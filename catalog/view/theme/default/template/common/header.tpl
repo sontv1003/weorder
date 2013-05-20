@@ -100,11 +100,15 @@
                     <div class="container">
 	<div class="header_left">
 		<ul id="tabs">
-			<li id="current"><a name="#tab1" href="#"><img width="32" src="<?php echo HTTP_SERVER; ?>/image/home.png"></a></li>
-			<li><a name="#tab2" href="#">Nam</a></li>
-			<li><a name="#tab3" href="#">Nữ</a></li>
-			<li><a name="#tab4" href="#">Trẻ em</a></li> 
-            <li><a target="_blank" name="#tab4" href="hotnew.html">tin nóng hàng ngày</a></li>      
+			<li id="current"><a name="#tab1" href="<?php echo $home; ?>"><img width="32" src="<?php echo HTTP_SERVER; ?>/image/home.png"></a></li>
+                        <?php if ($categories): ?>
+                            <?php foreach ($categories as $category) : ?>
+                            <li><a name="#tab2" href="<?php echo $category['href'] ?>"><?php echo $category['name'] ?></a></li>
+                        <?php endforeach; endif; ?>
+                        <?php if ($categoriesnews): ?>
+                            <?php foreach ($categoriesnews as $category) : ?>
+                            <li><a name="#tab2" href="<?php echo $category['href'] ?>"><?php echo $category['name'] ?></a></li>
+                        <?php endforeach; endif; ?>  
 		</ul>
 	</div>
                 <div class="clear"></div>
@@ -264,6 +268,8 @@
 					</li>
 				</ul>
             </div>
+                    
+                    <!--
                     <div class="links"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a><a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a><a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a></div>
                     </header>
 <?php if ($categories) { ?>
@@ -291,3 +297,4 @@
                     </div>
 <?php } ?>
                     <div id="notification"></div>
+-->

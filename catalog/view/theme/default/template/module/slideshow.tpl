@@ -11,6 +11,10 @@
 </div>
 <script type="text/javascript"><!--
 $(document).ready(function() {
-	$('#slideshow<?php echo $module; ?>').nivoSlider();
+	$('#slideshow<?php echo $module; ?>').nivoSlider({
+            directionNav: false,
+            directionNavHide: true,
+            controlNav: false
+        });
 });
 --></script>

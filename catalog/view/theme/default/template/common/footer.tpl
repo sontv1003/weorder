@@ -29,7 +29,7 @@
                   <!--<li><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>-->
                 </ul>
             </div>
-            <p>&copy; 2012 Powered by <a href="http://www.wesale.vn/">Wesale.vn</a>&trade;. All rights reserved</p>
+            <p>&copy; 2012 Powered by <a href="http://www.weorder.vn/">Weorder.vn</a>&trade;. All rights reserved</p>
             
           </div>
           <div class="float-r" id="tmfooterright">
