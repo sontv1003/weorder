@@ -86,11 +86,13 @@
 	font-weight:bold;
 }
 /* slider theme */
-
+.slideshow {
+    padding: 0px;
+        border: 1px solid #000;  
+}
 .slideshow .nivoSlider {
 	position: relative;
-	background: #fff url('../image/loading.gif') no-repeat 50% 50%;	
-	margin-bottom: 20px;
+	background: #fff url('../image/loading.gif') no-repeat 50% 50%;	      
 }
 .slideshow .nivoSlider img {
 	position: absolute;
@@ -146,4 +148,7 @@
 .slideshow .nivo-caption a {
 	color:#efe9d1;
 	text-decoration:underline;
+}
+#slideshow0 {
+    /*width: 996px;*/
 }
