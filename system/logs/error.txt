@@ -1,0 +1,17 @@
+2013-05-21 14:56:19 - PHP Notice:  Undefined variable: config_image_news_width in D:\Sources\weorder\admin\view\template\setting\setting.tpl on line 632
+2013-05-21 14:56:19 - PHP Notice:  Undefined variable: config_image_news_height in D:\Sources\weorder\admin\view\template\setting\setting.tpl on line 634
+2013-05-21 14:57:22 - PHP Notice:  Undefined variable: config_image_news_width in D:\Sources\weorder\admin\view\template\setting\setting.tpl on line 632
+2013-05-21 14:57:22 - PHP Notice:  Undefined variable: config_image_news_height in D:\Sources\weorder\admin\view\template\setting\setting.tpl on line 634
+2013-05-21 15:09:41 - PHP Notice:  Undefined variable: entry_manufacturer in D:\Sources\weorder\admin\view\template\catalog\news_form.tpl on line 62
+2013-05-21 15:09:41 - PHP Notice:  Undefined variable: manufacturer in D:\Sources\weorder\admin\view\template\catalog\news_form.tpl on line 63
+2013-05-21 15:09:41 - PHP Notice:  Undefined variable: manufacturer_id in D:\Sources\weorder\admin\view\template\catalog\news_form.tpl on line 63
+2013-05-21 15:29:53 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 138
+2013-05-21 15:29:59 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 138
+2013-05-21 15:30:23 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 138
+2013-05-21 15:31:02 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 138
+2013-05-21 15:31:02 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 139
+2013-05-21 15:31:12 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 138
+2013-05-21 15:32:24 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 138
+2013-05-21 15:32:26 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 138
+2013-05-21 15:32:26 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 138
+2013-05-21 17:20:02 - PHP Notice:  Error: Could not load template D:\Sources\weorder/catalog/view/theme/default/template/news/news_category2.tpl! in D:\Sources\weorder\vqmod\vqcache\vq2-system_engine_controller.php on line 75

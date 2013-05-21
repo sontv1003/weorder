@@ -57,7 +57,11 @@
           <?php } ?>
         </div>       
         <div id="tab-links">
-          <table class="form">            
+          <table class="form">        
+              <tr>
+              <td><?php echo $entry_manufacturer; ?></td>
+              <td><input type="text" name="manufacturer" value="<?php echo $manufacturer ?>" /><input type="hidden" name="manufacturer_id" value="<?php echo $manufacturer_id; ?>" /></td>
+            </tr>
             <tr>
               <td><?php echo $entry_category; ?></td>
               <td><div class="scrollbox">
@@ -347,6 +351,35 @@ $('#vtab-option a').tabs();
 		var txtname_trim=erase($("#news_description_"+lang_id+"_name").val());
 		$("#seo_keyword").val(seo_write(txtname_trim)+'.html');
 		
-	}
+	}// Manufacturer
+$('input[name=\'manufacturer\']').autocomplete({
+	delay: 500,
+	source: function(request, response) {
+		$.ajax({
+			url: 'index.php?route=catalog/manufacturer/autocomplete&token=<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request.term),
+			dataType: 'json',
+			success: function(json) {		
+				response($.map(json, function(item) {
+					return {
+						label: item.name,
+						value: item.manufacturer_id
+					}
+				}));
+			}
+		});
+	}, 
+	select: function(event, ui) {
+		$('input[name=\'manufacturer\']').attr('value', ui.item.label);
+		$('input[name=\'manufacturer_id\']').attr('value', ui.item.value);
+	
+		return false;
+	},
+	focus: function(event, ui) {
+      return false;
+   }
+});
+
+        
+        
 //--></script>
 <?php echo $footer; ?>
