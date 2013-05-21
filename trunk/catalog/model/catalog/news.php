@@ -15,8 +15,9 @@ class ModelCatalogNews extends Model {
 		
 		if ($query->num_rows) {
 			return array(
-				'news_id'       => $query->row['news_id'],
 				'name'             => $query->row['name'],
+				'manufacturer_id'             => $query->row['manufacturer_id'],
+				'news_id'       => $query->row['news_id'],
 				'short_description'      => $query->row['short_description'],
 				'description'      => $query->row['description'],
 				'meta_description' => $query->row['meta_description'],

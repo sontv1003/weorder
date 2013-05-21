@@ -140,6 +140,7 @@ class ControllerSettingSetting extends Controller {
 		$this->data['entry_error_log'] = $this->language->get('entry_error_log');
 		$this->data['entry_error_filename'] = $this->language->get('entry_error_filename');
 		$this->data['entry_google_analytics'] = $this->language->get('entry_google_analytics');
+		$this->data['entry_image_news'] = $this->language->get('entry_image_news');
 		
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
@@ -730,6 +731,18 @@ class ControllerSettingSetting extends Controller {
 			$this->data['config_image_category_width'] = $this->request->post['config_image_category_width'];
 		} else {
 			$this->data['config_image_category_width'] = $this->config->get('config_image_category_width');
+		}
+                
+		if (isset($this->request->post['config_image_category_width'])) {
+			$this->data['config_image_news_width'] = $this->request->post['config_image_news_width'];
+		} else {
+			$this->data['config_image_news_width'] = $this->config->get('config_image_news_width');
+		}
+                
+		if (isset($this->request->post['config_image_news_height'])) {
+			$this->data['config_image_news_height'] = $this->request->post['config_image_news_height'];
+		} else {
+			$this->data['config_image_news_height'] = $this->config->get('config_image_news_height');
 		}
 		
 		if (isset($this->request->post['config_image_category_height'])) {

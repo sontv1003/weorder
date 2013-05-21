@@ -137,4 +137,5 @@ $_['entry_customer_approval']  = 'Phê duyệt khách hàng mới:<br /><span cl
 $_['entry_review']       	    = 'Cho phép những tổng quan:<br /><span class="help">Enable / Disable mới xem xét nhập và hiển thị các đánh giá hiện tại</span>';
 $_['entry_download']            = 'Cho phép tải xuống:';
 $_['entry_upload_allowed']      = 'Được phép tải lên các tệp Mở rộng:<br /><span class="help">Thêm vào đó các phần mở rộng tập tin được phép tải lên. Sử dụng các giá trị cách nhau bằng dấu phẩy.</span>';
+$_['entry_image_news']      = 'Hình ảnh tin tức';
 ?>

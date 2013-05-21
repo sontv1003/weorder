@@ -628,6 +628,15 @@
                 <?php } ?></td>
             </tr>
             <tr>
+              <td><span class="required">*</span> <?php echo $entry_image_news; ?></td>
+              <td><input type="text" name="config_image_news_width" value="<?php echo $config_image_news_width; ?>" size="3" />
+                x
+                <input type="text" name="config_image_news_height" value="<?php echo $config_image_news_height; ?>" size="3" />
+                <?php if ($error_image_category) { ?>
+                <span class="error"><?php echo $error_image_category; ?></span>
+                <?php } ?></td>
+            </tr>
+            <tr>
               <td><span class="required">*</span> <?php echo $entry_image_thumb; ?></td>
               <td><input type="text" name="config_image_thumb_width" value="<?php echo $config_image_thumb_width; ?>" size="3" />
                 x
