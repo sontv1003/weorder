@@ -15,6 +15,7 @@
 <?php } ?>
 
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/style000.css" />
+        <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/slideshow.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/jquery00.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/homefeat.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/products.css" />
@@ -87,7 +88,7 @@
                         <a href="<?php echo $home; ?>" style="text-decoration:none"><img width="130" src="<?php echo $logo; ?>" id="logowesale" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a>
                         <h1 id="sloganws">Ready for better service</h1>
                     <?php } ?>
-                    <img width="250" style="margin:-8px 0px 0px -42px" src="<?php echo HTTP_SERVER; ?>/image/logoweorder-bong.png" id="header_logo">
+                        <a href="<?php echo $home; ?>"><img width="250" style="margin:-8px 0px 0px -42px" src="<?php echo HTTP_SERVER; ?>/image/logoweorder-bong.png" id="header_logo"></a>
                     <h1 id="slogan">___  Đặt hàng quốc tế  ___</h1>
                     <div class="top_btn">
                         <div class="topsearch">

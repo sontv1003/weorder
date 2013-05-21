@@ -1,9 +1,9 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               5.5.16-log - MySQL Community Server (GPL)
+-- Server version:               5.5.24-log - MySQL Community Server (GPL)
 -- Server OS:                    Win64
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-05-21 00:24:34
+-- Date/time:                    2013-05-21 13:29:48
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -200,12 +200,11 @@ CREATE TABLE IF NOT EXISTS `banner_image` (
   `link` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`banner_image_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.banner_image: 10 rows
 /*!40000 ALTER TABLE `banner_image` DISABLE KEYS */;
 INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VALUES
-	(78, 7, 'index.php?route=product/product&amp;path=57&amp;product_id=49', 'data/slide_00.jpg'),
 	(77, 6, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'data/demo/hp_banner.jpg'),
 	(75, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=5', 'data/demo/htc_logo.jpg'),
 	(73, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=8', 'data/demo/apple_logo.jpg'),
@@ -213,8 +212,9 @@ INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VAL
 	(71, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=10', 'data/demo/sony_logo.jpg'),
 	(72, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=6', 'data/demo/palm_logo.jpg'),
 	(76, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'data/demo/hp_logo.jpg'),
-	(79, 7, '', 'data/slide_01.jpg'),
-	(80, 7, '', 'data/slide_02.jpg');
+	(85, 7, '', 'data/slide_01.jpg'),
+	(84, 7, 'index.php?route=product/product&amp;path=57&amp;product_id=49', 'data/slide_00.jpg'),
+	(86, 7, '', 'data/slide_02.jpg');
 /*!40000 ALTER TABLE `banner_image` ENABLE KEYS */;
 
 
@@ -230,7 +230,7 @@ CREATE TABLE IF NOT EXISTS `banner_image_description` (
 -- Dumping data for table weorder.banner_image_description: 10 rows
 /*!40000 ALTER TABLE `banner_image_description` DISABLE KEYS */;
 INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
-	(78, 2, 7, 'Samsung Tab 10.1'),
+	(85, 2, 7, 'bla bla'),
 	(77, 2, 6, 'HP Banner'),
 	(75, 2, 8, 'HTC'),
 	(74, 2, 8, 'Canon'),
@@ -238,8 +238,8 @@ INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banne
 	(72, 2, 8, 'Palm'),
 	(71, 2, 8, 'Sony'),
 	(76, 2, 8, 'Hewlett-Packard'),
-	(79, 2, 7, 'bla bla'),
-	(80, 2, 7, 'bla bla');
+	(84, 2, 7, 'Samsung Tab 10.1'),
+	(86, 2, 7, 'bla bla');
 /*!40000 ALTER TABLE `banner_image_description` ENABLE KEYS */;
 
 
@@ -699,7 +699,7 @@ CREATE TABLE IF NOT EXISTS `currency` (
 /*!40000 ALTER TABLE `currency` DISABLE KEYS */;
 INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
 	(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.65679997, 1, '2013-05-20 16:07:27'),
-	(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2013-05-20 16:32:37'),
+	(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2013-05-21 02:07:15'),
 	(3, 'Euro', 'EUR', '', '€', '2', 0.77730000, 1, '2013-05-20 16:07:27');
 /*!40000 ALTER TABLE `currency` ENABLE KEYS */;
 
@@ -2451,7 +2451,7 @@ CREATE TABLE IF NOT EXISTS `setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=549 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=551 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.setting: 140 rows
 /*!40000 ALTER TABLE `setting` DISABLE KEYS */;
@@ -2503,7 +2503,7 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(95, 0, 'voucher', 'voucher_status', '1', 0),
 	(103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 	(104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
-	(340, 0, 'slideshow', 'slideshow_module', 'a:1:{i:0;a:7:{s:9:"banner_id";s:1:"7";s:5:"width";s:4:"1024";s:6:"height";s:3:"481";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(550, 0, 'slideshow', 'slideshow_module', 'a:1:{i:0;a:7:{s:9:"banner_id";s:1:"7";s:5:"width";s:3:"996";s:6:"height";s:3:"481";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(109, 0, 'banner', 'banner_module', 'a:1:{i:0;a:8:{s:9:"banner_id";s:1:"6";s:5:"width";s:3:"182";s:6:"height";s:3:"182";s:11:"resize_type";s:7:"default";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
 	(540, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
 	(539, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
@@ -2747,7 +2747,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table weorder.user: 1 rows
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `code`, `ip`, `status`, `date_added`) VALUES
-	(1, 1, 'admin', 'eb3b619f4e511cdecae9a01f958f9322a445eeb6', '16c32b3ef', '', '', 'admin@admin.com', '', '::1', 1, '2013-05-16 23:52:20');
+	(1, 1, 'admin', 'eb3b619f4e511cdecae9a01f958f9322a445eeb6', '16c32b3ef', '', '', 'admin@admin.com', '', '127.0.0.1', 1, '2013-05-16 23:52:20');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 
@@ -2883,7 +2883,7 @@ CREATE TABLE IF NOT EXISTS `zone` (
   PRIMARY KEY (`zone_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4033 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.zone: 3,985 rows
+-- Dumping data for table weorder.zone: 3.985 rows
 /*!40000 ALTER TABLE `zone` DISABLE KEYS */;
 INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 	(1, 1, 'Badakhshan', 'BDS', 1),
