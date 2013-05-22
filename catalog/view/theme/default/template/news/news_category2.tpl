@@ -1,46 +1,41 @@
 <?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
-<div id="content"><?php echo $content_top; ?>
-<!--  <div class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-    <?php } ?>
-  </div>
-  <h1><?php echo $heading_title; ?></h1>-->
-  
-  <?php foreach ($news as $news_item) { ?>
-        <div id="news_content" style="position: relative;">
-              <div class="date_block">
-              <span class="date"><?php echo date('d/m',strtotime($news_item['date_available'])) ?></span>
-              <span><?php echo date('Y',strtotime($news_item['date_available'])) ?></span>
-              </div>
-              <div style="height: 170px; width: 100%; z-index: -1; float: left;"></div> 
-              <div class="brand bt_border">
-                      <?php if(!empty($news_item['thumb_manufacture'])) { ?>
-                        <img src="<?php echo $news_item['thumb_manufacture'] ?>" />
-                      <?php } ?>
-                      <span id="gioithieuth"><?php echo utf8_substr($news_item['short_description'], 0, 150); ?></span>
-                    <ul>
-                          <?php if ($news_item['thumb']) { ?>
-                              <li id="anhtin"><a href="<?php echo $news_item['href']; ?>"><img src="<?php echo $news_item['thumb']; ?>" title="<?php echo $news_item['name']; ?>" alt="<?php echo $news_item['name']; ?>" <?php echo $news_item['width']; ?> <?php echo $news_item['height']; ?> /></a></li>
-                          <?php } ?>
-                              <a href="<?php echo $news_item['href']; ?>"><button class="float-l2" type="submit" name="newsletter[gender]" value="female">Xem chi tiết</button></a>
-                              <li><a href="<?php echo $news_item['href']; ?>"><span id="tinthoitrang"><?php echo $news_item['name']; ?></span></a></li>
-                    </ul>
-              </div>
-              <div id="ngan"><img src="<?php echo HTTP_SERVER ?>/image/vien.jpg" height="1px" width="950px"></div>
-
-              <a class="shop_now" href="#">
-                      <object width="120" height="30" id="shop">
-                                      <embed wmode="transparent" width="120" height="30" align="top" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="<?php echo HTTP_SERVER ?>/image/shopnow.swf" style="margin:10px 35px 10px 30px">
-                              </object>
-                      <span>From Zara.com</span>
-              </a>
-              <a class="like_on_face" href="#"><img src="<?php echo HTTP_SERVER ?>/image/face.png" style="width:110px; margin:-5px 0px 0px -5px "></a>
-              <a class="like_on_face" href="#"><img src="<?php echo HTTP_SERVER ?>/image/chiase.jpg" style="width:112px; margin:-5px 0px 0px -227px"></a>
-      </div>
-  <?php } ?>
-
-  <div class="cls"></div>
+<div class="l-pageWrapper l-hasSidebarAndAside l-staticpage">
+    <div class="press" id="cms-page">
+	<div class="wrapper">
+<div class="content"><?php echo $content_top; ?>
+    <div class="press"></div>
+    <h1>Báo Chí / Truyền Thông</h1>
+    <div class="shadow"></div>
+    
+    <div class="news-list">
+<?php foreach ($news as $news_item) { ?>
+        <div class="news">
+          <div class="thumb">
+            <div class="border"> <a href="bung-no-giam-gia-cac-san-pham-tai-zalora/">
+            <img width="220" height="153" src="<?php echo $news_item['thumb']; ?>" title="<?php echo $news_item['name']; ?>" alt="<?php echo $news_item['name']; ?>"></a> </div>
+            <div class="tl corner"></div>
+            <div class="br corner"></div>
+          </div>
+          <!--.thumb-->
+          <div class="info fr" style="width: 505px; height: 190px;">
+            <h2><a href="<?php echo $news_item['href']; ?>"><?php echo $news_item['name']; ?></a></h2>
+            <p class="meta">EVA <span class="date">- <?php echo date('d/m/Y',strtotime($news_item['date_available'])) ?></span></p>
+            <p style="" class="excerpt"> 
+                <img width="39" height="33" alt="quote" src="<?php echo HTTP_SERVER?>/image/quote-open.png" class="quote open">
+                <?php echo utf8_substr($news_item['short_description'], 0, 300); ?>
+                <img width="39" height="33" alt="quote" src="<?php echo HTTP_SERVER?>/image/quote-close.png" class="quote close"> 
+            </p>
+          </div>
+          <div class="cls"></div>
+          <!--.info-->
+          <div class="more"> <a href="<?php echo $news_item['href']; ?>">Xem Thêm</a> </div>
+          <!--.more--> 
+        </div>
+        <!--.news-->
+        
+<?php } ?>
+    </div>
+  <!--<div class="cls"></div>-->
   <div class="pagination"><?php echo $pagination; ?></div>
   
   <?php if (!$categories && !$news) { ?>
@@ -49,5 +44,20 @@
     <div class="right"><a href="<?php echo $continue; ?>" class="button"><span><?php echo $button_continue; ?></span></a></div>
   </div>
   <?php } ?>
-  <?php echo $content_bottom; ?></div>
+  <?php echo $content_bottom; ?>
+            </div> <!-- end content -->
+            <div class="sidebar">
+                <h3>Thông Tin Liên Hệ</h3>
+                <p>Nếu quý khách có những câu hỏi liên quan đến báo chí và truyền thông,vui lòng liên lạc với chúng tôi tại địa chỉ e-mail:</p>
+                <div class="email"><a href="mailto:customer@zalora.vn">customer@zalora.vn</a></div>
+                <p> Tầng 2, COPAC Centre<br>
+                        Số 12 đường Tôn Đản, Phường 13, Quận 4<br>
+                        TP. Hồ Chí Minh<br>
+                        Việt Nam 
+                </p>
+            </div> <!-- end sidebar -->
+        </div> <!-- end wrapper -->
+    </div> <!-- end press -->
+</div>
+<div class="clearfix"></div>
 <?php echo $footer; ?>
