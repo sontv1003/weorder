@@ -6437,3 +6437,11 @@ label.nl_header {
     background-repeat: no-repeat;
     padding-bottom: 125px;
 }
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}

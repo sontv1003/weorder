@@ -14,7 +14,6 @@
         <link href="<?php echo $icon; ?>" rel="icon" />
 <?php } ?>
 
-        <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/style000.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/slideshow.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/jquery00.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/homefeat.css" />
@@ -22,6 +21,7 @@
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sendtoaf.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/global00.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/register.css" />
+        <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/style000.css" />
         <link type="text/css" href="catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
 
         <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
