@@ -82,7 +82,7 @@ class ControllerNewsNewsCategory extends Controller {
             $this->document->setDescription($news_category_info['meta_description']);
             $this->document->setKeywords($news_category_info['meta_keyword']);
 
-            $this->data['heading_title'] = $news_category_info['name'];
+            $this->data['heading_title'] = $news_category_info['name'];            
 
             $this->data['text_refine'] = $this->language->get('text_refine');
             $this->data['text_empty'] = $this->language->get('text_empty');
@@ -247,10 +247,21 @@ class ControllerNewsNewsCategory extends Controller {
 //                $this->template = 'default/template/news/news_category.tpl';
 //            }
 
-            if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/news_category2.tpl')) {
-                $this->template = $this->config->get('config_template') . '/template/news/news_category2.tpl';
+            if (empty($news_category_info['theme_id'])) {
+                
+                if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/news_theme1.tpl')) {
+                    $this->template = $this->config->get('config_template') . '/template/news/news_theme1.tpl';
+                } else {
+                    $this->template = 'default/template/news/news_theme1.tpl';
+                }
+                
             } else {
-                $this->template = 'default/template/news/news_category2.tpl';
+
+                if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/news_theme2.tpl')) {
+                    $this->template = $this->config->get('config_template') . '/template/news/news_theme2.tpl';
+                } else {
+                    $this->template = 'default/template/news/news_theme2.tpl';
+                }
             }
 
             $this->children = array(

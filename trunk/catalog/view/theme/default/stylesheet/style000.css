@@ -394,6 +394,7 @@ h2, h3 {
 }
 #header {
 	position: relative;
+        margin-top: 35px;
 }
 .l-simpleHeader #header {
 	height: 80px

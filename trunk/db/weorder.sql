@@ -3,7 +3,7 @@
 -- Server version:               5.5.24-log - MySQL Community Server (GPL)
 -- Server OS:                    Win64
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-05-22 18:55:42
+-- Date/time:                    2013-05-24 09:58:22
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -184,12 +184,11 @@ CREATE TABLE IF NOT EXISTS `banner` (
   PRIMARY KEY (`banner_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.banner: 3 rows
+-- Dumping data for table weorder.banner: 2 rows
 /*!40000 ALTER TABLE `banner` DISABLE KEYS */;
 INSERT INTO `banner` (`banner_id`, `name`, `status`) VALUES
-	(6, 'HP Products', 1),
 	(7, 'Slideshow trang chủ', 1),
-	(8, 'Manufacturers', 1);
+	(8, 'Tin nóng hàng ngày', 1);
 /*!40000 ALTER TABLE `banner` ENABLE KEYS */;
 
 
@@ -200,21 +199,15 @@ CREATE TABLE IF NOT EXISTS `banner_image` (
   `link` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`banner_image_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=94 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.banner_image: 10 rows
+-- Dumping data for table weorder.banner_image: 4 rows
 /*!40000 ALTER TABLE `banner_image` DISABLE KEYS */;
 INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VALUES
-	(77, 6, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'data/demo/hp_banner.jpg'),
-	(75, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=5', 'data/demo/htc_logo.jpg'),
-	(73, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=8', 'data/demo/apple_logo.jpg'),
-	(74, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=9', 'data/demo/canon_logo.jpg'),
-	(71, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=10', 'data/demo/sony_logo.jpg'),
-	(72, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=6', 'data/demo/palm_logo.jpg'),
-	(76, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'data/demo/hp_logo.jpg'),
-	(85, 7, '', 'data/slide_01.jpg'),
-	(84, 7, 'index.php?route=product/product&amp;path=57&amp;product_id=49', 'data/slide_00.jpg'),
-	(86, 7, '', 'data/slide_02.jpg');
+	(87, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'data/anh1.jpg'),
+	(93, 7, '', 'data/slide_02.jpg'),
+	(92, 7, '', 'data/slide_01.jpg'),
+	(91, 7, '', 'data/slide_00.jpg');
 /*!40000 ALTER TABLE `banner_image` ENABLE KEYS */;
 
 
@@ -227,19 +220,13 @@ CREATE TABLE IF NOT EXISTS `banner_image_description` (
   PRIMARY KEY (`banner_image_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.banner_image_description: 10 rows
+-- Dumping data for table weorder.banner_image_description: 4 rows
 /*!40000 ALTER TABLE `banner_image_description` DISABLE KEYS */;
 INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
-	(85, 2, 7, 'bla bla'),
-	(77, 2, 6, 'HP Banner'),
-	(75, 2, 8, 'HTC'),
-	(74, 2, 8, 'Canon'),
-	(73, 2, 8, 'Apple'),
-	(72, 2, 8, 'Palm'),
-	(71, 2, 8, 'Sony'),
-	(76, 2, 8, 'Hewlett-Packard'),
-	(84, 2, 7, 'Samsung Tab 10.1'),
-	(86, 2, 7, 'bla bla');
+	(93, 2, 7, 'ssssssss'),
+	(87, 2, 8, 'TIN SIÊU HOT'),
+	(92, 2, 7, 'ssssssssssssssssss'),
+	(91, 2, 7, 'sssssss');
 /*!40000 ALTER TABLE `banner_image_description` ENABLE KEYS */;
 
 
@@ -255,14 +242,20 @@ CREATE TABLE IF NOT EXISTS `category` (
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`category_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.category: 3 rows
+-- Dumping data for table weorder.category: 9 rows
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 	(25, '', 0, 1, 1, 1, 1, '2009-01-31 01:04:25', '2013-05-20 23:43:45'),
 	(33, '', 0, 1, 1, 0, 1, '2009-02-03 14:17:55', '2013-05-20 23:43:37'),
-	(59, '', 0, 1, 1, 2, 1, '2013-05-20 23:43:15', '2013-05-20 23:44:07');
+	(59, '', 0, 1, 1, 2, 1, '2013-05-20 23:43:15', '2013-05-20 23:44:07'),
+	(60, '', 33, 0, 1, 1, 1, '2013-05-23 22:38:45', '2013-05-23 22:41:27'),
+	(61, '', 33, 0, 1, 0, 1, '2013-05-23 22:39:28', '2013-05-23 22:40:02'),
+	(62, '', 33, 0, 1, 2, 1, '2013-05-23 22:39:49', '2013-05-23 22:41:32'),
+	(63, '', 25, 0, 1, 0, 1, '2013-05-23 22:40:41', '2013-05-23 22:40:41'),
+	(64, '', 25, 0, 1, 0, 1, '2013-05-23 22:40:55', '2013-05-23 22:41:49'),
+	(65, '', 25, 0, 1, 3, 1, '2013-05-23 22:42:16', '2013-05-23 22:42:22');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 
 
@@ -278,12 +271,18 @@ CREATE TABLE IF NOT EXISTS `category_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.category_description: 3 rows
+-- Dumping data for table weorder.category_description: 9 rows
 /*!40000 ALTER TABLE `category_description` DISABLE KEYS */;
 INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(33, 2, 'Nam', '', '', 'nam'),
 	(59, 2, 'Trẻ em', '', '', ''),
-	(25, 2, 'Nữ', '', '', '');
+	(25, 2, 'Nữ', '', '', ''),
+	(60, 2, 'Quần', '', '', 'quan'),
+	(61, 2, 'Áo', '', '', ''),
+	(62, 2, 'Phụ kiện', '', '', ''),
+	(63, 2, 'Quần', '', '', ''),
+	(64, 2, 'Áo', '', '', ''),
+	(65, 2, 'Phụ kiện', '', '', '');
 /*!40000 ALTER TABLE `category_description` ENABLE KEYS */;
 
 
@@ -307,12 +306,24 @@ CREATE TABLE IF NOT EXISTS `category_path` (
   PRIMARY KEY (`category_id`,`path_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.category_path: 3 rows
+-- Dumping data for table weorder.category_path: 15 rows
 /*!40000 ALTER TABLE `category_path` DISABLE KEYS */;
 INSERT INTO `category_path` (`category_id`, `path_id`, `level`) VALUES
 	(25, 25, 0),
 	(33, 33, 0),
-	(59, 59, 0);
+	(59, 59, 0),
+	(60, 60, 1),
+	(60, 33, 0),
+	(61, 33, 0),
+	(61, 61, 1),
+	(62, 33, 0),
+	(62, 62, 1),
+	(63, 25, 0),
+	(63, 63, 1),
+	(64, 25, 0),
+	(64, 64, 1),
+	(65, 25, 0),
+	(65, 65, 1);
 /*!40000 ALTER TABLE `category_path` ENABLE KEYS */;
 
 
@@ -324,8 +335,15 @@ CREATE TABLE IF NOT EXISTS `category_to_layout` (
   PRIMARY KEY (`category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.category_to_layout: 0 rows
+-- Dumping data for table weorder.category_to_layout: 6 rows
 /*!40000 ALTER TABLE `category_to_layout` DISABLE KEYS */;
+INSERT INTO `category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
+	(61, 0, 3),
+	(62, 0, 3),
+	(60, 0, 3),
+	(63, 0, 3),
+	(64, 0, 3),
+	(65, 0, 3);
 /*!40000 ALTER TABLE `category_to_layout` ENABLE KEYS */;
 
 
@@ -336,12 +354,18 @@ CREATE TABLE IF NOT EXISTS `category_to_store` (
   PRIMARY KEY (`category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.category_to_store: 3 rows
+-- Dumping data for table weorder.category_to_store: 9 rows
 /*!40000 ALTER TABLE `category_to_store` DISABLE KEYS */;
 INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
 	(25, 0),
 	(33, 0),
-	(59, 0);
+	(59, 0),
+	(60, 0),
+	(61, 0),
+	(62, 0),
+	(63, 0),
+	(64, 0),
+	(65, 0);
 /*!40000 ALTER TABLE `category_to_store` ENABLE KEYS */;
 
 
@@ -698,9 +722,9 @@ CREATE TABLE IF NOT EXISTS `currency` (
 -- Dumping data for table weorder.currency: 3 rows
 /*!40000 ALTER TABLE `currency` DISABLE KEYS */;
 INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-	(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.65969998, 1, '2013-05-22 02:06:39'),
-	(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2013-05-22 02:07:14'),
-	(3, 'Euro', 'EUR', '', '€', '2', 0.77359998, 1, '2013-05-22 02:06:39');
+	(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.66240001, 1, '2013-05-23 15:34:38'),
+	(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2013-05-23 16:23:36'),
+	(3, 'Euro', 'EUR', '', '€', '2', 0.77440000, 1, '2013-05-23 15:34:38');
 /*!40000 ALTER TABLE `currency` ENABLE KEYS */;
 
 
@@ -1170,9 +1194,9 @@ CREATE TABLE IF NOT EXISTS `layout` (
   `layout_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`layout_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.layout: 11 rows
+-- Dumping data for table weorder.layout: 12 rows
 /*!40000 ALTER TABLE `layout` DISABLE KEYS */;
 INSERT INTO `layout` (`layout_id`, `name`) VALUES
 	(1, 'Home'),
@@ -1185,7 +1209,8 @@ INSERT INTO `layout` (`layout_id`, `name`) VALUES
 	(8, 'Contact'),
 	(9, 'Sitemap'),
 	(10, 'Affiliate'),
-	(11, 'Information');
+	(11, 'Information'),
+	(12, 'Danh mục tin tức');
 /*!40000 ALTER TABLE `layout` ENABLE KEYS */;
 
 
@@ -1196,9 +1221,9 @@ CREATE TABLE IF NOT EXISTS `layout_route` (
   `store_id` int(11) NOT NULL,
   `route` varchar(255) NOT NULL,
   PRIMARY KEY (`layout_route_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.layout_route: 10 rows
+-- Dumping data for table weorder.layout_route: 11 rows
 /*!40000 ALTER TABLE `layout_route` DISABLE KEYS */;
 INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
 	(30, 6, 0, 'account'),
@@ -1210,7 +1235,8 @@ INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`)
 	(22, 5, 0, 'product/manufacturer'),
 	(23, 7, 0, 'checkout/'),
 	(31, 8, 0, 'information/contact'),
-	(32, 9, 0, 'information/sitemap');
+	(32, 9, 0, 'information/sitemap'),
+	(35, 12, 0, 'news/news_category');
 /*!40000 ALTER TABLE `layout_route` ENABLE KEYS */;
 
 
@@ -1302,19 +1328,21 @@ CREATE TABLE IF NOT EXISTS `news` (
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `viewed` int(5) NOT NULL DEFAULT '0',
   PRIMARY KEY (`news_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table weorder.news: 2 rows
+-- Dumping data for table weorder.news: 3 rows
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
 INSERT INTO `news` (`news_id`, `manufacturer_id`, `image`, `date_available`, `sort_order`, `comment`, `approved`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-	(1, 0, 'data/sanpham1.jpg', '2013-05-19', 1, 1, 1, 1, '2013-05-21 00:20:55', '2013-05-22 09:07:12', 2),
-	(2, 0, 'data/sanpham1.jpg', '2013-05-20', 1, 1, 1, 1, '2013-05-21 23:32:51', '2013-05-22 09:07:00', 6);
+	(1, 0, 'data/sanpham1.jpg', '2013-05-19', 1, 1, 1, 1, '2013-05-21 00:20:55', '2013-05-22 09:07:12', 3),
+	(2, 0, 'data/sanpham1.jpg', '2013-05-20', 1, 1, 1, 1, '2013-05-21 23:32:51', '2013-05-22 09:07:00', 6),
+	(3, 0, '', '2013-05-22', 1, 1, 1, 1, '2013-05-23 23:58:22', '0000-00-00 00:00:00', 3);
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.news_category
 CREATE TABLE IF NOT EXISTS `news_category` (
   `news_category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `theme_id` int(11) DEFAULT '0',
   `image` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `parent_id` int(11) NOT NULL DEFAULT '0',
   `top` tinyint(4) NOT NULL,
@@ -1324,12 +1352,13 @@ CREATE TABLE IF NOT EXISTS `news_category` (
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`news_category_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table weorder.news_category: 1 rows
+-- Dumping data for table weorder.news_category: 2 rows
 /*!40000 ALTER TABLE `news_category` DISABLE KEYS */;
-INSERT INTO `news_category` (`news_category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
-	(1, '', 0, 1, 1, 4, 1, '2013-05-20 23:56:00', '2013-05-20 23:56:00');
+INSERT INTO `news_category` (`news_category_id`, `theme_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
+	(1, 0, '', 0, 1, 1, 4, 1, '2013-05-20 23:56:00', '2013-05-23 23:57:18'),
+	(2, 1, '', 0, 0, 1, 0, 1, '2013-05-23 23:20:14', '2013-05-23 23:56:58');
 /*!40000 ALTER TABLE `news_category` ENABLE KEYS */;
 
 
@@ -1345,10 +1374,11 @@ CREATE TABLE IF NOT EXISTS `news_category_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table weorder.news_category_description: 1 rows
+-- Dumping data for table weorder.news_category_description: 2 rows
 /*!40000 ALTER TABLE `news_category_description` DISABLE KEYS */;
 INSERT INTO `news_category_description` (`news_category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
-	(1, 2, 'Tin nóng hàng ngày', '', '', '');
+	(1, 2, 'Tin nóng hàng ngày', '', '', ''),
+	(2, 2, 'Báo chí / Truyền thông', '', '', '');
 /*!40000 ALTER TABLE `news_category_description` ENABLE KEYS */;
 
 
@@ -1372,10 +1402,11 @@ CREATE TABLE IF NOT EXISTS `news_category_to_store` (
   PRIMARY KEY (`news_category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table weorder.news_category_to_store: 1 rows
+-- Dumping data for table weorder.news_category_to_store: 2 rows
 /*!40000 ALTER TABLE `news_category_to_store` DISABLE KEYS */;
 INSERT INTO `news_category_to_store` (`news_category_id`, `store_id`) VALUES
-	(1, 0);
+	(1, 0),
+	(2, 0);
 /*!40000 ALTER TABLE `news_category_to_store` ENABLE KEYS */;
 
 
@@ -1410,13 +1441,14 @@ CREATE TABLE IF NOT EXISTS `news_description` (
   `meta_keyword` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`news_id`,`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table weorder.news_description: 2 rows
+-- Dumping data for table weorder.news_description: 3 rows
 /*!40000 ALTER TABLE `news_description` DISABLE KEYS */;
 INSERT INTO `news_description` (`news_id`, `language_id`, `name`, `short_description`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(1, 2, 'Sale off 50% hàng Lascote', 'ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…', '&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Tahoma, Geneva, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 18px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;&quot;&gt;ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…&lt;/span&gt;&lt;/p&gt;\r\n', '', ''),
-	(2, 2, 'Zara đại hạ giá', 'ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…', '&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Tahoma, Geneva, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 18px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;&quot;&gt;ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…&lt;/span&gt;&lt;/p&gt;\r\n', '', '');
+	(2, 2, 'Zara đại hạ giá', 'ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…', '&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Tahoma, Geneva, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 18px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;&quot;&gt;ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…&lt;/span&gt;&lt;/p&gt;\r\n', '', ''),
+	(3, 2, 'Testing', 'sdgsdgsdgds sdgsdg sdg', '&lt;p&gt;sdgsdgsđsgsdgsdsdgsd&lt;span style=&quot;font-size: 13px;&quot;&gt;sdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsdsdgsdgsđsgsdgsdsdgsd&lt;/span&gt;&lt;/p&gt;\r\n', '', '');
 /*!40000 ALTER TABLE `news_description` ENABLE KEYS */;
 
 
@@ -1456,11 +1488,12 @@ CREATE TABLE IF NOT EXISTS `news_to_category` (
   PRIMARY KEY (`news_id`,`news_category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table weorder.news_to_category: 2 rows
+-- Dumping data for table weorder.news_to_category: 3 rows
 /*!40000 ALTER TABLE `news_to_category` DISABLE KEYS */;
 INSERT INTO `news_to_category` (`news_id`, `news_category_id`) VALUES
 	(1, 1),
-	(2, 1);
+	(2, 1),
+	(3, 2);
 /*!40000 ALTER TABLE `news_to_category` ENABLE KEYS */;
 
 
@@ -1484,11 +1517,12 @@ CREATE TABLE IF NOT EXISTS `news_to_store` (
   PRIMARY KEY (`news_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table weorder.news_to_store: 2 rows
+-- Dumping data for table weorder.news_to_store: 3 rows
 /*!40000 ALTER TABLE `news_to_store` DISABLE KEYS */;
 INSERT INTO `news_to_store` (`news_id`, `store_id`) VALUES
 	(1, 0),
-	(2, 0);
+	(2, 0),
+	(3, 0);
 /*!40000 ALTER TABLE `news_to_store` ENABLE KEYS */;
 
 
@@ -2456,7 +2490,7 @@ CREATE TABLE IF NOT EXISTS `setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=761 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=767 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.setting: 142 rows
 /*!40000 ALTER TABLE `setting` DISABLE KEYS */;
@@ -2490,7 +2524,7 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(53, 0, 'reward', 'reward_sort_order', '2', 0),
 	(54, 0, 'reward', 'reward_status', '1', 0),
 	(56, 0, 'affiliate', 'affiliate_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:2:"10";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(57, 0, 'category', 'category_module', 'a:2:{i:0;a:5:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:5:"count";s:1:"0";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:5:{s:9:"layout_id";s:1:"2";s:8:"position";s:11:"column_left";s:5:"count";s:1:"0";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(766, 0, 'category', 'category_module', 'a:2:{i:0;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(60, 0, 'account', 'account_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"6";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(752, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
 	(750, 0, 'config', 'config_seo_url', '0', 0),
@@ -2499,7 +2533,6 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(95, 0, 'voucher', 'voucher_status', '1', 0),
 	(103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 	(104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
-	(550, 0, 'slideshow', 'slideshow_module', 'a:1:{i:0;a:7:{s:9:"banner_id";s:1:"7";s:5:"width";s:3:"996";s:6:"height";s:3:"481";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(109, 0, 'banner', 'banner_module', 'a:1:{i:0;a:8:{s:9:"banner_id";s:1:"6";s:5:"width";s:3:"182";s:6:"height";s:3:"182";s:11:"resize_type";s:7:"default";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
 	(749, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
 	(748, 0, 'config', 'config_shared', '0', 0),
@@ -2602,7 +2635,8 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(757, 0, 'config', 'config_error_display', '1', 0),
 	(758, 0, 'config', 'config_error_log', '1', 0),
 	(759, 0, 'config', 'config_error_filename', 'error.txt', 0),
-	(760, 0, 'config', 'config_google_analytics', '', 0);
+	(760, 0, 'config', 'config_google_analytics', '', 0),
+	(764, 0, 'slideshow', 'slideshow_module', 'a:2:{i:0;a:7:{s:9:"banner_id";s:1:"8";s:5:"width";s:3:"759";s:6:"height";s:3:"380";s:9:"layout_id";s:2:"12";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:7:{s:9:"banner_id";s:1:"7";s:5:"width";s:3:"996";s:6:"height";s:3:"481";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1);
 /*!40000 ALTER TABLE `setting` ENABLE KEYS */;
 
 
@@ -2717,9 +2751,9 @@ CREATE TABLE IF NOT EXISTS `url_alias` (
   `query` varchar(255) NOT NULL,
   `keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`url_alias_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=795 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=826 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.url_alias: 11 rows
+-- Dumping data for table weorder.url_alias: 18 rows
 /*!40000 ALTER TABLE `url_alias` DISABLE KEYS */;
 INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(704, 'product_id=48', 'ipod_classic'),
@@ -2729,10 +2763,17 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(772, 'information_id=4', 'about_us'),
 	(785, 'product_id=42', 'test'),
 	(780, 'category_id=59', 'tre-em'),
-	(781, 'news_category_id=1', 'tin-tuc'),
+	(824, 'news_category_id=1', 'tin-tuc'),
 	(794, 'news_id=1', 'sale-off-50-hang-lascote.html'),
 	(789, 'manufacturer_id=9', 'zara'),
-	(793, 'news_id=2', 'zara-dai-ha-gia.html');
+	(793, 'news_id=2', 'zara-dai-ha-gia.html'),
+	(804, 'category_id=60', 'quan'),
+	(799, 'category_id=61', 'ao'),
+	(805, 'category_id=62', 'phu-kien'),
+	(802, 'category_id=63', 'quan'),
+	(807, 'category_id=65', 'phu-kien'),
+	(822, 'news_category_id=2', 'bao-chi-truyen-thong'),
+	(825, 'news_id=3', 'testing.html');
 /*!40000 ALTER TABLE `url_alias` ENABLE KEYS */;
 
 

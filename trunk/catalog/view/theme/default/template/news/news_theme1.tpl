@@ -31,8 +31,8 @@
 
               <a class="shop_now" href="#">
                       <object width="120" height="30" id="shop">
-                                      <embed wmode="transparent" width="120" height="30" align="top" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="<?php echo HTTP_SERVER ?>/image/shopnow.swf" style="margin:10px 35px 10px 30px">
-                              </object>
+                        <embed wmode="transparent" width="120" height="30" align="top" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="<?php echo HTTP_SERVER ?>/image/shopnow.swf" style="margin:10px 35px 10px 30px">
+                        </object>
                       <span>From Zara.com</span>
               </a>
               <a class="like_on_face" href="#"><img src="<?php echo HTTP_SERVER ?>/image/face.png" style="width:110px; margin:-5px 0px 0px -5px "></a>
