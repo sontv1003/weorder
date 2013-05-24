@@ -88,7 +88,7 @@
 /* slider theme */
 .slideshow {
     padding: 0px;
-        border: 1px solid #000;  
+    /*border: 1px solid #000;*/  
 }
 .slideshow .nivoSlider {
 	position: relative;

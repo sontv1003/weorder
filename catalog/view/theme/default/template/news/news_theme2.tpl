@@ -2,9 +2,10 @@
 <div class="l-pageWrapper l-hasSidebarAndAside l-staticpage">
     <div class="press" id="cms-page">
 	<div class="wrapper">
-<div class="content"><?php echo $content_top; ?>
-    <div class="press"></div>
-    <h1>Báo Chí / Truyền Thông</h1>
+<div class="content"><?php // echo $content_top; ?>
+    <img src="<?php echo HTTP_SERVER ?>/image/bg-press.jpg" />
+    <!--<div class="press"></div>-->
+    <h1><?php echo $heading_title ?></h1>
     <div class="shadow"></div>
     
     <div class="news-list">

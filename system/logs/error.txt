@@ -1,17 +1,17 @@
-2013-05-21 14:56:19 - PHP Notice:  Undefined variable: config_image_news_width in D:\Sources\weorder\admin\view\template\setting\setting.tpl on line 632
-2013-05-21 14:56:19 - PHP Notice:  Undefined variable: config_image_news_height in D:\Sources\weorder\admin\view\template\setting\setting.tpl on line 634
-2013-05-21 14:57:22 - PHP Notice:  Undefined variable: config_image_news_width in D:\Sources\weorder\admin\view\template\setting\setting.tpl on line 632
-2013-05-21 14:57:22 - PHP Notice:  Undefined variable: config_image_news_height in D:\Sources\weorder\admin\view\template\setting\setting.tpl on line 634
-2013-05-21 15:09:41 - PHP Notice:  Undefined variable: entry_manufacturer in D:\Sources\weorder\admin\view\template\catalog\news_form.tpl on line 62
-2013-05-21 15:09:41 - PHP Notice:  Undefined variable: manufacturer in D:\Sources\weorder\admin\view\template\catalog\news_form.tpl on line 63
-2013-05-21 15:09:41 - PHP Notice:  Undefined variable: manufacturer_id in D:\Sources\weorder\admin\view\template\catalog\news_form.tpl on line 63
-2013-05-21 15:29:53 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 138
-2013-05-21 15:29:59 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 138
-2013-05-21 15:30:23 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 138
-2013-05-21 15:31:02 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 138
-2013-05-21 15:31:02 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 139
-2013-05-21 15:31:12 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 138
-2013-05-21 15:32:24 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 138
-2013-05-21 15:32:26 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 138
-2013-05-21 15:32:26 - PHP Notice:  Undefined index: manufacturer_id in D:\Sources\weorder\catalog\controller\news\news_category.php on line 138
-2013-05-21 17:20:02 - PHP Notice:  Error: Could not load template D:\Sources\weorder/catalog/view/theme/default/template/news/news_category2.tpl! in D:\Sources\weorder\vqmod\vqcache\vq2-system_engine_controller.php on line 75
+2013-05-21 1:03:58 - PHP Notice:  Error: Table 'weorder.weight_class' doesn't exist<br />Error No: 1146<br />SELECT * FROM weight_class wc LEFT JOIN weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '2' in E:\Sources\weorder\system\database\mysql.php on line 50
+2013-05-21 1:03:59 - PHP Notice:  Error: Table 'weorder.weight_class' doesn't exist<br />Error No: 1146<br />SELECT * FROM weight_class wc LEFT JOIN weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '2' in E:\Sources\weorder\system\database\mysql.php on line 50
+2013-05-23 16:30:05 - PHP Notice:  Undefined variable: news_theme in E:\Sources\weorder\admin\view\template\catalog\news_category_form.tpl on line 67
+2013-05-23 16:30:05 - PHP Notice:  Undefined variable: news_theme1 in E:\Sources\weorder\admin\view\template\catalog\news_category_form.tpl on line 69
+2013-05-23 16:30:05 - PHP Notice:  Undefined variable: news_theme1 in E:\Sources\weorder\admin\view\template\catalog\news_category_form.tpl on line 70
+2013-05-23 16:34:24 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`top` = '0', `column` = '1', sort_order = '0', status = '1', date_modified = NOW' at line 1<br />Error No: 1064<br />UPDATE news_category SET parent_id = '0', theme_id = '0' `top` = '0', `column` = '1', sort_order = '0', status = '1', date_modified = NOW() WHERE news_category_id = '2' in E:\Sources\weorder\system\database\mysql.php on line 50
+2013-05-23 16:38:54 - PHP Notice:  Undefined variable: category in E:\Sources\weorder\admin\view\template\catalog\news_category_form.tpl on line 51
+2013-05-23 16:49:31 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`top` = '0', `column` = '1', sort_order = '0', status = '1', date_modified = NOW' at line 1<br />Error No: 1064<br />INSERT INTO news_category SET parent_id = '0', `theme_id` = '1' `top` = '0', `column` = '1', sort_order = '0', status = '1', date_modified = NOW(), date_added = NOW() in E:\Sources\weorder\system\database\mysql.php on line 50
+2013-05-23 16:52:22 - PHP Notice:  Error: Could not load template E:\Sources\weorder/catalog/view/theme/default/template/news/news_category2.tpl! in E:\Sources\weorder\vqmod\vqcache\vq2-system_engine_controller.php on line 75
+2013-05-23 17:31:07 - PHP Notice:  Undefined variable: categoriesnews in E:\Sources\weorder\catalog\view\theme\default\template\common\header.tpl on line 110
+2013-05-23 17:31:59 - PHP Notice:  Undefined variable: categoriesnews in E:\Sources\weorder\catalog\view\theme\default\template\common\header.tpl on line 110
+2013-05-23 17:32:45 - PHP Notice:  Undefined variable: categoriesnews in E:\Sources\weorder\catalog\view\theme\default\template\common\header.tpl on line 110
+2013-05-23 17:32:45 - PHP Notice:  Undefined variable: news_brand_href in E:\Sources\weorder\catalog\view\theme\default\template\common\header.tpl on line 263
+2013-05-23 17:32:51 - PHP Notice:  Undefined variable: categoriesnews in E:\Sources\weorder\catalog\view\theme\default\template\common\header.tpl on line 110
+2013-05-23 17:32:51 - PHP Notice:  Undefined variable: news_brand_href in E:\Sources\weorder\catalog\view\theme\default\template\common\header.tpl on line 263
+2013-05-23 17:33:09 - PHP Notice:  Undefined variable: categoriesnews in E:\Sources\weorder\catalog\view\theme\default\template\common\header.tpl on line 110
+2013-05-23 17:33:45 - PHP Notice:  Undefined variable: categoriesnews in E:\Sources\weorder\catalog\view\theme\default\template\common\header.tpl on line 110

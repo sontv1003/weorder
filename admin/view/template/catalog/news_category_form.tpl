@@ -64,6 +64,13 @@
                 </select></td>
             </tr>
             <tr>
+              <td><?php echo $news_theme; ?></td>
+              <td><select name="theme_id">
+                  <option value="0" <?php echo ($theme_id==0) ? 'selected': '' ?>><?php echo $news_theme1 ?></option>
+                  <option value="1" <?php echo ($theme_id==1) ? 'selected': '' ?>><?php echo $news_theme2 ?></option>
+                </select></td>
+            </tr>
+            <tr>
               <td><?php echo $entry_store; ?></td>
               <td><div class="scrollbox">
                   <?php $class = 'even'; ?>

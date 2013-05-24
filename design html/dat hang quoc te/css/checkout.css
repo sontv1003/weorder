@@ -1,0 +1,201 @@
+.columns{position:relative;}
+#checkoutform{
+	display: block;
+	width: 30%;
+}
+#checkoutmethod{
+	position: absolute;
+	top:0;
+	left: 335px;
+	width: 26%;
+}
+#confirm_product{
+	width: 37%;
+	position:absolute;
+	top:0;
+	right:16px;
+}
+.setform{
+	background: #f9f9f9;
+	border: 1px solid lightgrey;
+	width: 96%;
+	padding: 15px;
+	margin: 0 15px 15px 0;
+}
+.setform h3{
+	padding-bottom: 5px;
+	color: #333 !important;
+	border-bottom: 1px solid lightgrey;
+}
+.setform p{
+	padding: 10px 0 0 0;
+	color: #444 !important;
+}
+.ui-formRow {
+	position: relative;
+	margin-bottom: .9em;
+}
+.ui-formRow, .ui-formRow .col2 {
+overflow: hidden;
+}
+.ui-formRow .col1 {
+float: left;
+}
+.ui-formRow .col2 {
+float: right;
+}
+.ui-formRow .col1, .ui-formRow .col2 {
+width: 48%;
+}
+.ui-formRow .ui-inputText, .ui-formRow .ui-inputPassword, .ui-formRow select {
+width: 97%;
+}
+.checkoutBirthDay, .checkoutBirthMonth {
+width: 27px!important;
+}
+.checkoutBirthYear {
+width: 52px!important;
+}
+.ui-formRow .ui-inputText, .ui-formRow .ui-inputPassword, .ui-formRow select {
+width: 97%;
+}
+.ui-inputText, .ui-inputPassword, select, textarea {
+padding: 4px;
+font-size: 13px;
+font-size: 1.3rem;
+background-color: white;
+border-color: #CCC;
+border-style: solid;
+border-width: 1px;
+}
+.ui-inlineBlock {
+display: inline-block;
+}
+.l-row, .l-cell {
+float: none!important;
+padding-left: 3px;
+}
+.fsxs {
+font-size: 10px;
+}
+.checkout_title{
+	padding:5px;
+	font-size: 18px !important;
+	color: #333 !important;
+}
+.ui-borderBottom {
+border-bottom: 1px solid lightGrey!important;
+}
+.pbs, .pvs, .pas {
+padding-bottom: 5px!important;
+}
+.columns .adyen_creditcard{
+font-weight: bold !important;
+}
+.i-payVisa, .i-payMasterCard, .i-payAmEx, .i-diners, .i-mybank2ucom, .i-payPayPal, .i-payIPay88, .i-payDinersClub, .i-payBankTransfer, .i-banktsf_new, .i-cimbclicks, .i-payCOD {
+width: 32px;
+height: 23px;
+overflow: hidden;
+text-indent: -10000px;
+}
+.i-payMasterCard {
+background: url('payMasterCard.png') no-repeat;
+}
+.i-payVisa {
+background: url('payVisa.png') no-repeat;
+}
+.i-payVisa, .i-payMasterCard, .i-payAmEx, .i-diners, .i-payPayPal, .i-payDinersClub {
+zoom: 1;
+display: block!important;
+float: left;
+margin-right: 5px;
+}
+.mbm, .mvm, .mam {
+margin-bottom: 10px!important;
+}
+.mtm, .mvm, .mam {
+margin-top: 10px!important;
+}
+.payment-method span.ui-listItem.selected {
+border: 2px solid #666;
+}
+.ui-inputText, .ui-inputPassword, select, textarea {
+padding: 4px;
+font-size: 13px;
+font-size: 1.3rem;
+background-color: white;
+border-color: #CCC;
+border-style: solid;
+border-width: 1px;
+}
+label.required {
+display: block;
+}
+.confirm_check{
+	width:100%;
+	background: white;
+	padding:4px;
+	border: 1px solid #eee;
+}
+.confirm_check th{
+	font-weight: bold;
+	padding:6px;
+	border-bottom: 1px solid #eee;
+	text-align: center;
+}
+.confirm_check td{
+	text-align: right;
+	padding:5px;
+}
+.underline{
+	border-bottom: 1px solid #eee;
+}
+.confirm_check td img{
+	float:left;
+	margin-right:2px;
+}
+.confirm_check td span{
+	font-weight:bold;
+}
+.ltext{text-align: left !important;}
+.pricetotal{
+	border-top: 1px solid #eee;
+	background: #f9f9f9;
+}
+.blue_button{
+display: inline-block;
+padding: 6px 16px;
+min-width: 140px;
+color: white;
+border-color: #FE9447;
+background: #3B679E;
+background: -moz-linear-gradient(top, rgba(59, 103, 158, 1) 0%, rgba(43, 136, 217, 1) 50%, rgba(32, 124, 202, 1) 51%, rgba(125, 185, 232, 1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(59, 103, 158, 1)), color-stop(50%,rgba(43, 136, 217, 1)), color-stop(51%,rgba(32, 124, 202, 1)), color-stop(100%,rgba(125, 185, 232, 1)));
+background: -webkit-linear-gradient(top, rgba(59, 103, 158, 1) 0%,rgba(43, 136, 217, 1) 50%,rgba(32, 124, 202, 1) 51%,rgba(125, 185, 232, 1) 100%);
+background: -o-linear-gradient(top, rgba(59, 103, 158, 1) 0%,rgba(43, 136, 217, 1) 50%,rgba(32, 124, 202, 1) 51%,rgba(125, 185, 232, 1) 100%);
+background: -ms-linear-gradient(top, rgba(59, 103, 158, 1) 0%,rgba(43, 136, 217, 1) 50%,rgba(32, 124, 202, 1) 51%,rgba(125, 185, 232, 1) 100%);
+background: linear-gradient(to bottom, rgba(59, 103, 158, 1) 0%,rgba(43, 136, 217, 1) 50%,rgba(32, 124, 202, 1) 51%,rgba(125, 185, 232, 1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=0 );
+-webkit-box-shadow: 0 1px 0 rgba(283, 181, 81, 0.3);
+-moz-box-shadow: 0 1px 0 rgba(283,181,81,0.3);
+box-shadow: 0 1px 0 rgba(283, 181, 81, 0.3);
+text-align: center;
+border: 1px solid #DBDBDB;
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-radius: 2px;
+font-size: 1.2em;
+}
+.blue_button:hover{
+border-color: #028ACE;
+background: #1E5799;
+background: -moz-linear-gradient(top, rgba(30, 87, 153, 1) 0%, rgba(41, 137, 216, 1) 50%, rgba(32, 124, 202, 1) 51%, rgba(125, 185, 232, 1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30, 87, 153, 1)), color-stop(50%,rgba(41, 137, 216, 1)), color-stop(51%,rgba(32, 124, 202, 1)), color-stop(100%,rgba(125, 185, 232, 1)));
+background: -webkit-linear-gradient(top, rgba(30, 87, 153, 1) 0%,rgba(41, 137, 216, 1) 50%,rgba(32, 124, 202, 1) 51%,rgba(125, 185, 232, 1) 100%);
+background: -o-linear-gradient(top, rgba(30, 87, 153, 1) 0%,rgba(41, 137, 216, 1) 50%,rgba(32, 124, 202, 1) 51%,rgba(125, 185, 232, 1) 100%);
+background: -ms-linear-gradient(top, rgba(30, 87, 153, 1) 0%,rgba(41, 137, 216, 1) 50%,rgba(32, 124, 202, 1) 51%,rgba(125, 185, 232, 1) 100%);
+background: linear-gradient(to bottom, rgba(30, 87, 153, 1) 0%,rgba(41, 137, 216, 1) 50%,rgba(32, 124, 202, 1) 51%,rgba(125, 185, 232, 1) 100%);
+-webkit-box-shadow: 0 1px 0 rgba(283, 181, 81, 0.5);
+-moz-box-shadow: 0 1px 0 rgba(283,181,81,0.5);
+box-shadow: 0 1px 0 rgba(283, 181, 81, 0.5);
+}

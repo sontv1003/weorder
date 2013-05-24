@@ -1,0 +1,372 @@
+.zoomPad{
+	position:relative;
+	float:left;
+	z-index:99;
+	cursor:crosshair;
+}
+
+.zoomPreload{
+   -moz-opacity:0.8;
+   opacity: 0.8;
+   filter: alpha(opacity = 80);
+   color: #333;
+   font-size: 12px;
+   font-family: Tahoma;
+   text-decoration: none;
+   border: 1px solid #CCC;
+   background-color: white;
+   padding: 8px;
+   text-align:center;
+   background-image: url(../images/zoomloader.gif);
+   background-repeat: no-repeat;
+   background-position: 43px 30px;
+   z-index:110;
+   width:90px;
+   height:43px;
+   position:absolute;
+   top:0px;
+   left:0px;
+    * width:100px;
+    * height:49px;
+}
+
+
+.zoomPup{
+	overflow:hidden;
+	background-color: #FFF;
+	-moz-opacity:0.6;
+	opacity: 0.6;
+	filter: alpha(opacity = 60);
+	z-index:120;
+	position:absolute;
+	border:1px solid #CCC;
+  z-index:101;
+  cursor:crosshair;
+}
+
+.zoomOverlay{
+	position:absolute;
+	left:0px;
+	top:0px;
+	background:#FFF;
+	/*opacity:0.5;*/
+	z-index:5000;
+	width:100%;
+	height:100%;
+	display:none;
+  z-index:101;
+}
+
+.zoomWindow{
+	position:absolute;
+	left:110%;
+	top:40px;
+	background:#FFF;
+	z-index:6000;
+	height:auto;
+  z-index:10000;
+  z-index:110;
+}
+.zoomWrapper{
+	position:relative;
+	border:1px solid #999;
+	margin-left: 10px;
+  z-index:110;
+}
+.zoomWrapperTitle{
+	display:block;
+	background:#999;
+	color:#FFF;
+	height:18px;
+	line-height:18px;
+	width:100%;
+  overflow:hidden;
+	text-align:center;
+	font-size:10px;
+  position:absolute;
+  top:0px;
+  left:0px;
+  z-index:120;
+  -moz-opacity:0.6;
+  opacity: 0.6;
+  filter: alpha(opacity = 60);
+}
+.zoomWrapperImage{
+	display:block;
+  position:relative;
+  overflow:hidden;
+  z-index:110;
+
+}
+.zoomWrapperImage img{
+  border:0px;
+  display:block;
+  position:absolute;
+  z-index:101;
+}
+
+.zoomIframe{
+  z-index: -1;
+  filter:alpha(opacity=0);
+  -moz-opacity: 0.80;
+  opacity: 0.80;
+  position:absolute;
+  display:block;
+}
+
+/*********************************************************
+/ When clicking on thumbs jqzoom will add the class
+/ "zoomThumbActive" on the anchor selected
+/*********************************************************/
+
+/*******************continue single***********************/
+#center_column{
+	position: relative;
+}
+#thumblist{
+	top: 0px;
+	left:0px;
+	z-index: 9999;
+}
+#thumblist li{
+	float: left;
+	margin: 10px 5px;
+}
+#thumblist img{
+	width: 83px;
+	border: 1px solid #eee;
+}
+
+.single_detail a{text-decoration: none !important	;}
+.single_left{
+	float: left;
+	width: 380px;
+}
+.single_center{
+	float: left;
+	width: 338px;
+	margin: 0 20px;
+}
+.single_center h1{
+	padding: 0 !important;
+	background: none !important;
+	color: black !important;
+	font-size: 17px !important;
+}
+.single_center h2{
+	padding: 10px 0;
+	font-size: 11px;
+}
+.single_center p{
+	color:#555;
+	margin-bottom: 20px;
+	font-size: 10px;
+}
+.single_detail h4{ margin-bottom: 8px;}
+.single_detail{
+	min-height: 70px;
+}
+.size_box{
+	position: relative;
+	width:26px;
+	height:26px;
+	float:left;
+}
+.roundy{
+	position: absolute;
+	margin: 5px;
+	/*border-radius:10px;*/
+	width: 20px;
+	height: 18px;
+	display:block;
+	text-align:center;
+	padding-top: 2px;
+	font-weight: bold;
+}
+.color_box{padding:2px;}
+.color_box img{
+	width:28px;
+	height: 28px;
+}
+.color_border{
+	position: absolute;
+	margin: 2px;
+	width:24px;
+	height: 24px;
+	/*border-radius: 12px;*/
+	border: 1px solid gray;
+	display: none;
+}
+.selected .color_border, .size_box:hover .color_border{
+	display: block;
+}
+.size_box:hover .roundy, .size_select .selected .roundy{
+	background: black !important;
+	color: white;
+}
+.right_single{
+	background: #eee;
+	border:1px solid lightgrey;
+	width: 164px;
+	float: right;
+	display: block;
+	padding: 10px;
+	text-align: center;
+}
+.box_price{
+	background: white;
+	padding: 10px;
+	border: 1px solid lightgray;
+	text-align: right;
+	margin-bottom: 10px;
+}
+#cartform button{
+	width: 70% !important;
+	text-transform: uppercase;
+	margin-top: 15px;
+}
+#infoTextRightSidebar p.i-callTollFree {
+	color: #0094de;
+	padding-left: 5px;
+}
+
+.shop_product{
+	float: right;
+	width: 246px;
+	padding: 10px;
+}
+.shop_product h2{
+	text-transform: uppercase;
+	font: bold 12px/24px "Tahoma";
+	color: #333;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.shop_product li{
+	float: left;
+	padding: 10px;
+	width:95px;
+	text-align: center;
+	display: block;
+	margin: 0 4px;
+}
+.shop_product a{
+	text-decoration: none;
+	color: #453;
+}
+.shop_product li h4{
+	font-size: 9px;
+	padding-top: 3px;
+	font-weight:normal;
+	color: #666
+}
+.shop_product img{
+	width: 93px;
+	border: 1px solid #aaa;
+}
+.price {font-weight: bold !important; font-size: 10px !important;color: black !important;}
+.shop_left, .shop_right, .shop_product h2{
+	width: 100%;
+}
+.shop_left{
+	float:left;
+	margin-bottom: 20px;
+}
+.shop_right{
+	float:right;
+}
+.nav-subTxt{
+	text-transform: uppercase;
+	font-family: 'georgia';
+	text-shadow: 1px -1px gainsboro;
+}
+.single_detail #thumblist{
+	z-index:1 !important;
+}
+.single_detail li{
+	float:left;
+}
+.bService {
+background-color: #EAEAEA;
+margin-bottom: 20px;
+overflow: hidden;
+}
+.bService .iconSprite {
+background: url(http://d20w110bpmr136.cloudfront.net/images/local/icons/csThumb.png) 0px 0px no-repeat scroll transparent;
+display: block;
+float: left;
+height: 56px;
+width: 67px;
+}
+.bService p{
+ padding: 12px 0 0 5px;
+ color: #444;
+ font-family: Arial;
+}
+.idTabs{border-bottom: 1px solid #aaa;}
+.idTabs2{
+	border-bottom: 1px solid #aaa;
+	clear: both;
+	height:29px;
+}
+.idTabs2 li, .idTabs li{
+	text-align: center;
+	border: 1px solid #aaa;
+}
+.idTabs li{width: 110px;}
+.idTabs2 li{
+	width: 352px;
+	float: left;
+	margin-right: 1px;
+	padding: 7px;
+	background: whiteSmoke;
+}
+.idTabs2 li:last-child{
+	margin-right: 0 !important;
+}
+.idTabs2 li a, .idTabs li a{
+	background:whiteSmoke !important;
+	color: #555 !important;
+	border: none !important;
+}
+.idTabs2 li a{
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.idTabs2 li.selected a, .idTabs li.selected a{
+	background: white !important;
+	color: black !important;
+}
+.idTabs2 li.selected, .idTabs li.selected{
+	border-bottom-color: white;
+	background: white !important;
+}
+.tabbed_content2, .tabbed_content{
+	border: 1px solid #aaa;
+	border-top: none;
+	padding: 10px;
+	color: #666;
+	margin-top: -1px;
+	margin-bottom: 15px;
+}
+.tabbed_content p, .tabbed_content strong, .tabbed_content a{
+	color: #666;
+	font-size: 10px;
+}
+
+.info_adv{
+	float: left;
+	width: 737px;
+}
+.i-cart{
+	background: rgb(191,210,85); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(191,210,85,1) 0%, rgba(142,185,42,1) 50%, rgba(114,170,0,1) 51%, rgba(158,203,45,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(191,210,85,1)), color-stop(50%,rgba(142,185,42,1)), color-stop(51%,rgba(114,170,0,1)), color-stop(100%,rgba(158,203,45,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 51%,rgba(158,203,45,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 51%,rgba(158,203,45,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 51%,rgba(158,203,45,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 51%,rgba(158,203,45,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfd255', endColorstr='#9ecb2d',GradientType=0 ); /* IE6-9 */
+	color: white;
+}

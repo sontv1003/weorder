@@ -33,4 +33,7 @@ $_['entry_layout']           = 'Ghi đè giao diện:';
 $_['error_warning']          = 'Cảnh báo: Yêu cầu nhập thông tin bắc buộc!';
 $_['error_permission']       = 'Cảnh báo: Bạn không được phép cập nhật danh mục tin tức!';
 $_['error_name']             = 'Tên danh mục tin tức phải có từ 3 đến 32 ký tự!';
+$_['news_theme']             = 'Giao diện';
+$_['news_theme1']            = 'Giao diện 1';
+$_['news_theme2']            = 'Giao diện 2';
 ?>
