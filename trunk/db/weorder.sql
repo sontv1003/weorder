@@ -1,14 +1,14 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               5.5.24-log - MySQL Community Server (GPL)
--- Server OS:                    Win64
--- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-05-24 09:58:22
+-- Server version:               5.5.16 - MySQL Community Server (GPL)
+-- Server OS:                    Win32
+-- HeidiSQL Version:             8.0.0.4396
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
-/*!40014 SET FOREIGN_KEY_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping structure for table weorder.address
 CREATE TABLE IF NOT EXISTS `address` (
@@ -182,13 +182,14 @@ CREATE TABLE IF NOT EXISTS `banner` (
   `name` varchar(64) NOT NULL,
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY (`banner_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.banner: 2 rows
+-- Dumping data for table weorder.banner: 3 rows
 /*!40000 ALTER TABLE `banner` DISABLE KEYS */;
 INSERT INTO `banner` (`banner_id`, `name`, `status`) VALUES
 	(7, 'Slideshow trang chủ', 1),
-	(8, 'Tin nóng hàng ngày', 1);
+	(8, 'Tin nóng hàng ngày', 1),
+	(9, 'Slideshow Danh mục', 1);
 /*!40000 ALTER TABLE `banner` ENABLE KEYS */;
 
 
@@ -199,15 +200,16 @@ CREATE TABLE IF NOT EXISTS `banner_image` (
   `link` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`banner_image_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=94 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.banner_image: 4 rows
+-- Dumping data for table weorder.banner_image: 5 rows
 /*!40000 ALTER TABLE `banner_image` DISABLE KEYS */;
 INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VALUES
 	(87, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'data/anh1.jpg'),
 	(93, 7, '', 'data/slide_02.jpg'),
 	(92, 7, '', 'data/slide_01.jpg'),
-	(91, 7, '', 'data/slide_00.jpg');
+	(91, 7, '', 'data/slide_00.jpg'),
+	(94, 9, '', 'data/1.jpg');
 /*!40000 ALTER TABLE `banner_image` ENABLE KEYS */;
 
 
@@ -220,13 +222,14 @@ CREATE TABLE IF NOT EXISTS `banner_image_description` (
   PRIMARY KEY (`banner_image_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.banner_image_description: 4 rows
+-- Dumping data for table weorder.banner_image_description: 5 rows
 /*!40000 ALTER TABLE `banner_image_description` DISABLE KEYS */;
 INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
 	(93, 2, 7, 'ssssssss'),
 	(87, 2, 8, 'TIN SIÊU HOT'),
 	(92, 2, 7, 'ssssssssssssssssss'),
-	(91, 2, 7, 'sssssss');
+	(91, 2, 7, 'sssssss'),
+	(94, 2, 9, 'hdfhdfhd');
 /*!40000 ALTER TABLE `banner_image_description` ENABLE KEYS */;
 
 
@@ -1000,9 +1003,9 @@ CREATE TABLE IF NOT EXISTS `extension` (
   `type` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL,
   PRIMARY KEY (`extension_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=429 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=431 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.extension: 21 rows
+-- Dumping data for table weorder.extension: 23 rows
 /*!40000 ALTER TABLE `extension` DISABLE KEYS */;
 INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 	(23, 'payment', 'cod'),
@@ -1025,7 +1028,9 @@ INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 	(407, 'payment', 'free_checkout'),
 	(427, 'module', 'featured'),
 	(419, 'module', 'slideshow'),
-	(428, 'module', 'vqmod_manager');
+	(428, 'module', 'vqmod_manager'),
+	(429, 'module', 'tnt_newscat'),
+	(430, 'module', 'filter');
 /*!40000 ALTER TABLE `extension` ENABLE KEYS */;
 
 
@@ -1333,9 +1338,9 @@ CREATE TABLE IF NOT EXISTS `news` (
 -- Dumping data for table weorder.news: 3 rows
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
 INSERT INTO `news` (`news_id`, `manufacturer_id`, `image`, `date_available`, `sort_order`, `comment`, `approved`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-	(1, 0, 'data/sanpham1.jpg', '2013-05-19', 1, 1, 1, 1, '2013-05-21 00:20:55', '2013-05-22 09:07:12', 3),
-	(2, 0, 'data/sanpham1.jpg', '2013-05-20', 1, 1, 1, 1, '2013-05-21 23:32:51', '2013-05-22 09:07:00', 6),
-	(3, 0, '', '2013-05-22', 1, 1, 1, 1, '2013-05-23 23:58:22', '0000-00-00 00:00:00', 3);
+	(1, 0, 'data/sanpham1.jpg', '2013-05-19', 1, 1, 1, 1, '2013-05-21 00:20:55', '2013-05-22 09:07:12', 4),
+	(2, 9, 'data/sanpham1.jpg', '2013-05-20', 1, 1, 1, 1, '2013-05-21 23:32:51', '2013-05-27 23:41:54', 7),
+	(3, 0, '', '2013-05-22', 1, 1, 1, 1, '2013-05-23 23:58:22', '0000-00-00 00:00:00', 4);
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 
 
@@ -1961,8 +1966,8 @@ CREATE TABLE IF NOT EXISTS `product` (
 INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
 	(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'data/demo/htc_touch_hd_1.jpg', 5, 1, 100.0000, 200, 9, '2009-02-03', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:06:50', '2011-09-30 01:05:39', 0),
 	(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'data/demo/palm_treo_pro_1.jpg', 6, 1, 279.9900, 0, 9, '2009-02-03', 133.00000000, 2, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0),
-	(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'data/demo/canon_eos_5d_1.jpg', 9, 1, 100.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2011-09-30 01:05:23', 0),
-	(31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'data/demo/nikon_d300_1.jpg', 0, 1, 80.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2011-09-30 01:06:00', 0),
+	(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'data/1-single-thumbnail.jpg', 9, 1, 100.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2013-05-28 00:27:52', 3),
+	(31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'data/demo/nikon_d300_1.jpg', 0, 1, 80.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2011-09-30 01:06:00', 6),
 	(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'data/demo/ipod_touch_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 17:07:26', '2011-09-30 01:07:22', 0),
 	(33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'data/demo/samsung_syncmaster_941bw.jpg', 0, 1, 200.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 17:08:31', '2011-09-30 01:06:29', 0),
 	(34, 'Product 7', '', '', '', '', '', '', '', 1000, 6, 'data/demo/ipod_shuffle_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:07:54', '2011-09-30 01:07:17', 0),
@@ -2035,7 +2040,7 @@ INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `descrip
 	(31, 2, 'Nikon D300', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', ''),
 	(49, 2, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world&amp;rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &amp;ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &amp;ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&amp;rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &amp;ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;&amp;auml;&amp;ouml;&lt;/p&gt;\r\n', '', '', ''),
 	(42, 2, 'Apple Cinema 30&quot;', '&lt;p&gt;&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there\'s no limit to what you can achieve. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it\'s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple\'s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;\r\n\r\n&lt;h3&gt;Features:&lt;/h3&gt;\r\n\r\n&lt;p&gt;Unrivaled display performance&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n	&lt;li&gt;Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n	&lt;li&gt;Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n	&lt;li&gt;Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n	&lt;li&gt;Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n	&lt;li&gt;Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n	&lt;li&gt;Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Simple setup and operation&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Single cable with elegant breakout for connection to DVI, USB and FireWire ports&lt;/li&gt;\r\n	&lt;li&gt;Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n	&lt;li&gt;Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Sleek, elegant design&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n	&lt;li&gt;Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n	&lt;li&gt;Unique hinge design for effortless adjustment&lt;/li&gt;\r\n	&lt;li&gt;Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;h3&gt;Technical specifications&lt;/h3&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen size (diagonal viewable image size)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen type&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Resolutions&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n	&lt;li&gt;2048 x 1280&lt;/li&gt;\r\n	&lt;li&gt;1920 x 1200&lt;/li&gt;\r\n	&lt;li&gt;1280 x 800&lt;/li&gt;\r\n	&lt;li&gt;1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Display colors (maximum)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Viewing angle (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;170° horizontal; 170° vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Brightness (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Contrast ratio (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Response time (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Pixel pitch&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen treatment&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;User controls (hardware and software)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Display Power,&lt;/li&gt;\r\n	&lt;li&gt;System sleep, wake&lt;/li&gt;\r\n	&lt;li&gt;Brightness&lt;/li&gt;\r\n	&lt;li&gt;Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Connectors and cables&lt;/b&gt;&lt;br /&gt;\r\nCable&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;DVI (Digital Visual Interface)&lt;/li&gt;\r\n	&lt;li&gt;FireWire 400&lt;/li&gt;\r\n	&lt;li&gt;USB 2.0&lt;/li&gt;\r\n	&lt;li&gt;DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Connectors&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n	&lt;li&gt;Two FireWire 400 ports&lt;/li&gt;\r\n	&lt;li&gt;Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;VESA mount adapter&lt;/b&gt;&lt;br /&gt;\r\nRequires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Electrical requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n	&lt;li&gt;Maximum power when operating: 150W&lt;/li&gt;\r\n	&lt;li&gt;Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Environmental requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Operating temperature: 50° to 95° F (10° to 35° C)&lt;/li&gt;\r\n	&lt;li&gt;Storage temperature: -40° to 116° F (-40° to 47° C)&lt;/li&gt;\r\n	&lt;li&gt;Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n	&lt;li&gt;Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Agency approvals&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;FCC Part 15 Class B&lt;/li&gt;\r\n	&lt;li&gt;EN55022 Class B&lt;/li&gt;\r\n	&lt;li&gt;EN55024&lt;/li&gt;\r\n	&lt;li&gt;VCCI Class B&lt;/li&gt;\r\n	&lt;li&gt;AS/NZS 3548 Class B&lt;/li&gt;\r\n	&lt;li&gt;CNS 13438 Class B&lt;/li&gt;\r\n	&lt;li&gt;ICES-003 Class B&lt;/li&gt;\r\n	&lt;li&gt;ISO 13406 part 2&lt;/li&gt;\r\n	&lt;li&gt;MPR II&lt;/li&gt;\r\n	&lt;li&gt;IEC 60950&lt;/li&gt;\r\n	&lt;li&gt;UL 60950&lt;/li&gt;\r\n	&lt;li&gt;CSA 60950&lt;/li&gt;\r\n	&lt;li&gt;EN60950&lt;/li&gt;\r\n	&lt;li&gt;ENERGY STAR&lt;/li&gt;\r\n	&lt;li&gt;TCO \'03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Size and weight&lt;/b&gt;&lt;br /&gt;\r\n30-inch Apple Cinema HD Display&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n	&lt;li&gt;Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n	&lt;li&gt;Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n	&lt;li&gt;Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;System Requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mac Pro, all graphic options&lt;/li&gt;\r\n	&lt;li&gt;MacBook Pro&lt;/li&gt;\r\n	&lt;li&gt;Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n	&lt;li&gt;Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n	&lt;li&gt;PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n	&lt;li&gt;Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '', ''),
-	(30, 2, 'Canon EOS 5D', '&lt;p&gt;\r\n	Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...) äë&lt;/p&gt;\r\n', '', '', '');
+	(30, 2, 'Canon EOS 5D', '&lt;p&gt;Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...) äë&lt;/p&gt;\r\n', '', '', '');
 /*!40000 ALTER TABLE `product_description` ENABLE KEYS */;
 
 
@@ -2081,12 +2086,11 @@ CREATE TABLE IF NOT EXISTS `product_image` (
   `image` varchar(255) DEFAULT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_image_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2357 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2373 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_image: 61 rows
 /*!40000 ALTER TABLE `product_image` DISABLE KEYS */;
 INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
-	(2345, 30, 'data/demo/canon_eos_5d_2.jpg', 0),
 	(2321, 47, 'data/demo/hp_3.jpg', 0),
 	(2035, 28, 'data/demo/htc_touch_hd_2.jpg', 0),
 	(2351, 41, 'data/demo/imac_3.jpg', 0),
@@ -2113,7 +2117,7 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 	(1990, 48, 'data/demo/ipod_classic_3.jpg', 0),
 	(1981, 40, 'data/demo/iphone_2.jpg', 0),
 	(1980, 40, 'data/demo/iphone_5.jpg', 0),
-	(2344, 30, 'data/demo/canon_eos_5d_3.jpg', 0),
+	(2372, 30, 'data/1-single-thumbnail.jpg', 1),
 	(2320, 47, 'data/demo/hp_2.jpg', 0),
 	(2034, 28, 'data/demo/htc_touch_hd_3.jpg', 0),
 	(2350, 41, 'data/demo/imac_2.jpg', 0),
@@ -2146,7 +2150,8 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 	(2354, 42, 'data/demo/compaq_presario.jpg', 0),
 	(2353, 42, 'data/demo/hp_1.jpg', 0),
 	(2352, 42, 'data/demo/canon_logo.jpg', 0),
-	(2356, 42, 'data/demo/canon_eos_5d_2.jpg', 0);
+	(2356, 42, 'data/demo/canon_eos_5d_2.jpg', 0),
+	(2371, 30, 'data/1-single-thumbnail.jpg', 2);
 /*!40000 ALTER TABLE `product_image` ENABLE KEYS */;
 
 
@@ -2242,7 +2247,7 @@ CREATE TABLE IF NOT EXISTS `product_reward` (
   `customer_group_id` int(11) NOT NULL DEFAULT '0',
   `points` int(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_reward_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=547 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=555 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_reward: 19 rows
 /*!40000 ALTER TABLE `product_reward` DISABLE KEYS */;
@@ -2254,7 +2259,7 @@ INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group
 	(339, 29, 1, 0),
 	(343, 48, 1, 0),
 	(335, 40, 1, 0),
-	(539, 30, 1, 200),
+	(554, 30, 1, 200),
 	(331, 44, 1, 700),
 	(333, 45, 1, 800),
 	(337, 31, 1, 0),
@@ -2280,14 +2285,14 @@ CREATE TABLE IF NOT EXISTS `product_special` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_special_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=441 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=457 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_special: 3 rows
 /*!40000 ALTER TABLE `product_special` DISABLE KEYS */;
 INSERT INTO `product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
 	(440, 42, 1, 1, 90.0000, '0000-00-00', '0000-00-00'),
-	(439, 30, 1, 2, 90.0000, '0000-00-00', '0000-00-00'),
-	(438, 30, 1, 1, 80.0000, '0000-00-00', '0000-00-00');
+	(456, 30, 1, 2, 90.0000, '0000-00-00', '0000-00-00'),
+	(455, 30, 1, 1, 80.0000, '0000-00-00', '0000-00-00');
 /*!40000 ALTER TABLE `product_special` ENABLE KEYS */;
 
 
@@ -2490,7 +2495,7 @@ CREATE TABLE IF NOT EXISTS `setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=767 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1713 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.setting: 142 rows
 /*!40000 ALTER TABLE `setting` DISABLE KEYS */;
@@ -2526,117 +2531,117 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(56, 0, 'affiliate', 'affiliate_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:2:"10";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(766, 0, 'category', 'category_module', 'a:2:{i:0;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(60, 0, 'account', 'account_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"6";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(752, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
-	(750, 0, 'config', 'config_seo_url', '0', 0),
-	(751, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
+	(1712, 0, 'config', 'config_google_analytics', '', 0),
+	(1711, 0, 'config', 'config_error_filename', 'error.txt', 0),
+	(1710, 0, 'config', 'config_error_log', '1', 0),
+	(1704, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
 	(94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 	(95, 0, 'voucher', 'voucher_status', '1', 0),
 	(103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 	(104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
 	(109, 0, 'banner', 'banner_module', 'a:1:{i:0;a:8:{s:9:"banner_id";s:1:"6";s:5:"width";s:3:"182";s:6:"height";s:3:"182";s:11:"resize_type";s:7:"default";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
-	(749, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-	(748, 0, 'config', 'config_shared', '0', 0),
-	(747, 0, 'config', 'config_secure', '0', 0),
-	(746, 0, 'config', 'config_fraud_status_id', '7', 0),
-	(745, 0, 'config', 'config_fraud_score', '', 0),
-	(744, 0, 'config', 'config_fraud_key', '', 0),
-	(743, 0, 'config', 'config_fraud_detection', '0', 0),
-	(742, 0, 'config', 'config_alert_emails', '', 0),
-	(740, 0, 'config', 'config_alert_mail', '0', 0),
-	(741, 0, 'config', 'config_account_mail', '0', 0),
-	(739, 0, 'config', 'config_smtp_timeout', '5', 0),
-	(738, 0, 'config', 'config_smtp_port', '25', 0),
-	(737, 0, 'config', 'config_smtp_password', '', 0),
-	(735, 0, 'config', 'config_smtp_host', '', 0),
-	(736, 0, 'config', 'config_smtp_username', '', 0),
-	(734, 0, 'config', 'config_mail_parameter', '', 0),
-	(733, 0, 'config', 'config_mail_protocol', 'mail', 0),
-	(732, 0, 'config', 'config_ftp_status', '0', 0),
-	(731, 0, 'config', 'config_ftp_root', '', 0),
-	(730, 0, 'config', 'config_ftp_password', '', 0),
-	(729, 0, 'config', 'config_ftp_username', '', 0),
-	(728, 0, 'config', 'config_ftp_port', '21', 0),
-	(727, 0, 'config', 'config_ftp_host', 'localhost', 0),
-	(726, 0, 'config', 'config_image_cart_height', '47', 0),
-	(725, 0, 'config', 'config_image_cart_width', '47', 0),
-	(724, 0, 'config', 'config_image_wishlist_height', '47', 0),
-	(723, 0, 'config', 'config_image_wishlist_width', '47', 0),
-	(722, 0, 'config', 'config_image_compare_height', '90', 0),
-	(721, 0, 'config', 'config_image_compare_width', '90', 0),
-	(720, 0, 'config', 'config_image_related_height', '80', 0),
-	(719, 0, 'config', 'config_image_related_width', '80', 0),
-	(718, 0, 'config', 'config_image_additional_height', '74', 0),
-	(717, 0, 'config', 'config_image_additional_width', '74', 0),
-	(716, 0, 'config', 'config_image_product_height', '80', 0),
-	(715, 0, 'config', 'config_image_product_width', '80', 0),
-	(714, 0, 'config', 'config_image_popup_height', '500', 0),
-	(713, 0, 'config', 'config_image_popup_width', '500', 0),
-	(712, 0, 'config', 'config_image_thumb_height', '228', 0),
-	(711, 0, 'config', 'config_image_thumb_width', '228', 0),
-	(710, 0, 'config', 'config_image_news_height', '341', 0),
-	(709, 0, 'config', 'config_image_news_width', '242', 0),
-	(708, 0, 'config', 'config_image_category_height', '80', 0),
-	(707, 0, 'config', 'config_image_category_width', '80', 0),
-	(706, 0, 'config', 'config_icon', 'data/cart.png', 0),
-	(705, 0, 'config', 'config_logo', 'data/wesale.jpg', 0),
-	(704, 0, 'config', 'config_return_status_id', '2', 0),
-	(703, 0, 'config', 'config_return_id', '0', 0),
-	(702, 0, 'config', 'config_commission', '5', 0),
-	(701, 0, 'config', 'config_affiliate_id', '4', 0),
-	(700, 0, 'config', 'config_stock_status_id', '5', 0),
-	(699, 0, 'config', 'config_stock_checkout', '0', 0),
-	(698, 0, 'config', 'config_stock_warning', '0', 0),
-	(697, 0, 'config', 'config_stock_display', '0', 0),
-	(696, 0, 'config', 'config_complete_status_id', '5', 0),
-	(695, 0, 'config', 'config_order_status_id', '1', 0),
-	(694, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
-	(693, 0, 'config', 'config_order_edit', '100', 0),
-	(692, 0, 'config', 'config_checkout_id', '5', 0),
-	(690, 0, 'config', 'config_cart_weight', '1', 0),
-	(691, 0, 'config', 'config_guest_checkout', '1', 0),
-	(688, 0, 'config', 'config_customer_price', '0', 0),
-	(689, 0, 'config', 'config_account_id', '3', 0),
-	(687, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
-	(686, 0, 'config', 'config_customer_group_id', '1', 0),
-	(685, 0, 'config', 'config_customer_online', '0', 0),
-	(684, 0, 'config', 'config_tax_customer', 'shipping', 0),
-	(676, 0, 'config', 'config_product_count', '1', 0),
-	(677, 0, 'config', 'config_review_status', '1', 0),
-	(678, 0, 'config', 'config_download', '1', 0),
-	(679, 0, 'config', 'config_voucher_min', '1', 0),
-	(680, 0, 'config', 'config_voucher_max', '1000', 0),
-	(681, 0, 'config', 'config_tax', '1', 0),
-	(682, 0, 'config', 'config_vat', '0', 0),
-	(683, 0, 'config', 'config_tax_default', 'shipping', 0),
-	(675, 0, 'config', 'config_admin_limit', '20', 0),
-	(672, 0, 'config', 'config_length_class_id', '1', 0),
-	(673, 0, 'config', 'config_weight_class_id', '1', 0),
-	(674, 0, 'config', 'config_catalog_limit', '15', 0),
-	(661, 0, 'config', 'config_fax', '', 0),
-	(662, 0, 'config', 'config_title', 'Đặt hàng quốc tế - Weorder', 0),
-	(663, 0, 'config', 'config_meta_description', 'Weorder', 0),
-	(664, 0, 'config', 'config_template', 'default', 0),
-	(665, 0, 'config', 'config_layout_id', '4', 0),
-	(666, 0, 'config', 'config_country_id', '230', 0),
-	(667, 0, 'config', 'config_zone_id', '3776', 0),
-	(668, 0, 'config', 'config_language', 'vi', 0),
-	(669, 0, 'config', 'config_admin_language', 'vi', 0),
-	(670, 0, 'config', 'config_currency', 'USD', 0),
-	(671, 0, 'config', 'config_currency_auto', '1', 0),
-	(660, 0, 'config', 'config_telephone', '123456789', 0),
-	(659, 0, 'config', 'config_email', 'admin@admin.com', 0),
-	(658, 0, 'config', 'config_address', 'Address 1', 0),
-	(657, 0, 'config', 'config_owner', 'Đặt hàng quốc tế', 0),
-	(656, 0, 'config', 'config_name', 'Đặt hàng quốc tế', 0),
-	(753, 0, 'config', 'config_maintenance', '0', 0),
-	(754, 0, 'config', 'config_password', '1', 0),
-	(755, 0, 'config', 'config_encryption', '7f339d82bc9ee711ed084c4a101fbb25', 0),
-	(756, 0, 'config', 'config_compression', '0', 0),
-	(757, 0, 'config', 'config_error_display', '1', 0),
-	(758, 0, 'config', 'config_error_log', '1', 0),
-	(759, 0, 'config', 'config_error_filename', 'error.txt', 0),
-	(760, 0, 'config', 'config_google_analytics', '', 0),
-	(764, 0, 'slideshow', 'slideshow_module', 'a:2:{i:0;a:7:{s:9:"banner_id";s:1:"8";s:5:"width";s:3:"759";s:6:"height";s:3:"380";s:9:"layout_id";s:2:"12";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:7:{s:9:"banner_id";s:1:"7";s:5:"width";s:3:"996";s:6:"height";s:3:"481";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1);
+	(1705, 0, 'config', 'config_maintenance', '0', 0),
+	(1706, 0, 'config', 'config_password', '1', 0),
+	(1707, 0, 'config', 'config_encryption', '7f339d82bc9ee711ed084c4a101fbb25', 0),
+	(1708, 0, 'config', 'config_compression', '0', 0),
+	(1709, 0, 'config', 'config_error_display', '1', 0),
+	(1699, 0, 'config', 'config_secure', '0', 0),
+	(1700, 0, 'config', 'config_shared', '0', 0),
+	(1701, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+	(1702, 0, 'config', 'config_seo_url', '0', 0),
+	(1703, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
+	(1698, 0, 'config', 'config_fraud_status_id', '7', 0),
+	(1697, 0, 'config', 'config_fraud_score', '', 0),
+	(1696, 0, 'config', 'config_fraud_key', '', 0),
+	(1695, 0, 'config', 'config_fraud_detection', '0', 0),
+	(1694, 0, 'config', 'config_alert_emails', '', 0),
+	(1693, 0, 'config', 'config_account_mail', '0', 0),
+	(1692, 0, 'config', 'config_alert_mail', '0', 0),
+	(1691, 0, 'config', 'config_smtp_timeout', '5', 0),
+	(1690, 0, 'config', 'config_smtp_port', '25', 0),
+	(1689, 0, 'config', 'config_smtp_password', '', 0),
+	(1688, 0, 'config', 'config_smtp_username', '', 0),
+	(1687, 0, 'config', 'config_smtp_host', '', 0),
+	(1686, 0, 'config', 'config_mail_parameter', '', 0),
+	(1685, 0, 'config', 'config_mail_protocol', 'mail', 0),
+	(1684, 0, 'config', 'config_ftp_status', '0', 0),
+	(1683, 0, 'config', 'config_ftp_root', '', 0),
+	(1682, 0, 'config', 'config_ftp_password', '', 0),
+	(1681, 0, 'config', 'config_ftp_username', '', 0),
+	(1680, 0, 'config', 'config_ftp_port', '21', 0),
+	(1679, 0, 'config', 'config_ftp_host', 'localhost', 0),
+	(1678, 0, 'config', 'config_image_cart_height', '47', 0),
+	(1677, 0, 'config', 'config_image_cart_width', '47', 0),
+	(1675, 0, 'config', 'config_image_wishlist_width', '47', 0),
+	(1676, 0, 'config', 'config_image_wishlist_height', '47', 0),
+	(1674, 0, 'config', 'config_image_compare_height', '90', 0),
+	(1673, 0, 'config', 'config_image_compare_width', '90', 0),
+	(1672, 0, 'config', 'config_image_related_height', '640', 0),
+	(1671, 0, 'config', 'config_image_related_width', '400', 0),
+	(1670, 0, 'config', 'config_image_additional_height', '150', 0),
+	(1669, 0, 'config', 'config_image_additional_width', '150', 0),
+	(1668, 0, 'config', 'config_image_product_height', '640', 0),
+	(1667, 0, 'config', 'config_image_product_width', '400', 0),
+	(1666, 0, 'config', 'config_image_popup_height', '600', 0),
+	(1665, 0, 'config', 'config_image_popup_width', '400', 0),
+	(1664, 0, 'config', 'config_image_thumb_height', '228', 0),
+	(1663, 0, 'config', 'config_image_thumb_width', '228', 0),
+	(1662, 0, 'config', 'config_image_news_height', '341', 0),
+	(1661, 0, 'config', 'config_image_news_width', '242', 0),
+	(1660, 0, 'config', 'config_image_category_height', '80', 0),
+	(1659, 0, 'config', 'config_image_category_width', '80', 0),
+	(1658, 0, 'config', 'config_icon', 'data/cart.png', 0),
+	(1657, 0, 'config', 'config_logo', 'data/wesale.jpg', 0),
+	(1656, 0, 'config', 'config_return_status_id', '2', 0),
+	(1655, 0, 'config', 'config_return_id', '0', 0),
+	(1654, 0, 'config', 'config_commission', '5', 0),
+	(1652, 0, 'config', 'config_stock_status_id', '5', 0),
+	(1653, 0, 'config', 'config_affiliate_id', '4', 0),
+	(1651, 0, 'config', 'config_stock_checkout', '0', 0),
+	(1650, 0, 'config', 'config_stock_warning', '0', 0),
+	(1649, 0, 'config', 'config_stock_display', '0', 0),
+	(1648, 0, 'config', 'config_complete_status_id', '5', 0),
+	(1647, 0, 'config', 'config_order_status_id', '1', 0),
+	(1645, 0, 'config', 'config_order_edit', '100', 0),
+	(1646, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
+	(767, 0, 'slideshow', 'slideshow_module', 'a:3:{i:0;a:7:{s:9:"banner_id";s:1:"8";s:5:"width";s:3:"759";s:6:"height";s:3:"380";s:9:"layout_id";s:2:"12";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:7:{s:9:"banner_id";s:1:"7";s:5:"width";s:3:"996";s:6:"height";s:3:"481";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:7:{s:9:"banner_id";s:1:"9";s:5:"width";s:3:"782";s:6:"height";s:3:"438";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(1644, 0, 'config', 'config_checkout_id', '5', 0),
+	(1643, 0, 'config', 'config_guest_checkout', '1', 0),
+	(1642, 0, 'config', 'config_cart_weight', '1', 0),
+	(1641, 0, 'config', 'config_account_id', '3', 0),
+	(1640, 0, 'config', 'config_customer_price', '0', 0),
+	(1639, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
+	(1638, 0, 'config', 'config_customer_group_id', '1', 0),
+	(1637, 0, 'config', 'config_customer_online', '0', 0),
+	(1636, 0, 'config', 'config_tax_customer', 'shipping', 0),
+	(1635, 0, 'config', 'config_tax_default', 'shipping', 0),
+	(1634, 0, 'config', 'config_vat', '0', 0),
+	(1633, 0, 'config', 'config_tax', '1', 0),
+	(1632, 0, 'config', 'config_voucher_max', '1000', 0),
+	(1631, 0, 'config', 'config_voucher_min', '1', 0),
+	(1630, 0, 'config', 'config_download', '1', 0),
+	(1629, 0, 'config', 'config_review_status', '1', 0),
+	(1628, 0, 'config', 'config_product_count', '1', 0),
+	(1627, 0, 'config', 'config_admin_limit', '20', 0),
+	(1626, 0, 'config', 'config_catalog_limit', '15', 0),
+	(1625, 0, 'config', 'config_weight_class_id', '1', 0),
+	(1624, 0, 'config', 'config_length_class_id', '1', 0),
+	(1623, 0, 'config', 'config_currency_auto', '1', 0),
+	(1622, 0, 'config', 'config_currency', 'USD', 0),
+	(1621, 0, 'config', 'config_admin_language', 'vi', 0),
+	(1620, 0, 'config', 'config_language', 'vi', 0),
+	(1619, 0, 'config', 'config_zone_id', '3776', 0),
+	(1618, 0, 'config', 'config_country_id', '230', 0),
+	(1617, 0, 'config', 'config_layout_id', '4', 0),
+	(1616, 0, 'config', 'config_template', 'default', 0),
+	(1615, 0, 'config', 'config_meta_description', 'Weorder', 0),
+	(1614, 0, 'config', 'config_title', 'Đặt hàng quốc tế - Weorder', 0),
+	(1613, 0, 'config', 'config_fax', '', 0),
+	(1612, 0, 'config', 'config_telephone', '123456789', 0),
+	(1611, 0, 'config', 'config_email', 'admin@admin.com', 0),
+	(1610, 0, 'config', 'config_address', 'Address 1', 0),
+	(1609, 0, 'config', 'config_owner', 'Đặt hàng quốc tế', 0),
+	(1608, 0, 'config', 'config_name', 'Đặt hàng quốc tế', 0);
 /*!40000 ALTER TABLE `setting` ENABLE KEYS */;
 
 
@@ -2751,7 +2756,7 @@ CREATE TABLE IF NOT EXISTS `url_alias` (
   `query` varchar(255) NOT NULL,
   `keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`url_alias_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=826 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=827 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.url_alias: 18 rows
 /*!40000 ALTER TABLE `url_alias` DISABLE KEYS */;
@@ -2766,7 +2771,7 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(824, 'news_category_id=1', 'tin-tuc'),
 	(794, 'news_id=1', 'sale-off-50-hang-lascote.html'),
 	(789, 'manufacturer_id=9', 'zara'),
-	(793, 'news_id=2', 'zara-dai-ha-gia.html'),
+	(826, 'news_id=2', 'zara-dai-ha-gia.html'),
 	(804, 'category_id=60', 'quan'),
 	(799, 'category_id=61', 'ao'),
 	(805, 'category_id=62', 'phu-kien'),
@@ -2797,7 +2802,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table weorder.user: 1 rows
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `code`, `ip`, `status`, `date_added`) VALUES
-	(1, 1, 'admin', 'eb3b619f4e511cdecae9a01f958f9322a445eeb6', '16c32b3ef', '', '', 'admin@admin.com', '', '127.0.0.1', 1, '2013-05-16 23:52:20');
+	(1, 1, 'admin', 'eb3b619f4e511cdecae9a01f958f9322a445eeb6', '16c32b3ef', '', '', 'admin@admin.com', '', '::1', 1, '2013-05-16 23:52:20');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 
@@ -2812,7 +2817,7 @@ CREATE TABLE IF NOT EXISTS `user_group` (
 -- Dumping data for table weorder.user_group: 2 rows
 /*!40000 ALTER TABLE `user_group` DISABLE KEYS */;
 INSERT INTO `user_group` (`user_group_id`, `name`, `permission`) VALUES
-	(1, 'Top Administrator', 'a:2:{s:6:"access";a:133:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";}s:6:"modify";a:133:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";}}'),
+	(1, 'Top Administrator', 'a:2:{s:6:"access";a:135:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";}s:6:"modify";a:135:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";}}'),
 	(10, 'Demonstration', '');
 /*!40000 ALTER TABLE `user_group` ENABLE KEYS */;
 
@@ -2933,7 +2938,7 @@ CREATE TABLE IF NOT EXISTS `zone` (
   PRIMARY KEY (`zone_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4033 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.zone: 3.985 rows
+-- Dumping data for table weorder.zone: 3,985 rows
 /*!40000 ALTER TABLE `zone` DISABLE KEYS */;
 INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 	(1, 1, 'Badakhshan', 'BDS', 1),
@@ -6941,5 +6946,6 @@ INSERT INTO `zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, 
 	(57, 222, 0, 3, '2010-02-26 22:33:24', '0000-00-00 00:00:00'),
 	(65, 222, 0, 4, '2010-12-15 15:18:13', '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `zone_to_geo_zone` ENABLE KEYS */;
-/*!40014 SET FOREIGN_KEY_CHECKS=1 */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

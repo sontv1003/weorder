@@ -373,7 +373,7 @@ header {padding:160px 0 0 0;position:relative;}
     overflow: hidden;
     padding: 0 15px;
     text-transform: uppercase;
-    width: 1000px; position:absolute
+    width: 900px; position:absolute
 }
 .infoBar ul li{float:left; margin-right:20px; font-family:'UTM_Charlotte';}
 .infoBar ul{margin:-2px 0 0 175px}
@@ -2030,28 +2030,28 @@ p.error404 img {margin:0 10px 0 0;}
 	display:block;
 	border-top: 1px solid #aaa;
 }
-.box{
+.box_p{
 	float: left;
 	width: 990px;
 	padding-right: 15px;
 }
-.box h4 {
+.box_p h4 {
 	border-bottom: 1px dashed lightgray;
 	padding-bottom:5px;
 }
-.box h4 a{
+.box_p h4 a{
 	font-size: 15px;
 	font-weight: bold;
 }
-.box .line{
+.box_p .line{
 	clear: both;
 }
-#nav-sub .box li, #nav-sub  .box li:hover {
+#nav-sub .box li, #nav-sub  .box_p li:hover {
 	border:none;
 	padding: 5px 9px;
 	clear: both;
 }
-#nav-sub  .box li a:hover {
+#nav-sub  .box_p li a:hover {
 	text-decoration: underline;
 }
 
@@ -2186,7 +2186,7 @@ float: right;
 	width: 100%;
 	color: #aaa;
 	background:#222;
-	padding: 8px;
+	padding: 4px;
 	box-shadow: inset 0px 1px 3px -1px linen;
 	z-index: 10001;
 	text-align: right;
@@ -2431,13 +2431,6 @@ color: white!important;
 #timkiemmahang ul{margin-top:10px;}
 #timkiemmahang ul li a{font-family:'UTM_Bebas'; font-size:18px; color:#ff0}
 .ui-border{font-family:'UTM_Avo'}
-
-.box-bgcolor ul{clear:none; width:988px; margin-top: 15px;}
-.box-bgcolor ul li{ border: 1px solid #000000;
-    float: left;
-    font-family: 'UTM_Bebas';
-    font-size: 20px;
-    padding: 2px 71px; }
 
 .xoa2{background: -moz-linear-gradient(center top , #56CA56, #006600) repeat scroll 0 0 transparent;
     color: #FFFFFF; width:300px; height:20px}

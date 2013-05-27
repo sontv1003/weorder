@@ -6,6 +6,8 @@ class ControllerProductCategory extends Controller {
 		$this->load->model('catalog/category');
 		
 		$this->load->model('catalog/product');
+                
+		$this->load->model('catalog/manufacturer');
 		
 		$this->load->model('tool/image'); 
 		
@@ -202,9 +204,28 @@ class ControllerProductCategory extends Controller {
 					
 			$product_total = $this->model_catalog_product->getTotalProducts($data); 
 			
-			$results = $this->model_catalog_product->getProducts($data);
+			$results = $this->model_catalog_product->getProducts($data);			
 			
 			foreach ($results as $result) {
+                            
+                                $images = array();
+                                $resultimgs = $this->model_catalog_product->getProductImages($result['product_id']);
+			
+                                foreach ($resultimgs as $resultimg) {
+                                    $images[] = array(
+                                            'popup' => $this->model_tool_image->resize($resultimg['image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height')),
+                                            'thumb' => $this->model_tool_image->resize($resultimg['image'], $this->config->get('config_image_additional_width'), $this->config->get('config_image_additional_height'))
+                                    );
+                                }
+                                
+                                $man_thumb = '';                
+                                if (!empty($result['manufacturer_id'])) {
+                                    $manufacture = $this->model_catalog_manufacturer->getManufacturer($result['manufacturer_id']);
+                                    if ($manufacture['image']) { 
+                                        $man_thumb = $this->model_tool_image->resize($manufacture['image'], 124, 70);
+                                    }
+                                }
+                
 				if ($result['image']) {
 					$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
 				} else {
@@ -237,8 +258,11 @@ class ControllerProductCategory extends Controller {
 								
 				$this->data['products'][] = array(
 					'product_id'  => $result['product_id'],
+					'man_thumb'   => $man_thumb,
 					'thumb'       => $image,
+					'thumbs'      => $images,
 					'name'        => $result['name'],
+					'date'        => $result['date_available'],
 					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, 100) . '..',
 					'price'       => $price,
 					'special'     => $special,
