@@ -9,17 +9,17 @@ define('HTTPS_CATALOG', 'http://localhost/weorder/');
 
 
 // DIR
-define('DIR_APPLICATION', 'E:\Sources\weorder/admin/');
-define('DIR_SYSTEM', 'E:\Sources\weorder/system/');
-define('DIR_DATABASE', 'E:\Sources\weorder/system/database/');
-define('DIR_LANGUAGE', 'E:\Sources\weorder/admin/language/');
-define('DIR_TEMPLATE', 'E:\Sources\weorder/admin/view/template/');
-define('DIR_CONFIG', 'E:\Sources\weorder/system/config/');
-define('DIR_IMAGE', 'E:\Sources\weorder/image/');
-define('DIR_CACHE', 'E:\Sources\weorder/system/cache/');
-define('DIR_DOWNLOAD', 'E:\Sources\weorder/download/');
-define('DIR_LOGS', 'E:\Sources\weorder/system/logs/');
-define('DIR_CATALOG', 'E:\Sources\weorder/catalog/');
+define('DIR_APPLICATION', 'C:\wamp\www\weorder/admin/');
+define('DIR_SYSTEM', 'C:\wamp\www\weorder/system/');
+define('DIR_DATABASE', 'C:\wamp\www\weorder/system/database/');
+define('DIR_LANGUAGE', 'C:\wamp\www\weorder/admin/language/');
+define('DIR_TEMPLATE', 'C:\wamp\www\weorder/admin/view/template/');
+define('DIR_CONFIG', 'C:\wamp\www\weorder/system/config/');
+define('DIR_IMAGE', 'C:\wamp\www\weorder/image/');
+define('DIR_CACHE', 'C:\wamp\www\weorder/system/cache/');
+define('DIR_DOWNLOAD', 'C:\wamp\www\weorder/download/');
+define('DIR_LOGS', 'C:\wamp\www\weorder/system/logs/');
+define('DIR_CATALOG', 'C:\wamp\www\weorder/catalog/');
 
 // DB
 define('DB_DRIVER', 'mysql');
