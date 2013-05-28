@@ -118,6 +118,14 @@
                 <?php } ?></td>
             </tr>
             <tr>
+              <td><?php echo $entry_top2; ?></td>
+              <td><?php if ($top2) { ?>
+                <input type="checkbox" name="top2" value="1" checked="checked" />
+                <?php } else { ?>
+                <input type="checkbox" name="top2" value="1" />
+                <?php } ?></td>
+            </tr>
+            <tr>
               <td><?php echo $entry_column; ?></td>
               <td><input type="text" name="column" value="<?php echo $column; ?>" size="1" /></td>
             </tr>

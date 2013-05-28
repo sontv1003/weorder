@@ -367,7 +367,6 @@
         <?php echo $content_top; ?>
         <div id="product-list-filters">
 
-
             <div class="pathway-items">
                 <?php foreach ($breadcrumbs as $breadcrumb) { ?>
                     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
@@ -375,68 +374,43 @@
             </div>
 
             <div class="filter-display">
-
-                <span>Sắp xếp theo:</span>
-
-                <select onchange="location='http://iloveitaly.vn/?page=productList&amp;id=310972&amp;site=246&amp;orderBy='+this.value;" id="orderBy9">
-
-                    <option value="">---Sắp xếp theo---</option>
-
-                    <option value="price asc">Giá: thấp đến cao</option>
-
-                    <option value="price desc">Giá: cao đến thấp</option>
-
-                    <option value="createdTime desc">Thời gian: mới cập nhật</option>
-
+                <span><?php echo $text_sort; ?></span>
+                <select onchange="location = this.value;">
+                    <?php foreach ($sorts as $sorts) { ?>
+                        <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
+                            <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
+                        <?php } else { ?>
+                            <option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
+                        <?php } ?>
+                    <?php } ?>
                 </select>
-
-                <select onchange="location='http://iloveitaly.vn/?page=productList&amp;id=310972&amp;site=246&amp;perPage='+this.value;" id="itemsPerPage9">
-
-                    <option value="">---Số SP---</option>
-
-                    <option value="10">10</option>
-
-                    <option value="20">20</option>
-
-                    <option value="50">50</option>
-
-                    <option value="100">100</option>
-
+                <span style="margin-left: 10px;"><?php echo $text_limit; ?></span>
+                <select onchange="location = this.value;" id="itemsPerPage9">
+                    <?php foreach ($limits as $limits) { ?>
+                        <?php if ($limits['value'] == $limit) { ?>
+                            <option value="<?php echo $limits['href']; ?>" selected="selected"><?php echo $limits['text']; ?></option>
+                        <?php } else { ?>
+                            <option value="<?php echo $limits['href']; ?>"><?php echo $limits['text']; ?></option>
+                        <?php } ?>
+                    <?php } ?>
                 </select>
-
-                <select>
-
-                    <option>---Theo Giá SP---</option>
-
-                    <option> &lt;100.000 VNĐ </option>
-
-                    <option>100.000 VNĐ - 500.000 VNĐ</option>
-
-                    <option>500.000 VNĐ - 1.000.000 VNĐ</option>
-
-                    <option>&gt;1.000.000 VNĐ</option>
-
-
-
-                </select>
-
             </div>
 
         </div>
         <div class="list-product">
             <ul>
-                <?php foreach ($products as $product) { 
+                <?php foreach ($products as $product) {
                     ?>
                     <li class="ajax_block_product">
                         <div class="mousehover">
                             <?php if ($product['thumb']) { ?>
                                 <div class="fader"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>" /></a></div>
-    <?php } ?>
+                            <?php } ?>
                         </div>
                         <div class="list_thumbnail">
                             <div class="manufacturer-product">
                                 <span class="product-date"><?php echo date('d/m/Y', strtotime($product['date'])); ?></span>
-                                <?php if(!empty($product['man_thumb'])) { ?>
+                                <?php if (!empty($product['man_thumb'])) { ?>
                                     <img src="<?php echo $product['man_thumb'] ?>" />
                                 <?php } ?>
                             </div>
@@ -445,23 +419,24 @@
                             foreach ($product['thumbs'] as $thumb) {
                                 $i++;
                                 if ($i <= 3) {
-                                ?>
-                                <a href="<?php echo $product['href']; ?>"><img src="<?php echo $thumb['thumb'] ?>" /></a>
-    <?php }} ?>
+                                    ?>
+                                    <a href="<?php echo $product['href']; ?>"><img src="<?php echo $thumb['thumb'] ?>" /></a>
+                                <?php }
+                            } ?>
                         </div>
                         <div id="tinsp">
                             <ul>
                                 <li><p class="aosomi"><?php echo $product['name']; ?></p></li>
                                 <li><p class="size">MẦU: Trắng, Da cam; SIZE: S, M, L</p></li>
                                 <li class="price">
-                                    <?php if (!$product['special']) { ?>
+                                        <?php if (!$product['special']) { ?>
                                         <p class="size" >Giá siêu rẻ:
                                         <?php echo $product['price']; ?>
                                         </p>
                                     <?php } else { ?>
                                         <span class="price-old size">Giá siêu rẻ: <?php echo $product['price']; ?></span> <span class="price-new"><?php echo $product['special']; ?></span>
                                     <?php } ?>
-                                    <?php if ($product['tax']) { ?>
+    <?php if ($product['tax']) { ?>
                                         <br />
                                         <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
     <?php } ?>
@@ -478,25 +453,7 @@
             </ul>
         </div>
 
-        <div class="nav_pagi">
-            <center>
-                <ul>
-                    <li class="pagi_text"><a href="#">Trang trước</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">6</a></li>
-                    <li><a href="#">7</a></li>
-                    <li class="pagi_text"><a href="#">Trang sau</a></li>
-                </ul>
-            </center>
-        </div>
-
-
-
-
+        <div class="pagination"><?php echo $pagination; ?></div>
 
     </div>
 

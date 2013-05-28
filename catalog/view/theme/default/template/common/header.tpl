@@ -118,20 +118,18 @@ endif; ?>
                             </div>
                             <div class="clear"></div>
                             <ul id="nav-sub">
-                                <li class="">
-                                    <a class="sel-cat-giay-dep" id="cat_164" href="/giay-dep/"><span class="nav-subTxt">Dịch vụ</span></a>
+                                <?php foreach($categoriesTop2 as $result) { ?>
+                                <li>
+                                    <a style="background-image:none;" href="<?php echo $result['href'] ?>"><span class="nav-subTxt"><?php echo $result['name'] ?></span></a>
                                 </li>
-                                <li class="">
-                                    <a style="background-image:none;" id="cat_164" href="/giay-dep/"><span class="nav-subTxt">hướng dẫn đặt hàng</span></a>
+                                <?php } ?>
+                                <?php foreach($informations as $result) { ?>
+                                <li>
+                                    <a style="background-image:none;" href="<?php echo $result['href'] ?>"><span class="nav-subTxt"><?php echo $result['title'] ?></span></a>
                                 </li>
-                                <li class="">
-                                    <a style="background-image:none;" id="cat_164" href="<?php echo $news_brand_href ?>"><span class="nav-subTxt">các thương hiệu</span></a>
-                                </li>
-                                <li class="">
-                                    <a style="background-image:none;" id="cat_164" href="/giay-dep/"><span class="nav-subTxt">chính sách ưu đãi</span></a>
-                                </li>
-                                <li class="">
-                                    <a style="background-image:none;" id="cat_164" href="/giay-dep/"><span class="nav-subTxt">Liên hệ</span></a>
+                                <?php } ?>
+                                <li>
+                                    <a style="background-image:none;" href="<?php echo $contact ?>"><span class="nav-subTxt"><?php echo $text_contact ?></span></a>
                                 </li>
                             </ul>
                         </div>

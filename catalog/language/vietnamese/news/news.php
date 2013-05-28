@@ -27,7 +27,7 @@ $_['entry_captcha']     = 'Nhập mã số xác nhận bên dưới:';
 // Tabs
 $_['tab_description']   = 'Giới thiệu';
 $_['tab_related']       = 'Tin liên quan'; 
-$_['tab_others']       = 'Các tin khác';
+$_['tab_others']       = 'Các tin tức khác';
 $_['tab_comment']       = 'Nhận xét'; 
 
 //Error
