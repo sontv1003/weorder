@@ -230,6 +230,7 @@ class ControllerCatalogCategory extends Controller {
 		$this->data['entry_keyword'] = $this->language->get('entry_keyword');
 		$this->data['entry_image'] = $this->language->get('entry_image');
 		$this->data['entry_top'] = $this->language->get('entry_top');
+		$this->data['entry_top2'] = $this->language->get('entry_top2');
 		$this->data['entry_column'] = $this->language->get('entry_column');		
 		$this->data['entry_sort_order'] = $this->language->get('entry_sort_order');
 		$this->data['entry_status'] = $this->language->get('entry_status');
@@ -379,6 +380,14 @@ class ControllerCatalogCategory extends Controller {
 			$this->data['top'] = $category_info['top'];
 		} else {
 			$this->data['top'] = 0;
+		}
+
+                if (isset($this->request->post['top2'])) {
+			$this->data['top'] = $this->request->post['top2'];
+		} elseif (!empty($category_info)) {
+			$this->data['top2'] = $category_info['top2'];
+		} else {
+			$this->data['top2'] = 0;
 		}
 		
 		if (isset($this->request->post['column'])) {

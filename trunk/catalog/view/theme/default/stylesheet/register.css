@@ -310,9 +310,12 @@ font-family:utm bebas; padding-bottom:8px; margin:40px 0 0 30px; position:absolu
 .bt_border{
 	border-bottom: 1px solid crimson;
 }
-#anhtin img{border: 1px solid #CDCDCD;
-    height: 280px;
-    margin: -87px 15px 60px 120px;}
+#anhtin img{
+    border: 1px solid #CDCDCD;
+    min-height: 280px;
+    width: 200px;
+    margin: -87px 15px 60px 120px;
+}
 @font-face
 {
     	font-family: UTM_Charlotte;
@@ -330,3 +333,4 @@ font-family:utm bebas; padding-bottom:8px; margin:40px 0 0 30px; position:absolu
 #gioithieuth{color:#666; font-size:14px}
 
 .cls {clear: both;}
+

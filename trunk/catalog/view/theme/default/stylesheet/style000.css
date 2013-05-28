@@ -6446,3 +6446,17 @@ label.nl_header {
 .fl {
     float: left;
 }
+
+.news_relate_title {
+    font-size: 14px;
+    font-weight: bold; 
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+.news_relate ul li{
+    line-height: 20px;
+}
+ 
+.news_relate_title , .news_relate, .share {
+    margin-left: 15px;
+}

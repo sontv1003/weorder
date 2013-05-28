@@ -151,7 +151,7 @@ h4, h5, .h4, .h5 {
 }
 .list-product{
     width: 100%;
-    margin-left: -8px;
+    margin-left: 30px;
 }
 .list-product ul li{
     width: 349px;
@@ -308,4 +308,36 @@ h4, h5, .h4, .h5 {
     font-family: UTM_Bebas;
     color: #CD3C38;
     font-size: 20px; 
+}
+
+.pagination {
+
+}
+.pagination .results{
+    font-size: 14px;
+    margin-top: 10px;
+}
+.pagination .links{
+    margin-right: 20px;
+}
+.pagination .links b,.pagination .links a {
+    font-size: 14px;
+    text-decoration: none;
+    margin-right: 5px;
+    padding: 2px 7px;
+    border: 1px solid #000;
+    color: #000;
+}
+.pagination .links a.selected {
+    color: #fff;
+    background: #9C232A;
+}
+.pagination .links b {
+    color: red;
+    font-size: 14px;
+}
+.pagination .links a:hover {
+    background: #000;
+    color: #fff;    
+    padding: 2px 7px;
 }

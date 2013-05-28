@@ -128,6 +128,18 @@ class ControllerCommonHeader extends Controller {
                 );
             }
         }
+
+        $categoriesTop2 = $this->model_catalog_category->getCategoriesTop2();
+        $this->data['categoriesTop2'] = array();
+        foreach ($categoriesTop2 as $category) {
+            // Level 1
+            $this->data['categoriesTop2'][] = array(
+                'name' => $category['name'],
+                'column' => $category['column'] ? $category['column'] : 1,
+                'href' => $this->url->link('product/category', 'path=' . $category['category_id'])
+            );
+        }
+
         if (isset($this->request->get['catid'])) {
             $partnews = explode('_', (string) $this->request->get['catid']);
         } else {
@@ -138,6 +150,15 @@ class ControllerCommonHeader extends Controller {
             $this->data['cat_id'] = $partnews[0];
         } else {
             $this->data['cat_id'] = 0;
+        }
+
+        $this->data['informations'] = array();
+
+        foreach ($this->model_catalog_information->getInformationsTop() as $result) {
+            $this->data['informations'][] = array(
+                'title' => $result['title'],
+                'href' => $this->url->link('information/information', 'information_id=' . $result['information_id'])
+            );
         }
 
         $this->load->model('catalog/news_category');
@@ -178,6 +199,9 @@ class ControllerCommonHeader extends Controller {
                 );
             }
         }
+
+        $this->data['contact'] = $this->url->link('information/contact', '', 'SSL');
+        $this->data['text_contact'] = $this->language->get('text_contact');
         
         $this->children = array(
             'module/language',
