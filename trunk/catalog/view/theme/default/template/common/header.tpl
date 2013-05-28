@@ -35,6 +35,7 @@
         <script type="text/javascript" src="catalog/view/javascript/nivo0000.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/tools000.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/jquery00.js"></script>
+        <script type="text/javascript" src="catalog/view/javascript/common.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/jquery/tabs.js"></script>
         <!--[if IE 7]> 
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/ie7.css" />
@@ -128,6 +129,9 @@ endif; ?>
                                     <a style="background-image:none;" href="<?php echo $result['href'] ?>"><span class="nav-subTxt"><?php echo $result['title'] ?></span></a>
                                 </li>
                                 <?php } ?>
+                                <li>
+                                    <a style="background-image:none;" href="<?php echo $news_brand_href ?>"><span class="nav-subTxt">Các thương hiệu</span></a>
+                                </li>
                                 <li>
                                     <a style="background-image:none;" href="<?php echo $contact ?>"><span class="nav-subTxt"><?php echo $text_contact ?></span></a>
                                 </li>

@@ -1,14 +1,14 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               5.5.16 - MySQL Community Server (GPL)
--- Server OS:                    Win32
--- HeidiSQL Version:             8.0.0.4396
+-- Server version:               5.5.24-log - MySQL Community Server (GPL)
+-- Server OS:                    Win64
+-- HeidiSQL version:             7.0.0.4053
+-- Date/time:                    2013-05-29 01:37:27
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40014 SET FOREIGN_KEY_CHECKS=0 */;
 
 -- Dumping structure for table weorder.address
 CREATE TABLE IF NOT EXISTS `address` (
@@ -255,8 +255,8 @@ INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `top2`, `col
 	(33, '', 0, 1, 0, 1, 0, 1, '2009-02-03 14:17:55', '2013-05-20 23:43:37'),
 	(59, '', 0, 1, 0, 1, 2, 1, '2013-05-20 23:43:15', '2013-05-20 23:44:07'),
 	(60, '', 33, 0, 0, 1, 1, 1, '2013-05-23 22:38:45', '2013-05-23 22:41:27'),
-	(61, '', 33, 0, 1, 1, 0, 1, '2013-05-23 22:39:28', '2013-05-28 22:50:59'),
-	(62, '', 33, 0, 1, 1, 2, 1, '2013-05-23 22:39:49', '2013-05-28 23:03:34'),
+	(61, '', 33, 0, 0, 1, 0, 1, '2013-05-23 22:39:28', '2013-05-29 00:21:22'),
+	(62, '', 33, 0, 0, 1, 2, 1, '2013-05-23 22:39:49', '2013-05-29 00:21:27'),
 	(63, '', 25, 0, 0, 1, 0, 1, '2013-05-23 22:40:41', '2013-05-23 22:40:41'),
 	(64, '', 25, 0, 0, 1, 0, 1, '2013-05-23 22:40:55', '2013-05-23 22:41:49'),
 	(65, '', 25, 0, 0, 1, 3, 1, '2013-05-23 22:42:16', '2013-05-23 22:42:22');
@@ -726,9 +726,9 @@ CREATE TABLE IF NOT EXISTS `currency` (
 -- Dumping data for table weorder.currency: 3 rows
 /*!40000 ALTER TABLE `currency` DISABLE KEYS */;
 INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-	(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.66240001, 1, '2013-05-23 15:34:38'),
-	(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2013-05-23 16:23:36'),
-	(3, 'Euro', 'EUR', '', '€', '2', 0.77440000, 1, '2013-05-23 15:34:38');
+	(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.66479999, 1, '2013-05-28 17:16:58'),
+	(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2013-05-28 18:30:06'),
+	(3, 'Euro', 'EUR', '', '€', '2', 0.77770001, 1, '2013-05-28 17:16:58');
 /*!40000 ALTER TABLE `currency` ENABLE KEYS */;
 
 
@@ -1114,16 +1114,18 @@ CREATE TABLE IF NOT EXISTS `information` (
   `top_order` int(3) NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`information_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.information: 5 rows
+-- Dumping data for table weorder.information: 7 rows
 /*!40000 ALTER TABLE `information` DISABLE KEYS */;
 INSERT INTO `information` (`information_id`, `bottom`, `sort_order`, `top`, `top_order`, `status`) VALUES
-	(3, 1, 3, 0, 0, 1),
-	(4, 1, 1, 1, 2, 1),
+	(3, 0, 3, 0, 0, 1),
+	(4, 1, 1, 0, 0, 1),
 	(5, 1, 4, 0, 0, 1),
 	(6, 1, 2, 0, 0, 1),
-	(7, 1, 2, 1, 2, 1);
+	(7, 0, 0, 1, 0, 1),
+	(8, 0, 0, 1, 0, 1),
+	(9, 0, 0, 1, 0, 1);
 /*!40000 ALTER TABLE `information` ENABLE KEYS */;
 
 
@@ -1136,14 +1138,16 @@ CREATE TABLE IF NOT EXISTS `information_description` (
   PRIMARY KEY (`information_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.information_description: 5 rows
+-- Dumping data for table weorder.information_description: 7 rows
 /*!40000 ALTER TABLE `information_description` DISABLE KEYS */;
 INSERT INTO `information_description` (`information_id`, `language_id`, `title`, `description`) VALUES
-	(4, 2, 'About Us', '&lt;p&gt;About Us&lt;/p&gt;\r\n'),
-	(5, 2, 'Terms &amp; Conditions', '&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;\r\n'),
-	(3, 2, 'Privacy Policy', '&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;\r\n'),
-	(6, 2, 'Delivery Information', '&lt;p&gt;Delivery Information&lt;/p&gt;\r\n'),
-	(7, 2, 'sss', '&lt;p&gt;sssssssdgsdgsdg&lt;/p&gt;\r\n');
+	(3, 2, 'Privacy Policy', '&lt;p&gt;Privacy Policy&lt;/p&gt;\r\n'),
+	(7, 2, 'Dịch vụ', '&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.32 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Một đoạn dịch của H. Rackham năm 1914&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.33 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.&quot;&lt;/p&gt;\r\n'),
+	(8, 2, 'Hướng dẫn đặt hàng', '&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.32 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Một đoạn dịch của H. Rackham năm 1914&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.33 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.&quot;&lt;/p&gt;\r\n'),
+	(6, 2, 'Thông tin vận chuyển', '&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.32 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Một đoạn dịch của H. Rackham năm 1914&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.33 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.&quot;&lt;/p&gt;\r\n'),
+	(4, 2, 'Về chúng tôi', '&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.32 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Một đoạn dịch của H. Rackham năm 1914&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.33 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.&quot;&lt;/p&gt;\r\n'),
+	(5, 2, 'Điều khoản và bảo mật', '&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.32 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Một đoạn dịch của H. Rackham năm 1914&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.33 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.&quot;&lt;/p&gt;\r\n'),
+	(9, 2, 'Chính sách ưu đãi', '&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.32 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Một đoạn dịch của H. Rackham năm 1914&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.33 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.&quot;&lt;/p&gt;\r\n');
 /*!40000 ALTER TABLE `information_description` ENABLE KEYS */;
 
 
@@ -1155,10 +1159,8 @@ CREATE TABLE IF NOT EXISTS `information_to_layout` (
   PRIMARY KEY (`information_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.information_to_layout: 1 rows
+-- Dumping data for table weorder.information_to_layout: 0 rows
 /*!40000 ALTER TABLE `information_to_layout` DISABLE KEYS */;
-INSERT INTO `information_to_layout` (`information_id`, `store_id`, `layout_id`) VALUES
-	(7, 0, 0);
 /*!40000 ALTER TABLE `information_to_layout` ENABLE KEYS */;
 
 
@@ -1169,14 +1171,16 @@ CREATE TABLE IF NOT EXISTS `information_to_store` (
   PRIMARY KEY (`information_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.information_to_store: 5 rows
+-- Dumping data for table weorder.information_to_store: 7 rows
 /*!40000 ALTER TABLE `information_to_store` DISABLE KEYS */;
 INSERT INTO `information_to_store` (`information_id`, `store_id`) VALUES
 	(3, 0),
 	(4, 0),
 	(5, 0),
 	(6, 0),
-	(7, 0);
+	(7, 0),
+	(8, 0),
+	(9, 0);
 /*!40000 ALTER TABLE `information_to_store` ENABLE KEYS */;
 
 
@@ -1349,18 +1353,18 @@ CREATE TABLE IF NOT EXISTS `news` (
 -- Dumping data for table weorder.news: 12 rows
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
 INSERT INTO `news` (`news_id`, `manufacturer_id`, `image`, `date_available`, `sort_order`, `comment`, `approved`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-	(1, 0, 'data/sanpham1.jpg', '2013-05-19', 1, 1, 1, 1, '2013-05-21 00:20:55', '2013-05-22 09:07:12', 5),
-	(2, 9, 'data/sanpham1.jpg', '2013-05-20', 1, 1, 1, 1, '2013-05-21 23:32:51', '2013-05-27 23:41:54', 7),
-	(3, 0, '', '2013-05-22', 1, 1, 1, 1, '2013-05-23 23:58:22', '0000-00-00 00:00:00', 4),
+	(1, 0, 'data/sanpham1.jpg', '2013-05-19', 1, 1, 1, 1, '2013-05-21 00:20:55', '2013-05-22 09:07:12', 6),
+	(2, 9, 'data/sanpham1.jpg', '2013-05-20', 1, 1, 1, 1, '2013-05-21 23:32:51', '2013-05-27 23:41:54', 8),
+	(3, 0, 'data/anh1.jpg', '2013-05-22', 1, 1, 1, 1, '2013-05-23 23:58:22', '2013-05-29 00:57:57', 4),
 	(4, 9, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:18:55', '0000-00-00 00:00:00', 2),
 	(5, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:21:51', '0000-00-00 00:00:00', 1),
 	(6, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:22:41', '0000-00-00 00:00:00', 0),
 	(7, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:23:20', '0000-00-00 00:00:00', 1),
-	(8, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:24:04', '0000-00-00 00:00:00', 1),
-	(9, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:24:35', '0000-00-00 00:00:00', 1),
-	(10, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:25:16', '0000-00-00 00:00:00', 1),
+	(8, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:24:04', '0000-00-00 00:00:00', 3),
+	(9, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:24:35', '0000-00-00 00:00:00', 2),
+	(10, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:25:16', '0000-00-00 00:00:00', 3),
 	(11, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:26:11', '0000-00-00 00:00:00', 18),
-	(12, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:26:46', '0000-00-00 00:00:00', 24);
+	(12, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:26:46', '0000-00-00 00:00:00', 30);
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 
 
@@ -1383,7 +1387,7 @@ CREATE TABLE IF NOT EXISTS `news_category` (
 /*!40000 ALTER TABLE `news_category` DISABLE KEYS */;
 INSERT INTO `news_category` (`news_category_id`, `theme_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 	(1, 0, '', 0, 1, 1, 4, 1, '2013-05-20 23:56:00', '2013-05-23 23:57:18'),
-	(2, 1, '', 0, 1, 1, 5, 1, '2013-05-23 23:20:14', '2013-05-28 23:04:53');
+	(2, 1, '', 0, 0, 1, 5, 1, '2013-05-23 23:20:14', '2013-05-29 00:17:44');
 /*!40000 ALTER TABLE `news_category` ENABLE KEYS */;
 
 
@@ -2014,9 +2018,9 @@ CREATE TABLE IF NOT EXISTS `product` (
 -- Dumping data for table weorder.product: 19 rows
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-	(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'data/demo/htc_touch_hd_1.jpg', 5, 1, 100.0000, 200, 9, '2009-02-03', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:06:50', '2013-05-29 02:08:17', 0),
+	(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'data/demo/htc_touch_hd_1.jpg', 5, 1, 100.0000, 200, 9, '2009-02-03', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:06:50', '2013-05-29 02:08:17', 1),
 	(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'data/demo/palm_treo_pro_1.jpg', 6, 1, 279.9900, 0, 9, '2009-02-03', 133.00000000, 2, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0),
-	(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'data/1-single-thumbnail.jpg', 9, 1, 100.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2013-05-28 00:27:52', 5),
+	(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'data/1-single-thumbnail.jpg', 9, 1, 100.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2013-05-28 00:27:52', 28),
 	(31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'data/demo/nikon_d300_1.jpg', 0, 1, 80.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2011-09-30 01:06:00', 6),
 	(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'data/demo/ipod_touch_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 17:07:26', '2011-09-30 01:07:22', 0),
 	(33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'data/demo/samsung_syncmaster_941bw.jpg', 0, 1, 200.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 17:08:31', '2011-09-30 01:06:29', 0),
@@ -2030,7 +2034,7 @@ INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`
 	(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'data/demo/macbook_air_1.jpg', 8, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:00', '2011-09-30 01:05:53', 0),
 	(45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'data/demo/macbook_pro_1.jpg', 8, 1, 2000.0000, 0, 100, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:17', '2011-09-15 22:22:01', 0),
 	(46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'data/demo/sony_vaio_1.jpg', 10, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:29', '2011-09-30 01:06:39', 0),
-	(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'data/demo/hp_1.jpg', 7, 1, 100.0000, 400, 9, '2009-02-03', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 0, 1, '2009-02-03 21:08:40', '2013-05-29 02:08:05', 0),
+	(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'data/demo/hp_1.jpg', 7, 1, 100.0000, 400, 9, '2009-02-03', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 0, 1, '2009-02-03 21:08:40', '2013-05-29 02:08:05', 2),
 	(48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'data/demo/ipod_classic_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-08', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-08 17:21:51', '2011-09-30 01:07:06', 0),
 	(49, 'SAM1', '', '', '', '', '', '', '', 0, 8, 'data/demo/samsung_tab_1.jpg', 0, 1, 199.9900, 0, 9, '2011-04-25', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23', 7);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
@@ -2549,7 +2553,7 @@ CREATE TABLE IF NOT EXISTS `setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1926 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2977 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.setting: 142 rows
 /*!40000 ALTER TABLE `setting` DISABLE KEYS */;
@@ -2583,119 +2587,119 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(53, 0, 'reward', 'reward_sort_order', '2', 0),
 	(54, 0, 'reward', 'reward_status', '1', 0),
 	(56, 0, 'affiliate', 'affiliate_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:2:"10";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(1925, 0, 'category', 'category_module', 'a:3:{i:0;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:4:{s:9:"layout_id";s:2:"13";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(2346, 0, 'category', 'category_module', 'a:2:{i:0;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:4:{s:9:"layout_id";s:2:"13";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(2976, 0, 'config', 'config_google_analytics', '', 0),
 	(60, 0, 'account', 'account_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"6";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(1922, 0, 'config', 'config_google_analytics', '', 0),
-	(1920, 0, 'config', 'config_error_log', '1', 0),
-	(1921, 0, 'config', 'config_error_filename', 'error.txt', 0),
-	(1918, 0, 'config', 'config_compression', '0', 0),
-	(1919, 0, 'config', 'config_error_display', '1', 0),
-	(1917, 0, 'config', 'config_encryption', '7f339d82bc9ee711ed084c4a101fbb25', 0),
-	(1916, 0, 'config', 'config_password', '1', 0),
-	(1915, 0, 'config', 'config_maintenance', '0', 0),
+	(2969, 0, 'config', 'config_maintenance', '0', 0),
 	(94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 	(95, 0, 'voucher', 'voucher_status', '1', 0),
 	(103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 	(104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
 	(109, 0, 'banner', 'banner_module', 'a:1:{i:0;a:8:{s:9:"banner_id";s:1:"6";s:5:"width";s:3:"182";s:6:"height";s:3:"182";s:11:"resize_type";s:7:"default";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
-	(1912, 0, 'config', 'config_seo_url', '0', 0),
-	(1913, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
-	(1914, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
-	(1909, 0, 'config', 'config_secure', '0', 0),
-	(1910, 0, 'config', 'config_shared', '0', 0),
-	(1911, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-	(1908, 0, 'config', 'config_fraud_status_id', '7', 0),
-	(1907, 0, 'config', 'config_fraud_score', '', 0),
-	(1906, 0, 'config', 'config_fraud_key', '', 0),
-	(1905, 0, 'config', 'config_fraud_detection', '0', 0),
-	(1904, 0, 'config', 'config_alert_emails', '', 0),
-	(1903, 0, 'config', 'config_account_mail', '0', 0),
-	(1902, 0, 'config', 'config_alert_mail', '0', 0),
-	(1901, 0, 'config', 'config_smtp_timeout', '5', 0),
-	(1900, 0, 'config', 'config_smtp_port', '25', 0),
-	(1899, 0, 'config', 'config_smtp_password', '', 0),
-	(1898, 0, 'config', 'config_smtp_username', '', 0),
-	(1897, 0, 'config', 'config_smtp_host', '', 0),
-	(1896, 0, 'config', 'config_mail_parameter', '', 0),
-	(1895, 0, 'config', 'config_mail_protocol', 'mail', 0),
-	(1894, 0, 'config', 'config_ftp_status', '0', 0),
-	(1893, 0, 'config', 'config_ftp_root', '', 0),
-	(1892, 0, 'config', 'config_ftp_password', '', 0),
-	(1891, 0, 'config', 'config_ftp_username', '', 0),
-	(1890, 0, 'config', 'config_ftp_port', '21', 0),
-	(1889, 0, 'config', 'config_ftp_host', 'localhost', 0),
-	(1888, 0, 'config', 'config_image_cart_height', '47', 0),
-	(1887, 0, 'config', 'config_image_cart_width', '47', 0),
-	(1885, 0, 'config', 'config_image_wishlist_width', '47', 0),
-	(1886, 0, 'config', 'config_image_wishlist_height', '47', 0),
-	(1884, 0, 'config', 'config_image_compare_height', '90', 0),
-	(1883, 0, 'config', 'config_image_compare_width', '90', 0),
-	(1882, 0, 'config', 'config_image_related_height', '640', 0),
-	(1881, 0, 'config', 'config_image_related_width', '400', 0),
-	(1880, 0, 'config', 'config_image_additional_height', '150', 0),
-	(1879, 0, 'config', 'config_image_additional_width', '150', 0),
-	(1878, 0, 'config', 'config_image_product_height', '640', 0),
-	(1877, 0, 'config', 'config_image_product_width', '400', 0),
-	(1876, 0, 'config', 'config_image_popup_height', '600', 0),
-	(1875, 0, 'config', 'config_image_popup_width', '400', 0),
-	(1874, 0, 'config', 'config_image_thumb_height', '228', 0),
-	(1873, 0, 'config', 'config_image_thumb_width', '228', 0),
-	(1872, 0, 'config', 'config_image_news_height', '341', 0),
-	(1871, 0, 'config', 'config_image_news_width', '242', 0),
-	(1870, 0, 'config', 'config_image_category_height', '80', 0),
-	(1869, 0, 'config', 'config_image_category_width', '80', 0),
-	(1868, 0, 'config', 'config_icon', 'data/cart.png', 0),
-	(1867, 0, 'config', 'config_logo', 'data/wesale.jpg', 0),
-	(1866, 0, 'config', 'config_return_status_id', '2', 0),
-	(1865, 0, 'config', 'config_return_id', '0', 0),
-	(1864, 0, 'config', 'config_commission', '5', 0),
-	(1862, 0, 'config', 'config_stock_status_id', '5', 0),
-	(1863, 0, 'config', 'config_affiliate_id', '4', 0),
-	(1861, 0, 'config', 'config_stock_checkout', '0', 0),
-	(1860, 0, 'config', 'config_stock_warning', '0', 0),
-	(1859, 0, 'config', 'config_stock_display', '0', 0),
-	(1858, 0, 'config', 'config_complete_status_id', '5', 0),
-	(1857, 0, 'config', 'config_order_status_id', '1', 0),
-	(1855, 0, 'config', 'config_order_edit', '100', 0),
-	(1856, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
+	(2975, 0, 'config', 'config_error_filename', 'error.txt', 0),
+	(2974, 0, 'config', 'config_error_log', '1', 0),
+	(2973, 0, 'config', 'config_error_display', '0', 0),
+	(2972, 0, 'config', 'config_compression', '0', 0),
+	(2971, 0, 'config', 'config_encryption', '7f339d82bc9ee711ed084c4a101fbb25', 0),
+	(2970, 0, 'config', 'config_password', '1', 0),
+	(2968, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
+	(2963, 0, 'config', 'config_secure', '0', 0),
+	(2964, 0, 'config', 'config_shared', '0', 0),
+	(2965, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+	(2966, 0, 'config', 'config_seo_url', '1', 0),
+	(2967, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
+	(2962, 0, 'config', 'config_fraud_status_id', '7', 0),
+	(2961, 0, 'config', 'config_fraud_score', '', 0),
+	(2960, 0, 'config', 'config_fraud_key', '', 0),
+	(2958, 0, 'config', 'config_alert_emails', '', 0),
+	(2959, 0, 'config', 'config_fraud_detection', '0', 0),
+	(2957, 0, 'config', 'config_account_mail', '0', 0),
+	(2956, 0, 'config', 'config_alert_mail', '0', 0),
+	(2955, 0, 'config', 'config_smtp_timeout', '5', 0),
+	(2953, 0, 'config', 'config_smtp_password', '', 0),
+	(2954, 0, 'config', 'config_smtp_port', '25', 0),
+	(2952, 0, 'config', 'config_smtp_username', '', 0),
+	(2951, 0, 'config', 'config_smtp_host', '', 0),
+	(2950, 0, 'config', 'config_mail_parameter', '', 0),
+	(2949, 0, 'config', 'config_mail_protocol', 'mail', 0),
+	(2947, 0, 'config', 'config_ftp_root', '', 0),
+	(2948, 0, 'config', 'config_ftp_status', '0', 0),
+	(2946, 0, 'config', 'config_ftp_password', '', 0),
+	(2945, 0, 'config', 'config_ftp_username', '', 0),
+	(2944, 0, 'config', 'config_ftp_port', '21', 0),
+	(2943, 0, 'config', 'config_ftp_host', 'localhost', 0),
+	(2942, 0, 'config', 'config_image_cart_height', '47', 0),
+	(2941, 0, 'config', 'config_image_cart_width', '47', 0),
+	(2940, 0, 'config', 'config_image_wishlist_height', '47', 0),
+	(2939, 0, 'config', 'config_image_wishlist_width', '47', 0),
+	(2938, 0, 'config', 'config_image_compare_height', '90', 0),
+	(2936, 0, 'config', 'config_image_related_height', '640', 0),
+	(2937, 0, 'config', 'config_image_compare_width', '90', 0),
+	(2935, 0, 'config', 'config_image_related_width', '400', 0),
+	(2934, 0, 'config', 'config_image_additional_height', '150', 0),
+	(2933, 0, 'config', 'config_image_additional_width', '150', 0),
+	(2932, 0, 'config', 'config_image_product_height', '640', 0),
+	(2930, 0, 'config', 'config_image_popup_height', '600', 0),
+	(2931, 0, 'config', 'config_image_product_width', '400', 0),
+	(2928, 0, 'config', 'config_image_thumb_height', '228', 0),
 	(767, 0, 'slideshow', 'slideshow_module', 'a:3:{i:0;a:7:{s:9:"banner_id";s:1:"8";s:5:"width";s:3:"759";s:6:"height";s:3:"380";s:9:"layout_id";s:2:"12";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:7:{s:9:"banner_id";s:1:"7";s:5:"width";s:3:"996";s:6:"height";s:3:"481";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:7:{s:9:"banner_id";s:1:"9";s:5:"width";s:3:"782";s:6:"height";s:3:"438";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(1854, 0, 'config', 'config_checkout_id', '5', 0),
-	(1853, 0, 'config', 'config_guest_checkout', '1', 0),
-	(1852, 0, 'config', 'config_cart_weight', '1', 0),
-	(1851, 0, 'config', 'config_account_id', '3', 0),
-	(1850, 0, 'config', 'config_customer_price', '0', 0),
-	(1849, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
-	(1848, 0, 'config', 'config_customer_group_id', '1', 0),
-	(1847, 0, 'config', 'config_customer_online', '0', 0),
-	(1846, 0, 'config', 'config_tax_customer', 'shipping', 0),
-	(1845, 0, 'config', 'config_tax_default', 'shipping', 0),
-	(1844, 0, 'config', 'config_vat', '0', 0),
-	(1843, 0, 'config', 'config_tax', '1', 0),
-	(1842, 0, 'config', 'config_voucher_max', '1000', 0),
-	(1841, 0, 'config', 'config_voucher_min', '1', 0),
-	(1840, 0, 'config', 'config_download', '1', 0),
-	(1839, 0, 'config', 'config_review_status', '1', 0),
-	(1838, 0, 'config', 'config_product_count', '1', 0),
-	(1837, 0, 'config', 'config_admin_limit', '20', 0),
-	(1836, 0, 'config', 'config_catalog_limit', '2', 0),
-	(1835, 0, 'config', 'config_weight_class_id', '1', 0),
-	(1834, 0, 'config', 'config_length_class_id', '1', 0),
-	(1833, 0, 'config', 'config_currency_auto', '1', 0),
-	(1832, 0, 'config', 'config_currency', 'USD', 0),
-	(1831, 0, 'config', 'config_admin_language', 'vi', 0),
-	(1830, 0, 'config', 'config_language', 'vi', 0),
-	(1829, 0, 'config', 'config_zone_id', '3776', 0),
-	(1828, 0, 'config', 'config_country_id', '230', 0),
-	(1827, 0, 'config', 'config_layout_id', '4', 0),
-	(1826, 0, 'config', 'config_template', 'default', 0),
-	(1825, 0, 'config', 'config_meta_description', 'Weorder', 0),
-	(1824, 0, 'config', 'config_title', 'Đặt hàng quốc tế - Weorder', 0),
-	(1823, 0, 'config', 'config_fax', '', 0),
-	(1822, 0, 'config', 'config_telephone', '123456789', 0),
-	(1821, 0, 'config', 'config_email', 'admin@admin.com', 0),
-	(1820, 0, 'config', 'config_address', 'Address 1', 0),
-	(1819, 0, 'config', 'config_owner', 'Đặt hàng quốc tế', 0),
-	(1818, 0, 'config', 'config_name', 'Đặt hàng quốc tế', 0);
+	(2929, 0, 'config', 'config_image_popup_width', '400', 0),
+	(2927, 0, 'config', 'config_image_thumb_width', '228', 0),
+	(2926, 0, 'config', 'config_image_news_height', '341', 0),
+	(2925, 0, 'config', 'config_image_news_width', '242', 0),
+	(2923, 0, 'config', 'config_image_category_width', '80', 0),
+	(2924, 0, 'config', 'config_image_category_height', '80', 0),
+	(2922, 0, 'config', 'config_icon', 'data/cart.png', 0),
+	(2921, 0, 'config', 'config_logo', 'data/wesale.jpg', 0),
+	(2920, 0, 'config', 'config_return_status_id', '2', 0),
+	(2919, 0, 'config', 'config_return_id', '0', 0),
+	(2918, 0, 'config', 'config_commission', '5', 0),
+	(2917, 0, 'config', 'config_affiliate_id', '4', 0),
+	(2916, 0, 'config', 'config_stock_status_id', '5', 0),
+	(2915, 0, 'config', 'config_stock_checkout', '0', 0),
+	(2914, 0, 'config', 'config_stock_warning', '0', 0),
+	(2913, 0, 'config', 'config_stock_display', '0', 0),
+	(2912, 0, 'config', 'config_complete_status_id', '5', 0),
+	(2909, 0, 'config', 'config_order_edit', '100', 0),
+	(2910, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
+	(2911, 0, 'config', 'config_order_status_id', '1', 0),
+	(2908, 0, 'config', 'config_checkout_id', '5', 0),
+	(2907, 0, 'config', 'config_guest_checkout', '1', 0),
+	(2906, 0, 'config', 'config_cart_weight', '1', 0),
+	(2905, 0, 'config', 'config_account_id', '3', 0),
+	(2904, 0, 'config', 'config_customer_price', '0', 0),
+	(2902, 0, 'config', 'config_customer_group_id', '1', 0),
+	(2903, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
+	(2897, 0, 'config', 'config_tax', '1', 0),
+	(2898, 0, 'config', 'config_vat', '0', 0),
+	(2899, 0, 'config', 'config_tax_default', 'shipping', 0),
+	(2900, 0, 'config', 'config_tax_customer', 'shipping', 0),
+	(2901, 0, 'config', 'config_customer_online', '0', 0),
+	(2896, 0, 'config', 'config_voucher_max', '1000', 0),
+	(2895, 0, 'config', 'config_voucher_min', '1', 0),
+	(2894, 0, 'config', 'config_download', '1', 0),
+	(2893, 0, 'config', 'config_review_status', '1', 0),
+	(2892, 0, 'config', 'config_product_count', '1', 0),
+	(2891, 0, 'config', 'config_admin_limit', '20', 0),
+	(2890, 0, 'config', 'config_catalog_limit', '15', 0),
+	(2889, 0, 'config', 'config_weight_class_id', '1', 0),
+	(2888, 0, 'config', 'config_length_class_id', '1', 0),
+	(2887, 0, 'config', 'config_currency_auto', '1', 0),
+	(2884, 0, 'config', 'config_language', 'vi', 0),
+	(2886, 0, 'config', 'config_currency', 'USD', 0),
+	(2885, 0, 'config', 'config_admin_language', 'vi', 0),
+	(2883, 0, 'config', 'config_zone_id', '3776', 0),
+	(2882, 0, 'config', 'config_country_id', '230', 0),
+	(2881, 0, 'config', 'config_layout_id', '4', 0),
+	(2880, 0, 'config', 'config_template', 'default', 0),
+	(2879, 0, 'config', 'config_meta_description', 'Weorder', 0),
+	(2878, 0, 'config', 'config_title', 'Đặt hàng quốc tế - Weorder', 0),
+	(2877, 0, 'config', 'config_fax', '', 0),
+	(2876, 0, 'config', 'config_telephone', '123456789', 0),
+	(2874, 0, 'config', 'config_address', 'Address 1', 0),
+	(2875, 0, 'config', 'config_email', 'admin@admin.com', 0),
+	(2872, 0, 'config', 'config_name', 'Đặt hàng quốc tế', 0),
+	(2873, 0, 'config', 'config_owner', 'Đặt hàng quốc tế', 0);
 /*!40000 ALTER TABLE `setting` ENABLE KEYS */;
 
 
@@ -2810,7 +2814,7 @@ CREATE TABLE IF NOT EXISTS `url_alias` (
   `query` varchar(255) NOT NULL,
   `keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`url_alias_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=843 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=850 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.url_alias: 27 rows
 /*!40000 ALTER TABLE `url_alias` DISABLE KEYS */;
@@ -2819,7 +2823,7 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(778, 'category_id=25', 'nu'),
 	(777, 'category_id=33', 'nam'),
 	(730, 'manufacturer_id=8', 'apple'),
-	(837, 'information_id=4', 'about_us'),
+	(848, 'information_id=4', 'about_us'),
 	(785, 'product_id=42', 'test'),
 	(780, 'category_id=59', 'tre-em'),
 	(824, 'news_category_id=1', 'tin-tuc'),
@@ -2827,12 +2831,12 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(789, 'manufacturer_id=9', 'zara'),
 	(826, 'news_id=2', 'zara-dai-ha-gia.html'),
 	(804, 'category_id=60', 'quan'),
-	(838, 'category_id=61', 'ao'),
-	(839, 'category_id=62', 'phu-kien'),
+	(844, 'category_id=61', 'ao'),
+	(845, 'category_id=62', 'phu-kien'),
 	(802, 'category_id=63', 'quan'),
 	(807, 'category_id=65', 'phu-kien'),
-	(842, 'news_category_id=2', 'bao-chi-truyen-thong'),
-	(825, 'news_id=3', 'testing.html'),
+	(843, 'news_category_id=2', 'bao-chi-truyen-thong'),
+	(849, 'news_id=3', 'testing.html'),
 	(827, 'news_id=4', 'bi-quyet-ton-dang-cung-ke-soc.html'),
 	(828, 'news_id=5', 'so-mi-mua-he.html'),
 	(829, 'news_id=6', 'dem-hoi-chan-dai-7-bi-xu-phat-35-trieu-dong.html'),
@@ -2865,7 +2869,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table weorder.user: 1 rows
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `code`, `ip`, `status`, `date_added`) VALUES
-	(1, 1, 'admin', 'eb3b619f4e511cdecae9a01f958f9322a445eeb6', '16c32b3ef', '', '', 'admin@admin.com', '', '::1', 1, '2013-05-16 23:52:20');
+	(1, 1, 'admin', 'eb3b619f4e511cdecae9a01f958f9322a445eeb6', '16c32b3ef', '', '', 'admin@admin.com', '', '127.0.0.1', 1, '2013-05-16 23:52:20');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 
@@ -7009,6 +7013,5 @@ INSERT INTO `zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, 
 	(57, 222, 0, 3, '2010-02-26 22:33:24', '0000-00-00 00:00:00'),
 	(65, 222, 0, 4, '2010-12-15 15:18:13', '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `zone_to_geo_zone` ENABLE KEYS */;
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
