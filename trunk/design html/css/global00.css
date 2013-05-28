@@ -2417,7 +2417,8 @@ color: white!important;
 .ui-border{font-family:'UTM_Avo'}
 
 .box-bgcolor ul{clear:none; width:988px; margin-top: 15px;}
-.box-bgcolor ul li{ border: 1px solid #000000;
+.box-bgcolor ul li{ 
+    border: 1px solid #000000;
     float: left;
     font-family: 'UTM_Bebas';
     font-size: 20px;

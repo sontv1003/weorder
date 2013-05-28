@@ -35,7 +35,7 @@
         <script type="text/javascript" src="catalog/view/javascript/nivo0000.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/tools000.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/jquery00.js"></script>
-
+        <script type="text/javascript" src="catalog/view/javascript/jquery/tabs.js"></script>
         <!--[if IE 7]> 
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/ie7.css" />
         <![endif]-->

@@ -1,21 +1,21 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://localhost/weorder/');
+define('HTTP_SERVER', 'http://localhost/weorder/trunk/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://localhost/weorder/');
+define('HTTPS_SERVER', 'http://localhost/weorder/trunk/');
 
 // DIR
-define('DIR_APPLICATION', 'C:\wamp\www\weorder/catalog/');
-define('DIR_SYSTEM', 'C:\wamp\www\weorder/system/');
-define('DIR_DATABASE', 'C:\wamp\www\weorder/system/database/');
-define('DIR_LANGUAGE', 'C:\wamp\www\weorder/catalog/language/');
-define('DIR_TEMPLATE', 'C:\wamp\www\weorder/catalog/view/theme/');
-define('DIR_CONFIG', 'C:\wamp\www\weorder/system/config/');
-define('DIR_IMAGE', 'C:\wamp\www\weorder/image/');
-define('DIR_CACHE', 'C:\wamp\www\weorder/system/cache/');
-define('DIR_DOWNLOAD', 'C:\wamp\www\weorder/download/');
-define('DIR_LOGS', 'C:\wamp\www\weorder/system/logs/');
+define('DIR_APPLICATION', 'F:\xampp\htdocs\weorder\trunk/catalog/');
+define('DIR_SYSTEM', 'F:\xampp\htdocs\weorder\trunk/system/');
+define('DIR_DATABASE', 'F:\xampp\htdocs\weorder\trunk/system/database/');
+define('DIR_LANGUAGE', 'F:\xampp\htdocs\weorder\trunk/catalog/language/');
+define('DIR_TEMPLATE', 'F:\xampp\htdocs\weorder\trunk/catalog/view/theme/');
+define('DIR_CONFIG', 'F:\xampp\htdocs\weorder\trunk/system/config/');
+define('DIR_IMAGE', 'F:\xampp\htdocs\weorder\trunk/image/');
+define('DIR_CACHE', 'F:\xampp\htdocs\weorder\trunk/system/cache/');
+define('DIR_DOWNLOAD', 'F:\xampp\htdocs\weorder\trunk/download/');
+define('DIR_LOGS', 'F:\xampp\htdocs\weorder\trunk/system/logs/');
 
 // DB
 define('DB_DRIVER', 'mysql');
