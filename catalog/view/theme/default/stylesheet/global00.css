@@ -1985,17 +1985,26 @@ p.error404 img {margin:0 10px 0 0;}
 }
 #tabs li:last-child a{background: none;}
 #jtabs a{
-    background-color: #E6E6E6;
-    background-image: -moz-linear-gradient(center top , #F8F8F8, #E6E6E6);
+    /*background-color: #E6E6E6;*/
+    /*background-image: -moz-linear-gradient(center top , #F8F8F8, #E6E6E6);*/
     
     float: left;
-    margin: 0 3px 3px 0;
+    margin: 0 1px -1px 0;
     text-transform: uppercase;
     display: block;
     padding: 8px 16px;
     line-height: 2rem;
     border: 1px solid;
     border-color: #D3D3D3;
+    
+    background-color: #e6e6e6;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, #f8f8f8, #e6e6e6);
+    background-image: -moz-linear-gradient(top, #f8f8f8, #e6e6e6);
+    background-image: -ms-linear-gradient(top, #f8f8f8, #e6e6e6);
+    background-image: -o-linear-gradient(top, #f8f8f8, #e6e6e6);
+    background-image: linear-gradient(top, #f8f8f8, #e6e6e6);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8f8f8', EndColorStr='#e6e6e6')
 
 }
 #jtabs a.selected{
@@ -2512,6 +2521,21 @@ position: absolute;
 .ui-border th #tt{border:1px solid #CCC}
 .ui-border .pt{padding-top:20px}
 
-tbody {height: 150px;
-       overflow-x: hidden;
-       overflow-y: scroll;}
+tbody {height: 150px; }
+
+span.error {
+    color: #FF0000;
+    display: block;
+}
+#contact_frm input[type="text"]{
+    width: 250px;
+}
+.clear {
+    clear: both;
+}
+#contact_frm h2 {
+    margin-bottom: 10px;
+}
+.ui-tabViewCont {
+    border: 1px solid #ccc;
+}

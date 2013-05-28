@@ -3792,14 +3792,14 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#000000', EndCo
 .ui-bgLightGrey {
 	background-color: #f9f9f9
 }
-.prd-sizeList>li.active, {
+.prd-sizeList li.active {
 background:#313131
 }
 .ui-tabViewNav {
 	position: relative;
 	z-index: 1000
 }
-.ui-tabViewNav>li {
+.ui-tabViewNav li {
 	background-color: #e6e6e6;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#e6e6e6));
 	background-image: -webkit-linear-gradient(top, #f8f8f8, #e6e6e6);
@@ -6459,4 +6459,7 @@ label.nl_header {
  
 .news_relate_title , .news_relate, .share {
     margin-left: 15px;
+}
+.buttons {
+    margin-top: 20px;
 }
