@@ -1,9 +1,9 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               5.5.24-log - MySQL Community Server (GPL)
--- Server OS:                    Win64
+-- Server version:               5.5.16 - MySQL Community Server (GPL)
+-- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-06-03 21:16:29
+-- Date/time:                    2013-06-04 01:31:24
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -11,6 +11,7 @@
 /*!40014 SET FOREIGN_KEY_CHECKS=0 */;
 
 -- Dumping structure for table weorder.address
+DROP TABLE IF EXISTS `address`;
 CREATE TABLE IF NOT EXISTS `address` (
   `address_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -30,11 +31,13 @@ CREATE TABLE IF NOT EXISTS `address` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.address: 0 rows
+DELETE FROM `address`;
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.affiliate
+DROP TABLE IF EXISTS `affiliate`;
 CREATE TABLE IF NOT EXISTS `affiliate` (
   `affiliate_id` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(32) NOT NULL,
@@ -71,11 +74,13 @@ CREATE TABLE IF NOT EXISTS `affiliate` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.affiliate: 0 rows
+DELETE FROM `affiliate`;
 /*!40000 ALTER TABLE `affiliate` DISABLE KEYS */;
 /*!40000 ALTER TABLE `affiliate` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.affiliate_transaction
+DROP TABLE IF EXISTS `affiliate_transaction`;
 CREATE TABLE IF NOT EXISTS `affiliate_transaction` (
   `affiliate_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `affiliate_id` int(11) NOT NULL,
@@ -87,11 +92,13 @@ CREATE TABLE IF NOT EXISTS `affiliate_transaction` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.affiliate_transaction: 0 rows
+DELETE FROM `affiliate_transaction`;
 /*!40000 ALTER TABLE `affiliate_transaction` DISABLE KEYS */;
 /*!40000 ALTER TABLE `affiliate_transaction` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.attribute
+DROP TABLE IF EXISTS `attribute`;
 CREATE TABLE IF NOT EXISTS `attribute` (
   `attribute_id` int(11) NOT NULL AUTO_INCREMENT,
   `attribute_group_id` int(11) NOT NULL,
@@ -100,6 +107,7 @@ CREATE TABLE IF NOT EXISTS `attribute` (
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.attribute: 11 rows
+DELETE FROM `attribute`;
 /*!40000 ALTER TABLE `attribute` DISABLE KEYS */;
 INSERT INTO `attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VALUES
 	(1, 6, 1),
@@ -117,6 +125,7 @@ INSERT INTO `attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VAL
 
 
 -- Dumping structure for table weorder.attribute_description
+DROP TABLE IF EXISTS `attribute_description`;
 CREATE TABLE IF NOT EXISTS `attribute_description` (
   `attribute_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -125,6 +134,7 @@ CREATE TABLE IF NOT EXISTS `attribute_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.attribute_description: 11 rows
+DELETE FROM `attribute_description`;
 /*!40000 ALTER TABLE `attribute_description` DISABLE KEYS */;
 INSERT INTO `attribute_description` (`attribute_id`, `language_id`, `name`) VALUES
 	(1, 2, 'Description'),
@@ -142,6 +152,7 @@ INSERT INTO `attribute_description` (`attribute_id`, `language_id`, `name`) VALU
 
 
 -- Dumping structure for table weorder.attribute_group
+DROP TABLE IF EXISTS `attribute_group`;
 CREATE TABLE IF NOT EXISTS `attribute_group` (
   `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
@@ -149,6 +160,7 @@ CREATE TABLE IF NOT EXISTS `attribute_group` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.attribute_group: 4 rows
+DELETE FROM `attribute_group`;
 /*!40000 ALTER TABLE `attribute_group` DISABLE KEYS */;
 INSERT INTO `attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 	(3, 2),
@@ -159,6 +171,7 @@ INSERT INTO `attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 
 
 -- Dumping structure for table weorder.attribute_group_description
+DROP TABLE IF EXISTS `attribute_group_description`;
 CREATE TABLE IF NOT EXISTS `attribute_group_description` (
   `attribute_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -167,6 +180,7 @@ CREATE TABLE IF NOT EXISTS `attribute_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.attribute_group_description: 4 rows
+DELETE FROM `attribute_group_description`;
 /*!40000 ALTER TABLE `attribute_group_description` DISABLE KEYS */;
 INSERT INTO `attribute_group_description` (`attribute_group_id`, `language_id`, `name`) VALUES
 	(3, 2, 'Memory'),
@@ -177,6 +191,7 @@ INSERT INTO `attribute_group_description` (`attribute_group_id`, `language_id`, 
 
 
 -- Dumping structure for table weorder.banner
+DROP TABLE IF EXISTS `banner`;
 CREATE TABLE IF NOT EXISTS `banner` (
   `banner_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -184,7 +199,8 @@ CREATE TABLE IF NOT EXISTS `banner` (
   PRIMARY KEY (`banner_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.banner: 3 rows
+-- Dumping data for table weorder.banner: 2 rows
+DELETE FROM `banner`;
 /*!40000 ALTER TABLE `banner` DISABLE KEYS */;
 INSERT INTO `banner` (`banner_id`, `name`, `status`) VALUES
 	(7, 'Slideshow trang chủ', 1),
@@ -194,6 +210,7 @@ INSERT INTO `banner` (`banner_id`, `name`, `status`) VALUES
 
 
 -- Dumping structure for table weorder.banner_image
+DROP TABLE IF EXISTS `banner_image`;
 CREATE TABLE IF NOT EXISTS `banner_image` (
   `banner_image_id` int(11) NOT NULL AUTO_INCREMENT,
   `banner_id` int(11) NOT NULL,
@@ -202,7 +219,8 @@ CREATE TABLE IF NOT EXISTS `banner_image` (
   PRIMARY KEY (`banner_image_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.banner_image: 5 rows
+-- Dumping data for table weorder.banner_image: 4 rows
+DELETE FROM `banner_image`;
 /*!40000 ALTER TABLE `banner_image` DISABLE KEYS */;
 INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VALUES
 	(87, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'data/anh1.jpg'),
@@ -214,6 +232,7 @@ INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VAL
 
 
 -- Dumping structure for table weorder.banner_image_description
+DROP TABLE IF EXISTS `banner_image_description`;
 CREATE TABLE IF NOT EXISTS `banner_image_description` (
   `banner_image_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -222,7 +241,8 @@ CREATE TABLE IF NOT EXISTS `banner_image_description` (
   PRIMARY KEY (`banner_image_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.banner_image_description: 5 rows
+-- Dumping data for table weorder.banner_image_description: 4 rows
+DELETE FROM `banner_image_description`;
 /*!40000 ALTER TABLE `banner_image_description` DISABLE KEYS */;
 INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
 	(93, 2, 7, 'ssssssss'),
@@ -234,6 +254,7 @@ INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banne
 
 
 -- Dumping structure for table weorder.category
+DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) DEFAULT NULL,
@@ -249,6 +270,7 @@ CREATE TABLE IF NOT EXISTS `category` (
 ) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.category: 9 rows
+DELETE FROM `category`;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `top2`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 	(25, '', 0, 1, 0, 1, 1, 1, '2009-01-31 01:04:25', '2013-05-20 23:43:45'),
@@ -264,6 +286,7 @@ INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `top2`, `col
 
 
 -- Dumping structure for table weorder.category_description
+DROP TABLE IF EXISTS `category_description`;
 CREATE TABLE IF NOT EXISTS `category_description` (
   `category_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -276,6 +299,7 @@ CREATE TABLE IF NOT EXISTS `category_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.category_description: 9 rows
+DELETE FROM `category_description`;
 /*!40000 ALTER TABLE `category_description` DISABLE KEYS */;
 INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(33, 2, 'Nam', '', '', 'nam'),
@@ -291,6 +315,7 @@ INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `descr
 
 
 -- Dumping structure for table weorder.category_filter
+DROP TABLE IF EXISTS `category_filter`;
 CREATE TABLE IF NOT EXISTS `category_filter` (
   `category_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
@@ -298,11 +323,13 @@ CREATE TABLE IF NOT EXISTS `category_filter` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.category_filter: 0 rows
+DELETE FROM `category_filter`;
 /*!40000 ALTER TABLE `category_filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `category_filter` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.category_path
+DROP TABLE IF EXISTS `category_path`;
 CREATE TABLE IF NOT EXISTS `category_path` (
   `category_id` int(11) NOT NULL,
   `path_id` int(11) NOT NULL,
@@ -311,6 +338,7 @@ CREATE TABLE IF NOT EXISTS `category_path` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.category_path: 15 rows
+DELETE FROM `category_path`;
 /*!40000 ALTER TABLE `category_path` DISABLE KEYS */;
 INSERT INTO `category_path` (`category_id`, `path_id`, `level`) VALUES
 	(25, 25, 0),
@@ -332,6 +360,7 @@ INSERT INTO `category_path` (`category_id`, `path_id`, `level`) VALUES
 
 
 -- Dumping structure for table weorder.category_to_layout
+DROP TABLE IF EXISTS `category_to_layout`;
 CREATE TABLE IF NOT EXISTS `category_to_layout` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -340,6 +369,7 @@ CREATE TABLE IF NOT EXISTS `category_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.category_to_layout: 6 rows
+DELETE FROM `category_to_layout`;
 /*!40000 ALTER TABLE `category_to_layout` DISABLE KEYS */;
 INSERT INTO `category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
 	(61, 0, 3),
@@ -352,6 +382,7 @@ INSERT INTO `category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
 
 
 -- Dumping structure for table weorder.category_to_store
+DROP TABLE IF EXISTS `category_to_store`;
 CREATE TABLE IF NOT EXISTS `category_to_store` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -359,6 +390,7 @@ CREATE TABLE IF NOT EXISTS `category_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.category_to_store: 9 rows
+DELETE FROM `category_to_store`;
 /*!40000 ALTER TABLE `category_to_store` DISABLE KEYS */;
 INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
 	(25, 0),
@@ -374,6 +406,7 @@ INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
 
 
 -- Dumping structure for table weorder.country
+DROP TABLE IF EXISTS `country`;
 CREATE TABLE IF NOT EXISTS `country` (
   `country_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
@@ -386,6 +419,7 @@ CREATE TABLE IF NOT EXISTS `country` (
 ) ENGINE=MyISAM AUTO_INCREMENT=252 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.country: 249 rows
+DELETE FROM `country`;
 /*!40000 ALTER TABLE `country` DISABLE KEYS */;
 INSERT INTO `country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 	(1, 'Afghanistan', 'AF', 'AFG', '', 0, 1),
@@ -641,6 +675,7 @@ INSERT INTO `country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addres
 
 
 -- Dumping structure for table weorder.coupon
+DROP TABLE IF EXISTS `coupon`;
 CREATE TABLE IF NOT EXISTS `coupon` (
   `coupon_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
@@ -660,6 +695,7 @@ CREATE TABLE IF NOT EXISTS `coupon` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.coupon: 3 rows
+DELETE FROM `coupon`;
 /*!40000 ALTER TABLE `coupon` DISABLE KEYS */;
 INSERT INTO `coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
 	(4, '-10% Discount', '2222', 'P', 10.0000, 0, 0, 0.0000, '2011-01-01', '2012-01-01', 10, '10', 1, '2009-01-27 13:55:03'),
@@ -669,6 +705,7 @@ INSERT INTO `coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`,
 
 
 -- Dumping structure for table weorder.coupon_category
+DROP TABLE IF EXISTS `coupon_category`;
 CREATE TABLE IF NOT EXISTS `coupon_category` (
   `coupon_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
@@ -676,11 +713,13 @@ CREATE TABLE IF NOT EXISTS `coupon_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.coupon_category: 0 rows
+DELETE FROM `coupon_category`;
 /*!40000 ALTER TABLE `coupon_category` DISABLE KEYS */;
 /*!40000 ALTER TABLE `coupon_category` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.coupon_history
+DROP TABLE IF EXISTS `coupon_history`;
 CREATE TABLE IF NOT EXISTS `coupon_history` (
   `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `coupon_id` int(11) NOT NULL,
@@ -692,11 +731,13 @@ CREATE TABLE IF NOT EXISTS `coupon_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.coupon_history: 0 rows
+DELETE FROM `coupon_history`;
 /*!40000 ALTER TABLE `coupon_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `coupon_history` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.coupon_product
+DROP TABLE IF EXISTS `coupon_product`;
 CREATE TABLE IF NOT EXISTS `coupon_product` (
   `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `coupon_id` int(11) NOT NULL,
@@ -705,11 +746,13 @@ CREATE TABLE IF NOT EXISTS `coupon_product` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.coupon_product: 0 rows
+DELETE FROM `coupon_product`;
 /*!40000 ALTER TABLE `coupon_product` DISABLE KEYS */;
 /*!40000 ALTER TABLE `coupon_product` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.currency
+DROP TABLE IF EXISTS `currency`;
 CREATE TABLE IF NOT EXISTS `currency` (
   `currency_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) NOT NULL,
@@ -724,15 +767,17 @@ CREATE TABLE IF NOT EXISTS `currency` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.currency: 3 rows
+DELETE FROM `currency`;
 /*!40000 ALTER TABLE `currency` DISABLE KEYS */;
 INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
 	(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.65480000, 1, '2013-06-03 12:15:21'),
-	(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2013-06-03 13:27:56'),
+	(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2013-06-03 17:09:18'),
 	(3, 'Euro', 'EUR', '', '€', '2', 0.76880002, 1, '2013-06-03 12:15:21');
 /*!40000 ALTER TABLE `currency` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.customer
+DROP TABLE IF EXISTS `customer`;
 CREATE TABLE IF NOT EXISTS `customer` (
   `customer_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -757,11 +802,13 @@ CREATE TABLE IF NOT EXISTS `customer` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer: 0 rows
+DELETE FROM `customer`;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.customer_ban_ip
+DROP TABLE IF EXISTS `customer_ban_ip`;
 CREATE TABLE IF NOT EXISTS `customer_ban_ip` (
   `customer_ban_ip_id` int(11) NOT NULL AUTO_INCREMENT,
   `ip` varchar(40) NOT NULL,
@@ -770,11 +817,13 @@ CREATE TABLE IF NOT EXISTS `customer_ban_ip` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_ban_ip: 0 rows
+DELETE FROM `customer_ban_ip`;
 /*!40000 ALTER TABLE `customer_ban_ip` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_ban_ip` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.customer_field
+DROP TABLE IF EXISTS `customer_field`;
 CREATE TABLE IF NOT EXISTS `customer_field` (
   `customer_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
@@ -786,11 +835,13 @@ CREATE TABLE IF NOT EXISTS `customer_field` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_field: 0 rows
+DELETE FROM `customer_field`;
 /*!40000 ALTER TABLE `customer_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_field` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.customer_group
+DROP TABLE IF EXISTS `customer_group`;
 CREATE TABLE IF NOT EXISTS `customer_group` (
   `customer_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `approval` int(1) NOT NULL,
@@ -803,6 +854,7 @@ CREATE TABLE IF NOT EXISTS `customer_group` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_group: 1 rows
+DELETE FROM `customer_group`;
 /*!40000 ALTER TABLE `customer_group` DISABLE KEYS */;
 INSERT INTO `customer_group` (`customer_group_id`, `approval`, `company_id_display`, `company_id_required`, `tax_id_display`, `tax_id_required`, `sort_order`) VALUES
 	(1, 0, 1, 0, 0, 1, 1);
@@ -810,6 +862,7 @@ INSERT INTO `customer_group` (`customer_group_id`, `approval`, `company_id_displ
 
 
 -- Dumping structure for table weorder.customer_group_description
+DROP TABLE IF EXISTS `customer_group_description`;
 CREATE TABLE IF NOT EXISTS `customer_group_description` (
   `customer_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -819,6 +872,7 @@ CREATE TABLE IF NOT EXISTS `customer_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_group_description: 1 rows
+DELETE FROM `customer_group_description`;
 /*!40000 ALTER TABLE `customer_group_description` DISABLE KEYS */;
 INSERT INTO `customer_group_description` (`customer_group_id`, `language_id`, `name`, `description`) VALUES
 	(1, 2, 'Default', 'test');
@@ -826,6 +880,7 @@ INSERT INTO `customer_group_description` (`customer_group_id`, `language_id`, `n
 
 
 -- Dumping structure for table weorder.customer_history
+DROP TABLE IF EXISTS `customer_history`;
 CREATE TABLE IF NOT EXISTS `customer_history` (
   `customer_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -835,11 +890,13 @@ CREATE TABLE IF NOT EXISTS `customer_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_history: 0 rows
+DELETE FROM `customer_history`;
 /*!40000 ALTER TABLE `customer_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_history` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.customer_ip
+DROP TABLE IF EXISTS `customer_ip`;
 CREATE TABLE IF NOT EXISTS `customer_ip` (
   `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -850,11 +907,13 @@ CREATE TABLE IF NOT EXISTS `customer_ip` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_ip: 0 rows
+DELETE FROM `customer_ip`;
 /*!40000 ALTER TABLE `customer_ip` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_ip` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.customer_online
+DROP TABLE IF EXISTS `customer_online`;
 CREATE TABLE IF NOT EXISTS `customer_online` (
   `ip` varchar(40) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -865,11 +924,13 @@ CREATE TABLE IF NOT EXISTS `customer_online` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_online: 0 rows
+DELETE FROM `customer_online`;
 /*!40000 ALTER TABLE `customer_online` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_online` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.customer_reward
+DROP TABLE IF EXISTS `customer_reward`;
 CREATE TABLE IF NOT EXISTS `customer_reward` (
   `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL DEFAULT '0',
@@ -881,11 +942,13 @@ CREATE TABLE IF NOT EXISTS `customer_reward` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_reward: 0 rows
+DELETE FROM `customer_reward`;
 /*!40000 ALTER TABLE `customer_reward` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_reward` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.customer_transaction
+DROP TABLE IF EXISTS `customer_transaction`;
 CREATE TABLE IF NOT EXISTS `customer_transaction` (
   `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -897,11 +960,13 @@ CREATE TABLE IF NOT EXISTS `customer_transaction` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_transaction: 0 rows
+DELETE FROM `customer_transaction`;
 /*!40000 ALTER TABLE `customer_transaction` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_transaction` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.custom_field
+DROP TABLE IF EXISTS `custom_field`;
 CREATE TABLE IF NOT EXISTS `custom_field` (
   `custom_field_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
@@ -914,11 +979,13 @@ CREATE TABLE IF NOT EXISTS `custom_field` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.custom_field: 0 rows
+DELETE FROM `custom_field`;
 /*!40000 ALTER TABLE `custom_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.custom_field_description
+DROP TABLE IF EXISTS `custom_field_description`;
 CREATE TABLE IF NOT EXISTS `custom_field_description` (
   `custom_field_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -927,11 +994,13 @@ CREATE TABLE IF NOT EXISTS `custom_field_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.custom_field_description: 0 rows
+DELETE FROM `custom_field_description`;
 /*!40000 ALTER TABLE `custom_field_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.custom_field_to_customer_group
+DROP TABLE IF EXISTS `custom_field_to_customer_group`;
 CREATE TABLE IF NOT EXISTS `custom_field_to_customer_group` (
   `custom_field_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
@@ -939,11 +1008,13 @@ CREATE TABLE IF NOT EXISTS `custom_field_to_customer_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.custom_field_to_customer_group: 0 rows
+DELETE FROM `custom_field_to_customer_group`;
 /*!40000 ALTER TABLE `custom_field_to_customer_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_to_customer_group` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.custom_field_value
+DROP TABLE IF EXISTS `custom_field_value`;
 CREATE TABLE IF NOT EXISTS `custom_field_value` (
   `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `custom_field_id` int(11) NOT NULL,
@@ -952,11 +1023,13 @@ CREATE TABLE IF NOT EXISTS `custom_field_value` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.custom_field_value: 0 rows
+DELETE FROM `custom_field_value`;
 /*!40000 ALTER TABLE `custom_field_value` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_value` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.custom_field_value_description
+DROP TABLE IF EXISTS `custom_field_value_description`;
 CREATE TABLE IF NOT EXISTS `custom_field_value_description` (
   `custom_field_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -966,11 +1039,13 @@ CREATE TABLE IF NOT EXISTS `custom_field_value_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.custom_field_value_description: 0 rows
+DELETE FROM `custom_field_value_description`;
 /*!40000 ALTER TABLE `custom_field_value_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_value_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.download
+DROP TABLE IF EXISTS `download`;
 CREATE TABLE IF NOT EXISTS `download` (
   `download_id` int(11) NOT NULL AUTO_INCREMENT,
   `filename` varchar(128) NOT NULL,
@@ -981,11 +1056,13 @@ CREATE TABLE IF NOT EXISTS `download` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.download: 0 rows
+DELETE FROM `download`;
 /*!40000 ALTER TABLE `download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `download` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.download_description
+DROP TABLE IF EXISTS `download_description`;
 CREATE TABLE IF NOT EXISTS `download_description` (
   `download_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -994,19 +1071,22 @@ CREATE TABLE IF NOT EXISTS `download_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.download_description: 0 rows
+DELETE FROM `download_description`;
 /*!40000 ALTER TABLE `download_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `download_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.extension
+DROP TABLE IF EXISTS `extension`;
 CREATE TABLE IF NOT EXISTS `extension` (
   `extension_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL,
   PRIMARY KEY (`extension_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=431 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=432 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.extension: 23 rows
+-- Dumping data for table weorder.extension: 24 rows
+DELETE FROM `extension`;
 /*!40000 ALTER TABLE `extension` DISABLE KEYS */;
 INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 	(23, 'payment', 'cod'),
@@ -1031,11 +1111,13 @@ INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 	(419, 'module', 'slideshow'),
 	(428, 'module', 'vqmod_manager'),
 	(429, 'module', 'tnt_newscat'),
-	(430, 'module', 'filter');
+	(430, 'module', 'filter'),
+	(431, 'module', 'manufacturersdropdown');
 /*!40000 ALTER TABLE `extension` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.filter
+DROP TABLE IF EXISTS `filter`;
 CREATE TABLE IF NOT EXISTS `filter` (
   `filter_id` int(11) NOT NULL AUTO_INCREMENT,
   `filter_group_id` int(11) NOT NULL,
@@ -1044,11 +1126,13 @@ CREATE TABLE IF NOT EXISTS `filter` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.filter: 0 rows
+DELETE FROM `filter`;
 /*!40000 ALTER TABLE `filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.filter_description
+DROP TABLE IF EXISTS `filter_description`;
 CREATE TABLE IF NOT EXISTS `filter_description` (
   `filter_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1058,11 +1142,13 @@ CREATE TABLE IF NOT EXISTS `filter_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.filter_description: 0 rows
+DELETE FROM `filter_description`;
 /*!40000 ALTER TABLE `filter_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.filter_group
+DROP TABLE IF EXISTS `filter_group`;
 CREATE TABLE IF NOT EXISTS `filter_group` (
   `filter_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
@@ -1070,11 +1156,13 @@ CREATE TABLE IF NOT EXISTS `filter_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.filter_group: 0 rows
+DELETE FROM `filter_group`;
 /*!40000 ALTER TABLE `filter_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter_group` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.filter_group_description
+DROP TABLE IF EXISTS `filter_group_description`;
 CREATE TABLE IF NOT EXISTS `filter_group_description` (
   `filter_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1083,11 +1171,13 @@ CREATE TABLE IF NOT EXISTS `filter_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.filter_group_description: 0 rows
+DELETE FROM `filter_group_description`;
 /*!40000 ALTER TABLE `filter_group_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter_group_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.geo_zone
+DROP TABLE IF EXISTS `geo_zone`;
 CREATE TABLE IF NOT EXISTS `geo_zone` (
   `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
@@ -1098,6 +1188,7 @@ CREATE TABLE IF NOT EXISTS `geo_zone` (
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.geo_zone: 2 rows
+DELETE FROM `geo_zone`;
 /*!40000 ALTER TABLE `geo_zone` DISABLE KEYS */;
 INSERT INTO `geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`, `date_added`) VALUES
 	(3, 'UK VAT Zone', 'UK VAT', '2010-02-26 22:33:24', '2009-01-06 23:26:25'),
@@ -1106,6 +1197,7 @@ INSERT INTO `geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`, `
 
 
 -- Dumping structure for table weorder.information
+DROP TABLE IF EXISTS `information`;
 CREATE TABLE IF NOT EXISTS `information` (
   `information_id` int(11) NOT NULL AUTO_INCREMENT,
   `bottom` int(1) NOT NULL DEFAULT '0',
@@ -1116,7 +1208,8 @@ CREATE TABLE IF NOT EXISTS `information` (
   PRIMARY KEY (`information_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.information: 7 rows
+-- Dumping data for table weorder.information: 4 rows
+DELETE FROM `information`;
 /*!40000 ALTER TABLE `information` DISABLE KEYS */;
 INSERT INTO `information` (`information_id`, `bottom`, `sort_order`, `top`, `top_order`, `status`) VALUES
 	(3, 0, 3, 0, 0, 1),
@@ -1130,6 +1223,7 @@ INSERT INTO `information` (`information_id`, `bottom`, `sort_order`, `top`, `top
 
 
 -- Dumping structure for table weorder.information_description
+DROP TABLE IF EXISTS `information_description`;
 CREATE TABLE IF NOT EXISTS `information_description` (
   `information_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1138,7 +1232,8 @@ CREATE TABLE IF NOT EXISTS `information_description` (
   PRIMARY KEY (`information_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.information_description: 7 rows
+-- Dumping data for table weorder.information_description: 6 rows
+DELETE FROM `information_description`;
 /*!40000 ALTER TABLE `information_description` DISABLE KEYS */;
 INSERT INTO `information_description` (`information_id`, `language_id`, `title`, `description`) VALUES
 	(7, 2, 'Dịch vụ', '&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.32 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Một đoạn dịch của H. Rackham năm 1914&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.33 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.&quot;&lt;/p&gt;\r\n'),
@@ -1152,6 +1247,7 @@ INSERT INTO `information_description` (`information_id`, `language_id`, `title`,
 
 
 -- Dumping structure for table weorder.information_to_layout
+DROP TABLE IF EXISTS `information_to_layout`;
 CREATE TABLE IF NOT EXISTS `information_to_layout` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1159,19 +1255,22 @@ CREATE TABLE IF NOT EXISTS `information_to_layout` (
   PRIMARY KEY (`information_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.information_to_layout: 0 rows
+-- Dumping data for table weorder.information_to_layout: 1 rows
+DELETE FROM `information_to_layout`;
 /*!40000 ALTER TABLE `information_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `information_to_layout` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.information_to_store
+DROP TABLE IF EXISTS `information_to_store`;
 CREATE TABLE IF NOT EXISTS `information_to_store` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`information_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.information_to_store: 7 rows
+-- Dumping data for table weorder.information_to_store: 4 rows
+DELETE FROM `information_to_store`;
 /*!40000 ALTER TABLE `information_to_store` DISABLE KEYS */;
 INSERT INTO `information_to_store` (`information_id`, `store_id`) VALUES
 	(3, 0),
@@ -1185,6 +1284,7 @@ INSERT INTO `information_to_store` (`information_id`, `store_id`) VALUES
 
 
 -- Dumping structure for table weorder.language
+DROP TABLE IF EXISTS `language`;
 CREATE TABLE IF NOT EXISTS `language` (
   `language_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
@@ -1200,6 +1300,7 @@ CREATE TABLE IF NOT EXISTS `language` (
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.language: 1 rows
+DELETE FROM `language`;
 /*!40000 ALTER TABLE `language` DISABLE KEYS */;
 INSERT INTO `language` (`language_id`, `name`, `code`, `locale`, `image`, `directory`, `filename`, `sort_order`, `status`) VALUES
 	(2, 'Vietnamese', 'vi', 'vi_VN.UTF-8,vi_VN,vi-vn,vietnamese', 'vn.png', 'vietnamese', 'vietnamese', 0, 1);
@@ -1207,13 +1308,15 @@ INSERT INTO `language` (`language_id`, `name`, `code`, `locale`, `image`, `direc
 
 
 -- Dumping structure for table weorder.layout
+DROP TABLE IF EXISTS `layout`;
 CREATE TABLE IF NOT EXISTS `layout` (
   `layout_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`layout_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.layout: 13 rows
+-- Dumping data for table weorder.layout: 12 rows
+DELETE FROM `layout`;
 /*!40000 ALTER TABLE `layout` DISABLE KEYS */;
 INSERT INTO `layout` (`layout_id`, `name`) VALUES
 	(1, 'Home'),
@@ -1233,6 +1336,7 @@ INSERT INTO `layout` (`layout_id`, `name`) VALUES
 
 
 -- Dumping structure for table weorder.layout_route
+DROP TABLE IF EXISTS `layout_route`;
 CREATE TABLE IF NOT EXISTS `layout_route` (
   `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,
   `layout_id` int(11) NOT NULL,
@@ -1241,7 +1345,8 @@ CREATE TABLE IF NOT EXISTS `layout_route` (
   PRIMARY KEY (`layout_route_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.layout_route: 13 rows
+-- Dumping data for table weorder.layout_route: 11 rows
+DELETE FROM `layout_route`;
 /*!40000 ALTER TABLE `layout_route` DISABLE KEYS */;
 INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
 	(30, 6, 0, 'account'),
@@ -1261,6 +1366,7 @@ INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`)
 
 
 -- Dumping structure for table weorder.length_class
+DROP TABLE IF EXISTS `length_class`;
 CREATE TABLE IF NOT EXISTS `length_class` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL,
@@ -1268,6 +1374,7 @@ CREATE TABLE IF NOT EXISTS `length_class` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.length_class: 3 rows
+DELETE FROM `length_class`;
 /*!40000 ALTER TABLE `length_class` DISABLE KEYS */;
 INSERT INTO `length_class` (`length_class_id`, `value`) VALUES
 	(1, 1.00000000),
@@ -1277,6 +1384,7 @@ INSERT INTO `length_class` (`length_class_id`, `value`) VALUES
 
 
 -- Dumping structure for table weorder.length_class_description
+DROP TABLE IF EXISTS `length_class_description`;
 CREATE TABLE IF NOT EXISTS `length_class_description` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -1286,6 +1394,7 @@ CREATE TABLE IF NOT EXISTS `length_class_description` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.length_class_description: 3 rows
+DELETE FROM `length_class_description`;
 /*!40000 ALTER TABLE `length_class_description` DISABLE KEYS */;
 INSERT INTO `length_class_description` (`length_class_id`, `language_id`, `title`, `unit`) VALUES
 	(1, 2, 'Centimeter', 'cm'),
@@ -1295,6 +1404,7 @@ INSERT INTO `length_class_description` (`length_class_id`, `language_id`, `title
 
 
 -- Dumping structure for table weorder.manufacturer
+DROP TABLE IF EXISTS `manufacturer`;
 CREATE TABLE IF NOT EXISTS `manufacturer` (
   `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -1304,6 +1414,7 @@ CREATE TABLE IF NOT EXISTS `manufacturer` (
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.manufacturer: 6 rows
+DELETE FROM `manufacturer`;
 /*!40000 ALTER TABLE `manufacturer` DISABLE KEYS */;
 INSERT INTO `manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VALUES
 	(5, 'HTC', 'data/demo/htc_logo.jpg', 0),
@@ -1316,6 +1427,7 @@ INSERT INTO `manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VA
 
 
 -- Dumping structure for table weorder.manufacturer_to_store
+DROP TABLE IF EXISTS `manufacturer_to_store`;
 CREATE TABLE IF NOT EXISTS `manufacturer_to_store` (
   `manufacturer_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1323,6 +1435,7 @@ CREATE TABLE IF NOT EXISTS `manufacturer_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.manufacturer_to_store: 6 rows
+DELETE FROM `manufacturer_to_store`;
 /*!40000 ALTER TABLE `manufacturer_to_store` DISABLE KEYS */;
 INSERT INTO `manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 	(5, 0),
@@ -1335,6 +1448,7 @@ INSERT INTO `manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 
 
 -- Dumping structure for table weorder.news
+DROP TABLE IF EXISTS `news`;
 CREATE TABLE IF NOT EXISTS `news` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
   `manufacturer_id` int(11) DEFAULT NULL,
@@ -1350,7 +1464,8 @@ CREATE TABLE IF NOT EXISTS `news` (
   PRIMARY KEY (`news_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table weorder.news: 12 rows
+-- Dumping data for table weorder.news: 3 rows
+DELETE FROM `news`;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
 INSERT INTO `news` (`news_id`, `manufacturer_id`, `image`, `date_available`, `sort_order`, `comment`, `approved`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
 	(1, 0, 'data/sanpham1.jpg', '2013-05-19', 1, 1, 1, 1, '2013-05-21 00:20:55', '2013-05-22 09:07:12', 6),
@@ -1369,6 +1484,7 @@ INSERT INTO `news` (`news_id`, `manufacturer_id`, `image`, `date_available`, `so
 
 
 -- Dumping structure for table weorder.news_category
+DROP TABLE IF EXISTS `news_category`;
 CREATE TABLE IF NOT EXISTS `news_category` (
   `news_category_id` int(11) NOT NULL AUTO_INCREMENT,
   `theme_id` int(11) DEFAULT '0',
@@ -1384,6 +1500,7 @@ CREATE TABLE IF NOT EXISTS `news_category` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_category: 2 rows
+DELETE FROM `news_category`;
 /*!40000 ALTER TABLE `news_category` DISABLE KEYS */;
 INSERT INTO `news_category` (`news_category_id`, `theme_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 	(1, 0, '', 0, 1, 1, 4, 1, '2013-05-20 23:56:00', '2013-05-23 23:57:18'),
@@ -1392,6 +1509,7 @@ INSERT INTO `news_category` (`news_category_id`, `theme_id`, `image`, `parent_id
 
 
 -- Dumping structure for table weorder.news_category_description
+DROP TABLE IF EXISTS `news_category_description`;
 CREATE TABLE IF NOT EXISTS `news_category_description` (
   `news_category_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1404,6 +1522,7 @@ CREATE TABLE IF NOT EXISTS `news_category_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_category_description: 2 rows
+DELETE FROM `news_category_description`;
 /*!40000 ALTER TABLE `news_category_description` DISABLE KEYS */;
 INSERT INTO `news_category_description` (`news_category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(1, 2, 'Tin nóng hàng ngày', '', '', ''),
@@ -1412,6 +1531,7 @@ INSERT INTO `news_category_description` (`news_category_id`, `language_id`, `nam
 
 
 -- Dumping structure for table weorder.news_category_to_layout
+DROP TABLE IF EXISTS `news_category_to_layout`;
 CREATE TABLE IF NOT EXISTS `news_category_to_layout` (
   `news_category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1420,11 +1540,13 @@ CREATE TABLE IF NOT EXISTS `news_category_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_category_to_layout: 0 rows
+DELETE FROM `news_category_to_layout`;
 /*!40000 ALTER TABLE `news_category_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_category_to_layout` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.news_category_to_store
+DROP TABLE IF EXISTS `news_category_to_store`;
 CREATE TABLE IF NOT EXISTS `news_category_to_store` (
   `news_category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1432,6 +1554,7 @@ CREATE TABLE IF NOT EXISTS `news_category_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_category_to_store: 2 rows
+DELETE FROM `news_category_to_store`;
 /*!40000 ALTER TABLE `news_category_to_store` DISABLE KEYS */;
 INSERT INTO `news_category_to_store` (`news_category_id`, `store_id`) VALUES
 	(1, 0),
@@ -1440,6 +1563,7 @@ INSERT INTO `news_category_to_store` (`news_category_id`, `store_id`) VALUES
 
 
 -- Dumping structure for table weorder.news_comment
+DROP TABLE IF EXISTS `news_comment`;
 CREATE TABLE IF NOT EXISTS `news_comment` (
   `comment_id` int(11) NOT NULL AUTO_INCREMENT,
   `news_id` int(11) NOT NULL,
@@ -1455,11 +1579,13 @@ CREATE TABLE IF NOT EXISTS `news_comment` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_comment: 0 rows
+DELETE FROM `news_comment`;
 /*!40000 ALTER TABLE `news_comment` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_comment` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.news_description
+DROP TABLE IF EXISTS `news_description`;
 CREATE TABLE IF NOT EXISTS `news_description` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -1472,7 +1598,8 @@ CREATE TABLE IF NOT EXISTS `news_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table weorder.news_description: 12 rows
+-- Dumping data for table weorder.news_description: 3 rows
+DELETE FROM `news_description`;
 /*!40000 ALTER TABLE `news_description` DISABLE KEYS */;
 INSERT INTO `news_description` (`news_id`, `language_id`, `name`, `short_description`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(1, 2, 'Sale off 50% hàng Lascote', 'ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…', '&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Tahoma, Geneva, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 18px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;&quot;&gt;ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…&lt;/span&gt;&lt;/p&gt;\r\n', '', ''),
@@ -1491,6 +1618,7 @@ INSERT INTO `news_description` (`news_id`, `language_id`, `name`, `short_descrip
 
 
 -- Dumping structure for table weorder.news_related
+DROP TABLE IF EXISTS `news_related`;
 CREATE TABLE IF NOT EXISTS `news_related` (
   `news_id` int(11) NOT NULL,
   `related_id` int(11) NOT NULL,
@@ -1498,11 +1626,13 @@ CREATE TABLE IF NOT EXISTS `news_related` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_related: 0 rows
+DELETE FROM `news_related`;
 /*!40000 ALTER TABLE `news_related` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_related` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.news_tag
+DROP TABLE IF EXISTS `news_tag`;
 CREATE TABLE IF NOT EXISTS `news_tag` (
   `news_tag_id` int(11) NOT NULL AUTO_INCREMENT,
   `news_id` int(11) NOT NULL,
@@ -1512,6 +1642,7 @@ CREATE TABLE IF NOT EXISTS `news_tag` (
 ) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_tag: 2 rows
+DELETE FROM `news_tag`;
 /*!40000 ALTER TABLE `news_tag` DISABLE KEYS */;
 INSERT INTO `news_tag` (`news_tag_id`, `news_id`, `language_id`, `tag`) VALUES
 	(18, 1, 2, 'sale off'),
@@ -1520,13 +1651,15 @@ INSERT INTO `news_tag` (`news_tag_id`, `news_id`, `language_id`, `tag`) VALUES
 
 
 -- Dumping structure for table weorder.news_to_category
+DROP TABLE IF EXISTS `news_to_category`;
 CREATE TABLE IF NOT EXISTS `news_to_category` (
   `news_id` int(11) NOT NULL,
   `news_category_id` int(11) NOT NULL,
   PRIMARY KEY (`news_id`,`news_category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table weorder.news_to_category: 15 rows
+-- Dumping data for table weorder.news_to_category: 3 rows
+DELETE FROM `news_to_category`;
 /*!40000 ALTER TABLE `news_to_category` DISABLE KEYS */;
 INSERT INTO `news_to_category` (`news_id`, `news_category_id`) VALUES
 	(1, 1),
@@ -1548,6 +1681,7 @@ INSERT INTO `news_to_category` (`news_id`, `news_category_id`) VALUES
 
 
 -- Dumping structure for table weorder.news_to_layout
+DROP TABLE IF EXISTS `news_to_layout`;
 CREATE TABLE IF NOT EXISTS `news_to_layout` (
   `news_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1556,18 +1690,21 @@ CREATE TABLE IF NOT EXISTS `news_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_to_layout: 0 rows
+DELETE FROM `news_to_layout`;
 /*!40000 ALTER TABLE `news_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_to_layout` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.news_to_store
+DROP TABLE IF EXISTS `news_to_store`;
 CREATE TABLE IF NOT EXISTS `news_to_store` (
   `news_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`news_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table weorder.news_to_store: 12 rows
+-- Dumping data for table weorder.news_to_store: 3 rows
+DELETE FROM `news_to_store`;
 /*!40000 ALTER TABLE `news_to_store` DISABLE KEYS */;
 INSERT INTO `news_to_store` (`news_id`, `store_id`) VALUES
 	(1, 0),
@@ -1586,6 +1723,7 @@ INSERT INTO `news_to_store` (`news_id`, `store_id`) VALUES
 
 
 -- Dumping structure for table weorder.option
+DROP TABLE IF EXISTS `option`;
 CREATE TABLE IF NOT EXISTS `option` (
   `option_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
@@ -1593,7 +1731,8 @@ CREATE TABLE IF NOT EXISTS `option` (
   PRIMARY KEY (`option_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.option: 11 rows
+-- Dumping data for table weorder.option: 12 rows
+DELETE FROM `option`;
 /*!40000 ALTER TABLE `option` DISABLE KEYS */;
 INSERT INTO `option` (`option_id`, `type`, `sort_order`) VALUES
 	(1, 'radio', 2),
@@ -1611,6 +1750,7 @@ INSERT INTO `option` (`option_id`, `type`, `sort_order`) VALUES
 
 
 -- Dumping structure for table weorder.option_description
+DROP TABLE IF EXISTS `option_description`;
 CREATE TABLE IF NOT EXISTS `option_description` (
   `option_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1618,7 +1758,8 @@ CREATE TABLE IF NOT EXISTS `option_description` (
   PRIMARY KEY (`option_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.option_description: 11 rows
+-- Dumping data for table weorder.option_description: 12 rows
+DELETE FROM `option_description`;
 /*!40000 ALTER TABLE `option_description` DISABLE KEYS */;
 INSERT INTO `option_description` (`option_id`, `language_id`, `name`) VALUES
 	(1, 2, 'Radio'),
@@ -1636,6 +1777,7 @@ INSERT INTO `option_description` (`option_id`, `language_id`, `name`) VALUES
 
 
 -- Dumping structure for table weorder.option_value
+DROP TABLE IF EXISTS `option_value`;
 CREATE TABLE IF NOT EXISTS `option_value` (
   `option_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `option_id` int(11) NOT NULL,
@@ -1644,7 +1786,8 @@ CREATE TABLE IF NOT EXISTS `option_value` (
   PRIMARY KEY (`option_value_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.option_value: 14 rows
+-- Dumping data for table weorder.option_value: 18 rows
+DELETE FROM `option_value`;
 /*!40000 ALTER TABLE `option_value` DISABLE KEYS */;
 INSERT INTO `option_value` (`option_value_id`, `option_id`, `image`, `sort_order`) VALUES
 	(43, 1, '', 3),
@@ -1665,6 +1808,7 @@ INSERT INTO `option_value` (`option_value_id`, `option_id`, `image`, `sort_order
 
 
 -- Dumping structure for table weorder.option_value_description
+DROP TABLE IF EXISTS `option_value_description`;
 CREATE TABLE IF NOT EXISTS `option_value_description` (
   `option_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1673,7 +1817,8 @@ CREATE TABLE IF NOT EXISTS `option_value_description` (
   PRIMARY KEY (`option_value_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.option_value_description: 14 rows
+-- Dumping data for table weorder.option_value_description: 18 rows
+DELETE FROM `option_value_description`;
 /*!40000 ALTER TABLE `option_value_description` DISABLE KEYS */;
 INSERT INTO `option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
 	(43, 2, 1, 'Large'),
@@ -1694,6 +1839,7 @@ INSERT INTO `option_value_description` (`option_value_id`, `language_id`, `optio
 
 
 -- Dumping structure for table weorder.order
+DROP TABLE IF EXISTS `order`;
 CREATE TABLE IF NOT EXISTS `order` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `invoice_no` int(11) NOT NULL DEFAULT '0',
@@ -1757,11 +1903,13 @@ CREATE TABLE IF NOT EXISTS `order` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order: 0 rows
+DELETE FROM `order`;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.order_download
+DROP TABLE IF EXISTS `order_download`;
 CREATE TABLE IF NOT EXISTS `order_download` (
   `order_download_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1774,11 +1922,13 @@ CREATE TABLE IF NOT EXISTS `order_download` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_download: 0 rows
+DELETE FROM `order_download`;
 /*!40000 ALTER TABLE `order_download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_download` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.order_field
+DROP TABLE IF EXISTS `order_field`;
 CREATE TABLE IF NOT EXISTS `order_field` (
   `order_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
@@ -1790,11 +1940,13 @@ CREATE TABLE IF NOT EXISTS `order_field` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_field: 0 rows
+DELETE FROM `order_field`;
 /*!40000 ALTER TABLE `order_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_field` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.order_fraud
+DROP TABLE IF EXISTS `order_fraud`;
 CREATE TABLE IF NOT EXISTS `order_fraud` (
   `order_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -1853,11 +2005,13 @@ CREATE TABLE IF NOT EXISTS `order_fraud` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_fraud: 0 rows
+DELETE FROM `order_fraud`;
 /*!40000 ALTER TABLE `order_fraud` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_fraud` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.order_history
+DROP TABLE IF EXISTS `order_history`;
 CREATE TABLE IF NOT EXISTS `order_history` (
   `order_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1869,11 +2023,13 @@ CREATE TABLE IF NOT EXISTS `order_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_history: 0 rows
+DELETE FROM `order_history`;
 /*!40000 ALTER TABLE `order_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_history` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.order_option
+DROP TABLE IF EXISTS `order_option`;
 CREATE TABLE IF NOT EXISTS `order_option` (
   `order_option_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1887,11 +2043,13 @@ CREATE TABLE IF NOT EXISTS `order_option` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_option: 0 rows
+DELETE FROM `order_option`;
 /*!40000 ALTER TABLE `order_option` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_option` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.order_product
+DROP TABLE IF EXISTS `order_product`;
 CREATE TABLE IF NOT EXISTS `order_product` (
   `order_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1907,11 +2065,13 @@ CREATE TABLE IF NOT EXISTS `order_product` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_product: 0 rows
+DELETE FROM `order_product`;
 /*!40000 ALTER TABLE `order_product` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_product` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.order_status
+DROP TABLE IF EXISTS `order_status`;
 CREATE TABLE IF NOT EXISTS `order_status` (
   `order_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -1920,6 +2080,7 @@ CREATE TABLE IF NOT EXISTS `order_status` (
 ) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_status: 14 rows
+DELETE FROM `order_status`;
 /*!40000 ALTER TABLE `order_status` DISABLE KEYS */;
 INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`) VALUES
 	(2, 2, 'Processing'),
@@ -1940,6 +2101,7 @@ INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`) VALUES
 
 
 -- Dumping structure for table weorder.order_total
+DROP TABLE IF EXISTS `order_total`;
 CREATE TABLE IF NOT EXISTS `order_total` (
   `order_total_id` int(10) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1953,11 +2115,13 @@ CREATE TABLE IF NOT EXISTS `order_total` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_total: 0 rows
+DELETE FROM `order_total`;
 /*!40000 ALTER TABLE `order_total` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_total` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.order_voucher
+DROP TABLE IF EXISTS `order_voucher`;
 CREATE TABLE IF NOT EXISTS `order_voucher` (
   `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1975,11 +2139,13 @@ CREATE TABLE IF NOT EXISTS `order_voucher` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_voucher: 0 rows
+DELETE FROM `order_voucher`;
 /*!40000 ALTER TABLE `order_voucher` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_voucher` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.product
+DROP TABLE IF EXISTS `product`;
 CREATE TABLE IF NOT EXISTS `product` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
   `model` varchar(64) NOT NULL,
@@ -2016,11 +2182,12 @@ CREATE TABLE IF NOT EXISTS `product` (
 ) ENGINE=MyISAM AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product: 19 rows
+DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-	(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'data/demo/htc_touch_hd_1.jpg', 5, 1, 100.0000, 200, 9, '2009-02-03', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:06:50', '2013-05-29 02:08:17', 4),
+	(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'data/demo/htc_touch_hd_1.jpg', 5, 1, 100.0000, 200, 9, '2009-02-03', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:06:50', '2013-05-29 02:08:17', 6),
 	(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'data/demo/palm_treo_pro_1.jpg', 6, 1, 279.9900, 0, 9, '2009-02-03', 133.00000000, 2, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0),
-	(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'data/1-single-thumbnail.jpg', 9, 1, 100.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2013-05-28 00:27:52', 33),
+	(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'data/1-single-thumbnail.jpg', 9, 1, 100.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2013-05-28 00:27:52', 37),
 	(31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'data/demo/nikon_d300_1.jpg', 0, 1, 80.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2011-09-30 01:06:00', 6),
 	(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'data/demo/ipod_touch_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 17:07:26', '2011-09-30 01:07:22', 0),
 	(33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'data/demo/samsung_syncmaster_941bw.jpg', 0, 1, 200.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 17:08:31', '2011-09-30 01:06:29', 0),
@@ -2034,13 +2201,14 @@ INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`
 	(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'data/demo/macbook_air_1.jpg', 8, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:00', '2011-09-30 01:05:53', 0),
 	(45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'data/demo/macbook_pro_1.jpg', 8, 1, 2000.0000, 0, 100, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:17', '2011-09-15 22:22:01', 0),
 	(46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'data/demo/sony_vaio_1.jpg', 10, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:29', '2011-09-30 01:06:39', 0),
-	(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'data/demo/hp_1.jpg', 7, 1, 100.0000, 400, 9, '2009-02-03', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 0, 1, '2009-02-03 21:08:40', '2013-05-29 02:08:05', 2),
+	(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'data/demo/hp_1.jpg', 7, 1, 100.0000, 400, 9, '2009-02-03', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 0, 1, '2009-02-03 21:08:40', '2013-05-29 02:08:05', 6),
 	(48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'data/demo/ipod_classic_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-08', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-08 17:21:51', '2011-09-30 01:07:06', 0),
 	(49, 'SAM1', '', '', '', '', '', '', '', 0, 8, 'data/demo/samsung_tab_1.jpg', 0, 1, 199.9900, 0, 9, '2011-04-25', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23', 7);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.product_attribute
+DROP TABLE IF EXISTS `product_attribute`;
 CREATE TABLE IF NOT EXISTS `product_attribute` (
   `product_id` int(11) NOT NULL,
   `attribute_id` int(11) NOT NULL,
@@ -2050,6 +2218,7 @@ CREATE TABLE IF NOT EXISTS `product_attribute` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_attribute: 5 rows
+DELETE FROM `product_attribute`;
 /*!40000 ALTER TABLE `product_attribute` DISABLE KEYS */;
 INSERT INTO `product_attribute` (`product_id`, `attribute_id`, `language_id`, `text`) VALUES
 	(43, 2, 2, '1'),
@@ -2061,6 +2230,7 @@ INSERT INTO `product_attribute` (`product_id`, `attribute_id`, `language_id`, `t
 
 
 -- Dumping structure for table weorder.product_description
+DROP TABLE IF EXISTS `product_description`;
 CREATE TABLE IF NOT EXISTS `product_description` (
   `product_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -2074,6 +2244,7 @@ CREATE TABLE IF NOT EXISTS `product_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_description: 19 rows
+DELETE FROM `product_description`;
 /*!40000 ALTER TABLE `product_description` DISABLE KEYS */;
 INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`, `tag`) VALUES
 	(35, 2, 'Product 8', '&lt;p&gt;\r\n	Product 8&lt;/p&gt;\r\n', '', '', ''),
@@ -2099,6 +2270,7 @@ INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `descrip
 
 
 -- Dumping structure for table weorder.product_discount
+DROP TABLE IF EXISTS `product_discount`;
 CREATE TABLE IF NOT EXISTS `product_discount` (
   `product_discount_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2112,7 +2284,8 @@ CREATE TABLE IF NOT EXISTS `product_discount` (
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=444 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_discount: 3 rows
+-- Dumping data for table weorder.product_discount: 6 rows
+DELETE FROM `product_discount`;
 /*!40000 ALTER TABLE `product_discount` DISABLE KEYS */;
 INSERT INTO `product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
 	(443, 42, 1, 30, 1, 66.0000, '0000-00-00', '0000-00-00'),
@@ -2122,6 +2295,7 @@ INSERT INTO `product_discount` (`product_discount_id`, `product_id`, `customer_g
 
 
 -- Dumping structure for table weorder.product_filter
+DROP TABLE IF EXISTS `product_filter`;
 CREATE TABLE IF NOT EXISTS `product_filter` (
   `product_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
@@ -2129,11 +2303,13 @@ CREATE TABLE IF NOT EXISTS `product_filter` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_filter: 0 rows
+DELETE FROM `product_filter`;
 /*!40000 ALTER TABLE `product_filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_filter` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.product_image
+DROP TABLE IF EXISTS `product_image`;
 CREATE TABLE IF NOT EXISTS `product_image` (
   `product_image_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2142,7 +2318,8 @@ CREATE TABLE IF NOT EXISTS `product_image` (
   PRIMARY KEY (`product_image_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2379 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_image: 61 rows
+-- Dumping data for table weorder.product_image: 63 rows
+DELETE FROM `product_image`;
 /*!40000 ALTER TABLE `product_image` DISABLE KEYS */;
 INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
 	(2376, 47, 'data/demo/hp_2.jpg', 0),
@@ -2210,6 +2387,7 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 
 
 -- Dumping structure for table weorder.product_option
+DROP TABLE IF EXISTS `product_option`;
 CREATE TABLE IF NOT EXISTS `product_option` (
   `product_option_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2219,7 +2397,8 @@ CREATE TABLE IF NOT EXISTS `product_option` (
   PRIMARY KEY (`product_option_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=227 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_option: 12 rows
+-- Dumping data for table weorder.product_option: 13 rows
+DELETE FROM `product_option`;
 /*!40000 ALTER TABLE `product_option` DISABLE KEYS */;
 INSERT INTO `product_option` (`product_option_id`, `product_id`, `option_id`, `option_value`, `required`) VALUES
 	(224, 35, 11, '', 1),
@@ -2238,6 +2417,7 @@ INSERT INTO `product_option` (`product_option_id`, `product_id`, `option_id`, `o
 
 
 -- Dumping structure for table weorder.product_option_value
+DROP TABLE IF EXISTS `product_option_value`;
 CREATE TABLE IF NOT EXISTS `product_option_value` (
   `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_option_id` int(11) NOT NULL,
@@ -2255,7 +2435,8 @@ CREATE TABLE IF NOT EXISTS `product_option_value` (
   PRIMARY KEY (`product_option_value_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_option_value: 16 rows
+-- Dumping data for table weorder.product_option_value: 17 rows
+DELETE FROM `product_option_value`;
 /*!40000 ALTER TABLE `product_option_value` DISABLE KEYS */;
 INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
 	(5, 218, 42, 1, 32, 96, 1, 10.0000, '+', 1, '+', 10.00000000, '+'),
@@ -2278,13 +2459,15 @@ INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_i
 
 
 -- Dumping structure for table weorder.product_related
+DROP TABLE IF EXISTS `product_related`;
 CREATE TABLE IF NOT EXISTS `product_related` (
   `product_id` int(11) NOT NULL,
   `related_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`related_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_related: 4 rows
+-- Dumping data for table weorder.product_related: 22 rows
+DELETE FROM `product_related`;
 /*!40000 ALTER TABLE `product_related` DISABLE KEYS */;
 INSERT INTO `product_related` (`product_id`, `related_id`) VALUES
 	(40, 42),
@@ -2295,6 +2478,7 @@ INSERT INTO `product_related` (`product_id`, `related_id`) VALUES
 
 
 -- Dumping structure for table weorder.product_reward
+DROP TABLE IF EXISTS `product_reward`;
 CREATE TABLE IF NOT EXISTS `product_reward` (
   `product_reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL DEFAULT '0',
@@ -2303,7 +2487,8 @@ CREATE TABLE IF NOT EXISTS `product_reward` (
   PRIMARY KEY (`product_reward_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=558 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_reward: 19 rows
+-- Dumping data for table weorder.product_reward: 22 rows
+DELETE FROM `product_reward`;
 /*!40000 ALTER TABLE `product_reward` DISABLE KEYS */;
 INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
 	(546, 42, 1, 100),
@@ -2329,6 +2514,7 @@ INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group
 
 
 -- Dumping structure for table weorder.product_special
+DROP TABLE IF EXISTS `product_special`;
 CREATE TABLE IF NOT EXISTS `product_special` (
   `product_special_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2341,7 +2527,8 @@ CREATE TABLE IF NOT EXISTS `product_special` (
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=457 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_special: 3 rows
+-- Dumping data for table weorder.product_special: 6 rows
+DELETE FROM `product_special`;
 /*!40000 ALTER TABLE `product_special` DISABLE KEYS */;
 INSERT INTO `product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
 	(440, 42, 1, 1, 90.0000, '0000-00-00', '0000-00-00'),
@@ -2351,13 +2538,15 @@ INSERT INTO `product_special` (`product_special_id`, `product_id`, `customer_gro
 
 
 -- Dumping structure for table weorder.product_to_category
+DROP TABLE IF EXISTS `product_to_category`;
 CREATE TABLE IF NOT EXISTS `product_to_category` (
   `product_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_to_category: 6 rows
+-- Dumping data for table weorder.product_to_category: 4 rows
+DELETE FROM `product_to_category`;
 /*!40000 ALTER TABLE `product_to_category` DISABLE KEYS */;
 INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 	(28, 33),
@@ -2370,6 +2559,7 @@ INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 
 
 -- Dumping structure for table weorder.product_to_download
+DROP TABLE IF EXISTS `product_to_download`;
 CREATE TABLE IF NOT EXISTS `product_to_download` (
   `product_id` int(11) NOT NULL,
   `download_id` int(11) NOT NULL,
@@ -2377,11 +2567,13 @@ CREATE TABLE IF NOT EXISTS `product_to_download` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_to_download: 0 rows
+DELETE FROM `product_to_download`;
 /*!40000 ALTER TABLE `product_to_download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_to_download` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.product_to_layout
+DROP TABLE IF EXISTS `product_to_layout`;
 CREATE TABLE IF NOT EXISTS `product_to_layout` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -2390,11 +2582,13 @@ CREATE TABLE IF NOT EXISTS `product_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_to_layout: 0 rows
+DELETE FROM `product_to_layout`;
 /*!40000 ALTER TABLE `product_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_to_layout` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.product_to_store
+DROP TABLE IF EXISTS `product_to_store`;
 CREATE TABLE IF NOT EXISTS `product_to_store` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -2402,6 +2596,7 @@ CREATE TABLE IF NOT EXISTS `product_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_to_store: 19 rows
+DELETE FROM `product_to_store`;
 /*!40000 ALTER TABLE `product_to_store` DISABLE KEYS */;
 INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 	(28, 0),
@@ -2427,6 +2622,7 @@ INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 
 
 -- Dumping structure for table weorder.return
+DROP TABLE IF EXISTS `return`;
 CREATE TABLE IF NOT EXISTS `return` (
   `return_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2451,11 +2647,13 @@ CREATE TABLE IF NOT EXISTS `return` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.return: 0 rows
+DELETE FROM `return`;
 /*!40000 ALTER TABLE `return` DISABLE KEYS */;
 /*!40000 ALTER TABLE `return` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.return_action
+DROP TABLE IF EXISTS `return_action`;
 CREATE TABLE IF NOT EXISTS `return_action` (
   `return_action_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2464,6 +2662,7 @@ CREATE TABLE IF NOT EXISTS `return_action` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.return_action: 3 rows
+DELETE FROM `return_action`;
 /*!40000 ALTER TABLE `return_action` DISABLE KEYS */;
 INSERT INTO `return_action` (`return_action_id`, `language_id`, `name`) VALUES
 	(1, 2, 'Refunded'),
@@ -2473,6 +2672,7 @@ INSERT INTO `return_action` (`return_action_id`, `language_id`, `name`) VALUES
 
 
 -- Dumping structure for table weorder.return_history
+DROP TABLE IF EXISTS `return_history`;
 CREATE TABLE IF NOT EXISTS `return_history` (
   `return_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `return_id` int(11) NOT NULL,
@@ -2484,11 +2684,13 @@ CREATE TABLE IF NOT EXISTS `return_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.return_history: 0 rows
+DELETE FROM `return_history`;
 /*!40000 ALTER TABLE `return_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `return_history` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.return_reason
+DROP TABLE IF EXISTS `return_reason`;
 CREATE TABLE IF NOT EXISTS `return_reason` (
   `return_reason_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2497,6 +2699,7 @@ CREATE TABLE IF NOT EXISTS `return_reason` (
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.return_reason: 5 rows
+DELETE FROM `return_reason`;
 /*!40000 ALTER TABLE `return_reason` DISABLE KEYS */;
 INSERT INTO `return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
 	(1, 2, 'Dead On Arrival'),
@@ -2508,6 +2711,7 @@ INSERT INTO `return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
 
 
 -- Dumping structure for table weorder.return_status
+DROP TABLE IF EXISTS `return_status`;
 CREATE TABLE IF NOT EXISTS `return_status` (
   `return_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2516,6 +2720,7 @@ CREATE TABLE IF NOT EXISTS `return_status` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.return_status: 3 rows
+DELETE FROM `return_status`;
 /*!40000 ALTER TABLE `return_status` DISABLE KEYS */;
 INSERT INTO `return_status` (`return_status_id`, `language_id`, `name`) VALUES
 	(1, 2, 'Pending'),
@@ -2525,6 +2730,7 @@ INSERT INTO `return_status` (`return_status_id`, `language_id`, `name`) VALUES
 
 
 -- Dumping structure for table weorder.review
+DROP TABLE IF EXISTS `review`;
 CREATE TABLE IF NOT EXISTS `review` (
   `review_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2540,11 +2746,13 @@ CREATE TABLE IF NOT EXISTS `review` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.review: 0 rows
+DELETE FROM `review`;
 /*!40000 ALTER TABLE `review` DISABLE KEYS */;
 /*!40000 ALTER TABLE `review` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.setting
+DROP TABLE IF EXISTS `setting`;
 CREATE TABLE IF NOT EXISTS `setting` (
   `setting_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -2553,9 +2761,10 @@ CREATE TABLE IF NOT EXISTS `setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3187 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3398 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.setting: 142 rows
+-- Dumping data for table weorder.setting: 147 rows
+DELETE FROM `setting`;
 /*!40000 ALTER TABLE `setting` DISABLE KEYS */;
 INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `serialized`) VALUES
 	(1, 0, 'shipping', 'shipping_sort_order', '3', 0),
@@ -2588,122 +2797,124 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(54, 0, 'reward', 'reward_status', '1', 0),
 	(56, 0, 'affiliate', 'affiliate_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:2:"10";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(2346, 0, 'category', 'category_module', 'a:2:{i:0;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:4:{s:9:"layout_id";s:2:"13";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(3395, 0, 'config', 'config_error_filename', 'error.txt', 0),
 	(60, 0, 'account', 'account_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"6";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 	(95, 0, 'voucher', 'voucher_status', '1', 0),
 	(103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 	(104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
 	(109, 0, 'banner', 'banner_module', 'a:1:{i:0;a:8:{s:9:"banner_id";s:1:"6";s:5:"width";s:3:"182";s:6:"height";s:3:"182";s:11:"resize_type";s:7:"default";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
-	(3178, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
-	(3177, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
-	(3176, 0, 'config', 'config_seo_url', '1', 0),
-	(3175, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-	(3170, 0, 'config', 'config_fraud_key', '', 0),
-	(3171, 0, 'config', 'config_fraud_score', '', 0),
-	(3172, 0, 'config', 'config_fraud_status_id', '7', 0),
-	(3173, 0, 'config', 'config_secure', '0', 0),
-	(3174, 0, 'config', 'config_shared', '0', 0),
-	(3169, 0, 'config', 'config_fraud_detection', '0', 0),
-	(3168, 0, 'config', 'config_alert_emails', '', 0),
-	(3167, 0, 'config', 'config_account_mail', '0', 0),
-	(3166, 0, 'config', 'config_alert_mail', '0', 0),
-	(3165, 0, 'config', 'config_smtp_timeout', '5', 0),
-	(3164, 0, 'config', 'config_smtp_port', '25', 0),
-	(3163, 0, 'config', 'config_smtp_password', '', 0),
-	(3162, 0, 'config', 'config_smtp_username', '', 0),
-	(3161, 0, 'config', 'config_smtp_host', '', 0),
-	(3159, 0, 'config', 'config_mail_protocol', 'mail', 0),
-	(3160, 0, 'config', 'config_mail_parameter', '', 0),
-	(3158, 0, 'config', 'config_ftp_status', '0', 0),
-	(3157, 0, 'config', 'config_ftp_root', '', 0),
-	(3156, 0, 'config', 'config_ftp_password', '', 0),
-	(3155, 0, 'config', 'config_ftp_username', '', 0),
-	(3154, 0, 'config', 'config_ftp_port', '21', 0),
-	(3153, 0, 'config', 'config_ftp_host', 'localhost', 0),
-	(3152, 0, 'config', 'config_image_cart_height', '47', 0),
-	(3151, 0, 'config', 'config_image_cart_width', '47', 0),
-	(3150, 0, 'config', 'config_image_wishlist_height', '47', 0),
-	(3149, 0, 'config', 'config_image_wishlist_width', '47', 0),
-	(3148, 0, 'config', 'config_image_compare_height', '90', 0),
-	(3147, 0, 'config', 'config_image_compare_width', '90', 0),
+	(3384, 0, 'config', 'config_shared', '0', 0),
+	(3385, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+	(3389, 0, 'config', 'config_maintenance', '0', 0),
+	(3390, 0, 'config', 'config_password', '1', 0),
+	(3391, 0, 'config', 'config_encryption', '7f339d82bc9ee711ed084c4a101fbb25', 0),
+	(3392, 0, 'config', 'config_compression', '0', 0),
+	(3393, 0, 'config', 'config_error_display', '0', 0),
+	(3394, 0, 'config', 'config_error_log', '1', 0),
+	(3386, 0, 'config', 'config_seo_url', '1', 0),
+	(3387, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
+	(3388, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
+	(3383, 0, 'config', 'config_secure', '0', 0),
+	(3382, 0, 'config', 'config_fraud_status_id', '7', 0),
+	(3381, 0, 'config', 'config_fraud_score', '', 0),
+	(3380, 0, 'config', 'config_fraud_key', '', 0),
+	(3379, 0, 'config', 'config_fraud_detection', '0', 0),
+	(3378, 0, 'config', 'config_alert_emails', '', 0),
+	(3377, 0, 'config', 'config_account_mail', '0', 0),
+	(3376, 0, 'config', 'config_alert_mail', '0', 0),
+	(3375, 0, 'config', 'config_smtp_timeout', '5', 0),
+	(3374, 0, 'config', 'config_smtp_port', '25', 0),
+	(3373, 0, 'config', 'config_smtp_password', '', 0),
+	(3372, 0, 'config', 'config_smtp_username', '', 0),
+	(3371, 0, 'config', 'config_smtp_host', '', 0),
+	(3370, 0, 'config', 'config_mail_parameter', '', 0),
+	(3369, 0, 'config', 'config_mail_protocol', 'mail', 0),
+	(3368, 0, 'config', 'config_ftp_status', '0', 0),
+	(3367, 0, 'config', 'config_ftp_root', '', 0),
+	(3366, 0, 'config', 'config_ftp_password', '', 0),
+	(3365, 0, 'config', 'config_ftp_username', '', 0),
+	(3364, 0, 'config', 'config_ftp_port', '21', 0),
+	(3363, 0, 'config', 'config_ftp_host', 'localhost', 0),
 	(767, 0, 'slideshow', 'slideshow_module', 'a:3:{i:0;a:7:{s:9:"banner_id";s:1:"8";s:5:"width";s:3:"759";s:6:"height";s:3:"380";s:9:"layout_id";s:2:"12";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:7:{s:9:"banner_id";s:1:"7";s:5:"width";s:3:"996";s:6:"height";s:3:"481";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:7:{s:9:"banner_id";s:1:"9";s:5:"width";s:3:"782";s:6:"height";s:3:"438";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(3145, 0, 'config', 'config_image_related_width', '400', 0),
-	(3146, 0, 'config', 'config_image_related_height', '640', 0),
-	(3144, 0, 'config', 'config_image_additional_height', '150', 0),
-	(3143, 0, 'config', 'config_image_additional_width', '150', 0),
-	(3142, 0, 'config', 'config_image_product_height', '640', 0),
-	(3140, 0, 'config', 'config_image_popup_height', '600', 0),
-	(3141, 0, 'config', 'config_image_product_width', '400', 0),
-	(3139, 0, 'config', 'config_image_popup_width', '400', 0),
-	(3138, 0, 'config', 'config_image_thumb_height', '228', 0),
-	(3137, 0, 'config', 'config_image_thumb_width', '228', 0),
-	(3136, 0, 'config', 'config_image_news_height', '341', 0),
-	(3135, 0, 'config', 'config_image_news_width', '242', 0),
-	(3134, 0, 'config', 'config_image_category_height', '80', 0),
-	(3133, 0, 'config', 'config_image_category_width', '80', 0),
-	(3132, 0, 'config', 'config_icon', 'data/cart.png', 0),
-	(3131, 0, 'config', 'config_logo', 'data/wesale.jpg', 0),
-	(3130, 0, 'config', 'config_return_status_id', '2', 0),
-	(3129, 0, 'config', 'config_return_id', '0', 0),
-	(3127, 0, 'config', 'config_affiliate_id', '4', 0),
-	(3128, 0, 'config', 'config_commission', '5', 0),
-	(3126, 0, 'config', 'config_stock_status_id', '5', 0),
-	(3125, 0, 'config', 'config_stock_checkout', '0', 0),
-	(3124, 0, 'config', 'config_stock_warning', '0', 0),
-	(3123, 0, 'config', 'config_stock_display', '0', 0),
-	(3122, 0, 'config', 'config_complete_status_id', '5', 0),
-	(3121, 0, 'config', 'config_order_status_id', '1', 0),
-	(3120, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
-	(3119, 0, 'config', 'config_order_edit', '100', 0),
-	(3117, 0, 'config', 'config_guest_checkout', '1', 0),
-	(3118, 0, 'config', 'config_checkout_id', '3', 0),
-	(3116, 0, 'config', 'config_cart_weight', '1', 0),
-	(3114, 0, 'config', 'config_customer_price', '0', 0),
-	(3115, 0, 'config', 'config_account_id', '5', 0),
-	(3113, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
-	(3112, 0, 'config', 'config_customer_group_id', '1', 0),
-	(3111, 0, 'config', 'config_customer_online', '0', 0),
-	(3102, 0, 'config', 'config_product_count', '1', 0),
-	(3103, 0, 'config', 'config_review_status', '1', 0),
-	(3104, 0, 'config', 'config_download', '1', 0),
-	(3105, 0, 'config', 'config_voucher_min', '1', 0),
-	(3106, 0, 'config', 'config_voucher_max', '1000', 0),
-	(3107, 0, 'config', 'config_tax', '1', 0),
-	(3108, 0, 'config', 'config_vat', '0', 0),
-	(3109, 0, 'config', 'config_tax_default', 'shipping', 0),
-	(3110, 0, 'config', 'config_tax_customer', 'shipping', 0),
-	(3101, 0, 'config', 'config_admin_limit', '20', 0),
-	(3098, 0, 'config', 'config_length_class_id', '1', 0),
-	(3099, 0, 'config', 'config_weight_class_id', '1', 0),
-	(3100, 0, 'config', 'config_catalog_limit', '15', 0),
-	(3087, 0, 'config', 'config_fax', '', 0),
-	(3088, 0, 'config', 'config_title', 'Đặt hàng quốc tế - Weorder', 0),
-	(3089, 0, 'config', 'config_meta_description', 'Weorder', 0),
-	(3090, 0, 'config', 'config_template', 'default', 0),
-	(3091, 0, 'config', 'config_layout_id', '4', 0),
-	(3092, 0, 'config', 'config_country_id', '230', 0),
-	(3093, 0, 'config', 'config_zone_id', '3776', 0),
-	(3094, 0, 'config', 'config_language', 'vi', 0),
-	(3095, 0, 'config', 'config_admin_language', 'vi', 0),
-	(3096, 0, 'config', 'config_currency', 'USD', 0),
-	(3097, 0, 'config', 'config_currency_auto', '1', 0),
-	(3086, 0, 'config', 'config_telephone', '123456789', 0),
-	(3085, 0, 'config', 'config_email', 'admin@admin.com', 0),
-	(3084, 0, 'config', 'config_address', 'Address 1', 0),
-	(3083, 0, 'config', 'config_owner', 'Đặt hàng quốc tế', 0),
-	(3082, 0, 'config', 'config_name', 'Đặt hàng quốc tế', 0),
-	(3179, 0, 'config', 'config_maintenance', '0', 0),
-	(3180, 0, 'config', 'config_password', '1', 0),
-	(3181, 0, 'config', 'config_encryption', '7f339d82bc9ee711ed084c4a101fbb25', 0),
-	(3182, 0, 'config', 'config_compression', '0', 0),
-	(3183, 0, 'config', 'config_error_display', '0', 0),
-	(3184, 0, 'config', 'config_error_log', '1', 0),
-	(3185, 0, 'config', 'config_error_filename', 'error.txt', 0),
-	(3186, 0, 'config', 'config_google_analytics', '', 0);
+	(3362, 0, 'config', 'config_image_cart_height', '100', 0),
+	(3361, 0, 'config', 'config_image_cart_width', '120', 0),
+	(3360, 0, 'config', 'config_image_wishlist_height', '47', 0),
+	(3359, 0, 'config', 'config_image_wishlist_width', '47', 0),
+	(3358, 0, 'config', 'config_image_compare_height', '90', 0),
+	(3357, 0, 'config', 'config_image_compare_width', '90', 0),
+	(3356, 0, 'config', 'config_image_related_height', '640', 0),
+	(3355, 0, 'config', 'config_image_related_width', '400', 0),
+	(3354, 0, 'config', 'config_image_additional_height', '150', 0),
+	(3353, 0, 'config', 'config_image_additional_width', '150', 0),
+	(3352, 0, 'config', 'config_image_product_height', '640', 0),
+	(3351, 0, 'config', 'config_image_product_width', '400', 0),
+	(3348, 0, 'config', 'config_image_thumb_height', '228', 0),
+	(3349, 0, 'config', 'config_image_popup_width', '400', 0),
+	(3350, 0, 'config', 'config_image_popup_height', '600', 0),
+	(3347, 0, 'config', 'config_image_thumb_width', '228', 0),
+	(3346, 0, 'config', 'config_image_news_height', '341', 0),
+	(3345, 0, 'config', 'config_image_news_width', '242', 0),
+	(3344, 0, 'config', 'config_image_category_height', '80', 0),
+	(3342, 0, 'config', 'config_icon', 'data/cart.png', 0),
+	(3343, 0, 'config', 'config_image_category_width', '80', 0),
+	(3341, 0, 'config', 'config_logo', 'data/wesale.jpg', 0),
+	(3340, 0, 'config', 'config_return_status_id', '2', 0),
+	(3338, 0, 'config', 'config_commission', '5', 0),
+	(3339, 0, 'config', 'config_return_id', '0', 0),
+	(3337, 0, 'config', 'config_affiliate_id', '4', 0),
+	(3336, 0, 'config', 'config_stock_status_id', '5', 0),
+	(3335, 0, 'config', 'config_stock_checkout', '0', 0),
+	(3334, 0, 'config', 'config_stock_warning', '0', 0),
+	(3333, 0, 'config', 'config_stock_display', '0', 0),
+	(3331, 0, 'config', 'config_order_status_id', '1', 0),
+	(3332, 0, 'config', 'config_complete_status_id', '5', 0),
+	(3330, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
+	(3328, 0, 'config', 'config_checkout_id', '3', 0),
+	(3329, 0, 'config', 'config_order_edit', '100', 0),
+	(3327, 0, 'config', 'config_guest_checkout', '1', 0),
+	(3326, 0, 'config', 'config_cart_weight', '1', 0),
+	(3325, 0, 'config', 'config_account_id', '5', 0),
+	(3324, 0, 'config', 'config_customer_price', '0', 0),
+	(3323, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
+	(3321, 0, 'config', 'config_customer_online', '0', 0),
+	(3322, 0, 'config', 'config_customer_group_id', '1', 0),
+	(3320, 0, 'config', 'config_tax_customer', 'shipping', 0),
+	(3319, 0, 'config', 'config_tax_default', 'shipping', 0),
+	(3317, 0, 'config', 'config_tax', '1', 0),
+	(3318, 0, 'config', 'config_vat', '0', 0),
+	(3316, 0, 'config', 'config_voucher_max', '1000', 0),
+	(3315, 0, 'config', 'config_voucher_min', '1', 0),
+	(3314, 0, 'config', 'config_download', '1', 0),
+	(3313, 0, 'config', 'config_review_status', '1', 0),
+	(3312, 0, 'config', 'config_product_count', '1', 0),
+	(3311, 0, 'config', 'config_admin_limit', '20', 0),
+	(3310, 0, 'config', 'config_catalog_limit', '15', 0),
+	(3309, 0, 'config', 'config_weight_class_id', '1', 0),
+	(3308, 0, 'config', 'config_length_class_id', '1', 0),
+	(3307, 0, 'config', 'config_currency_auto', '1', 0),
+	(3305, 0, 'config', 'config_admin_language', 'vi', 0),
+	(3306, 0, 'config', 'config_currency', 'USD', 0),
+	(3304, 0, 'config', 'config_language', 'vi', 0),
+	(3303, 0, 'config', 'config_zone_id', '3776', 0),
+	(3302, 0, 'config', 'config_country_id', '230', 0),
+	(3301, 0, 'config', 'config_layout_id', '4', 0),
+	(3297, 0, 'config', 'config_fax', '', 0),
+	(3298, 0, 'config', 'config_title', 'Đặt hàng quốc tế - Weorder', 0),
+	(3299, 0, 'config', 'config_meta_description', 'Weorder', 0),
+	(3300, 0, 'config', 'config_template', 'default', 0),
+	(3296, 0, 'config', 'config_telephone', '123456789', 0),
+	(3295, 0, 'config', 'config_email', 'admin@admin.com', 0),
+	(3294, 0, 'config', 'config_address', 'Address 1', 0),
+	(3293, 0, 'config', 'config_owner', 'Đặt hàng quốc tế', 0),
+	(3292, 0, 'config', 'config_name', 'Đặt hàng quốc tế', 0),
+	(3396, 0, 'config', 'config_google_analytics', '', 0),
+	(3397, 0, 'manufacturersdropdown', 'manufacturersdropdown_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1);
 /*!40000 ALTER TABLE `setting` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.stock_status
+DROP TABLE IF EXISTS `stock_status`;
 CREATE TABLE IF NOT EXISTS `stock_status` (
   `stock_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -2712,6 +2923,7 @@ CREATE TABLE IF NOT EXISTS `stock_status` (
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.stock_status: 4 rows
+DELETE FROM `stock_status`;
 /*!40000 ALTER TABLE `stock_status` DISABLE KEYS */;
 INSERT INTO `stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 	(7, 2, 'In Stock'),
@@ -2722,6 +2934,7 @@ INSERT INTO `stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 
 
 -- Dumping structure for table weorder.store
+DROP TABLE IF EXISTS `store`;
 CREATE TABLE IF NOT EXISTS `store` (
   `store_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -2731,11 +2944,13 @@ CREATE TABLE IF NOT EXISTS `store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.store: 0 rows
+DELETE FROM `store`;
 /*!40000 ALTER TABLE `store` DISABLE KEYS */;
 /*!40000 ALTER TABLE `store` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.tax_class
+DROP TABLE IF EXISTS `tax_class`;
 CREATE TABLE IF NOT EXISTS `tax_class` (
   `tax_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) NOT NULL,
@@ -2746,6 +2961,7 @@ CREATE TABLE IF NOT EXISTS `tax_class` (
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.tax_class: 2 rows
+DELETE FROM `tax_class`;
 /*!40000 ALTER TABLE `tax_class` DISABLE KEYS */;
 INSERT INTO `tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `date_modified`) VALUES
 	(9, 'Taxable Goods', 'Taxed Stuff', '2009-01-06 23:21:53', '2011-09-23 14:07:50'),
@@ -2754,6 +2970,7 @@ INSERT INTO `tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `
 
 
 -- Dumping structure for table weorder.tax_rate
+DROP TABLE IF EXISTS `tax_rate`;
 CREATE TABLE IF NOT EXISTS `tax_rate` (
   `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT,
   `geo_zone_id` int(11) NOT NULL DEFAULT '0',
@@ -2766,6 +2983,7 @@ CREATE TABLE IF NOT EXISTS `tax_rate` (
 ) ENGINE=MyISAM AUTO_INCREMENT=88 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.tax_rate: 2 rows
+DELETE FROM `tax_rate`;
 /*!40000 ALTER TABLE `tax_rate` DISABLE KEYS */;
 INSERT INTO `tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `date_added`, `date_modified`) VALUES
 	(86, 3, 'VAT (17.5%)', 17.5000, 'P', '2011-03-09 21:17:10', '2011-09-22 22:24:29'),
@@ -2774,6 +2992,7 @@ INSERT INTO `tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `d
 
 
 -- Dumping structure for table weorder.tax_rate_to_customer_group
+DROP TABLE IF EXISTS `tax_rate_to_customer_group`;
 CREATE TABLE IF NOT EXISTS `tax_rate_to_customer_group` (
   `tax_rate_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
@@ -2781,6 +3000,7 @@ CREATE TABLE IF NOT EXISTS `tax_rate_to_customer_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.tax_rate_to_customer_group: 2 rows
+DELETE FROM `tax_rate_to_customer_group`;
 /*!40000 ALTER TABLE `tax_rate_to_customer_group` DISABLE KEYS */;
 INSERT INTO `tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VALUES
 	(86, 1),
@@ -2789,6 +3009,7 @@ INSERT INTO `tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VA
 
 
 -- Dumping structure for table weorder.tax_rule
+DROP TABLE IF EXISTS `tax_rule`;
 CREATE TABLE IF NOT EXISTS `tax_rule` (
   `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT,
   `tax_class_id` int(11) NOT NULL,
@@ -2799,6 +3020,7 @@ CREATE TABLE IF NOT EXISTS `tax_rule` (
 ) ENGINE=MyISAM AUTO_INCREMENT=129 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.tax_rule: 4 rows
+DELETE FROM `tax_rule`;
 /*!40000 ALTER TABLE `tax_rule` DISABLE KEYS */;
 INSERT INTO `tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `priority`) VALUES
 	(121, 10, 86, 'payment', 1),
@@ -2809,6 +3031,7 @@ INSERT INTO `tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `
 
 
 -- Dumping structure for table weorder.url_alias
+DROP TABLE IF EXISTS `url_alias`;
 CREATE TABLE IF NOT EXISTS `url_alias` (
   `url_alias_id` int(11) NOT NULL AUTO_INCREMENT,
   `query` varchar(255) NOT NULL,
@@ -2816,7 +3039,8 @@ CREATE TABLE IF NOT EXISTS `url_alias` (
   PRIMARY KEY (`url_alias_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=850 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.url_alias: 27 rows
+-- Dumping data for table weorder.url_alias: 18 rows
+DELETE FROM `url_alias`;
 /*!40000 ALTER TABLE `url_alias` DISABLE KEYS */;
 INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(704, 'product_id=48', 'ipod_classic'),
@@ -2850,6 +3074,7 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 
 
 -- Dumping structure for table weorder.user
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_group_id` int(11) NOT NULL,
@@ -2867,13 +3092,15 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.user: 1 rows
+DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `code`, `ip`, `status`, `date_added`) VALUES
-	(1, 1, 'admin', 'eb3b619f4e511cdecae9a01f958f9322a445eeb6', '16c32b3ef', '', '', 'admin@admin.com', '', '127.0.0.1', 1, '2013-05-16 23:52:20');
+	(1, 1, 'admin', 'eb3b619f4e511cdecae9a01f958f9322a445eeb6', '16c32b3ef', '', '', 'admin@admin.com', '', '::1', 1, '2013-05-16 23:52:20');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.user_group
+DROP TABLE IF EXISTS `user_group`;
 CREATE TABLE IF NOT EXISTS `user_group` (
   `user_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -2882,14 +3109,16 @@ CREATE TABLE IF NOT EXISTS `user_group` (
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.user_group: 2 rows
+DELETE FROM `user_group`;
 /*!40000 ALTER TABLE `user_group` DISABLE KEYS */;
 INSERT INTO `user_group` (`user_group_id`, `name`, `permission`) VALUES
-	(1, 'Top Administrator', 'a:2:{s:6:"access";a:135:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";}s:6:"modify";a:135:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";}}'),
+	(1, 'Top Administrator', 'a:2:{s:6:"access";a:136:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";}s:6:"modify";a:136:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";}}'),
 	(10, 'Demonstration', '');
 /*!40000 ALTER TABLE `user_group` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.voucher
+DROP TABLE IF EXISTS `voucher`;
 CREATE TABLE IF NOT EXISTS `voucher` (
   `voucher_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2907,11 +3136,13 @@ CREATE TABLE IF NOT EXISTS `voucher` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.voucher: 0 rows
+DELETE FROM `voucher`;
 /*!40000 ALTER TABLE `voucher` DISABLE KEYS */;
 /*!40000 ALTER TABLE `voucher` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.voucher_history
+DROP TABLE IF EXISTS `voucher_history`;
 CREATE TABLE IF NOT EXISTS `voucher_history` (
   `voucher_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `voucher_id` int(11) NOT NULL,
@@ -2922,11 +3153,13 @@ CREATE TABLE IF NOT EXISTS `voucher_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.voucher_history: 0 rows
+DELETE FROM `voucher_history`;
 /*!40000 ALTER TABLE `voucher_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `voucher_history` ENABLE KEYS */;
 
 
 -- Dumping structure for table weorder.voucher_theme
+DROP TABLE IF EXISTS `voucher_theme`;
 CREATE TABLE IF NOT EXISTS `voucher_theme` (
   `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) NOT NULL,
@@ -2934,6 +3167,7 @@ CREATE TABLE IF NOT EXISTS `voucher_theme` (
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.voucher_theme: 3 rows
+DELETE FROM `voucher_theme`;
 /*!40000 ALTER TABLE `voucher_theme` DISABLE KEYS */;
 INSERT INTO `voucher_theme` (`voucher_theme_id`, `image`) VALUES
 	(8, 'data/demo/canon_eos_5d_2.jpg'),
@@ -2943,6 +3177,7 @@ INSERT INTO `voucher_theme` (`voucher_theme_id`, `image`) VALUES
 
 
 -- Dumping structure for table weorder.voucher_theme_description
+DROP TABLE IF EXISTS `voucher_theme_description`;
 CREATE TABLE IF NOT EXISTS `voucher_theme_description` (
   `voucher_theme_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -2951,6 +3186,7 @@ CREATE TABLE IF NOT EXISTS `voucher_theme_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.voucher_theme_description: 3 rows
+DELETE FROM `voucher_theme_description`;
 /*!40000 ALTER TABLE `voucher_theme_description` DISABLE KEYS */;
 INSERT INTO `voucher_theme_description` (`voucher_theme_id`, `language_id`, `name`) VALUES
 	(6, 2, 'Christmas'),
@@ -2960,6 +3196,7 @@ INSERT INTO `voucher_theme_description` (`voucher_theme_id`, `language_id`, `nam
 
 
 -- Dumping structure for table weorder.weight_class
+DROP TABLE IF EXISTS `weight_class`;
 CREATE TABLE IF NOT EXISTS `weight_class` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL DEFAULT '0.00000000',
@@ -2967,6 +3204,7 @@ CREATE TABLE IF NOT EXISTS `weight_class` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.weight_class: 4 rows
+DELETE FROM `weight_class`;
 /*!40000 ALTER TABLE `weight_class` DISABLE KEYS */;
 INSERT INTO `weight_class` (`weight_class_id`, `value`) VALUES
 	(1, 1.00000000),
@@ -2977,6 +3215,7 @@ INSERT INTO `weight_class` (`weight_class_id`, `value`) VALUES
 
 
 -- Dumping structure for table weorder.weight_class_description
+DROP TABLE IF EXISTS `weight_class_description`;
 CREATE TABLE IF NOT EXISTS `weight_class_description` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -2986,6 +3225,7 @@ CREATE TABLE IF NOT EXISTS `weight_class_description` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.weight_class_description: 4 rows
+DELETE FROM `weight_class_description`;
 /*!40000 ALTER TABLE `weight_class_description` DISABLE KEYS */;
 INSERT INTO `weight_class_description` (`weight_class_id`, `language_id`, `title`, `unit`) VALUES
 	(1, 2, 'Kilogram', 'kg'),
@@ -2996,6 +3236,7 @@ INSERT INTO `weight_class_description` (`weight_class_id`, `language_id`, `title
 
 
 -- Dumping structure for table weorder.zone
+DROP TABLE IF EXISTS `zone`;
 CREATE TABLE IF NOT EXISTS `zone` (
   `zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
@@ -3005,7 +3246,8 @@ CREATE TABLE IF NOT EXISTS `zone` (
   PRIMARY KEY (`zone_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4033 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.zone: 3.985 rows
+-- Dumping data for table weorder.zone: 3,985 rows
+DELETE FROM `zone`;
 /*!40000 ALTER TABLE `zone` DISABLE KEYS */;
 INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 	(1, 1, 'Badakhshan', 'BDS', 1),
@@ -6997,6 +7239,7 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 
 
 -- Dumping structure for table weorder.zone_to_geo_zone
+DROP TABLE IF EXISTS `zone_to_geo_zone`;
 CREATE TABLE IF NOT EXISTS `zone_to_geo_zone` (
   `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
@@ -7008,6 +7251,7 @@ CREATE TABLE IF NOT EXISTS `zone_to_geo_zone` (
 ) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.zone_to_geo_zone: 2 rows
+DELETE FROM `zone_to_geo_zone`;
 /*!40000 ALTER TABLE `zone_to_geo_zone` DISABLE KEYS */;
 INSERT INTO `zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, `geo_zone_id`, `date_added`, `date_modified`) VALUES
 	(57, 222, 0, 3, '2010-02-26 22:33:24', '0000-00-00 00:00:00'),
