@@ -23,7 +23,9 @@
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/register.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/style000.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/category.css" />
+        <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/stylesheet.css" />
         <link type="text/css" href="catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/colorbox/colorbox.css" media="screen" />
 
         <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
@@ -37,6 +39,7 @@
         <script type="text/javascript" src="catalog/view/javascript/jquery00.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/common.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/jquery/tabs.js"></script>
+        <script type="text/javascript" src="catalog/view/javascript/jquery/colorbox/jquery.colorbox-min.js"></script>
         <!--[if IE 7]> 
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/ie7.css" />
         <![endif]-->

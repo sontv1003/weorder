@@ -10,7 +10,7 @@ $_['text_your_details']    = 'Thông tin cá nhân';
 $_['text_your_address']    = 'Địa chỉ của bạn';
 $_['text_newsletter']      = 'Thư thông báo';
 $_['text_your_password']   = 'Mật khẩu';
-$_['text_agree']           = 'Tôi đã đọc và đồng ý với điều khoản <a class="fancybox" href="%s" alt="%s"><b>%s</b></a>';
+$_['text_agree']           = '<span>Tôi đã đọc và đồng ý với</span> <a href="%s" alt="%s">%s</a>';
 
 // Entry
 $_['entry_firstname']           = 'Tên:';

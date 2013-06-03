@@ -381,7 +381,7 @@
 
 </div>
 <?php echo $content_bottom; ?></div>
-
+<?php echo $footer; ?>
 <script type="text/javascript"><!--
     $('#button-cart').bind('click', function() {
         $.ajax({

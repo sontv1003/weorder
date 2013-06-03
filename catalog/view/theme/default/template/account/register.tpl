@@ -2,21 +2,22 @@
 <?php if ($error_warning) { ?>
 <div class="warning"><?php echo $error_warning; ?></div>
 <?php } ?>
-<?php echo $column_left; ?><?php echo $column_right; ?>
-<div id="content"><?php echo $content_top; ?>
+<div id="content">
+  <?php echo $content_top; ?>
   <div class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
     <?php } ?>
   </div>
+<?php echo $column_left; ?><?php echo $column_right; ?>
   <h1><?php echo $heading_title; ?></h1>
   <p><?php echo $text_account_already; ?></p>
-  <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+  <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="frn_register">
     <h2><?php echo $text_your_details; ?></h2>
     <div class="content">
       <table class="form">
         <tr>
-          <td><span class="required">*</span> <?php echo $entry_firstname; ?></td>
+            <td><span class="required">*</span> <span class="txt_label"><?php echo $entry_firstname; ?></span></td>
           <td><input type="text" name="firstname" value="<?php echo $firstname; ?>" />
             <?php if ($error_firstname) { ?>
             <span class="error"><?php echo $error_firstname; ?></span>
@@ -175,18 +176,19 @@
     </div>
     <?php if ($text_agree) { ?>
     <div class="buttons">
-      <div class="right"><?php echo $text_agree; ?>
+      <div style="color: #000; font-family: Arial;">
+        <input type="submit" value="<?php echo $button_continue; ?>" class="button" />
         <?php if ($agree) { ?>
         <input type="checkbox" name="agree" value="1" checked="checked" />
         <?php } else { ?>
         <input type="checkbox" name="agree" value="1" />
         <?php } ?>
-        <input type="submit" value="<?php echo $button_continue; ?>" class="button" />
+        <?php echo $text_agree; ?>
       </div>
     </div>
     <?php } else { ?>
     <div class="buttons">
-      <div class="right">
+      <div>
         <input type="submit" value="<?php echo $button_continue; ?>" class="button" />
       </div>
     </div>
