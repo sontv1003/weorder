@@ -10,11 +10,34 @@
 <?php } ?>
 <?php echo $column_left; ?><?php echo $column_right; ?>
 <div id="content"><?php echo $content_top; ?>
-  <div class="breadcrumb">
+<!--  <div class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
     <?php } ?>
-  </div>
+  </div>-->
+    <div id="tbm2">
+        <ul>
+            <li>
+                <a href="#" id="chot">cho link sản phẩm vào giỏ hàng</a>
+            </li>
+            <li>
+                <a href="#">gửi đơn hàng và xác nhận thông tin</a>
+            </li>
+            <li>
+                <a href="#">thanh toán</a>
+            </li>
+            <li>
+                <a href="#">nhận hàng</a>
+            </li>
+                
+        </ul>
+    </div>
+    <div class="l-pageWrapper" style="margin-top: 20px;">
+        <img class="fl" src="catalog/view/theme/default/images/giohang.png" style="height: 115px; padding-bottom: 17px; margin-top: 20px; margin-right: 30px;">
+        <img class="fl" style="width: 855px;" id="camket" src="catalog/view/theme/default/images/camket.jpg">
+        <div class="clear"></div>
+    </div>
+    
   <h1><?php echo $heading_title; ?>
     <?php if ($weight) { ?>
     &nbsp;(<?php echo $weight; ?>)
@@ -34,7 +57,9 @@
           </tr>
         </thead>
         <tbody>
-          <?php foreach ($products as $product) { ?>
+          <?php 
+          $total_quantity = 0;
+          foreach ($products as $product) { ?>
           <tr>
             <td class="image"><?php if ($product['thumb']) { ?>
               <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" /></a>
@@ -52,12 +77,18 @@
               <small><?php echo $product['reward']; ?></small>
               <?php } ?></td>
             <td class="model"><?php echo $product['model']; ?></td>
-            <td class="quantity"><input type="text" name="quantity[<?php echo $product['key']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" />
+            <td class="quantity">
+              <input style="float: left; margin-right: 10px;" type="text" name="quantity[<?php echo $product['key']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" />
               &nbsp;
-              <input type="image" src="catalog/view/theme/default/image/update.png" alt="<?php echo $button_update; ?>" title="<?php echo $button_update; ?>" />
-              &nbsp;<a href="<?php echo $product['remove']; ?>"><img src="catalog/view/theme/default/image/remove.png" alt="<?php echo $button_remove; ?>" title="<?php echo $button_remove; ?>" /></a></td>
+              <input style="float: left; margin-right: 10px;" type="image" src="catalog/view/theme/default/images/update.png" alt="<?php echo $button_update; ?>" title="<?php echo $button_update; ?>" />
+              &nbsp;
+              <a style="float: left;" href="<?php echo $product['remove']; ?>"><img src="catalog/view/theme/default/images/remove.png" alt="<?php echo $button_remove; ?>" title="<?php echo $button_remove; ?>" /></a>
+              <div class="clear"></div>
+            </td>
+            
             <td class="price"><?php echo $product['price']; ?></td>
             <td class="total"><?php echo $product['total']; ?></td>
+            <?php $total_quantity += $product['quantity'];?>
           </tr>
           <?php } ?>
           <?php foreach ($vouchers as $vouchers) { ?>
@@ -66,7 +97,7 @@
             <td class="name"><?php echo $vouchers['description']; ?></td>
             <td class="model"></td>
             <td class="quantity"><input type="text" name="" value="1" size="1" disabled="disabled" />
-              &nbsp;<a href="<?php echo $vouchers['remove']; ?>"><img src="catalog/view/theme/default/image/remove.png" alt="<?php echo $button_remove; ?>" title="<?php echo $button_remove; ?>" /></a></td>
+              &nbsp;<a href="<?php echo $vouchers['remove']; ?>"><img src="catalog/view/theme/default/images/remove.png" alt="<?php echo $button_remove; ?>" title="<?php echo $button_remove; ?>" /></a></td>
             <td class="price"><?php echo $vouchers['amount']; ?></td>
             <td class="total"><?php echo $vouchers['amount']; ?></td>
           </tr>
@@ -180,16 +211,40 @@
     </div>
   </div>
   <?php } ?>
-  <div class="cart-total">
+<!--  <div class="cart-total">
     <table id="total">
+    <??>
       <?php foreach ($totals as $total) { ?>
       <tr>
-        <td class="right"><b><?php echo $total['title']; ?>:</b></td>
-        <td class="right"><?php echo $total['text']; ?></td>
+        <td class="right"><b><?php echo $total['title']; ?></b></td>
+        <td class="right"><b><?php echo $total['text']; ?></b></td>
       </tr>
       <?php } ?>
     </table>
+  </div>-->
+  <div class="box-bgcolor payment_cart">
+      
+      <?php $i=0; foreach ($totals as $total) { ?>
+          <?php if($i == 0) { ?>
+              <ul>
+                  <li style="background-color:#444; width: 350px;">Tổng số lượng trong giỏ hàng là </li>
+                  <li style="background-color:#222; width: 165px; color:#fff"><?php echo $total_quantity ?></li>
+                  <li style="background-color:#444; width: 200px;"><?php echo $total['title']; ?></li>
+                  <li style="background-color:#222; width: 200px; color:#fff"><?php echo $total['text']; ?></li>
+              </ul>
+          <?php } else { ?>
+      
+      <div>
+        <div class="fr" style="width: 220px; text-align: center"><b><?php echo $total['text']; ?></b></div>
+        <div class="fr" style="width: 220px; text-align: center"><b><?php echo $total['title']; ?></b></div>
+        <div class="clear"></div>
+      </div>
+      
+    <?php } 
+        $i++;
+    }?>
   </div>
+  <div class="clear"></div>
   <div class="buttons">
     <div class="right"><a href="<?php echo $checkout; ?>" class="button"><?php echo $button_checkout; ?></a></div>
     <div class="center"><a href="<?php echo $continue; ?>" class="button"><?php echo $button_shopping; ?></a></div>
