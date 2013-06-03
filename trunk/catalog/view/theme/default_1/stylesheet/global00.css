@@ -189,6 +189,37 @@ select {font:normal 12px "Arial";color:#000;}
 .columns input[type=file] {background:#fff;border:1px solid #ddd;}
 .columns textarea {width:668px !important;height:100px;overflow:auto !important;}
 
+#content label,
+#content .radio span,
+#content .select span {font:normal 12px "Arial";color:#555;}
+
+#content input[type=text],
+#content input[type=password],
+#content textarea,
+#content select {padding:3px;background:#fff;border:1px solid #ddd;
+-webkit-transition:all .5s linear;
+   -moz-transition:all .5s linear;
+    -ms-transition:all .5s linear;
+     -o-transition:all .5s linear;
+        transition:all .5s linear;
+}
+
+#content select {padding:0px;}
+
+#content input[type=text]:focus,
+#content input[type=password]:focus,
+#content textarea:focus,
+#content select:focus {border-color:#777;outline:1px solid #777;
+-webkit-transition:all .2s linear;
+   -moz-transition:all .2s linear;
+    -ms-transition:all .2s linear;
+     -o-transition:all .2s linear;
+        transition:all .2s linear;
+}
+
+#content input[type=file] {background:#fff;border:1px solid #ddd;}
+#content textarea {width:668px !important;height:100px;overflow:auto !important;}
+
 /* std */
 form.std {clear:both;}
 form.std h3 {padding-bottom:7px;border-width:0 0 1px 0;border-style:solid;}
