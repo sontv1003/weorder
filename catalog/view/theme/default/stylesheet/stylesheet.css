@@ -1,3 +1,9 @@
+@font-face
+{
+    font-family: UTM_Bebas;
+    src: url('./fonts/UTM_Bebas.ttf')
+        ,url('./fonts/UTM_Bebas.eot'); /* IE9 */
+}
 html {
 	overflow-y: scroll;
 	margin: 0;
@@ -117,8 +123,8 @@ label {
 }
 #header #cart {
 	position: absolute;
-	top: 0px;
-	right: 145px;
+	top: 5px;
+	right: -170px;
 	z-index: 9;
 	min-width: 300px;
 }
@@ -128,9 +134,9 @@ label {
 	margin-top: 15px;
 	padding-left: 14px;
 	padding-right: 14px;
-	border-top: 1px solid #FFFFFF;
+/*	border-top: 1px solid #FFFFFF;
 	border-left: 1px solid #FFFFFF;
-	border-right: 1px solid #EEEEEE;
+	border-right: 1px solid #EEEEEE;*/
 	background: #FFF;
 	position: relative;
 	z-index: 1;
@@ -155,8 +161,9 @@ label {
 	display: none;
 	position: relative;
 	top: -1px;
+        left: -135px;
 	padding: 8px;
-	min-height: 150px;
+	min-height: 70px;
 	border-top: 1px solid #EEEEEE;
 	border-left: 1px solid #EEEEEE;
 	border-right: 1px solid #EEEEEE;
@@ -192,16 +199,16 @@ label {
 }
 .mini-cart-info td {
 	color: #000;
-	vertical-align: top;
+	vertical-align: middle;
 	padding: 10px 5px;
-	border-bottom: 1px solid #EEEEEE;
+	border-bottom: 1px solid #EEEEEE;        
 }
 .mini-cart-info .image {
 	width: 1px;
 }
-.mini-cart-info .image img {
-	border: 1px solid #EEEEEE;
+.mini-cart-info .image img {	
 	text-align: left;
+        width: 60px;
 }
 .mini-cart-info .name small {
 	color: #666;
@@ -229,13 +236,18 @@ label {
 .mini-cart-total td {
 	color: #000;
 	padding: 4px;
+        font-family: 'UTM_Bebas';
+        font-size: 14px;
+}
+.mini-cart-total span {
+    font-size: 14px;
 }
 #header #cart .checkout {
 	text-align: right;
 	clear: both;
 }
 #header #cart .empty {
-	padding-top: 50px;
+	padding-top: 20px;
 	text-align: center;
 }
 #header #search {
@@ -1246,10 +1258,13 @@ table.radio tr.highlight:hover td {
 	padding: 7px;
 }
 .cart-info thead td {
-	color: #4D4D4D;
-	font-weight: bold;
-	background-color: #F7F7F7;
+	color: #fff;
+	/*font-weight: bold;*/
+	background-color: #000;
 	border-bottom: 1px solid #DDDDDD;
+        padding: 8px;
+        font-family: 'UTM_Bebas';
+        font-size: 18px;
 }
 .cart-info thead .image {
 	text-align: center;
@@ -1261,25 +1276,41 @@ table.radio tr.highlight:hover td {
 	text-align: right;
 }
 .cart-info tbody td {
-	vertical-align: top;
+	vertical-align: middle;
 	border-bottom: 1px solid #DDDDDD;
 }
 .cart-info tbody .image img {
-	border: 1px solid #DDDDDD;
+	/*border: 1px solid #DDDDDD;*/
 }
 .cart-info tbody .image {
 	text-align: center;
 }
-.cart-info tbody .name, .cart-info tbody .model, .cart-info tbody .quantity {
+.cart-info tbody .name, .cart-info tbody .name a, .cart-info tbody .quantity {
 	text-align: left;
+        font-family: 'UTM_Bebas';
+        font-size: 18px;
+}
+.cart-info tbody .model {
+    
 }
 .cart-info tbody .quantity input[type='image'], .cart-info tbody .quantity img {
 	position: relative;
 	top: 4px;
 	cursor: pointer;
 }
-.cart-info tbody .price, .cart-info tbody .total {
+.cart-info tbody .quantity {
+    width: 120px;
+}
+.cart-info tbody .total {
 	text-align: right;
+        font-family: 'UTM_Bebas';
+        font-size: 18px;
+        font-weight: normal;
+}
+.cart-info tbody .price {
+    font-size: 14px;
+    text-align: right;
+    font-weight: normal;
 }
 .cart-info tbody span.stock {
 	color: #F00;
@@ -1289,10 +1320,10 @@ table.radio tr.highlight:hover td {
 	display: none;
 }
 .cart-total {
-	border-top: 1px solid #DDDDDD;
-	overflow: auto;
-	padding-top: 8px;
-	margin-bottom: 15px;
+    border-top: 1px solid #DDDDDD;
+    overflow: auto;
+    padding-top: 8px;
+    margin-bottom: 15px;
 }
 .cart-total table {
 	float: right;
@@ -1300,6 +1331,9 @@ table.radio tr.highlight:hover td {
 .cart-total td {
 	padding: 3px;
 	text-align: right;
+}
+#cart-total {
+    color: #000;
 }
 /* checkout */
 .checkout-heading {
@@ -1395,13 +1429,13 @@ table.radio tr.highlight:hover td {
 }
 /* footer */ 
 #footer {
-	clear: both;
+/*	clear: both;
 	overflow: auto;
 	min-height: 100px;
 	padding: 20px;
 	border-top: 1px solid #DBDEE1;
 	border-bottom: 1px solid #DBDEE1;
-	background: #F8F8F8;
+	background: #F8F8F8;*/
 }
 #footer h3 {
 	color: #000000;

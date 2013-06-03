@@ -24,14 +24,14 @@
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/style000.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/category.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/stylesheet.css" />
-        <link type="text/css" href="catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+        <link type="text/css" href="catalog/view/default/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/colorbox/colorbox.css" media="screen" />
 
         <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/jquery.carouFredSel.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/jquery-1.js"></script>
-        <!--<script type="text/javascript" src="catalog/view/javascript/moderniz.js"></script>-->
+        <!--<script type="text/javascript" src="catalog/view/theme/default/javascript/moderniz.js"></script>-->
         <script type="text/javascript" src="catalog/view/javascript/jscript_.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/script00.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/nivo0000.js"></script>
@@ -65,7 +65,6 @@
         <div id="wrapper1">
             <div id="wrapper2">
                 <div id="wrapper3" class="clearfix">
-
                     <div class="login_link">
                         <div class="infoBar">
                             <div class="sitelinks left">
@@ -89,7 +88,9 @@
                     </div>
 
                     <header id="header" name="header">                  
-
+                            <span id="cart_item">
+                                <?php echo $cart; ?>
+                            </span>
                         <?php if ($logo) { ?>
                             <a href="<?php echo $home; ?>" style="text-decoration:none"><img width="130" src="<?php echo $logo; ?>" id="logowesale" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a>
                             <h1 id="sloganws">Ready for better service</h1>

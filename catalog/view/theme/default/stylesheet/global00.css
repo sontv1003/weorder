@@ -999,7 +999,7 @@ footer { width:100%; margin:0 auto; padding:0;}
 #tmfooterlinks ul li a:hover { color:#000;}
 
 
-#tmfooterlinks p {padding:14px 0 45px 1px;clear:both;color:#933; font-size:12px; line-height:22px; font-family:Tahoma, Geneva, sans-serif; }
+#tmfooterlinks p {padding:14px 0 0px 1px;clear:both;color:#933; font-size:12px; line-height:22px; font-family:Tahoma, Geneva, sans-serif; }
 #tmfooterlinks p a {color:#999999; text-decoration:none;}
 #tmfooterlinks p a:hover { color:#933;}
 
@@ -2148,20 +2148,20 @@ p.error404 img {margin:0 10px 0 0;}
     box-shadow: inset 1px 1px 3px #ddd;
 }
 .topsearch input[type="submit"]{
-    background: url(../images/buttons_.png) -36px -65px no-repeat #606060;
-    background: url(../images/buttons_.png) -36px -65px no-repeat -moz-linear-gradient(top,#606060 0%,#2F2F2F 100%);
-    background: url(../images/buttons_.png) -36px -65px no-repeat -webkit-gradient(linear,left top,left bottom,color-stop(0%,#606060),color-stop(100%,#2F2F2F));
-    background: url(../images/buttons_.png) -36px -65px no-repeat -webkit-linear-gradient(top,#606060 0%,#2F2F2F 100%);
-    background: url(../images/buttons_.png) -36px -65px no-repeat -o-linear-gradient(top,#606060 0%,#2F2F2F 100%);
-    background: url(../images/buttons_.png) -36px -65px no-repeat -ms-linear-gradient(top,#606060 0%,#2F2F2F 100%);
-    background: url(../images/buttons_.png) -36px -65px no-repeat linear-gradient(top,#606060 0%,#2F2F2F 100%);
+    background: url(../images/buttons_.png) -36px -68px no-repeat #606060;
+    background: url(../images/buttons_.png) -36px -68px no-repeat -moz-linear-gradient(top,#606060 0%,#2F2F2F 100%);
+    background: url(../images/buttons_.png) -36px -68px no-repeat -webkit-gradient(linear,left top,left bottom,color-stop(0%,#606060),color-stop(100%,#2F2F2F));
+    background: url(../images/buttons_.png) -36px -68px no-repeat -webkit-linear-gradient(top,#606060 0%,#2F2F2F 100%);
+    background: url(../images/buttons_.png) -36px -68px no-repeat -o-linear-gradient(top,#606060 0%,#2F2F2F 100%);
+    background: url(../images/buttons_.png) -36px -68px no-repeat -ms-linear-gradient(top,#606060 0%,#2F2F2F 100%);
+    background: url(../images/buttons_.png) -36px -68px no-repeat linear-gradient(top,#606060 0%,#2F2F2F 100%);
     position: absolute;
     right:0;
     top: 0;
     border-radius: 2px;
     text-indent: -400px;
     width:40px;
-    height:38px;
+    height:30px;
 }
 .topsearch input[type="submit"]:hover{box-shadow: inset 2px 2px 3px 0 #333;}
 
@@ -2645,4 +2645,18 @@ a.button {
 }
 #contact_frm input[type="text"]{
     width: 250px;
+}
+.box-content ul li {
+    margin-bottom: 5px;
+}
+.box-heading {
+    margin-bottom: 10px;
+}
+.payment_cart ul li {    
+    float: left;
+    padding: 5px 10px;
+    font-family: 'UTM_Bebas';
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
 }
