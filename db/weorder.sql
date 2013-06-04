@@ -3,7 +3,7 @@
 -- Server version:               5.5.16 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-06-04 01:31:24
+-- Date/time:                    2013-06-04 11:56:52
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -199,7 +199,7 @@ CREATE TABLE IF NOT EXISTS `banner` (
   PRIMARY KEY (`banner_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.banner: 2 rows
+-- Dumping data for table weorder.banner: 3 rows
 DELETE FROM `banner`;
 /*!40000 ALTER TABLE `banner` DISABLE KEYS */;
 INSERT INTO `banner` (`banner_id`, `name`, `status`) VALUES
@@ -219,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `banner_image` (
   PRIMARY KEY (`banner_image_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.banner_image: 4 rows
+-- Dumping data for table weorder.banner_image: 5 rows
 DELETE FROM `banner_image`;
 /*!40000 ALTER TABLE `banner_image` DISABLE KEYS */;
 INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VALUES
@@ -241,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `banner_image_description` (
   PRIMARY KEY (`banner_image_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.banner_image_description: 4 rows
+-- Dumping data for table weorder.banner_image_description: 5 rows
 DELETE FROM `banner_image_description`;
 /*!40000 ALTER TABLE `banner_image_description` DISABLE KEYS */;
 INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
@@ -771,7 +771,7 @@ DELETE FROM `currency`;
 /*!40000 ALTER TABLE `currency` DISABLE KEYS */;
 INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
 	(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.65480000, 1, '2013-06-03 12:15:21'),
-	(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2013-06-03 17:09:18'),
+	(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2013-06-04 05:00:16'),
 	(3, 'Euro', 'EUR', '', '€', '2', 0.76880002, 1, '2013-06-03 12:15:21');
 /*!40000 ALTER TABLE `currency` ENABLE KEYS */;
 
@@ -1112,7 +1112,8 @@ INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 	(428, 'module', 'vqmod_manager'),
 	(429, 'module', 'tnt_newscat'),
 	(430, 'module', 'filter'),
-	(431, 'module', 'manufacturersdropdown');
+	(431, 'module', 'manufacturersdropdown'),
+	(432, 'module', 'filteroption');
 /*!40000 ALTER TABLE `extension` ENABLE KEYS */;
 
 
@@ -1208,7 +1209,7 @@ CREATE TABLE IF NOT EXISTS `information` (
   PRIMARY KEY (`information_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.information: 4 rows
+-- Dumping data for table weorder.information: 7 rows
 DELETE FROM `information`;
 /*!40000 ALTER TABLE `information` DISABLE KEYS */;
 INSERT INTO `information` (`information_id`, `bottom`, `sort_order`, `top`, `top_order`, `status`) VALUES
@@ -1232,7 +1233,7 @@ CREATE TABLE IF NOT EXISTS `information_description` (
   PRIMARY KEY (`information_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.information_description: 6 rows
+-- Dumping data for table weorder.information_description: 7 rows
 DELETE FROM `information_description`;
 /*!40000 ALTER TABLE `information_description` DISABLE KEYS */;
 INSERT INTO `information_description` (`information_id`, `language_id`, `title`, `description`) VALUES
@@ -1255,7 +1256,7 @@ CREATE TABLE IF NOT EXISTS `information_to_layout` (
   PRIMARY KEY (`information_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.information_to_layout: 1 rows
+-- Dumping data for table weorder.information_to_layout: 0 rows
 DELETE FROM `information_to_layout`;
 /*!40000 ALTER TABLE `information_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `information_to_layout` ENABLE KEYS */;
@@ -1269,7 +1270,7 @@ CREATE TABLE IF NOT EXISTS `information_to_store` (
   PRIMARY KEY (`information_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.information_to_store: 4 rows
+-- Dumping data for table weorder.information_to_store: 7 rows
 DELETE FROM `information_to_store`;
 /*!40000 ALTER TABLE `information_to_store` DISABLE KEYS */;
 INSERT INTO `information_to_store` (`information_id`, `store_id`) VALUES
@@ -1315,7 +1316,7 @@ CREATE TABLE IF NOT EXISTS `layout` (
   PRIMARY KEY (`layout_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.layout: 12 rows
+-- Dumping data for table weorder.layout: 13 rows
 DELETE FROM `layout`;
 /*!40000 ALTER TABLE `layout` DISABLE KEYS */;
 INSERT INTO `layout` (`layout_id`, `name`) VALUES
@@ -1345,7 +1346,7 @@ CREATE TABLE IF NOT EXISTS `layout_route` (
   PRIMARY KEY (`layout_route_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.layout_route: 11 rows
+-- Dumping data for table weorder.layout_route: 13 rows
 DELETE FROM `layout_route`;
 /*!40000 ALTER TABLE `layout_route` DISABLE KEYS */;
 INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
@@ -1464,7 +1465,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   PRIMARY KEY (`news_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table weorder.news: 3 rows
+-- Dumping data for table weorder.news: 12 rows
 DELETE FROM `news`;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
 INSERT INTO `news` (`news_id`, `manufacturer_id`, `image`, `date_available`, `sort_order`, `comment`, `approved`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
@@ -1598,7 +1599,7 @@ CREATE TABLE IF NOT EXISTS `news_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table weorder.news_description: 3 rows
+-- Dumping data for table weorder.news_description: 12 rows
 DELETE FROM `news_description`;
 /*!40000 ALTER TABLE `news_description` DISABLE KEYS */;
 INSERT INTO `news_description` (`news_id`, `language_id`, `name`, `short_description`, `description`, `meta_description`, `meta_keyword`) VALUES
@@ -1658,7 +1659,7 @@ CREATE TABLE IF NOT EXISTS `news_to_category` (
   PRIMARY KEY (`news_id`,`news_category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table weorder.news_to_category: 3 rows
+-- Dumping data for table weorder.news_to_category: 15 rows
 DELETE FROM `news_to_category`;
 /*!40000 ALTER TABLE `news_to_category` DISABLE KEYS */;
 INSERT INTO `news_to_category` (`news_id`, `news_category_id`) VALUES
@@ -1703,7 +1704,7 @@ CREATE TABLE IF NOT EXISTS `news_to_store` (
   PRIMARY KEY (`news_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table weorder.news_to_store: 3 rows
+-- Dumping data for table weorder.news_to_store: 12 rows
 DELETE FROM `news_to_store`;
 /*!40000 ALTER TABLE `news_to_store` DISABLE KEYS */;
 INSERT INTO `news_to_store` (`news_id`, `store_id`) VALUES
@@ -1731,21 +1732,14 @@ CREATE TABLE IF NOT EXISTS `option` (
   PRIMARY KEY (`option_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.option: 12 rows
+-- Dumping data for table weorder.option: 11 rows
 DELETE FROM `option`;
 /*!40000 ALTER TABLE `option` DISABLE KEYS */;
 INSERT INTO `option` (`option_id`, `type`, `sort_order`) VALUES
-	(1, 'radio', 2),
-	(2, 'checkbox', 3),
-	(4, 'text', 4),
-	(5, 'select', 1),
-	(6, 'textarea', 5),
-	(7, 'file', 6),
-	(8, 'date', 7),
-	(9, 'time', 8),
-	(10, 'datetime', 9),
-	(11, 'select', 1),
-	(12, 'date', 1);
+	(16, 'checkbox', 5),
+	(14, 'radio', 2),
+	(15, 'select', 3),
+	(13, 'image', 1);
 /*!40000 ALTER TABLE `option` ENABLE KEYS */;
 
 
@@ -1758,21 +1752,14 @@ CREATE TABLE IF NOT EXISTS `option_description` (
   PRIMARY KEY (`option_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.option_description: 12 rows
+-- Dumping data for table weorder.option_description: 11 rows
 DELETE FROM `option_description`;
 /*!40000 ALTER TABLE `option_description` DISABLE KEYS */;
 INSERT INTO `option_description` (`option_id`, `language_id`, `name`) VALUES
-	(1, 2, 'Radio'),
-	(2, 2, 'Checkbox'),
-	(4, 2, 'Text'),
-	(6, 2, 'Textarea'),
-	(8, 2, 'Date'),
-	(7, 2, 'File'),
-	(5, 2, 'Select'),
-	(9, 2, 'Time'),
-	(10, 2, 'Date &amp; Time'),
-	(12, 2, 'Delivery Date'),
-	(11, 2, 'Size');
+	(16, 2, 'Kích cỡ khác:'),
+	(15, 2, 'Kích cỡ theo số'),
+	(14, 2, 'Kích cỡ theo chữ'),
+	(13, 2, 'Màu Sắc');
 /*!40000 ALTER TABLE `option_description` ENABLE KEYS */;
 
 
@@ -1786,24 +1773,58 @@ CREATE TABLE IF NOT EXISTS `option_value` (
   PRIMARY KEY (`option_value_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.option_value: 18 rows
+-- Dumping data for table weorder.option_value: 14 rows
 DELETE FROM `option_value`;
 /*!40000 ALTER TABLE `option_value` DISABLE KEYS */;
 INSERT INTO `option_value` (`option_value_id`, `option_id`, `image`, `sort_order`) VALUES
-	(43, 1, '', 3),
-	(32, 1, '', 1),
-	(45, 2, '', 4),
-	(44, 2, '', 3),
-	(42, 5, '', 4),
-	(41, 5, '', 3),
-	(39, 5, '', 1),
-	(40, 5, '', 2),
-	(31, 1, '', 2),
-	(23, 2, '', 1),
-	(24, 2, '', 2),
-	(46, 11, '', 1),
-	(47, 11, '', 2),
-	(48, 11, '', 3);
+	(52, 13, 'data/colors/xanh_muoc_bien.png', 4),
+	(53, 13, 'data/colors/teal.png', 5),
+	(51, 13, 'data/colors/xam.png', 3),
+	(50, 13, 'data/colors/mau_nau.png', 2),
+	(49, 13, 'data/colors/black.png', 1),
+	(54, 13, 'data/colors/xanh_la_cay.png', 6),
+	(55, 13, 'data/colors/da_cam.png', 7),
+	(56, 13, 'data/colors/do.png', 8),
+	(57, 13, 'data/colors/hong.png', 9),
+	(58, 13, 'data/colors/tim.png', 10),
+	(59, 14, '', 1),
+	(60, 14, '', 2),
+	(61, 14, '', 3),
+	(62, 14, '', 4),
+	(63, 14, '', 5),
+	(64, 14, '', 6),
+	(65, 14, '', 7),
+	(66, 14, '', 8),
+	(67, 15, '', 0),
+	(68, 15, '', 0),
+	(69, 15, '', 0),
+	(70, 15, '', 0),
+	(71, 15, '', 0),
+	(72, 15, '', 0),
+	(73, 15, '', 0),
+	(74, 15, '', 0),
+	(75, 15, '', 0),
+	(76, 15, '', 0),
+	(77, 15, '', 0),
+	(78, 15, '', 0),
+	(79, 15, '', 0),
+	(80, 15, '', 0),
+	(81, 15, '', 0),
+	(82, 16, '', 0),
+	(83, 16, '', 0),
+	(84, 16, '', 0),
+	(85, 16, '', 0),
+	(86, 16, '', 0),
+	(87, 16, '', 0),
+	(88, 16, '', 0),
+	(89, 16, '', 0),
+	(90, 16, '', 0),
+	(91, 16, '', 0),
+	(92, 16, '', 0),
+	(93, 16, '', 0),
+	(94, 16, '', 0),
+	(95, 16, '', 0),
+	(96, 16, '', 0);
 /*!40000 ALTER TABLE `option_value` ENABLE KEYS */;
 
 
@@ -1817,24 +1838,58 @@ CREATE TABLE IF NOT EXISTS `option_value_description` (
   PRIMARY KEY (`option_value_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.option_value_description: 18 rows
+-- Dumping data for table weorder.option_value_description: 14 rows
 DELETE FROM `option_value_description`;
 /*!40000 ALTER TABLE `option_value_description` DISABLE KEYS */;
 INSERT INTO `option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
-	(43, 2, 1, 'Large'),
-	(32, 2, 1, 'Small'),
-	(45, 2, 2, 'Checkbox 4'),
-	(44, 2, 2, 'Checkbox 3'),
-	(31, 2, 1, 'Medium'),
-	(42, 2, 5, 'Yellow'),
-	(41, 2, 5, 'Green'),
-	(39, 2, 5, 'Red'),
-	(40, 2, 5, 'Blue'),
-	(23, 2, 2, 'Checkbox 1'),
-	(24, 2, 2, 'Checkbox 2'),
-	(48, 2, 11, 'Large'),
-	(47, 2, 11, 'Medium'),
-	(46, 2, 11, 'Small');
+	(54, 2, 13, 'Xanh lá cây'),
+	(55, 2, 13, 'Da cam'),
+	(53, 2, 13, 'Xanh dương'),
+	(52, 2, 13, 'Xanh nước biển'),
+	(51, 2, 13, 'Xám tro'),
+	(50, 2, 13, 'Nâu'),
+	(49, 2, 13, 'Đen'),
+	(56, 2, 13, 'Đỏ'),
+	(57, 2, 13, 'Hồng'),
+	(58, 2, 13, 'Tím'),
+	(59, 2, 14, 'XXXXL'),
+	(60, 2, 14, 'XS'),
+	(61, 2, 14, 'S'),
+	(62, 2, 14, 'M'),
+	(63, 2, 14, 'L'),
+	(64, 2, 14, 'XL'),
+	(65, 2, 14, 'XXL'),
+	(66, 2, 14, 'XXXL'),
+	(67, 2, 15, '26'),
+	(68, 2, 15, '27'),
+	(69, 2, 15, '28'),
+	(70, 2, 15, '29'),
+	(71, 2, 15, '30'),
+	(72, 2, 15, '31'),
+	(73, 2, 15, '32'),
+	(74, 2, 15, '33'),
+	(75, 2, 15, '34'),
+	(76, 2, 15, '35'),
+	(77, 2, 15, '36'),
+	(78, 2, 15, '37'),
+	(79, 2, 15, '38'),
+	(80, 2, 15, '39'),
+	(81, 2, 15, '40'),
+	(82, 2, 16, '0-XS'),
+	(83, 2, 16, '1-S'),
+	(84, 2, 16, '2-M'),
+	(85, 2, 16, '3-L'),
+	(86, 2, 16, '4-XL'),
+	(87, 2, 16, 'A75'),
+	(88, 2, 16, 'A80'),
+	(89, 2, 16, 'A85'),
+	(90, 2, 16, 'B70'),
+	(91, 2, 16, 'B75'),
+	(92, 2, 16, 'B80'),
+	(93, 2, 16, 'L'),
+	(94, 2, 16, 'M'),
+	(95, 2, 16, 'Onesize'),
+	(96, 2, 16, 'S');
 /*!40000 ALTER TABLE `option_value_description` ENABLE KEYS */;
 
 
@@ -2185,9 +2240,9 @@ CREATE TABLE IF NOT EXISTS `product` (
 DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-	(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'data/demo/htc_touch_hd_1.jpg', 5, 1, 100.0000, 200, 9, '2009-02-03', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:06:50', '2013-05-29 02:08:17', 6),
+	(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'data/demo/htc_touch_hd_1.jpg', 5, 1, 100.0000, 200, 9, '2009-02-03', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:06:50', '2013-05-29 02:08:17', 8),
 	(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'data/demo/palm_treo_pro_1.jpg', 6, 1, 279.9900, 0, 9, '2009-02-03', 133.00000000, 2, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0),
-	(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'data/1-single-thumbnail.jpg', 9, 1, 100.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2013-05-28 00:27:52', 37),
+	(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'data/1-single-thumbnail.jpg', 9, 1, 100.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2013-06-04 11:29:39', 38),
 	(31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'data/demo/nikon_d300_1.jpg', 0, 1, 80.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2011-09-30 01:06:00', 6),
 	(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'data/demo/ipod_touch_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 17:07:26', '2011-09-30 01:07:22', 0),
 	(33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'data/demo/samsung_syncmaster_941bw.jpg', 0, 1, 200.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 17:08:31', '2011-09-30 01:06:29', 0),
@@ -2196,7 +2251,7 @@ INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`
 	(36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'data/demo/ipod_nano_1.jpg', 8, 0, 100.0000, 100, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:09:19', '2011-09-30 01:07:12', 0),
 	(40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'data/demo/iphone_1.jpg', 8, 1, 101.0000, 0, 9, '2009-02-03', 10.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:12', '2011-09-30 01:06:53', 0),
 	(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'data/demo/imac_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:26', '2011-09-30 01:06:44', 0),
-	(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'data/demo/apple_cinema_30.jpg', 8, 1, 100.0000, 400, 9, '2009-02-04', 12.50000000, 1, 1.00000000, 2.00000000, 3.00000000, 1, 1, 2, 0, 1, '2009-02-03 21:07:37', '2013-05-21 22:06:34', 0),
+	(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'data/demo/apple_cinema_30.jpg', 8, 1, 100.0000, 400, 9, '2009-02-04', 12.50000000, 1, 1.00000000, 2.00000000, 3.00000000, 1, 1, 2, 0, 1, '2009-02-03 21:07:37', '2013-06-04 10:44:56', 0),
 	(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'data/demo/macbook_1.jpg', 8, 0, 500.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:07:49', '2011-09-30 01:05:46', 0),
 	(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'data/demo/macbook_air_1.jpg', 8, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:00', '2011-09-30 01:05:53', 0),
 	(45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'data/demo/macbook_pro_1.jpg', 8, 1, 2000.0000, 0, 100, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:17', '2011-09-15 22:22:01', 0),
@@ -2284,13 +2339,13 @@ CREATE TABLE IF NOT EXISTS `product_discount` (
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=444 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_discount: 6 rows
+-- Dumping data for table weorder.product_discount: 3 rows
 DELETE FROM `product_discount`;
 /*!40000 ALTER TABLE `product_discount` DISABLE KEYS */;
 INSERT INTO `product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
-	(443, 42, 1, 30, 1, 66.0000, '0000-00-00', '0000-00-00'),
-	(442, 42, 1, 20, 1, 77.0000, '0000-00-00', '0000-00-00'),
-	(441, 42, 1, 10, 1, 88.0000, '0000-00-00', '0000-00-00');
+	(449, 42, 1, 30, 1, 66.0000, '0000-00-00', '0000-00-00'),
+	(448, 42, 1, 20, 1, 77.0000, '0000-00-00', '0000-00-00'),
+	(447, 42, 1, 10, 1, 88.0000, '0000-00-00', '0000-00-00');
 /*!40000 ALTER TABLE `product_discount` ENABLE KEYS */;
 
 
@@ -2318,7 +2373,7 @@ CREATE TABLE IF NOT EXISTS `product_image` (
   PRIMARY KEY (`product_image_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2379 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_image: 63 rows
+-- Dumping data for table weorder.product_image: 61 rows
 DELETE FROM `product_image`;
 /*!40000 ALTER TABLE `product_image` DISABLE KEYS */;
 INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
@@ -2348,7 +2403,7 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 	(1990, 48, 'data/demo/ipod_classic_3.jpg', 0),
 	(1981, 40, 'data/demo/iphone_2.jpg', 0),
 	(1980, 40, 'data/demo/iphone_5.jpg', 0),
-	(2372, 30, 'data/1-single-thumbnail.jpg', 1),
+	(2390, 30, 'data/1-single-thumbnail.jpg', 2),
 	(2375, 47, 'data/demo/hp_3.jpg', 0),
 	(2377, 28, 'data/demo/htc_touch_hd_3.jpg', 0),
 	(2350, 41, 'data/demo/imac_2.jpg', 0),
@@ -2377,12 +2432,12 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 	(2324, 49, 'data/demo/samsung_tab_4.jpg', 0),
 	(2323, 49, 'data/demo/samsung_tab_3.jpg', 0),
 	(2322, 49, 'data/demo/samsung_tab_2.jpg', 0),
-	(2355, 42, 'data/demo/canon_eos_5d_1.jpg', 0),
-	(2354, 42, 'data/demo/compaq_presario.jpg', 0),
-	(2353, 42, 'data/demo/hp_1.jpg', 0),
-	(2352, 42, 'data/demo/canon_logo.jpg', 0),
-	(2356, 42, 'data/demo/canon_eos_5d_2.jpg', 0),
-	(2371, 30, 'data/1-single-thumbnail.jpg', 2);
+	(2388, 42, 'data/demo/canon_eos_5d_2.jpg', 0),
+	(2387, 42, 'data/demo/canon_eos_5d_1.jpg', 0),
+	(2386, 42, 'data/demo/compaq_presario.jpg', 0),
+	(2385, 42, 'data/demo/hp_1.jpg', 0),
+	(2389, 30, 'data/1-single-thumbnail.jpg', 1),
+	(2384, 42, 'data/demo/canon_logo.jpg', 0);
 /*!40000 ALTER TABLE `product_image` ENABLE KEYS */;
 
 
@@ -2397,22 +2452,15 @@ CREATE TABLE IF NOT EXISTS `product_option` (
   PRIMARY KEY (`product_option_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=227 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_option: 13 rows
+-- Dumping data for table weorder.product_option: 12 rows
 DELETE FROM `product_option`;
 /*!40000 ALTER TABLE `product_option` DISABLE KEYS */;
 INSERT INTO `product_option` (`product_option_id`, `product_id`, `option_id`, `option_value`, `required`) VALUES
-	(224, 35, 11, '', 1),
-	(225, 47, 12, '2011-04-22', 1),
-	(222, 42, 7, '', 1),
-	(219, 42, 8, '2011-02-20', 1),
-	(208, 42, 4, 'test', 1),
-	(218, 42, 1, '', 1),
-	(209, 42, 6, '', 1),
-	(217, 42, 5, '', 1),
-	(223, 42, 2, '', 1),
-	(226, 30, 5, '', 1),
-	(221, 42, 9, '22:25', 1),
-	(220, 42, 10, '2011-02-20 22:25', 1);
+	(231, 30, 14, '', 1),
+	(230, 30, 15, '', 1),
+	(229, 30, 13, '', 1),
+	(228, 42, 14, '', 1),
+	(227, 42, 13, '', 1);
 /*!40000 ALTER TABLE `product_option` ENABLE KEYS */;
 
 
@@ -2435,26 +2483,27 @@ CREATE TABLE IF NOT EXISTS `product_option_value` (
   PRIMARY KEY (`product_option_value_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_option_value: 17 rows
+-- Dumping data for table weorder.product_option_value: 16 rows
 DELETE FROM `product_option_value`;
 /*!40000 ALTER TABLE `product_option_value` DISABLE KEYS */;
 INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
-	(5, 218, 42, 1, 32, 96, 1, 10.0000, '+', 1, '+', 10.00000000, '+'),
-	(7, 218, 42, 1, 43, 300, 1, 30.0000, '+', 3, '+', 30.00000000, '+'),
-	(6, 218, 42, 1, 31, 146, 1, 20.0000, '+', 2, '-', 20.00000000, '+'),
-	(3, 217, 42, 5, 40, 300, 0, 3.0000, '+', 0, '+', 3.00000000, '+'),
-	(2, 217, 42, 5, 42, 200, 1, 2.0000, '+', 0, '+', 2.00000000, '+'),
-	(4, 217, 42, 5, 39, 92, 1, 4.0000, '+', 0, '+', 4.00000000, '+'),
-	(1, 217, 42, 5, 41, 100, 0, 1.0000, '+', 0, '+', 1.00000000, '+'),
-	(11, 223, 42, 2, 45, 3998, 1, 40.0000, '+', 0, '+', 40.00000000, '+'),
-	(9, 223, 42, 2, 24, 194, 1, 20.0000, '+', 0, '+', 20.00000000, '+'),
-	(10, 223, 42, 2, 44, 2696, 1, 30.0000, '+', 0, '+', 30.00000000, '+'),
-	(8, 223, 42, 2, 23, 48, 1, 10.0000, '+', 0, '+', 10.00000000, '+'),
+	(29, 231, 30, 14, 63, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(28, 230, 30, 15, 69, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(27, 230, 30, 15, 68, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(26, 230, 30, 15, 67, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(25, 229, 30, 13, 50, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(22, 228, 42, 14, 62, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(21, 228, 42, 14, 63, 20, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(17, 227, 42, 13, 55, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(18, 227, 42, 13, 57, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(19, 227, 42, 13, 50, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(20, 227, 42, 13, 52, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(12, 224, 35, 11, 46, 0, 1, 5.0000, '+', 0, '+', 0.00000000, '+'),
 	(13, 224, 35, 11, 47, 10, 1, 10.0000, '+', 0, '+', 0.00000000, '+'),
 	(14, 224, 35, 11, 48, 15, 1, 15.0000, '+', 0, '+', 0.00000000, '+'),
-	(16, 226, 30, 5, 40, 5, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(15, 226, 30, 5, 39, 2, 1, 0.0000, '+', 0, '+', 0.00000000, '+');
+	(24, 229, 30, 13, 57, 100, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(23, 229, 30, 13, 55, 100, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(30, 231, 30, 14, 62, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+');
 /*!40000 ALTER TABLE `product_option_value` ENABLE KEYS */;
 
 
@@ -2466,7 +2515,7 @@ CREATE TABLE IF NOT EXISTS `product_related` (
   PRIMARY KEY (`product_id`,`related_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_related: 22 rows
+-- Dumping data for table weorder.product_related: 4 rows
 DELETE FROM `product_related`;
 /*!40000 ALTER TABLE `product_related` DISABLE KEYS */;
 INSERT INTO `product_related` (`product_id`, `related_id`) VALUES
@@ -2487,18 +2536,18 @@ CREATE TABLE IF NOT EXISTS `product_reward` (
   PRIMARY KEY (`product_reward_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=558 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_reward: 22 rows
+-- Dumping data for table weorder.product_reward: 19 rows
 DELETE FROM `product_reward`;
 /*!40000 ALTER TABLE `product_reward` DISABLE KEYS */;
 INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
-	(546, 42, 1, 100),
+	(559, 42, 1, 100),
 	(556, 47, 1, 300),
 	(557, 28, 1, 400),
 	(329, 43, 1, 600),
 	(339, 29, 1, 0),
 	(343, 48, 1, 0),
 	(335, 40, 1, 0),
-	(554, 30, 1, 200),
+	(560, 30, 1, 200),
 	(331, 44, 1, 700),
 	(333, 45, 1, 800),
 	(337, 31, 1, 0),
@@ -2527,13 +2576,13 @@ CREATE TABLE IF NOT EXISTS `product_special` (
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=457 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_special: 6 rows
+-- Dumping data for table weorder.product_special: 3 rows
 DELETE FROM `product_special`;
 /*!40000 ALTER TABLE `product_special` DISABLE KEYS */;
 INSERT INTO `product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
-	(440, 42, 1, 1, 90.0000, '0000-00-00', '0000-00-00'),
-	(456, 30, 1, 2, 90.0000, '0000-00-00', '0000-00-00'),
-	(455, 30, 1, 1, 80.0000, '0000-00-00', '0000-00-00');
+	(458, 42, 1, 1, 90.0000, '0000-00-00', '0000-00-00'),
+	(460, 30, 1, 2, 90.0000, '0000-00-00', '0000-00-00'),
+	(459, 30, 1, 1, 80.0000, '0000-00-00', '0000-00-00');
 /*!40000 ALTER TABLE `product_special` ENABLE KEYS */;
 
 
@@ -2545,7 +2594,7 @@ CREATE TABLE IF NOT EXISTS `product_to_category` (
   PRIMARY KEY (`product_id`,`category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_to_category: 4 rows
+-- Dumping data for table weorder.product_to_category: 6 rows
 DELETE FROM `product_to_category`;
 /*!40000 ALTER TABLE `product_to_category` DISABLE KEYS */;
 INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
@@ -2763,7 +2812,7 @@ CREATE TABLE IF NOT EXISTS `setting` (
   PRIMARY KEY (`setting_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3398 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.setting: 147 rows
+-- Dumping data for table weorder.setting: 143 rows
 DELETE FROM `setting`;
 /*!40000 ALTER TABLE `setting` DISABLE KEYS */;
 INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `serialized`) VALUES
@@ -2797,119 +2846,120 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(54, 0, 'reward', 'reward_status', '1', 0),
 	(56, 0, 'affiliate', 'affiliate_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:2:"10";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(2346, 0, 'category', 'category_module', 'a:2:{i:0;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:4:{s:9:"layout_id";s:2:"13";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(3395, 0, 'config', 'config_error_filename', 'error.txt', 0),
 	(60, 0, 'account', 'account_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"6";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 	(95, 0, 'voucher', 'voucher_status', '1', 0),
 	(103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 	(104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
 	(109, 0, 'banner', 'banner_module', 'a:1:{i:0;a:8:{s:9:"banner_id";s:1:"6";s:5:"width";s:3:"182";s:6:"height";s:3:"182";s:11:"resize_type";s:7:"default";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
-	(3384, 0, 'config', 'config_shared', '0', 0),
-	(3385, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-	(3389, 0, 'config', 'config_maintenance', '0', 0),
-	(3390, 0, 'config', 'config_password', '1', 0),
-	(3391, 0, 'config', 'config_encryption', '7f339d82bc9ee711ed084c4a101fbb25', 0),
-	(3392, 0, 'config', 'config_compression', '0', 0),
-	(3393, 0, 'config', 'config_error_display', '0', 0),
-	(3394, 0, 'config', 'config_error_log', '1', 0),
-	(3386, 0, 'config', 'config_seo_url', '1', 0),
-	(3387, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
-	(3388, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
-	(3383, 0, 'config', 'config_secure', '0', 0),
-	(3382, 0, 'config', 'config_fraud_status_id', '7', 0),
-	(3381, 0, 'config', 'config_fraud_score', '', 0),
-	(3380, 0, 'config', 'config_fraud_key', '', 0),
-	(3379, 0, 'config', 'config_fraud_detection', '0', 0),
-	(3378, 0, 'config', 'config_alert_emails', '', 0),
-	(3377, 0, 'config', 'config_account_mail', '0', 0),
-	(3376, 0, 'config', 'config_alert_mail', '0', 0),
-	(3375, 0, 'config', 'config_smtp_timeout', '5', 0),
-	(3374, 0, 'config', 'config_smtp_port', '25', 0),
-	(3373, 0, 'config', 'config_smtp_password', '', 0),
-	(3372, 0, 'config', 'config_smtp_username', '', 0),
-	(3371, 0, 'config', 'config_smtp_host', '', 0),
-	(3370, 0, 'config', 'config_mail_parameter', '', 0),
-	(3369, 0, 'config', 'config_mail_protocol', 'mail', 0),
-	(3368, 0, 'config', 'config_ftp_status', '0', 0),
-	(3367, 0, 'config', 'config_ftp_root', '', 0),
-	(3366, 0, 'config', 'config_ftp_password', '', 0),
-	(3365, 0, 'config', 'config_ftp_username', '', 0),
-	(3364, 0, 'config', 'config_ftp_port', '21', 0),
-	(3363, 0, 'config', 'config_ftp_host', 'localhost', 0),
+	(3489, 0, 'config', 'config_fraud_status_id', '7', 0),
+	(3490, 0, 'config', 'config_secure', '0', 0),
+	(3491, 0, 'config', 'config_shared', '0', 0),
+	(3492, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+	(3488, 0, 'config', 'config_fraud_score', '', 0),
+	(3487, 0, 'config', 'config_fraud_key', '', 0),
+	(3486, 0, 'config', 'config_fraud_detection', '0', 0),
+	(3485, 0, 'config', 'config_alert_emails', '', 0),
+	(3484, 0, 'config', 'config_account_mail', '0', 0),
+	(3483, 0, 'config', 'config_alert_mail', '0', 0),
+	(3479, 0, 'config', 'config_smtp_username', '', 0),
+	(3480, 0, 'config', 'config_smtp_password', '', 0),
+	(3481, 0, 'config', 'config_smtp_port', '25', 0),
+	(3482, 0, 'config', 'config_smtp_timeout', '5', 0),
+	(3468, 0, 'config', 'config_image_cart_width', '120', 0),
+	(3469, 0, 'config', 'config_image_cart_height', '100', 0),
+	(3470, 0, 'config', 'config_ftp_host', 'localhost', 0),
+	(3471, 0, 'config', 'config_ftp_port', '21', 0),
+	(3472, 0, 'config', 'config_ftp_username', '', 0),
+	(3473, 0, 'config', 'config_ftp_password', '', 0),
+	(3474, 0, 'config', 'config_ftp_root', '', 0),
+	(3475, 0, 'config', 'config_ftp_status', '0', 0),
+	(3476, 0, 'config', 'config_mail_protocol', 'mail', 0),
+	(3477, 0, 'config', 'config_mail_parameter', '', 0),
+	(3478, 0, 'config', 'config_smtp_host', '', 0),
+	(3467, 0, 'config', 'config_image_wishlist_height', '47', 0),
+	(3466, 0, 'config', 'config_image_wishlist_width', '47', 0),
+	(3465, 0, 'config', 'config_image_compare_height', '90', 0),
+	(3464, 0, 'config', 'config_image_compare_width', '90', 0),
+	(3463, 0, 'config', 'config_image_related_height', '640', 0),
+	(3462, 0, 'config', 'config_image_related_width', '400', 0),
+	(3461, 0, 'config', 'config_image_additional_height', '150', 0),
+	(3460, 0, 'config', 'config_image_additional_width', '150', 0),
+	(3459, 0, 'config', 'config_image_product_height', '640', 0),
+	(3458, 0, 'config', 'config_image_product_width', '400', 0),
+	(3457, 0, 'config', 'config_image_popup_height', '600', 0),
 	(767, 0, 'slideshow', 'slideshow_module', 'a:3:{i:0;a:7:{s:9:"banner_id";s:1:"8";s:5:"width";s:3:"759";s:6:"height";s:3:"380";s:9:"layout_id";s:2:"12";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:7:{s:9:"banner_id";s:1:"7";s:5:"width";s:3:"996";s:6:"height";s:3:"481";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:7:{s:9:"banner_id";s:1:"9";s:5:"width";s:3:"782";s:6:"height";s:3:"438";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(3362, 0, 'config', 'config_image_cart_height', '100', 0),
-	(3361, 0, 'config', 'config_image_cart_width', '120', 0),
-	(3360, 0, 'config', 'config_image_wishlist_height', '47', 0),
-	(3359, 0, 'config', 'config_image_wishlist_width', '47', 0),
-	(3358, 0, 'config', 'config_image_compare_height', '90', 0),
-	(3357, 0, 'config', 'config_image_compare_width', '90', 0),
-	(3356, 0, 'config', 'config_image_related_height', '640', 0),
-	(3355, 0, 'config', 'config_image_related_width', '400', 0),
-	(3354, 0, 'config', 'config_image_additional_height', '150', 0),
-	(3353, 0, 'config', 'config_image_additional_width', '150', 0),
-	(3352, 0, 'config', 'config_image_product_height', '640', 0),
-	(3351, 0, 'config', 'config_image_product_width', '400', 0),
-	(3348, 0, 'config', 'config_image_thumb_height', '228', 0),
-	(3349, 0, 'config', 'config_image_popup_width', '400', 0),
-	(3350, 0, 'config', 'config_image_popup_height', '600', 0),
-	(3347, 0, 'config', 'config_image_thumb_width', '228', 0),
-	(3346, 0, 'config', 'config_image_news_height', '341', 0),
-	(3345, 0, 'config', 'config_image_news_width', '242', 0),
-	(3344, 0, 'config', 'config_image_category_height', '80', 0),
-	(3342, 0, 'config', 'config_icon', 'data/cart.png', 0),
-	(3343, 0, 'config', 'config_image_category_width', '80', 0),
-	(3341, 0, 'config', 'config_logo', 'data/wesale.jpg', 0),
-	(3340, 0, 'config', 'config_return_status_id', '2', 0),
-	(3338, 0, 'config', 'config_commission', '5', 0),
-	(3339, 0, 'config', 'config_return_id', '0', 0),
-	(3337, 0, 'config', 'config_affiliate_id', '4', 0),
-	(3336, 0, 'config', 'config_stock_status_id', '5', 0),
-	(3335, 0, 'config', 'config_stock_checkout', '0', 0),
-	(3334, 0, 'config', 'config_stock_warning', '0', 0),
-	(3333, 0, 'config', 'config_stock_display', '0', 0),
-	(3331, 0, 'config', 'config_order_status_id', '1', 0),
-	(3332, 0, 'config', 'config_complete_status_id', '5', 0),
-	(3330, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
-	(3328, 0, 'config', 'config_checkout_id', '3', 0),
-	(3329, 0, 'config', 'config_order_edit', '100', 0),
-	(3327, 0, 'config', 'config_guest_checkout', '1', 0),
-	(3326, 0, 'config', 'config_cart_weight', '1', 0),
-	(3325, 0, 'config', 'config_account_id', '5', 0),
-	(3324, 0, 'config', 'config_customer_price', '0', 0),
-	(3323, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
-	(3321, 0, 'config', 'config_customer_online', '0', 0),
-	(3322, 0, 'config', 'config_customer_group_id', '1', 0),
-	(3320, 0, 'config', 'config_tax_customer', 'shipping', 0),
-	(3319, 0, 'config', 'config_tax_default', 'shipping', 0),
-	(3317, 0, 'config', 'config_tax', '1', 0),
-	(3318, 0, 'config', 'config_vat', '0', 0),
-	(3316, 0, 'config', 'config_voucher_max', '1000', 0),
-	(3315, 0, 'config', 'config_voucher_min', '1', 0),
-	(3314, 0, 'config', 'config_download', '1', 0),
-	(3313, 0, 'config', 'config_review_status', '1', 0),
-	(3312, 0, 'config', 'config_product_count', '1', 0),
-	(3311, 0, 'config', 'config_admin_limit', '20', 0),
-	(3310, 0, 'config', 'config_catalog_limit', '15', 0),
-	(3309, 0, 'config', 'config_weight_class_id', '1', 0),
-	(3308, 0, 'config', 'config_length_class_id', '1', 0),
-	(3307, 0, 'config', 'config_currency_auto', '1', 0),
-	(3305, 0, 'config', 'config_admin_language', 'vi', 0),
-	(3306, 0, 'config', 'config_currency', 'USD', 0),
-	(3304, 0, 'config', 'config_language', 'vi', 0),
-	(3303, 0, 'config', 'config_zone_id', '3776', 0),
-	(3302, 0, 'config', 'config_country_id', '230', 0),
-	(3301, 0, 'config', 'config_layout_id', '4', 0),
-	(3297, 0, 'config', 'config_fax', '', 0),
-	(3298, 0, 'config', 'config_title', 'Đặt hàng quốc tế - Weorder', 0),
-	(3299, 0, 'config', 'config_meta_description', 'Weorder', 0),
-	(3300, 0, 'config', 'config_template', 'default', 0),
-	(3296, 0, 'config', 'config_telephone', '123456789', 0),
-	(3295, 0, 'config', 'config_email', 'admin@admin.com', 0),
-	(3294, 0, 'config', 'config_address', 'Address 1', 0),
-	(3293, 0, 'config', 'config_owner', 'Đặt hàng quốc tế', 0),
-	(3292, 0, 'config', 'config_name', 'Đặt hàng quốc tế', 0),
-	(3396, 0, 'config', 'config_google_analytics', '', 0),
-	(3397, 0, 'manufacturersdropdown', 'manufacturersdropdown_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1);
+	(3456, 0, 'config', 'config_image_popup_width', '400', 0),
+	(3455, 0, 'config', 'config_image_thumb_height', '228', 0),
+	(3454, 0, 'config', 'config_image_thumb_width', '228', 0),
+	(3453, 0, 'config', 'config_image_news_height', '341', 0),
+	(3452, 0, 'config', 'config_image_news_width', '242', 0),
+	(3451, 0, 'config', 'config_image_category_height', '80', 0),
+	(3450, 0, 'config', 'config_image_category_width', '80', 0),
+	(3449, 0, 'config', 'config_icon', 'data/cart.png', 0),
+	(3448, 0, 'config', 'config_logo', 'data/wesale.jpg', 0),
+	(3447, 0, 'config', 'config_return_status_id', '2', 0),
+	(3446, 0, 'config', 'config_return_id', '0', 0),
+	(3445, 0, 'config', 'config_commission', '5', 0),
+	(3444, 0, 'config', 'config_affiliate_id', '4', 0),
+	(3443, 0, 'config', 'config_stock_status_id', '5', 0),
+	(3442, 0, 'config', 'config_stock_checkout', '0', 0),
+	(3441, 0, 'config', 'config_stock_warning', '0', 0),
+	(3440, 0, 'config', 'config_stock_display', '0', 0),
+	(3439, 0, 'config', 'config_complete_status_id', '5', 0),
+	(3438, 0, 'config', 'config_order_status_id', '1', 0),
+	(3437, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
+	(3436, 0, 'config', 'config_order_edit', '100', 0),
+	(3435, 0, 'config', 'config_checkout_id', '3', 0),
+	(3434, 0, 'config', 'config_guest_checkout', '1', 0),
+	(3433, 0, 'config', 'config_cart_weight', '1', 0),
+	(3432, 0, 'config', 'config_account_id', '5', 0),
+	(3431, 0, 'config', 'config_customer_price', '0', 0),
+	(3430, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
+	(3429, 0, 'config', 'config_customer_group_id', '1', 0),
+	(3428, 0, 'config', 'config_customer_online', '0', 0),
+	(3427, 0, 'config', 'config_tax_customer', 'shipping', 0),
+	(3426, 0, 'config', 'config_tax_default', 'shipping', 0),
+	(3425, 0, 'config', 'config_vat', '0', 0),
+	(3424, 0, 'config', 'config_tax', '1', 0),
+	(3423, 0, 'config', 'config_voucher_max', '1000', 0),
+	(3422, 0, 'config', 'config_voucher_min', '1', 0),
+	(3421, 0, 'config', 'config_download', '1', 0),
+	(3420, 0, 'config', 'config_review_status', '1', 0),
+	(3419, 0, 'config', 'config_product_count', '1', 0),
+	(3418, 0, 'config', 'config_admin_limit', '20', 0),
+	(3417, 0, 'config', 'config_catalog_limit', '15', 0),
+	(3416, 0, 'config', 'config_weight_class_id', '1', 0),
+	(3415, 0, 'config', 'config_length_class_id', '1', 0),
+	(3414, 0, 'config', 'config_currency_auto', '1', 0),
+	(3413, 0, 'config', 'config_currency', 'USD', 0),
+	(3412, 0, 'config', 'config_admin_language', 'vi', 0),
+	(3411, 0, 'config', 'config_language', 'vi', 0),
+	(3410, 0, 'config', 'config_zone_id', '3776', 0),
+	(3409, 0, 'config', 'config_country_id', '230', 0),
+	(3408, 0, 'config', 'config_layout_id', '4', 0),
+	(3407, 0, 'config', 'config_template', 'default', 0),
+	(3406, 0, 'config', 'config_meta_description', 'Weorder', 0),
+	(3405, 0, 'config', 'config_title', 'Đặt hàng quốc tế - Weorder', 0),
+	(3404, 0, 'config', 'config_fax', '', 0),
+	(3403, 0, 'config', 'config_telephone', '123456789', 0),
+	(3402, 0, 'config', 'config_email', 'admin@admin.com', 0),
+	(3401, 0, 'config', 'config_address', 'Address 1', 0),
+	(3400, 0, 'config', 'config_owner', 'Đặt hàng quốc tế', 0),
+	(3399, 0, 'config', 'config_name', 'Đặt hàng quốc tế', 0),
+	(3397, 0, 'manufacturersdropdown', 'manufacturersdropdown_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1),
+	(3504, 0, 'filteroption', 'filteroption_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
+	(3493, 0, 'config', 'config_seo_url', '0', 0),
+	(3494, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
+	(3495, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
+	(3496, 0, 'config', 'config_maintenance', '0', 0),
+	(3497, 0, 'config', 'config_password', '1', 0),
+	(3498, 0, 'config', 'config_encryption', '7f339d82bc9ee711ed084c4a101fbb25', 0),
+	(3499, 0, 'config', 'config_compression', '0', 0),
+	(3500, 0, 'config', 'config_error_display', '1', 0),
+	(3501, 0, 'config', 'config_error_log', '1', 0),
+	(3502, 0, 'config', 'config_error_filename', 'error.txt', 0),
+	(3503, 0, 'config', 'config_google_analytics', '', 0);
 /*!40000 ALTER TABLE `setting` ENABLE KEYS */;
 
 
@@ -3039,7 +3089,7 @@ CREATE TABLE IF NOT EXISTS `url_alias` (
   PRIMARY KEY (`url_alias_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=850 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.url_alias: 18 rows
+-- Dumping data for table weorder.url_alias: 27 rows
 DELETE FROM `url_alias`;
 /*!40000 ALTER TABLE `url_alias` DISABLE KEYS */;
 INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
@@ -3048,7 +3098,7 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(777, 'category_id=33', 'nam'),
 	(730, 'manufacturer_id=8', 'apple'),
 	(848, 'information_id=4', 'about_us'),
-	(785, 'product_id=42', 'test'),
+	(851, 'product_id=42', 'test'),
 	(780, 'category_id=59', 'tre-em'),
 	(824, 'news_category_id=1', 'tin-tuc'),
 	(794, 'news_id=1', 'sale-off-50-hang-lascote.html'),
@@ -3112,7 +3162,7 @@ CREATE TABLE IF NOT EXISTS `user_group` (
 DELETE FROM `user_group`;
 /*!40000 ALTER TABLE `user_group` DISABLE KEYS */;
 INSERT INTO `user_group` (`user_group_id`, `name`, `permission`) VALUES
-	(1, 'Top Administrator', 'a:2:{s:6:"access";a:136:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";}s:6:"modify";a:136:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";}}'),
+	(1, 'Top Administrator', 'a:2:{s:6:"access";a:137:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";i:136;s:19:"module/filteroption";}s:6:"modify";a:137:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";i:136;s:19:"module/filteroption";}}'),
 	(10, 'Demonstration', '');
 /*!40000 ALTER TABLE `user_group` ENABLE KEYS */;
 

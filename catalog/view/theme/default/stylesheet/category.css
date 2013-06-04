@@ -121,7 +121,7 @@ h4, h5, .h4, .h5 {
     padding: 0px 2px 0px 5px;
 }
 .fct-colorPicker {
-    width: 174px;
+    width: auto;
     position: relative;
     margin-right: -4px;
 }
@@ -139,7 +139,7 @@ h4, h5, .h4, .h5 {
     display: block;
     width: 15px;
     height: 15px;
-    text-indent: -10000px;
+    text-indent: 0;
     overflow: hidden;
     background: #CCC;
     margin-top: 3px;
