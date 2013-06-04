@@ -13,7 +13,7 @@
                     <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a></div>
                     <div id="productZoom" style="background-image: url(<?php echo $popup; ?>); opacity: 0.578217; display: none; background-position: -355px 0px;" data-zoom-image="<?php echo $popup; ?>"></div>
                 <?php } ?>
-                    
+
                 <?php if ($images) { ?>
                     <div class="prd-moreImages" data-thumbnailcount="5">
                         <h2 class="s-visuallyhidden">Thêm hình ảnh khác</h2>
@@ -399,19 +399,19 @@
                     },
                     onComplete: function(file, json) {
                         $('#button-option-<?php echo $option['product_option_id']; ?>').attr('disabled', false);
-                                    		
+                                                		
                         $('.error').remove();
-                                    		
+                                                		
                         if (json['success']) {
                             alert(json['success']);
-                                    			
+                                                			
                             $('input[name=\'option[<?php echo $option['product_option_id']; ?>]\']').attr('value', json['file']);
                         }
-                                    		
+                                                		
                         if (json['error']) {
                             $('#option-<?php echo $option['product_option_id']; ?>').after('<span class="error">' + json['error'] + '</span>');
                         }
-                                    		
+                                                		
                         $('.loading').remove();	
                     }
                 });

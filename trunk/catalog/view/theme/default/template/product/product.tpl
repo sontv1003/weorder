@@ -1,6 +1,6 @@
 <?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
 
-<div id="content" role="main">
+<div id="content" class="product-info" role="main">
     <?php echo $content_top; ?>
 
     <div class="bcr mbm fsm breadcrumbs">
@@ -54,31 +54,190 @@
                                     </p>
                                 <?php } ?>
                             </div>
-                            <div class="prm mts fsm clearfix strong estimated-delivery">
-                                <span>Sẽ có tại nhà bạn</span>
-                                <span id="estimated_delivery_time">trong 3 - 5 ngày làm việc</span>
-                            </div>
-                            <div class="prm mts fsm txtGray clearfix">
-                                <p>Với thiết kế nhiều ngăn tiện dụng cùng kiểu dáng trẻ trung, ba lô 
-                                    củawesale</p>
-                                <p> sẽ mang đến cho bạn vẻ ngoài năng động, khỏe khoắn và cá
-                                    tính. Hãy kết hợp ba lô</p>
-                                <p> với những bộ trang phục hợp thời trang để trở 
-                                    nên cuốn hút và nổi bật hơn bao giờ hết.</p>
-                            </div>
-                            <div id="productOptionsWrapper" class="product-options clearfix">
-                                <div class="s-error msgBox mbs pas" id="product-selector-error" style="display:none;margin-top:8px;margin-bottom:8px;"></div>
-                                <div id="OptionsSingleDefault" class="prd-size">
-                                    <h2 class="prd-attributeTitle h4 ui-borderBottom mbs">
-                                        Hãy chọn kích thước                    </h2>
-                                    <ul class="prd-option-collection ui-listHorizontal ui-listItemBorder size">
-                                        <li style="opacity: 1;" class="prd-option-item ui-listItem ui-border ui-listItem-margin pas opt-One-Sizeitem-0 selected" data-js-function="selectOption" data-attribute="size" data-value-class="opt-One-Sizeitem-0">
-                                            One Size        </li>
-                                        <div class="reminder size">Xin vui lòng chọn kích cỡ để tiếp tục.<div class="arrow-top"></div></div></ul>
-                                </div>
+                            <?php echo $sort_description ?>
 
-                            </div>
+                            <?php if ($options) { ?>
+                                <div class="options">
+                                    <?php foreach ($options as $option) { ?>
+                                        <?php if ($option['type'] == 'select') { ?>
+                                            <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                                <div class="option-name">
+                                                    <?php if ($option['required']) { ?>
+                                                        <span class="required">*</span>
+                                                    <?php } ?>
+                                                    <b><?php echo $option['name']; ?>:</b>
+                                                </div><br />
+                                                <select name="option[<?php echo $option['product_option_id']; ?>]">
+                                                    <option value=""><?php echo $text_select; ?></option>
+                                                    <?php foreach ($option['option_value'] as $option_value) { ?>
+                                                        <option value="<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>
+                                                            <?php if ($option_value['price']) { ?>
+                                                                (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+                                                            <?php } ?>
+                                                        </option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                            <br />
+                                        <?php } ?>
+                                        <?php if ($option['type'] == 'radio') { ?>
+                                            <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                                <div class="option-name">
+                                                    <?php if ($option['required']) { ?>
+                                                        <span class="required">*</span>
+                                                    <?php } ?>
+                                                    <b><?php echo $option['name']; ?>:</b>
+                                                </div><br />
+
+
+                                                <ul class="prd-option-collection ui-listHorizontal ui-listItemBorder size">
+                                                    <?php foreach ($option['option_value'] as $option_value) { ?>
+                                                        <li data-value-class="opt-One-Sizeitem-0" data-attribute="size" data-js-function="selectOption" class="prd-option-item ui-listItem ui-border ui-listItem-margin pas opt-One-Sizeitem-0 selected" style="opacity: 1;">
+                                                            <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />
+                                                            <?php echo $option_value['name']; ?>       
+                                                            <?php if ($option_value['price']) { ?>
+                                                                (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+                                                            <?php } ?>
+                                                        </li>
+                                                    <?php } ?>
+                                                </ul>
+                                            </div>
+                                            <br />
+                                        <?php } ?>
+                                        <?php if ($option['type'] == 'checkbox') { ?>
+                                            <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                                <div class="option-name">
+                                                    <?php if ($option['required']) { ?>
+                                                        <span class="required">*</span>
+                                                    <?php } ?>
+                                                    <b><?php echo $option['name']; ?>:</b>
+                                                </div><br />
+
+                                                <ul class="prd-option-collection ui-listHorizontal ui-listItemBorder size">
+                                                    <?php foreach ($option['option_value'] as $option_value) { ?>
+                                                        <li data-value-class="opt-One-Sizeitem-0" data-attribute="size" data-js-function="selectOption" class="prd-option-item ui-listItem ui-border ui-listItem-margin pas opt-One-Sizeitem-0 selected" style="opacity: 1;">
+                                                            <input type="checkbox" name="option[<?php echo $option['product_option_id']; ?>][]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />                                                       
+                                                            <?php echo $option_value['name']; ?>       
+                                                            <?php if ($option_value['price']) { ?>
+                                                                (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+                                                            <?php } ?>
+                                                        </li>
+                                                    <?php } ?>
+                                                </ul>
+
+                                            </div>
+                                            <br />
+                                        <?php } ?>
+                                        <?php if ($option['type'] == 'image') { ?>
+                                            <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                                <div class="option-name">
+                                                    <?php if ($option['required']) { ?>
+                                                        <span class="required">*</span>
+                                                    <?php } ?>
+                                                    <b><?php echo $option['name']; ?>:</b>
+                                                </div><br />
+                                                <ul class="prd-option-collection ui-listHorizontal ui-listItemBorder size">
+                                                    <?php foreach ($option['option_value'] as $option_value) { ?>
+                                                        <li data-value-class="opt-One-Sizeitem-0" data-attribute="size" data-js-function="selectOption" class="prd-option-item ui-listItem ui-border ui-listItem-margin pas opt-One-Sizeitem-0" style="opacity: 1;">
+                                                            <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />                                                  
+                                                            <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" />
+                                                        </li>
+                                                    <?php } ?>
+                                                </ul>
+                                            </div>
+                                            <br />
+                                        <?php } ?>
+                                        <?php if ($option['type'] == 'text') { ?>
+                                            <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                                <div class="option-name">
+                                                    <?php if ($option['required']) { ?>
+                                                        <span class="required">*</span>
+                                                    <?php } ?>
+                                                    <b><?php echo $option['name']; ?>:</b>
+                                                </div><br />
+                                                <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['option_value']; ?>" />
+                                            </div>
+                                            <br />
+                                        <?php } ?>
+                                        <?php if ($option['type'] == 'textarea') { ?>
+                                            <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                                <div class="option-name">
+                                                    <?php if ($option['required']) { ?>
+                                                        <span class="required">*</span>
+                                                    <?php } ?>
+                                                    <b><?php echo $option['name']; ?>:</b>
+                                                </div><br />
+                                                <textarea name="option[<?php echo $option['product_option_id']; ?>]" cols="40" rows="5"><?php echo $option['option_value']; ?></textarea>
+                                            </div>
+                                            <br />
+                                        <?php } ?>
+                                        <?php if ($option['type'] == 'file') { ?>
+                                            <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                                <div class="option-name">
+                                                    <?php if ($option['required']) { ?>
+                                                        <span class="required">*</span>
+                                                    <?php } ?>
+                                                    <b><?php echo $option['name']; ?>:</b>
+                                                </div>
+                                                <br />
+                                                <input type="button" value="<?php echo $button_upload; ?>" id="button-option-<?php echo $option['product_option_id']; ?>" class="button">
+                                                <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]" value="" />
+                                            </div>
+                                            <br />
+                                        <?php } ?>
+                                        <?php if ($option['type'] == 'date') { ?>
+                                            <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                                <div class="option-name">
+                                                    <?php if ($option['required']) { ?>
+                                                        <span class="required">*</span>
+                                                    <?php } ?>
+                                                    <b><?php echo $option['name']; ?>:</b>
+                                                </div><br />
+                                                <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['option_value']; ?>" class="date" />
+                                            </div>
+                                            <br />
+                                        <?php } ?>
+                                        <?php if ($option['type'] == 'datetime') { ?>
+                                            <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                                <div class="option-name">
+                                                    <?php if ($option['required']) { ?>
+                                                        <span class="required">*</span>
+                                                    <?php } ?>
+                                                    <b><?php echo $option['name']; ?>:</b>
+                                                </div><br />
+                                                <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['option_value']; ?>" class="datetime" />
+                                            </div>
+                                            <br />
+                                        <?php } ?>
+                                        <?php if ($option['type'] == 'time') { ?>
+                                            <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                                <div class="option-name">
+                                                    <?php if ($option['required']) { ?>
+                                                        <span class="required">*</span>
+                                                    <?php } ?>
+                                                    <b><?php echo $option['name']; ?>:</b>
+                                                </div><br />
+                                                <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['option_value']; ?>" class="time" />
+                                            </div>
+                                            <br />
+                                        <?php } ?>
+                                    <?php } ?>
+                                </div>
+                            <?php } ?>
+
                             <div class="mtm mbm">
+                            </div>
+
+                            <div class="cart">
+                                <div><?php echo $text_qty; ?>
+                                    <input type="text" name="quantity" size="2" value="<?php echo $minimum; ?>" />
+                                    <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
+                                    &nbsp;
+                                    <input type="button" value="<?php echo $button_cart; ?>" id="button-cart" class="button" />
+                                </div>
+                                <?php if ($minimum > 1) { ?>
+                                    <div class="minimum"><?php echo $text_minimum; ?></div>
+                                <?php } ?>
                             </div>
                         </div>
                         <div id="prdMedia" class="prd-media">
@@ -140,10 +299,7 @@
                                                 <td class="" style="width: 200px;"><?php echo $text_model; ?></td>
                                                 <td class=""><?php echo $model; ?></td>
                                             </tr>
-                                            <tr class="even">
-                                                <td class="" style="width: 200px;">Màu sắc</td>
-                                                <td class="">Nâu Đậm</td>
-                                            </tr>
+                                           
                                         </tbody>
                                     </table>
                                 </div>
@@ -151,13 +307,15 @@
                                     <h2 class="mbm">THÔNG TIN NHÃN HIỆU</h2>
                                     <div class="product-additionals">
                                         <h1><?php echo $manufacturer; ?></h1>
-                                        <p><strong>Lee &amp; Tee</strong> nổi tiếng với những sản phẩm túi xách rất được giới trẻ ưa chuộng. Màu sắc đẹp, kiểu dáng đa dạng, hợp thời trang giúp <strong>túi xách Lee &amp; Tee</strong>
-                                            luôn chinh phục được các khách hàng trẻ và sành điệu. Các sản phẩm của 
-                                            Lee &amp; Tee đều được sản xuất dưới chất liệu simili giả da vô cùng bền
-                                            chắc và đẹp mắt. Điểm đặc biệt chính của <strong>Lee and Tee</strong> chính là những thiết kế luôn cập nhập nhanh nhạy xu hướng thời trang trên thế giới. Với phong cách trẻ trung, hiện đại, <strong>Lee &amp; Tee</strong> sẽ là sự lựa chọn hoàn hảo cho bộ sưu tập túi xách của bạn. Hiện các sản phẩm của thương hiệu <strong>túi du lịch Lee &amp; Tee</strong> đã có mặt tại trang web mua sắm thời trang hàng đầu ZALORA Việt Nam.</p>                </div>
+                                        <?php if (!empty($manufacturer_description)) { ?>
+                                            <?php echo $manufacturer_description ?>
+                                        <?php } ?>
+                                    </div>
                                 </div>
                                 <div id="productReviews" class="detailTab pbl" style="display: none;">
-                                    <h2 class="mbm">NHẬN XÉT SẢN PHẨM</h2>
+
+                                    <div id="review"></div>
+                                    <h2 class="mbm" id="review-title"><?php echo $text_write; ?></h2>
                                     <div id="productReview">
                                         <div id="ProductRating">
                                             <h3 class="mbm">Chúng tôi muốn biết ý kiến của bạn</h3>
@@ -165,59 +323,21 @@
 
                                                 <div id="ProductRatingFormOptions" class="box box-bdr phm">
                                                     <fieldset id="ProductRatingFormOption_quality" class="prd-ratingOption mvm clearfix">
-                                                        <legend id="rating-option--quality" class="prd-ratingOptionTitle lfloat strong">Chất Lượng <span class="required">*</span></legend>
+                                                        <legend id="rating" class="prd-ratingOptionTitle lfloat strong">Chất Lượng <span class="required">*</span></legend>
                                                         <label for="quality_1">
-                                                            <input class="" id="quality_1" name="rating-option--quality" value="11" type="radio"><span title="1"></span> 
+                                                            <input class="" id="quality_1" name="rating" value="11" type="radio"><span title="1"></span> 
                                                         </label>
                                                         <label for="quality_2">
-                                                            <input class="" id="quality_2" name="rating-option--quality" value="12" type="radio"><span title="2"></span> 
+                                                            <input class="" id="quality_2" name="rating" value="12" type="radio"><span title="2"></span> 
                                                         </label>
                                                         <label for="quality_3">
-                                                            <input class="" id="quality_3" name="rating-option--quality" value="13" type="radio"><span title="3"></span> 
+                                                            <input class="" id="quality_3" name="rating" value="13" type="radio"><span title="3"></span> 
                                                         </label>
                                                         <label for="quality_4">
-                                                            <input class="" id="quality_4" name="rating-option--quality" value="14" type="radio"><span title="4"></span> 
+                                                            <input class="" id="quality_4" name="rating" value="14" type="radio"><span title="4"></span> 
                                                         </label>
                                                         <label for="quality_5">
-                                                            <input class="" id="quality_5" name="rating-option--quality" value="15" type="radio"><span title="5"></span> 
-                                                        </label>
-                                                        <div class="wrapper"></div>
-                                                    </fieldset>
-                                                    <fieldset id="ProductRatingFormOption_appearance" class="prd-ratingOption mvm clearfix">
-                                                        <legend id="rating-option--appearance" class="prd-ratingOptionTitle lfloat strong">Hình Dạng <span class="required">*</span></legend>
-                                                        <label for="appearance_1">
-                                                            <input class="" id="appearance_1" name="rating-option--appearance" value="6" type="radio"><span title="1"></span> 
-                                                        </label>
-                                                        <label for="appearance_2">
-                                                            <input class="" id="appearance_2" name="rating-option--appearance" value="7" type="radio"><span title="2"></span> 
-                                                        </label>
-                                                        <label for="appearance_3">
-                                                            <input class="" id="appearance_3" name="rating-option--appearance" value="8" type="radio"><span title="3"></span> 
-                                                        </label>
-                                                        <label for="appearance_4">
-                                                            <input class="" id="appearance_4" name="rating-option--appearance" value="9" type="radio"><span title="4"></span> 
-                                                        </label>
-                                                        <label for="appearance_5">
-                                                            <input class="" id="appearance_5" name="rating-option--appearance" value="10" type="radio"><span title="5"></span> 
-                                                        </label>
-                                                        <div class="wrapper"></div>
-                                                    </fieldset>
-                                                    <fieldset id="ProductRatingFormOption_price" class="prd-ratingOption mvm clearfix">
-                                                        <legend id="rating-option--price" class="prd-ratingOptionTitle lfloat strong">Giá <span class="required">*</span></legend>
-                                                        <label for="price_1">
-                                                            <input class="" id="price_1" name="rating-option--price" value="1" type="radio"><span title="1"></span> 
-                                                        </label>
-                                                        <label for="price_2">
-                                                            <input class="" id="price_2" name="rating-option--price" value="2" type="radio"><span title="2"></span> 
-                                                        </label>
-                                                        <label for="price_3">
-                                                            <input class="" id="price_3" name="rating-option--price" value="3" type="radio"><span title="3"></span> 
-                                                        </label>
-                                                        <label for="price_4">
-                                                            <input class="" id="price_4" name="rating-option--price" value="4" type="radio"><span title="4"></span> 
-                                                        </label>
-                                                        <label for="price_5">
-                                                            <input class="" id="price_5" name="rating-option--price" value="5" type="radio"><span title="5"></span> 
+                                                            <input class="" id="quality_5" name="rating" value="15" type="radio"><span title="5"></span> 
                                                         </label>
                                                         <div class="wrapper"></div>
                                                     </fieldset>
@@ -225,20 +345,17 @@
                                                 <div style="clear: both"></div>
                                                 <fieldset id="ProductRatingFormSender" class="mtl clearfix">
 
-                                                    <label for="RatingForm_name" class="required">Tên <span class="required">*</span></label>       
-                                                    <input class="required ui-inputText" name="RatingForm[name]" id="RatingForm_name" type="text">      
-                                                    <label class="mtm required" for="RatingForm_title">Tiêu đề <span class="required">*</span></label>    
-                                                    <input class="required ui-inputText" name="RatingForm[title]" id="RatingForm_title" type="text">     
-                                                    <label for="RatingForm_comment" class="required">Bình luận <span class="required">*</span></label>   
-                                                    <textarea class="required ui-inputText" name="RatingForm[comment]" id="RatingForm_comment"></textarea>   
+                                                    <label for="RatingForm_name" class="required"><?php echo $entry_name; ?> <span class="required">*</span></label>       
+                                                    <input class="required ui-inputText" name="name" id="RatingForm_name" type="text">      
+                                                    <label for="RatingForm_comment" class="required"><?php echo $entry_review; ?> <span class="required">*</span></label>   
+                                                    <textarea class="required ui-inputText" name="text" id="RatingForm_comment"></textarea>   
+                                                    <label for="RatingForm_name" class="required"><?php echo $entry_captcha; ?> <span class="required">*</span></label>       
+                                                    <div><img src="index.php?route=product/product/captcha" alt="" id="captcha" /></div>
+                                                    <input class="required ui-inputText" type="text" name="captcha">  
+
                                                 </fieldset><!-- #ProductRatingFormSender -->
-                                                <div id="ProductRatingFormAction" class="mtl">
-                                                    <input name="ratings" value="1" type="hidden">
-                                                    <input name="key" value="Balo-2-Trong-1-V2-<?php echo $heading_title; ?>-81022.html" type="hidden">
-                                                    <input name="rating-sku" value="LE490AC77PWGVN" type="hidden">
-                                                    <input id="ProductRatingFormAction_customer" name="rating-customer" value="" type="hidden">
-                                                    <input id="ProductRatingFormAction_config" name="rating-catalog-config" value="81022" type="hidden">
-                                                    <input id="ProductRatingFormAction_submit" onclick="javascript:rating.performSend();" class="ui-button" name="rating-submit" value="Gửi nhận xét" type="submit">
+                                                <div id="" class="mtl">
+                                                    <input id="button-review" class="ui-button" name="rating-submit" value="Gửi nhận xét" type="button">
                                                 </div><!-- #ProductRatingFormAction -->
                                             </form>                  
                                         </div><!-- #ProductRating -->
@@ -429,19 +546,19 @@
                     },
                     onComplete: function(file, json) {
                         $('#button-option-<?php echo $option['product_option_id']; ?>').attr('disabled', false);
-                                                                                                                                                                                                                                                            		
+                                                                                                                                                                                                                                                                                                                                                                                                            		
                         $('.error').remove();
-                                                                                                                                                                                                                                                            		
+                                                                                                                                                                                                                                                                                                                                                                                                            		
                         if (json['success']) {
                             alert(json['success']);
-                                                                                                                                                                                                                                                            			
+                                                                                                                                                                                                                                                                                                                                                                                                            			
                             $('input[name=\'option[<?php echo $option['product_option_id']; ?>]\']').attr('value', json['file']);
                         }
-                                                                                                                                                                                                                                                            		
+                                                                                                                                                                                                                                                                                                                                                                                                            		
                         if (json['error']) {
                             $('#option-<?php echo $option['product_option_id']; ?>').after('<span class="error">' + json['error'] + '</span>');
                         }
-                                                                                                                                                                                                                                                            		
+                                                                                                                                                                                                                                                                                                                                                                                                            		
                         $('.loading').remove();	
                     }
                 });

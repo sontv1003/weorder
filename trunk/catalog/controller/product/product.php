@@ -168,10 +168,11 @@ class ControllerProductProduct extends Controller {
         $this->load->model('catalog/product');
 
         $product_info = $this->model_catalog_product->getProduct($product_id);
-
         $manufacturer_pr_info = $this->model_catalog_manufacturer->getManufacturer($product_info['manufacturer_id']);
         if ($manufacturer_pr_info) {
             $this->data['manufacturer_image'] = $this->model_tool_image->resize($manufacturer_pr_info['image'], 100, 80);
+            $this->data['manufacturer_description'] = html_entity_decode($manufacturer_pr_info['description']);
+            
         }
 
         if ($product_info) {
@@ -408,6 +409,7 @@ class ControllerProductProduct extends Controller {
             $this->data['reviews'] = sprintf($this->language->get('text_reviews'), (int) $product_info['reviews']);
             $this->data['rating'] = (int) $product_info['rating'];
             $this->data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
+            $this->data['sort_description'] = html_entity_decode($product_info['sort_description'], ENT_QUOTES, 'UTF-8');
             $this->data['attribute_groups'] = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
 
             $this->data['products'] = array();
