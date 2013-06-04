@@ -205,6 +205,8 @@ class ControllerProductCategory extends Controller {
             );
             if (!empty($this->request->get['filter_manufacturer_id']))
                 $data['filter_manufacturer_id'] = $this->request->get['filter_manufacturer_id'];
+            if (!empty($this->request->get['filter_option']))
+                $data['filter_option'] = $this->request->get['filter_option'];
 
             $product_total = $this->model_catalog_product->getTotalProducts($data);
 
