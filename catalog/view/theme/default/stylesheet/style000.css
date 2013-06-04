@@ -4281,7 +4281,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#f1f1f1', EndCo
 #ProductRatingFormAction {
 	margin-top: 10px!important
 }
-#ProductRatingFormAction #ProductRatingFormAction_submit {
+#ProductRatingFormAction #ProductRatingFormAction_submit, #button-review {
 	margin-left: 130px;
 	width: 360px
 }

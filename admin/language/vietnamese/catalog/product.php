@@ -73,6 +73,7 @@ $_['entry_related']          = 'Sản phẩm cùng loại:';
 $_['entry_tag']          	 = 'Tags:<br /><span class="help">Ngăn cách bằng dấu phẩy</span>';
 $_['entry_reward']           = 'Điểm thưởng:';
 $_['entry_layout']           = 'Bố cục:';
+$_['entry_sortdescription']           = 'Mô tả ngắn:';
 
 // Error
 $_['error_warning']          = 'Cảnh báo: Dữ liệu bắt buộc chưa được nhập vào. Kiểm tra các ô trống!';

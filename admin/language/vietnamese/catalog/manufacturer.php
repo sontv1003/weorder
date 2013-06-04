@@ -23,6 +23,8 @@ $_['entry_keyword']      = 'Từ khóa SEO:';
 $_['entry_image']        = 'Hình ảnh:';
 $_['entry_sort_order']   = 'Thứ tự:';
 $_['entry_type']         = 'Loại:';
+$_['entry_description']  = 'Miêu tả:';
+$_['entry_sortdescription']  = 'Miêu tả ngắn:';
 
 // Error
 $_['error_permission']   = 'Cảnh báo: Bạn không được phép thay đổi các hãng sản xuất!';

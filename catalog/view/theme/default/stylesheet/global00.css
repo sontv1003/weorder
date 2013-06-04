@@ -197,12 +197,24 @@ select {font:normal 12px "Arial";color:#000;}
 #content input[type=text],
 #content input[type=password],
 #content textarea,
-#content select {padding:3px;background:#fff;border:1px solid #ddd;
--webkit-transition:all .5s linear;
-   -moz-transition:all .5s linear;
+#content select {
+    padding:3px;background:#fff;border:1px solid #ddd;
+    -webkit-transition:all .5s linear;
+    -moz-transition:all .5s linear;
     -ms-transition:all .5s linear;
-     -o-transition:all .5s linear;
-        transition:all .5s linear;
+    -o-transition:all .5s linear;
+    transition:all .5s linear;
+}
+
+#captcha{
+    padding:3px;background:#fff;border:1px solid #ddd;
+    -webkit-transition:all .5s linear;
+    -moz-transition:all .5s linear;
+    -ms-transition:all .5s linear;
+    -o-transition:all .5s linear;
+    transition:all .5s linear;
+    float: left;
+    margin: 5px 5px 5px 0;
 }
 
 #content select {padding:0px;}
@@ -211,11 +223,11 @@ select {font:normal 12px "Arial";color:#000;}
 #content input[type=password]:focus,
 #content textarea:focus,
 #content select:focus {border-color:#777;outline:1px solid #777;
--webkit-transition:all .2s linear;
-   -moz-transition:all .2s linear;
-    -ms-transition:all .2s linear;
-     -o-transition:all .2s linear;
-        transition:all .2s linear;
+                       -webkit-transition:all .2s linear;
+                       -moz-transition:all .2s linear;
+                       -ms-transition:all .2s linear;
+                       -o-transition:all .2s linear;
+                       transition:all .2s linear;
 }
 
 #content input[type=file] {background:#fff;border:1px solid #ddd;}
@@ -2025,7 +2037,7 @@ p.error404 img {margin:0 10px 0 0;}
 #jtabs a{
     /*background-color: #E6E6E6;*/
     /*background-image: -moz-linear-gradient(center top , #F8F8F8, #E6E6E6);*/
-    
+
     float: left;
     margin: 0 1px -1px 0;
     text-transform: uppercase;
@@ -2034,7 +2046,7 @@ p.error404 img {margin:0 10px 0 0;}
     line-height: 2rem;
     border: 1px solid;
     border-color: #D3D3D3;
-    
+
     background-color: #e6e6e6;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#e6e6e6));
     background-image: -webkit-linear-gradient(top, #f8f8f8, #e6e6e6);
@@ -2048,7 +2060,7 @@ p.error404 img {margin:0 10px 0 0;}
 #jtabs a.selected{
     border-bottom: none;
     background: #fff;
-    
+
 }
 #tabs a:hover
 {
@@ -2247,16 +2259,16 @@ p.error404 img {margin:0 10px 0 0;}
     padding: 15px;
 }
 .login_link{
-position: absolute;
-	top:0;
-	right:0;
-	width: 100%;
-	color: #aaa;
-	background:#222;
-	padding: 4px;
-	box-shadow: inset 0px 1px 3px -1px linen;
-	z-index: 10001;
-	text-align: right;
+    position: absolute;
+    top:0;
+    right:0;
+    width: 100%;
+    color: #aaa;
+    background:#222;
+    padding: 4px;
+    box-shadow: inset 0px 1px 3px -1px linen;
+    z-index: 10001;
+    text-align: right;
 }
 .login_link span{
     display: block;
@@ -2606,31 +2618,31 @@ a.button, input.button {
     box-shadow: 0px 2px 2px #DDDDDD;
 }
 a.button {
-	display: inline-block;
-	text-decoration: none;
-	padding: 3px 10px 3px 10px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 3px 10px 3px 10px;
 }
 
 .buttons {
-        color: #FFFFFF;
-        font-family: 'UTM_Bebas';
-        font-size: 20px;
-        height: 32px;
-        padding-bottom: 3px;
-        margin-top: 7px;
+    color: #FFFFFF;
+    font-family: 'UTM_Bebas';
+    font-size: 20px;
+    height: 32px;
+    padding-bottom: 3px;
+    margin-top: 7px;
 }
 .buttons .left {
-	float: left;
-	text-align: left;
+    float: left;
+    text-align: left;
 }
 .buttons .right {
-	float: right;
-	text-align: right;
+    float: right;
+    text-align: right;
 }
 .buttons .center {
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 .frn_form .txt_label {
     font-family: "UTM_Bebas";
@@ -2641,7 +2653,7 @@ a.button {
     width: 250px;
 }
 .frn_form input[type="text"], .frn_form input[type="password"] {
-     width: 250px;
+    width: 250px;
 }
 #contact_frm input[type="text"]{
     width: 250px;
@@ -2659,4 +2671,16 @@ a.button {
     font-size: 18px;
     color: #fff;
     text-align: center;
+}
+
+
+div.option .option-name{
+    color: #993333;
+    font-family: 'UTM_Bebas';
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    border-bottom: 1px solid #993333 !important;
+    /*width: 100%;*/
+    display: block;
 }

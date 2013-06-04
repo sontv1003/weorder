@@ -143,3 +143,5 @@ endif; ?>
                         </div>
                     </header>
                     <div class="clearfix"></div>
+                    
+                    <div id="notification"></div>
