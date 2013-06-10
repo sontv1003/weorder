@@ -1255,7 +1255,7 @@ table.radio tr.highlight:hover td {
 	border-right: 1px solid #DDDDDD;
 }
 .cart-info td {
-	padding: 7px;
+	padding: 15px;
 }
 .cart-info thead td {
 	color: #fff;
@@ -1283,7 +1283,8 @@ table.radio tr.highlight:hover td {
 	/*border: 1px solid #DDDDDD;*/
 }
 .cart-info tbody .image {
-	text-align: center;
+	text-align: left;
+        width: 200px;
 }
 .cart-info tbody .name, .cart-info tbody .name a, .cart-info tbody .quantity {
 	text-align: left;

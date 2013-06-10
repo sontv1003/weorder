@@ -2684,3 +2684,70 @@ div.option .option-name{
     /*width: 100%;*/
     display: block;
 }
+
+
+#chon-all{margin:-19px 0 10px;
+    position: absolute;}
+#camket{
+    /*margin:-10px 0 0 -852px;*/
+}
+#hotline p{font-family:'UTM_Bebas'; font-size:20px; position:absolute; color:#000; padding-top:3px;}
+#hotline p img{height:25px; margin-left:5px}
+#httt p{font-family:'UTM_Bebas'; font-size:20px;position:absolute;  color:#000; padding-top:3px; right: 0px;}
+#httt p img{height:25px; margin-left:5px}
+.cartSelectAll {
+    font-family:'UTM_Bebas'; 
+    font-size:20px;
+    color: #fff;
+    text-align: center;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #060;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#56CA56),to(#060));
+    background-image: -webkit-linear-gradient(top,#56CA56,#060);
+    background-image: -moz-linear-gradient(top,#56CA56,#060);
+    background-image: -ms-linear-gradient(top,#56CA56,#060);
+    background-image: -o-linear-gradient(top,#56CA56,#060);
+    background-image: linear-gradient(top,#56CA56,#060);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#56CA56',EndColorStr='#060');
+    -webkit-box-shadow: 0 1px 0 rgba(283,181,81,0.3);
+    -moz-box-shadow: 0 1px 0 rgba(283,181,81,0.3);
+    box-shadow: 0 1px 0 rgba(283,181,81,0.3);
+    
+    width: 150px; font-weight: normal; line-height: 31px; text-align: center;
+    
+}
+.cartSelectAll label {
+    display: inline-block;
+    font-family:'UTM_Bebas' !important;
+    font-weight: normal;
+    font-size:20px !important;
+    line-height: 31px !important;
+    color: #fff !important;
+}
+.cartDelProduct {
+    font-family:'UTM_Bebas'; 
+    font-size:20px;
+    color: #fff;
+    text-align: center;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #c00;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#f00),to(#c00));
+    background-image: -webkit-linear-gradient(top,#f00,#c00);
+    background-image: -moz-linear-gradient(top,#f00,#c00);
+    background-image: -ms-linear-gradient(top,#f00,#c00);
+    background-image: -o-linear-gradient(top,#f00,#c00);
+    background-image: linear-gradient(top,#f00,#c00);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f00',EndColorStr='#c00');
+    -webkit-box-shadow: 0 1px 0 rgba(200,200,200,0.2);
+    -moz-box-shadow: 0 1px 0 rgba(200,200,200,0.2);
+    box-shadow: 0 1px 0 rgba(200,200,200,0.2);
+    cursor: pointer;
+    width: 150px; 
+    font-weight: normal; 
+    line-height: 31px;
+}
+#hotline span {font-size: 20px; color: #c00;}
