@@ -27,12 +27,12 @@ $_['text_empty'] = 'Giỏ hàng của bạn đang trống!';
 
 // Column
 $_['column_remove'] = 'Loại bỏ';
-$_['column_image'] = 'Hình ảnh';
+$_['column_image'] = 'Ảnh sản phẩm';
 $_['column_name'] = 'Tên sản phẩm';
 $_['column_model'] = 'Kiểu';
 $_['column_quantity'] = 'Số lượng';
 $_['column_price'] = 'Đơn Giá';
-$_['column_total'] = 'Tổng cộng';
+$_['column_total'] = 'Thành tiền';
 
 // Entry
 $_['entry_coupon'] = 'Enter your coupon here:';

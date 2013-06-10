@@ -279,11 +279,14 @@ class Cart {
 		$this->data = array();
   	}
 
-  	public function remove($key) {
-		if (isset($this->session->data['cart'][$key])) {
-     		unset($this->session->data['cart'][$key]);
-  		}
-		
+  	public function remove($keys) {
+            
+                foreach($keys as $key) {
+                    if (isset($this->session->data['cart'][$key])) {
+                        unset($this->session->data['cart'][$key]);
+                    }
+                }
+                
 		$this->data = array();
 	}
 	

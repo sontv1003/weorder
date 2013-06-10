@@ -37,12 +37,25 @@
         <img class="fl" style="width: 855px;" id="camket" src="catalog/view/theme/default/images/camket.jpg">
         <div class="clear"></div>
     </div>
-    
-  <h1><?php echo $heading_title; ?>
-    <?php if ($weight) { ?>
-    &nbsp;(<?php echo $weight; ?>)
-    <?php } ?>
-  </h1>
+    <div>
+        <div class="fl cartSelectAll">
+            <input type="checkbox" id="cbSelectAll" />
+            <label for="cbSelectAll">CHỌN TẤT CẢ</label>
+        </div>
+        <div class="fl cartDelProduct">
+            XÓA SẢN PHẨM
+        </div>
+        <div class="fr" style="border-top: 1px solid #000; width: 690px; height: 30px;">
+            <div id="hotline" class="fl" style="width: 60%;">
+                <p>HOTLINE: MR.LONG: <span id="sohl">092 883 688</span><img src="catalog/view/theme/default/images/ip.png"></p>
+            </div>
+            <div id="httt" class="fr" style="width: 35%;">
+                <p>HỖ TRỢ TRỰC TUYẾN<img src="catalog/view/theme/default/images/phone.png"></p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
   <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
     <div class="cart-info">
       <table>
@@ -61,7 +74,10 @@
           $total_quantity = 0;
           foreach ($products as $product) { ?>
           <tr>
-            <td class="image"><?php if ($product['thumb']) { ?>
+            <td class="image">
+                <input type="checkbox" class="cbProdutct" value="<?php echo $product['key'] ?>"/>
+                
+                <?php if ($product['thumb']) { ?>
               <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" /></a>
               <?php } ?></td>
             <td class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
@@ -401,6 +417,23 @@ $('select[name=\'country_id\']').bind('change', function() {
 });
 
 $('select[name=\'country_id\']').trigger('change');
+
+$('#cbSelectAll').click(function(){
+    if($(this).is(':checked'))
+        $('.cbProdutct').attr('checked', true);
+    else 
+        $('.cbProdutct').attr('checked', false);
+});
+
+$('.cartDelProduct').click(function(){
+        var selected = new Array();
+        $('.cbProdutct:checked').each(function() {
+            selected.push($(this).val());
+        });
+        
+        location.href = '<?php echo $remove_link ?>&remove=' + selected.join(',');
+});
+
 //--></script>
 <?php } ?>
 <?php echo $footer; ?>
