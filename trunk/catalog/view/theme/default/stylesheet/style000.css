@@ -124,8 +124,8 @@ q:before, q:after {
 	content: none
 }
 small {
-	font-size: 11px;
-	font-size: 1.1rem
+    font-size: 11px;
+    font-family: Arial;
 }
 sub, sup {
 	font-size: 10px;
@@ -191,10 +191,22 @@ table button, table input {
 }
 .clickable, button, input[type="button"], input[type="reset"], input[type="submit"] {
 	cursor: pointer;
-	-webkit-appearance: button
+	-webkit-appearance: button;
+}
+.button {
+    background: #000;
+    color: #FFFFFF;
+    font-family: 'UTM_Bebas' !important;
+    font-size: 20px !important;
+    height: 32px;
+    border: none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    webkit-border-radius: 5px;
 }
 input[type="checkbox"], input[type="radio"] {
-	box-sizing: border-box
+	box-sizing: border-box;
+        vertical-align: middle;
 }
 input[type="search"] {
 	-webkit-appearance: textfield;
@@ -2575,14 +2587,31 @@ font-size:.9rem;
 }
 .prd-brand-img {
 	float: left;
-	display: block
+	display: block;
+        margin-top: 10px;
 }
 .prd-hd {
-	margin-left: 115px;
-	margin-bottom: 20px
+
 }
-.prd-brand {
-	display: block
+.prd-brand a{
+	display: block;
+        font-family: 'UTM_Bebas';
+        font-size: 15px;
+}
+.lbPrice {
+    color: #BF0000;
+    font-size: 20px;
+}
+.prd-title {
+    display: block;  
+    font-family: 'UTM_Bebas';
+    font-size: 20px;
+    padding: 10px 0;
+}
+.prd-price {
+    font-family: 'UTM_Bebas';
+    font-size: 20px;
+    display: block;
 }
 .prd-availability {
 	clear: both;
@@ -4425,6 +4454,9 @@ table#checkoutCart, table.cartTable {
 .itm-brand, .itm-name, .itm-title, .itm-priceBox, .itm-imageWrapper {
 	display: block
 }
+.itm-imageWrapper img {
+    width: 200px;
+}
 .itm-product-title {
 	padding-left: 8px;
 	padding-right: 5px;
@@ -4861,19 +4893,20 @@ font-size:.9rem;
 	overflow: hidden
 }
 .bService .iconSprite {
-	background: url("../../images/local/icons/csThumb.png") no-repeat scroll 0 0 transparent;
+	background: url("../images/call.png") center center no-repeat;
 	display: block;
 	float: left;
-	height: 56px;
-	width: 67px
+	height: 80px;
+	width: 100px
 }
 .bService p {
 	color: black;
 	float: left;
 	font-size: 13px;
 	line-height: 20px;
+        margin-left: -25px;
 	padding: 8px;
-	width: 323px
+	width: 300px
 }
 ul.rightbar>li.i-usp {
 	width: 107px

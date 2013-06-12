@@ -65,7 +65,7 @@
             <td class="name"><?php echo $column_name; ?></td>
             <td class="model"><?php echo $column_model; ?></td>
             <td class="quantity"><?php echo $column_quantity; ?></td>
-            <td class="price"><?php echo $column_price; ?></td>
+            <td class="price" style="font-weight: normal"><?php echo $column_price; ?></td>
             <td class="total"><?php echo $column_total; ?></td>
           </tr>
         </thead>
@@ -122,6 +122,8 @@
       </table>
     </div>
   </form>
+<!--    
+    
   <?php if ($coupon_status || $voucher_status || $reward_status || $shipping_status) { ?>
   <h2><?php echo $text_next; ?></h2>
   <div class="content">
@@ -227,6 +229,11 @@
     </div>
   </div>
   <?php } ?>
+
+-->
+
+
+
 <!--  <div class="cart-total">
     <table id="total">
     <??>
@@ -243,27 +250,35 @@
       <?php $i=0; foreach ($totals as $total) { ?>
           <?php if($i == 0) { ?>
               <ul>
-                  <li style="background-color:#444; width: 350px;">Tổng số lượng trong giỏ hàng là </li>
-                  <li style="background-color:#222; width: 165px; color:#fff"><?php echo $total_quantity ?></li>
-                  <li style="background-color:#444; width: 200px;"><?php echo $total['title']; ?></li>
-                  <li style="background-color:#222; width: 200px; color:#fff"><?php echo $total['text']; ?></li>
+                  <li class="head_cart1" style="width: 310px; color:#000;">Tổng số lượng trong giỏ hàng là </li>
+                  <li class="head_cart2" style="width: 163px;"><?php echo $total_quantity ?></li>
+                  <li class="head_cart1" style="width: 198px; color:#000;"><?php echo $total['title']; ?></li>
+                  <li class="head_cart2" style="width: 237px;"><?php echo $total['text']; ?></li>
               </ul>
           <?php } else { ?>
-      
+
       <div>
-        <div class="fr" style="width: 220px; text-align: center"><b><?php echo $total['text']; ?></b></div>
-        <div class="fr" style="width: 220px; text-align: center"><b><?php echo $total['title']; ?></b></div>
-        <div class="clear"></div>
+          <a href="<?php echo $checkout; ?>"><div class="fl dytt fontUTM" style="width: 518px;"><?php echo $button_checkout; ?></div></a>
+          <div id="phis" class="fr">
+                <ul>
+                    <li>phí ship quốc tế</li>
+                    <li>210.000</li>
+                    <li>phí ship trong nước</li>
+                    <li>90.000</li>
+                </ul>
+          </div>
+          <div class="clear"></div>
+      </div>
+      <div>
+            <div class="fl dky fontUTM">Hủy đơn hàng</div>
+            <div class="fr cost_payment"><b><?php echo $total['text']; ?></b></div>
+            <div class="fr total_payment"><b>Tổng tiền bạn phải trả là:<?php //echo $total['title']; ?></b></div>
+            <div class="clear"></div>
       </div>
       
     <?php } 
         $i++;
     }?>
-  </div>
-  <div class="clear"></div>
-  <div class="buttons">
-    <div class="right"><a href="<?php echo $checkout; ?>" class="button"><?php echo $button_checkout; ?></a></div>
-    <div class="center"><a href="<?php echo $continue; ?>" class="button"><?php echo $button_shopping; ?></a></div>
   </div>
   <?php echo $content_bottom; ?></div>
 <script type="text/javascript"><!--

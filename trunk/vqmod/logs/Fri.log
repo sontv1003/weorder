@@ -1,0 +1,52 @@
+---------- Date: 2013-06-07 04:56:30 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-07 04:56:40 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-07 04:56:47 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-07 04:56:50 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/checkout
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+

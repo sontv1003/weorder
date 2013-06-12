@@ -1,7 +1,7 @@
----------- Date: 2013-06-04 04:52:06 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/nam?product_id=28
+---------- Date: 2013-06-11 07:44:24 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -11,10 +11,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 04:52:10 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/nam?filter_manufacturer_id=5
+---------- Date: 2013-06-11 07:44:40 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -24,23 +24,1350 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 04:52:17 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/nam?product_id=28
+---------- Date: 2013-06-11 07:44:46 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/product&amp;path=33&amp;product_id=30
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
    author    : VinaEcom
 SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/rcn_jqzoom_product.xml
+   id        : RCN jqzoom product
+   version   : 1.0
+   vqmver    : 2.1.6
+   author    : rocanowi
+SEARCH NOT FOUND (ABORTING MOD): <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 07:44:54 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 07:44:57 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/product&amp;product_id=42
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/rcn_jqzoom_product.xml
+   id        : RCN jqzoom product
+   version   : 1.0
+   vqmver    : 2.1.6
+   author    : rocanowi
+SEARCH NOT FOUND (ABORTING MOD): <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 07:45:02 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 07:45:08 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 07:45:25 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 07:47:58 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 07:48:02 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 07:48:09 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/product&amp;product_id=42
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/rcn_jqzoom_product.xml
+   id        : RCN jqzoom product
+   version   : 1.0
+   vqmver    : 2.1.6
+   author    : rocanowi
+SEARCH NOT FOUND (ABORTING MOD): <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 07:48:13 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 07:48:17 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 07:48:20 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=common/home
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 07:48:26 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 07:48:35 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 07:48:41 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:37:04 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:37:15 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:37:44 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/product&amp;product_id=42
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/rcn_jqzoom_product.xml
+   id        : RCN jqzoom product
+   version   : 1.0
+   vqmver    : 2.1.6
+   author    : rocanowi
+SEARCH NOT FOUND (ABORTING MOD): <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:38:24 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:38:31 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:42:14 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:42:31 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:42:56 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:43:00 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:43:09 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:45:54 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:46:07 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:46:43 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:47:40 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:49:16 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:49:48 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:50:14 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:51:05 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:51:19 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:51:44 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:51:59 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:52:18 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:53:02 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:55:24 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:56:42 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 15:57:56 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:00:09 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:00:25 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:00:40 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:00:58 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:01:38 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:02:40 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:05:16 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:06:00 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:08:16 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:08:33 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:08:52 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:09:17 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:12:09 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:14:39 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:15:12 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:15:36 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:17:08 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:18:00 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:18:53 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:20:15 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:20:36 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:22:16 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:22:20 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=common/home
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:22:22 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:22:25 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=common/home
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:22:33 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:22:55 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:23:38 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:23:46 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:24:07 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:24:10 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:24:42 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:25:26 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:25:42 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/checkout
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:25:45 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:25:59 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:27:26 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:28:14 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:28:37 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:28:53 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:29:00 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:29:03 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:29:05 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/product&amp;product_id=42
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/rcn_jqzoom_product.xml
+   id        : RCN jqzoom product
+   version   : 1.0
+   vqmver    : 2.1.6
+   author    : rocanowi
+SEARCH NOT FOUND (ABORTING MOD): <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:29:12 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:29:26 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:29:42 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:30:06 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:30:21 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:30:44 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:31:07 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:31:11 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:33:20 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:33:47 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:33:54 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:34:40 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:34:45 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:34:51 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:34:58 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-11 16:35:21 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:00:20 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/
+---------- Date: 2013-06-11 16:36:23 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/checkout
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -50,10 +1377,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:04:36 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:36:26 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -63,10 +1390,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:06:52 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:36:54 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=account/login
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -76,10 +1403,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:11:39 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:37:01 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -89,10 +1416,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:31:07 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:37:11 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -102,23 +1429,31 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:33:02 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:38:44 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/product&amp;product_id=42
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
    author    : VinaEcom
 SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/rcn_jqzoom_product.xml
+   id        : RCN jqzoom product
+   version   : 1.0
+   vqmver    : 2.1.6
+   author    : rocanowi
+SEARCH NOT FOUND (ABORTING MOD): <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a></div>
 
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:35:22 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:38:47 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -128,10 +1463,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:37:45 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:38:57 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -141,10 +1476,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:37:48 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/
+---------- Date: 2013-06-11 16:43:59 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -154,10 +1489,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:40:34 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:44:02 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -167,10 +1502,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:40:37 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/
+---------- Date: 2013-06-11 16:44:30 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -180,10 +1515,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:41:09 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:45:50 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -193,10 +1528,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:41:12 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/
+---------- Date: 2013-06-11 16:46:02 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -206,10 +1541,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:41:40 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:46:12 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/checkout
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -219,10 +1554,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:46:04 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:46:15 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -232,10 +1567,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:46:11 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=52
+---------- Date: 2013-06-11 16:46:26 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -245,23 +1580,31 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:49:23 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=52
+---------- Date: 2013-06-11 16:47:22 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/product&amp;product_id=30
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
    author    : VinaEcom
 SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/rcn_jqzoom_product.xml
+   id        : RCN jqzoom product
+   version   : 1.0
+   vqmver    : 2.1.6
+   author    : rocanowi
+SEARCH NOT FOUND (ABORTING MOD): <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a></div>
 
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:49:30 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=52
+---------- Date: 2013-06-11 16:47:25 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -271,10 +1614,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:49:48 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=52
+---------- Date: 2013-06-11 16:48:16 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -284,36 +1627,52 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:49:55 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:48:18 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/product&amp;path=33&amp;product_id=28
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
    author    : VinaEcom
 SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/rcn_jqzoom_product.xml
+   id        : RCN jqzoom product
+   version   : 1.0
+   vqmver    : 2.1.6
+   author    : rocanowi
+SEARCH NOT FOUND (ABORTING MOD): <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a></div>
 
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:50:53 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:49:14 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/product&amp;path=33&amp;product_id=28
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
    author    : VinaEcom
 SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/rcn_jqzoom_product.xml
+   id        : RCN jqzoom product
+   version   : 1.0
+   vqmver    : 2.1.6
+   author    : rocanowi
+SEARCH NOT FOUND (ABORTING MOD): <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a></div>
 
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:52:49 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:49:16 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -323,10 +1682,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:57:53 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:49:21 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -336,10 +1695,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:59:12 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:49:27 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -349,10 +1708,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 05:59:55 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:49:32 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -362,10 +1721,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:00:50 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:50:11 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -375,10 +1734,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:01:04 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:50:15 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -388,10 +1747,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:10:22 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:50:19 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -401,10 +1760,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:11:10 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=65
+---------- Date: 2013-06-11 16:52:43 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -414,23 +1773,31 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:17:28 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=65
+---------- Date: 2013-06-11 16:52:46 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/product&amp;product_id=42
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
    author    : VinaEcom
 SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/rcn_jqzoom_product.xml
+   id        : RCN jqzoom product
+   version   : 1.0
+   vqmver    : 2.1.6
+   author    : rocanowi
+SEARCH NOT FOUND (ABORTING MOD): <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a></div>
 
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:25:58 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=65
+---------- Date: 2013-06-11 16:52:52 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -440,10 +1807,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:27:39 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=65
+---------- Date: 2013-06-11 16:52:59 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -453,10 +1820,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:27:54 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:53:02 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=common/home
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -466,10 +1833,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:29:47 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 16:53:06 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -479,10 +1846,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:29:59 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=62
+---------- Date: 2013-06-11 16:53:09 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -492,10 +1859,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:30:15 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=69
+---------- Date: 2013-06-11 16:53:16 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/checkout
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -505,10 +1872,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:30:32 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=62
+---------- Date: 2013-06-11 16:53:18 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -518,10 +1885,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:35:59 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=62
+---------- Date: 2013-06-11 16:53:22 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -531,23 +1898,31 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:36:06 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=71
+---------- Date: 2013-06-11 16:53:26 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/product&amp;product_id=42
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
    author    : VinaEcom
 SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/rcn_jqzoom_product.xml
+   id        : RCN jqzoom product
+   version   : 1.0
+   vqmver    : 2.1.6
+   author    : rocanowi
+SEARCH NOT FOUND (ABORTING MOD): <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a></div>
 
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:36:51 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=71
+---------- Date: 2013-06-11 16:53:34 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -557,10 +1932,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:37:22 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=71
+---------- Date: 2013-06-11 16:53:58 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -570,10 +1945,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:39:22 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=49
+---------- Date: 2013-06-11 16:54:04 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -583,10 +1958,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:39:28 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=50
+---------- Date: 2013-06-11 16:54:15 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/checkout
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -596,10 +1971,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:41:27 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=50
+---------- Date: 2013-06-11 16:59:43 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=account/login
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -609,10 +1984,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:41:48 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=50
+---------- Date: 2013-06-11 16:59:50 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=account/register
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -622,10 +1997,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:42:29 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=50
+---------- Date: 2013-06-11 17:00:30 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -635,10 +2010,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:42:56 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=50
+---------- Date: 2013-06-11 17:00:32 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -648,10 +2023,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:43:56 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=50
+---------- Date: 2013-06-11 17:00:47 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/checkout
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -661,10 +2036,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:44:01 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=50
+---------- Date: 2013-06-11 17:00:57 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -674,10 +2049,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:44:05 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=59
+---------- Date: 2013-06-11 17:01:05 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -687,10 +2062,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:44:10 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=62
+---------- Date: 2013-06-11 17:02:29 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -700,10 +2075,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:44:23 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=69
+---------- Date: 2013-06-11 17:02:33 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/checkout
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -713,10 +2088,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:44:36 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_manufacturer_id=7
+---------- Date: 2013-06-11 17:05:31 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=information/information&amp;information_id=9
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -726,10 +2101,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:44:46 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=62
+---------- Date: 2013-06-11 17:05:33 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -739,10 +2114,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:44:55 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/product&amp;path=33&amp;product_id=30
+---------- Date: 2013-06-11 17:05:39 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -752,10 +2127,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:46:35 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=62
+---------- Date: 2013-06-11 17:05:45 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -765,10 +2140,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:47:43 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=62
+---------- Date: 2013-06-11 17:05:47 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -778,23 +2153,31 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:48:39 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=62
+---------- Date: 2013-06-11 17:05:51 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/product&amp;product_id=28
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
    author    : VinaEcom
 SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+MOD DETAILS:
+   modFile   : E:\Sources\weorder\vqmod/xml/rcn_jqzoom_product.xml
+   id        : RCN jqzoom product
+   version   : 1.0
+   vqmver    : 2.1.6
+   author    : rocanowi
+SEARCH NOT FOUND (ABORTING MOD): <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a></div>
 
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:49:28 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_manufacturer_id=7
+---------- Date: 2013-06-11 17:05:55 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -804,10 +2187,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:51:59 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=50
+---------- Date: 2013-06-11 17:06:03 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=common/home
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -817,10 +2200,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:52:10 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=50
+---------- Date: 2013-06-11 17:07:48 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=common/home
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -830,10 +2213,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:52:46 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=50
+---------- Date: 2013-06-11 17:07:52 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -843,10 +2226,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:52:51 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=50&amp;filter_manufacturer_id=7
+---------- Date: 2013-06-11 17:07:57 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=common/home
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -856,10 +2239,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:53:24 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=50&amp;filter_manufacturer_id=7
+---------- Date: 2013-06-11 17:08:00 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -869,10 +2252,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:53:32 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_manufacturer_id=7&amp;filter_option=63
+---------- Date: 2013-06-11 17:08:05 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -882,10 +2265,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:53:41 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_manufacturer_id=7&amp;filter_option=62
+---------- Date: 2013-06-11 17:08:15 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=common/home
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -895,10 +2278,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:53:47 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=62&amp;filter_manufacturer_id=5
+---------- Date: 2013-06-11 17:08:17 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -908,10 +2291,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:53:57 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33
+---------- Date: 2013-06-11 17:11:51 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -921,10 +2304,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:54:01 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_manufacturer_id=5
+---------- Date: 2013-06-11 17:11:54 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=common/home
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -934,10 +2317,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:54:58 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_manufacturer_id=5
+---------- Date: 2013-06-11 17:12:00 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=product/category&amp;path=33
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -947,10 +2330,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:55:03 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_manufacturer_id=7
+---------- Date: 2013-06-11 17:12:07 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -960,10 +2343,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:55:09 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_manufacturer_id=7&amp;filter_option=62
+---------- Date: 2013-06-11 17:13:43 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/checkout
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -973,10 +2356,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:55:16 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=62&amp;filter_manufacturer_id=9
+---------- Date: 2013-06-11 17:17:25 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/checkout
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -986,10 +2369,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:55:30 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_manufacturer_id=9&amp;filter_option=63
+---------- Date: 2013-06-11 17:17:33 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -999,10 +2382,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:55:35 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=63&amp;filter_manufacturer_id=5
+---------- Date: 2013-06-11 17:17:39 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/checkout
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -1012,10 +2395,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:56:35 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=63&amp;filter_manufacturer_id=5
+---------- Date: 2013-06-11 17:18:22 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/checkout
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
@@ -1025,10 +2408,10 @@ SEARCH NOT FOUND (ABORTING MOD): </ul></div>
 ----------------------------------------------------------------------
 
 
----------- Date: 2013-06-04 06:56:40 ~ IP : ::1 ----------
-REQUEST URI : /weorder/trunk/index.php?route=product/category&amp;path=33&amp;filter_option=63&amp;filter_manufacturer_id=9
+---------- Date: 2013-06-11 17:18:37 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/checkout
 MOD DETAILS:
-   modFile   : F:\xampp\htdocs\weorder\trunk\vqmod/xml/news_pro.xml
+   modFile   : E:\Sources\weorder\vqmod/xml/news_pro.xml
    id        : News_Pro
    version   : 1.5.4.1
    vqmver    : 2.1.7
