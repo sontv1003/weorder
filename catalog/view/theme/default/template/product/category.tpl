@@ -85,7 +85,7 @@
                                 <li class="price">
                                         <?php if (!$product['special']) { ?>
                                         <p class="size" >Giá siêu rẻ:
-                                        <?php echo $product['price']; ?>
+                                            <span style="color: #BF0000; font-weight: bold;"><?php echo $product['price']; ?></span>
                                         </p>
                                     <?php } else { ?>
                                         <span class="price-old size">Giá siêu rẻ: <?php echo $product['price']; ?></span> <span class="price-new"><?php echo $product['special']; ?></span>
@@ -207,4 +207,13 @@
         display('list');
     }
     //--></script> 
+<script type="text/javascript"><!--
+    $(document).ready(function() {
+        $('.colorbox').colorbox({
+            width: 640,
+            height: 480
+        });
+    });
+    //--></script> 
 <?php echo $footer; ?>
+

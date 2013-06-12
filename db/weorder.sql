@@ -1,9 +1,9 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               5.5.16 - MySQL Community Server (GPL)
--- Server OS:                    Win32
+-- Server version:               5.5.24-log - MySQL Community Server (GPL)
+-- Server OS:                    Win64
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-06-04 16:09:11
+-- Date/time:                    2013-06-12 19:06:21
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -31,7 +31,6 @@ CREATE TABLE IF NOT EXISTS `address` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.address: 0 rows
-DELETE FROM `address`;
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 
@@ -74,7 +73,6 @@ CREATE TABLE IF NOT EXISTS `affiliate` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.affiliate: 0 rows
-DELETE FROM `affiliate`;
 /*!40000 ALTER TABLE `affiliate` DISABLE KEYS */;
 /*!40000 ALTER TABLE `affiliate` ENABLE KEYS */;
 
@@ -92,7 +90,6 @@ CREATE TABLE IF NOT EXISTS `affiliate_transaction` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.affiliate_transaction: 0 rows
-DELETE FROM `affiliate_transaction`;
 /*!40000 ALTER TABLE `affiliate_transaction` DISABLE KEYS */;
 /*!40000 ALTER TABLE `affiliate_transaction` ENABLE KEYS */;
 
@@ -107,7 +104,6 @@ CREATE TABLE IF NOT EXISTS `attribute` (
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.attribute: 11 rows
-DELETE FROM `attribute`;
 /*!40000 ALTER TABLE `attribute` DISABLE KEYS */;
 INSERT INTO `attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VALUES
 	(1, 6, 1),
@@ -134,7 +130,6 @@ CREATE TABLE IF NOT EXISTS `attribute_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.attribute_description: 11 rows
-DELETE FROM `attribute_description`;
 /*!40000 ALTER TABLE `attribute_description` DISABLE KEYS */;
 INSERT INTO `attribute_description` (`attribute_id`, `language_id`, `name`) VALUES
 	(1, 2, 'Description'),
@@ -160,7 +155,6 @@ CREATE TABLE IF NOT EXISTS `attribute_group` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.attribute_group: 4 rows
-DELETE FROM `attribute_group`;
 /*!40000 ALTER TABLE `attribute_group` DISABLE KEYS */;
 INSERT INTO `attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 	(3, 2),
@@ -180,7 +174,6 @@ CREATE TABLE IF NOT EXISTS `attribute_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.attribute_group_description: 4 rows
-DELETE FROM `attribute_group_description`;
 /*!40000 ALTER TABLE `attribute_group_description` DISABLE KEYS */;
 INSERT INTO `attribute_group_description` (`attribute_group_id`, `language_id`, `name`) VALUES
 	(3, 2, 'Memory'),
@@ -200,7 +193,6 @@ CREATE TABLE IF NOT EXISTS `banner` (
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.banner: 3 rows
-DELETE FROM `banner`;
 /*!40000 ALTER TABLE `banner` DISABLE KEYS */;
 INSERT INTO `banner` (`banner_id`, `name`, `status`) VALUES
 	(7, 'Slideshow trang chủ', 1),
@@ -220,7 +212,6 @@ CREATE TABLE IF NOT EXISTS `banner_image` (
 ) ENGINE=MyISAM AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.banner_image: 5 rows
-DELETE FROM `banner_image`;
 /*!40000 ALTER TABLE `banner_image` DISABLE KEYS */;
 INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VALUES
 	(87, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'data/anh1.jpg'),
@@ -242,7 +233,6 @@ CREATE TABLE IF NOT EXISTS `banner_image_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.banner_image_description: 5 rows
-DELETE FROM `banner_image_description`;
 /*!40000 ALTER TABLE `banner_image_description` DISABLE KEYS */;
 INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
 	(93, 2, 7, 'ssssssss'),
@@ -270,7 +260,6 @@ CREATE TABLE IF NOT EXISTS `category` (
 ) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.category: 9 rows
-DELETE FROM `category`;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `top2`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 	(25, '', 0, 1, 0, 1, 1, 1, '2009-01-31 01:04:25', '2013-05-20 23:43:45'),
@@ -299,7 +288,6 @@ CREATE TABLE IF NOT EXISTS `category_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.category_description: 9 rows
-DELETE FROM `category_description`;
 /*!40000 ALTER TABLE `category_description` DISABLE KEYS */;
 INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(33, 2, 'Nam', '', '', 'nam'),
@@ -323,7 +311,6 @@ CREATE TABLE IF NOT EXISTS `category_filter` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.category_filter: 0 rows
-DELETE FROM `category_filter`;
 /*!40000 ALTER TABLE `category_filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `category_filter` ENABLE KEYS */;
 
@@ -338,7 +325,6 @@ CREATE TABLE IF NOT EXISTS `category_path` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.category_path: 15 rows
-DELETE FROM `category_path`;
 /*!40000 ALTER TABLE `category_path` DISABLE KEYS */;
 INSERT INTO `category_path` (`category_id`, `path_id`, `level`) VALUES
 	(25, 25, 0),
@@ -369,7 +355,6 @@ CREATE TABLE IF NOT EXISTS `category_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.category_to_layout: 6 rows
-DELETE FROM `category_to_layout`;
 /*!40000 ALTER TABLE `category_to_layout` DISABLE KEYS */;
 INSERT INTO `category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
 	(61, 0, 3),
@@ -390,7 +375,6 @@ CREATE TABLE IF NOT EXISTS `category_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.category_to_store: 9 rows
-DELETE FROM `category_to_store`;
 /*!40000 ALTER TABLE `category_to_store` DISABLE KEYS */;
 INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
 	(25, 0),
@@ -419,7 +403,6 @@ CREATE TABLE IF NOT EXISTS `country` (
 ) ENGINE=MyISAM AUTO_INCREMENT=252 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.country: 249 rows
-DELETE FROM `country`;
 /*!40000 ALTER TABLE `country` DISABLE KEYS */;
 INSERT INTO `country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 	(1, 'Afghanistan', 'AF', 'AFG', '', 0, 1),
@@ -695,7 +678,6 @@ CREATE TABLE IF NOT EXISTS `coupon` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.coupon: 3 rows
-DELETE FROM `coupon`;
 /*!40000 ALTER TABLE `coupon` DISABLE KEYS */;
 INSERT INTO `coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
 	(4, '-10% Discount', '2222', 'P', 10.0000, 0, 0, 0.0000, '2011-01-01', '2012-01-01', 10, '10', 1, '2009-01-27 13:55:03'),
@@ -713,7 +695,6 @@ CREATE TABLE IF NOT EXISTS `coupon_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.coupon_category: 0 rows
-DELETE FROM `coupon_category`;
 /*!40000 ALTER TABLE `coupon_category` DISABLE KEYS */;
 /*!40000 ALTER TABLE `coupon_category` ENABLE KEYS */;
 
@@ -731,7 +712,6 @@ CREATE TABLE IF NOT EXISTS `coupon_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.coupon_history: 0 rows
-DELETE FROM `coupon_history`;
 /*!40000 ALTER TABLE `coupon_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `coupon_history` ENABLE KEYS */;
 
@@ -746,7 +726,6 @@ CREATE TABLE IF NOT EXISTS `coupon_product` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.coupon_product: 0 rows
-DELETE FROM `coupon_product`;
 /*!40000 ALTER TABLE `coupon_product` DISABLE KEYS */;
 /*!40000 ALTER TABLE `coupon_product` ENABLE KEYS */;
 
@@ -764,15 +743,14 @@ CREATE TABLE IF NOT EXISTS `currency` (
   `status` tinyint(1) NOT NULL,
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`currency_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.currency: 3 rows
-DELETE FROM `currency`;
 /*!40000 ALTER TABLE `currency` DISABLE KEYS */;
 INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-	(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.65480000, 1, '2013-06-03 12:15:21'),
-	(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2013-06-04 05:00:16'),
-	(3, 'Euro', 'EUR', '', '€', '2', 0.76880002, 1, '2013-06-03 12:15:21');
+	(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.64969999, 1, '2013-06-05 15:08:27'),
+	(3, 'Euro', 'EUR', '', '€', '2', 0.76419997, 1, '2013-06-05 15:08:27'),
+	(4, 'VNĐ', 'VND', '', ' VNĐ', '0', 1.00000000, 1, '2013-06-05 22:18:49');
 /*!40000 ALTER TABLE `currency` ENABLE KEYS */;
 
 
@@ -802,7 +780,6 @@ CREATE TABLE IF NOT EXISTS `customer` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer: 0 rows
-DELETE FROM `customer`;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 
@@ -817,7 +794,6 @@ CREATE TABLE IF NOT EXISTS `customer_ban_ip` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_ban_ip: 0 rows
-DELETE FROM `customer_ban_ip`;
 /*!40000 ALTER TABLE `customer_ban_ip` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_ban_ip` ENABLE KEYS */;
 
@@ -835,7 +811,6 @@ CREATE TABLE IF NOT EXISTS `customer_field` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_field: 0 rows
-DELETE FROM `customer_field`;
 /*!40000 ALTER TABLE `customer_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_field` ENABLE KEYS */;
 
@@ -854,7 +829,6 @@ CREATE TABLE IF NOT EXISTS `customer_group` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_group: 1 rows
-DELETE FROM `customer_group`;
 /*!40000 ALTER TABLE `customer_group` DISABLE KEYS */;
 INSERT INTO `customer_group` (`customer_group_id`, `approval`, `company_id_display`, `company_id_required`, `tax_id_display`, `tax_id_required`, `sort_order`) VALUES
 	(1, 0, 1, 0, 0, 1, 1);
@@ -872,7 +846,6 @@ CREATE TABLE IF NOT EXISTS `customer_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_group_description: 1 rows
-DELETE FROM `customer_group_description`;
 /*!40000 ALTER TABLE `customer_group_description` DISABLE KEYS */;
 INSERT INTO `customer_group_description` (`customer_group_id`, `language_id`, `name`, `description`) VALUES
 	(1, 2, 'Default', 'test');
@@ -890,7 +863,6 @@ CREATE TABLE IF NOT EXISTS `customer_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_history: 0 rows
-DELETE FROM `customer_history`;
 /*!40000 ALTER TABLE `customer_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_history` ENABLE KEYS */;
 
@@ -907,7 +879,6 @@ CREATE TABLE IF NOT EXISTS `customer_ip` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_ip: 0 rows
-DELETE FROM `customer_ip`;
 /*!40000 ALTER TABLE `customer_ip` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_ip` ENABLE KEYS */;
 
@@ -924,7 +895,6 @@ CREATE TABLE IF NOT EXISTS `customer_online` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_online: 0 rows
-DELETE FROM `customer_online`;
 /*!40000 ALTER TABLE `customer_online` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_online` ENABLE KEYS */;
 
@@ -942,7 +912,6 @@ CREATE TABLE IF NOT EXISTS `customer_reward` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_reward: 0 rows
-DELETE FROM `customer_reward`;
 /*!40000 ALTER TABLE `customer_reward` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_reward` ENABLE KEYS */;
 
@@ -960,7 +929,6 @@ CREATE TABLE IF NOT EXISTS `customer_transaction` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_transaction: 0 rows
-DELETE FROM `customer_transaction`;
 /*!40000 ALTER TABLE `customer_transaction` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_transaction` ENABLE KEYS */;
 
@@ -979,7 +947,6 @@ CREATE TABLE IF NOT EXISTS `custom_field` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.custom_field: 0 rows
-DELETE FROM `custom_field`;
 /*!40000 ALTER TABLE `custom_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field` ENABLE KEYS */;
 
@@ -994,7 +961,6 @@ CREATE TABLE IF NOT EXISTS `custom_field_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.custom_field_description: 0 rows
-DELETE FROM `custom_field_description`;
 /*!40000 ALTER TABLE `custom_field_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_description` ENABLE KEYS */;
 
@@ -1008,7 +974,6 @@ CREATE TABLE IF NOT EXISTS `custom_field_to_customer_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.custom_field_to_customer_group: 0 rows
-DELETE FROM `custom_field_to_customer_group`;
 /*!40000 ALTER TABLE `custom_field_to_customer_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_to_customer_group` ENABLE KEYS */;
 
@@ -1023,7 +988,6 @@ CREATE TABLE IF NOT EXISTS `custom_field_value` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.custom_field_value: 0 rows
-DELETE FROM `custom_field_value`;
 /*!40000 ALTER TABLE `custom_field_value` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_value` ENABLE KEYS */;
 
@@ -1039,7 +1003,6 @@ CREATE TABLE IF NOT EXISTS `custom_field_value_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.custom_field_value_description: 0 rows
-DELETE FROM `custom_field_value_description`;
 /*!40000 ALTER TABLE `custom_field_value_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_value_description` ENABLE KEYS */;
 
@@ -1056,7 +1019,6 @@ CREATE TABLE IF NOT EXISTS `download` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.download: 0 rows
-DELETE FROM `download`;
 /*!40000 ALTER TABLE `download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `download` ENABLE KEYS */;
 
@@ -1071,7 +1033,6 @@ CREATE TABLE IF NOT EXISTS `download_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.download_description: 0 rows
-DELETE FROM `download_description`;
 /*!40000 ALTER TABLE `download_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `download_description` ENABLE KEYS */;
 
@@ -1083,10 +1044,9 @@ CREATE TABLE IF NOT EXISTS `extension` (
   `type` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL,
   PRIMARY KEY (`extension_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=433 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=434 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.extension: 25 rows
-DELETE FROM `extension`;
+-- Dumping data for table weorder.extension: 26 rows
 /*!40000 ALTER TABLE `extension` DISABLE KEYS */;
 INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 	(23, 'payment', 'cod'),
@@ -1113,7 +1073,8 @@ INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 	(429, 'module', 'tnt_newscat'),
 	(430, 'module', 'filter'),
 	(431, 'module', 'manufacturersdropdown'),
-	(432, 'module', 'filteroption');
+	(432, 'module', 'filteroption'),
+	(433, 'module', 'viewed');
 /*!40000 ALTER TABLE `extension` ENABLE KEYS */;
 
 
@@ -1127,7 +1088,6 @@ CREATE TABLE IF NOT EXISTS `filter` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.filter: 0 rows
-DELETE FROM `filter`;
 /*!40000 ALTER TABLE `filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter` ENABLE KEYS */;
 
@@ -1143,7 +1103,6 @@ CREATE TABLE IF NOT EXISTS `filter_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.filter_description: 0 rows
-DELETE FROM `filter_description`;
 /*!40000 ALTER TABLE `filter_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter_description` ENABLE KEYS */;
 
@@ -1157,7 +1116,6 @@ CREATE TABLE IF NOT EXISTS `filter_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.filter_group: 0 rows
-DELETE FROM `filter_group`;
 /*!40000 ALTER TABLE `filter_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter_group` ENABLE KEYS */;
 
@@ -1172,7 +1130,6 @@ CREATE TABLE IF NOT EXISTS `filter_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.filter_group_description: 0 rows
-DELETE FROM `filter_group_description`;
 /*!40000 ALTER TABLE `filter_group_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter_group_description` ENABLE KEYS */;
 
@@ -1189,7 +1146,6 @@ CREATE TABLE IF NOT EXISTS `geo_zone` (
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.geo_zone: 2 rows
-DELETE FROM `geo_zone`;
 /*!40000 ALTER TABLE `geo_zone` DISABLE KEYS */;
 INSERT INTO `geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`, `date_added`) VALUES
 	(3, 'UK VAT Zone', 'UK VAT', '2010-02-26 22:33:24', '2009-01-06 23:26:25'),
@@ -1210,7 +1166,6 @@ CREATE TABLE IF NOT EXISTS `information` (
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.information: 7 rows
-DELETE FROM `information`;
 /*!40000 ALTER TABLE `information` DISABLE KEYS */;
 INSERT INTO `information` (`information_id`, `bottom`, `sort_order`, `top`, `top_order`, `status`) VALUES
 	(3, 0, 3, 0, 0, 1),
@@ -1234,7 +1189,6 @@ CREATE TABLE IF NOT EXISTS `information_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.information_description: 7 rows
-DELETE FROM `information_description`;
 /*!40000 ALTER TABLE `information_description` DISABLE KEYS */;
 INSERT INTO `information_description` (`information_id`, `language_id`, `title`, `description`) VALUES
 	(7, 2, 'Dịch vụ', '&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.32 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Một đoạn dịch của H. Rackham năm 1914&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.33 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.&quot;&lt;/p&gt;\r\n'),
@@ -1257,7 +1211,6 @@ CREATE TABLE IF NOT EXISTS `information_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.information_to_layout: 0 rows
-DELETE FROM `information_to_layout`;
 /*!40000 ALTER TABLE `information_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `information_to_layout` ENABLE KEYS */;
 
@@ -1271,7 +1224,6 @@ CREATE TABLE IF NOT EXISTS `information_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.information_to_store: 7 rows
-DELETE FROM `information_to_store`;
 /*!40000 ALTER TABLE `information_to_store` DISABLE KEYS */;
 INSERT INTO `information_to_store` (`information_id`, `store_id`) VALUES
 	(3, 0),
@@ -1301,7 +1253,6 @@ CREATE TABLE IF NOT EXISTS `language` (
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.language: 1 rows
-DELETE FROM `language`;
 /*!40000 ALTER TABLE `language` DISABLE KEYS */;
 INSERT INTO `language` (`language_id`, `name`, `code`, `locale`, `image`, `directory`, `filename`, `sort_order`, `status`) VALUES
 	(2, 'Vietnamese', 'vi', 'vi_VN.UTF-8,vi_VN,vi-vn,vietnamese', 'vn.png', 'vietnamese', 'vietnamese', 0, 1);
@@ -1317,7 +1268,6 @@ CREATE TABLE IF NOT EXISTS `layout` (
 ) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.layout: 13 rows
-DELETE FROM `layout`;
 /*!40000 ALTER TABLE `layout` DISABLE KEYS */;
 INSERT INTO `layout` (`layout_id`, `name`) VALUES
 	(1, 'Home'),
@@ -1347,7 +1297,6 @@ CREATE TABLE IF NOT EXISTS `layout_route` (
 ) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.layout_route: 13 rows
-DELETE FROM `layout_route`;
 /*!40000 ALTER TABLE `layout_route` DISABLE KEYS */;
 INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
 	(30, 6, 0, 'account'),
@@ -1375,7 +1324,6 @@ CREATE TABLE IF NOT EXISTS `length_class` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.length_class: 3 rows
-DELETE FROM `length_class`;
 /*!40000 ALTER TABLE `length_class` DISABLE KEYS */;
 INSERT INTO `length_class` (`length_class_id`, `value`) VALUES
 	(1, 1.00000000),
@@ -1395,7 +1343,6 @@ CREATE TABLE IF NOT EXISTS `length_class_description` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.length_class_description: 3 rows
-DELETE FROM `length_class_description`;
 /*!40000 ALTER TABLE `length_class_description` DISABLE KEYS */;
 INSERT INTO `length_class_description` (`length_class_id`, `language_id`, `title`, `unit`) VALUES
 	(1, 2, 'Centimeter', 'cm'),
@@ -1413,18 +1360,20 @@ CREATE TABLE IF NOT EXISTS `manufacturer` (
   `image` varchar(255) DEFAULT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`manufacturer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.manufacturer: 6 rows
-DELETE FROM `manufacturer`;
+-- Dumping data for table weorder.manufacturer: 9 rows
 /*!40000 ALTER TABLE `manufacturer` DISABLE KEYS */;
 INSERT INTO `manufacturer` (`manufacturer_id`, `name`, `description`, `image`, `sort_order`) VALUES
-	(5, 'HTC', NULL, 'data/demo/htc_logo.jpg', 0),
-	(6, 'Palm', NULL, 'data/demo/palm_logo.jpg', 0),
-	(7, 'Hewlett-Packard', NULL, 'data/demo/hp_logo.jpg', 0),
-	(8, 'Apple', NULL, 'data/demo/apple_logo.jpg', 0),
-	(9, 'Zara', '&lt;p&gt;&lt;strong&gt;Lee &amp;amp; Tee&lt;/strong&gt; nổi tiếng với những sản phẩm túi xách rất được giới trẻ ưa chuộng. Màu sắc đẹp, kiểu dáng đa dạng, hợp thời trang giúp &lt;strong&gt;túi xách Lee &amp;amp; Tee&lt;/strong&gt; luôn chinh phục được các khách hàng trẻ và sành điệu. Các sản phẩm của Lee &amp;amp; Tee đều được sản xuất dưới chất liệu simili giả da vô cùng bền chắc và đẹp mắt. Điểm đặc biệt chính của &lt;strong&gt;Lee and Tee&lt;/strong&gt; chính là những thiết kế luôn cập nhập nhanh nhạy xu hướng thời trang trên thế giới. Với phong cách trẻ trung, hiện đại, &lt;strong&gt;Lee &amp;amp; Tee&lt;/strong&gt; sẽ là sự lựa chọn hoàn hảo cho bộ sưu tập túi xách của bạn. Hiện các sản phẩm của thương hiệu &lt;strong&gt;túi du lịch Lee &amp;amp; Tee&lt;/strong&gt; đã có mặt tại trang web mua sắm thời trang hàng đầu ZALORA Việt Nam.&lt;/p&gt;\r\n', 'data/diesel.png', 0),
-	(10, 'Sony', NULL, 'data/demo/sony_logo.jpg', 0);
+	(5, 'Converse', '', 'data/thuong_hieu/logo converse_logo.jpg', 0),
+	(6, 'Adidas', '', 'data/thuong_hieu/logo-adidas.jpg', 0),
+	(7, 'Louis Vuitton', '', 'data/thuong_hieu/louis-vuitton-logo.jpg', 0),
+	(8, 'Lascote', '', 'data/thuong_hieu/logo_lacoste.gif', 0),
+	(9, 'Zara', '&lt;p&gt;&lt;strong&gt;Lee &amp;amp; Tee&lt;/strong&gt; nổi tiếng với những sản phẩm túi xách rất được giới trẻ ưa chuộng. Màu sắc đẹp, kiểu dáng đa dạng, hợp thời trang giúp &lt;strong&gt;túi xách Lee &amp;amp; Tee&lt;/strong&gt; luôn chinh phục được các khách hàng trẻ và sành điệu. Các sản phẩm của Lee &amp;amp; Tee đều được sản xuất dưới chất liệu simili giả da vô cùng bền chắc và đẹp mắt. Điểm đặc biệt chính của &lt;strong&gt;Lee and Tee&lt;/strong&gt; chính là những thiết kế luôn cập nhập nhanh nhạy xu hướng thời trang trên thế giới. Với phong cách trẻ trung, hiện đại, &lt;strong&gt;Lee &amp;amp; Tee&lt;/strong&gt; sẽ là sự lựa chọn hoàn hảo cho bộ sưu tập túi xách của bạn. Hiện các sản phẩm của thương hiệu &lt;strong&gt;túi du lịch Lee &amp;amp; Tee&lt;/strong&gt; đã có mặt tại trang web mua sắm thời trang hàng đầu ZALORA Việt Nam.&lt;/p&gt;\r\n', 'data/thuong_hieu/diesel.png', 0),
+	(10, 'Nike', '', 'data/thuong_hieu/nike-logo.jpg', 0),
+	(11, 'Tommy Hilfiger', '', 'data/thuong_hieu/thiet-ke-logo-thoi-trang-tommy_hilfiger_logo.jpg', 0),
+	(12, 'Armani', '', 'data/thuong_hieu/1667_armani_serris_img.jpg', 0),
+	(13, 'Phan Nguyễn', '', 'data/thuong_hieu/phannguyen_logo.png', 0);
 /*!40000 ALTER TABLE `manufacturer` ENABLE KEYS */;
 
 
@@ -1436,8 +1385,7 @@ CREATE TABLE IF NOT EXISTS `manufacturer_to_store` (
   PRIMARY KEY (`manufacturer_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.manufacturer_to_store: 6 rows
-DELETE FROM `manufacturer_to_store`;
+-- Dumping data for table weorder.manufacturer_to_store: 9 rows
 /*!40000 ALTER TABLE `manufacturer_to_store` DISABLE KEYS */;
 INSERT INTO `manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 	(5, 0),
@@ -1445,7 +1393,10 @@ INSERT INTO `manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 	(7, 0),
 	(8, 0),
 	(9, 0),
-	(10, 0);
+	(10, 0),
+	(11, 0),
+	(12, 0),
+	(13, 0);
 /*!40000 ALTER TABLE `manufacturer_to_store` ENABLE KEYS */;
 
 
@@ -1467,19 +1418,18 @@ CREATE TABLE IF NOT EXISTS `news` (
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news: 12 rows
-DELETE FROM `news`;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
 INSERT INTO `news` (`news_id`, `manufacturer_id`, `image`, `date_available`, `sort_order`, `comment`, `approved`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
 	(1, 0, 'data/sanpham1.jpg', '2013-05-19', 1, 1, 1, 1, '2013-05-21 00:20:55', '2013-05-22 09:07:12', 6),
 	(2, 9, 'data/sanpham1.jpg', '2013-05-20', 1, 1, 1, 1, '2013-05-21 23:32:51', '2013-05-27 23:41:54', 8),
-	(3, 0, 'data/anh1.jpg', '2013-05-22', 1, 1, 1, 1, '2013-05-23 23:58:22', '2013-05-29 00:57:57', 4),
+	(3, 0, 'data/anh1.jpg', '2013-05-22', 1, 1, 1, 1, '2013-05-23 23:58:22', '2013-05-29 00:57:57', 5),
 	(4, 9, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:18:55', '0000-00-00 00:00:00', 2),
 	(5, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:21:51', '0000-00-00 00:00:00', 1),
 	(6, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:22:41', '0000-00-00 00:00:00', 0),
 	(7, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:23:20', '0000-00-00 00:00:00', 1),
 	(8, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:24:04', '0000-00-00 00:00:00', 3),
-	(9, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:24:35', '0000-00-00 00:00:00', 3),
-	(10, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:25:16', '0000-00-00 00:00:00', 4),
+	(9, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:24:35', '0000-00-00 00:00:00', 4),
+	(10, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:25:16', '0000-00-00 00:00:00', 5),
 	(11, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:26:11', '0000-00-00 00:00:00', 19),
 	(12, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:26:46', '0000-00-00 00:00:00', 30);
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
@@ -1502,7 +1452,6 @@ CREATE TABLE IF NOT EXISTS `news_category` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_category: 2 rows
-DELETE FROM `news_category`;
 /*!40000 ALTER TABLE `news_category` DISABLE KEYS */;
 INSERT INTO `news_category` (`news_category_id`, `theme_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 	(1, 0, '', 0, 1, 1, 4, 1, '2013-05-20 23:56:00', '2013-05-23 23:57:18'),
@@ -1524,7 +1473,6 @@ CREATE TABLE IF NOT EXISTS `news_category_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_category_description: 2 rows
-DELETE FROM `news_category_description`;
 /*!40000 ALTER TABLE `news_category_description` DISABLE KEYS */;
 INSERT INTO `news_category_description` (`news_category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(1, 2, 'Tin nóng hàng ngày', '', '', ''),
@@ -1542,7 +1490,6 @@ CREATE TABLE IF NOT EXISTS `news_category_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_category_to_layout: 0 rows
-DELETE FROM `news_category_to_layout`;
 /*!40000 ALTER TABLE `news_category_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_category_to_layout` ENABLE KEYS */;
 
@@ -1556,7 +1503,6 @@ CREATE TABLE IF NOT EXISTS `news_category_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_category_to_store: 2 rows
-DELETE FROM `news_category_to_store`;
 /*!40000 ALTER TABLE `news_category_to_store` DISABLE KEYS */;
 INSERT INTO `news_category_to_store` (`news_category_id`, `store_id`) VALUES
 	(1, 0),
@@ -1581,7 +1527,6 @@ CREATE TABLE IF NOT EXISTS `news_comment` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_comment: 0 rows
-DELETE FROM `news_comment`;
 /*!40000 ALTER TABLE `news_comment` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_comment` ENABLE KEYS */;
 
@@ -1601,7 +1546,6 @@ CREATE TABLE IF NOT EXISTS `news_description` (
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_description: 12 rows
-DELETE FROM `news_description`;
 /*!40000 ALTER TABLE `news_description` DISABLE KEYS */;
 INSERT INTO `news_description` (`news_id`, `language_id`, `name`, `short_description`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(1, 2, 'Sale off 50% hàng Lascote', 'ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…', '&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Tahoma, Geneva, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 18px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;&quot;&gt;ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…&lt;/span&gt;&lt;/p&gt;\r\n', '', ''),
@@ -1628,7 +1572,6 @@ CREATE TABLE IF NOT EXISTS `news_related` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_related: 0 rows
-DELETE FROM `news_related`;
 /*!40000 ALTER TABLE `news_related` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_related` ENABLE KEYS */;
 
@@ -1644,7 +1587,6 @@ CREATE TABLE IF NOT EXISTS `news_tag` (
 ) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_tag: 2 rows
-DELETE FROM `news_tag`;
 /*!40000 ALTER TABLE `news_tag` DISABLE KEYS */;
 INSERT INTO `news_tag` (`news_tag_id`, `news_id`, `language_id`, `tag`) VALUES
 	(18, 1, 2, 'sale off'),
@@ -1661,7 +1603,6 @@ CREATE TABLE IF NOT EXISTS `news_to_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_to_category: 15 rows
-DELETE FROM `news_to_category`;
 /*!40000 ALTER TABLE `news_to_category` DISABLE KEYS */;
 INSERT INTO `news_to_category` (`news_id`, `news_category_id`) VALUES
 	(1, 1),
@@ -1692,7 +1633,6 @@ CREATE TABLE IF NOT EXISTS `news_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_to_layout: 0 rows
-DELETE FROM `news_to_layout`;
 /*!40000 ALTER TABLE `news_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_to_layout` ENABLE KEYS */;
 
@@ -1706,7 +1646,6 @@ CREATE TABLE IF NOT EXISTS `news_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_to_store: 12 rows
-DELETE FROM `news_to_store`;
 /*!40000 ALTER TABLE `news_to_store` DISABLE KEYS */;
 INSERT INTO `news_to_store` (`news_id`, `store_id`) VALUES
 	(1, 0),
@@ -1734,7 +1673,6 @@ CREATE TABLE IF NOT EXISTS `option` (
 ) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.option: 4 rows
-DELETE FROM `option`;
 /*!40000 ALTER TABLE `option` DISABLE KEYS */;
 INSERT INTO `option` (`option_id`, `type`, `sort_order`) VALUES
 	(16, 'radio', 5),
@@ -1754,7 +1692,6 @@ CREATE TABLE IF NOT EXISTS `option_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.option_description: 4 rows
-DELETE FROM `option_description`;
 /*!40000 ALTER TABLE `option_description` DISABLE KEYS */;
 INSERT INTO `option_description` (`option_id`, `language_id`, `name`) VALUES
 	(16, 2, 'Kích cỡ khác:'),
@@ -1775,7 +1712,6 @@ CREATE TABLE IF NOT EXISTS `option_value` (
 ) ENGINE=MyISAM AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.option_value: 48 rows
-DELETE FROM `option_value`;
 /*!40000 ALTER TABLE `option_value` DISABLE KEYS */;
 INSERT INTO `option_value` (`option_value_id`, `option_id`, `image`, `sort_order`) VALUES
 	(52, 13, 'data/colors/xanh_muoc_bien.png', 4),
@@ -1840,7 +1776,6 @@ CREATE TABLE IF NOT EXISTS `option_value_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.option_value_description: 48 rows
-DELETE FROM `option_value_description`;
 /*!40000 ALTER TABLE `option_value_description` DISABLE KEYS */;
 INSERT INTO `option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
 	(54, 2, 13, 'Xanh lá cây'),
@@ -1956,11 +1891,12 @@ CREATE TABLE IF NOT EXISTS `order` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order: 0 rows
-DELETE FROM `order`;
+-- Dumping data for table weorder.order: 1 rows
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
+INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_company_id`, `payment_tax_id`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
+	(1, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 0, 1, 'ssssssss', 'ssssssssssss', 'sontran@mailinator.com', '123456789', '', 'ssssssss', 'ssssssssssss', '', '', '', 'sdgsgd', '', 'dsgsdg', '', 'Viet Nam', 230, 'Ca Mau', 3762, '', 'Thu tiền khi giao hàng', 'cod', 'ssssssss', 'ssssssssssss', '', 'sdgsgd', '', 'dsgsdg', '', 'Viet Nam', 230, 'Ca Mau', 3762, '', 'Phí vận chuyển cố định', 'flat.flat', '', 2800005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-11 23:57:49', '2013-06-11 23:57:49');
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 
 
@@ -1978,7 +1914,6 @@ CREATE TABLE IF NOT EXISTS `order_download` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_download: 0 rows
-DELETE FROM `order_download`;
 /*!40000 ALTER TABLE `order_download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_download` ENABLE KEYS */;
 
@@ -1996,7 +1931,6 @@ CREATE TABLE IF NOT EXISTS `order_field` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_field: 0 rows
-DELETE FROM `order_field`;
 /*!40000 ALTER TABLE `order_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_field` ENABLE KEYS */;
 
@@ -2061,7 +1995,6 @@ CREATE TABLE IF NOT EXISTS `order_fraud` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_fraud: 0 rows
-DELETE FROM `order_fraud`;
 /*!40000 ALTER TABLE `order_fraud` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_fraud` ENABLE KEYS */;
 
@@ -2079,7 +2012,6 @@ CREATE TABLE IF NOT EXISTS `order_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_history: 0 rows
-DELETE FROM `order_history`;
 /*!40000 ALTER TABLE `order_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_history` ENABLE KEYS */;
 
@@ -2096,11 +2028,13 @@ CREATE TABLE IF NOT EXISTS `order_option` (
   `value` text NOT NULL,
   `type` varchar(32) NOT NULL,
   PRIMARY KEY (`order_option_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order_option: 0 rows
-DELETE FROM `order_option`;
+-- Dumping data for table weorder.order_option: 2 rows
 /*!40000 ALTER TABLE `order_option` DISABLE KEYS */;
+INSERT INTO `order_option` (`order_option_id`, `order_id`, `order_product_id`, `product_option_id`, `product_option_value_id`, `name`, `value`, `type`) VALUES
+	(1, 1, 2, 227, 20, 'Màu Sắc', 'Xanh nước biển', 'image'),
+	(2, 1, 2, 228, 22, 'Kích cỡ theo chữ', 'M', 'radio');
 /*!40000 ALTER TABLE `order_option` ENABLE KEYS */;
 
 
@@ -2118,11 +2052,13 @@ CREATE TABLE IF NOT EXISTS `order_product` (
   `tax` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `reward` int(8) NOT NULL,
   PRIMARY KEY (`order_product_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order_product: 0 rows
-DELETE FROM `order_product`;
+-- Dumping data for table weorder.order_product: 2 rows
 /*!40000 ALTER TABLE `order_product` DISABLE KEYS */;
+INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
+	(1, 1, 41, 'Áo phông 2', 'Product 14', 2, 650000.0000, 1300000.0000, 0.0000, 0),
+	(2, 1, 42, 'Áo sơ mi 1', 'Product 15', 2, 750000.0000, 1500000.0000, 0.0000, 200);
 /*!40000 ALTER TABLE `order_product` ENABLE KEYS */;
 
 
@@ -2136,7 +2072,6 @@ CREATE TABLE IF NOT EXISTS `order_status` (
 ) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_status: 14 rows
-DELETE FROM `order_status`;
 /*!40000 ALTER TABLE `order_status` DISABLE KEYS */;
 INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`) VALUES
 	(2, 2, 'Processing'),
@@ -2168,11 +2103,14 @@ CREATE TABLE IF NOT EXISTS `order_total` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`order_total_id`),
   KEY `idx_orders_total_orders_id` (`order_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order_total: 0 rows
-DELETE FROM `order_total`;
+-- Dumping data for table weorder.order_total: 3 rows
 /*!40000 ALTER TABLE `order_total` DISABLE KEYS */;
+INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`, `value`, `sort_order`) VALUES
+	(1, 1, 'sub_total', 'Tổng giá trị là', '2,800,000 VNĐ', 2800000.0000, 1),
+	(2, 1, 'shipping', 'Phí vận chuyển cố định', '5 VNĐ', 5.0000, 3),
+	(3, 1, 'total', 'Tổng cộng :', '2,800,005 VNĐ', 2800005.0000, 9);
 /*!40000 ALTER TABLE `order_total` ENABLE KEYS */;
 
 
@@ -2195,7 +2133,6 @@ CREATE TABLE IF NOT EXISTS `order_voucher` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_voucher: 0 rows
-DELETE FROM `order_voucher`;
 /*!40000 ALTER TABLE `order_voucher` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_voucher` ENABLE KEYS */;
 
@@ -2238,26 +2175,25 @@ CREATE TABLE IF NOT EXISTS `product` (
 ) ENGINE=MyISAM AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product: 19 rows
-DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-	(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'data/demo/htc_touch_hd_1.jpg', 5, 1, 100.0000, 200, 9, '2009-02-03', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:06:50', '2013-05-29 02:08:17', 8),
+	(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'data/san_pham/IMG_3920-400x600.JPG', 5, 1, 500000.0000, 200, 9, '2009-02-03', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:06:50', '2013-06-05 21:59:35', 94),
 	(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'data/demo/palm_treo_pro_1.jpg', 6, 1, 279.9900, 0, 9, '2009-02-03', 133.00000000, 2, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0),
-	(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'data/1-single-thumbnail.jpg', 9, 1, 100.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2013-06-04 16:08:43', 100),
-	(31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'data/demo/nikon_d300_1.jpg', 0, 1, 80.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2011-09-30 01:06:00', 6),
+	(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'data/1-single-thumbnail.jpg', 9, 1, 690000.0000, 0, 0, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2013-06-05 23:13:34', 117),
+	(31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'data/san_pham/IMG_3958-400x600.JPG', 11, 1, 390000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2013-06-05 22:04:16', 10),
 	(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'data/demo/ipod_touch_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 17:07:26', '2011-09-30 01:07:22', 0),
 	(33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'data/demo/samsung_syncmaster_941bw.jpg', 0, 1, 200.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 17:08:31', '2011-09-30 01:06:29', 0),
 	(34, 'Product 7', '', '', '', '', '', '', '', 1000, 6, 'data/demo/ipod_shuffle_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:07:54', '2011-09-30 01:07:17', 0),
 	(35, 'Product 8', '', '', '', '', '', '', '', 1000, 5, '', 0, 0, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 18:08:31', '2011-09-30 01:06:17', 0),
 	(36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'data/demo/ipod_nano_1.jpg', 8, 0, 100.0000, 100, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:09:19', '2011-09-30 01:07:12', 0),
-	(40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'data/demo/iphone_1.jpg', 8, 1, 101.0000, 0, 9, '2009-02-03', 10.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:12', '2011-09-30 01:06:53', 0),
-	(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'data/demo/imac_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:26', '2011-09-30 01:06:44', 0),
-	(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'data/demo/apple_cinema_30.jpg', 8, 1, 100.0000, 400, 9, '2009-02-04', 12.50000000, 1, 1.00000000, 2.00000000, 3.00000000, 1, 1, 2, 0, 1, '2009-02-03 21:07:37', '2013-06-04 16:02:34', 0),
+	(40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'data/san_pham/IMG_3935-400x600.JPG', 8, 1, 652000.0000, 0, 9, '2009-02-03', 10.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:12', '2013-06-05 23:13:24', 2),
+	(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'data/san_pham/IMG_4003-400x600.JPG', 9, 1, 650000.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:26', '2013-06-05 22:02:37', 2),
+	(42, 'Product 15', '', '', '', '', '', '', '', 100, 5, 'data/san_pham/IMG_3909-400x600 (1).JPG', 13, 1, 750000.0000, 400, 9, '2009-02-04', 0.00000000, 1, 1.00000000, 2.00000000, 3.00000000, 1, 1, 2, 0, 1, '2009-02-03 21:07:37', '2013-06-05 23:15:07', 21),
 	(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'data/demo/macbook_1.jpg', 8, 0, 500.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:07:49', '2011-09-30 01:05:46', 0),
 	(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'data/demo/macbook_air_1.jpg', 8, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:00', '2011-09-30 01:05:53', 0),
 	(45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'data/demo/macbook_pro_1.jpg', 8, 1, 2000.0000, 0, 100, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:17', '2011-09-15 22:22:01', 0),
 	(46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'data/demo/sony_vaio_1.jpg', 10, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:29', '2011-09-30 01:06:39', 0),
-	(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'data/demo/hp_1.jpg', 7, 1, 100.0000, 400, 9, '2009-02-03', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 0, 1, '2009-02-03 21:08:40', '2013-05-29 02:08:05', 6),
+	(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'data/san_pham/IMG_3917-400x600 (1).JPG', 8, 1, 100.0000, 400, 9, '2009-02-03', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 0, 1, '2009-02-03 21:08:40', '2013-06-05 23:14:05', 6),
 	(48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'data/demo/ipod_classic_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-08', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-08 17:21:51', '2011-09-30 01:07:06', 0),
 	(49, 'SAM1', '', '', '', '', '', '', '', 0, 8, 'data/demo/samsung_tab_1.jpg', 0, 1, 199.9900, 0, 9, '2011-04-25', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23', 7);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
@@ -2273,15 +2209,12 @@ CREATE TABLE IF NOT EXISTS `product_attribute` (
   PRIMARY KEY (`product_id`,`attribute_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_attribute: 5 rows
-DELETE FROM `product_attribute`;
+-- Dumping data for table weorder.product_attribute: 3 rows
 /*!40000 ALTER TABLE `product_attribute` DISABLE KEYS */;
 INSERT INTO `product_attribute` (`product_id`, `attribute_id`, `language_id`, `text`) VALUES
 	(43, 2, 2, '1'),
-	(47, 2, 2, '4'),
 	(43, 4, 2, '8gb'),
-	(42, 3, 2, '100mhz'),
-	(47, 4, 2, '16GB');
+	(42, 3, 2, '100mhz');
 /*!40000 ALTER TABLE `product_attribute` ENABLE KEYS */;
 
 
@@ -2301,28 +2234,27 @@ CREATE TABLE IF NOT EXISTS `product_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_description: 19 rows
-DELETE FROM `product_description`;
 /*!40000 ALTER TABLE `product_description` DISABLE KEYS */;
 INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `description`, `sort_description`, `meta_description`, `meta_keyword`, `tag`) VALUES
 	(35, 2, 'Product 8', '&lt;p&gt;\r\n	Product 8&lt;/p&gt;\r\n', '', '', '', ''),
 	(48, 2, 'iPod Classic', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', '', ''),
-	(40, 2, 'iPhone', '&lt;p class=&quot;intro&quot;&gt;\r\n	iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.&lt;/p&gt;\r\n', '', '', '', ''),
-	(28, 2, 'HTC Touch HD', '&lt;p&gt;HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Processor Qualcomm® MSM 7201A™ 528 MHz&lt;/li&gt;\r\n	&lt;li&gt;Windows Mobile® 6.1 Professional Operating System&lt;/li&gt;\r\n	&lt;li&gt;Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\r\n	&lt;li&gt;Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\r\n	&lt;li&gt;3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\r\n	&lt;li&gt;HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\r\n	&lt;li&gt;Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\r\n	&lt;li&gt;Device Control via HTC TouchFLO™ 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\r\n	&lt;li&gt;GPS and A-GPS ready&lt;/li&gt;\r\n	&lt;li&gt;Bluetooth® 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\r\n	&lt;li&gt;Wi-Fi®: IEEE 802.11 b/g&lt;/li&gt;\r\n	&lt;li&gt;HTC ExtUSB™ (11-pin mini-USB 2.0)&lt;/li&gt;\r\n	&lt;li&gt;5 megapixel color camera with auto focus&lt;/li&gt;\r\n	&lt;li&gt;VGA CMOS color camera&lt;/li&gt;\r\n	&lt;li&gt;Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\r\n	&lt;li&gt;Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\r\n	&lt;li&gt;40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\r\n	&lt;li&gt;Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\r\n	&lt;li&gt;Expansion Slot: microSD™ memory card (SD 2.0 compatible)&lt;/li&gt;\r\n	&lt;li&gt;AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\r\n	&lt;li&gt;Special Features: FM Radio, G-Sensor&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '', '', ''),
+	(40, 2, 'Áo phông 3', '&lt;p class=&quot;intro&quot;&gt;iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.&lt;/p&gt;\r\n', '', '', '', ''),
+	(28, 2, 'Áo phông 1', '&lt;p&gt;HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Processor Qualcomm® MSM 7201A™ 528 MHz&lt;/li&gt;\r\n	&lt;li&gt;Windows Mobile® 6.1 Professional Operating System&lt;/li&gt;\r\n	&lt;li&gt;Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\r\n	&lt;li&gt;Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\r\n	&lt;li&gt;3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\r\n	&lt;li&gt;HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\r\n	&lt;li&gt;Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\r\n	&lt;li&gt;Device Control via HTC TouchFLO™ 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\r\n	&lt;li&gt;GPS and A-GPS ready&lt;/li&gt;\r\n	&lt;li&gt;Bluetooth® 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\r\n	&lt;li&gt;Wi-Fi®: IEEE 802.11 b/g&lt;/li&gt;\r\n	&lt;li&gt;HTC ExtUSB™ (11-pin mini-USB 2.0)&lt;/li&gt;\r\n	&lt;li&gt;5 megapixel color camera with auto focus&lt;/li&gt;\r\n	&lt;li&gt;VGA CMOS color camera&lt;/li&gt;\r\n	&lt;li&gt;Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\r\n	&lt;li&gt;Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\r\n	&lt;li&gt;40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\r\n	&lt;li&gt;Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\r\n	&lt;li&gt;Expansion Slot: microSD™ memory card (SD 2.0 compatible)&lt;/li&gt;\r\n	&lt;li&gt;AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\r\n	&lt;li&gt;Special Features: FM Radio, G-Sensor&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '', '', ''),
 	(44, 2, 'MacBook Air', '&lt;div&gt;\r\n	MacBook Air is ultrathin, ultraportable, and ultra unlike anything else. But you don&amp;rsquo;t lose inches and pounds overnight. It&amp;rsquo;s the result of rethinking conventions. Of multiple wireless innovations. And of breakthrough design. With MacBook Air, mobile computing suddenly has a new standard.&lt;/div&gt;\r\n', '', '', '', ''),
 	(45, 2, 'MacBook Pro', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Latest Intel mobile architecture&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Powered by the most advanced mobile processors from Intel, the new Core 2 Duo MacBook Pro is over 50% faster than the original Core Duo MacBook Pro and now supports up to 4GB of RAM.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Leading-edge graphics&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			The NVIDIA GeForce 8600M GT delivers exceptional graphics processing power. For the ultimate creative canvas, you can even configure the 17-inch model with a 1920-by-1200 resolution display.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Designed for life on the road&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Innovations such as a magnetic power connection and an illuminated keyboard with ambient light sensor put the MacBook Pro in a class by itself.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Connect. Create. Communicate.&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Quickly set up a video conference with the built-in iSight camera. Control presentations and media from up to 30 feet away with the included Apple Remote. Connect to high-bandwidth peripherals with FireWire 800 and DVI.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Next-generation wireless&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Featuring 802.11n wireless technology, the MacBook Pro delivers up to five times the performance and up to twice the range of previous-generation technologies.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', '', ''),
 	(29, 2, 'Palm Treo Pro', '&lt;p&gt;\r\n	Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&amp;rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Edition&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Qualcomm&amp;reg; MSM7201 400MHz Processor&lt;/li&gt;\r\n	&lt;li&gt;\r\n		320x320 transflective colour TFT touchscreen&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/UMTS/EDGE/GPRS/GSM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Tri-band UMTS &amp;mdash; 850MHz, 1900MHz, 2100MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM &amp;mdash; 850/900/1800/1900&lt;/li&gt;\r\n	&lt;li&gt;\r\n		802.11b/g with WPA, WPA2, and 801.1x authentication&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in GPS&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth Version: 2.0 + Enhanced Data Rate&lt;/li&gt;\r\n	&lt;li&gt;\r\n		256MB storage (100MB user available), 128MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2.0 megapixel camera, up to 8x digital zoom and video capture&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Removable, rechargeable 1500mAh lithium-ion battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Up to 5.0 hours talk time and up to 250 hours standby&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroSDHC card expansion (up to 32GB supported)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroUSB 2.0 for synchronization and charging&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.5mm stereo headset jack&lt;/li&gt;\r\n	&lt;li&gt;\r\n		60mm (W) x 114mm (L) x 13.5mm (D) / 133g&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '', '', ''),
 	(36, 2, 'iPod Nano', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Video in your pocket.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Sleek and colorful.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;iTunes.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', '', ''),
 	(46, 2, 'Sony VAIO', '&lt;div&gt;\r\n	Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&amp;#39;s latest, most powerful innovation yet: Intel&amp;reg; Centrino&amp;reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.&lt;/div&gt;\r\n', '', '', '', ''),
-	(47, 2, 'HP LP3065', '&lt;p&gt;Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you\'re at the office&lt;/p&gt;\r\n', '', '', '', ''),
+	(47, 2, 'Áo sơ mi 2', '&lt;p&gt;Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you\'re at the office&lt;/p&gt;\r\n', '', '', '', ''),
 	(32, 2, 'iPod Touch', '&lt;p&gt;\r\n	&lt;strong&gt;Revolutionary multi-touch interface.&lt;/strong&gt;&lt;br /&gt;\r\n	iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Gorgeous 3.5-inch widescreen display.&lt;/strong&gt;&lt;br /&gt;\r\n	Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Music downloads straight from iTunes.&lt;/strong&gt;&lt;br /&gt;\r\n	Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Surf the web with Wi-Fi.&lt;/strong&gt;&lt;br /&gt;\r\n	Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in&lt;br /&gt;\r\n	&amp;nbsp;&lt;/p&gt;\r\n', '', '', '', ''),
-	(41, 2, 'iMac', '&lt;div&gt;\r\n	Just when you thought iMac had everything, now there&acute;s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife &acute;08, and it&acute;s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '', '', '', ''),
+	(41, 2, 'Áo phông 2', '&lt;div&gt;Just when you thought iMac had everything, now there´s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife ´08, and it´s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '', '', '', ''),
 	(33, 2, 'Samsung SyncMaster 941BW', '&lt;div&gt;\r\n	Imagine the advantages of going big without slowing down. The big 19&amp;quot; 941BW monitor combines wide aspect ratio with fast pixel response time, for bigger images, more room to work and crisp motion. In addition, the exclusive MagicBright 2, MagicColor and MagicTune technologies help deliver the ideal image in every situation, while sleek, narrow bezels and adjustable stands deliver style just the way you want it. With the Samsung 941BW widescreen analog/digital LCD monitor, it&amp;#39;s not hard to imagine.&lt;/div&gt;\r\n', '', '', '', ''),
 	(34, 2, 'iPod Shuffle', '&lt;div&gt;\r\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\r\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', '', ''),
 	(43, 2, 'MacBook', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Intel Core 2 Duo processor&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, the new MacBook is the fastest ever.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;1GB memory, larger hard drives&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		The new MacBook now comes with 1GB of memory standard and larger hard drives for the entire line perfect for running more of your favorite applications and storing growing media collections.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Sleek, 1.08-inch-thin design&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		MacBook makes it easy to hit the road thanks to its tough polycarbonate case, built-in wireless technologies, and innovative MagSafe Power Adapter that releases automatically if someone accidentally trips on the cord.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Built-in iSight camera&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Right out of the box, you can have a video chat with friends or family,2 record a video at your desk, or take fun pictures with Photo Booth&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', '', ''),
-	(31, 2, 'Nikon D300', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', '', ''),
+	(31, 2, 'Áo phông 3', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n&lt;div&gt;Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon\'s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n&lt;br /&gt;\r\nSimilar to the D3, the D300 features Nikon\'s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera\'s new features. The D300 features a new 51-point autofocus system with Nikon\'s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera\'s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n&lt;br /&gt;\r\nThe D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n&lt;br /&gt;\r\nThe D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon\'s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', '', ''),
 	(49, 2, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world&amp;rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &amp;ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &amp;ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&amp;rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &amp;ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;&amp;auml;&amp;ouml;&lt;/p&gt;\r\n', '', '', '', ''),
-	(42, 2, 'Apple Cinema 30&quot;', '&lt;p&gt;&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there\'s no limit to what you can achieve. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it\'s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple\'s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;\r\n\r\n&lt;h3&gt;Features:&lt;/h3&gt;\r\n\r\n&lt;p&gt;Unrivaled display performance&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n	&lt;li&gt;Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n	&lt;li&gt;Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n	&lt;li&gt;Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n	&lt;li&gt;Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n	&lt;li&gt;Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n	&lt;li&gt;Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Simple setup and operation&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Single cable with elegant breakout for connection to DVI, USB and FireWire ports&lt;/li&gt;\r\n	&lt;li&gt;Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n	&lt;li&gt;Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Sleek, elegant design&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n	&lt;li&gt;Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n	&lt;li&gt;Unique hinge design for effortless adjustment&lt;/li&gt;\r\n	&lt;li&gt;Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;h3&gt;Technical specifications&lt;/h3&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen size (diagonal viewable image size)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen type&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Resolutions&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n	&lt;li&gt;2048 x 1280&lt;/li&gt;\r\n	&lt;li&gt;1920 x 1200&lt;/li&gt;\r\n	&lt;li&gt;1280 x 800&lt;/li&gt;\r\n	&lt;li&gt;1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Display colors (maximum)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Viewing angle (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;170° horizontal; 170° vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Brightness (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Contrast ratio (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Response time (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Pixel pitch&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen treatment&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;User controls (hardware and software)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Display Power,&lt;/li&gt;\r\n	&lt;li&gt;System sleep, wake&lt;/li&gt;\r\n	&lt;li&gt;Brightness&lt;/li&gt;\r\n	&lt;li&gt;Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Connectors and cables&lt;/b&gt;&lt;br /&gt;\r\nCable&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;DVI (Digital Visual Interface)&lt;/li&gt;\r\n	&lt;li&gt;FireWire 400&lt;/li&gt;\r\n	&lt;li&gt;USB 2.0&lt;/li&gt;\r\n	&lt;li&gt;DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Connectors&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n	&lt;li&gt;Two FireWire 400 ports&lt;/li&gt;\r\n	&lt;li&gt;Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;VESA mount adapter&lt;/b&gt;&lt;br /&gt;\r\nRequires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Electrical requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n	&lt;li&gt;Maximum power when operating: 150W&lt;/li&gt;\r\n	&lt;li&gt;Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Environmental requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Operating temperature: 50° to 95° F (10° to 35° C)&lt;/li&gt;\r\n	&lt;li&gt;Storage temperature: -40° to 116° F (-40° to 47° C)&lt;/li&gt;\r\n	&lt;li&gt;Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n	&lt;li&gt;Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Agency approvals&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;FCC Part 15 Class B&lt;/li&gt;\r\n	&lt;li&gt;EN55022 Class B&lt;/li&gt;\r\n	&lt;li&gt;EN55024&lt;/li&gt;\r\n	&lt;li&gt;VCCI Class B&lt;/li&gt;\r\n	&lt;li&gt;AS/NZS 3548 Class B&lt;/li&gt;\r\n	&lt;li&gt;CNS 13438 Class B&lt;/li&gt;\r\n	&lt;li&gt;ICES-003 Class B&lt;/li&gt;\r\n	&lt;li&gt;ISO 13406 part 2&lt;/li&gt;\r\n	&lt;li&gt;MPR II&lt;/li&gt;\r\n	&lt;li&gt;IEC 60950&lt;/li&gt;\r\n	&lt;li&gt;UL 60950&lt;/li&gt;\r\n	&lt;li&gt;CSA 60950&lt;/li&gt;\r\n	&lt;li&gt;EN60950&lt;/li&gt;\r\n	&lt;li&gt;ENERGY STAR&lt;/li&gt;\r\n	&lt;li&gt;TCO \'03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Size and weight&lt;/b&gt;&lt;br /&gt;\r\n30-inch Apple Cinema HD Display&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n	&lt;li&gt;Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n	&lt;li&gt;Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n	&lt;li&gt;Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;System Requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mac Pro, all graphic options&lt;/li&gt;\r\n	&lt;li&gt;MacBook Pro&lt;/li&gt;\r\n	&lt;li&gt;Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n	&lt;li&gt;Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n	&lt;li&gt;PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n	&lt;li&gt;Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;div class=&quot;prm mts fsm clearfix strong estimated-delivery&quot;&gt;&lt;strong&gt;&lt;span&gt;Sẽ có tại nhà bạn&lt;/span&gt; &lt;span id=&quot;estimated_delivery_time&quot;&gt;trong 3 - 5 ngày làm việc&lt;/span&gt;&lt;/strong&gt;&lt;/div&gt;\r\n\r\n&lt;div class=&quot;prm mts fsm txtGray clearfix&quot;&gt;\r\n&lt;p&gt;Với thiết kế nhiều ngăn tiện dụng cùng kiểu dáng trẻ trung, ba lô củawesale&lt;/p&gt;\r\n\r\n&lt;p&gt;sẽ mang đến cho bạn vẻ ngoài năng động, khỏe khoắn và cá tính. Hãy kết hợp ba lô&lt;/p&gt;\r\n\r\n&lt;p&gt;với những bộ trang phục hợp thời trang để trở nên cuốn hút và nổi bật hơn bao giờ hết.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', ''),
-	(30, 2, 'Canon EOS 5D', '&lt;p&gt;Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...)&lt;/p&gt;\r\n', '&lt;div class=&quot;box prm mts fsm clearfix strong estimated-delivery&quot;&gt;\r\n    &lt;span&gt;Sẽ có tại nhà bạn&lt;/span&gt;\r\n    &lt;span id=&quot;estimated_delivery_time&quot;&gt;trong 3 - 5 ngày làm việc&lt;/span&gt;\r\n&lt;/div&gt;\r\n\r\n&lt;div class=&quot;box prm mts fsm txtGray clearfix&quot;&gt;\r\n    &lt;p&gt;Với thiết kế nhiều ngăn tiện dụng cùng kiểu dáng trẻ trung, ba lô \r\n      củawesale&lt;/p&gt;\r\n    &lt;p&gt; sẽ mang đến cho bạn vẻ ngoài năng động, khỏe khoắn và cá\r\n      tính. Hãy kết hợp ba lô&lt;/p&gt;\r\n    &lt;p&gt; với những bộ trang phục hợp thời trang để trở \r\n      nên cuốn hút và nổi bật hơn bao giờ hết.&lt;/p&gt;\r\n&lt;/div&gt;', '', '', '');
+	(42, 2, 'Áo sơ mi 1', '&lt;p&gt;&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there\'s no limit to what you can achieve. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it\'s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple\'s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;\r\n\r\n&lt;h3&gt;Features:&lt;/h3&gt;\r\n\r\n&lt;p&gt;Unrivaled display performance&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n	&lt;li&gt;Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n	&lt;li&gt;Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n	&lt;li&gt;Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n	&lt;li&gt;Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n	&lt;li&gt;Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n	&lt;li&gt;Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Simple setup and operation&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Single cable with elegant breakout for connection to DVI, USB and FireWire ports&lt;/li&gt;\r\n	&lt;li&gt;Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n	&lt;li&gt;Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Sleek, elegant design&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n	&lt;li&gt;Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n	&lt;li&gt;Unique hinge design for effortless adjustment&lt;/li&gt;\r\n	&lt;li&gt;Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;h3&gt;Technical specifications&lt;/h3&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen size (diagonal viewable image size)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen type&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Resolutions&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n	&lt;li&gt;2048 x 1280&lt;/li&gt;\r\n	&lt;li&gt;1920 x 1200&lt;/li&gt;\r\n	&lt;li&gt;1280 x 800&lt;/li&gt;\r\n	&lt;li&gt;1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Display colors (maximum)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Viewing angle (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;170° horizontal; 170° vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Brightness (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Contrast ratio (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Response time (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Pixel pitch&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen treatment&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;User controls (hardware and software)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Display Power,&lt;/li&gt;\r\n	&lt;li&gt;System sleep, wake&lt;/li&gt;\r\n	&lt;li&gt;Brightness&lt;/li&gt;\r\n	&lt;li&gt;Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Connectors and cables&lt;/b&gt;&lt;br /&gt;\r\nCable&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;DVI (Digital Visual Interface)&lt;/li&gt;\r\n	&lt;li&gt;FireWire 400&lt;/li&gt;\r\n	&lt;li&gt;USB 2.0&lt;/li&gt;\r\n	&lt;li&gt;DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Connectors&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n	&lt;li&gt;Two FireWire 400 ports&lt;/li&gt;\r\n	&lt;li&gt;Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;VESA mount adapter&lt;/b&gt;&lt;br /&gt;\r\nRequires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Electrical requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n	&lt;li&gt;Maximum power when operating: 150W&lt;/li&gt;\r\n	&lt;li&gt;Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Environmental requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Operating temperature: 50° to 95° F (10° to 35° C)&lt;/li&gt;\r\n	&lt;li&gt;Storage temperature: -40° to 116° F (-40° to 47° C)&lt;/li&gt;\r\n	&lt;li&gt;Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n	&lt;li&gt;Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Agency approvals&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;FCC Part 15 Class B&lt;/li&gt;\r\n	&lt;li&gt;EN55022 Class B&lt;/li&gt;\r\n	&lt;li&gt;EN55024&lt;/li&gt;\r\n	&lt;li&gt;VCCI Class B&lt;/li&gt;\r\n	&lt;li&gt;AS/NZS 3548 Class B&lt;/li&gt;\r\n	&lt;li&gt;CNS 13438 Class B&lt;/li&gt;\r\n	&lt;li&gt;ICES-003 Class B&lt;/li&gt;\r\n	&lt;li&gt;ISO 13406 part 2&lt;/li&gt;\r\n	&lt;li&gt;MPR II&lt;/li&gt;\r\n	&lt;li&gt;IEC 60950&lt;/li&gt;\r\n	&lt;li&gt;UL 60950&lt;/li&gt;\r\n	&lt;li&gt;CSA 60950&lt;/li&gt;\r\n	&lt;li&gt;EN60950&lt;/li&gt;\r\n	&lt;li&gt;ENERGY STAR&lt;/li&gt;\r\n	&lt;li&gt;TCO \'03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Size and weight&lt;/b&gt;&lt;br /&gt;\r\n30-inch Apple Cinema HD Display&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n	&lt;li&gt;Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n	&lt;li&gt;Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n	&lt;li&gt;Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;System Requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mac Pro, all graphic options&lt;/li&gt;\r\n	&lt;li&gt;MacBook Pro&lt;/li&gt;\r\n	&lt;li&gt;Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n	&lt;li&gt;Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n	&lt;li&gt;PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n	&lt;li&gt;Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;div class=&quot;prm mts fsm clearfix strong estimated-delivery&quot;&gt;&lt;strong&gt;&lt;span&gt;Sẽ có tại nhà bạn&lt;/span&gt; &lt;span id=&quot;estimated_delivery_time&quot;&gt;trong 3 - 5 ngày làm việc&lt;/span&gt;&lt;/strong&gt;&lt;/div&gt;\r\n\r\n&lt;div class=&quot;prm mts fsm txtGray clearfix&quot;&gt;\r\n&lt;p&gt;Với thiết kế nhiều ngăn tiện dụng cùng kiểu dáng trẻ trung, ba lô củawesale&lt;/p&gt;\r\n\r\n&lt;p&gt;sẽ mang đến cho bạn vẻ ngoài năng động, khỏe khoắn và cá tính. Hãy kết hợp ba lô&lt;/p&gt;\r\n\r\n&lt;p&gt;với những bộ trang phục hợp thời trang để trở nên cuốn hút và nổi bật hơn bao giờ hết.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', ''),
+	(30, 2, 'Áo cánh mỏng', '&lt;p&gt;Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...)&lt;/p&gt;\r\n', '&lt;div class=&quot;box prm mts fsm clearfix strong estimated-delivery&quot;&gt;&lt;span&gt;Sẽ có tại nhà bạn&lt;/span&gt; &lt;span id=&quot;estimated_delivery_time&quot;&gt;trong 3 - 5 ngày làm việc&lt;/span&gt;&lt;/div&gt;\r\n\r\n&lt;div class=&quot;box prm mts fsm txtGray clearfix&quot;&gt;\r\n&lt;p&gt;Với thiết kế nhiều ngăn tiện dụng cùng kiểu dáng trẻ trung, ba lô củawesale&lt;/p&gt;\r\n\r\n&lt;p&gt;sẽ mang đến cho bạn vẻ ngoài năng động, khỏe khoắn và cá tính. Hãy kết hợp ba lô&lt;/p&gt;\r\n\r\n&lt;p&gt;với những bộ trang phục hợp thời trang để trở nên cuốn hút và nổi bật hơn bao giờ hết.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', '');
 /*!40000 ALTER TABLE `product_description` ENABLE KEYS */;
 
 
@@ -2339,15 +2271,14 @@ CREATE TABLE IF NOT EXISTS `product_discount` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_discount_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=456 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=474 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_discount: 3 rows
-DELETE FROM `product_discount`;
 /*!40000 ALTER TABLE `product_discount` DISABLE KEYS */;
 INSERT INTO `product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
-	(455, 42, 1, 30, 1, 66.0000, '0000-00-00', '0000-00-00'),
-	(454, 42, 1, 20, 1, 77.0000, '0000-00-00', '0000-00-00'),
-	(453, 42, 1, 10, 1, 88.0000, '0000-00-00', '0000-00-00');
+	(473, 42, 1, 30, 1, 66.0000, '0000-00-00', '0000-00-00'),
+	(472, 42, 1, 20, 1, 77.0000, '0000-00-00', '0000-00-00'),
+	(471, 42, 1, 10, 1, 88.0000, '0000-00-00', '0000-00-00');
 /*!40000 ALTER TABLE `product_discount` ENABLE KEYS */;
 
 
@@ -2360,7 +2291,6 @@ CREATE TABLE IF NOT EXISTS `product_filter` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_filter: 0 rows
-DELETE FROM `product_filter`;
 /*!40000 ALTER TABLE `product_filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_filter` ENABLE KEYS */;
 
@@ -2373,16 +2303,14 @@ CREATE TABLE IF NOT EXISTS `product_image` (
   `image` varchar(255) DEFAULT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_image_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2405 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2469 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_image: 61 rows
-DELETE FROM `product_image`;
+-- Dumping data for table weorder.product_image: 62 rows
 /*!40000 ALTER TABLE `product_image` DISABLE KEYS */;
 INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
-	(2376, 47, 'data/demo/hp_2.jpg', 0),
-	(2378, 28, 'data/demo/htc_touch_hd_2.jpg', 0),
-	(2351, 41, 'data/demo/imac_3.jpg', 0),
-	(1982, 40, 'data/demo/iphone_6.jpg', 0),
+	(2464, 47, 'data/san_pham/IMG_3919-400x600.JPG', 0),
+	(2423, 41, 'data/san_pham/IMG_3959-400x600.JPG', 0),
+	(2457, 40, 'data/san_pham/IMG_3937-400x600 (1).JPG', 0),
 	(2001, 36, 'data/demo/ipod_nano_5.jpg', 0),
 	(2000, 36, 'data/demo/ipod_nano_4.jpg', 0),
 	(2005, 34, 'data/demo/ipod_shuffle_5.jpg', 0),
@@ -2396,21 +2324,16 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 	(1973, 44, 'data/demo/macbook_air_2.jpg', 0),
 	(1977, 45, 'data/demo/macbook_pro_2.jpg', 0),
 	(1976, 45, 'data/demo/macbook_pro_3.jpg', 0),
-	(1986, 31, 'data/demo/nikon_d300_3.jpg', 0),
-	(1985, 31, 'data/demo/nikon_d300_2.jpg', 0),
+	(2426, 31, 'data/san_pham/IMG_3959-400x600 (1).JPG', 0),
 	(1988, 29, 'data/demo/palm_treo_pro_3.jpg', 0),
 	(1995, 46, 'data/demo/sony_vaio_5.jpg', 0),
 	(1994, 46, 'data/demo/sony_vaio_4.jpg', 0),
 	(1991, 48, 'data/demo/ipod_classic_4.jpg', 0),
 	(1990, 48, 'data/demo/ipod_classic_3.jpg', 0),
-	(1981, 40, 'data/demo/iphone_2.jpg', 0),
-	(1980, 40, 'data/demo/iphone_5.jpg', 0),
-	(2404, 30, 'data/1-single-thumbnail.jpg', 2),
-	(2375, 47, 'data/demo/hp_3.jpg', 0),
-	(2377, 28, 'data/demo/htc_touch_hd_3.jpg', 0),
-	(2350, 41, 'data/demo/imac_2.jpg', 0),
-	(1979, 40, 'data/demo/iphone_3.jpg', 0),
-	(1978, 40, 'data/demo/iphone_4.jpg', 0),
+	(2459, 40, 'data/san_pham/IMG_3936-400x600.JPG', 0),
+	(2461, 30, 'data/1-single-thumbnail.jpg', 2),
+	(2414, 28, 'data/san_pham/IMG_3922-400x600.JPG', 0),
+	(2458, 40, 'data/san_pham/IMG_3940-400x600.JPG', 0),
 	(1989, 48, 'data/demo/ipod_classic_2.jpg', 0),
 	(1999, 36, 'data/demo/ipod_nano_2.jpg', 0),
 	(1998, 36, 'data/demo/ipod_nano_3.jpg', 0),
@@ -2423,8 +2346,7 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 	(1968, 43, 'data/demo/macbook_3.jpg', 0),
 	(1972, 44, 'data/demo/macbook_air_3.jpg', 0),
 	(1975, 45, 'data/demo/macbook_pro_4.jpg', 0),
-	(1984, 31, 'data/demo/nikon_d300_4.jpg', 0),
-	(1983, 31, 'data/demo/nikon_d300_5.jpg', 0),
+	(2425, 31, 'data/san_pham/IMG_3932-400x600.JPG', 0),
 	(1987, 29, 'data/demo/palm_treo_pro_2.jpg', 0),
 	(1993, 46, 'data/demo/sony_vaio_2.jpg', 0),
 	(1992, 46, 'data/demo/sony_vaio_3.jpg', 0),
@@ -2434,12 +2356,20 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 	(2324, 49, 'data/demo/samsung_tab_4.jpg', 0),
 	(2323, 49, 'data/demo/samsung_tab_3.jpg', 0),
 	(2322, 49, 'data/demo/samsung_tab_2.jpg', 0),
-	(2402, 42, 'data/demo/canon_eos_5d_2.jpg', 0),
-	(2401, 42, 'data/demo/canon_eos_5d_1.jpg', 0),
-	(2400, 42, 'data/demo/compaq_presario.jpg', 0),
-	(2399, 42, 'data/demo/hp_1.jpg', 0),
-	(2403, 30, 'data/1-single-thumbnail.jpg', 1),
-	(2398, 42, 'data/demo/canon_logo.jpg', 0);
+	(2468, 42, 'data/san_pham/IMG_3911-400x600.JPG', 0),
+	(2467, 42, 'data/san_pham/IMG_3909-400x600.JPG', 0),
+	(2460, 30, 'data/1-single-thumbnail.jpg', 1),
+	(2466, 42, 'data/san_pham/IMG_3913-400x600.JPG', 0),
+	(2465, 42, 'data/san_pham/IMG_3910-400x600.JPG', 0),
+	(2463, 47, 'data/san_pham/IMG_3918-400x600.JPG', 0),
+	(2462, 47, 'data/san_pham/IMG_3917-400x600.JPG', 0),
+	(2415, 28, 'data/san_pham/IMG_3924-400x600.JPG', 0),
+	(2416, 28, 'data/san_pham/IMG_3926-400x600.JPG', 0),
+	(2422, 41, 'data/san_pham/IMG_3959-400x600 (1).JPG', 0),
+	(2421, 41, 'data/san_pham/IMG_3958-400x600.JPG', 0),
+	(2424, 41, 'data/san_pham/IMG_4006-400x600 (1).JPG', 0),
+	(2427, 31, 'data/san_pham/IMG_4003-400x600 (1).JPG', 0),
+	(2428, 31, 'data/san_pham/IMG_4006-400x600.JPG', 0);
 /*!40000 ALTER TABLE `product_image` ENABLE KEYS */;
 
 
@@ -2452,17 +2382,19 @@ CREATE TABLE IF NOT EXISTS `product_option` (
   `option_value` text NOT NULL,
   `required` tinyint(1) NOT NULL,
   PRIMARY KEY (`product_option_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=232 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=235 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_option: 5 rows
-DELETE FROM `product_option`;
+-- Dumping data for table weorder.product_option: 8 rows
 /*!40000 ALTER TABLE `product_option` DISABLE KEYS */;
 INSERT INTO `product_option` (`product_option_id`, `product_id`, `option_id`, `option_value`, `required`) VALUES
 	(229, 30, 13, '', 1),
 	(230, 30, 15, '', 1),
 	(231, 30, 14, '', 1),
 	(227, 42, 13, '', 1),
-	(228, 42, 14, '', 1);
+	(228, 42, 14, '', 1),
+	(232, 47, 13, '', 0),
+	(233, 28, 14, '', 1),
+	(234, 40, 13, '', 0);
 /*!40000 ALTER TABLE `product_option` ENABLE KEYS */;
 
 
@@ -2483,13 +2415,11 @@ CREATE TABLE IF NOT EXISTS `product_option_value` (
   `weight` decimal(15,8) NOT NULL,
   `weight_prefix` varchar(1) NOT NULL,
   PRIMARY KEY (`product_option_value_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_option_value: 17 rows
-DELETE FROM `product_option_value`;
+-- Dumping data for table weorder.product_option_value: 23 rows
 /*!40000 ALTER TABLE `product_option_value` DISABLE KEYS */;
 INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
-	(25, 229, 30, 13, 50, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(24, 229, 30, 13, 57, 100, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(23, 229, 30, 13, 55, 100, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(28, 230, 30, 15, 69, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
@@ -2504,8 +2434,15 @@ INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_i
 	(13, 224, 35, 11, 47, 10, 1, 10.0000, '+', 0, '+', 0.00000000, '+'),
 	(14, 224, 35, 11, 48, 15, 1, 15.0000, '+', 0, '+', 0.00000000, '+'),
 	(26, 230, 30, 15, 67, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(31, 232, 47, 13, 55, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(32, 232, 47, 13, 51, 15, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(33, 233, 28, 14, 62, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(34, 233, 28, 14, 63, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(35, 233, 28, 14, 64, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(30, 231, 30, 14, 62, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(29, 231, 30, 14, 63, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(30, 231, 30, 14, 62, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+');
+	(36, 234, 40, 13, 56, 20, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(25, 229, 30, 13, 50, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+');
 /*!40000 ALTER TABLE `product_option_value` ENABLE KEYS */;
 
 
@@ -2518,7 +2455,6 @@ CREATE TABLE IF NOT EXISTS `product_related` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_related: 4 rows
-DELETE FROM `product_related`;
 /*!40000 ALTER TABLE `product_related` DISABLE KEYS */;
 INSERT INTO `product_related` (`product_id`, `related_id`) VALUES
 	(40, 42),
@@ -2536,27 +2472,26 @@ CREATE TABLE IF NOT EXISTS `product_reward` (
   `customer_group_id` int(11) NOT NULL DEFAULT '0',
   `points` int(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_reward_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=565 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=585 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_reward: 19 rows
-DELETE FROM `product_reward`;
 /*!40000 ALTER TABLE `product_reward` DISABLE KEYS */;
 INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
-	(563, 42, 1, 100),
-	(556, 47, 1, 300),
-	(557, 28, 1, 400),
+	(584, 42, 1, 100),
+	(583, 47, 1, 300),
+	(568, 28, 1, 400),
 	(329, 43, 1, 600),
 	(339, 29, 1, 0),
 	(343, 48, 1, 0),
-	(335, 40, 1, 0),
-	(564, 30, 1, 200),
+	(581, 40, 1, 0),
+	(582, 30, 1, 200),
 	(331, 44, 1, 700),
 	(333, 45, 1, 800),
-	(337, 31, 1, 0),
+	(571, 31, 1, 0),
 	(425, 35, 1, 0),
 	(345, 33, 1, 0),
 	(347, 46, 1, 0),
-	(545, 41, 1, 0),
+	(570, 41, 1, 0),
 	(351, 36, 1, 0),
 	(353, 34, 1, 0),
 	(355, 32, 1, 0),
@@ -2576,15 +2511,10 @@ CREATE TABLE IF NOT EXISTS `product_special` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_special_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=467 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=473 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_special: 3 rows
-DELETE FROM `product_special`;
+-- Dumping data for table weorder.product_special: 0 rows
 /*!40000 ALTER TABLE `product_special` DISABLE KEYS */;
-INSERT INTO `product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
-	(464, 42, 1, 1, 90.0000, '0000-00-00', '0000-00-00'),
-	(466, 30, 1, 2, 90.0000, '0000-00-00', '0000-00-00'),
-	(465, 30, 1, 1, 80.0000, '0000-00-00', '0000-00-00');
 /*!40000 ALTER TABLE `product_special` ENABLE KEYS */;
 
 
@@ -2596,14 +2526,21 @@ CREATE TABLE IF NOT EXISTS `product_to_category` (
   PRIMARY KEY (`product_id`,`category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_to_category: 6 rows
-DELETE FROM `product_to_category`;
+-- Dumping data for table weorder.product_to_category: 14 rows
 /*!40000 ALTER TABLE `product_to_category` DISABLE KEYS */;
 INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 	(28, 33),
 	(28, 61),
 	(30, 33),
+	(30, 61),
 	(31, 33),
+	(31, 61),
+	(40, 33),
+	(40, 61),
+	(41, 33),
+	(41, 61),
+	(42, 33),
+	(42, 61),
 	(47, 33),
 	(47, 61);
 /*!40000 ALTER TABLE `product_to_category` ENABLE KEYS */;
@@ -2618,7 +2555,6 @@ CREATE TABLE IF NOT EXISTS `product_to_download` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_to_download: 0 rows
-DELETE FROM `product_to_download`;
 /*!40000 ALTER TABLE `product_to_download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_to_download` ENABLE KEYS */;
 
@@ -2633,7 +2569,6 @@ CREATE TABLE IF NOT EXISTS `product_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_to_layout: 0 rows
-DELETE FROM `product_to_layout`;
 /*!40000 ALTER TABLE `product_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_to_layout` ENABLE KEYS */;
 
@@ -2647,7 +2582,6 @@ CREATE TABLE IF NOT EXISTS `product_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_to_store: 19 rows
-DELETE FROM `product_to_store`;
 /*!40000 ALTER TABLE `product_to_store` DISABLE KEYS */;
 INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 	(28, 0),
@@ -2698,7 +2632,6 @@ CREATE TABLE IF NOT EXISTS `return` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.return: 0 rows
-DELETE FROM `return`;
 /*!40000 ALTER TABLE `return` DISABLE KEYS */;
 /*!40000 ALTER TABLE `return` ENABLE KEYS */;
 
@@ -2713,7 +2646,6 @@ CREATE TABLE IF NOT EXISTS `return_action` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.return_action: 3 rows
-DELETE FROM `return_action`;
 /*!40000 ALTER TABLE `return_action` DISABLE KEYS */;
 INSERT INTO `return_action` (`return_action_id`, `language_id`, `name`) VALUES
 	(1, 2, 'Refunded'),
@@ -2735,7 +2667,6 @@ CREATE TABLE IF NOT EXISTS `return_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.return_history: 0 rows
-DELETE FROM `return_history`;
 /*!40000 ALTER TABLE `return_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `return_history` ENABLE KEYS */;
 
@@ -2750,7 +2681,6 @@ CREATE TABLE IF NOT EXISTS `return_reason` (
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.return_reason: 5 rows
-DELETE FROM `return_reason`;
 /*!40000 ALTER TABLE `return_reason` DISABLE KEYS */;
 INSERT INTO `return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
 	(1, 2, 'Dead On Arrival'),
@@ -2771,7 +2701,6 @@ CREATE TABLE IF NOT EXISTS `return_status` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.return_status: 3 rows
-DELETE FROM `return_status`;
 /*!40000 ALTER TABLE `return_status` DISABLE KEYS */;
 INSERT INTO `return_status` (`return_status_id`, `language_id`, `name`) VALUES
 	(1, 2, 'Pending'),
@@ -2797,7 +2726,6 @@ CREATE TABLE IF NOT EXISTS `review` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.review: 1 rows
-DELETE FROM `review`;
 /*!40000 ALTER TABLE `review` DISABLE KEYS */;
 INSERT INTO `review` (`review_id`, `product_id`, `customer_id`, `author`, `text`, `rating`, `status`, `date_added`, `date_modified`) VALUES
 	(1, 30, 0, 'fsd', 'fsdfsdfsdfsfsfsdfsf sdf sf sf sdf sdfsdf sd', 13, 0, '2013-06-04 14:52:37', '0000-00-00 00:00:00');
@@ -2814,10 +2742,9 @@ CREATE TABLE IF NOT EXISTS `setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3505 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3820 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.setting: 144 rows
-DELETE FROM `setting`;
 /*!40000 ALTER TABLE `setting` DISABLE KEYS */;
 INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `serialized`) VALUES
 	(1, 0, 'shipping', 'shipping_sort_order', '3', 0),
@@ -2856,114 +2783,114 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 	(104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
 	(109, 0, 'banner', 'banner_module', 'a:1:{i:0;a:8:{s:9:"banner_id";s:1:"6";s:5:"width";s:3:"182";s:6:"height";s:3:"182";s:11:"resize_type";s:7:"default";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
-	(3489, 0, 'config', 'config_fraud_status_id', '7', 0),
-	(3490, 0, 'config', 'config_secure', '0', 0),
-	(3491, 0, 'config', 'config_shared', '0', 0),
-	(3492, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-	(3488, 0, 'config', 'config_fraud_score', '', 0),
-	(3487, 0, 'config', 'config_fraud_key', '', 0),
-	(3486, 0, 'config', 'config_fraud_detection', '0', 0),
-	(3485, 0, 'config', 'config_alert_emails', '', 0),
-	(3484, 0, 'config', 'config_account_mail', '0', 0),
-	(3483, 0, 'config', 'config_alert_mail', '0', 0),
-	(3479, 0, 'config', 'config_smtp_username', '', 0),
-	(3480, 0, 'config', 'config_smtp_password', '', 0),
-	(3481, 0, 'config', 'config_smtp_port', '25', 0),
-	(3482, 0, 'config', 'config_smtp_timeout', '5', 0),
-	(3468, 0, 'config', 'config_image_cart_width', '120', 0),
-	(3469, 0, 'config', 'config_image_cart_height', '100', 0),
-	(3470, 0, 'config', 'config_ftp_host', 'localhost', 0),
-	(3471, 0, 'config', 'config_ftp_port', '21', 0),
-	(3472, 0, 'config', 'config_ftp_username', '', 0),
-	(3473, 0, 'config', 'config_ftp_password', '', 0),
-	(3474, 0, 'config', 'config_ftp_root', '', 0),
-	(3475, 0, 'config', 'config_ftp_status', '0', 0),
-	(3476, 0, 'config', 'config_mail_protocol', 'mail', 0),
-	(3477, 0, 'config', 'config_mail_parameter', '', 0),
-	(3478, 0, 'config', 'config_smtp_host', '', 0),
-	(3467, 0, 'config', 'config_image_wishlist_height', '47', 0),
-	(3466, 0, 'config', 'config_image_wishlist_width', '47', 0),
-	(3465, 0, 'config', 'config_image_compare_height', '90', 0),
-	(3464, 0, 'config', 'config_image_compare_width', '90', 0),
-	(3463, 0, 'config', 'config_image_related_height', '640', 0),
-	(3462, 0, 'config', 'config_image_related_width', '400', 0),
-	(3461, 0, 'config', 'config_image_additional_height', '150', 0),
-	(3460, 0, 'config', 'config_image_additional_width', '150', 0),
-	(3459, 0, 'config', 'config_image_product_height', '640', 0),
-	(3458, 0, 'config', 'config_image_product_width', '400', 0),
-	(3457, 0, 'config', 'config_image_popup_height', '600', 0),
+	(3815, 0, 'config', 'config_compression', '0', 0),
+	(3816, 0, 'config', 'config_error_display', '1', 0),
+	(3817, 0, 'config', 'config_error_log', '1', 0),
+	(3818, 0, 'config', 'config_error_filename', 'error.txt', 0),
+	(3819, 0, 'config', 'config_google_analytics', '', 0),
+	(3809, 0, 'config', 'config_seo_url', '0', 0),
+	(3810, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
+	(3811, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
+	(3812, 0, 'config', 'config_maintenance', '0', 0),
+	(3813, 0, 'config', 'config_password', '1', 0),
+	(3814, 0, 'config', 'config_encryption', '7f339d82bc9ee711ed084c4a101fbb25', 0),
 	(767, 0, 'slideshow', 'slideshow_module', 'a:3:{i:0;a:7:{s:9:"banner_id";s:1:"8";s:5:"width";s:3:"759";s:6:"height";s:3:"380";s:9:"layout_id";s:2:"12";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:7:{s:9:"banner_id";s:1:"7";s:5:"width";s:3:"996";s:6:"height";s:3:"481";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:7:{s:9:"banner_id";s:1:"9";s:5:"width";s:3:"782";s:6:"height";s:3:"438";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(3456, 0, 'config', 'config_image_popup_width', '400', 0),
-	(3455, 0, 'config', 'config_image_thumb_height', '228', 0),
-	(3454, 0, 'config', 'config_image_thumb_width', '228', 0),
-	(3453, 0, 'config', 'config_image_news_height', '341', 0),
-	(3452, 0, 'config', 'config_image_news_width', '242', 0),
-	(3451, 0, 'config', 'config_image_category_height', '80', 0),
-	(3450, 0, 'config', 'config_image_category_width', '80', 0),
-	(3449, 0, 'config', 'config_icon', 'data/cart.png', 0),
-	(3448, 0, 'config', 'config_logo', 'data/wesale.jpg', 0),
-	(3447, 0, 'config', 'config_return_status_id', '2', 0),
-	(3446, 0, 'config', 'config_return_id', '0', 0),
-	(3445, 0, 'config', 'config_commission', '5', 0),
-	(3444, 0, 'config', 'config_affiliate_id', '4', 0),
-	(3443, 0, 'config', 'config_stock_status_id', '5', 0),
-	(3442, 0, 'config', 'config_stock_checkout', '0', 0),
-	(3441, 0, 'config', 'config_stock_warning', '0', 0),
-	(3440, 0, 'config', 'config_stock_display', '0', 0),
-	(3439, 0, 'config', 'config_complete_status_id', '5', 0),
-	(3438, 0, 'config', 'config_order_status_id', '1', 0),
-	(3437, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
-	(3436, 0, 'config', 'config_order_edit', '100', 0),
-	(3435, 0, 'config', 'config_checkout_id', '3', 0),
-	(3434, 0, 'config', 'config_guest_checkout', '1', 0),
-	(3433, 0, 'config', 'config_cart_weight', '1', 0),
-	(3432, 0, 'config', 'config_account_id', '5', 0),
-	(3431, 0, 'config', 'config_customer_price', '0', 0),
-	(3430, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
-	(3429, 0, 'config', 'config_customer_group_id', '1', 0),
-	(3428, 0, 'config', 'config_customer_online', '0', 0),
-	(3427, 0, 'config', 'config_tax_customer', 'shipping', 0),
-	(3426, 0, 'config', 'config_tax_default', 'shipping', 0),
-	(3425, 0, 'config', 'config_vat', '0', 0),
-	(3424, 0, 'config', 'config_tax', '1', 0),
-	(3423, 0, 'config', 'config_voucher_max', '1000', 0),
-	(3422, 0, 'config', 'config_voucher_min', '1', 0),
-	(3421, 0, 'config', 'config_download', '1', 0),
-	(3420, 0, 'config', 'config_review_status', '1', 0),
-	(3419, 0, 'config', 'config_product_count', '1', 0),
-	(3418, 0, 'config', 'config_admin_limit', '20', 0),
-	(3417, 0, 'config', 'config_catalog_limit', '15', 0),
-	(3416, 0, 'config', 'config_weight_class_id', '1', 0),
-	(3415, 0, 'config', 'config_length_class_id', '1', 0),
-	(3414, 0, 'config', 'config_currency_auto', '1', 0),
-	(3413, 0, 'config', 'config_currency', 'USD', 0),
-	(3412, 0, 'config', 'config_admin_language', 'vi', 0),
-	(3411, 0, 'config', 'config_language', 'vi', 0),
-	(3410, 0, 'config', 'config_zone_id', '3776', 0),
-	(3409, 0, 'config', 'config_country_id', '230', 0),
-	(3408, 0, 'config', 'config_layout_id', '4', 0),
-	(3407, 0, 'config', 'config_template', 'default', 0),
-	(3406, 0, 'config', 'config_meta_description', 'Weorder', 0),
-	(3405, 0, 'config', 'config_title', 'Đặt hàng quốc tế - Weorder', 0),
-	(3404, 0, 'config', 'config_fax', '', 0),
-	(3403, 0, 'config', 'config_telephone', '123456789', 0),
-	(3402, 0, 'config', 'config_email', 'admin@admin.com', 0),
-	(3401, 0, 'config', 'config_address', 'Address 1', 0),
-	(3400, 0, 'config', 'config_owner', 'Đặt hàng quốc tế', 0),
-	(3399, 0, 'config', 'config_name', 'Đặt hàng quốc tế', 0),
+	(3808, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+	(3806, 0, 'config', 'config_secure', '0', 0),
+	(3807, 0, 'config', 'config_shared', '0', 0),
+	(3804, 0, 'config', 'config_fraud_score', '', 0),
+	(3805, 0, 'config', 'config_fraud_status_id', '7', 0),
+	(3803, 0, 'config', 'config_fraud_key', '', 0),
+	(3801, 0, 'config', 'config_alert_emails', '', 0),
+	(3802, 0, 'config', 'config_fraud_detection', '0', 0),
+	(3800, 0, 'config', 'config_account_mail', '0', 0),
+	(3798, 0, 'config', 'config_smtp_timeout', '5', 0),
+	(3799, 0, 'config', 'config_alert_mail', '0', 0),
+	(3796, 0, 'config', 'config_smtp_password', '', 0),
+	(3797, 0, 'config', 'config_smtp_port', '25', 0),
+	(3794, 0, 'config', 'config_smtp_host', '', 0),
+	(3795, 0, 'config', 'config_smtp_username', '', 0),
+	(3793, 0, 'config', 'config_mail_parameter', '', 0),
+	(3792, 0, 'config', 'config_mail_protocol', 'mail', 0),
+	(3790, 0, 'config', 'config_ftp_root', '', 0),
+	(3791, 0, 'config', 'config_ftp_status', '0', 0),
+	(3788, 0, 'config', 'config_ftp_username', '', 0),
+	(3789, 0, 'config', 'config_ftp_password', '', 0),
+	(3786, 0, 'config', 'config_ftp_host', 'localhost', 0),
+	(3787, 0, 'config', 'config_ftp_port', '21', 0),
+	(3785, 0, 'config', 'config_image_cart_height', '100', 0),
+	(3784, 0, 'config', 'config_image_cart_width', '120', 0),
+	(3783, 0, 'config', 'config_image_wishlist_height', '47', 0),
+	(3782, 0, 'config', 'config_image_wishlist_width', '47', 0),
+	(3781, 0, 'config', 'config_image_compare_height', '90', 0),
+	(3780, 0, 'config', 'config_image_compare_width', '90', 0),
+	(3779, 0, 'config', 'config_image_related_height', '640', 0),
+	(3778, 0, 'config', 'config_image_related_width', '400', 0),
+	(3776, 0, 'config', 'config_image_additional_width', '150', 0),
+	(3777, 0, 'config', 'config_image_additional_height', '150', 0),
+	(3775, 0, 'config', 'config_image_product_height', '640', 0),
+	(3774, 0, 'config', 'config_image_product_width', '400', 0),
+	(3771, 0, 'config', 'config_image_thumb_height', '228', 0),
+	(3772, 0, 'config', 'config_image_popup_width', '400', 0),
 	(3397, 0, 'manufacturersdropdown', 'manufacturersdropdown_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1),
 	(3504, 0, 'filteroption', 'filteroption_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
-	(3493, 0, 'config', 'config_seo_url', '0', 0),
-	(3494, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
-	(3495, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
-	(3496, 0, 'config', 'config_maintenance', '0', 0),
-	(3497, 0, 'config', 'config_password', '1', 0),
-	(3498, 0, 'config', 'config_encryption', '7f339d82bc9ee711ed084c4a101fbb25', 0),
-	(3499, 0, 'config', 'config_compression', '0', 0),
-	(3500, 0, 'config', 'config_error_display', '1', 0),
-	(3501, 0, 'config', 'config_error_log', '1', 0),
-	(3502, 0, 'config', 'config_error_filename', 'error.txt', 0),
-	(3503, 0, 'config', 'config_google_analytics', '', 0);
+	(3773, 0, 'config', 'config_image_popup_height', '600', 0),
+	(3770, 0, 'config', 'config_image_thumb_width', '228', 0),
+	(3769, 0, 'config', 'config_image_news_height', '341', 0),
+	(3768, 0, 'config', 'config_image_news_width', '242', 0),
+	(3767, 0, 'config', 'config_image_category_height', '80', 0),
+	(3766, 0, 'config', 'config_image_category_width', '80', 0),
+	(3765, 0, 'config', 'config_icon', 'data/cart.png', 0),
+	(3764, 0, 'config', 'config_logo', 'data/wesale.jpg', 0),
+	(3763, 0, 'config', 'config_return_status_id', '2', 0),
+	(3762, 0, 'config', 'config_return_id', '0', 0),
+	(3761, 0, 'config', 'config_commission', '5', 0),
+	(3760, 0, 'config', 'config_affiliate_id', '4', 0),
+	(3759, 0, 'config', 'config_stock_status_id', '7', 0),
+	(3758, 0, 'config', 'config_stock_checkout', '0', 0),
+	(3756, 0, 'config', 'config_stock_display', '0', 0),
+	(3757, 0, 'config', 'config_stock_warning', '0', 0),
+	(3754, 0, 'config', 'config_order_status_id', '1', 0),
+	(3755, 0, 'config', 'config_complete_status_id', '5', 0),
+	(3753, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
+	(3747, 0, 'config', 'config_customer_price', '0', 0),
+	(3748, 0, 'config', 'config_account_id', '5', 0),
+	(3749, 0, 'config', 'config_cart_weight', '1', 0),
+	(3750, 0, 'config', 'config_guest_checkout', '1', 0),
+	(3751, 0, 'config', 'config_checkout_id', '3', 0),
+	(3752, 0, 'config', 'config_order_edit', '100', 0),
+	(3746, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
+	(3745, 0, 'config', 'config_customer_group_id', '1', 0),
+	(3744, 0, 'config', 'config_customer_online', '0', 0),
+	(3732, 0, 'config', 'config_weight_class_id', '1', 0),
+	(3733, 0, 'config', 'config_catalog_limit', '15', 0),
+	(3734, 0, 'config', 'config_admin_limit', '20', 0),
+	(3735, 0, 'config', 'config_product_count', '1', 0),
+	(3736, 0, 'config', 'config_review_status', '1', 0),
+	(3737, 0, 'config', 'config_download', '1', 0),
+	(3738, 0, 'config', 'config_voucher_min', '1', 0),
+	(3739, 0, 'config', 'config_voucher_max', '1000', 0),
+	(3740, 0, 'config', 'config_tax', '0', 0),
+	(3741, 0, 'config', 'config_vat', '0', 0),
+	(3742, 0, 'config', 'config_tax_default', 'shipping', 0),
+	(3743, 0, 'config', 'config_tax_customer', 'shipping', 0),
+	(3731, 0, 'config', 'config_length_class_id', '1', 0),
+	(3729, 0, 'config', 'config_currency', 'VND', 0),
+	(3730, 0, 'config', 'config_currency_auto', '1', 0),
+	(3728, 0, 'config', 'config_admin_language', 'vi', 0),
+	(3720, 0, 'config', 'config_fax', '', 0),
+	(3721, 0, 'config', 'config_title', 'Đặt hàng quốc tế - Weorder', 0),
+	(3722, 0, 'config', 'config_meta_description', 'Weorder', 0),
+	(3723, 0, 'config', 'config_template', 'default', 0),
+	(3724, 0, 'config', 'config_layout_id', '4', 0),
+	(3725, 0, 'config', 'config_country_id', '230', 0),
+	(3726, 0, 'config', 'config_zone_id', '3776', 0),
+	(3727, 0, 'config', 'config_language', 'vi', 0),
+	(3719, 0, 'config', 'config_telephone', '123456789', 0),
+	(3718, 0, 'config', 'config_email', 'admin@admin.com', 0),
+	(3717, 0, 'config', 'config_address', 'Address 1', 0),
+	(3716, 0, 'config', 'config_owner', 'Đặt hàng quốc tế', 0),
+	(3715, 0, 'config', 'config_name', 'Đặt hàng quốc tế', 0);
 /*!40000 ALTER TABLE `setting` ENABLE KEYS */;
 
 
@@ -2977,7 +2904,6 @@ CREATE TABLE IF NOT EXISTS `stock_status` (
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.stock_status: 4 rows
-DELETE FROM `stock_status`;
 /*!40000 ALTER TABLE `stock_status` DISABLE KEYS */;
 INSERT INTO `stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 	(7, 2, 'In Stock'),
@@ -2998,7 +2924,6 @@ CREATE TABLE IF NOT EXISTS `store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.store: 0 rows
-DELETE FROM `store`;
 /*!40000 ALTER TABLE `store` DISABLE KEYS */;
 /*!40000 ALTER TABLE `store` ENABLE KEYS */;
 
@@ -3015,7 +2940,6 @@ CREATE TABLE IF NOT EXISTS `tax_class` (
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.tax_class: 2 rows
-DELETE FROM `tax_class`;
 /*!40000 ALTER TABLE `tax_class` DISABLE KEYS */;
 INSERT INTO `tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `date_modified`) VALUES
 	(9, 'Taxable Goods', 'Taxed Stuff', '2009-01-06 23:21:53', '2011-09-23 14:07:50'),
@@ -3037,7 +2961,6 @@ CREATE TABLE IF NOT EXISTS `tax_rate` (
 ) ENGINE=MyISAM AUTO_INCREMENT=88 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.tax_rate: 2 rows
-DELETE FROM `tax_rate`;
 /*!40000 ALTER TABLE `tax_rate` DISABLE KEYS */;
 INSERT INTO `tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `date_added`, `date_modified`) VALUES
 	(86, 3, 'VAT (17.5%)', 17.5000, 'P', '2011-03-09 21:17:10', '2011-09-22 22:24:29'),
@@ -3054,7 +2977,6 @@ CREATE TABLE IF NOT EXISTS `tax_rate_to_customer_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.tax_rate_to_customer_group: 2 rows
-DELETE FROM `tax_rate_to_customer_group`;
 /*!40000 ALTER TABLE `tax_rate_to_customer_group` DISABLE KEYS */;
 INSERT INTO `tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VALUES
 	(86, 1),
@@ -3074,7 +2996,6 @@ CREATE TABLE IF NOT EXISTS `tax_rule` (
 ) ENGINE=MyISAM AUTO_INCREMENT=129 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.tax_rule: 4 rows
-DELETE FROM `tax_rule`;
 /*!40000 ALTER TABLE `tax_rule` DISABLE KEYS */;
 INSERT INTO `tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `priority`) VALUES
 	(121, 10, 86, 'payment', 1),
@@ -3091,22 +3012,21 @@ CREATE TABLE IF NOT EXISTS `url_alias` (
   `query` varchar(255) NOT NULL,
   `keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`url_alias_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=855 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=870 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.url_alias: 27 rows
-DELETE FROM `url_alias`;
+-- Dumping data for table weorder.url_alias: 34 rows
 /*!40000 ALTER TABLE `url_alias` DISABLE KEYS */;
 INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(704, 'product_id=48', 'ipod_classic'),
 	(778, 'category_id=25', 'nu'),
 	(777, 'category_id=33', 'nam'),
-	(730, 'manufacturer_id=8', 'apple'),
+	(855, 'manufacturer_id=8', 'lascote'),
 	(848, 'information_id=4', 'about_us'),
-	(854, 'product_id=42', 'test'),
+	(869, 'product_id=42', 'test'),
 	(780, 'category_id=59', 'tre-em'),
 	(824, 'news_category_id=1', 'tin-tuc'),
 	(794, 'news_id=1', 'sale-off-50-hang-lascote.html'),
-	(852, 'manufacturer_id=9', 'zara'),
+	(868, 'manufacturer_id=9', 'zara'),
 	(826, 'news_id=2', 'zara-dai-ha-gia.html'),
 	(804, 'category_id=60', 'quan'),
 	(844, 'category_id=61', 'ao'),
@@ -3123,7 +3043,14 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(832, 'news_id=9', 'mai-phuong-thuy-tuoi-tan-ben-canh-dan-em.html'),
 	(833, 'news_id=10', 'scandal-cho-mua-di-bien.html'),
 	(834, 'news_id=11', 'thoi-trang-he-noi-bat-cung-mango.html'),
-	(835, 'news_id=12', 'em-gai-chung-thuc-quyen-ngam-eo-con-kien-cua-em-gai-chung-thuc-quyen.html');
+	(835, 'news_id=12', 'em-gai-chung-thuc-quyen-ngam-eo-con-kien-cua-em-gai-chung-thuc-quyen.html'),
+	(856, 'manufacturer_id=10', 'nike'),
+	(857, 'manufacturer_id=7', 'louis-vuitton'),
+	(858, 'manufacturer_id=5', 'converse'),
+	(859, 'manufacturer_id=6', 'adidas'),
+	(860, 'manufacturer_id=11', 'tommy-hilfiger'),
+	(861, 'manufacturer_id=12', 'armani'),
+	(862, 'manufacturer_id=13', 'phan-nguyen');
 /*!40000 ALTER TABLE `url_alias` ENABLE KEYS */;
 
 
@@ -3146,10 +3073,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.user: 1 rows
-DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `code`, `ip`, `status`, `date_added`) VALUES
-	(1, 1, 'admin', 'eb3b619f4e511cdecae9a01f958f9322a445eeb6', '16c32b3ef', '', '', 'admin@admin.com', '', '::1', 1, '2013-05-16 23:52:20');
+	(1, 1, 'admin', 'eb3b619f4e511cdecae9a01f958f9322a445eeb6', '16c32b3ef', '', '', 'admin@admin.com', '', '127.0.0.1', 1, '2013-05-16 23:52:20');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 
@@ -3163,10 +3089,9 @@ CREATE TABLE IF NOT EXISTS `user_group` (
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.user_group: 2 rows
-DELETE FROM `user_group`;
 /*!40000 ALTER TABLE `user_group` DISABLE KEYS */;
 INSERT INTO `user_group` (`user_group_id`, `name`, `permission`) VALUES
-	(1, 'Top Administrator', 'a:2:{s:6:"access";a:137:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";i:136;s:19:"module/filteroption";}s:6:"modify";a:137:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";i:136;s:19:"module/filteroption";}}'),
+	(1, 'Top Administrator', 'a:2:{s:6:"access";a:138:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";i:136;s:19:"module/filteroption";i:137;s:13:"module/viewed";}s:6:"modify";a:138:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";i:136;s:19:"module/filteroption";i:137;s:13:"module/viewed";}}'),
 	(10, 'Demonstration', '');
 /*!40000 ALTER TABLE `user_group` ENABLE KEYS */;
 
@@ -3190,7 +3115,6 @@ CREATE TABLE IF NOT EXISTS `voucher` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.voucher: 0 rows
-DELETE FROM `voucher`;
 /*!40000 ALTER TABLE `voucher` DISABLE KEYS */;
 /*!40000 ALTER TABLE `voucher` ENABLE KEYS */;
 
@@ -3207,7 +3131,6 @@ CREATE TABLE IF NOT EXISTS `voucher_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.voucher_history: 0 rows
-DELETE FROM `voucher_history`;
 /*!40000 ALTER TABLE `voucher_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `voucher_history` ENABLE KEYS */;
 
@@ -3221,7 +3144,6 @@ CREATE TABLE IF NOT EXISTS `voucher_theme` (
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.voucher_theme: 3 rows
-DELETE FROM `voucher_theme`;
 /*!40000 ALTER TABLE `voucher_theme` DISABLE KEYS */;
 INSERT INTO `voucher_theme` (`voucher_theme_id`, `image`) VALUES
 	(8, 'data/demo/canon_eos_5d_2.jpg'),
@@ -3240,7 +3162,6 @@ CREATE TABLE IF NOT EXISTS `voucher_theme_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.voucher_theme_description: 3 rows
-DELETE FROM `voucher_theme_description`;
 /*!40000 ALTER TABLE `voucher_theme_description` DISABLE KEYS */;
 INSERT INTO `voucher_theme_description` (`voucher_theme_id`, `language_id`, `name`) VALUES
 	(6, 2, 'Christmas'),
@@ -3258,7 +3179,6 @@ CREATE TABLE IF NOT EXISTS `weight_class` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.weight_class: 4 rows
-DELETE FROM `weight_class`;
 /*!40000 ALTER TABLE `weight_class` DISABLE KEYS */;
 INSERT INTO `weight_class` (`weight_class_id`, `value`) VALUES
 	(1, 1.00000000),
@@ -3279,7 +3199,6 @@ CREATE TABLE IF NOT EXISTS `weight_class_description` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.weight_class_description: 4 rows
-DELETE FROM `weight_class_description`;
 /*!40000 ALTER TABLE `weight_class_description` DISABLE KEYS */;
 INSERT INTO `weight_class_description` (`weight_class_id`, `language_id`, `title`, `unit`) VALUES
 	(1, 2, 'Kilogram', 'kg'),
@@ -3300,8 +3219,7 @@ CREATE TABLE IF NOT EXISTS `zone` (
   PRIMARY KEY (`zone_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4033 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.zone: 3,985 rows
-DELETE FROM `zone`;
+-- Dumping data for table weorder.zone: 3.985 rows
 /*!40000 ALTER TABLE `zone` DISABLE KEYS */;
 INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 	(1, 1, 'Badakhshan', 'BDS', 1),
@@ -7305,7 +7223,6 @@ CREATE TABLE IF NOT EXISTS `zone_to_geo_zone` (
 ) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.zone_to_geo_zone: 2 rows
-DELETE FROM `zone_to_geo_zone`;
 /*!40000 ALTER TABLE `zone_to_geo_zone` DISABLE KEYS */;
 INSERT INTO `zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, `geo_zone_id`, `date_added`, `date_modified`) VALUES
 	(57, 222, 0, 3, '2010-02-26 22:33:24', '0000-00-00 00:00:00'),

@@ -874,7 +874,7 @@ $('#button-shipping-method').live('click', function() {
 	});	
 });
 
-$('#button-payment-method').live('click', function() {
+$(document).ready(function(){
 	$.ajax({
 		url: 'index.php?route=checkout/payment_method/validate', 
 		type: 'post',
@@ -923,7 +923,8 @@ $('#button-payment-method').live('click', function() {
 		error: function(xhr, ajaxOptions, thrownError) {
 			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
-	});	
+                
+        });
 });
 //--></script> 
 <?php echo $footer; ?>

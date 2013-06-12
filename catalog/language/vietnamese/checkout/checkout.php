@@ -62,7 +62,7 @@ $_['entry_shipping'] 	             = 'Địa chỉ nhận hàng và địa chỉ
 // Error
 $_['error_warning']                  = 'Có lỗi khi xử lý đơn hàng của bạn! Nếu lỗi vẫn tồn tại vui lòng chọn phương thức thanh toán khác hoặc bạn có thể liên hệ quản lý gian hàng bằng cách <a href="%s">bấm vào đây</a>.';
 $_['error_login']                    = 'Lỗi: Địa chỉ Email / Mật khẩu không đúng.';
-$_['error_approved']               = 'Lỗi: Tài khoản của bạn cần phải được kích hoạt trước khi bạn có thể đăng nhập.'; 
+$_['error_approved']                 = 'Lỗi: Tài khoản của bạn cần phải được kích hoạt trước khi bạn có thể đăng nhập.'; 
 $_['error_exists']                   = 'Lỗi: E-Mail đã có người sử dụng!';
 $_['error_firstname']                = 'Tên phải từ 1 đến 32 kí tự!';
 $_['error_lastname']                 = 'Họ và tên lót phải từ 1 đến 32 kí tự!';
@@ -70,9 +70,9 @@ $_['error_email']                    = 'E-Mail không hợp lệ!';
 $_['error_telephone']                = 'Điện thoại phải từ 3 đến 32 kí tự!';
 $_['error_password']                 = 'Mật khẩu phải từ 3 đến 20 kí tự!';
 $_['error_confirm']                  = 'Nhập lại mật khẩu không chính xác!';
-$_['error_company_id']     = 'Yêu cầu điền mã số công ty!';
-$_['error_tax_id']         = 'Yêu cầu điền mã số thuế!';
-$_['error_vat']            = 'Mã số thuế không hợp lệ!';
+$_['error_company_id']               = 'Yêu cầu điền mã số công ty!';
+$_['error_tax_id']                   = 'Yêu cầu điền mã số thuế!';
+$_['error_vat']                      = 'Mã số thuế không hợp lệ!';
 $_['error_address_1']                = 'Địa chỉ dòng 1 phải từ 3 đến 128 kí tự!';
 $_['error_city']                     = 'Thành Phố phải từ 2 đến 128 kí tự!';
 $_['error_postcode']                 = 'Mã Bưu Điện phải từ 2 đến 10 kí tự!';
@@ -86,7 +86,7 @@ $_['error_payment']                  = 'Lỗi: Thiếu phương thức thanh to�
 $_['error_no_payment']               = 'Lỗi: Không có tùy chọn phương thức thanh toán. Vui lòng <a href="%s">liên hệ chúng tôi</a> để được tư vấn!';
 
 // compatible with old version
-$_['entry_account']        = 'Tài khoản:';
+$_['entry_account']                  = 'Tài khoản:';
 $_['text_logged']                    = 'You are logged in as <a href="%s">%s</a> <b>(</b> <a href="%s">Logout</a> <b>)</b>';
 $_['text_items']                     = '%s item(s) - %s';
 ?>

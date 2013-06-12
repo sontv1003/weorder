@@ -23,22 +23,23 @@
                                 </a>
                             <?php } ?>
                             <div id="product-option-stock-hint" class="mtm" style="">
-                                Lựa chọn của quý khách: <strong><span id="product-option-stock-number" style="color:#D02700">Chỉ còn lại 32 mục</span></strong>
+                                <!--Lựa chọn của quý khách: <strong><span id="product-option-stock-number" style="color:#D02700">Chỉ còn lại 32 mục</span></strong>-->
                             </div>
-
 
                             <div class="bService overflow marginBottom ">
                                 <div class="iconSprite"></div>
                                 <p>Mọi câu hỏi vui lòng liên hệ Chăm Sóc Khách Hàng qua hotline miễn phí (08) 6 288 5678</p>
                             </div>
+                            <div class="clear"></div>
                             <div class="prd-hd">
                                 <h1 class="h2 mtm lhl">
                                     <?php if ($manufacturer) { ?>
                                         <span class="prd-brand" property="gr:BusinessEntity">
-                                            <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a><br />
+                                            <a href="<?php echo $manufacturers; ?>">THƯƠNG HIỆU: <?php echo $manufacturer; ?></a>
                                         </span>
                                     <?php } ?>
                                     <span class="prd-title fsm" property="gr:name"><?php echo $heading_title; ?></span>
+                                    <span class="prd-price fsm" property="gr:name"><?php echo $text_price; ?> <span class="lbPrice"><?php echo $price; ?></span></span>
                                 </h1>
                                 <div class="l-row vMid">
                                 </div>
@@ -140,7 +141,7 @@
                                                     <?php foreach ($option['option_value'] as $option_value) { ?>
                                                         <li data-value-class="opt-One-Sizeitem-0" data-attribute="size" data-js-function="selectOption" class="prd-option-item ui-listItem ui-border ui-listItem-margin pas opt-One-Sizeitem-0" style="opacity: 1;">
                                                             <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />                                                  
-                                                            <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" />
+                                                            <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>"  width="20px" />
                                                         </li>
                                                     <?php } ?>
                                                 </ul>
@@ -225,11 +226,11 @@
                                 </div>
                             <?php } ?>
 
-                            <div class="mtm mbm">
-                            </div>
+                            <div class="mtm mbm"> </div>
 
                             <div class="cart">
-                                <div><?php echo $text_qty; ?>
+                                <div>
+                                    <div style="line-height: 35px; display: inline-block;"><?php echo $text_qty; ?></div>
                                     <input type="text" name="quantity" size="2" value="<?php echo $minimum; ?>" />
                                     <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
                                     &nbsp;
@@ -245,7 +246,7 @@
                                 <div class="left">
                                     <?php if ($thumb) { ?>
                                         <div class="prd-imageBoxLayout ui-border">
-                                            <a class="prd-imageBox" id="prdZoomBox">
+                                            <a class="prd-imageBox colorbox" id="prdZoomBox" rel="colorbox">
                                                 <span rel="foaf:depiction">
                                                     <img class="prd-image" id="prdImage" data-js-function="setPlaceholderOnError" data-placeholder="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" src="<?php echo $popup; ?>" height="400" width="277">
                                                 </span>
@@ -261,7 +262,7 @@
                                                     <ul class="prd-moreImagesList ui-listItemBorder ui-listLight clearfix">
                                                         <?php foreach ($images as $key => $image) { ?>
                                                             <li class="lfloat ui-border" data-js-function="setImage" data-image-product="<?php echo $image['popup']; ?>" data-image-big="<?php echo $image['popup']; ?>">
-                                                                <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="colorbox">
+                                                                <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="colorbox" rel="colorbox">
                                                                     <img data-js-function="setPlaceholderOnError" data-placeholder="<?php echo $image['thumb']; ?>" id="gal<?php echo $key ?>" src="<?php echo $image['thumb']; ?>" alt="<?php echo $image['thumb']; ?>" height="54" width="37">
                                                                 </a>
                                                             </li>
@@ -299,7 +300,7 @@
                                                 <td class="" style="width: 200px;"><?php echo $text_model; ?></td>
                                                 <td class=""><?php echo $model; ?></td>
                                             </tr>
-                                           
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -516,7 +517,11 @@
                         }
                     }
                 } 
-			
+                //Nhay den trang gio hang
+                if (json['redirect']) {
+                    location = json['redirect'];
+                }	
+                
                 if (json['success']) {
                     $('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
 					
@@ -524,7 +529,7 @@
 					
                     $('#cart-total').html(json['total']);
 				
-                    $('html, body').animate({ scrollTop: 0 }, 'slow'); 
+                    //$('html, body').animate({ scrollTop: 0 }, 'slow'); 
                 }	
             }
         });
@@ -546,19 +551,19 @@
                     },
                     onComplete: function(file, json) {
                         $('#button-option-<?php echo $option['product_option_id']; ?>').attr('disabled', false);
-                                                                                                                                                                                                                                                                                                                                                                                                            		
+                                                                                                                                                                                                                                                                                                                                                                                                                        		
                         $('.error').remove();
-                                                                                                                                                                                                                                                                                                                                                                                                            		
+                                                                                                                                                                                                                                                                                                                                                                                                                        		
                         if (json['success']) {
                             alert(json['success']);
-                                                                                                                                                                                                                                                                                                                                                                                                            			
+                                                                                                                                                                                                                                                                                                                                                                                                                        			
                             $('input[name=\'option[<?php echo $option['product_option_id']; ?>]\']').attr('value', json['file']);
                         }
-                                                                                                                                                                                                                                                                                                                                                                                                            		
+                                                                                                                                                                                                                                                                                                                                                                                                                        		
                         if (json['error']) {
                             $('#option-<?php echo $option['product_option_id']; ?>').after('<span class="error">' + json['error'] + '</span>');
                         }
-                                                                                                                                                                                                                                                                                                                                                                                                            		
+                                                                                                                                                                                                                                                                                                                                                                                                                        		
                         $('.loading').remove();	
                     }
                 });
@@ -613,4 +618,15 @@
     //--></script> 
 <script type="text/javascript"><!--
     $('#jtabs a').tabs();
+    //--></script> 
+
+<script type="text/javascript"><!--
+    $(document).ready(function() {
+        $('.colorbox').colorbox({
+            width: 640,
+            height: 480,
+            overlayClose: true,
+            opacity: 0.5
+        });
+    });
     //--></script> 

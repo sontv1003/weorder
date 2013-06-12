@@ -2345,12 +2345,14 @@ p.error404 img {margin:0 10px 0 0;}
     font-size: 20px;
     height: 32px;
     margin-left: 122px;
-    width: 108px;padding-bottom: 3px; margin-top:7px;
+    width: 108px;padding-bottom: 3px; 
+    margin-top:7px;
     border: none;
     border-radius: 5px;
     -moz-border-radius: 5px;
     webkit-border-radius: 5px;
 }
+
 @font-face
 {
     font-family: UTM_Avo;
@@ -2605,14 +2607,16 @@ span.error {
 a.button, input.button {
     cursor: pointer;
     color: #FFFFFF;
-    line-height: 12px;
-    font-family: 'UTM_Bebas';
-    font-size: 12px;
+    line-height: 30px;
+    padding-bottom: 3px;
+    font-family: 'UTM_Bebas' !important;
+    font-size: 20px !important;
+    height: 32px !important;
     font-weight: bold;
-    -webkit-border-radius: 7px 7px 7px 7px;
-    -moz-border-radius: 7px 7px 7px 7px;
-    -khtml-border-radius: 7px 7px 7px 7px;
-    border-radius: 7px 7px 7px 7px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius:  5px;
+    border-radius: 5px;
     -webkit-box-shadow: 0px 2px 2px #DDDDDD;
     -moz-box-shadow: 0px 2px 2px #DDDDDD;
     box-shadow: 0px 2px 2px #DDDDDD;
@@ -2620,7 +2624,7 @@ a.button, input.button {
 a.button {
     display: inline-block;
     text-decoration: none;
-    padding: 3px 10px 3px 10px;
+    padding: 3px 10px 0px 10px;
 }
 
 .buttons {
@@ -2751,3 +2755,96 @@ div.option .option-name{
     line-height: 31px;
 }
 #hotline span {font-size: 20px; color: #c00;}
+
+.dky{
+    padding: 5px 10px; 
+    text-align: center; 
+    width: 497px; 
+    color:#fff;
+    background-color: #EBEBEB;
+    background: -moz-linear-gradient(center top , #f00, #c00);
+    background: -webkit-gradient(linear, center top, center bottom, from(#f00), to(#c00));    
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#f00', EndColorStr='#c00');    
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 1px 0 rgba(200, 200, 200, 0.2);
+    color: #fff;
+    cursor: pointer;
+}
+.fontUTM {
+    font-family: 'UTM_Bebas';
+    font-size: 20px;
+}
+.kt1{height:30px; }
+.dytt{
+    background: -moz-linear-gradient(center top , #56CA56, #006600) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear, center top, center bottom, from(#56CA56), to(#006600));    
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#56CA56', EndColorStr='#006600');
+    border-color: #006600;    
+    box-shadow: 0 1px 0;
+    height: 65px;
+    line-height: 65px;
+    color: #FFFFFF;
+    text-align: center;
+    cursor: pointer;
+}
+.dytt:hover{
+    background: -moz-linear-gradient(center top , #006600, #56CA56) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear, center top, center bottom, from(#006600), to(#56CA56));    
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='##006600', EndColorStr='#56CA56');
+    border-color: #006600;
+    box-shadow: 0 1px 0;
+    color: #FFFFFF;
+}
+
+#phis {
+    width: 475px; 
+}
+#phis ul{
+}
+#phis ul li{
+    float: left;
+    font-size: 18px;
+    width: 45%;
+    border:none; 
+    color: #000;
+    border-bottom:1px solid #cdcdcd
+}
+#tongtien ul{
+    float: right;
+    margin: -31px -15px 0 0;
+    width: 482px;
+}
+#tongtien ul li{ float: left;
+    font-size: 20px;
+    line-height: 25px;
+    padding: 4px 12px 5px;
+    width: 166px; 
+    border:none ;
+    border-left:1px solid #cdcdcd
+}
+.total_payment {
+    width: 195px; 
+    padding: 5px 10px; 
+    text-align: center; 
+    background-color:#444; 
+    color:#000;
+    border: 1px solid #000;
+}
+.cost_payment {
+    padding: 5px 10px;
+    text-align: center;
+    background-color:#222;     
+    width: 239px; 
+    color:#fff;
+    border: 1px solid #000;
+}
+.head_cart1{
+    background-color:#444;
+    color:#000; 
+    border: 1px solid #000;
+}
+.head_cart2{
+    background-color:#222; 
+    color:#fff;
+    border: 1px solid #000;
+}

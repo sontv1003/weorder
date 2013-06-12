@@ -3,7 +3,7 @@
     <img width="100%" src="<?php echo HTTP_SERVER; ?>/image/quy_trinh_mua_hang.jpg">
     <div id="dathangngay">
         <ul>
-            <li><a target="_blank" href="gio-hang.html">đặt hàng ngay</a></li>
+            <li><a href="<?php echo $link_order_now ?>">đặt hàng ngay</a></li>
             <li><a href="#">-</a></li>
             <li><a href="#">đăng nhập sau</a></li>
         </ul>

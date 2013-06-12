@@ -20,7 +20,9 @@ class ControllerCommonHome extends Controller {
 			'common/footer',
 			'common/header'
 		);
-										
+                
+		$this->data['link_order_now'] = $this->url->link('checkout/cart');
+                
 		$this->response->setOutput($this->render());
 	}
 }
