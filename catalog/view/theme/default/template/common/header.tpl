@@ -24,7 +24,7 @@
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/style000.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/category.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/stylesheet.css" />
-        <!--<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/alice-min-vnfas.css" />-->
+        <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/alice-min-vnfas.css" />
         <link type="text/css" href="catalog/view/default/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/colorbox/colorbox.css" media="screen" />
 
