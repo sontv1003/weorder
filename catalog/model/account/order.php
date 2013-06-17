@@ -103,7 +103,7 @@ class ModelAccountOrder extends Model {
         }
     }
 
-    public function getOrders($start = 0, $limit = 20, $order_status_id = null) {
+    public function getOrders($start = 0, $limit = 20, $order_status_id = null, $order_from = '', $order_to = '', $order_id = '') {
         if ($start < 0) {
             $start = 0;
         }
@@ -112,13 +112,29 @@ class ModelAccountOrder extends Model {
             $limit = 1;
         }
 
+        $where = '';
         if (isset($order_status_id)) {
-            $where_order_status_id = " = '" . $order_status_id . "'";
-        } else {
-            $where_order_status_id = " > '0'";
+            $where .= " AND o.order_status_id = '" . $order_status_id . "'";
         }
 
-        $query = $this->db->query("SELECT o.order_id, o.firstname, o.lastname, os.name as status, o.date_added, o.total, o.currency_code, o.currency_value FROM `" . DB_PREFIX . "order` o LEFT JOIN " . DB_PREFIX . "order_status os ON (o.order_status_id = os.order_status_id) WHERE o.customer_id = '" . (int) $this->customer->getId() . "' AND o.order_status_id " . $where_order_status_id . " AND os.language_id = '" . (int) $this->config->get('config_language_id') . "' ORDER BY o.order_id DESC LIMIT " . (int) $start . "," . (int) $limit);
+        if (!empty($order_from)) {
+            $where .= " AND o.date_added >= '" . $order_from . "'";
+        }
+
+        if (!empty($order_to)) {
+            $where .= " AND o.date_added <= '" . $order_to . "'";
+        }
+        
+        if (!empty($order_id)) {
+            $where .= " AND o.order_id = '" . $order_id . "'";
+        }
+
+        $query = $this->db->query("SELECT o.order_id, o.firstname, o.lastname, os.name as status, o.date_added, o.total, o.currency_code, o.currency_value 
+            FROM `" . DB_PREFIX . "order` o 
+            LEFT JOIN " . DB_PREFIX . "order_status os ON (o.order_status_id = os.order_status_id) 
+            WHERE o.customer_id = '" . (int) $this->customer->getId() .
+            "' AND os.language_id = '" . (int) $this->config->get('config_language_id') .
+            "'". $where ." ORDER BY o.order_id DESC LIMIT " . (int) $start . "," . (int) $limit);
 
         return $query->rows;
     }

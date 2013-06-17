@@ -100,9 +100,10 @@
                         <h1 id="slogan">___  Đặt hàng quốc tế  ___</h1>
                         <div class="top_btn">
                             <div class="topsearch">
-                                <form class="" style="width: 37px;" method="get" action="#" id="searchForm">
+                                <form class="" style="width: 37px;" method="get" action="http://localhost/weorder/index.php" id="searchForm">
                                     <input type="submit" class="btn-search" value="Search" id="searchSubmit">
-                                    <input type="text" class="stext" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />                                    
+									<input type="hidden" name="route" value="product/search" />
+                                    <input type="text" class="stext" name="filter_name" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />                                    
                                 </form>
                             </div> 
                         </div>

@@ -2848,3 +2848,7 @@ div.option .option-name{
     color:#fff;
     border: 1px solid #000;
 }
+
+#tatcadonhang a.filter_selected input {
+    color: #FFF;
+}
