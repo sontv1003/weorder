@@ -1,6 +1,7 @@
 <?php echo $header; ?>
 <div id="content">
     <?php echo $content_top; ?>
+    <?php echo $column_left; ?><?php echo $column_right; ?>
     <div class="breadcrumb">
         <?php foreach ($breadcrumbs as $breadcrumb) { ?>
             <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
@@ -9,7 +10,6 @@
     <?php if ($error_warning) { ?>
         <div class="warning"><?php echo $error_warning; ?></div>
     <?php } ?>
-    <?php echo $column_left; ?><?php echo $column_right; ?>
     <h1><?php echo $heading_title; ?></h1>
     <p><?php echo $text_account_already; ?></p>
     <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="frn_register">
@@ -17,18 +17,50 @@
         <div class="content">
             <table class="form">
                 <tr>
-                    <td><span class="required">*</span> <span class="txt_label"><?php echo $entry_firstname; ?></span></td>
+                    <td><span class="txt_label"><?php echo $entry_firstname; ?></span></td>
                     <td><input type="text" name="firstname" value="<?php echo $firstname; ?>" />
                         <?php if ($error_firstname) { ?>
                             <span class="error"><?php echo $error_firstname; ?></span>
                         <?php } ?></td>
                 </tr>
                 <tr>
-                    <td><span class="required">*</span> <?php echo $entry_lastname; ?></td>
-                    <td><input type="text" name="lastname" value="<?php echo $lastname; ?>" />
-                        <?php if ($error_lastname) { ?>
-                            <span class="error"><?php echo $error_lastname; ?></span>
-                        <?php } ?></td>
+                    <td><span class="txt_label"><?php echo $entry_gender; ?></span></td>
+                    <td>
+                        <select name="gender">
+                            <?php if(empty($entry_gender)):?>
+                            <option value="1">Nam</option>
+                            <option value="0" selected="selected">Nữ</option>
+                            <?php else: ?>
+                            <option value="1" selected="selected">Nam</option>
+                            <option value="0">Nữ</option>
+                            <?php endif; ?>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="txt_label"><?php echo $entry_birthday; ?></span></td>
+                    <td>                    
+                        <select name="date">
+                            <option value="">ngày</option>
+                            <?php for ($i = 1; $i <= 31; $i++): ?> 
+                                <option value="<?php echo $i ?>"><?php echo $i ?></option>
+                            <?php endfor; ?>
+                        </select>
+
+                        <select name="month">
+                            <option value="">tháng</option>
+                            <?php for ($i = 1; $i <= 12; $i++): ?> 
+                                <option value="<?php echo $i ?>"><?php echo $i ?></option>
+                            <?php endfor; ?>
+                        </select>    
+
+                        <select name="year">
+                            <option value="">năm</option>
+                            <?php for ($i = date('Y') - 10; $i > 1900; $i--): ?> 
+                                <option value="<?php echo $i ?>"><?php echo $i ?></option>
+                            <?php endfor; ?>
+                        </select>  
+                    </td>
                 </tr>
                 <tr>
                     <td><span class="required">*</span> <?php echo $entry_email; ?></td>
@@ -45,72 +77,13 @@
                         <?php } ?></td>
                 </tr>
                 <tr>
-                    <td><?php echo $entry_fax; ?></td>
-                    <td><input type="text" name="fax" value="<?php echo $fax; ?>" /></td>
-                </tr>
-            </table>
-        </div>
-        <h2><?php echo $text_your_address; ?></h2>
-        <div class="content">
-            <table class="form">
-                <tr>
-                    <td><?php echo $entry_company; ?></td>
-                    <td><input type="text" name="company" value="<?php echo $company; ?>" /></td>
-                </tr>        
-                <tr style="display: <?php echo (count($customer_groups) > 1 ? 'table-row' : 'none'); ?>;">
-                    <td><?php echo $entry_customer_group; ?></td>
-                    <td><?php foreach ($customer_groups as $customer_group) { ?>
-                            <?php if ($customer_group['customer_group_id'] == $customer_group_id) { ?>
-                                <input type="radio" name="customer_group_id" value="<?php echo $customer_group['customer_group_id']; ?>" id="customer_group_id<?php echo $customer_group['customer_group_id']; ?>" checked="checked" />
-                                <label for="customer_group_id<?php echo $customer_group['customer_group_id']; ?>"><?php echo $customer_group['name']; ?></label>
-                                <br />
-                            <?php } else { ?>
-                                <input type="radio" name="customer_group_id" value="<?php echo $customer_group['customer_group_id']; ?>" id="customer_group_id<?php echo $customer_group['customer_group_id']; ?>" />
-                                <label for="customer_group_id<?php echo $customer_group['customer_group_id']; ?>"><?php echo $customer_group['name']; ?></label>
-                                <br />
-                            <?php } ?>
-                        <?php } ?></td>
-                </tr>      
-                <tr id="company-id-display">
-                    <td><span id="company-id-required" class="required">*</span> <?php echo $entry_company_id; ?></td>
-                    <td><input type="text" name="company_id" value="<?php echo $company_id; ?>" />
-                        <?php if ($error_company_id) { ?>
-                            <span class="error"><?php echo $error_company_id; ?></span>
-                        <?php } ?></td>
-                </tr>
-                <tr id="tax-id-display">
-                    <td><span id="tax-id-required" class="required">*</span> <?php echo $entry_tax_id; ?></td>
-                    <td><input type="text" name="tax_id" value="<?php echo $tax_id; ?>" />
-                        <?php if ($error_tax_id) { ?>
-                            <span class="error"><?php echo $error_tax_id; ?></span>
-                        <?php } ?></td>
-                </tr>
-                <tr>
                     <td><span class="required">*</span> <?php echo $entry_address_1; ?></td>
                     <td><input type="text" name="address_1" value="<?php echo $address_1; ?>" />
                         <?php if ($error_address_1) { ?>
                             <span class="error"><?php echo $error_address_1; ?></span>
                         <?php } ?></td>
                 </tr>
-                <tr>
-                    <td><?php echo $entry_address_2; ?></td>
-                    <td><input type="text" name="address_2" value="<?php echo $address_2; ?>" /></td>
-                </tr>
-                <tr>
-                    <td><span class="required">*</span> <?php echo $entry_city; ?></td>
-                    <td><input type="text" name="city" value="<?php echo $city; ?>" />
-                        <?php if ($error_city) { ?>
-                            <span class="error"><?php echo $error_city; ?></span>
-                        <?php } ?></td>
-                </tr>
-                <tr>
-                    <td><span id="postcode-required" class="required">*</span> <?php echo $entry_postcode; ?></td>
-                    <td><input type="text" name="postcode" value="<?php echo $postcode; ?>" />
-                        <?php if ($error_postcode) { ?>
-                            <span class="error"><?php echo $error_postcode; ?></span>
-                        <?php } ?></td>
-                </tr>
-                <tr>
+                <tr style="display: none;">
                     <td><span class="required">*</span> <?php echo $entry_country; ?></td>
                     <td><select name="country_id">
                             <option value=""><?php echo $text_select; ?></option>
@@ -124,10 +97,11 @@
                         </select>
                         <?php if ($error_country) { ?>
                             <span class="error"><?php echo $error_country; ?></span>
-                        <?php } ?></td>
+                        <?php } ?>
+                    </td>
                 </tr>
                 <tr>
-                    <td><span class="required">*</span> <?php echo $entry_zone; ?></td>
+                    <td><span class="required">*</span> <?php echo $entry_city; ?></td>
                     <td><select name="zone_id">
                         </select>
                         <?php if ($error_zone) { ?>
@@ -136,6 +110,7 @@
                 </tr>
             </table>
         </div>
+
         <h2><?php echo $text_your_password; ?></h2>
         <div class="content">
             <table class="form">
@@ -174,25 +149,12 @@
                 </tr>
             </table>
         </div>
-        <?php if ($text_agree) { ?>
-            <div class="buttons">
-                <div style="color: #000; font-family: Arial;">
-                    <input type="submit" value="<?php echo $button_continue; ?>" class="button" />
-                    <?php if ($agree) { ?>
-                        <input type="checkbox" name="agree" value="1" checked="checked" />
-                    <?php } else { ?>
-                        <input type="checkbox" name="agree" value="1" />
-                    <?php } ?>
-                    <?php echo $text_agree; ?>
-                </div>
+
+        <div class="buttons">
+            <div>
+                <input type="submit" value="<?php echo $button_continue; ?>" class="button" />
             </div>
-        <?php } else { ?>
-            <div class="buttons">
-                <div>
-                    <input type="submit" value="<?php echo $button_continue; ?>" class="button" />
-                </div>
-            </div>
-        <?php } ?>
+        </div>
     </form>
     <?php echo $content_bottom; ?></div>
 <script type="text/javascript"><!--

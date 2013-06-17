@@ -4,12 +4,12 @@
 <?php } ?>
 <div id="content">
     <?php echo $content_top; ?>
+    <?php echo $column_left; ?><?php echo $column_right; ?>
   <div class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
     <?php } ?>
   </div>
-<?php echo $column_left; ?><?php echo $column_right; ?>
   <h1><?php echo $heading_title; ?></h1>
   <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="frn_form">
     <p><?php echo $text_email; ?></p>

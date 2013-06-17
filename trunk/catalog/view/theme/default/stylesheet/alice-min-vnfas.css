@@ -160,7 +160,9 @@ a.popup-payment-close-btn,a:active.popup-payment-close-btn,a:visited.popup-payme
 .rfloat p{font-size:18px; line-height:18px}
 #size{width:30px}
 #q{color:#fff}
-#ghichu{background: url("../images/bg-ghichu.jpg") no-repeat scroll 0 0 transparent;
+#ghichu{
+    background: url("../images/bg-ghichu.jpg") no-repeat scroll 0 0 transparent;
+    margin-bottom: 20px;
     float: left;
     height: 29px;
     margin-left: -2px;
@@ -174,9 +176,10 @@ a.popup-payment-close-btn,a:active.popup-payment-close-btn,a:visited.popup-payme
     position: absolute;	}
 #ghichu p{background-color: #3f3f3f;
     color: #FFFF00;
-    margin: -23px 0 0 400px;
+    margin: -25px 0 0 400px;
     padding: 0px 268px 6px 8px;
-    width: 300px; font-family:'UTM_Avo'}
+    width: 322px; font-family:'UTM_Avo'
+}
 #wsbb{font-family:'UTM_Bebas'; font-size:18px; margin-right:5px}
 #thuonghieu{font-family:'UTM_Bebas'; font-size:18px}
 
