@@ -1,5 +1,6 @@
-<?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
+<?php echo $header; ?>
 <div id="content" style="min-height: 400px;"><?php echo $content_top; ?>
+    <?php echo $column_left; ?><?php echo $column_right; ?>
   <div class="pathway-items">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>

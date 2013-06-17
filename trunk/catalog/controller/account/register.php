@@ -18,6 +18,16 @@ class ControllerAccountRegister extends Controller {
         $this->load->model('account/customer');
 
         if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+
+            $this->request->post['lastname'] = '';
+            $this->request->post['tax_id'] = '';
+            $this->request->post['city'] = '';
+            $this->request->post['address_2'] = '';
+            $this->request->post['company_id'] = '';
+            $this->request->post['company'] = '';
+            $this->request->post['postcode'] = '';
+            $this->request->post['fax'] = '';
+            
             $this->model_account_customer->addCustomer($this->request->post);
 
             $this->customer->login($this->request->post['email'], $this->request->post['password']);
