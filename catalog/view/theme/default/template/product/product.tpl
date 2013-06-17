@@ -517,11 +517,6 @@
                         }
                     }
                 } 
-                //Nhay den trang gio hang
-                if (json['redirect']) {
-                    location = json['redirect'];
-                }	
-                
                 if (json['success']) {
                     $('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
 					
@@ -529,6 +524,8 @@
 					
                     $('#cart-total').html(json['total']);
 				
+                    //Nhay den trang gio hang
+                    location = json['redirect'];
                     //$('html, body').animate({ scrollTop: 0 }, 'slow'); 
                 }	
             }

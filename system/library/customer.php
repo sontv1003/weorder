@@ -24,6 +24,8 @@ class Customer {
 				$this->firstname = $customer_query->row['firstname'];
 				$this->lastname = $customer_query->row['lastname'];
 				$this->email = $customer_query->row['email'];
+				$this->gender = $customer_query->row['gender'];
+				$this->birthday = $customer_query->row['birthday'];
 				$this->telephone = $customer_query->row['telephone'];
 				$this->fax = $customer_query->row['fax'];
 				$this->newsletter = $customer_query->row['newsletter'];
@@ -83,6 +85,8 @@ class Customer {
 			$this->firstname = $customer_query->row['firstname'];
 			$this->lastname = $customer_query->row['lastname'];
 			$this->email = $customer_query->row['email'];
+			$this->gender = $customer_query->row['gender'];
+			$this->birthday = $customer_query->row['birthday'];
 			$this->telephone = $customer_query->row['telephone'];
 			$this->fax = $customer_query->row['fax'];
 			$this->newsletter = $customer_query->row['newsletter'];
@@ -106,6 +110,8 @@ class Customer {
 		$this->firstname = '';
 		$this->lastname = '';
 		$this->email = '';
+		$this->gender = '';
+		$this->birthday = '';
 		$this->telephone = '';
 		$this->fax = '';
 		$this->newsletter = '';
@@ -131,6 +137,14 @@ class Customer {
   
   	public function getEmail() {
 		return $this->email;
+  	}
+  
+  	public function getGender() {
+		return $this->gender;
+  	}
+  
+  	public function getBirthday() {
+		return $this->birthday;
   	}
   
   	public function getTelephone() {

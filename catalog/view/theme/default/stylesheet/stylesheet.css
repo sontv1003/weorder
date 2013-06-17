@@ -467,7 +467,7 @@ input.large-field, select.large-field {
 }
 table.list {
 	border-collapse: collapse;
-	width: 100%;
+	width: 80%;
 	border-top: 1px solid #DDDDDD;
 	border-left: 1px solid #DDDDDD;
 	margin-bottom: 20px;

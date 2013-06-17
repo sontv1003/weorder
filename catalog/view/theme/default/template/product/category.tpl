@@ -4,18 +4,6 @@
         <?php echo $column_left; ?>
         
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="l-main">
         <?php echo $content_top; ?>
         <div id="product-list-filters">

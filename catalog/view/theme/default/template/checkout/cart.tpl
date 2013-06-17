@@ -122,6 +122,11 @@
       </table>
     </div>
   </form>
+    <div id="ghichu">
+        <h5>Ghi chú</h5>
+        <input type="text" placeholder=". . . ." onfocus="if(this.value == ' . . . .') this.value = '';"><a href="#"><img src="images/save-icon.png"></a><p><span id="wsbb">website:</span>http://www.energie.it</p>
+    </div>
+    <div class="clear"></div>
 <!--    
     
   <?php if ($coupon_status || $voucher_status || $reward_status || $shipping_status) { ?>

@@ -74,6 +74,8 @@ class ControllerAccountRegister extends Controller {
 
         $this->data['entry_firstname'] = $this->language->get('entry_firstname');
         $this->data['entry_lastname'] = $this->language->get('entry_lastname');
+        $this->data['entry_gender'] = $this->language->get('entry_gender');
+        $this->data['entry_birthday'] = $this->language->get('entry_birthday');
         $this->data['entry_email'] = $this->language->get('entry_email');
         $this->data['entry_telephone'] = $this->language->get('entry_telephone');
         $this->data['entry_fax'] = $this->language->get('entry_fax');
@@ -356,10 +358,6 @@ class ControllerAccountRegister extends Controller {
             $this->error['firstname'] = $this->language->get('error_firstname');
         }
 
-        if ((utf8_strlen($this->request->post['lastname']) < 1) || (utf8_strlen($this->request->post['lastname']) > 32)) {
-            $this->error['lastname'] = $this->language->get('error_lastname');
-        }
-
         if ((utf8_strlen($this->request->post['email']) > 96) || !preg_match('/^[^\@]+@.*\.[a-z]{2,6}$/i', $this->request->post['email'])) {
             $this->error['email'] = $this->language->get('error_email');
         }
@@ -399,26 +397,7 @@ class ControllerAccountRegister extends Controller {
             $this->error['address_1'] = $this->language->get('error_address_1');
         }
 
-        if ((utf8_strlen($this->request->post['city']) < 2) || (utf8_strlen($this->request->post['city']) > 128)) {
-            $this->error['city'] = $this->language->get('error_city');
-        }
-
         $this->load->model('localisation/country');
-
-        $country_info = $this->model_localisation_country->getCountry($this->request->post['country_id']);
-
-        if ($country_info) {
-            if ($country_info['postcode_required'] && (utf8_strlen($this->request->post['postcode']) < 2) || (utf8_strlen($this->request->post['postcode']) > 10)) {
-                $this->error['postcode'] = $this->language->get('error_postcode');
-            }
-
-            // VAT Validation
-            $this->load->helper('vat');
-
-            if ($this->config->get('config_vat') && $this->request->post['tax_id'] && (vat_validation($country_info['iso_code_2'], $this->request->post['tax_id']) == 'invalid')) {
-                $this->error['tax_id'] = $this->language->get('error_vat');
-            }
-        }
 
         if ($this->request->post['country_id'] == '') {
             $this->error['country'] = $this->language->get('error_country');
@@ -434,16 +413,6 @@ class ControllerAccountRegister extends Controller {
 
         if ($this->request->post['confirm'] != $this->request->post['password']) {
             $this->error['confirm'] = $this->language->get('error_confirm');
-        }
-
-        if ($this->config->get('config_account_id')) {
-            $this->load->model('catalog/information');
-
-            $information_info = $this->model_catalog_information->getInformation($this->config->get('config_account_id'));
-
-            if ($information_info && !isset($this->request->post['agree'])) {
-                $this->error['warning'] = sprintf($this->language->get('error_agree'), $information_info['title']);
-            }
         }
 
         if (!$this->error) {
