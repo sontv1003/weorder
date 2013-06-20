@@ -1269,8 +1269,8 @@ table.radio tr.highlight:hover td {
 .cart-info thead .image {
 	text-align: center;
 }
-.cart-info thead .name, .cart-info thead .model, .cart-info thead .quantity {
-	text-align: left;
+.cart-info thead .name, .cart-info thead .model, .cart-info thead .link,.cart-info thead .size,.cart-info thead .color, .cart-info thead .quantity {
+	text-align: center;
 }
 .cart-info thead .price, .cart-info thead .total {
 	text-align: right;
@@ -1284,7 +1284,7 @@ table.radio tr.highlight:hover td {
 }
 .cart-info tbody .image {
 	text-align: left;
-        width: 200px;
+        width: 140px;
 }
 .cart-info tbody .name, .cart-info tbody .name a, .cart-info tbody .quantity {
 	text-align: left;
@@ -1300,7 +1300,7 @@ table.radio tr.highlight:hover td {
 	cursor: pointer;
 }
 .cart-info tbody .quantity {
-    width: 120px;
+    width: 95px;
 }
 .cart-info tbody .total {
 	text-align: right;
@@ -1477,4 +1477,10 @@ table.radio tr.highlight:hover td {
 }
 .banner div img {
 	margin-bottom: 20px;
+}
+.empty_cart {
+    color: #ff0000;
+    text-align: left;
+    font-weight: normal;
+    font-size: 16px;
 }

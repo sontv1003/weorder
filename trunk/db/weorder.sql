@@ -1,14 +1,14 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               5.5.16 - MySQL Community Server (GPL)
--- Server OS:                    Win32
--- HeidiSQL Version:             8.0.0.4396
+-- Server version:               5.5.24-log - MySQL Community Server (GPL)
+-- Server OS:                    Win64
+-- HeidiSQL version:             7.0.0.4053
+-- Date/time:                    2013-06-20 09:24:28
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40014 SET FOREIGN_KEY_CHECKS=0 */;
 
 -- Dumping structure for table weorder.address
 CREATE TABLE IF NOT EXISTS `address` (
@@ -771,9 +771,9 @@ CREATE TABLE IF NOT EXISTS `customer` (
 -- Dumping data for table weorder.customer: 9 rows
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `birthday`, `gender`, `password`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `customer_group_id`, `ip`, `status`, `approved`, `token`, `date_added`) VALUES
-	(1, 0, 'Sơn', 'Trần', 'transontt@gmail.com', '0902222222222', '', NULL, NULL, 'c0ff2af611e745e05c989d8c07a56230be54ede5', 'fbad643c7', 'a:0:{}', '', 1, 1, 1, '::1', 1, 1, '', '2013-06-16 14:36:00'),
+	(1, 0, 'Sơn', 'Trần', 'transontt@gmail.com', '0902222222222', '', NULL, NULL, 'c0ff2af611e745e05c989d8c07a56230be54ede5', 'fbad643c7', 'a:0:{}', 'a:0:{}', 1, 1, 1, '::1', 1, 1, '', '2013-06-16 14:36:00'),
 	(2, 0, 'Son Tran', '', 'abc@abc.com', '0904449512', '', NULL, NULL, '77a5b440ca697d017e6b7b26c49b2143afdb2409', '1639fb344', 'a:1:{s:51:"30:YToyOntpOjIyOTtzOjI6IjIzIjtpOjIzMDtzOjI6IjI2Ijt9";i:1;}', '', 0, 2, 1, '::1', 1, 1, '', '2013-06-16 15:38:25'),
-	(3, 0, 'Son Tran', '', 'abc2@abc.com', '099999', '', '2013-06-16', 1, 'd5ed71b57ac0291dc6486ef25da05dac1f717958', '069781bef', 'a:2:{i:41;i:2;s:51:"42:YToyOntpOjIyNztzOjI6IjE5IjtpOjIyODtzOjI6IjIxIjt9";i:2;}', '', 1, 3, 1, '::1', 1, 1, '', '2013-06-16 17:59:54'),
+	(3, 0, 'Son Tran', '', 'abc2@abc.com', '099999', '', '2013-06-16', 1, 'd5ed71b57ac0291dc6486ef25da05dac1f717958', '069781bef', 'a:1:{i:30;i:1;}', '', 1, 3, 1, '::1', 1, 1, '', '2013-06-16 17:59:54'),
 	(4, 0, 'Testing', '', 'abc3@abc.com', '0900000', '', '2013-06-16', 1, 'f8c8c06b5030d3678cf1f2aaf9bba2128413f48c', '65ffc4630', 'a:1:{s:51:"30:YToyOntpOjIyOTtzOjI6IjIzIjtpOjIzMDtzOjI6IjI3Ijt9";i:1;}', '', 1, 4, 1, '::1', 1, 1, '', '2013-06-16 18:04:20'),
 	(5, 0, 'Son Tran', '', 'abc4@abc.com', '0989999999999999', '', '2013-06-16', 0, '4d3676e0d8b251e248ac317e97453bcf372100e3', '9abdb677e', 'a:1:{i:47;i:1;}', '', 1, 5, 1, '::1', 1, 1, '', '2013-06-16 18:06:55'),
 	(6, 0, 'sdgsdgds', '', 'abc32@abc.com', '3532534', '', '1988-06-04', 1, 'f5c4e801c6e29f8d83bfe5b28ab6a79b268474a9', '5539c26fa', 'a:1:{i:31;i:1;}', '', 1, 6, 1, '::1', 1, 1, '', '2013-06-16 19:27:45'),
@@ -1876,7 +1876,7 @@ INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `st
 	(35, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 650000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-17 00:07:46', '2013-06-17 00:07:46'),
 	(36, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 650000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-17 00:07:48', '2013-06-17 00:07:48'),
 	(37, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 650000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-17 00:08:21', '2013-06-17 00:08:21'),
-	(38, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 2800000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-17 00:08:54', '2013-06-17 00:08:54');
+	(38, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 2800000.0000, 7, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-17 00:08:54', '2013-06-19 20:04:33');
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 
 
@@ -1985,9 +1985,9 @@ CREATE TABLE IF NOT EXISTS `order_history` (
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`order_history_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order_history: 15 rows
+-- Dumping data for table weorder.order_history: 16 rows
 /*!40000 ALTER TABLE `order_history` DISABLE KEYS */;
 INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, `notify`, `comment`, `date_added`) VALUES
 	(1, 24, 1, 1, '', '2013-06-16 20:38:44'),
@@ -2004,7 +2004,8 @@ INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, 
 	(12, 35, 1, 1, '', '2013-06-17 00:07:46'),
 	(13, 36, 1, 1, '', '2013-06-17 00:07:48'),
 	(14, 37, 1, 1, '', '2013-06-17 00:08:21'),
-	(15, 38, 1, 1, '', '2013-06-17 00:08:54');
+	(15, 38, 1, 1, '', '2013-06-17 00:08:54'),
+	(16, 38, 7, 0, '', '2013-06-19 20:04:33');
 /*!40000 ALTER TABLE `order_history` ENABLE KEYS */;
 
 
@@ -2044,6 +2045,9 @@ CREATE TABLE IF NOT EXISTS `order_product` (
   `product_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `model` varchar(64) NOT NULL,
+  `link` varchar(250) DEFAULT NULL,
+  `size` varchar(250) DEFAULT NULL,
+  `color` varchar(250) DEFAULT NULL,
   `quantity` int(4) NOT NULL,
   `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `total` decimal(15,4) NOT NULL DEFAULT '0.0000',
@@ -2054,47 +2058,47 @@ CREATE TABLE IF NOT EXISTS `order_product` (
 
 -- Dumping data for table weorder.order_product: 40 rows
 /*!40000 ALTER TABLE `order_product` DISABLE KEYS */;
-INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
-	(1, 1, 41, 'Áo phông 2', 'Product 14', 2, 650000.0000, 1300000.0000, 0.0000, 0),
-	(2, 1, 42, 'Áo sơ mi 1', 'Product 15', 2, 750000.0000, 1500000.0000, 0.0000, 200),
-	(3, 2, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(4, 3, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(5, 4, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(6, 5, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(7, 6, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(8, 7, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(9, 8, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(10, 9, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(11, 10, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(12, 11, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(13, 12, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(14, 13, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(15, 14, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(16, 15, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(17, 16, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(18, 17, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(19, 18, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(20, 19, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(21, 20, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(22, 21, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(23, 22, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(24, 23, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(25, 24, 30, 'Áo cánh mỏng', 'Product 3', 1, 690000.0000, 690000.0000, 0.0000, 200),
-	(26, 25, 30, 'Áo cánh mỏng', 'Product 3', 1, 690000.0000, 690000.0000, 0.0000, 200),
-	(27, 26, 31, 'Áo phông 3', 'Product 4', 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(28, 27, 41, 'Áo phông 2', 'Product 14', 1, 650000.0000, 650000.0000, 0.0000, 0),
-	(29, 28, 41, 'Áo phông 2', 'Product 14', 1, 650000.0000, 650000.0000, 0.0000, 0),
-	(30, 29, 41, 'Áo phông 2', 'Product 14', 1, 650000.0000, 650000.0000, 0.0000, 0),
-	(31, 30, 41, 'Áo phông 2', 'Product 14', 1, 650000.0000, 650000.0000, 0.0000, 0),
-	(32, 31, 41, 'Áo phông 2', 'Product 14', 1, 650000.0000, 650000.0000, 0.0000, 0),
-	(33, 32, 41, 'Áo phông 2', 'Product 14', 1, 650000.0000, 650000.0000, 0.0000, 0),
-	(34, 33, 41, 'Áo phông 2', 'Product 14', 1, 650000.0000, 650000.0000, 0.0000, 0),
-	(35, 34, 41, 'Áo phông 2', 'Product 14', 1, 650000.0000, 650000.0000, 0.0000, 0),
-	(36, 35, 41, 'Áo phông 2', 'Product 14', 1, 650000.0000, 650000.0000, 0.0000, 0),
-	(37, 36, 41, 'Áo phông 2', 'Product 14', 1, 650000.0000, 650000.0000, 0.0000, 0),
-	(38, 37, 41, 'Áo phông 2', 'Product 14', 1, 650000.0000, 650000.0000, 0.0000, 0),
-	(39, 38, 41, 'Áo phông 2', 'Product 14', 2, 650000.0000, 1300000.0000, 0.0000, 0),
-	(40, 38, 42, 'Áo sơ mi 1', 'Product 15', 2, 750000.0000, 1500000.0000, 0.0000, 200);
+INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `link`, `size`, `color`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
+	(1, 1, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'L,M', 'Trắng ', 2, 650000.0000, 1300000.0000, 0.0000, 0),
+	(2, 1, 42, 'Áo sơ mi 1', 'Product 15', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'XL', 'Đen', 2, 750000.0000, 1500000.0000, 0.0000, 200),
+	(3, 2, 31, 'Áo phông 3', 'Product 4', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(4, 3, 31, 'Áo phông 3', 'Product 4', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(5, 4, 31, 'Áo phông 3', 'Product 4', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(6, 5, 31, 'Áo phông 3', 'Product 4', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(7, 6, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(8, 7, 31, 'Áo phông 3', 'Product 4', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(9, 8, 31, 'Áo phông 3', 'Product 4', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(10, 9, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(11, 10, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(12, 11, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(13, 12, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(14, 13, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(15, 14, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(16, 15, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(17, 16, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(18, 17, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(19, 18, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(20, 19, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(21, 20, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(22, 21, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(23, 22, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(24, 23, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(25, 24, 30, 'Áo cánh mỏng', 'Product 3', NULL, NULL, NULL, 1, 690000.0000, 690000.0000, 0.0000, 200),
+	(26, 25, 30, 'Áo cánh mỏng', 'Product 3', NULL, NULL, NULL, 1, 690000.0000, 690000.0000, 0.0000, 200),
+	(27, 26, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(28, 27, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 650000.0000, 650000.0000, 0.0000, 0),
+	(29, 28, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 650000.0000, 650000.0000, 0.0000, 0),
+	(30, 29, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 650000.0000, 650000.0000, 0.0000, 0),
+	(31, 30, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 650000.0000, 650000.0000, 0.0000, 0),
+	(32, 31, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 650000.0000, 650000.0000, 0.0000, 0),
+	(33, 32, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 650000.0000, 650000.0000, 0.0000, 0),
+	(34, 33, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 650000.0000, 650000.0000, 0.0000, 0),
+	(35, 34, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 650000.0000, 650000.0000, 0.0000, 0),
+	(36, 35, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 650000.0000, 650000.0000, 0.0000, 0),
+	(37, 36, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 650000.0000, 650000.0000, 0.0000, 0),
+	(38, 37, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 650000.0000, 650000.0000, 0.0000, 0),
+	(39, 38, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'L, M', 'Trắng', 2, 650000.0000, 1300000.0000, 0.0000, 0),
+	(40, 38, 42, 'Áo sơ mi 1', 'Product 15', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'XL', 'Đen', 2, 750000.0000, 1500000.0000, 0.0000, 200);
 /*!40000 ALTER TABLE `order_product` ENABLE KEYS */;
 
 
@@ -2113,7 +2117,7 @@ INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`) VALUES
 	(3, 2, 'Shipped'),
 	(7, 2, 'Canceled'),
 	(5, 2, 'Complete'),
-	(8, 2, 'Denied'),
+	(0, 2, 'Denied'),
 	(9, 2, 'Canceled Reversal'),
 	(10, 2, 'Failed'),
 	(11, 2, 'Refunded'),
@@ -2264,6 +2268,9 @@ CREATE TABLE IF NOT EXISTS `product` (
   `points` int(8) NOT NULL DEFAULT '0',
   `tax_class_id` int(11) NOT NULL,
   `date_available` date NOT NULL,
+  `link` varchar(250) DEFAULT NULL,
+  `size` varchar(250) DEFAULT NULL,
+  `color` varchar(250) DEFAULT NULL,
   `weight` decimal(15,8) NOT NULL DEFAULT '0.00000000',
   `weight_class_id` int(11) NOT NULL DEFAULT '0',
   `length` decimal(15,8) NOT NULL DEFAULT '0.00000000',
@@ -2282,26 +2289,26 @@ CREATE TABLE IF NOT EXISTS `product` (
 
 -- Dumping data for table weorder.product: 19 rows
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-	(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'data/san_pham/IMG_3920-400x600.JPG', 5, 1, 500000.0000, 200, 9, '2009-02-03', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:06:50', '2013-06-16 09:30:38', 94),
-	(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'data/demo/palm_treo_pro_1.jpg', 6, 1, 279.9900, 0, 9, '2009-02-03', 133.00000000, 2, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0),
-	(30, 'Product 3', '', '', '', '', '', '', '', 5, 6, 'data/1-single-thumbnail.jpg', 9, 1, 690000.0000, 0, 0, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2013-06-16 09:30:14', 139),
-	(31, 'Product 4', '', '', '', '', '', '', '', 999, 6, 'data/san_pham/IMG_3958-400x600.JPG', 11, 1, 390000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2013-06-05 22:04:16', 10),
-	(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'data/demo/ipod_touch_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 17:07:26', '2011-09-30 01:07:22', 0),
-	(33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'data/demo/samsung_syncmaster_941bw.jpg', 0, 1, 200.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 17:08:31', '2011-09-30 01:06:29', 0),
-	(34, 'Product 7', '', '', '', '', '', '', '', 1000, 6, 'data/demo/ipod_shuffle_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:07:54', '2011-09-30 01:07:17', 0),
-	(35, 'Product 8', '', '', '', '', '', '', '', 1000, 5, '', 0, 0, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 18:08:31', '2011-09-30 01:06:17', 0),
-	(36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'data/demo/ipod_nano_1.jpg', 8, 0, 100.0000, 100, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:09:19', '2011-09-30 01:07:12', 0),
-	(40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'data/san_pham/IMG_3935-400x600.JPG', 8, 1, 652000.0000, 0, 9, '2009-02-03', 10.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:12', '2013-06-16 09:30:49', 4),
-	(41, 'Product 14', '', '', '', '', '', '', '', 964, 5, 'data/san_pham/IMG_4003-400x600.JPG', 9, 1, 650000.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:26', '2013-06-05 22:02:37', 2),
-	(42, 'Product 15', '', '', '', '', '', '', '', 98, 5, 'data/san_pham/IMG_3909-400x600 (1).JPG', 13, 1, 750000.0000, 400, 9, '2009-02-04', 0.00000000, 1, 1.00000000, 2.00000000, 3.00000000, 1, 1, 2, 0, 1, '2009-02-03 21:07:37', '2013-06-16 09:30:54', 24),
-	(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'data/demo/macbook_1.jpg', 8, 0, 500.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:07:49', '2011-09-30 01:05:46', 0),
-	(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'data/demo/macbook_air_1.jpg', 8, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:00', '2011-09-30 01:05:53', 0),
-	(45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'data/demo/macbook_pro_1.jpg', 8, 1, 2000.0000, 0, 100, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:17', '2011-09-15 22:22:01', 0),
-	(46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'data/demo/sony_vaio_1.jpg', 10, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:29', '2011-09-30 01:06:39', 0),
-	(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'data/san_pham/IMG_3917-400x600 (1).JPG', 8, 1, 100.0000, 400, 9, '2009-02-03', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 0, 1, '2009-02-03 21:08:40', '2013-06-16 09:30:58', 6),
-	(48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'data/demo/ipod_classic_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-08', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-08 17:21:51', '2011-09-30 01:07:06', 0),
-	(49, 'SAM1', '', '', '', '', '', '', '', 0, 8, 'data/demo/samsung_tab_1.jpg', 0, 1, 199.9900, 0, 9, '2011-04-25', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23', 7);
+INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `link`, `size`, `color`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
+	(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'data/san_pham/IMG_3920-400x600.JPG', 5, 1, 500000.0000, 200, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:06:50', '2013-06-19 20:30:49', 95),
+	(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'data/demo/palm_treo_pro_1.jpg', 6, 1, 279.9900, 0, 9, '2009-02-03', 'http://www.geckofashion.vn', NULL, NULL, 133.00000000, 2, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0),
+	(30, 'Product 3', '', '', '', '', '', '', '', 5, 6, 'data/1-single-thumbnail.jpg', 9, 1, 690000.0000, 0, 0, '2009-02-03', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2013-06-19 20:35:38', 148),
+	(31, 'Product 4', '', '', '', '', '', '', '', 999, 6, 'data/san_pham/IMG_3958-400x600.JPG', 11, 1, 390000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2013-06-19 20:31:00', 11),
+	(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'data/demo/ipod_touch_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 'http://www.geckofashion.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 17:07:26', '2011-09-30 01:07:22', 0),
+	(33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'data/demo/samsung_syncmaster_941bw.jpg', 0, 1, 200.0000, 0, 9, '2009-02-03', 'http://www.geckofashion.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 17:08:31', '2011-09-30 01:06:29', 0),
+	(34, 'Product 7', '', '', '', '', '', '', '', 1000, 6, 'data/demo/ipod_shuffle_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 'http://www.geckofashion.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:07:54', '2011-09-30 01:07:17', 0),
+	(35, 'Product 8', '', '', '', '', '', '', '', 1000, 5, '', 0, 0, 100.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 18:08:31', '2011-09-30 01:06:17', 0),
+	(36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'data/demo/ipod_nano_1.jpg', 8, 0, 100.0000, 100, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:09:19', '2011-09-30 01:07:12', 0),
+	(40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'data/san_pham/IMG_3935-400x600.JPG', 8, 1, 652000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 10.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:12', '2013-06-19 20:31:31', 4),
+	(41, 'Product 14', '', '', '', '', '', '', '', 964, 5, 'data/san_pham/IMG_4003-400x600.JPG', 9, 1, 650000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:26', '2013-06-19 20:30:55', 4),
+	(42, 'Product 15', '', '', '', '', '', '', '', 98, 5, 'data/san_pham/IMG_3909-400x600 (1).JPG', 13, 1, 750000.0000, 400, 9, '2009-02-04', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 1.00000000, 2.00000000, 3.00000000, 1, 1, 2, 0, 1, '2009-02-03 21:07:37', '2013-06-19 20:34:34', 25),
+	(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'data/demo/macbook_1.jpg', 8, 0, 500.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:07:49', '2011-09-30 01:05:46', 0),
+	(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'data/demo/macbook_air_1.jpg', 8, 1, 1000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:00', '2011-09-30 01:05:53', 0),
+	(45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'data/demo/macbook_pro_1.jpg', 8, 1, 2000.0000, 0, 100, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:17', '2011-09-15 22:22:01', 0),
+	(46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'data/demo/sony_vaio_1.jpg', 10, 1, 1000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:29', '2011-09-30 01:06:39', 0),
+	(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'data/san_pham/IMG_3917-400x600 (1).JPG', 8, 1, 100.0000, 400, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 0, 1, '2009-02-03 21:08:40', '2013-06-19 20:34:38', 6),
+	(48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'data/demo/ipod_classic_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-08', 'http://www.geckomedia.vn', NULL, NULL, 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-08 17:21:51', '2011-09-30 01:07:06', 0),
+	(49, 'SAM1', '', '', '', '', '', '', '', 0, 8, 'data/demo/samsung_tab_1.jpg', 0, 1, 199.9900, 0, 9, '2011-04-25', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23', 7);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 
@@ -2314,12 +2321,11 @@ CREATE TABLE IF NOT EXISTS `product_attribute` (
   PRIMARY KEY (`product_id`,`attribute_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_attribute: 3 rows
+-- Dumping data for table weorder.product_attribute: 2 rows
 /*!40000 ALTER TABLE `product_attribute` DISABLE KEYS */;
 INSERT INTO `product_attribute` (`product_id`, `attribute_id`, `language_id`, `text`) VALUES
 	(43, 2, 2, '1'),
-	(43, 4, 2, '8gb'),
-	(42, 3, 2, '100mhz');
+	(43, 4, 2, '8gb');
 /*!40000 ALTER TABLE `product_attribute` ENABLE KEYS */;
 
 
@@ -2374,14 +2380,14 @@ CREATE TABLE IF NOT EXISTS `product_discount` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_discount_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=477 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=489 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_discount: 3 rows
 /*!40000 ALTER TABLE `product_discount` DISABLE KEYS */;
 INSERT INTO `product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
-	(476, 42, 1, 30, 1, 66.0000, '0000-00-00', '0000-00-00'),
-	(475, 42, 1, 20, 1, 77.0000, '0000-00-00', '0000-00-00'),
-	(474, 42, 1, 10, 1, 88.0000, '0000-00-00', '0000-00-00');
+	(488, 42, 1, 30, 1, 66.0000, '0000-00-00', '0000-00-00'),
+	(487, 42, 1, 20, 1, 77.0000, '0000-00-00', '0000-00-00'),
+	(486, 42, 1, 10, 1, 88.0000, '0000-00-00', '0000-00-00');
 /*!40000 ALTER TABLE `product_discount` ENABLE KEYS */;
 
 
@@ -2404,14 +2410,14 @@ CREATE TABLE IF NOT EXISTS `product_image` (
   `image` varchar(255) DEFAULT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_image_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2484 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2533 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_image: 62 rows
 /*!40000 ALTER TABLE `product_image` DISABLE KEYS */;
 INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
-	(2483, 47, 'data/san_pham/IMG_3917-400x600.JPG', 0),
-	(2423, 41, 'data/san_pham/IMG_3959-400x600.JPG', 0),
-	(2475, 40, 'data/san_pham/IMG_3936-400x600.JPG', 0),
+	(2528, 47, 'data/san_pham/IMG_3917-400x600.JPG', 0),
+	(2495, 41, 'data/san_pham/IMG_3958-400x600.JPG', 0),
+	(2517, 40, 'data/san_pham/IMG_3940-400x600.JPG', 0),
 	(2001, 36, 'data/demo/ipod_nano_5.jpg', 0),
 	(2000, 36, 'data/demo/ipod_nano_4.jpg', 0),
 	(2005, 34, 'data/demo/ipod_shuffle_5.jpg', 0),
@@ -2425,15 +2431,15 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 	(1973, 44, 'data/demo/macbook_air_2.jpg', 0),
 	(1977, 45, 'data/demo/macbook_pro_2.jpg', 0),
 	(1976, 45, 'data/demo/macbook_pro_3.jpg', 0),
-	(2426, 31, 'data/san_pham/IMG_3959-400x600 (1).JPG', 0),
+	(2499, 31, 'data/san_pham/IMG_4003-400x600 (1).JPG', 0),
 	(1988, 29, 'data/demo/palm_treo_pro_3.jpg', 0),
 	(1995, 46, 'data/demo/sony_vaio_5.jpg', 0),
 	(1994, 46, 'data/demo/sony_vaio_4.jpg', 0),
 	(1991, 48, 'data/demo/ipod_classic_4.jpg', 0),
 	(1990, 48, 'data/demo/ipod_classic_3.jpg', 0),
-	(2470, 30, 'data/1-single-thumbnail.jpg', 1),
-	(2473, 28, 'data/san_pham/IMG_3926-400x600.JPG', 0),
-	(2474, 40, 'data/san_pham/IMG_3937-400x600 (1).JPG', 0),
+	(2532, 30, 'data/1-single-thumbnail.jpg', 2),
+	(2492, 28, 'data/san_pham/IMG_3922-400x600.JPG', 0),
+	(2516, 40, 'data/san_pham/IMG_3937-400x600 (1).JPG', 0),
 	(1989, 48, 'data/demo/ipod_classic_2.jpg', 0),
 	(1999, 36, 'data/demo/ipod_nano_2.jpg', 0),
 	(1998, 36, 'data/demo/ipod_nano_3.jpg', 0),
@@ -2446,7 +2452,7 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 	(1968, 43, 'data/demo/macbook_3.jpg', 0),
 	(1972, 44, 'data/demo/macbook_air_3.jpg', 0),
 	(1975, 45, 'data/demo/macbook_pro_4.jpg', 0),
-	(2425, 31, 'data/san_pham/IMG_3932-400x600.JPG', 0),
+	(2498, 31, 'data/san_pham/IMG_3932-400x600.JPG', 0),
 	(1987, 29, 'data/demo/palm_treo_pro_2.jpg', 0),
 	(1993, 46, 'data/demo/sony_vaio_2.jpg', 0),
 	(1992, 46, 'data/demo/sony_vaio_3.jpg', 0),
@@ -2456,21 +2462,21 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 	(2324, 49, 'data/demo/samsung_tab_4.jpg', 0),
 	(2323, 49, 'data/demo/samsung_tab_3.jpg', 0),
 	(2322, 49, 'data/demo/samsung_tab_2.jpg', 0),
-	(2480, 42, 'data/san_pham/IMG_3910-400x600.JPG', 0),
-	(2479, 42, 'data/san_pham/IMG_3913-400x600.JPG', 0),
-	(2469, 30, 'data/1-single-thumbnail.jpg', 2),
-	(2478, 42, 'data/san_pham/IMG_3909-400x600.JPG', 0),
-	(2477, 42, 'data/san_pham/IMG_3911-400x600.JPG', 0),
-	(2482, 47, 'data/san_pham/IMG_3918-400x600.JPG', 0),
-	(2481, 47, 'data/san_pham/IMG_3919-400x600.JPG', 0),
-	(2472, 28, 'data/san_pham/IMG_3924-400x600.JPG', 0),
-	(2471, 28, 'data/san_pham/IMG_3922-400x600.JPG', 0),
-	(2422, 41, 'data/san_pham/IMG_3959-400x600 (1).JPG', 0),
-	(2421, 41, 'data/san_pham/IMG_3958-400x600.JPG', 0),
-	(2424, 41, 'data/san_pham/IMG_4006-400x600 (1).JPG', 0),
-	(2427, 31, 'data/san_pham/IMG_4003-400x600 (1).JPG', 0),
-	(2428, 31, 'data/san_pham/IMG_4006-400x600.JPG', 0),
-	(2476, 40, 'data/san_pham/IMG_3940-400x600.JPG', 0);
+	(2525, 42, 'data/san_pham/IMG_3911-400x600.JPG', 0),
+	(2524, 42, 'data/san_pham/IMG_3909-400x600.JPG', 0),
+	(2531, 30, 'data/1-single-thumbnail.jpg', 1),
+	(2523, 42, 'data/san_pham/IMG_3913-400x600.JPG', 0),
+	(2522, 42, 'data/san_pham/IMG_3910-400x600.JPG', 0),
+	(2527, 47, 'data/san_pham/IMG_3918-400x600.JPG', 0),
+	(2526, 47, 'data/san_pham/IMG_3919-400x600.JPG', 0),
+	(2491, 28, 'data/san_pham/IMG_3924-400x600.JPG', 0),
+	(2490, 28, 'data/san_pham/IMG_3926-400x600.JPG', 0),
+	(2494, 41, 'data/san_pham/IMG_3959-400x600 (1).JPG', 0),
+	(2493, 41, 'data/san_pham/IMG_3959-400x600.JPG', 0),
+	(2497, 31, 'data/san_pham/IMG_3959-400x600 (1).JPG', 0),
+	(2515, 40, 'data/san_pham/IMG_3936-400x600.JPG', 0),
+	(2496, 41, 'data/san_pham/IMG_4006-400x600 (1).JPG', 0),
+	(2500, 31, 'data/san_pham/IMG_4006-400x600.JPG', 0);
 /*!40000 ALTER TABLE `product_image` ENABLE KEYS */;
 
 
@@ -2484,17 +2490,8 @@ CREATE TABLE IF NOT EXISTS `product_option` (
   PRIMARY KEY (`product_option_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=235 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_option: 8 rows
+-- Dumping data for table weorder.product_option: 0 rows
 /*!40000 ALTER TABLE `product_option` DISABLE KEYS */;
-INSERT INTO `product_option` (`product_option_id`, `product_id`, `option_id`, `option_value`, `required`) VALUES
-	(229, 30, 13, '', 1),
-	(230, 30, 15, '', 1),
-	(231, 30, 14, '', 0),
-	(227, 42, 13, '', 1),
-	(228, 42, 14, '', 0),
-	(232, 47, 13, '', 0),
-	(233, 28, 14, '', 0),
-	(234, 40, 13, '', 0);
 /*!40000 ALTER TABLE `product_option` ENABLE KEYS */;
 
 
@@ -2516,32 +2513,12 @@ CREATE TABLE IF NOT EXISTS `product_option_value` (
   PRIMARY KEY (`product_option_value_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_option_value: 23 rows
+-- Dumping data for table weorder.product_option_value: 3 rows
 /*!40000 ALTER TABLE `product_option_value` DISABLE KEYS */;
 INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
-	(23, 229, 30, 13, 55, 98, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(24, 229, 30, 13, 57, 100, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(26, 230, 30, 15, 67, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(27, 230, 30, 15, 68, 8, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(20, 227, 42, 13, 52, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(19, 227, 42, 13, 50, 8, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(18, 227, 42, 13, 57, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(17, 227, 42, 13, 55, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(21, 228, 42, 14, 63, 18, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(22, 228, 42, 14, 62, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(12, 224, 35, 11, 46, 0, 1, 5.0000, '+', 0, '+', 0.00000000, '+'),
 	(13, 224, 35, 11, 47, 10, 1, 10.0000, '+', 0, '+', 0.00000000, '+'),
-	(14, 224, 35, 11, 48, 15, 1, 15.0000, '+', 0, '+', 0.00000000, '+'),
-	(28, 230, 30, 15, 69, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(32, 232, 47, 13, 51, 15, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(31, 232, 47, 13, 55, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(34, 233, 28, 14, 63, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(33, 233, 28, 14, 62, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(29, 231, 30, 14, 63, 8, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(36, 234, 40, 13, 56, 20, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(30, 231, 30, 14, 62, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(25, 229, 30, 13, 50, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(35, 233, 28, 14, 64, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+');
+	(14, 224, 35, 11, 48, 15, 1, 15.0000, '+', 0, '+', 0.00000000, '+');
 /*!40000 ALTER TABLE `product_option_value` ENABLE KEYS */;
 
 
@@ -2569,26 +2546,26 @@ CREATE TABLE IF NOT EXISTS `product_reward` (
   `customer_group_id` int(11) NOT NULL DEFAULT '0',
   `points` int(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_reward_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=590 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=606 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_reward: 19 rows
 /*!40000 ALTER TABLE `product_reward` DISABLE KEYS */;
 INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
-	(588, 42, 1, 100),
-	(589, 47, 1, 300),
-	(586, 28, 1, 400),
+	(602, 42, 1, 100),
+	(603, 47, 1, 300),
+	(593, 28, 1, 400),
 	(329, 43, 1, 600),
 	(339, 29, 1, 0),
 	(343, 48, 1, 0),
-	(587, 40, 1, 0),
-	(585, 30, 1, 200),
+	(600, 40, 1, 0),
+	(605, 30, 1, 200),
 	(331, 44, 1, 700),
 	(333, 45, 1, 800),
-	(571, 31, 1, 0),
+	(595, 31, 1, 0),
 	(425, 35, 1, 0),
 	(345, 33, 1, 0),
 	(347, 46, 1, 0),
-	(570, 41, 1, 0),
+	(594, 41, 1, 0),
 	(351, 36, 1, 0),
 	(353, 34, 1, 0),
 	(355, 32, 1, 0),
@@ -2827,7 +2804,7 @@ CREATE TABLE IF NOT EXISTS `setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4030 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4032 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.setting: 144 rows
 /*!40000 ALTER TABLE `setting` DISABLE KEYS */;
@@ -2862,7 +2839,7 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(54, 0, 'reward', 'reward_status', '1', 0),
 	(56, 0, 'affiliate', 'affiliate_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:2:"10";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(2346, 0, 'category', 'category_module', 'a:2:{i:0;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:4:{s:9:"layout_id";s:2:"13";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(60, 0, 'account', 'account_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"6";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(4031, 0, 'account', 'account_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"6";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 	(95, 0, 'voucher', 'voucher_status', '1', 0),
 	(103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
@@ -3090,7 +3067,7 @@ CREATE TABLE IF NOT EXISTS `url_alias` (
   `query` varchar(255) NOT NULL,
   `keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`url_alias_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=871 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=875 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.url_alias: 34 rows
 /*!40000 ALTER TABLE `url_alias` DISABLE KEYS */;
@@ -3100,7 +3077,7 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(777, 'category_id=33', 'nam'),
 	(855, 'manufacturer_id=8', 'lascote'),
 	(848, 'information_id=4', 'about_us'),
-	(870, 'product_id=42', 'test'),
+	(874, 'product_id=42', 'test'),
 	(780, 'category_id=59', 'tre-em'),
 	(824, 'news_category_id=1', 'tin-tuc'),
 	(794, 'news_id=1', 'sale-off-50-hang-lascote.html'),
@@ -3288,7 +3265,7 @@ CREATE TABLE IF NOT EXISTS `zone` (
   PRIMARY KEY (`zone_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4033 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.zone: 3.985 rows
+-- Dumping data for table weorder.zone: 3,985 rows
 /*!40000 ALTER TABLE `zone` DISABLE KEYS */;
 INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 	(1, 1, 'Badakhshan', 'BDS', 1),
@@ -7296,6 +7273,5 @@ INSERT INTO `zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, 
 	(57, 222, 0, 3, '2010-02-26 22:33:24', '0000-00-00 00:00:00'),
 	(65, 222, 0, 4, '2010-12-15 15:18:13', '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `zone_to_geo_zone` ENABLE KEYS */;
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

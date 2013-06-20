@@ -6,14 +6,14 @@ $_['heading_title'] = 'Giỏ Hàng';
 // Text
 $_['text_weight'] = 'Trọng lượng:';
 $_['text_success'] = 'Thành công: Bạn đã thêm <a href="%s">%s</a> vào <a href="%s">giỏ hàng</a>!';
-$_['text_remove'] = 'Success: You have modified your shopping cart!';
+$_['text_remove'] = 'Bạn đã cập nhật giỏ hành thành công!';
 $_['text_coupon'] = 'Success: Your coupon discount has been applied!';
 $_['text_voucher'] = 'Success: Your gift voucher discount has been applied!';
 
 $_['text_reward'] = 'Điểm thưởng: %s';
 $_['text_shipping'] = 'Success: Your shipping estimate has been applied!';
 $_['text_login'] = 'Lưu ý: Bạn phải <a href="%s">đăng nhập</a> hoặc <a href="%s">đăng kí thành viên</a> để xem giá!';
-$_['text_points'] = 'Reward Points: %s';
+$_['text_points'] = 'Điểm thưởng: %s';
 $_['text_items'] = '%s sản phẩm - %s';
 $_['text_next'] = 'What would you like to do next?';
 $_['text_next_choice'] = 'Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.';
@@ -30,6 +30,9 @@ $_['column_remove'] = 'Loại bỏ';
 $_['column_image'] = 'Ảnh sản phẩm';
 $_['column_name'] = 'Tên sản phẩm';
 $_['column_model'] = 'Kiểu';
+$_['column_link'] = 'Link sản phẩm';
+$_['column_color'] = 'Màu sắc';
+$_['column_size'] = 'Size';
 $_['column_quantity'] = 'Số lượng';
 $_['column_price'] = 'Đơn Giá';
 $_['column_total'] = 'Thành tiền';

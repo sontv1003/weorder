@@ -66,6 +66,10 @@
                                 <?php } ?></td>
                         </tr>
                         <tr>
+                            <td><?php echo $entry_link; ?></td>
+                            <td><input style="width: 350px" type="text" name="link" value="<?php echo $link; ?>" /></td>
+                        </tr>
+                        <tr>
                             <td><?php echo $entry_sku; ?></td>
                             <td><input type="text" name="sku" value="<?php echo $sku; ?>" /></td>
                         </tr>
