@@ -194,6 +194,7 @@ class ControllerAccountOrder extends Controller {
 
     public function info() {
         $this->language->load('account/order');
+        $this->language->load('checkout/cart');
 
         if (isset($this->request->get['order_id'])) {
             $order_id = $this->request->get['order_id'];
@@ -263,6 +264,10 @@ class ControllerAccountOrder extends Controller {
             $this->data['column_model'] = $this->language->get('column_model');
             $this->data['column_quantity'] = $this->language->get('column_quantity');
             $this->data['column_price'] = $this->language->get('column_price');
+            $this->data['column_link'] = $this->language->get('column_link');
+            $this->data['column_size'] = $this->language->get('column_size');
+            $this->data['column_color'] = $this->language->get('column_color');
+            $this->data['column_image'] = $this->language->get('column_image');
             $this->data['column_total'] = $this->language->get('column_total');
             $this->data['column_action'] = $this->language->get('column_action');
             $this->data['column_date_added'] = $this->language->get('column_date_added');
@@ -354,8 +359,10 @@ class ControllerAccountOrder extends Controller {
             $this->data['shipping_method'] = $order_info['shipping_method'];
 
             $this->data['products'] = array();
-
-            $products = $this->model_account_order->getOrderProducts($this->request->get['order_id']);
+            
+            $this->load->model('tool/image');
+            
+            $products = $this->model_account_order->getOrderDetailProducts($this->request->get['order_id']);
 
             foreach ($products as $product) {
                 $option_data = array();
@@ -374,12 +381,23 @@ class ControllerAccountOrder extends Controller {
                         'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
                     );
                 }
-
+                
+                if ($product['image']) {
+                    $image = $this->model_tool_image->resize($product['image'], $this->config->get('config_image_cart_width'), $this->config->get('config_image_cart_height'));
+                } else {
+                    $image = '';
+                }
+                
                 $this->data['products'][] = array(
                     'name' => $product['name'],
                     'model' => $product['model'],
+                    'link' => $product['link'],
+                    'size' => $product['size'],
+                    'color' => $product['color'],
                     'option' => $option_data,
+                    'thumb' => $image,
                     'quantity' => $product['quantity'],
+                    'href' => $this->url->link('product/product', 'product_id=' . $product['product_id']),
                     'price' => $this->currency->format($product['price'] + ($this->config->get('config_tax') ? $product['tax'] : 0), $order_info['currency_code'], $order_info['currency_value']),
                     'total' => $this->currency->format($product['total'] + ($this->config->get('config_tax') ? ($product['tax'] * $product['quantity']) : 0), $order_info['currency_code'], $order_info['currency_value']),
                     'return' => $this->url->link('account/return/insert', 'order_id=' . $order_info['order_id'] . '&product_id=' . $product['product_id'], 'SSL')

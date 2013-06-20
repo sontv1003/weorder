@@ -74,6 +74,7 @@ class Cart {
 										'product_option_id'       => $product_option_id,
 										'product_option_value_id' => $option_value,
 										'option_id'               => $option_query->row['option_id'],
+										'link'                    => $option_query->row['link'],
 										'option_value_id'         => $option_value_query->row['option_value_id'],
 										'name'                    => $option_query->row['name'],
 										'option_value'            => $option_value_query->row['name'],
@@ -118,6 +119,7 @@ class Cart {
 										$option_data[] = array(
 											'product_option_id'       => $product_option_id,
 											'product_option_value_id' => $product_option_value_id,
+                                                                                        'link'                    => $option_query->row['link'],
 											'option_id'               => $option_query->row['option_id'],
 											'option_value_id'         => $option_value_query->row['option_value_id'],
 											'name'                    => $option_query->row['name'],
@@ -220,6 +222,7 @@ class Cart {
 					$this->data[$key] = array(
 						'key'             => $key,
 						'product_id'      => $product_query->row['product_id'],
+                                                'link'            => $product_query->row['link'],
 						'name'            => $product_query->row['name'],
 						'model'           => $product_query->row['model'],
 						'shipping'        => $product_query->row['shipping'],

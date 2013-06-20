@@ -1,144 +1,158 @@
 <?php echo $header; ?>
-<div id="content">
-    <?php echo $content_top; ?>
-    <?php echo $column_left; ?><?php echo $column_right; ?>
-  <div class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-    <?php } ?>
-  </div>
-  <h1><?php echo $heading_title; ?></h1>
-  <table class="list">
-    <thead>
-      <tr>
-        <td class="left" colspan="2"><?php echo $text_order_detail; ?></td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="left" style="width: 50%;"><?php if ($invoice_no) { ?>
-          <b><?php echo $text_invoice_no; ?></b> <?php echo $invoice_no; ?><br />
+<?php echo $column_left; ?>
+<div id="content"><?php echo $content_top; ?>
+    <div id="tbm2">
+        <ul>
+            <li>
+                <a href="javascript:void(0)" id="chot">cho link sản phẩm vào giỏ hàng</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">gửi đơn hàng và xác nhận thông tin</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">thanh toán</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">nhận hàng</a>
+            </li>
+                
+        </ul>
+    </div>    
+    <div class="l-pageWrapper" style="margin-top: 20px;">
+        <img class="fl" src="catalog/view/theme/default/images/giohang.png" style="height: 115px; padding-bottom: 17px; margin-top: 20px; margin-right: 30px;">
+        <img class="fl" style="width: 855px;" id="camket" src="catalog/view/theme/default/images/camket.jpg">
+        <div class="clear"></div>
+    </div>
+    <div>
+        <div class="fl cartSelectAll">
+            <input type="checkbox" id="cbSelectAll" />
+            <label for="cbSelectAll">CHỌN TẤT CẢ</label>
+        </div>
+        <div class="fl cartDelProduct">
+            XÓA SẢN PHẨM
+        </div>
+        <div class="fr" style="border-top: 1px solid #000; width: 690px; height: 30px;">
+            <div id="hotline" class="fl" style="width: 60%;">
+                <p>HOTLINE: MR.LONG: <span id="sohl">092 883 688</span><img src="catalog/view/theme/default/images/ip.png"></p>
+            </div>
+            <div id="httt" class="fr" style="width: 35%;">
+                <p>HỖ TRỢ TRỰC TUYẾN<img src="catalog/view/theme/default/images/phone.png"></p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+  <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+    <div class="cart-info">
+      <table>
+        <thead>
+          <tr>
+            <td class="image" style="text-align: center; width: 120px;"><?php echo $column_image; ?></td>
+            <td class="name" style="text-align: center; width: 110px;"><?php echo $column_name; ?></td>
+            <td class="link" style="text-align: center; width: 140px;"><?php echo $column_link; ?></td>
+            <td class="size" style="text-align: center; width: 60px;"><?php echo $column_size; ?></td>
+            <td class="color" style="text-align: center; width: 60px;"><?php echo $column_color; ?></td>
+            <td class="quantity" style="text-align: center; width: 90px;"><?php echo $column_quantity; ?></td>
+            <td class="price" style="font-weight: normal; width: 110px; text-align: center;" ><?php echo $column_price; ?></td>
+            <td class="total" style="text-align: center; width: 110px;"><?php echo $column_total; ?></td>
+            <td class="total" style="text-align: center;">Trả lại</td>
+          </tr>
+        </thead>
+        <tbody>       
+          
+          <?php 
+          $total_quantity = 0;          
+          //echo '<pre>' . print_r($products, true) . '</pre>';
+          foreach ($products as $product) { ?>
+          <tr>
+            <td class="image">
+                <?php if (!empty($product['thumb'])) { ?>
+              <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" /></a>
+              <?php } ?></td>
+            <td class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+              <div>
+                <?php foreach ($product['option'] as $option) { ?>
+                - <small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small><br />
+                <?php } ?>
+              </div>
+            </td>
+            <td class="link" style="text-align: center;"><a href="<?php echo $product['link']; ?>" target="_blank">Xem link</a></td>
+            <td class="size" style="text-align: center;"><?php echo $product['size']; ?></td>
+            <td class="color" style="text-align: center;"><?php echo $product['color']; ?></td>
+            <td class="quantity" style="text-align: center;">
+                <?php echo $product['quantity']; ?>
+            </td>
+            <td class="price" style="text-align: center;"><?php echo $product['price']; ?></td>
+            <td class="total" style="text-align: center;"><?php echo $product['total']; ?></td>
+            <?php $total_quantity += $product['quantity'];?>
+            <td class="return"><a href="<?php echo $product['return']; ?>">Bấm</a></td>
+          </tr>
           <?php } ?>
-          <b><?php echo $text_order_id; ?></b> #<?php echo $order_id; ?><br />
-          <b><?php echo $text_date_added; ?></b> <?php echo $date_added; ?></td>
-        <td class="left" style="width: 50%;"><?php if ($payment_method) { ?>
-          <b><?php echo $text_payment_method; ?></b> <?php echo $payment_method; ?><br />
+          <?php foreach ($vouchers as $vouchers) { ?>
+          <tr>
+            <td class="image"></td>
+            <td class="name"><?php echo $vouchers['description']; ?></td>
+            <td class="model"></td>
+            <td class="quantity"><input type="text" name="" value="1" size="1" disabled="disabled" />
+              &nbsp;<a href="<?php echo $vouchers['remove']; ?>"><img src="catalog/view/theme/default/images/remove.png" alt="<?php echo $button_remove; ?>" title="<?php echo $button_remove; ?>" /></a></td>
+            <td class="price"><?php echo $vouchers['amount']; ?></td>
+            <td class="total"><?php echo $vouchers['amount']; ?></td>            
+          </tr>
           <?php } ?>
-          <?php if ($shipping_method) { ?>
-          <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
-          <?php } ?></td>
-      </tr>
-    </tbody>
-  </table>
-  <table class="list">
-    <thead>
-      <tr>
-        <td class="left"><?php echo $text_payment_address; ?></td>
-        <?php if ($shipping_address) { ?>
-        <td class="left"><?php echo $text_shipping_address; ?></td>
-        <?php } ?>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="left"><?php echo $payment_address; ?></td>
-        <?php if ($shipping_address) { ?>
-        <td class="left"><?php echo $shipping_address; ?></td>
-        <?php } ?>
-      </tr>
-    </tbody>
-  </table>
-  <table class="list">
-    <thead>
-      <tr>
-        <td class="left"><?php echo $column_name; ?></td>
-        <td class="left"><?php echo $column_model; ?></td>
-        <td class="right"><?php echo $column_quantity; ?></td>
-        <td class="right"><?php echo $column_price; ?></td>
-        <td class="right"><?php echo $column_total; ?></td>
-        <?php if ($products) { ?>
-        <td style="width: 1px;"></td>
-        <?php } ?>
-      </tr>
-    </thead>
-    <tbody>
-      <?php foreach ($products as $product) { ?>
-      <tr>
-        <td class="left"><?php echo $product['name']; ?>
-          <?php foreach ($product['option'] as $option) { ?>
-          <br />
-          &nbsp;<small> - <?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>
-          <?php } ?></td>
-        <td class="left"><?php echo $product['model']; ?></td>
-        <td class="right"><?php echo $product['quantity']; ?></td>
-        <td class="right"><?php echo $product['price']; ?></td>
-        <td class="right"><?php echo $product['total']; ?></td>
-        <td class="right"><a href="<?php echo $product['return']; ?>"><img src="catalog/view/theme/default/image/return.png" alt="<?php echo $button_return; ?>" title="<?php echo $button_return; ?>" /></a></td>
-      </tr>
-      <?php } ?>
-      <?php foreach ($vouchers as $voucher) { ?>
-      <tr>
-        <td class="left"><?php echo $voucher['description']; ?></td>
-        <td class="left"></td>
-        <td class="right">1</td>
-        <td class="right"><?php echo $voucher['amount']; ?></td>
-        <td class="right"><?php echo $voucher['amount']; ?></td>
-        <?php if ($products) { ?>
-        <td></td>
-        <?php } ?>
-      </tr>
-      <?php } ?>
-    </tbody>
-    <tfoot>
-      <?php foreach ($totals as $total) { ?>
-      <tr>
-        <td colspan="3"></td>
-        <td class="right"><b><?php echo $total['title']; ?>:</b></td>
-        <td class="right"><?php echo $total['text']; ?></td>
-        <?php if ($products) { ?>
-        <td></td>
-        <?php } ?>
-      </tr>
-      <?php } ?>
-    </tfoot>
-  </table>
-  <?php if ($comment) { ?>
-  <table class="list">
-    <thead>
-      <tr>
-        <td class="left"><?php echo $text_comment; ?></td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="left"><?php echo $comment; ?></td>
-      </tr>
-    </tbody>
-  </table>
-  <?php } ?>
-  <?php if ($histories) { ?>
-  <h2><?php echo $text_history; ?></h2>
-  <table class="list">
-    <thead>
-      <tr>
-        <td class="left"><?php echo $column_date_added; ?></td>
-        <td class="left"><?php echo $column_status; ?></td>
-        <td class="left"><?php echo $column_comment; ?></td>
-      </tr>
-    </thead>
-    <tbody>
-      <?php foreach ($histories as $history) { ?>
-      <tr>
-        <td class="left"><?php echo $history['date_added']; ?></td>
-        <td class="left"><?php echo $history['status']; ?></td>
-        <td class="left"><?php echo $history['comment']; ?></td>
-      </tr>
-      <?php } ?>
-    </tbody>
-  </table>
-  <?php } ?>
-  <div class="buttons">
-    <div class="right"><a href="<?php echo $continue; ?>" class="button"><?php echo $button_continue; ?></a></div>
+        </tbody>
+      </table>
+    </div>
+  </form>
+  <div class="box-bgcolor payment_cart">
+      
+      <?php $i=0; foreach ($totals as $total) { ?>
+          <?php if($i == 0) { ?>
+              <ul>
+                  <li class="head_cart1" style="width: 310px; color:#000;">Tổng số lượng trong giỏ hàng là </li>
+                  <li class="head_cart2" style="width: 163px;"><?php echo $total_quantity ?></li>
+                  <li class="head_cart1" style="width: 198px; color:#000;"><?php echo $total['title']; ?></li>
+                  <li class="head_cart2" style="width: 237px;"><?php echo $total['text']; ?></li>
+              </ul>
+          <?php } else { ?>
+
+      <div>          
+          <div id="phis" class="fr">
+                <ul>
+                    <li>phí ship quốc tế</li>
+                    <li>0</li>
+                    <li>phí ship trong nước</li>
+                    <li>0</li>
+                </ul>
+          </div>
+          <div class="clear"></div>
+      </div>
+      <div>
+            <div class="fr cost_payment"><b><?php echo $total['text']; ?></b></div>
+            <div class="fr total_payment"><b>Tổng tiền bạn phải trả là:<?php //echo $total['title']; ?></b></div>
+            <div class="clear"></div>
+      </div>
+      
+    <?php } 
+        $i++;
+    }?>
   </div>
   <?php echo $content_bottom; ?></div>
-<?php echo $footer; ?> 
+<script type="text/javascript"><!--
+$('#cbSelectAll').click(function(){
+    if($(this).is(':checked'))
+        $('.cbProdutct').attr('checked', true);
+    else 
+        $('.cbProdutct').attr('checked', false);
+});
+
+$('.cartDelProduct').click(function(){
+        var selected = new Array();
+        $('.cbProdutct:checked').each(function() {
+            selected.push($(this).val());
+        });
+        
+        location.href = '<?php echo $remove_link ?>&remove=' + selected.join(',');
+});
+
+//--></script>
+<?php echo $footer; ?>

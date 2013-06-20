@@ -32,6 +32,7 @@ $_['entry_description']      = 'Mô tả sản phẩm:';
 $_['entry_store']            = 'Cửa hàng:';
 $_['entry_keyword']          = 'Từ khóa SEO:';
 $_['entry_model']            = 'Model:';
+$_['entry_link']             = 'Website:';
 $_['entry_sku']              = 'SKU:<br/><span class="help">Stock Keeping Unit</span>';
 $_['entry_upc']              = 'UPC:<br/><span class="help">Universal Product Code</span>';
 $_['entry_ean']              = 'EAN:<br/><span class="help">European Article Number</span>';

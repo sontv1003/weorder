@@ -548,6 +548,7 @@ class ControllerCatalogProduct extends Controller {
         $this->data['entry_store'] = $this->language->get('entry_store');
         $this->data['entry_keyword'] = $this->language->get(' ');
         $this->data['entry_model'] = $this->language->get('entry_model');
+        $this->data['entry_link'] = $this->language->get('entry_link');
         $this->data['entry_sku'] = $this->language->get('entry_sku');
         $this->data['entry_upc'] = $this->language->get('entry_upc');
         $this->data['entry_ean'] = $this->language->get('entry_ean');
@@ -728,6 +729,14 @@ class ControllerCatalogProduct extends Controller {
             $this->data['model'] = $product_info['model'];
         } else {
             $this->data['model'] = '';
+        }
+
+        if (isset($this->request->post['link'])) {
+            $this->data['link'] = $this->request->post['link'];
+        } elseif (!empty($product_info)) {
+            $this->data['link'] = $product_info['link'];
+        } else {
+            $this->data['link'] = '';
         }
 
         if (isset($this->request->post['sku'])) {
