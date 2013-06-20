@@ -729,6 +729,18 @@ class ControllerCheckoutCart extends Controller {
         $this->response->setOutput(json_encode($json));
     }
 
+    function add_product() {
+
+        if ($this->request->server['REQUEST_METHOD'] == 'POST' && !empty($this->request->post)) {
+            
+            $this->load->model('catalog/product');
+
+            $product_id = $this->model_catalog_product->addProduct($this->request->post);
+            
+            echo $product_id;
+        }
+    }
+
 }
 
 ?>
