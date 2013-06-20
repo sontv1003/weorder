@@ -1,37 +1,6 @@
 <?php echo $header; ?>
 <div id="content">    
     <?php $status_id = (!empty($_GET['status_id'])) ? $_GET['status_id'] : ''; ?>
-    <!--
-  <div class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-        <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-    <?php } ?>
-  </div>
-  <h1><?php echo $heading_title; ?></h1>
-    <?php if ($orders) { ?>
-        <?php foreach ($orders as $order) { ?>
-                          <div class="order-list">
-                            <div class="order-id"><b><?php echo $text_order_id; ?></b> #<?php echo $order['order_id']; ?></div>
-                            <div class="order-status"><b><?php echo $text_status; ?></b> <?php echo $order['status']; ?></div>
-                            <div class="order-content">
-                              <div><b><?php echo $text_date_added; ?></b> <?php echo $order['date_added']; ?><br />
-                                <b><?php echo $text_products; ?></b> <?php echo $order['products']; ?></div>
-                              <div><b><?php echo $text_customer; ?></b> <?php echo $order['name']; ?><br />
-                                <b><?php echo $text_total; ?></b> <?php echo $order['total']; ?></div>
-                              <div class="order-info"><a href="<?php echo $order['href']; ?>"><img src="catalog/view/theme/default/image/info.png" alt="<?php echo $button_view; ?>" title="<?php echo $button_view; ?>" /></a>&nbsp;&nbsp;<a href="<?php echo $order['reorder']; ?>"><img src="catalog/view/theme/default/image/reorder.png" alt="<?php echo $button_reorder; ?>" title="<?php echo $button_reorder; ?>" /></a></div>
-                            </div>
-                          </div>
-        <?php } ?>
-              <div class="pagination"><?php echo $pagination; ?></div>
-    <?php } else { ?>
-              <div class="content"><?php echo $text_empty; ?></div>
-    <?php } ?>
-  <div class="buttons">
-    <div class="right"><a href="<?php echo $continue; ?>" class="button"><?php echo $button_continue; ?></a></div>
-  </div>
-  
-    -->
-
     <div id="ttcanhan">
         <img src="<?php echo HTTP_SERVER; ?>image/camket.jpg" id="ck">
         <ul>
@@ -45,25 +14,26 @@
     <div class="clear-both"></div>
     <div style="  width:80%; margin:10px auto; padding:0px; ">
         <table width="100%" cellspacing="10px;" cellpadding="5px" bordercolor="#CCCCCC" align="center">
-            <tbody><tr>
+            <tbody>
+                <tr>
                     <td align="center" colspan="5" class="font-chu"><span style="font-size:36px; margin-top:-10px;color:#333">Danh sách đơn hàng cá nhân</span></td>
                 </tr>
                 <tr bgcolor="#CCCCCC">
-                    <td width="180px" bgcolor="#cdcdcd" align="center" style="background-color: #333;color: #FFFFFF; margin: 8px;" class="font-chu boder-1">Đơn hàng</td>
-                    <td bgcolor="#cdcdcd" align="center" style="background-color: #333;color: #FFFFFF;margin: 8px;" class="font-chu boder-1">Giao dịch thành công</td>
-                    <td bgcolor="#cdcdcd" align="center" style="background-color: #333;color: #FFFFFF; margin: 8px;" class="font-chu boder-1">Đơn hàng bị hủy</td>
-                    <td bgcolor="#cdcdcd" align="center" style="background-color: #333; color: #FFFFFF; margin: 8px;" class="font-chu boder-1">Đơn hàng chưa thanh toán</td>
-                    <td bgcolor="#cdcdcd" align="center" style="background-color: #333; color: #FFFFFF; margin: 8px;" class="font-chu boder-1">Đơn hàng đã thanh toán đang chờ mua</td>
+                    <td width="160px" bgcolor="#cdcdcd" align="center" style="background-color: #333;color: #FFFFFF; margin: 8px; vertical-align: middle;" class="font-chu boder-1">Đơn hàng</td>
+                    <td width="20%" bgcolor="#cdcdcd" align="center" style="background-color: #333;color: #FFFFFF;margin: 8px; vertical-align: middle;" class="font-chu boder-1">Giao dịch thành công</td>
+                    <td width="20%" bgcolor="#cdcdcd" align="center" style="background-color: #333;color: #FFFFFF; margin: 8px; vertical-align: middle;" class="font-chu boder-1">Đơn hàng bị hủy</td>
+                    <td width="20%" bgcolor="#cdcdcd" align="center" style="background-color: #333; color: #FFFFFF; margin: 8px; vertical-align: middle;" class="font-chu boder-1">Đơn hàng chưa thanh toán</td>
+                    <td width="*" bgcolor="#cdcdcd" align="center" style="background-color: #333; color: #FFFFFF; margin: 8px; vertical-align: middle;" class="font-chu boder-1">Đơn hàng đã thanh toán đang chờ mua</td>
                 </tr>
                 <tr bgcolor="#CCCCCC">
-                    <td bgcolor="#cdcdcd" align="center" style="background-color: #333333; color: #FFFFFF; margin: 2px;" class="boder-1 font-chu">Số lượng ( đơn )</td>
+                    <td bgcolor="#cdcdcd" align="center" style="background-color: #333333; color: #FFFFFF; margin: 2px; vertical-align: middle;" class="boder-1 font-chu">Số lượng ( đơn )</td>
                     <td bgcolor="#fff" align="center" style="margin: 2px; background-color: rgb(153, 153, 153); border: 1px solid rgb(0, 0, 0); font-family: 'UTM_Avo'; font-size: 16px;" class="boder-1"><?php echo $summary_orders['Complete']['quantity']; ?></td>
                     <td bgcolor="#fff" align="center" style="margin: 2px; background-color: rgb(153, 153, 153); border: 1px solid rgb(0, 0, 0); font-family: 'UTM_Avo'; font-size: 16px;" class="boder-1"><?php echo $summary_orders['Canceled']['quantity']; ?></td>
                     <td bgcolor="#fff" align="center" style="margin: 2px; background-color: rgb(153, 153, 153); border: 1px solid rgb(0, 0, 0); font-family: 'UTM_Avo'; font-size: 16px;" class="boder-1"><?php echo $summary_orders['Pending']['quantity']; ?></td>
                     <td bgcolor="#fff" align="center" style="margin: 2px; background-color: rgb(153, 153, 153); border: 1px solid rgb(0, 0, 0); font-family: 'UTM_Avo'; font-size: 16px;;" class="boder-1"><?php echo $summary_orders['Processing']['quantity']; ?></td>
                 </tr>
                 <tr bgcolor="#CCCCCC">
-                    <td bgcolor="#fff" align="center" style="background-color: #333333; color: #FFFFFF; margin: 2px;" class="boder-1 font-chu">Trị Giá ( vnđ )</td>
+                    <td bgcolor="#fff" align="center" style="background-color: #333333; color: #FFFFFF; margin: 2px; vertical-align: middle;" class="boder-1 font-chu">Trị Giá ( vnđ )</td>
                     <td bgcolor="#fff" align="center" style="margin: 2px; background-color: rgb(153, 153, 153); border: 1px solid rgb(000, 000, 000); font-family: 'UTM_Avo'; font-size: 16px;color:#f00" class="boder-1"><?php echo $summary_orders['Complete']['currency']; ?></td>
                     <td bgcolor="#fff" align="center" style="margin: 2px; background-color: rgb(153, 153, 153); border: 1px solid rgb(000, 000, 000); font-family: 'UTM_Avo'; font-size: 16px;color:#f00" class="boder-1"><?php echo $summary_orders['Canceled']['currency']; ?></td>
                     <td bgcolor="#fff" align="center" style="margin: 2px; background-color: rgb(153, 153, 153); border: 1px solid rgb(000, 000, 000); font-family: 'UTM_Avo'; font-size: 16px;color:#f00" class="boder-1"><?php echo $summary_orders['Pending']['currency']; ?></td>
@@ -91,7 +61,7 @@
         </ul>
     </div>
     <div class="clear"></div>
-    <div style="  width:100%; margin:0px auto; padding:0px; ">
+    <div style="width:100%; margin:0px auto; padding:0px;">
         <ul id="tatcadonhang">
             <li>
                 <a href="javascript:void(0)" class="filter_selected">
@@ -146,7 +116,7 @@
         <table class="cartTable ui-gridFull">
             <tbody class="cartHead">
                 <tr class="ui-borderTop ui-borderRight ui-borderLeft">
-                    <th width="15%" align="center" style=" background-color:#000; color: #fff;" class="font-chu">Mã đơn hàng</th>
+                    <th width="15%" align="center" style=" background-color:#000; color: #fff; vertical-align: middle;" class="font-chu">Mã đơn hàng</th>
                     <th width="30%" align="center" style=" background-color:#000; color: #fff;" class="font-chu">Ghi chú</th>
                     <th width="15%" align="center" style=" background-color:#000; color: #fff;" class="font-chu">tổng tiền</th>
                     <th width="10%" align="center" style=" background-color:#000; color: #fff;" class="font-chu">Số llượng</th>
@@ -158,10 +128,10 @@
                 <?php if ($orders) { ?>
                     <?php foreach ($orders as $order) { ?>
                         <tr class="ui-border">
-                            <th width="15%" align="center" valign="middle">
+                            <th width="15%" align="center" class="v_center" style="padding-top: 10px; padding-bottom: 10px;">
                                 <a href="<?php echo $order['href']; ?>">#<?php echo $order['order_id']; ?> - <?php echo $order['date_added']; ?></a>
                             </th>
-                            <th width="30%" align="center" valign="middle" class="boder-1">
+                            <th width="30%" align="center" class="boder-1 v_center">
                                 <textarea onfocus="this.value=''; this.onfocus=null;" style="border: 1px solid;
                                           color: #999999;width: 200px !important;
                                           height: 19px; margin-top:10px" name="domainNameInput2" id="domainNameInput2" class="txt-reg-domain"> 
@@ -169,10 +139,10 @@
                                 </textarea>
                                 <a href="#"><img style="margin:10px 0px 0px 4px" src="<?php echo HTTP_SERVER; ?>image/save-icon.png"></a>
                             </th>
-                            <th width="15%" align="center" valign="middle" class="boder-1"><?php echo $order['total']; ?></th>
-                            <th width="10%" align="center" valign="middle" class="boder-1"><?php echo $order['products']; ?></th>
-                            <th width="20%" align="center" valign="middle" class="boder-1 pt"><span id="tt"><?php echo $order_status[$order['status']]; ?></span></th>
-                            <th width="*" align="center" valign="middle" class="boder-1"><a href="<?php echo $order['href']; ?>">Chi tiết</a></th>
+                            <th width="15%" align="center" valign="middle" class="boder-1 v_center"><?php echo $order['total']; ?></th>
+                            <th width="10%" align="center" valign="middle" class="boder-1 v_center"><?php echo $order['products']; ?></th>
+                            <th width="20%" align="center" valign="middle" class="boder-1 v_center"><span id="tt"><?php echo $order_status[$order['status']]; ?></span></th>
+                            <th width="*" align="center" valign="middle" class="boder-1 v_center"><a href="<?php echo $order['href']; ?>">Chi tiết</a></th>
                         </tr>
                         <?php
                     }
