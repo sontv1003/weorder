@@ -14,7 +14,7 @@
       <div class="buttons"><a onclick="$('#form').submit();" class="button"><?php echo $button_save; ?></a><a href="<?php echo $cancel; ?>" class="button"><?php echo $button_cancel; ?></a></div>
     </div>
     <div class="content">
-      <div id="vtabs" class="vtabs"><a href="#tab-customer"><?php echo $tab_customer; ?></a><a href="#tab-payment"><?php echo $tab_payment; ?></a><a href="#tab-shipping"><?php echo $tab_shipping; ?></a><a href="#tab-product"><?php echo $tab_product; ?></a><a href="#tab-voucher"><?php echo $tab_voucher; ?></a><a href="#tab-total"><?php echo $tab_total; ?></a></div>
+      <div id="vtabs" class="vtabs"><a href="#tab-customer">Chi tiết Khách hàng<?php //echo $tab_customer; ?></a><a href="#tab-payment"><?php echo $tab_payment; ?></a><a href="#tab-shipping"><?php echo $tab_shipping; ?></a><a href="#tab-product"><?php echo $tab_product; ?></a><a href="#tab-voucher"><?php echo $tab_voucher; ?></a><a href="#tab-total"><?php echo $tab_total; ?></a></div>
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form">
         <div id="tab-customer" class="vtabs-content">
           <table class="form">
@@ -257,7 +257,9 @@
               <tr>
                 <td></td>
                 <td class="left"><?php echo $column_product; ?></td>
-                <td class="left"><?php echo $column_model; ?></td>
+                <td class="left">Link</td>
+                <td class="left">Size</td>
+                <td class="left">Màu sắc</td>
                 <td class="right"><?php echo $column_quantity; ?></td>
                 <td class="right"><?php echo $column_price; ?></td>
                 <td class="right"><?php echo $column_total; ?></td>
@@ -293,8 +295,16 @@
                   <input type="hidden" name="order_product[<?php echo $product_row; ?>][order_download][<?php echo $download_row; ?>][remaining]" value="<?php echo $download['remaining']; ?>" />
                   <?php $download_row++; ?>
                   <?php } ?></td>
-                <td class="left"><?php echo $order_product['model']; ?>
-                  <input type="hidden" name="order_product[<?php echo $product_row; ?>][model]" value="<?php echo $order_product['model']; ?>" /></td>
+                <td class="left">
+                    <a href="<?php echo $order_product['link']; ?>" target="_blank"><?php echo utf8_substr($order_product['link'], 0, 25); echo (strlen($order_product['link'])?'...':''); ?></a>
+                  <input type="hidden" name="order_product[<?php echo $product_row; ?>][link]" value="<?php echo $order_product['link']; ?>" />
+                </td>
+                <td class="left"><?php echo $order_product['size']; ?>
+                  <input type="hidden" name="order_product[<?php echo $product_row; ?>][size]" value="<?php echo $order_product['size']; ?>" />
+                </td>
+                <td class="left"><?php echo $order_product['color']; ?>
+                  <input type="hidden" name="order_product[<?php echo $product_row; ?>][color]" value="<?php echo $order_product['color']; ?>" />
+                </td>
                 <td class="right"><?php echo $order_product['quantity']; ?>
                   <input type="hidden" name="order_product[<?php echo $product_row; ?>][quantity]" value="<?php echo $order_product['quantity']; ?>" /></td>                 
                 <td class="right"><?php echo $order_product['price']; ?>
@@ -436,7 +446,9 @@
             <thead>
               <tr>
                 <td class="left"><?php echo $column_product; ?></td>
-                <td class="left"><?php echo $column_model; ?></td>
+                <td class="left">Link</td>
+                <td class="left">Size</td>
+                <td class="left">Màu sắc</td>
                 <td class="right"><?php echo $column_quantity; ?></td>
                 <td class="right"><?php echo $column_price; ?></td>
                 <td class="right"><?php echo $column_total; ?></td>
@@ -451,7 +463,11 @@
                   <?php foreach ($order_product['option'] as $option) { ?>
                   - <small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small><br />
                   <?php } ?></td>
-                <td class="left"><?php echo $order_product['model']; ?></td>
+                <td class="left">
+                    <a href="<?php echo $order_product['link']; ?>" target="_blank"><?php echo utf8_substr($order_product['link'], 0, 25); echo (strlen($order_product['link'])?'...':''); ?></a>
+                </td>
+                <td class="right"><?php echo $order_product['size']; ?></td>
+                <td class="right"><?php echo $order_product['color']; ?></td>
                 <td class="right"><?php echo $order_product['quantity']; ?></td>
                 <td class="right"><?php echo $order_product['price']; ?></td>
                 <td class="right"><?php echo $order_product['total']; ?></td>
@@ -468,7 +484,7 @@
               <?php } ?>
               <?php foreach ($order_totals as $order_total) { ?>
               <tr id="total-row<?php echo $total_row; ?>">
-                <td class="right" colspan="4"><?php echo $order_total['title']; ?>:
+                <td class="right" colspan="6"><?php echo $order_total['title']; ?>:
                   <input type="hidden" name="order_total[<?php echo $total_row; ?>][order_total_id]" value="<?php echo $order_total['order_total_id']; ?>" />
                   <input type="hidden" name="order_total[<?php echo $total_row; ?>][code]" value="<?php echo $order_total['code']; ?>" />
                   <input type="hidden" name="order_total[<?php echo $total_row; ?>][title]" value="<?php echo $order_total['title']; ?>" />

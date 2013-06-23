@@ -12,6 +12,7 @@ class ControllerAccountOrder extends Controller {
         }
 
         $this->language->load('account/order');
+        $this->load->model('localisation/order_status');
 
         $this->load->model('account/order');
 
@@ -100,20 +101,19 @@ class ControllerAccountOrder extends Controller {
         } else {
             $order_status_id = null;
         }
-        
+
         $this->data['orders'] = array();
 
         $order_total = $this->model_account_order->getTotalOrders($order_status_id);
-        
-        $results = $this->model_account_order->getOrders(($page - 1) * 10, 10, $order_status_id);
 
-        $summary_orders = array(
-            'Pending' => array('quantity' => 0, 'total' => 0, 'currency' => 0),
-            'Complete' => array('quantity' => 0, 'total' => 0, 'currency' => 0),
-            'Canceled' => array('quantity' => 0, 'total' => 0, 'currency' => 0),
-            'Processing' => array('quantity' => 0, 'total' => 0, 'currency' => 0)
-        );
-        
+        $results = $this->model_account_order->getOrders(($page - 1) * 10, 10, $order_status_id);
+        $order_statuses = $this->model_localisation_order_status->getOrderStatuses();
+        $count_status = 0;
+        foreach($order_statuses as $os) {
+            $count_status++;
+            $summary_orders[$os['order_status_id']] = array('quantity' => 0, 'total' => 0, 'currency' => 0);
+        }
+
         foreach ($results as $result) {
             $product_total = $this->model_account_order->getTotalOrderProductsByOrderId($result['order_id']);
             $voucher_total = $this->model_account_order->getTotalOrderVouchersByOrderId($result['order_id']);
@@ -128,12 +128,10 @@ class ControllerAccountOrder extends Controller {
                 'href' => $this->url->link('account/order/info', 'order_id=' . $result['order_id'], 'SSL'),
                 'reorder' => $this->url->link('account/order', 'order_id=' . $result['order_id'], 'SSL')
             );
-            
-            $summary_orders[$result['status']]['quantity'] +=  $product_total + $voucher_total;
-            $summary_orders[$result['status']]['total'] += $result['total'];
-            $summary_orders[$result['status']]['currency'] = $this->currency->format($summary_orders[$result['status']]['total'], $result['currency_code'], $result['currency_value']);
-            
-            
+
+            $summary_orders[$result['order_status_id']]['quantity'] += $product_total + $voucher_total;
+            $summary_orders[$result['order_status_id']]['total'] += $result['total'];
+            $summary_orders[$result['order_status_id']]['currency'] = $this->currency->format($summary_orders[$result['order_status_id']]['total'], $result['currency_code'], $result['currency_value']);
         }
 
         $pagination = new Pagination();
@@ -141,12 +139,12 @@ class ControllerAccountOrder extends Controller {
         $pagination->page = $page;
         $pagination->limit = 10;
         $pagination->text = $this->language->get('text_pagination');
-        
-        if(!empty($order_status_id))
-            $pagination->url = $this->url->link('account/order&status_id='. $order_status_id, 'page={page}', 'SSL');
-        else 
+
+        if (!empty($order_status_id))
+            $pagination->url = $this->url->link('account/order&status_id=' . $order_status_id, 'page={page}', 'SSL');
+        else
             $pagination->url = $this->url->link('account/order', 'page={page}', 'SSL');
-            
+
 
         $this->data['pagination'] = $pagination->render();
 
@@ -155,25 +153,10 @@ class ControllerAccountOrder extends Controller {
         $this->data['account_info_href'] = $this->url->link('account/edit');
         $this->data['account_order_info_href'] = $this->url->link('account/order');
         $this->data['account_transaction_href'] = $this->url->link('account/transaction');
+        $this->data['order_statuses'] = $order_statuses;
         $this->data['summary_orders'] = $summary_orders;
-        
-        $this->data['order_status'] = array(
-                'Processing' => 'Đang xử lý',
-                'Shipped' => 'Đã giao hàng',
-                'Canceled' => 'Đã hủy',
-                'Complete' => 'Hoàn thành',
-                'Denied' => 'Bị từ chối',
-                'Canceled Reversal' => 'Đã hủy',
-                'Failed' => 'Thất bại',
-                'Refunded' => 'Đã trả lại',
-                'Reversed' => 'Reversed',
-                'Chargeback' => 'Đang xử lý',
-                'Pending' => 'Chưa thanh toán',
-                'Voided' => 'Voided',
-                'Processed' => 'Đã xử lý',
-                'Expired' => 'Đã hết hạn',
-        );
-            
+        $this->data['count_status'] = $count_status;
+
         if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/order_list.tpl')) {
             $this->template = $this->config->get('config_template') . '/template/account/order_list.tpl';
         } else {
@@ -359,9 +342,9 @@ class ControllerAccountOrder extends Controller {
             $this->data['shipping_method'] = $order_info['shipping_method'];
 
             $this->data['products'] = array();
-            
+
             $this->load->model('tool/image');
-            
+
             $products = $this->model_account_order->getOrderDetailProducts($this->request->get['order_id']);
 
             foreach ($products as $product) {
@@ -381,13 +364,13 @@ class ControllerAccountOrder extends Controller {
                         'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
                     );
                 }
-                
+
                 if ($product['image']) {
                     $image = $this->model_tool_image->resize($product['image'], $this->config->get('config_image_cart_width'), $this->config->get('config_image_cart_height'));
                 } else {
                     $image = '';
                 }
-                
+
                 $this->data['products'][] = array(
                     'name' => $product['name'],
                     'model' => $product['model'],
@@ -486,7 +469,7 @@ class ControllerAccountOrder extends Controller {
             );
 
             $this->data['continue'] = $this->url->link('account/order', '', 'SSL');
-            
+
             if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/error/not_found.tpl')) {
                 $this->template = $this->config->get('config_template') . '/template/error/not_found.tpl';
             } else {
@@ -506,7 +489,6 @@ class ControllerAccountOrder extends Controller {
         }
     }
 
-    
     function ajax_order() {
         $url = '';
 
@@ -526,30 +508,27 @@ class ControllerAccountOrder extends Controller {
         } else {
             $order_status_id = '';
         }
-        
+
         if (!empty($this->request->get['order_id'])) {
             $order_id = $this->request->get['order_id'];
         } else {
             $order_id = '';
         }
-        
+
         $order_from = '';
         $order_to = '';
-        if (!empty($this->request->get['order_from']) 
-                && !empty($this->request->get['order_to']) 
-                && !empty($this->request->get['order_year']) 
-        ) {
-            //date_added
+        if (!empty($this->request->get['order_from'])) {
             $str_from = explode('/', $this->request->get['order_from']);
-            if(count($str_from) == 2) {
-                $order_from = $this->request->get['order_year'].'-'.$str_from[1].'-'.$str_from[0];
+            if (count($str_from) == 3) {
+                $order_from = $str_from[2] . '-' . $str_from[1] . '-' . $str_from[0].' 00:00:00';
             }
-            
+        }
+
+        if (!empty($this->request->get['order_to'])) {
             $str_to = explode('/', $this->request->get['order_to']);
-            if(count($str_to) == 2) {
-                $order_to = $this->request->get['order_year'].'-'.$str_to[1].'-'.$str_to[0];
+            if (count($str_to) == 3) {
+                $order_to = $str_to[2] . '-' . $str_to[1] . '-' . $str_to[0]. '23:59:59';
             }
-            
         }
 
         if (!empty($this->request->get['status_id'])) {
@@ -557,15 +536,15 @@ class ControllerAccountOrder extends Controller {
         } else {
             $order_status_id = null;
         }
-        
+
         $this->data['orders'] = array();
-        
+
         $this->load->model('account/order');
-        
+
         $order_total = $this->model_account_order->getTotalOrders($order_status_id);
-        
+
         $results = $this->model_account_order->getOrders(($page - 1) * 10, 10, $order_status_id, $order_from, $order_to, $order_id);
-        
+
         foreach ($results as $result) {
             $product_total = $this->model_account_order->getTotalOrderProductsByOrderId($result['order_id']);
             $voucher_total = $this->model_account_order->getTotalOrderVouchersByOrderId($result['order_id']);
@@ -580,7 +559,6 @@ class ControllerAccountOrder extends Controller {
                 'href' => $this->url->link('account/order/info', 'order_id=' . $result['order_id'], 'SSL'),
                 'reorder' => $this->url->link('account/order', 'order_id=' . $result['order_id'], 'SSL')
             );
-            
         }
 
         $pagination = new Pagination();
@@ -588,12 +566,12 @@ class ControllerAccountOrder extends Controller {
         $pagination->page = $page;
         $pagination->limit = 10;
         $pagination->text = $this->language->get('text_pagination');
-        
-        if(!empty($order_status_id))
-            $pagination->url = $this->url->link('account/order&status_id='. $order_status_id, 'page={page}', 'SSL');
-        else 
+
+        if (!empty($order_status_id))
+            $pagination->url = $this->url->link('account/order&status_id=' . $order_status_id, 'page={page}', 'SSL');
+        else
             $pagination->url = $this->url->link('account/order', 'page={page}', 'SSL');
-            
+
 
         $this->data['pagination'] = $pagination->render();
 
@@ -602,32 +580,33 @@ class ControllerAccountOrder extends Controller {
         $this->data['account_info_href'] = $this->url->link('account/edit');
         $this->data['account_order_info_href'] = $this->url->link('account/order');
         $this->data['account_transaction_href'] = $this->url->link('account/transaction');
-        
+
         $this->data['order_status'] = array(
-                'Processing' => 'Đang xử lý',
-                'Shipped' => 'Đã giao hàng',
-                'Canceled' => 'Đã hủy',
-                'Complete' => 'Hoàn thành',
-                'Denied' => 'Bị từ chối',
-                'Canceled Reversal' => 'Đã hủy',
-                'Failed' => 'Thất bại',
-                'Refunded' => 'Đã trả lại',
-                'Reversed' => 'Reversed',
-                'Chargeback' => 'Đang xử lý',
-                'Pending' => 'Chưa thanh toán',
-                'Voided' => 'Voided',
-                'Processed' => 'Đã xử lý',
-                'Expired' => 'Đã hết hạn',
+            'Processing' => 'Đang xử lý',
+            'Shipped' => 'Đã giao hàng',
+            'Canceled' => 'Đã hủy',
+            'Complete' => 'Hoàn thành',
+            'Denied' => 'Bị từ chối',
+            'Canceled Reversal' => 'Đã hủy',
+            'Failed' => 'Thất bại',
+            'Refunded' => 'Đã trả lại',
+            'Reversed' => 'Reversed',
+            'Chargeback' => 'Đang xử lý',
+            'Pending' => 'Chưa thanh toán',
+            'Voided' => 'Voided',
+            'Processed' => 'Đã xử lý',
+            'Expired' => 'Đã hết hạn',
         );
-            
+
         if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/ajax_order.tpl')) {
             $this->template = $this->config->get('config_template') . '/template/account/ajax_order.tpl';
         } else {
             $this->template = 'default/template/account/ajax_order.tpl';
         }
-        
+
         $this->response->setOutput($this->render());
     }
+
 }
 
 ?>

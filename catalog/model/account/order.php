@@ -120,16 +120,16 @@ class ModelAccountOrder extends Model {
         if (!empty($order_from)) {
             $where .= " AND o.date_added >= '" . $order_from . "'";
         }
-
+        
         if (!empty($order_to)) {
             $where .= " AND o.date_added <= '" . $order_to . "'";
         }
-        
+
         if (!empty($order_id)) {
-            $where .= " AND o.order_id = '" . $order_id . "'";
+            $where = " AND o.order_id = '" . $order_id . "'";
         }
 
-        $query = $this->db->query("SELECT o.order_id, o.firstname, o.lastname, os.name as status, o.date_added, o.total, o.currency_code, o.currency_value 
+        $query = $this->db->query("SELECT o.order_id, o.order_status_id, o.firstname, o.lastname, os.name as status, o.date_added, o.total, o.currency_code, o.currency_value 
             FROM `" . DB_PREFIX . "order` o 
             LEFT JOIN " . DB_PREFIX . "order_status os ON (o.order_status_id = os.order_status_id) 
             WHERE o.customer_id = '" . (int) $this->customer->getId() .

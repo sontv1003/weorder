@@ -7,10 +7,12 @@ $_['text_success']     = 'Hoàn tất: Bạn đã sửa xong tình trạng đơn
 
 // Column
 $_['column_name']      = 'Tên tình trạng';
+$_['column_sort_order']      = 'Thứ tự';
 $_['column_action']    = 'Thao tác';
 
 // Entry
 $_['entry_name']       = 'Tên tình trạng:';
+$_['entry_order_status']       = 'Thứ tự:';
 
 // Error
 $_['error_permission'] = 'Cảnh báo: Bạn không được phép thay đổi tình trạng đơn hàng!';

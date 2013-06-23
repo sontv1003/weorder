@@ -1,14 +1,14 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               5.5.24-log - MySQL Community Server (GPL)
--- Server OS:                    Win64
--- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-06-20 09:24:28
+-- Server version:               5.5.16 - MySQL Community Server (GPL)
+-- Server OS:                    Win32
+-- HeidiSQL Version:             8.0.0.4396
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
-/*!40014 SET FOREIGN_KEY_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping structure for table weorder.address
 CREATE TABLE IF NOT EXISTS `address` (
@@ -27,9 +27,9 @@ CREATE TABLE IF NOT EXISTS `address` (
   `zone_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`address_id`),
   KEY `customer_id` (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.address: 9 rows
+-- Dumping data for table weorder.address: 10 rows
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
 INSERT INTO `address` (`address_id`, `customer_id`, `firstname`, `lastname`, `company`, `company_id`, `tax_id`, `address_1`, `address_2`, `city`, `postcode`, `country_id`, `zone_id`) VALUES
 	(1, 1, 'Sơn', 'Trần', '', '', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 230, 3755),
@@ -40,7 +40,9 @@ INSERT INTO `address` (`address_id`, `customer_id`, `firstname`, `lastname`, `co
 	(6, 6, 'sdgsdgds', '', '', '', '', '2356346457457', '', '', '', 230, 3755),
 	(7, 7, 'User 6', '', '', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 230, 3758),
 	(8, 8, 'SƠn Trần', '', '', '', '', '346475865', '', '', '', 230, 3755),
-	(9, 9, 'Testing...', '', '', '', '', '363464', '', '', '', 230, 3755);
+	(9, 9, 'Testing...', '', '', '', '', '363464', '', '', '', 230, 3755),
+	(10, 10, 'Sơn Trần', '', '', '', '', 'Từ Sơn', '', '', '', 230, 3755),
+	(11, 11, 'Tester', '', '', '', '', '233265', '', '', '', 230, 3752);
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 
 
@@ -256,9 +258,9 @@ CREATE TABLE IF NOT EXISTS `category` (
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`category_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.category: 9 rows
+-- Dumping data for table weorder.category: 10 rows
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `top2`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 	(25, '', 0, 1, 0, 1, 1, 1, '2009-01-31 01:04:25', '2013-05-20 23:43:45'),
@@ -269,7 +271,8 @@ INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `top2`, `col
 	(62, '', 33, 0, 0, 1, 2, 1, '2013-05-23 22:39:49', '2013-05-29 00:21:27'),
 	(63, '', 25, 0, 0, 1, 0, 1, '2013-05-23 22:40:41', '2013-05-23 22:40:41'),
 	(64, '', 25, 0, 0, 1, 0, 1, '2013-05-23 22:40:55', '2013-05-23 22:41:49'),
-	(65, '', 25, 0, 0, 1, 3, 1, '2013-05-23 22:42:16', '2013-05-23 22:42:22');
+	(65, '', 25, 0, 0, 1, 3, 1, '2013-05-23 22:42:16', '2013-05-23 22:42:22'),
+	(66, '', 0, 0, 0, 1, 0, 1, '2013-06-22 22:32:42', '2013-06-22 22:32:55');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 
 
@@ -285,7 +288,7 @@ CREATE TABLE IF NOT EXISTS `category_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.category_description: 9 rows
+-- Dumping data for table weorder.category_description: 10 rows
 /*!40000 ALTER TABLE `category_description` DISABLE KEYS */;
 INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(33, 2, 'Nam', '', '', 'nam'),
@@ -296,7 +299,8 @@ INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `descr
 	(62, 2, 'Phụ kiện', '', '', ''),
 	(63, 2, 'Quần', '', '', ''),
 	(64, 2, 'Áo', '', '', ''),
-	(65, 2, 'Phụ kiện', '', '', '');
+	(65, 2, 'Phụ kiện', '', '', ''),
+	(66, 2, 'Người dùng tạo', '', '', '');
 /*!40000 ALTER TABLE `category_description` ENABLE KEYS */;
 
 
@@ -320,7 +324,7 @@ CREATE TABLE IF NOT EXISTS `category_path` (
   PRIMARY KEY (`category_id`,`path_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.category_path: 15 rows
+-- Dumping data for table weorder.category_path: 16 rows
 /*!40000 ALTER TABLE `category_path` DISABLE KEYS */;
 INSERT INTO `category_path` (`category_id`, `path_id`, `level`) VALUES
 	(25, 25, 0),
@@ -337,7 +341,8 @@ INSERT INTO `category_path` (`category_id`, `path_id`, `level`) VALUES
 	(64, 25, 0),
 	(64, 64, 1),
 	(65, 25, 0),
-	(65, 65, 1);
+	(65, 65, 1),
+	(66, 66, 0);
 /*!40000 ALTER TABLE `category_path` ENABLE KEYS */;
 
 
@@ -368,7 +373,7 @@ CREATE TABLE IF NOT EXISTS `category_to_store` (
   PRIMARY KEY (`category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.category_to_store: 9 rows
+-- Dumping data for table weorder.category_to_store: 10 rows
 /*!40000 ALTER TABLE `category_to_store` DISABLE KEYS */;
 INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
 	(25, 0),
@@ -379,7 +384,8 @@ INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
 	(62, 0),
 	(63, 0),
 	(64, 0),
-	(65, 0);
+	(65, 0),
+	(66, 0);
 /*!40000 ALTER TABLE `category_to_store` ENABLE KEYS */;
 
 
@@ -738,7 +744,7 @@ CREATE TABLE IF NOT EXISTS `currency` (
 INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
 	(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.64969999, 1, '2013-06-05 15:08:27'),
 	(3, 'Euro', 'EUR', '', '€', '2', 0.76419997, 1, '2013-06-05 15:08:27'),
-	(4, 'VNĐ', 'VND', '', ' VNĐ', '0', 1.00000000, 1, '2013-06-16 18:49:05');
+	(4, 'VNĐ', 'VND', '', ' VNĐ', '0', 1.00000000, 1, '2013-06-23 12:56:28');
 /*!40000 ALTER TABLE `currency` ENABLE KEYS */;
 
 
@@ -766,20 +772,22 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `token` varchar(255) NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.customer: 9 rows
+-- Dumping data for table weorder.customer: 10 rows
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `birthday`, `gender`, `password`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `customer_group_id`, `ip`, `status`, `approved`, `token`, `date_added`) VALUES
 	(1, 0, 'Sơn', 'Trần', 'transontt@gmail.com', '0902222222222', '', NULL, NULL, 'c0ff2af611e745e05c989d8c07a56230be54ede5', 'fbad643c7', 'a:0:{}', 'a:0:{}', 1, 1, 1, '::1', 1, 1, '', '2013-06-16 14:36:00'),
 	(2, 0, 'Son Tran', '', 'abc@abc.com', '0904449512', '', NULL, NULL, '77a5b440ca697d017e6b7b26c49b2143afdb2409', '1639fb344', 'a:1:{s:51:"30:YToyOntpOjIyOTtzOjI6IjIzIjtpOjIzMDtzOjI6IjI2Ijt9";i:1;}', '', 0, 2, 1, '::1', 1, 1, '', '2013-06-16 15:38:25'),
-	(3, 0, 'Son Tran', '', 'abc2@abc.com', '099999', '', '2013-06-16', 1, 'd5ed71b57ac0291dc6486ef25da05dac1f717958', '069781bef', 'a:1:{i:30;i:1;}', '', 1, 3, 1, '::1', 1, 1, '', '2013-06-16 17:59:54'),
+	(3, 0, 'Son Tran', '', 'abc2@abc.com', '099999', '', '2013-06-16', 1, 'd5ed71b57ac0291dc6486ef25da05dac1f717958', '069781bef', 'a:7:{i:40;i:1;i:89;i:2;i:90;i:3;s:4:"link";a:4:{i:40;s:24:"http://www.geckomedia.vn";i:89;s:5:"dsgds";i:90;s:20:"http://www.dantri.vn";i:30;s:83:"http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html";}s:4:"size";a:4:{i:40;s:1:"M";i:89;s:7:"gsdgdsg";i:90;s:1:"M";i:30;s:3:"sdg";}s:5:"color";a:2:{i:40;s:5:"Đỏ";i:90;s:7:"Trắng";}i:30;i:2;}', '', 1, 3, 1, '::1', 1, 1, '', '2013-06-16 17:59:54'),
 	(4, 0, 'Testing', '', 'abc3@abc.com', '0900000', '', '2013-06-16', 1, 'f8c8c06b5030d3678cf1f2aaf9bba2128413f48c', '65ffc4630', 'a:1:{s:51:"30:YToyOntpOjIyOTtzOjI6IjIzIjtpOjIzMDtzOjI6IjI3Ijt9";i:1;}', '', 1, 4, 1, '::1', 1, 1, '', '2013-06-16 18:04:20'),
-	(5, 0, 'Son Tran', '', 'abc4@abc.com', '0989999999999999', '', '2013-06-16', 0, '4d3676e0d8b251e248ac317e97453bcf372100e3', '9abdb677e', 'a:1:{i:47;i:1;}', '', 1, 5, 1, '::1', 1, 1, '', '2013-06-16 18:06:55'),
+	(5, 0, 'Son Tran', '', 'abc4@abc.com', '0989999999999999', '', '2013-06-16', 0, '4d3676e0d8b251e248ac317e97453bcf372100e3', '9abdb677e', 'a:0:{}', '', 1, 5, 1, '::1', 1, 1, '', '2013-06-16 18:06:55'),
 	(6, 0, 'sdgsdgds', '', 'abc32@abc.com', '3532534', '', '1988-06-04', 1, 'f5c4e801c6e29f8d83bfe5b28ab6a79b268474a9', '5539c26fa', 'a:1:{i:31;i:1;}', '', 1, 6, 1, '::1', 1, 1, '', '2013-06-16 19:27:45'),
 	(7, 0, 'User 6', '', 'abhhh@abc.com', '0912222222', '', '1976-05-07', 1, 'a08ca22bda822c411983a81f47383c82f37858c0', '5861a8e83', 'a:1:{i:31;i:1;}', '', 1, 7, 1, '::1', 1, 1, '', '2013-06-16 20:15:41'),
 	(8, 0, 'SƠn Trần', '', 'abc5@abc.com', '92385325', '', '0000-00-00', 0, '609d3081592895ff6c370faeff2ff9c7cb6aebef', '1997b6a16', 'a:1:{i:31;i:1;}', '', 1, 8, 1, '::1', 1, 1, '', '2013-06-16 20:26:34'),
-	(9, 0, 'Testing...', '', 'hhh@abc.com', '3546436', '', '0000-00-00', 0, '8a2af002e6666d557cc454c20162c92f99826ea0', '4b32febea', 'a:1:{s:71:"30:YTozOntpOjIyOTtzOjI6IjIzIjtpOjIzMTtzOjI6IjI5IjtpOjIzMDtzOjI6IjI3Ijt9";i:1;}', '', 1, 9, 1, '::1', 1, 1, '', '2013-06-16 20:38:43');
+	(9, 0, 'Testing...', '', 'hhh@abc.com', '3546436', '', '0000-00-00', 0, '8a2af002e6666d557cc454c20162c92f99826ea0', '4b32febea', 'a:1:{s:71:"30:YTozOntpOjIyOTtzOjI6IjIzIjtpOjIzMTtzOjI6IjI5IjtpOjIzMDtzOjI6IjI3Ijt9";i:1;}', '', 1, 9, 1, '::1', 1, 1, '', '2013-06-16 20:38:43'),
+	(11, 0, 'Tester', '', 'abc10@abc.com', '235', '', '0000-00-00', 1, '269176159f4b10913a51a188761f7e5d2b1ad0d6', '3ece162bc', 'a:0:{}', '', 1, 11, 1, '::1', 1, 1, '', '2013-06-24 00:07:31'),
+	(10, 0, 'Sơn Trần', '', 'abcd@abc.com', '0900000', '', '0000-00-00', 1, 'db881ccb4a1876cd7bbc69f48f1bdd2aa7f1c099', '4c0da4808', 'a:0:{}', '', 1, 10, 1, '::1', 1, 1, '', '2013-06-22 22:28:51');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 
 
@@ -869,9 +877,9 @@ CREATE TABLE IF NOT EXISTS `customer_ip` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_ip_id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.customer_ip: 9 rows
+-- Dumping data for table weorder.customer_ip: 10 rows
 /*!40000 ALTER TABLE `customer_ip` DISABLE KEYS */;
 INSERT INTO `customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) VALUES
 	(1, 1, '::1', '2013-06-16 14:36:01'),
@@ -882,7 +890,9 @@ INSERT INTO `customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) 
 	(6, 6, '::1', '2013-06-16 19:27:47'),
 	(7, 7, '::1', '2013-06-16 20:17:10'),
 	(8, 8, '::1', '2013-06-16 20:26:39'),
-	(9, 9, '::1', '2013-06-16 20:39:55');
+	(9, 9, '::1', '2013-06-16 20:39:55'),
+	(10, 10, '::1', '2013-06-22 22:28:55'),
+	(11, 11, '::1', '2013-06-24 00:08:42');
 /*!40000 ALTER TABLE `customer_ip` ENABLE KEYS */;
 
 
@@ -1036,7 +1046,7 @@ CREATE TABLE IF NOT EXISTS `extension` (
   `type` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL,
   PRIMARY KEY (`extension_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=434 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=436 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.extension: 26 rows
 /*!40000 ALTER TABLE `extension` DISABLE KEYS */;
@@ -1066,7 +1076,8 @@ INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 	(430, 'module', 'filter'),
 	(431, 'module', 'manufacturersdropdown'),
 	(432, 'module', 'filteroption'),
-	(433, 'module', 'viewed');
+	(433, 'module', 'viewed'),
+	(435, 'payment', 'bank_transfer');
 /*!40000 ALTER TABLE `extension` ENABLE KEYS */;
 
 
@@ -1850,9 +1861,9 @@ CREATE TABLE IF NOT EXISTS `order` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order: 22 rows
+-- Dumping data for table weorder.order: 24 rows
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
 INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_company_id`, `payment_tax_id`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
 	(29, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 650000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-16 23:43:20', '2013-06-16 23:43:20'),
@@ -1862,13 +1873,13 @@ INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `st
 	(26, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 8, 1, 'SƠn Trần', '', 'abc5@abc.com', '92385325', '', 'SƠn Trần', '', '', '', '', '346475865', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'SƠn Trần', '', '', '346475865', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 390000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36', 'en-US,en;q=0.8', '2013-06-16 22:57:57', '2013-06-16 22:57:57'),
 	(25, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 9, 1, 'Testing...', '', 'hhh@abc.com', '3546436', '', 'Testing...', '', '', '', '', '363464', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Testing...', '', '', '363464', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 690000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-16 20:40:00', '2013-06-16 20:40:00'),
 	(24, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 9, 1, 'Testing...', '', 'hhh@abc.com', '3546436', '', 'Testing...', '', '', '', '', '363464', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Testing...', '', '', '363464', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 690000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-16 20:38:44', '2013-06-16 20:38:44'),
-	(23, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 7, 1, 'User 6', '', 'abhhh@abc.com', '0912222222', '', 'User 6', '', '', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', 'User 6', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', '', 390000.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-16 20:28:16', '2013-06-16 20:28:16'),
-	(22, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 7, 1, 'User 6', '', 'abhhh@abc.com', '0912222222', '', 'User 6', '', '', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', 'User 6', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', '', 390000.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-16 20:27:58', '2013-06-16 20:27:58'),
-	(21, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 7, 1, 'User 6', '', 'abhhh@abc.com', '0912222222', '', 'User 6', '', '', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', 'User 6', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', '', 390000.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-16 20:27:57', '2013-06-16 20:27:57'),
-	(20, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 8, 1, 'SƠn Trần', '', 'abc5@abc.com', '92385325', '', 'SƠn Trần', '', '', '', '', '346475865', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'SƠn Trần', '', '', '346475865', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 390000.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36', 'en-US,en;q=0.8', '2013-06-16 20:26:35', '2013-06-16 20:26:35'),
-	(19, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 7, 1, 'User 6', '', 'abhhh@abc.com', '0912222222', '', 'User 6', '', '', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', 'User 6', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', '', 390000.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-16 20:18:06', '2013-06-16 20:18:06'),
-	(18, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 7, 1, 'User 6', '', 'abhhh@abc.com', '0912222222', '', 'User 6', '', '', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', 'User 6', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', '', 390000.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-16 20:15:42', '2013-06-16 20:15:42'),
-	(17, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 6, 1, 'sdgsdgds', '', 'abc32@abc.com', '3532534', '', 'sdgsdgds', '', '', '', '', '2356346457457', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'sdgsdgds', '', '', '2356346457457', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 390000.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-16 20:14:25', '2013-06-16 20:14:25'),
+	(23, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 7, 1, 'User 6', '', 'abhhh@abc.com', '0912222222', '', 'User 6', '', '', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', 'User 6', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', '', 390000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-16 20:28:16', '2013-06-16 20:28:16'),
+	(22, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 7, 1, 'User 6', '', 'abhhh@abc.com', '0912222222', '', 'User 6', '', '', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', 'User 6', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', '', 390000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-16 20:27:58', '2013-06-16 20:27:58'),
+	(21, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 7, 1, 'User 6', '', 'abhhh@abc.com', '0912222222', '', 'User 6', '', '', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', 'User 6', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', '', 390000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-16 20:27:57', '2013-06-16 20:27:57'),
+	(20, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 8, 1, 'SƠn Trần', '', 'abc5@abc.com', '92385325', '', 'SƠn Trần', '', '', '', '', '346475865', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'SƠn Trần', '', '', '346475865', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 390000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36', 'en-US,en;q=0.8', '2013-06-16 20:26:35', '2013-06-16 20:26:35'),
+	(19, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 7, 1, 'User 6', '', 'abhhh@abc.com', '0912222222', '', 'User 6', '', '', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', 'User 6', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', '', 390000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-16 20:18:06', '2013-06-16 20:18:06'),
+	(18, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 7, 1, 'User 6', '', 'abhhh@abc.com', '0912222222', '', 'User 6', '', '', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', 'User 6', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 'Viet Nam', 230, 'Binh Dinh', 3758, '', '', '', '', 390000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-16 20:15:42', '2013-06-16 20:15:42'),
+	(17, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 6, 1, 'sdgsdgds', '', 'abc32@abc.com', '3532534', '', 'sdgsdgds', '', '', '', '', '2356346457457', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'sdgsdgds', '', '', '2356346457457', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 390000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-16 20:14:25', '2013-06-16 20:14:25'),
 	(31, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 650000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-16 23:48:11', '2013-06-16 23:48:11'),
 	(32, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 650000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-17 00:07:21', '2013-06-17 00:07:21'),
 	(33, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 650000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-17 00:07:36', '2013-06-17 00:07:36'),
@@ -1876,7 +1887,19 @@ INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `st
 	(35, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 650000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-17 00:07:46', '2013-06-17 00:07:46'),
 	(36, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 650000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-17 00:07:48', '2013-06-17 00:07:48'),
 	(37, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 650000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-17 00:08:21', '2013-06-17 00:08:21'),
-	(38, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 2800000.0000, 7, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-17 00:08:54', '2013-06-19 20:04:33');
+	(38, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Từ Sơn', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 2800000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-17 00:08:54', '2013-06-23 22:41:40'),
+	(39, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 690000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-20 21:05:16', '2013-06-23 22:41:02'),
+	(40, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 10, 1, 'Sơn Trần', '', 'abcd@abc.com', '0900000', '', 'Sơn Trần', '', '', '', '', 'Từ Sơn', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, '{firstname} {lastname}\n{company}\n{address_1}\n{address_2}\n{city} {postcode}\n{zone}\n{country}', '', '', '', 250000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-22 22:28:53', '2013-06-23 22:41:07'),
+	(41, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 5, 1, 'Son Tran', '', 'abc4@abc.com', '0989999999999999', '', 'Son Tran', '', '', '', '', 'Tu Son Tesging', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu Son Tesging', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 100.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36', 'en-US,en;q=0.8', '2013-06-23 23:55:57', '2013-06-23 23:55:57'),
+	(42, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 5, 1, 'Son Tran', '', 'abc4@abc.com', '0989999999999999', '', 'Son Tran', '', '', '', '', 'Tu Son Tesging', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', 202005.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36', 'en-US,en;q=0.8', '2013-06-24 00:00:22', '2013-06-24 00:00:22'),
+	(43, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 5, 1, 'Son Tran', '', 'abc4@abc.com', '0989999999999999', '', 'Son Tran', '', '', '', '', 'Tu Son Tesging', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', 100000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36', 'en-US,en;q=0.8', '2013-06-24 00:03:01', '2013-06-24 00:03:01'),
+	(44, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 11, 1, 'Tester', '', 'abc10@abc.com', '235', '', 'Tester', '', '', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', 500000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-24 00:07:33', '2013-06-24 00:07:33'),
+	(45, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 11, 1, 'Tester', '', 'abc10@abc.com', '235', '', 'Tester', '', '', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', 53.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-24 00:09:05', '2013-06-24 00:09:05'),
+	(46, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 11, 1, 'Tester', '', 'abc10@abc.com', '235', '', 'Tester', '', '', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', 0.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-24 00:11:32', '2013-06-24 00:11:32'),
+	(47, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 11, 1, 'Tester', '', 'abc10@abc.com', '235', '', 'Tester', '', '', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', 250000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-24 00:12:30', '2013-06-24 00:12:30'),
+	(48, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 11, 1, 'Tester', '', 'abc10@abc.com', '235', '', 'Tester', '', '', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', 'Tester', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', '', 690000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-24 00:16:32', '2013-06-24 00:16:32'),
+	(49, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 11, 1, 'Tester', '', 'abc10@abc.com', '235', '', 'Tester', '', '', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', 'Tester', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', '', 690000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-24 00:18:14', '2013-06-24 00:18:14'),
+	(50, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 11, 1, 'Tester', '', 'abc10@abc.com', '235', '', 'Tester', '', '', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', 'Tester', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', '', 390000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-24 00:18:38', '2013-06-24 00:18:38');
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 
 
@@ -1985,9 +2008,9 @@ CREATE TABLE IF NOT EXISTS `order_history` (
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`order_history_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order_history: 16 rows
+-- Dumping data for table weorder.order_history: 18 rows
 /*!40000 ALTER TABLE `order_history` DISABLE KEYS */;
 INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, `notify`, `comment`, `date_added`) VALUES
 	(1, 24, 1, 1, '', '2013-06-16 20:38:44'),
@@ -2005,7 +2028,19 @@ INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, 
 	(13, 36, 1, 1, '', '2013-06-17 00:07:48'),
 	(14, 37, 1, 1, '', '2013-06-17 00:08:21'),
 	(15, 38, 1, 1, '', '2013-06-17 00:08:54'),
-	(16, 38, 7, 0, '', '2013-06-19 20:04:33');
+	(16, 38, 7, 0, '', '2013-06-19 20:04:33'),
+	(17, 39, 1, 1, '', '2013-06-20 21:05:16'),
+	(18, 40, 1, 1, '', '2013-06-22 22:28:53'),
+	(19, 41, 1, 1, '', '2013-06-23 23:55:57'),
+	(20, 42, 1, 1, '', '2013-06-24 00:00:22'),
+	(21, 43, 1, 1, '', '2013-06-24 00:03:01'),
+	(22, 44, 1, 1, '', '2013-06-24 00:07:33'),
+	(23, 45, 1, 1, '', '2013-06-24 00:09:05'),
+	(24, 46, 1, 1, '', '2013-06-24 00:11:32'),
+	(25, 47, 1, 1, '', '2013-06-24 00:12:30'),
+	(26, 48, 1, 1, '', '2013-06-24 00:16:32'),
+	(27, 49, 1, 1, '', '2013-06-24 00:18:14'),
+	(28, 50, 1, 1, '', '2013-06-24 00:18:38');
 /*!40000 ALTER TABLE `order_history` ENABLE KEYS */;
 
 
@@ -2033,8 +2068,8 @@ INSERT INTO `order_option` (`order_option_id`, `order_id`, `order_product_id`, `
 	(6, 25, 26, 229, 23, 'Màu Sắc', 'Da cam', 'image'),
 	(7, 25, 26, 231, 29, 'Kích cỡ theo chữ', 'L', 'radio'),
 	(8, 25, 26, 230, 27, 'Kích cỡ theo số', '27', 'radio'),
-	(9, 38, 40, 227, 19, 'Màu Sắc', 'Nâu', 'image'),
-	(10, 38, 40, 228, 21, 'Kích cỡ theo chữ', 'L', 'radio');
+	(10, 38, 40, 228, 21, 'Kích cỡ theo chữ', 'L', 'radio'),
+	(9, 38, 40, 227, 19, 'Màu Sắc', 'Nâu', 'image');
 /*!40000 ALTER TABLE `order_option` ENABLE KEYS */;
 
 
@@ -2054,9 +2089,9 @@ CREATE TABLE IF NOT EXISTS `order_product` (
   `tax` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `reward` int(8) NOT NULL,
   PRIMARY KEY (`order_product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order_product: 40 rows
+-- Dumping data for table weorder.order_product: 42 rows
 /*!40000 ALTER TABLE `order_product` DISABLE KEYS */;
 INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `link`, `size`, `color`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
 	(1, 1, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'L,M', 'Trắng ', 2, 650000.0000, 1300000.0000, 0.0000, 0),
@@ -2068,10 +2103,10 @@ INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name
 	(7, 6, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
 	(8, 7, 31, 'Áo phông 3', 'Product 4', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
 	(9, 8, 31, 'Áo phông 3', 'Product 4', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(10, 9, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(11, 10, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(12, 11, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
-	(13, 12, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(10, 9, 31, 'Áo phông 3', 'Product 4', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c35', NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(11, 10, 31, 'Áo phông 3', 'Product 4', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c35', NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(12, 11, 31, 'Áo phông 3', 'Product 4', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c35', NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(13, 12, 31, 'Áo phông 3', 'Product 4', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c35', NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
 	(14, 13, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
 	(15, 14, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
 	(16, 15, 31, 'Áo phông 3', 'Product 4', NULL, NULL, NULL, 1, 390000.0000, 390000.0000, 0.0000, 0),
@@ -2097,8 +2132,23 @@ INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name
 	(36, 35, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 650000.0000, 650000.0000, 0.0000, 0),
 	(37, 36, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 650000.0000, 650000.0000, 0.0000, 0),
 	(38, 37, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 1, 650000.0000, 650000.0000, 0.0000, 0),
-	(39, 38, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'L, M', 'Trắng', 2, 650000.0000, 1300000.0000, 0.0000, 0),
-	(40, 38, 42, 'Áo sơ mi 1', 'Product 15', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'XL', 'Đen', 2, 750000.0000, 1500000.0000, 0.0000, 200);
+	(43, 41, 47, 'Áo sơ mi 2', 'Product 21', NULL, NULL, NULL, 1, 100.0000, 100.0000, 0.0000, 300),
+	(44, 42, 91, 'Testing', 'Tím', NULL, NULL, NULL, 1, 200000.0000, 200000.0000, 0.0000, 0),
+	(39, 38, 41, 'Áo phông 2', '', NULL, NULL, NULL, 2, 650000.0000, 1300000.0000, 0.0000, 0),
+	(40, 38, 42, 'Áo sơ mi 1', '', NULL, NULL, NULL, 2, 750000.0000, 1500000.0000, 0.0000, 200),
+	(41, 39, 30, 'Áo cánh mỏng', '', NULL, NULL, NULL, 1, 690000.0000, 690000.0000, 0.0000, 200),
+	(42, 40, 72, 'Testing', '', NULL, NULL, NULL, 1, 250000.0000, 250000.0000, 0.0000, 0),
+	(45, 42, 92, 'Test2', '', NULL, NULL, NULL, 1, 2005.0000, 2005.0000, 0.0000, 0),
+	(46, 43, 93, 'name', 'mau', 'mau', 'SIZE', '', 2, 50000.0000, 100000.0000, 0.0000, 0),
+	(47, 44, 94, 'Name', 'mau', 'Link', 'size', '', 1, 250000.0000, 250000.0000, 0.0000, 0),
+	(48, 44, 95, 'name', 'mau', 'link', 'size', '', 1, 0.0000, 0.0000, 0.0000, 0),
+	(49, 44, 96, 'name', 'color', 'link', 'size', '', 1, 250000.0000, 250000.0000, 0.0000, 0),
+	(50, 45, 97, 'sdg', 'dsg2', 'sdgsd', 'dg', '', 1, 53.0000, 53.0000, 0.0000, 0),
+	(51, 46, 98, 'dhdfhd', 'dfh', 'dg', 'fdh', 'Array', 1, 0.0000, 0.0000, 0.0000, 0),
+	(52, 47, 99, 'Sản phẩm', 'Color', 'link sản phẩm', 'size', 'Array', 1, 250000.0000, 250000.0000, 0.0000, 0),
+	(53, 48, 30, 'Áo cánh mỏng', 'Màu', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', 'Array', 1, 690000.0000, 690000.0000, 0.0000, 200),
+	(54, 49, 30, 'Áo cánh mỏng', 'Product 3', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', '', 1, 690000.0000, 690000.0000, 0.0000, 200),
+	(55, 50, 31, 'Áo phông 3', 'Product 4', 'http://www.geckomedia.vn', 'M', 'Trắng', 1, 390000.0000, 390000.0000, 0.0000, 0);
 /*!40000 ALTER TABLE `order_product` ENABLE KEYS */;
 
 
@@ -2107,26 +2157,18 @@ CREATE TABLE IF NOT EXISTS `order_status` (
   `order_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
+  `sort_order` int(11) DEFAULT NULL,
   PRIMARY KEY (`order_status_id`,`language_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order_status: 14 rows
+-- Dumping data for table weorder.order_status: 5 rows
 /*!40000 ALTER TABLE `order_status` DISABLE KEYS */;
-INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`) VALUES
-	(2, 2, 'Processing'),
-	(3, 2, 'Shipped'),
-	(7, 2, 'Canceled'),
-	(5, 2, 'Complete'),
-	(0, 2, 'Denied'),
-	(9, 2, 'Canceled Reversal'),
-	(10, 2, 'Failed'),
-	(11, 2, 'Refunded'),
-	(12, 2, 'Reversed'),
-	(13, 2, 'Chargeback'),
-	(1, 2, 'Pending'),
-	(16, 2, 'Voided'),
-	(15, 2, 'Processed'),
-	(14, 2, 'Expired');
+INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`, `sort_order`) VALUES
+	(19, 2, 'Đang mua hàng', 3),
+	(21, 2, 'Giao dịch thành công', 5),
+	(20, 2, 'Đang chuyển hàng', 4),
+	(1, 2, 'Chờ xác minh', 1),
+	(18, 2, 'Chờ thanh toán', 2);
 /*!40000 ALTER TABLE `order_status` ENABLE KEYS */;
 
 
@@ -2141,9 +2183,9 @@ CREATE TABLE IF NOT EXISTS `order_total` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`order_total_id`),
   KEY `idx_orders_total_orders_id` (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=78 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=102 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order_total: 77 rows
+-- Dumping data for table weorder.order_total: 81 rows
 /*!40000 ALTER TABLE `order_total` DISABLE KEYS */;
 INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`, `value`, `sort_order`) VALUES
 	(1, 1, 'sub_total', 'Tổng giá trị là', '2,800,000 VNĐ', 2800000.0000, 1),
@@ -2221,8 +2263,32 @@ INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`
 	(73, 36, 'total', 'Thành tiền', '650,000 VNĐ', 650000.0000, 9),
 	(74, 37, 'sub_total', 'Tổng giá trị là', '650,000 VNĐ', 650000.0000, 1),
 	(75, 37, 'total', 'Thành tiền', '650,000 VNĐ', 650000.0000, 9),
+	(77, 38, 'total', 'Thành tiền', '2,800,000 VNĐ', 2800000.0000, 9),
 	(76, 38, 'sub_total', 'Tổng giá trị là', '2,800,000 VNĐ', 2800000.0000, 1),
-	(77, 38, 'total', 'Thành tiền', '2,800,000 VNĐ', 2800000.0000, 9);
+	(78, 39, 'sub_total', 'Tổng giá trị là', '690,000 VNĐ', 690000.0000, 1),
+	(80, 40, 'sub_total', 'Tổng giá trị là', '250,000 VNĐ', 250000.0000, 1),
+	(79, 39, 'total', 'Thành tiền', '690,000 VNĐ', 690000.0000, 9),
+	(81, 40, 'total', 'Thành tiền', '250,000 VNĐ', 250000.0000, 9),
+	(82, 41, 'sub_total', 'Tổng giá trị là', '100 VNĐ', 100.0000, 1),
+	(83, 41, 'total', 'Thành tiền', '100 VNĐ', 100.0000, 9),
+	(84, 42, 'sub_total', 'Tổng giá trị là', '202,005 VNĐ', 202005.0000, 1),
+	(85, 42, 'total', 'Thành tiền', '202,005 VNĐ', 202005.0000, 9),
+	(86, 43, 'sub_total', 'Tổng giá trị là', '100,000 VNĐ', 100000.0000, 1),
+	(87, 43, 'total', 'Thành tiền', '100,000 VNĐ', 100000.0000, 9),
+	(88, 44, 'sub_total', 'Tổng giá trị là', '500,000 VNĐ', 500000.0000, 1),
+	(89, 44, 'total', 'Thành tiền', '500,000 VNĐ', 500000.0000, 9),
+	(90, 45, 'sub_total', 'Tổng giá trị là', '53 VNĐ', 53.0000, 1),
+	(91, 45, 'total', 'Thành tiền', '53 VNĐ', 53.0000, 9),
+	(92, 46, 'sub_total', 'Tổng giá trị là', '0 VNĐ', 0.0000, 1),
+	(93, 46, 'total', 'Thành tiền', '0 VNĐ', 0.0000, 9),
+	(94, 47, 'sub_total', 'Tổng giá trị là', '250,000 VNĐ', 250000.0000, 1),
+	(95, 47, 'total', 'Thành tiền', '250,000 VNĐ', 250000.0000, 9),
+	(96, 48, 'sub_total', 'Tổng giá trị là', '690,000 VNĐ', 690000.0000, 1),
+	(97, 48, 'total', 'Thành tiền', '690,000 VNĐ', 690000.0000, 9),
+	(98, 49, 'sub_total', 'Tổng giá trị là', '690,000 VNĐ', 690000.0000, 1),
+	(99, 49, 'total', 'Thành tiền', '690,000 VNĐ', 690000.0000, 9),
+	(100, 50, 'sub_total', 'Tổng giá trị là', '390,000 VNĐ', 390000.0000, 1),
+	(101, 50, 'total', 'Thành tiền', '390,000 VNĐ', 390000.0000, 9);
 /*!40000 ALTER TABLE `order_total` ENABLE KEYS */;
 
 
@@ -2285,21 +2351,22 @@ CREATE TABLE IF NOT EXISTS `product` (
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `viewed` int(5) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product: 19 rows
+-- Dumping data for table weorder.product: 36 rows
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `link`, `size`, `color`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-	(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'data/san_pham/IMG_3920-400x600.JPG', 5, 1, 500000.0000, 200, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:06:50', '2013-06-19 20:30:49', 95),
-	(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'data/demo/palm_treo_pro_1.jpg', 6, 1, 279.9900, 0, 9, '2009-02-03', 'http://www.geckofashion.vn', NULL, NULL, 133.00000000, 2, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0),
-	(30, 'Product 3', '', '', '', '', '', '', '', 5, 6, 'data/1-single-thumbnail.jpg', 9, 1, 690000.0000, 0, 0, '2009-02-03', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2013-06-19 20:35:38', 148),
-	(31, 'Product 4', '', '', '', '', '', '', '', 999, 6, 'data/san_pham/IMG_3958-400x600.JPG', 11, 1, 390000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2013-06-19 20:31:00', 11),
-	(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'data/demo/ipod_touch_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 'http://www.geckofashion.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 17:07:26', '2011-09-30 01:07:22', 0),
+	(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'data/san_pham/IMG_3920-400x600.JPG', 5, 1, 500000.0000, 200, 9, '2009-02-03', 'http://www.geckomedia.vn', 'M', 'Trắng', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:06:50', '2013-06-19 20:30:49', 95),
+	(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'data/demo/palm_treo_pro_1.jpg', 6, 1, 279.9900, 0, 9, '2009-02-03', 'http://www.geckofashion.vn', 'M', 'Trắng', 133.00000000, 2, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0),
+	(30, 'Product 3', '', '', '', '', '', '', '', 2, 6, 'data/1-single-thumbnail.jpg', 9, 1, 690000.0000, 0, 0, '2009-02-03', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2013-06-19 20:35:38', 149),
+	(31, 'Product 4', '', '', '', '', '', '', '', 998, 6, 'data/san_pham/IMG_3958-400x600.JPG', 11, 1, 390000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2013-06-19 20:31:00', 11),
+	(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'data/demo/ipod_touch_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 'http://www.geckofashion.vn', 'sdg', NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 17:07:26', '2011-09-30 01:07:22', 0),
 	(33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'data/demo/samsung_syncmaster_941bw.jpg', 0, 1, 200.0000, 0, 9, '2009-02-03', 'http://www.geckofashion.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 17:08:31', '2011-09-30 01:06:29', 0),
 	(34, 'Product 7', '', '', '', '', '', '', '', 1000, 6, 'data/demo/ipod_shuffle_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 'http://www.geckofashion.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:07:54', '2011-09-30 01:07:17', 0),
-	(35, 'Product 8', '', '', '', '', '', '', '', 1000, 5, '', 0, 0, 100.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 18:08:31', '2011-09-30 01:06:17', 0),
+	(76, '', '', '', '', '', '', '', '', 0, 0, NULL, 0, 0, 0.0000, 0, 0, '0000-00-00', '', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 21:12:17', '0000-00-00 00:00:00', 0),
+	(77, '', '', '', '', '', '', '', '', 0, 0, NULL, 0, 0, 0.0000, 0, 0, '0000-00-00', '', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 21:12:21', '0000-00-00 00:00:00', 0),
 	(36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'data/demo/ipod_nano_1.jpg', 8, 0, 100.0000, 100, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:09:19', '2011-09-30 01:07:12', 0),
-	(40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'data/san_pham/IMG_3935-400x600.JPG', 8, 1, 652000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 10.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:12', '2013-06-19 20:31:31', 4),
+	(40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'data/san_pham/IMG_3935-400x600.JPG', 8, 1, 652000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', 'M', 'Đỏ', 10.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:12', '2013-06-19 20:31:31', 4),
 	(41, 'Product 14', '', '', '', '', '', '', '', 964, 5, 'data/san_pham/IMG_4003-400x600.JPG', 9, 1, 650000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:26', '2013-06-19 20:30:55', 4),
 	(42, 'Product 15', '', '', '', '', '', '', '', 98, 5, 'data/san_pham/IMG_3909-400x600 (1).JPG', 13, 1, 750000.0000, 400, 9, '2009-02-04', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 1.00000000, 2.00000000, 3.00000000, 1, 1, 2, 0, 1, '2009-02-03 21:07:37', '2013-06-19 20:34:34', 25),
 	(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'data/demo/macbook_1.jpg', 8, 0, 500.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:07:49', '2011-09-30 01:05:46', 0),
@@ -2308,7 +2375,49 @@ INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`
 	(46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'data/demo/sony_vaio_1.jpg', 10, 1, 1000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:29', '2011-09-30 01:06:39', 0),
 	(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'data/san_pham/IMG_3917-400x600 (1).JPG', 8, 1, 100.0000, 400, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 0, 1, '2009-02-03 21:08:40', '2013-06-19 20:34:38', 6),
 	(48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'data/demo/ipod_classic_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-08', 'http://www.geckomedia.vn', NULL, NULL, 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-08 17:21:51', '2011-09-30 01:07:06', 0),
-	(49, 'SAM1', '', '', '', '', '', '', '', 0, 8, 'data/demo/samsung_tab_1.jpg', 0, 1, 199.9900, 0, 9, '2011-04-25', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23', 7);
+	(49, 'SAM1', '', '', '', '', '', '', '', 0, 8, 'data/demo/samsung_tab_1.jpg', 0, 1, 199.9900, 0, 9, '2011-04-25', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23', 7),
+	(50, '', '', '', '', '', '', '', '', 1, 0, NULL, 0, 0, 450000.0000, 0, 0, '0000-00-00', 'http://www.dantri.vn', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 0, '2013-06-20 23:58:26', '0000-00-00 00:00:00', 0),
+	(51, '', '', '', '', '', '', '', '', 0, 0, NULL, 0, 0, 0.0000, 0, 0, '0000-00-00', '', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 0, '2013-06-22 00:25:32', '0000-00-00 00:00:00', 0),
+	(52, '', '', '', '', '', '', '', '', 22, 0, NULL, 0, 0, 235532.0000, 0, 0, '0000-00-00', '6436436', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 0, '2013-06-22 00:31:11', '0000-00-00 00:00:00', 0),
+	(53, '', '', '', '', '', '', '', '', 22, 0, NULL, 0, 0, 235532.0000, 0, 0, '0000-00-00', '6436436', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 0, '2013-06-22 00:32:56', '0000-00-00 00:00:00', 0),
+	(54, '', '', '', '', '', '', '', '', 33, 0, NULL, 0, 0, 3463.0000, 0, 0, '0000-00-00', '345346346', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 0, '2013-06-22 00:33:30', '0000-00-00 00:00:00', 0),
+	(55, '', '', '', '', '', '', '', '', 10, 0, NULL, 0, 0, 12000.0000, 0, 0, '0000-00-00', 'http://dantri.vn', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 00:35:47', '0000-00-00 00:00:00', 0),
+	(56, '', '', '', '', '', '', '', '', 0, 0, NULL, 0, 0, 0.0000, 0, 0, '0000-00-00', '', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 00:36:17', '0000-00-00 00:00:00', 0),
+	(57, '', '', '', '', '', '', '', '', 0, 0, NULL, 0, 0, 0.0000, 0, 0, '0000-00-00', '', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 00:36:25', '0000-00-00 00:00:00', 0),
+	(58, '', '', '', '', '', '', '', '', 0, 0, NULL, 0, 0, 0.0000, 0, 0, '0000-00-00', '', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 00:36:39', '0000-00-00 00:00:00', 0),
+	(59, '', '', '', '', '', '', '', '', 1, 0, NULL, 0, 0, 2500000.0000, 0, 0, '0000-00-00', 'http://link.com', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 00:38:01', '0000-00-00 00:00:00', 0),
+	(62, '', '', '', '', '', '', '', '', 74, 0, NULL, 0, 0, 0.0000, 0, 0, '0000-00-00', 'nhjhf', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 01:14:58', '0000-00-00 00:00:00', 0),
+	(63, '', '', '', '', '', '', '', '', 325, 0, NULL, 0, 0, 23523523.0000, 0, 0, '0000-00-00', 'dd', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 01:15:56', '0000-00-00 00:00:00', 0),
+	(64, '', '', '', '', '', '', '', '', 325, 0, NULL, 0, 0, 23523523.0000, 0, 0, '0000-00-00', 'dd', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 01:16:59', '0000-00-00 00:00:00', 0),
+	(75, '', '', '', '', '', '', '', '', 0, 0, NULL, 0, 0, 0.0000, 0, 0, '0000-00-00', '', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 21:12:17', '0000-00-00 00:00:00', 0),
+	(74, '', '', '', '', '', '', '', '', 0, 0, NULL, 0, 0, 0.0000, 0, 0, '0000-00-00', '', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 21:10:47', '0000-00-00 00:00:00', 0),
+	(67, '', '', '', '', '', '', '', '', 1, 0, NULL, 0, 0, 150000.0000, 0, 0, '0000-00-00', 'http://www.dantri.vn', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 01:24:19', '0000-00-00 00:00:00', 0),
+	(78, '', '', '', '', '', '', '', '', 1, 0, NULL, 0, 0, 1450000.0000, 0, 0, '0000-00-00', 'testing.com', 'L', 'Trắng', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 21:35:50', '0000-00-00 00:00:00', 0),
+	(69, '', '', '', '', '', '', '', '', 1, 0, NULL, 0, 0, 250000.0000, 0, 0, '0000-00-00', 'http://link', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 01:26:04', '0000-00-00 00:00:00', 0),
+	(70, '', '', '', '', '', '', '', '', 1, 0, NULL, 0, 0, 500000.0000, 0, 0, '0000-00-00', 'httP://www.test.com', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 01:26:43', '0000-00-00 00:00:00', 0),
+	(73, '', '', '', '', '', '', '', '', 0, 0, NULL, 0, 0, 0.0000, 0, 0, '0000-00-00', '', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 22:45:48', '0000-00-00 00:00:00', 0),
+	(72, '', '', '', '', '', '', '', '', 1, 0, NULL, 0, 0, 250000.0000, 0, 0, '0000-00-00', 'http://www.dantri.vn', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 22:27:12', '0000-00-00 00:00:00', 1),
+	(79, '', '', '', '', '', '', '', '', 2, 0, 'data/no_image.jpg', 0, 0, 250000.0000, 0, 0, '0000-00-00', 'http://www.dantri.vn', 'S', 'Trắng', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 22:45:23', '0000-00-00 00:00:00', 1),
+	(80, '', '', '', '', '', '', '', '', 0, 0, 'data/no_image.jpg', 0, 0, 0.0000, 0, 0, '0000-00-00', 'dsg', 'dsg', '', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 22:51:52', '0000-00-00 00:00:00', 0),
+	(81, '', '', '', '', '', '', '', '', 23, 0, 'data/no_image.jpg', 0, 0, 23.0000, 0, 0, '0000-00-00', 'dsgsd', '235', '53', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 22:52:05', '0000-00-00 00:00:00', 0),
+	(82, '', '', '', '', '', '', '', '', 0, 0, 'data/no_image.jpg', 0, 0, 0.0000, 0, 0, '0000-00-00', 'sdg', '523', 'gsd', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 22:52:44', '0000-00-00 00:00:00', 0),
+	(83, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 235.0000, 0, 0, '0000-00-00', 'sdg', '23', 'gsd', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 22:52:52', '0000-00-00 00:00:00', 0),
+	(84, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 0.0000, 0, 0, '0000-00-00', 'dsg', 'sgd', 'sgd', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 22:54:39', '0000-00-00 00:00:00', 0),
+	(85, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 352.0000, 0, 0, '0000-00-00', '2352', 'dgsgs', '235', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 22:54:51', '0000-00-00 00:00:00', 0),
+	(86, '', '', '', '', '', '', '', '', 0, 0, 'data/no_image.jpg', 0, 0, 6234.0000, 0, 0, '0000-00-00', 'dsg', 'sag', '', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 23:01:05', '0000-00-00 00:00:00', 0),
+	(87, '', '', '', '', '', '', '', '', 0, 0, 'data/no_image.jpg', 0, 0, 0.0000, 0, 0, '0000-00-00', 'dsg', 'sdg', '', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 23:01:35', '0000-00-00 00:00:00', 0),
+	(88, '', '', '', '', '', '', '', '', 0, 0, 'data/no_image.jpg', 0, 0, 0.0000, 0, 0, '0000-00-00', 'dsgsdgsdgd', 'dsg', '', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 23:01:46', '0000-00-00 00:00:00', 0),
+	(89, '', '', '', '', '', '', '', '', 12, 0, 'data/no_image.jpg', 0, 0, 235235.0000, 0, 0, '0000-00-00', 'dsgds', 'gsdgdsg', '', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 23:04:09', '0000-00-00 00:00:00', 0),
+	(90, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 250000.0000, 0, 0, '0000-00-00', 'http://www.dantri.vn', 'M', 'Trắng', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 23:04:30', '0000-00-00 00:00:00', 0),
+	(91, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 200000.0000, 0, 0, '0000-00-00', 'www.dantri.vn', 'L', 'Tím', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 23:59:24', '0000-00-00 00:00:00', 0),
+	(92, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 2005.0000, 0, 0, '0000-00-00', 'dantr.vin', 'M', 'Do', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-24 00:00:07', '0000-00-00 00:00:00', 0),
+	(93, '', '', '', '', '', '', '', '', 2, 0, 'data/no_image.jpg', 0, 0, 50000.0000, 0, 0, '0000-00-00', 'link', 'size', 'mau', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-24 00:02:43', '0000-00-00 00:00:00', 0),
+	(94, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 250000.0000, 0, 0, '0000-00-00', 'Link', 'size', 'mau', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-24 00:05:38', '0000-00-00 00:00:00', 0),
+	(95, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 0.0000, 0, 0, '0000-00-00', 'link', 'size', 'mau', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-24 00:05:50', '0000-00-00 00:00:00', 0),
+	(96, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 250000.0000, 0, 0, '0000-00-00', 'link', 'size', 'color', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-24 00:06:50', '0000-00-00 00:00:00', 0),
+	(97, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 53.0000, 0, 0, '0000-00-00', 'sdgsd', 'dg', 'dsg2', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-24 00:08:58', '0000-00-00 00:00:00', 0),
+	(98, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 0.0000, 0, 0, '0000-00-00', 'dg', 'fdh', 'dfh', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-24 00:11:27', '0000-00-00 00:00:00', 0),
+	(99, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 250000.0000, 0, 0, '0000-00-00', 'link sản phẩm', 'size', 'Color', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-24 00:12:23', '0000-00-00 00:00:00', 0);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 
@@ -2343,10 +2452,10 @@ CREATE TABLE IF NOT EXISTS `product_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_description: 19 rows
+-- Dumping data for table weorder.product_description: 25 rows
 /*!40000 ALTER TABLE `product_description` DISABLE KEYS */;
 INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `description`, `sort_description`, `meta_description`, `meta_keyword`, `tag`) VALUES
-	(35, 2, 'Product 8', '&lt;p&gt;\r\n	Product 8&lt;/p&gt;\r\n', '', '', '', ''),
+	(76, 2, '', '', '', '', '', ''),
 	(48, 2, 'iPod Classic', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', '', ''),
 	(40, 2, 'Áo phông 3', '&lt;p class=&quot;intro&quot;&gt;iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.&lt;/p&gt;\r\n', '', '', '', ''),
 	(28, 2, 'Áo phông 1', '&lt;p&gt;HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Processor Qualcomm® MSM 7201A™ 528 MHz&lt;/li&gt;\r\n	&lt;li&gt;Windows Mobile® 6.1 Professional Operating System&lt;/li&gt;\r\n	&lt;li&gt;Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\r\n	&lt;li&gt;Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\r\n	&lt;li&gt;3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\r\n	&lt;li&gt;HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\r\n	&lt;li&gt;Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\r\n	&lt;li&gt;Device Control via HTC TouchFLO™ 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\r\n	&lt;li&gt;GPS and A-GPS ready&lt;/li&gt;\r\n	&lt;li&gt;Bluetooth® 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\r\n	&lt;li&gt;Wi-Fi®: IEEE 802.11 b/g&lt;/li&gt;\r\n	&lt;li&gt;HTC ExtUSB™ (11-pin mini-USB 2.0)&lt;/li&gt;\r\n	&lt;li&gt;5 megapixel color camera with auto focus&lt;/li&gt;\r\n	&lt;li&gt;VGA CMOS color camera&lt;/li&gt;\r\n	&lt;li&gt;Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\r\n	&lt;li&gt;Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\r\n	&lt;li&gt;40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\r\n	&lt;li&gt;Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\r\n	&lt;li&gt;Expansion Slot: microSD™ memory card (SD 2.0 compatible)&lt;/li&gt;\r\n	&lt;li&gt;AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\r\n	&lt;li&gt;Special Features: FM Radio, G-Sensor&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '', '', ''),
@@ -2364,7 +2473,39 @@ INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `descrip
 	(31, 2, 'Áo phông 3', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n&lt;div&gt;Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon\'s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n&lt;br /&gt;\r\nSimilar to the D3, the D300 features Nikon\'s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera\'s new features. The D300 features a new 51-point autofocus system with Nikon\'s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera\'s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n&lt;br /&gt;\r\nThe D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n&lt;br /&gt;\r\nThe D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon\'s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', '', ''),
 	(49, 2, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world&amp;rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &amp;ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &amp;ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&amp;rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &amp;ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;&amp;auml;&amp;ouml;&lt;/p&gt;\r\n', '', '', '', ''),
 	(42, 2, 'Áo sơ mi 1', '&lt;p&gt;&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there\'s no limit to what you can achieve. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it\'s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple\'s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;\r\n\r\n&lt;h3&gt;Features:&lt;/h3&gt;\r\n\r\n&lt;p&gt;Unrivaled display performance&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n	&lt;li&gt;Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n	&lt;li&gt;Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n	&lt;li&gt;Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n	&lt;li&gt;Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n	&lt;li&gt;Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n	&lt;li&gt;Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Simple setup and operation&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Single cable with elegant breakout for connection to DVI, USB and FireWire ports&lt;/li&gt;\r\n	&lt;li&gt;Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n	&lt;li&gt;Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Sleek, elegant design&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n	&lt;li&gt;Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n	&lt;li&gt;Unique hinge design for effortless adjustment&lt;/li&gt;\r\n	&lt;li&gt;Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;h3&gt;Technical specifications&lt;/h3&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen size (diagonal viewable image size)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen type&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Resolutions&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n	&lt;li&gt;2048 x 1280&lt;/li&gt;\r\n	&lt;li&gt;1920 x 1200&lt;/li&gt;\r\n	&lt;li&gt;1280 x 800&lt;/li&gt;\r\n	&lt;li&gt;1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Display colors (maximum)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Viewing angle (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;170° horizontal; 170° vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Brightness (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Contrast ratio (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Response time (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Pixel pitch&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen treatment&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;User controls (hardware and software)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Display Power,&lt;/li&gt;\r\n	&lt;li&gt;System sleep, wake&lt;/li&gt;\r\n	&lt;li&gt;Brightness&lt;/li&gt;\r\n	&lt;li&gt;Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Connectors and cables&lt;/b&gt;&lt;br /&gt;\r\nCable&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;DVI (Digital Visual Interface)&lt;/li&gt;\r\n	&lt;li&gt;FireWire 400&lt;/li&gt;\r\n	&lt;li&gt;USB 2.0&lt;/li&gt;\r\n	&lt;li&gt;DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Connectors&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n	&lt;li&gt;Two FireWire 400 ports&lt;/li&gt;\r\n	&lt;li&gt;Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;VESA mount adapter&lt;/b&gt;&lt;br /&gt;\r\nRequires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Electrical requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n	&lt;li&gt;Maximum power when operating: 150W&lt;/li&gt;\r\n	&lt;li&gt;Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Environmental requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Operating temperature: 50° to 95° F (10° to 35° C)&lt;/li&gt;\r\n	&lt;li&gt;Storage temperature: -40° to 116° F (-40° to 47° C)&lt;/li&gt;\r\n	&lt;li&gt;Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n	&lt;li&gt;Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Agency approvals&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;FCC Part 15 Class B&lt;/li&gt;\r\n	&lt;li&gt;EN55022 Class B&lt;/li&gt;\r\n	&lt;li&gt;EN55024&lt;/li&gt;\r\n	&lt;li&gt;VCCI Class B&lt;/li&gt;\r\n	&lt;li&gt;AS/NZS 3548 Class B&lt;/li&gt;\r\n	&lt;li&gt;CNS 13438 Class B&lt;/li&gt;\r\n	&lt;li&gt;ICES-003 Class B&lt;/li&gt;\r\n	&lt;li&gt;ISO 13406 part 2&lt;/li&gt;\r\n	&lt;li&gt;MPR II&lt;/li&gt;\r\n	&lt;li&gt;IEC 60950&lt;/li&gt;\r\n	&lt;li&gt;UL 60950&lt;/li&gt;\r\n	&lt;li&gt;CSA 60950&lt;/li&gt;\r\n	&lt;li&gt;EN60950&lt;/li&gt;\r\n	&lt;li&gt;ENERGY STAR&lt;/li&gt;\r\n	&lt;li&gt;TCO \'03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Size and weight&lt;/b&gt;&lt;br /&gt;\r\n30-inch Apple Cinema HD Display&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n	&lt;li&gt;Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n	&lt;li&gt;Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n	&lt;li&gt;Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;System Requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mac Pro, all graphic options&lt;/li&gt;\r\n	&lt;li&gt;MacBook Pro&lt;/li&gt;\r\n	&lt;li&gt;Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n	&lt;li&gt;Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n	&lt;li&gt;PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n	&lt;li&gt;Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;div class=&quot;prm mts fsm clearfix strong estimated-delivery&quot;&gt;&lt;strong&gt;&lt;span&gt;Sẽ có tại nhà bạn&lt;/span&gt; &lt;span id=&quot;estimated_delivery_time&quot;&gt;trong 3 - 5 ngày làm việc&lt;/span&gt;&lt;/strong&gt;&lt;/div&gt;\r\n\r\n&lt;div class=&quot;prm mts fsm txtGray clearfix&quot;&gt;\r\n&lt;p&gt;Với thiết kế nhiều ngăn tiện dụng cùng kiểu dáng trẻ trung, ba lô củawesale&lt;/p&gt;\r\n\r\n&lt;p&gt;sẽ mang đến cho bạn vẻ ngoài năng động, khỏe khoắn và cá tính. Hãy kết hợp ba lô&lt;/p&gt;\r\n\r\n&lt;p&gt;với những bộ trang phục hợp thời trang để trở nên cuốn hút và nổi bật hơn bao giờ hết.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', ''),
-	(30, 2, 'Áo cánh mỏng', '&lt;p&gt;Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...)&lt;/p&gt;\r\n', '&lt;div class=&quot;box prm mts fsm clearfix strong estimated-delivery&quot;&gt;&lt;span&gt;Sẽ có tại nhà bạn&lt;/span&gt; &lt;span id=&quot;estimated_delivery_time&quot;&gt;trong 3 - 5 ngày làm việc&lt;/span&gt;&lt;/div&gt;\r\n\r\n&lt;div class=&quot;box prm mts fsm txtGray clearfix&quot;&gt;\r\n&lt;p&gt;Với thiết kế nhiều ngăn tiện dụng cùng kiểu dáng trẻ trung, ba lô củawesale&lt;/p&gt;\r\n\r\n&lt;p&gt;sẽ mang đến cho bạn vẻ ngoài năng động, khỏe khoắn và cá tính. Hãy kết hợp ba lô&lt;/p&gt;\r\n\r\n&lt;p&gt;với những bộ trang phục hợp thời trang để trở nên cuốn hút và nổi bật hơn bao giờ hết.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', '');
+	(30, 2, 'Áo cánh mỏng', '&lt;p&gt;Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...)&lt;/p&gt;\r\n', '&lt;div class=&quot;box prm mts fsm clearfix strong estimated-delivery&quot;&gt;&lt;span&gt;Sẽ có tại nhà bạn&lt;/span&gt; &lt;span id=&quot;estimated_delivery_time&quot;&gt;trong 3 - 5 ngày làm việc&lt;/span&gt;&lt;/div&gt;\r\n\r\n&lt;div class=&quot;box prm mts fsm txtGray clearfix&quot;&gt;\r\n&lt;p&gt;Với thiết kế nhiều ngăn tiện dụng cùng kiểu dáng trẻ trung, ba lô củawesale&lt;/p&gt;\r\n\r\n&lt;p&gt;sẽ mang đến cho bạn vẻ ngoài năng động, khỏe khoắn và cá tính. Hãy kết hợp ba lô&lt;/p&gt;\r\n\r\n&lt;p&gt;với những bộ trang phục hợp thời trang để trở nên cuốn hút và nổi bật hơn bao giờ hết.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', ''),
+	(77, 2, '', '', '', '', '', ''),
+	(78, 2, 'testin', '', '', '', '', ''),
+	(79, 2, 'Testing', '', '', '', '', ''),
+	(80, 2, 'dsgds', '', '', '', '', ''),
+	(81, 2, 'dsg', '', '', '', '', ''),
+	(82, 2, 'sdg', '', '', '', '', ''),
+	(83, 2, 'gds', '', '', '', '', ''),
+	(84, 2, 'sdg', '', '', '', '', ''),
+	(85, 2, 'ewt', '', '', '', '', ''),
+	(86, 2, 'sdgsdg', '', '', '', '', ''),
+	(87, 2, 'sdg', '', '', '', '', ''),
+	(88, 2, 'dsg', '', '', '', '', ''),
+	(89, 2, 'gsdgsd', '', '', '', '', ''),
+	(90, 2, 'Testing', '', '', '', '', ''),
+	(91, 2, 'Testing', '', '', '', '', ''),
+	(92, 2, 'Test2', '', '', '', '', ''),
+	(93, 2, 'name', '', '', '', '', ''),
+	(94, 2, 'Name', '', '', '', '', ''),
+	(95, 2, 'name', '', '', '', '', ''),
+	(96, 2, 'name', '', '', '', '', ''),
+	(97, 2, 'sdg', '', '', '', '', ''),
+	(98, 2, 'dhdfhd', '', '', '', '', ''),
+	(99, 2, 'Sản phẩm', '', '', '', '', ''),
+	(63, 2, 'sđ', '', '', '', '', ''),
+	(64, 2, 'sđ', '', '', '', '', ''),
+	(75, 2, '', '', '', '', '', ''),
+	(74, 2, '', '', '', '', '', ''),
+	(67, 2, 'Testing', '', '', '', '', ''),
+	(69, 2, 'Testing', '', '', '', '', ''),
+	(70, 2, 'Sơn Trần', '', '', '', '', ''),
+	(73, 2, '', '', '', '', '', ''),
+	(72, 2, 'Testing', '', '', '', '', '');
 /*!40000 ALTER TABLE `product_description` ENABLE KEYS */;
 
 
@@ -2513,12 +2654,8 @@ CREATE TABLE IF NOT EXISTS `product_option_value` (
   PRIMARY KEY (`product_option_value_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_option_value: 3 rows
+-- Dumping data for table weorder.product_option_value: 0 rows
 /*!40000 ALTER TABLE `product_option_value` DISABLE KEYS */;
-INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
-	(12, 224, 35, 11, 46, 0, 1, 5.0000, '+', 0, '+', 0.00000000, '+'),
-	(13, 224, 35, 11, 47, 10, 1, 10.0000, '+', 0, '+', 0.00000000, '+'),
-	(14, 224, 35, 11, 48, 15, 1, 15.0000, '+', 0, '+', 0.00000000, '+');
 /*!40000 ALTER TABLE `product_option_value` ENABLE KEYS */;
 
 
@@ -2548,7 +2685,7 @@ CREATE TABLE IF NOT EXISTS `product_reward` (
   PRIMARY KEY (`product_reward_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=606 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_reward: 19 rows
+-- Dumping data for table weorder.product_reward: 18 rows
 /*!40000 ALTER TABLE `product_reward` DISABLE KEYS */;
 INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
 	(602, 42, 1, 100),
@@ -2562,7 +2699,6 @@ INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group
 	(331, 44, 1, 700),
 	(333, 45, 1, 800),
 	(595, 31, 1, 0),
-	(425, 35, 1, 0),
 	(345, 33, 1, 0),
 	(347, 46, 1, 0),
 	(594, 41, 1, 0),
@@ -2614,7 +2750,27 @@ INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 	(42, 33),
 	(42, 61),
 	(47, 33),
-	(47, 61);
+	(47, 61),
+	(80, 0),
+	(81, 0),
+	(82, 66),
+	(83, 66),
+	(84, 66),
+	(85, 66),
+	(86, 66),
+	(87, 66),
+	(88, 66),
+	(89, 66),
+	(90, 66),
+	(91, 66),
+	(92, 66),
+	(93, 66),
+	(94, 66),
+	(95, 66),
+	(96, 66),
+	(97, 66),
+	(98, 66),
+	(99, 66);
 /*!40000 ALTER TABLE `product_to_category` ENABLE KEYS */;
 
 
@@ -2650,7 +2806,7 @@ CREATE TABLE IF NOT EXISTS `product_to_store` (
   PRIMARY KEY (`product_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_to_store: 19 rows
+-- Dumping data for table weorder.product_to_store: 26 rows
 /*!40000 ALTER TABLE `product_to_store` DISABLE KEYS */;
 INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 	(28, 0),
@@ -2660,7 +2816,6 @@ INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 	(32, 0),
 	(33, 0),
 	(34, 0),
-	(35, 0),
 	(36, 0),
 	(40, 0),
 	(41, 0),
@@ -2671,7 +2826,41 @@ INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 	(46, 0),
 	(47, 0),
 	(48, 0),
-	(49, 0);
+	(49, 0),
+	(62, 0),
+	(63, 0),
+	(64, 0),
+	(67, 0),
+	(69, 0),
+	(70, 0),
+	(72, 0),
+	(73, 0),
+	(74, 0),
+	(75, 0),
+	(76, 0),
+	(77, 0),
+	(78, 0),
+	(79, 0),
+	(80, 0),
+	(81, 0),
+	(82, 0),
+	(83, 0),
+	(84, 0),
+	(85, 0),
+	(86, 0),
+	(87, 0),
+	(88, 0),
+	(89, 0),
+	(90, 0),
+	(91, 0),
+	(92, 0),
+	(93, 0),
+	(94, 0),
+	(95, 0),
+	(96, 0),
+	(97, 0),
+	(98, 0),
+	(99, 0);
 /*!40000 ALTER TABLE `product_to_store` ENABLE KEYS */;
 
 
@@ -2804,7 +2993,7 @@ CREATE TABLE IF NOT EXISTS `setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4032 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4046 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.setting: 144 rows
 /*!40000 ALTER TABLE `setting` DISABLE KEYS */;
@@ -2816,12 +3005,10 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(5, 0, 'total', 'total_sort_order', '9', 0),
 	(6, 0, 'total', 'total_status', '1', 0),
 	(7, 0, 'tax', 'tax_sort_order', '5', 0),
-	(8, 0, 'free_checkout', 'free_checkout_sort_order', '1', 0),
-	(9, 0, 'cod', 'cod_sort_order', '5', 0),
-	(10, 0, 'cod', 'cod_total', '0.01', 0),
-	(11, 0, 'cod', 'cod_order_status_id', '1', 0),
-	(12, 0, 'cod', 'cod_geo_zone_id', '0', 0),
-	(13, 0, 'cod', 'cod_status', '1', 0),
+	(4045, 0, 'free_checkout', 'free_checkout_sort_order', '2', 0),
+	(4040, 0, 'cod', 'cod_geo_zone_id', '0', 0),
+	(4039, 0, 'cod', 'cod_order_status_id', '1', 0),
+	(4038, 0, 'cod', 'cod_total', '0.01', 0),
 	(14, 0, 'shipping', 'shipping_status', '1', 0),
 	(15, 0, 'shipping', 'shipping_estimator', '1', 0),
 	(27, 0, 'coupon', 'coupon_sort_order', '4', 0),
@@ -2842,8 +3029,8 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(4031, 0, 'account', 'account_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"6";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 	(95, 0, 'voucher', 'voucher_status', '1', 0),
-	(103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
-	(104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
+	(4044, 0, 'free_checkout', 'free_checkout_status', '1', 0),
+	(4043, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
 	(109, 0, 'banner', 'banner_module', 'a:1:{i:0;a:8:{s:9:"banner_id";s:1:"6";s:5:"width";s:3:"182";s:6:"height";s:3:"182";s:11:"resize_type";s:7:"default";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
 	(4013, 0, 'config', 'config_fraud_key', '', 0),
 	(4014, 0, 'config', 'config_fraud_score', '', 0),
@@ -2952,7 +3139,15 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(4026, 0, 'config', 'config_error_display', '1', 0),
 	(4027, 0, 'config', 'config_error_log', '1', 0),
 	(4028, 0, 'config', 'config_error_filename', 'error.txt', 0),
-	(4029, 0, 'config', 'config_google_analytics', '', 0);
+	(4029, 0, 'config', 'config_google_analytics', '', 0),
+	(4032, 0, 'bank_transfer', 'bank_transfer_bank_2', 'Thông tin ngân hàng', 0),
+	(4033, 0, 'bank_transfer', 'bank_transfer_total', '', 0),
+	(4034, 0, 'bank_transfer', 'bank_transfer_order_status_id', '1', 0),
+	(4035, 0, 'bank_transfer', 'bank_transfer_geo_zone_id', '0', 0),
+	(4036, 0, 'bank_transfer', 'bank_transfer_status', '1', 0),
+	(4037, 0, 'bank_transfer', 'bank_transfer_sort_order', '3', 0),
+	(4041, 0, 'cod', 'cod_status', '1', 0),
+	(4042, 0, 'cod', 'cod_sort_order', '1', 0);
 /*!40000 ALTER TABLE `setting` ENABLE KEYS */;
 
 
@@ -3067,9 +3262,9 @@ CREATE TABLE IF NOT EXISTS `url_alias` (
   `query` varchar(255) NOT NULL,
   `keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`url_alias_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=875 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=877 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.url_alias: 34 rows
+-- Dumping data for table weorder.url_alias: 35 rows
 /*!40000 ALTER TABLE `url_alias` DISABLE KEYS */;
 INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(704, 'product_id=48', 'ipod_classic'),
@@ -3105,7 +3300,8 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(859, 'manufacturer_id=6', 'adidas'),
 	(860, 'manufacturer_id=11', 'tommy-hilfiger'),
 	(861, 'manufacturer_id=12', 'armani'),
-	(862, 'manufacturer_id=13', 'phan-nguyen');
+	(862, 'manufacturer_id=13', 'phan-nguyen'),
+	(876, 'category_id=66', 'nguoi-dung-tao');
 /*!40000 ALTER TABLE `url_alias` ENABLE KEYS */;
 
 
@@ -3144,7 +3340,7 @@ CREATE TABLE IF NOT EXISTS `user_group` (
 -- Dumping data for table weorder.user_group: 2 rows
 /*!40000 ALTER TABLE `user_group` DISABLE KEYS */;
 INSERT INTO `user_group` (`user_group_id`, `name`, `permission`) VALUES
-	(1, 'Top Administrator', 'a:2:{s:6:"access";a:138:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";i:136;s:19:"module/filteroption";i:137;s:13:"module/viewed";}s:6:"modify";a:138:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";i:136;s:19:"module/filteroption";i:137;s:13:"module/viewed";}}'),
+	(1, 'Top Administrator', 'a:2:{s:6:"access";a:140:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";i:136;s:19:"module/filteroption";i:137;s:13:"module/viewed";i:138;s:13:"shipping/free";i:139;s:21:"payment/bank_transfer";}s:6:"modify";a:140:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";i:136;s:19:"module/filteroption";i:137;s:13:"module/viewed";i:138;s:13:"shipping/free";i:139;s:21:"payment/bank_transfer";}}'),
 	(10, 'Demonstration', '');
 /*!40000 ALTER TABLE `user_group` ENABLE KEYS */;
 
@@ -3265,7 +3461,7 @@ CREATE TABLE IF NOT EXISTS `zone` (
   PRIMARY KEY (`zone_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4033 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.zone: 3,985 rows
+-- Dumping data for table weorder.zone: 3.985 rows
 /*!40000 ALTER TABLE `zone` DISABLE KEYS */;
 INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 	(1, 1, 'Badakhshan', 'BDS', 1),
@@ -7273,5 +7469,6 @@ INSERT INTO `zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, 
 	(57, 222, 0, 3, '2010-02-26 22:33:24', '0000-00-00 00:00:00'),
 	(65, 222, 0, 4, '2010-12-15 15:18:13', '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `zone_to_geo_zone` ENABLE KEYS */;
-/*!40014 SET FOREIGN_KEY_CHECKS=1 */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
