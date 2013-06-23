@@ -14,7 +14,7 @@
             </th>
             <th width="15%" align="center" valign="middle" class="boder-1 v_center"><?php echo $order['total']; ?></th>
             <th width="10%" align="center" valign="middle" class="boder-1 v_center"><?php echo $order['products']; ?></th>
-            <th width="20%" align="center" valign="middle" class="boder-1 v_center"><span id="tt"><?php echo $order_status[$order['status']]; ?></span></th>
+            <th width="20%" align="center" valign="middle" class="boder-1 v_center"><span id="tt"><?php echo $order['status']; ?></span></th>
             <th width="*" align="center" valign="middle" class="boder-1 v_center"><a href="<?php echo $order['href']; ?>">Chi tiết</a></th>
         </tr>
         <?php

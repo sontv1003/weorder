@@ -99,9 +99,9 @@
                                 <?php if ($product['reward']) { ?>
                                     <small><?php echo $product['reward']; ?></small>
                                 <?php } ?></td>
-                            <td class="link"><input type="text" name="link" value="<?php echo $product['link']; ?>" /></td>
-                            <td class="size"><input type="text" name="size" value="" style="width: 50px" /></td>
-                            <td class="color"><input type="text" name="color" value="" style="width: 50px" /></td>
+                            <td class="link"><input type="text" name="link[<?php echo $product['key']; ?>]" value="<?php echo $product['link']; ?>" /></td>
+                            <td class="size"><input type="text" name="size[<?php echo $product['key']; ?>]" value="<?php echo $product['size']; ?>" style="width: 50px" /></td>
+                            <td class="color"><input type="text" name="color[<?php echo $product['key']; ?>]" value="<?php echo $product['color']; ?>" style="width: 50px" /></td>
                             <td class="quantity">
                                 <input style="float: left; margin-right: 10px;" type="text" name="quantity[<?php echo $product['key']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" />
                                 &nbsp;
@@ -134,23 +134,23 @@
     <div id="order_products_frm" style="margin-bottom: 20px; border: 1px solid #ccc; padding: 10px 0px">
         <table width="100%" style="border-collapse: collapse;" border="1">
             <tr>
-                <td class="image" width="10%">
-                    <!--<input type="" class="cbProdutct" value="<?php echo $product['key'] ?>"/>-->
-                </td>
-                <td class="name" width="15%">
-                    <input type="text" name="order_name" id="order_name" value="" placeholder="Tên sản phẩm" /></td>
+<!--                <td class="image" width="10%">
+                    <input type="" class="cbProdutct" value="<?php echo $product['key'] ?>"/>
+                </td>-->
+                <td class="name" width="15%" style="padding-left: 15px;">
+                    <input type="text" size="100" name="order_name" id="order_name" value="" placeholder="Tên sản phẩm" /></td>
                 </td>
                 <td class="link" width="*">
-                    <input type="text" name="order_link" id="order_link" value="" placeholder="Link của sản phẩm" /></td>
+                    <input type="text" size="500" name="order_link" id="order_link" value="" placeholder="Link của sản phẩm" /></td>
                 <td class="size" width="8%">
-                    <input type="text" name="order_size" id="order_size" value="" placeholder="Size"/></td>
+                    <input type="text" size="50" name="order_size" id="order_size" value="" placeholder="Size"/></td>
                 <td class="color" width="10%">
-                    <input type="text" name="order_color" id="order_color" value="" placeholder="Màu" />
+                    <input type="text" size="50" name="order_color" id="order_color" value="" placeholder="Màu" />
                 </td>
                 <td class="quantity" width="8%">
-                    <input type="text" name="order_quantity" id="order_quantity" value="" placeholder="Số lượng" />
+                    <input type="text" size="2" name="order_quantity" id="order_quantity" value="" placeholder="Số lượng" />
                 </td>
-                <td class="price" width="10%"><input type="text" value="" name="order_price" id="order_price" placeholder="Đơn giá" /></td>
+                <td class="price" width="10%"><input type="text" size="10" value="" name="order_price" id="order_price" placeholder="Đơn giá" /></td>
                 <td class="total" width="10%"><input type="text" value="" name="order_total" id="order_total" placeholder="Thành tiền" /></td>
                 <td class="order_submit" width="8%"><input type="button" value="Thêm vào giỏ" name="add_order_product" id="add_order_product" /></td>
             </tr>
@@ -159,7 +159,8 @@
     <div class="clear"></div>
     <div class="box-bgcolor payment_cart">
 
-        <?php $i = 0;
+        <?php
+        $i = 0;
         foreach ($totals as $total) {
             ?>
     <?php if ($i == 0) { ?>
@@ -186,7 +187,7 @@
                 <div>
                     <div class="fl dky fontUTM">Hủy đơn hàng</div>
                     <div class="fr cost_payment"><b><?php echo $total['text']; ?></b></div>
-                    <div class="fr total_payment"><b>Tổng tiền bạn phải trả là:<?php //echo $total['title'];   ?></b></div>
+                    <div class="fr total_payment"><b>Tổng tiền bạn phải trả là:<?php //echo $total['title'];    ?></b></div>
                     <div class="clear"></div>
                 </div>
 
@@ -198,88 +199,143 @@
     </div>
 <?php echo $content_bottom; ?></div>
 <script type="text/javascript"><!--
-    $('#cbSelectAll').click(function(){
-        if($(this).is(':checked'))
+    $('#cbSelectAll').click(function() {
+        if ($(this).is(':checked'))
             $('.cbProdutct').attr('checked', true);
-        else 
+        else
             $('.cbProdutct').attr('checked', false);
     });
 
-    $('.cartDelProduct').click(function(){
+    $('.cartDelProduct').click(function() {
         var selected = new Array();
         $('.cbProdutct:checked').each(function() {
             selected.push($(this).val());
         });
-        
+
         location.href = '<?php echo $remove_link ?>&remove=' + selected.join(',');
     });
 
-    $('#order_quantity').keyup(function(){
+    $('#order_quantity').keyup(function() {
         getTotal($(this), 1);
     });
 
-    $('#order_price').keyup(function(){
+    $('#order_price').keyup(function() {
         getTotal($(this), 2);
     });
-    
+
     function getTotal(obj, sign) {
         var quantity = $('#order_quantity').val();
         var price = $('#order_price').val();
-        
+
         var total = 0;
         
-        obj.removeClass('error');
-        
-        if(isNaN(obj.val())) {
-            obj.addClass('error');
-            $('#order_total').val(total);
-            return false;
-        }
-        
-        if(isNaN(price) && sign == 1) {
+        if (isNaN(price) && sign == 1) {
             price = 0;
         }
-        
-        if(isNaN(quantity) && sign == 2) {
+
+        if (isNaN(quantity) && sign == 2) {
             quantity = 0;
         }
-            
-        total = quantity * price;        
-    
+
+        total = quantity * price;
+
         $('#order_total').val(total);
     }
-    
 
-    $('#add_order_product').click(function(){
-        
-        if($('#order_products_frm .error').length <= 0) {
-            
-            var quantity = $('#order_quantity').val();
-            if(quantity == '') {
-                quantity = 0;
+
+    $('#add_order_product').click(function() {
+        $('#order_products_frm input').removeClass('error');
+        var flag = true;
+        if ($('#order_name').val() == '') {
+            $('#order_name').addClass('error');
+            flag = false;
+        }
+
+        if ($('#order_link').val() == '') {
+            $('#order_link').addClass('error');
+            flag = false;
+        }
+
+        if ($('#order_size').val() == '') {
+            $('#order_size').addClass('error');
+            flag = false;
+        }
+
+        if (isNaN($('#order_price').val())) {
+            $('#order_price').addClass('error');
+            flag = false;
+        }
+
+        if (isNaN($('#order_quantity').val())) {
+            $('#order_quantity').addClass('error');
+            flag = false;
+        }
+
+        if (!flag || $('#order_products_frm .error').length > 0) {
+            return false;
+        }
+
+        var quantity = $('#order_quantity').val();
+        var price = $('#order_price').val();
+
+        if (quantity == '') {
+            quantity = 1;
+        }
+        if (price == '') {
+            price = 0;
+        }
+
+        var params = {
+            name: $('#order_name').val(),
+            link: $('#order_link').val(),
+            size: $('#order_size').val(),
+            color: $('#order_color').val(),
+            model: '',
+            sku: '',
+            upc: '',
+            ean: '',
+            jan: '',
+            isbn: '',
+            mpn: '',
+            location: '',
+            minimum: '',
+            subtract: '',
+            stock_status_id: '',
+            date_available: '',
+            manufacturer_id: '',
+            shipping: '',
+            points: '',
+            weight: '',
+            weight_class_id: '',
+            length: '',
+            width: '',
+            height: '',
+            length_class_id: '',
+            status: '1',
+            tax_class_id: '',
+            sort_order: '',
+            product_description: {2: {name: $('#order_name').val(),
+                    meta_keyword: '', sort_description: '', tag: '',
+                    meta_description: '', description: ''
+                }},
+            product_category: [66],
+            product_store: {0: ''},
+            keyword: '',
+            quantity: quantity,
+            price: price,
+            total: quantity * price
+        };
+
+        $.ajax({
+            url: 'index.php?route=checkout/cart/add_product',
+            type: 'post',
+            data: params,
+            dataType: 'json',
+            success: function(product_id) {
+                addToCart(product_id, quantity);
             }
-                
-            var params = {
-                name: $('#order_name').val(),
-                link: $('#order_link').val(),
-                size: $('#order_size').val(),
-                color: $('#order_color').val(),
-                quantity: quantity,
-                price: $('#order_price').val(),
-                total: $('#order_total').val()
-            };
-            
-            $.ajax({
-                url: 'index.php?route=checkout/cart/add_product', 
-                type: 'post',
-                data: params,
-                dataType: 'json',		
-                success: function(product_id) {
-                    addToCart(product_id, quantity);
-                }
-            });
-        } 
-    }); 
+        });
+    });
 
     //--></script>
 <?php echo $footer; ?>

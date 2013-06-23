@@ -162,10 +162,10 @@
             <td><?php echo $text_firstname; ?></td>
             <td><?php echo $payment_firstname; ?></td>
           </tr>
-          <tr>
+<!--          <tr>
             <td><?php echo $text_lastname; ?></td>
             <td><?php echo $payment_lastname; ?></td>
-          </tr>
+          </tr>-->
           <?php if ($payment_company) { ?>
           <tr>
             <td><?php echo $text_company; ?></td>
@@ -194,10 +194,10 @@
             <td><?php echo $payment_address_2; ?></td>
           </tr>
           <?php } ?>
-          <tr>
-            <td><?php echo $text_city; ?></td>
+<!--          <tr>
+            <td><?php echo $text_city; ?>ss</td>
             <td><?php echo $payment_city; ?></td>
-          </tr>
+          </tr>-->
           <?php if ($payment_postcode) { ?>
           <tr>
             <td><?php echo $text_postcode; ?></td>
@@ -289,7 +289,9 @@
           <thead>
             <tr>
               <td class="left"><?php echo $column_product; ?></td>
-              <td class="left"><?php echo $column_model; ?></td>
+              <td class="left">Link</td>
+              <td class="left">Size</td>
+              <td class="left">Màu sắc</td>
               <td class="right"><?php echo $column_quantity; ?></td>
               <td class="right"><?php echo $column_price; ?></td>
               <td class="right"><?php echo $column_total; ?></td>
@@ -307,7 +309,9 @@
                 &nbsp;<small> - <?php echo $option['name']; ?>: <a href="<?php echo $option['href']; ?>"><?php echo $option['value']; ?></a></small>
                 <?php } ?>
                 <?php } ?></td>
-              <td class="left"><?php echo $product['model']; ?></td>
+              <td class="left"><a href="<?php echo $product['link']; ?>" target="_blank"><?php echo utf8_substr($product['link'], 0, 25); echo (strlen($product['link'])>25)?'...':''; ?></a></td>
+              <td class="left"><?php echo $product['size']; ?></td>
+              <td class="left"><?php echo $product['color']; ?></td>
               <td class="right"><?php echo $product['quantity']; ?></td>
               <td class="right"><?php echo $product['price']; ?></td>
               <td class="right"><?php echo $product['total']; ?></td>

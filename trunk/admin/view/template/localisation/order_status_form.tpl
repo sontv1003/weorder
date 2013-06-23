@@ -26,6 +26,13 @@
               <?php } ?>
               <?php } ?></td>
           </tr>
+          <tr>
+            <td><?php echo $entry_order_status; ?></td>
+            <td><?php foreach ($languages as $language) { ?>
+              <input type="text" name="order_status[<?php echo $language['language_id']; ?>][sort_order]" value="<?php echo isset($order_status[$language['language_id']]) ? $order_status[$language['language_id']]['sort_order'] : ''; ?>" />
+              <img src="view/image/flags/<?php echo $language['image']; ?>" title="<?php echo $language['name']; ?>" /><br />
+              <?php } ?></td>
+          </tr>
         </table>
       </form>
     </div>

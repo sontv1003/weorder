@@ -239,13 +239,13 @@
                                                 <img src="<?php echo $product['image'] ?>" />
                                             </div>
 
-                                            <div class="cart-txt">
+                                            <div class="cart-txt" style="margin-bottom: 10px;">
                                                 <div><span class="ui-formDetailLabel txtDarkGray"><?php echo $product['name'] ?></span></div>
-                                                <div class="txtDark ui-formDetailLabel">Từ Website:http//www.ennergie.com</div>
+                                                <div class="txtDark ui-formDetailLabel">Từ Website: <a href="<?php echo $product['link']?>" target="_blank"><?php echo utf8_substr($product['link'], 0, 25); echo (strlen($product['link'])>25) ? '...' : '' ?></a></div>
                                                 <div>
                                                     <div class="txtDarkGray ui-formDetailLabel">
-                                                        <p>Size: 41.5</p>
-                                                        <p>Màu: Be</p>
+                                                        <p style="margin-bottom: 0px">Size: <?php echo $product['size']; ?></p>
+                                                        <p style="margin-bottom: 0px">Màu: <?php echo $product['color']; ?></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -287,7 +287,7 @@
 
             <div class="mtl">
                 <a href="javascript:void(0)">
-                    <button id="checkoutBtn" class="rfloat ui-button ui-buttonCta iBuyNow newIconsWithoutText sel-checkout-send" type="submit" style="opacity: 1;">
+                    <button id="checkoutBtn" class="rfloat ui-button ui-buttonCta iBuyNow newIconsWithoutText sel-checkout-send" type="submit" style="opacity: 1; padding-top: 5px; padding-bottom: 5px;">
                         <span class="fontUTM" style="padding-left: 15px; padding-right: 15px; color: #000;">thanh toán và tới trang theo dõi đơn hàng</span>
                     </button>
                 </a>

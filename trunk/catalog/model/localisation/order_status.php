@@ -91,13 +91,6 @@ class ModelLocalisationOrderStatus extends Model {
 
         return $order_status_data;
     }
-
-    public function getTotalOrderStatuses() {
-        $query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "order_status WHERE language_id = '" . (int) $this->config->get('config_language_id') . "'");
-
-        return $query->row['total'];
-    }
-
 }
 
 ?>

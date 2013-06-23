@@ -12,9 +12,21 @@ class ControllerCheckoutCart extends Controller {
         }
 
         // Update
-        if (!empty($this->request->post['quantity'])) {
+        if (isset($this->request->post['quantity'])) {
             foreach ($this->request->post['quantity'] as $key => $value) {
                 $this->cart->update($key, $value);
+            }
+            
+            foreach ($this->request->post['link'] as $key => $value) {
+                $this->cart->updateOtherField($key, $value, 'link');
+            }
+            
+            foreach ($this->request->post['size'] as $key => $value) {
+                $this->cart->updateOtherField($key, $value, 'size');
+            }
+            
+            foreach ($this->request->post['color'] as $key => $value) {
+                $this->cart->updateOtherField($key, $value, 'color');
             }
 
             unset($this->session->data['shipping_method']);
@@ -246,6 +258,8 @@ class ControllerCheckoutCart extends Controller {
                 'thumb' => $image,
                 'name' => $product['name'],
                 'model' => $product['model'],
+                'size' => $product['size'],
+                'color' => $product['color'],
                 'link' => $product['link'],
                 'option' => $option_data,
                 'quantity' => $product['quantity'],
@@ -526,7 +540,7 @@ class ControllerCheckoutCart extends Controller {
 
             if (!$json) {
                 $this->cart->add($this->request->post['product_id'], $quantity, $option);
-
+                
                 $json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));
 
                 unset($this->session->data['shipping_method']);
@@ -734,7 +748,7 @@ class ControllerCheckoutCart extends Controller {
         if ($this->request->server['REQUEST_METHOD'] == 'POST' && !empty($this->request->post)) {
             
             $this->load->model('catalog/product');
-
+            $this->request->post['image'] = 'data/no_image.jpg';
             $product_id = $this->model_catalog_product->addProduct($this->request->post);
             
             echo $product_id;
