@@ -134,9 +134,6 @@
     <div id="order_products_frm" style="margin-bottom: 20px; border: 1px solid #ccc; padding: 10px 0px">
         <table width="100%" style="border-collapse: collapse;" border="1">
             <tr>
-<!--                <td class="image" width="10%">
-                    <input type="" class="cbProdutct" value="<?php echo $product['key'] ?>"/>
-                </td>-->
                 <td class="name" width="15%" style="padding-left: 15px;">
                     <input type="text" size="100" name="order_name" id="order_name" value="" placeholder="Tên sản phẩm" /></td>
                 </td>
@@ -151,7 +148,14 @@
                     <input type="text" size="2" name="order_quantity" id="order_quantity" value="" placeholder="Số lượng" />
                 </td>
                 <td class="price" width="10%"><input type="text" size="10" value="" name="order_price" id="order_price" placeholder="Đơn giá" /></td>
-                <td class="total" width="10%"><input type="text" value="" name="order_total" id="order_total" placeholder="Thành tiền" /></td>
+                <td class="currency" width="8%">
+                    <select name="currency" style="padding: 5px 5px;" id="cb_currency">
+                        <?php foreach ($currencies as $value): ?>
+                            <option value="<?php echo $value['value'] ?>"><?php echo $value['code'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </td>
+                <td class="total" width="12%"><input type="text" value="" name="order_total" id="order_total" placeholder="Thành tiền" style="width: 65%" />&nbspVNĐ</td>
                 <td class="order_submit" width="8%"><input type="button" value="Thêm vào giỏ" name="add_order_product" id="add_order_product" /></td>
             </tr>
         </table>
@@ -163,14 +167,14 @@
         $i = 0;
         foreach ($totals as $total) {
             ?>
-    <?php if ($i == 0) { ?>
+            <?php if ($i == 0) { ?>
                 <ul>
                     <li class="head_cart1" style="width: 310px; color:#000;">Tổng số lượng trong giỏ hàng là </li>
                     <li class="head_cart2" style="width: 163px;"><?php echo $total_quantity ?></li>
                     <li class="head_cart1" style="width: 198px; color:#000;"><?php echo $total['title']; ?></li>
                     <li class="head_cart2" style="width: 237px;"><?php echo $total['text']; ?></li>
                 </ul>
-    <?php } else { ?>
+            <?php } else { ?>
 
                 <div>
                     <a href="<?php echo $checkout; ?>"><div class="fl dytt fontUTM" style="width: 518px;"><?php echo $button_checkout; ?></div></a>
@@ -187,7 +191,7 @@
                 <div>
                     <div class="fl dky fontUTM">Hủy đơn hàng</div>
                     <div class="fr cost_payment"><b><?php echo $total['text']; ?></b></div>
-                    <div class="fr total_payment"><b>Tổng tiền bạn phải trả là:<?php //echo $total['title'];    ?></b></div>
+                    <div class="fr total_payment"><b>Tổng tiền bạn phải trả là:<?php //echo $total['title'];       ?></b></div>
                     <div class="clear"></div>
                 </div>
 
@@ -197,7 +201,7 @@
         }
         ?>
     </div>
-<?php echo $content_bottom; ?></div>
+    <?php echo $content_bottom; ?></div>
 <script type="text/javascript"><!--
     $('#cbSelectAll').click(function() {
         if ($(this).is(':checked'))
@@ -226,9 +230,9 @@
     function getTotal(obj, sign) {
         var quantity = $('#order_quantity').val();
         var price = $('#order_price').val();
-
+        var currency = $('#cb_currency').val();
         var total = 0;
-        
+
         if (isNaN(price) && sign == 1) {
             price = 0;
         }
@@ -237,14 +241,27 @@
             quantity = 0;
         }
 
-        total = quantity * price;
+        total = quantity * price * currency;
 
         $('#order_total').val(total);
     }
 
+    $('#cb_currency').change(function() {
+        var currency = $(this).val();
+        var quantity = $('#order_quantity').val();
+        var price = $('#order_price').val();
+        var total = 0;
+        if (!isNaN(price) && !isNaN(quantity)) {
+            total = Math.round(quantity * price * currency);
+        }
+
+        $('#order_total').val(total);
+
+    });
 
     $('#add_order_product').click(function() {
         $('#order_products_frm input').removeClass('error');
+        var currency = $('#cb_currency').val();
         var flag = true;
         if ($('#order_name').val() == '') {
             $('#order_name').addClass('error');
@@ -283,7 +300,10 @@
         }
         if (price == '') {
             price = 0;
+        } else {
+            price = Math.round(price * currency);
         }
+
 
         var params = {
             name: $('#order_name').val(),
