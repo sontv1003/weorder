@@ -403,7 +403,8 @@ class ControllerCheckoutCart extends Controller {
         $this->data['continue'] = $this->url->link('common/home');
 
         $this->data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
-
+        $this->load->model('localisation/currency');
+        $this->data['currencies'] = $this->model_localisation_currency->getCurrencies();
         if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/cart.tpl')) {
             $this->template = $this->config->get('config_template') . '/template/checkout/cart.tpl';
         } else {

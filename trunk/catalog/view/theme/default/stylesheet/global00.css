@@ -2866,3 +2866,23 @@ div.option .option-name{
 #tatcadonhang a.filter_selected input {
     color: #FFF;
 }
+#thuchitaichinh {
+    
+}
+#thuchitaichinh th {
+    background: #000;
+    font-size: 20px;
+    font-family: 'UTM_Bebas';
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+#thuchitaichinh td {
+    padding: 8px 10px;
+    border: 1px solid #DCDCDC;
+    text-align: center;
+}
+#thuchitaichinh td span {
+    font-family: 'UTM_Bebas';
+    font-size: 15px;
+}
