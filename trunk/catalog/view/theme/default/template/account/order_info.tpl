@@ -126,7 +126,9 @@
       </table>
     </div>
   </form>
-  <div class="box-bgcolor payment_cart">
+    <span style="font-family: 'UTM_Bebas'; font-size: 20px;">GHI CHÚ:</span>&nbsp;
+    <span style="font-size: 16px;"><?php echo $note; ?></span>
+  <div class="box-bgcolor payment_cart" style='margin-top: 20px;'>
       
       <?php $i=0; foreach ($totals as $total) { ?>
           <?php if($i == 0) { ?>

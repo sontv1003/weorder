@@ -336,6 +336,9 @@
           </tbody>
           <?php } ?>
         </table>
+        
+          <div><b>Ghi chú của khách hàng:</b> <?php echo $note; ?></div>
+        
         <?php if ($downloads) { ?>
         <h3><?php echo $text_download; ?></h3>
         <table class="list">

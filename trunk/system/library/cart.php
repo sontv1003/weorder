@@ -320,20 +320,22 @@ class Cart {
         if (!empty($value)) {
             $this->session->data['cart2'][$key][$field] = $value;
         } else {
-            $this->removeOtherField($key, $field);
+            //$this->removeOtherField($key, $field);
         }
         
         $this->data = array();
     }
 
     public function removeOtherField($keys, $field) {
-        foreach ($keys as $key) {
-            if (isset($this->session->data['cart2'][$key][$field])) {
-                unset($this->session->data['cart2'][$key][$field]);
-            }
-        }
+		if(is_array($keys)) {
+			foreach ($keys as $key) {
+				if (isset($this->session->data['cart2'][$key][$field])) {
+					unset($this->session->data['cart2'][$key][$field]);
+				}
+			}
 
-        $this->data = array();
+			$this->data = array();
+		}
     }
     public function remove($keys) {
         foreach ($keys as $key) {

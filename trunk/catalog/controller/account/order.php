@@ -121,6 +121,7 @@ class ControllerAccountOrder extends Controller {
             $this->data['orders'][] = array(
                 'order_id' => $result['order_id'],
                 'name' => $result['firstname'] . ' ' . $result['lastname'],
+                'note' => $result['note'],
                 'status' => $result['status'],
                 'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
                 'products' => ($product_total + $voucher_total),
@@ -394,7 +395,7 @@ class ControllerAccountOrder extends Controller {
 
             // Voucher
             $this->data['vouchers'] = array();
-
+            
             $vouchers = $this->model_account_order->getOrderVouchers($this->request->get['order_id']);
 
             foreach ($vouchers as $voucher) {
@@ -407,6 +408,7 @@ class ControllerAccountOrder extends Controller {
             $this->data['totals'] = $this->model_account_order->getOrderTotals($this->request->get['order_id']);
 
             $this->data['comment'] = nl2br($order_info['comment']);
+            $this->data['note'] = $order_info['note'];
 
             $this->data['histories'] = array();
 
@@ -558,6 +560,7 @@ class ControllerAccountOrder extends Controller {
                 'order_id' => $result['order_id'],
                 'name' => $result['firstname'] . ' ' . $result['lastname'],
                 'status' => $result['status'],
+                'note' => $result['note'],
                 'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
                 'products' => ($product_total + $voucher_total),
                 'total' => $this->currency->format($result['total'], $result['currency_code'], $result['currency_value']),
@@ -610,6 +613,19 @@ class ControllerAccountOrder extends Controller {
         }
 
         $this->response->setOutput($this->render());
+    }
+    
+    function update_note() {
+        
+        if (isset($this->request->get['order_id'])) {
+            $order_id = $this->request->get['order_id'];
+            $note = $this->request->get['note'];
+            
+            $this->load->model('account/order');
+            $this->model_account_order->updateNoteForOrder($order_id, $note);
+            
+            echo json_encode(array('status' => 'success'));
+        }
     }
 
 }
