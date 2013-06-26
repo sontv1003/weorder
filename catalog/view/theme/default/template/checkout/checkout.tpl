@@ -6,6 +6,13 @@
             <h2 class="h2 ui-formTitle">1. Thông tin khách hàng</h2>
         </div>
         <div class="box-bd box-bdr white-box" style="width:331px; float:left; padding-top: 20px;">
+            <?php if(!$isLogged): ?>
+            <p class="note_reg">
+                Nếu bạn chưa là thành viên hãy nhập thông tin
+                phía dưới. thành viên mời bạn đăng nhập <a href="<?php echo $login_href; ?>">tại đây</a>
+            </p>
+            <?php endif; ?>
+            
             <input id="loggedInCustomer" name="loggedInCustomer" type="hidden" value="1">
             <fieldset id="checkout-address" class="ui-fieldset">
                 <div class="ui-formRow frm_register">

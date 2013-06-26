@@ -84,7 +84,8 @@ class ControllerCheckoutCheckout extends Controller {
         $this->data['entry_password'] = $this->language->get('entry_password');
         $this->data['entry_confirm'] = $this->language->get('entry_confirm');
         $this->data['entry_shipping'] = $this->language->get('entry_shipping');
-
+        $this->data['login_href'] = $this->url->link('account/login');
+        $this->data['isLogged'] = $this->customer->isLogged();
         if (isset($this->session->data['shipping_country_id'])) {
             $this->data['country_id'] = $this->session->data['shipping_country_id'];
         } else {

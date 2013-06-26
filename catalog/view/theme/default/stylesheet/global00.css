@@ -2886,3 +2886,47 @@ div.option .option-name{
     font-family: 'UTM_Bebas';
     font-size: 15px;
 }
+.btn-update {
+    font-size: 13px;
+    padding: 3px 5px;
+    background: -webkit-gradient(linear, center top, center bottom, from(#FFAC59), to(#FF9428));
+    background: -moz-linear-gradient(center top,  #FFAC59,  #FF9428);
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#FFAC59', EndColorStr='#FF9428');
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 1px 0 3px 0 rgba(0, 0, 0, 0.6);
+    font-family: 'UTM_Bebas';    
+}
+.btn-update:hover{
+    background: #606060;
+    background: -moz-linear-gradient(top,#606060 0%,#2F2F2F 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#606060),color-stop(100%,#2F2F2F));
+    background: -webkit-linear-gradient(top,#606060 0%,#2F2F2F 100%);
+    background: -o-linear-gradient(top,#606060 0%,#2F2F2F 100%);
+    background: -ms-linear-gradient(top,#606060 0%,#2F2F2F 100%);
+    background: linear-gradient(top,#606060 0%,#2F2F2F 100%);
+    color: white!important;
+}
+
+.note_reg {
+    font-size: 14px; font-weight: normal; font-family: 'UTM_Bebas';
+}
+.note_reg a{
+    font-size: 14px; font-weight: normal; font-family: 'UTM_Bebas'; color: blue;
+}
+.note_reg a:hover {
+    text-decoration: underline;
+}
+ul.menu_cart {
+    margin-top: 10px;
+}
+ul.menu_cart li{
+    display: block;
+}
+ul.menu_cart li a {
+    color: #000;
+    font-family: 'UTM_Bebas';
+    font-size: 16px;
+}
+ul.menu_cart li a:hover {
+    text-decoration: underline;    
+}

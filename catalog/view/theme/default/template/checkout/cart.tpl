@@ -10,7 +10,7 @@
 <?php } ?>
 <?php echo $column_left; ?><?php echo $column_right; ?>
 <div id="content"><?php echo $content_top; ?>
-    <div id="tbm2">
+    <div id="tbm2" style="width: 65%" class="fl">
         <ul>
             <li>
                 <a href="javascript:void(0)" id="chot">cho link sản phẩm vào giỏ hàng</a>
@@ -24,14 +24,50 @@
             <li>
                 <a href="javascript:void(0)">nhận hàng</a>
             </li>
-
         </ul>
+    </div>
+    <div style="width: 32%;" class="fl">
+        <table>
+            <tr>
+                <td width="50px">
+                    <img src="<?php echo HTTP_SERVER ?>image/tranminhduc.png" height="85px">
+                </td>
+                <td width="*" style="padding-left: 15px;">
+                    <p style="font-size: 15px; line-height: 17px;">
+                        Xin chào: Trần Minh Đức!<br>
+                        Bạn có (3) tin nhắn mới<br>
+                        Hãy gọi cho chúng tôi mỗi khi bạn
+                        cần hỗ trợ. Chúc bạn một ngày mua sắm vui vẻ!
+                    </p>
+                </td>
+            </tr>
+        </table>
     </div>    
+    <div class="clear"></div>
     <div class="l-pageWrapper" style="margin-top: 20px;">
         <img class="fl" src="catalog/view/theme/default/images/giohang.png" style="height: 115px; padding-bottom: 17px; margin-top: 20px; margin-right: 30px;">
         <img class="fl" style="width: 855px;" id="camket" src="catalog/view/theme/default/images/camket.jpg">
         <div class="clear"></div>
     </div>
+    <div id="ttcanhan">
+        <ul>
+            <li class="ttcn ttcnd" style="padding-top: 2px; padding-bottom: 5px;">
+                <a href="<?php echo $account_info_href; ?>">thông tin cá nhân</a>
+            </li>
+            <li class="ttcc" style="padding-top: 2px; padding-bottom: 5px;">
+                <a href="<?php echo $account_order_info_href; ?>">danh sách đơn hàng cá nhân</a>
+            </li>
+            <li class="ttcn" style="padding-top: 2px; padding-bottom: 5px;">
+                <a href="<?php echo $account_transaction_href; ?>">thu chi tài chính</a>
+            </li>
+            <li class="ttcc" style="padding-top: 2px; padding-bottom: 5px;">
+                <a href="javascript:void(0)">khiếu nại</a>
+            </li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <br />
+    <br />
     <div>
         <div class="fl cartSelectAll">
             <input type="checkbox" id="cbSelectAll" />
@@ -57,13 +93,13 @@
                 <thead>
                     <tr>
                         <td class="image a_center"><?php echo $column_image; ?></td>
-                        <td class="name a_center"><?php echo $column_name; ?></td>
+                        <td class="name a_center" style="width: 110px;"><?php echo $column_name; ?></td>
                         <td class="model a_center"><?php echo $column_link; ?></td>
                         <td class="model a_center"><?php echo $column_size; ?></td>
                         <td class="model a_center"><?php echo $column_color; ?></td>
-                        <td class="quantity a_center"><?php echo $column_quantity; ?></td>
-                        <td class="price a_center" style="font-weight: normal"><?php echo $column_price; ?></td>
-                        <td class="total a_center"><?php echo $column_total; ?></td>
+                        <td class="quantity a_center" style="width: 130px;"><?php echo $column_quantity; ?></td>
+                        <td class="price a_center" style="font-weight: normal; width: 120px;"><?php echo $column_price; ?></td>
+                        <td class="total a_center" style="width: 110px;"><?php echo $column_total; ?></td>
                     </tr>
                 </thead>
                 <tbody>
@@ -81,7 +117,7 @@
                     foreach ($products as $product) {
                         ?>
                         <tr>
-                            <td class="image">
+                            <td class="image" style="padding-left: 15px;">
                                 <input type="checkbox" class="cbProdutct" value="<?php echo $product['key'] ?>"/>
 
                                 <?php if ($product['thumb']) { ?>
@@ -94,25 +130,26 @@
                                 <div>
                                     <?php foreach ($product['option'] as $option) { ?>
                                         - <small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small><br />
-                                    <?php } ?>
+                                    <?php } ?>                                     
                                 </div>
                                 <?php if ($product['reward']) { ?>
                                     <small><?php echo $product['reward']; ?></small>
-                                <?php } ?></td>
+                                <?php } ?>             
+                                <div class="clear"></div>
+                                <a style="font-size: 15px;" href="<?php echo $product['remove']; ?>"><img src="catalog/view/theme/default/images/remove.png" alt="<?php echo $button_remove; ?>" title="<?php echo $button_remove; ?>" />&nbsp;Xóa</a>
+                            </td>
                             <td class="link"><input type="text" name="link[<?php echo $product['key']; ?>]" value="<?php echo $product['link']; ?>" /></td>
                             <td class="size"><input type="text" name="size[<?php echo $product['key']; ?>]" value="<?php echo $product['size']; ?>" style="width: 50px" /></td>
                             <td class="color"><input type="text" name="color[<?php echo $product['key']; ?>]" value="<?php echo $product['color']; ?>" style="width: 50px" /></td>
                             <td class="quantity">
-                                <input style="float: left; margin-right: 10px;" type="text" name="quantity[<?php echo $product['key']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" />
-                                &nbsp;
-                                <input style="float: left; margin-right: 10px;" type="image" src="catalog/view/theme/default/images/update.png" alt="<?php echo $button_update; ?>" title="<?php echo $button_update; ?>" />
-                                &nbsp;
-                                <a style="float: left;" href="<?php echo $product['remove']; ?>"><img src="catalog/view/theme/default/images/remove.png" alt="<?php echo $button_remove; ?>" title="<?php echo $button_remove; ?>" /></a>
+                                <input style="float: left; margin-right: 10px; width: 30px;" type="text" name="quantity[<?php echo $product['key']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" />
+                                <!--<input style="float: left; margin-right: 10px;" type="image" src="catalog/view/theme/default/images/update.png" alt="<?php echo $button_update; ?>" title="<?php echo $button_update; ?>" />-->
+                                <input class="btn-update fl" type="submit" alt="<?php echo $button_update; ?>" title="<?php echo $button_update; ?>" value="Cập nhật thông tin"/>
                                 <div class="clear"></div>
                             </td>
 
-                            <td class="price"><?php echo $product['price']; ?></td>
-                            <td class="total"><?php echo $product['total']; ?></td>
+                            <td class="price" style="font-size: 14px;"><?php echo $product['price']; ?></td>
+                            <td class="total" style="padding-right: 15px;"><?php echo $product['total']; ?></td>
                             <?php $total_quantity += $product['quantity']; ?>
                         </tr>
                     <?php } ?>
@@ -131,6 +168,9 @@
             </table>
         </div>
     </form>
+    <h2 style="text-transform: uppercase; font-family: 'UTM_Bebas'; font-size: 18px; font-weight: normal">
+        đặt hàng ở các website khác
+    </h2>
     <div id="order_products_frm" style="margin-bottom: 20px; border: 1px solid #ccc; padding: 10px 0px">
         <table width="100%" style="border-collapse: collapse;" border="1">
             <tr>
@@ -155,7 +195,10 @@
                         <?php endforeach; ?>
                     </select>
                 </td>
-                <td class="total" width="12%"><input type="text" value="" name="order_total" id="order_total" placeholder="Thành tiền" style="width: 65%" />&nbspVNĐ</td>
+                <td class="total" width="12%">
+                    <input type="text" value="" name="order_total" id="order_total" placeholder="Thành tiền" style="width: 65%" />
+                    &nbsp<span style="font-size: 18px; font-family: 'UTM_Bebas'">VNĐ</span>
+                </td>
                 <td class="order_submit" width="8%"><input type="button" value="Thêm vào giỏ" name="add_order_product" id="add_order_product" /></td>
             </tr>
         </table>
@@ -191,7 +234,7 @@
                 <div>
                     <div class="fl dky fontUTM">Hủy đơn hàng</div>
                     <div class="fr cost_payment"><b><?php echo $total['text']; ?></b></div>
-                    <div class="fr total_payment"><b>Tổng tiền bạn phải trả là:<?php //echo $total['title'];       ?></b></div>
+                    <div class="fr total_payment"><b>Tổng tiền bạn phải trả là:<?php //echo $total['title'];         ?></b></div>
                     <div class="clear"></div>
                 </div>
 

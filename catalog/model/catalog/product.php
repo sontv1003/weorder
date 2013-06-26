@@ -229,7 +229,7 @@ class ModelCatalogProduct extends Model {
         $product_data = array();
 
         $query = $this->db->query($sql);
-
+        
         foreach ($query->rows as $result) {
             $product_data[$result['product_id']] = $this->getProduct($result['product_id']);
         }

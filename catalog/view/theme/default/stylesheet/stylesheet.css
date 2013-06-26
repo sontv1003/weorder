@@ -1255,7 +1255,7 @@ table.radio tr.highlight:hover td {
 	border-right: 1px solid #DDDDDD;
 }
 .cart-info td {
-	padding: 15px;
+	padding: 15px 0px;
 }
 .cart-info thead td {
 	color: #fff;
@@ -1278,6 +1278,7 @@ table.radio tr.highlight:hover td {
 .cart-info tbody td {
 	vertical-align: middle;
 	border-bottom: 1px solid #DDDDDD;
+        text-align: center;
 }
 .cart-info tbody .image img {
 	/*border: 1px solid #DDDDDD;*/
@@ -1316,6 +1317,9 @@ table.radio tr.highlight:hover td {
 .cart-info tbody span.stock {
 	color: #F00;
 	font-weight: bold;
+}
+.cart-info input[type="text"] {
+    width: 90%;
 }
 .cart-module > div {
 	display: none;
@@ -1500,8 +1504,13 @@ table.radio tr.highlight:hover td {
     padding-left: 5px;
 }
 #order_products_frm .order_submit input[type="button"] {
-    width: 100px;
-    background: -moz-linear-gradient(center top , #FFAC59 0%, #FF9428 100%) repeat scroll 0 0 transparent;
+    width: 100px;    
+    background: -moz-linear-gradient(center top,#FFAC59 0%,#FF9428 100%);
+    background: -webkit-gradient(linear,center top,center bottom,color-stop(0%,#FF9428),color-stop(100%,#FF9428));
+    background: -webkit-linear-gradient(center top,#FFAC59 0%,#FF9428 100%);
+    background: -o-linear-gradient(center top,#FFAC59 0%,#FF9428 100%);
+    background: -ms-linear-gradient(center top,#FFAC59 0%,#FF9428 100%);
+    background: linear-gradient(center top,#FFAC59 0%,#FF9428 100%);
     border: 0 none;
     border-radius: 2px 2px 2px 2px;
     box-shadow: 1px 0px 3px 0 rgba(0, 0, 0, 0.6);
@@ -1511,6 +1520,7 @@ table.radio tr.highlight:hover td {
     font-size: 18px;
     padding: 3px 10px;
     text-align: center;
+    
 }
 
 #order_products_frm .order_submit input[type="button"]:hover{
