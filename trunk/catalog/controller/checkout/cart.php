@@ -165,6 +165,10 @@ class ControllerCheckoutCart extends Controller {
         $this->data['button_shopping'] = $this->language->get('button_shopping');
         $this->data['button_checkout'] = $this->language->get('button_checkout');
         $this->data['text_empty'] = $this->language->get('text_empty');
+        $this->data['account_info_href'] = $this->url->link('account/edit');
+        $this->data['account_order_info_href'] = $this->url->link('account/order');
+        $this->data['account_transaction_href'] = $this->url->link('account/transaction');
+        
         $this->data['hasProducts'] = $this->cart->hasProducts();
 
         if (isset($this->error['warning'])) {
@@ -252,7 +256,7 @@ class ControllerCheckoutCart extends Controller {
             } else {
                 $total = false;
             }
-
+            
             $this->data['products'][] = array(
                 'key' => $product['key'],
                 'thumb' => $image,
@@ -747,7 +751,7 @@ class ControllerCheckoutCart extends Controller {
     function add_product() {
 
         if ($this->request->server['REQUEST_METHOD'] == 'POST' && !empty($this->request->post)) {
-            
+            $this->request->post['quantity'] = 100; // Add 100 products for default
             $this->load->model('catalog/product');
             $this->request->post['image'] = 'data/no_image.jpg';
             $product_id = $this->model_catalog_product->addProduct($this->request->post);

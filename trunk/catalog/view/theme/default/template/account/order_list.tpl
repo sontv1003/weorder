@@ -85,7 +85,7 @@
                     <th width="15%" align="center" style=" background-color:#000; color: #fff; vertical-align: middle;" class="font-chu">Mã đơn hàng</th>
                     <th width="30%" align="center" style=" background-color:#000; color: #fff;" class="font-chu">Ghi chú</th>
                     <th width="15%" align="center" style=" background-color:#000; color: #fff;" class="font-chu">tổng tiền</th>
-                    <th width="10%" align="center" style=" background-color:#000; color: #fff;" class="font-chu">Số llượng</th>
+                    <th width="10%" align="center" style=" background-color:#000; color: #fff;" class="font-chu">Số lượng</th>
                     <th width="20%" align="center" style=" background-color:#000; color: #fff;" class="font-chu">Trạng thái</th>
                     <th width="*" align="center" style=" background-color:#000; color: #fff;" class="font-chu">Xem</th>
                 </tr>

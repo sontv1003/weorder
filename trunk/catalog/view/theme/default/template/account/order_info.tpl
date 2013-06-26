@@ -23,6 +23,25 @@
         <img class="fl" style="width: 855px;" id="camket" src="catalog/view/theme/default/images/camket.jpg">
         <div class="clear"></div>
     </div>
+    <div id="ttcanhan">
+        <ul>
+            <li class="ttcn ttcnd" style="padding-top: 2px; padding-bottom: 5px;">
+                <a href="<?php echo $account_info_href; ?>">thông tin cá nhân</a>
+            </li>
+            <li class="ttcc" style="padding-top: 2px; padding-bottom: 5px;">
+                <a href="<?php echo $account_order_info_href; ?>">danh sách đơn hàng cá nhân</a>
+            </li>
+            <li class="ttcn" style="padding-top: 2px; padding-bottom: 5px;">
+                <a href="<?php echo $account_transaction_href; ?>">thu chi tài chính</a>
+            </li>
+            <li class="ttcc" style="padding-top: 2px; padding-bottom: 5px;">
+                <a href="javascript:void(0)">khiếu nại</a>
+            </li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <br/>
+    <br/>
     <div>
         <div class="fl cartSelectAll">
             <input type="checkbox" id="cbSelectAll" />
@@ -55,7 +74,7 @@
             <td class="quantity" style="text-align: center; width: 90px;"><?php echo $column_quantity; ?></td>
             <td class="price" style="font-weight: normal; width: 110px; text-align: center;" ><?php echo $column_price; ?></td>
             <td class="total" style="text-align: center; width: 110px;"><?php echo $column_total; ?></td>
-            <td class="total" style="text-align: center;">Trả lại</td>
+            <td class="total" style="text-align: center; width: 60px">Trả lại</td>
           </tr>
         </thead>
         <tbody>       
@@ -85,7 +104,11 @@
             <td class="price" style="text-align: center;"><?php echo $product['price']; ?></td>
             <td class="total" style="text-align: center;"><?php echo $product['total']; ?></td>
             <?php $total_quantity += $product['quantity'];?>
-            <td class="return"><a href="<?php echo $product['return']; ?>">Bấm</a></td>
+            <td class="return">
+                <?php if($product['order_status_id'] == 21): ?>
+                <a href="<?php echo $product['return']; ?>">Bấm</a>
+                <?php endif; ?>
+            </td>
           </tr>
           <?php } ?>
           <?php foreach ($vouchers as $vouchers) { ?>

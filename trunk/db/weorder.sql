@@ -3,7 +3,7 @@
 -- Server version:               5.5.24-log - MySQL Community Server (GPL)
 -- Server OS:                    Win64
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-06-25 21:04:16
+-- Date/time:                    2013-06-26 20:03:07
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -478,8 +478,8 @@ INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_r
 -- Dumping data for table weorder.customer: 11 rows
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `birthday`, `gender`, `password`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `customer_group_id`, `ip`, `status`, `approved`, `token`, `date_added`) VALUES
-	(1, 0, 'Sơn', 'Trần', 'transontt@gmail.com', '0902222222222', '', NULL, NULL, 'c0ff2af611e745e05c989d8c07a56230be54ede5', 'fbad643c7', 'a:1:{i:106;i:1;}', 'a:0:{}', 1, 1, 1, '::1', 1, 1, '', '2013-06-16 14:36:00'),
-	(2, 0, 'Son Tran', '', 'abc@abc.com', '0904449512', '', NULL, NULL, '77a5b440ca697d017e6b7b26c49b2143afdb2409', '1639fb344', 'a:1:{s:51:"30:YToyOntpOjIyOTtzOjI6IjIzIjtpOjIzMDtzOjI6IjI2Ijt9";i:1;}', '', 0, 2, 1, '::1', 1, 1, '', '2013-06-16 15:38:25'),
+	(1, 0, 'Sơn', 'Trần', 'transontt@gmail.com', '0902222222222', '', NULL, NULL, 'c0ff2af611e745e05c989d8c07a56230be54ede5', 'fbad643c7', 'a:2:{i:110;i:1;i:111;i:2;}', 'a:0:{}', 1, 1, 1, '::1', 1, 1, '', '2013-06-16 14:36:00'),
+	(2, 0, 'Son Tran', '', 'abc@abc.com', '0904449512', '', NULL, NULL, '77a5b440ca697d017e6b7b26c49b2143afdb2409', '1639fb344', 'a:0:{}', '', 0, 2, 1, '::1', 1, 1, '', '2013-06-16 15:38:25'),
 	(3, 0, 'Son Tran', '', 'abc2@abc.com', '099999', '', '2013-06-16', 1, 'd5ed71b57ac0291dc6486ef25da05dac1f717958', '069781bef', 'a:7:{i:40;i:1;i:89;i:2;i:90;i:3;s:4:"link";a:4:{i:40;s:24:"http://www.geckomedia.vn";i:89;s:5:"dsgds";i:90;s:20:"http://www.dantri.vn";i:30;s:83:"http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html";}s:4:"size";a:4:{i:40;s:1:"M";i:89;s:7:"gsdgdsg";i:90;s:1:"M";i:30;s:3:"sdg";}s:5:"color";a:2:{i:40;s:5:"Đỏ";i:90;s:7:"Trắng";}i:30;i:2;}', '', 1, 3, 1, '::1', 1, 1, '', '2013-06-16 17:59:54'),
 	(4, 0, 'Testing', '', 'abc3@abc.com', '0900000', '', '2013-06-16', 1, 'f8c8c06b5030d3678cf1f2aaf9bba2128413f48c', '65ffc4630', 'a:1:{s:51:"30:YToyOntpOjIyOTtzOjI6IjIzIjtpOjIzMDtzOjI6IjI3Ijt9";i:1;}', '', 1, 4, 1, '::1', 1, 1, '', '2013-06-16 18:04:20'),
 	(5, 0, 'Son Tran', '', 'abc4@abc.com', '0989999999999999', '', '2013-06-16', 0, '4d3676e0d8b251e248ac317e97453bcf372100e3', '9abdb677e', 'a:0:{}', '', 1, 5, 1, '::1', 1, 1, '', '2013-06-16 18:06:55'),
@@ -991,7 +991,7 @@ INSERT INTO `option_value_description` (`option_value_id`, `language_id`, `optio
 	(96, 2, 16, 'S');
 /*!40000 ALTER TABLE `option_value_description` ENABLE KEYS */;
 
--- Dumping data for table weorder.order: 34 rows
+-- Dumping data for table weorder.order: 36 rows
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
 INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_company_id`, `payment_tax_id`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
 	(29, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 650000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-16 23:43:20', '2013-06-16 23:43:20'),
@@ -1027,7 +1027,9 @@ INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `st
 	(47, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 11, 1, 'Tester', '', 'abc10@abc.com', '235', '', 'Tester', '', '', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', 250000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-24 00:12:30', '2013-06-24 00:12:30'),
 	(48, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 11, 1, 'Tester', '', 'abc10@abc.com', '235', '', 'Tester', '', '', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', 'Tester', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', '', 690000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-24 00:16:32', '2013-06-24 00:16:32'),
 	(49, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 11, 1, 'Tester', '', 'abc10@abc.com', '235', '', 'Tester', '', '', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', 'Tester', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', '', 690000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-24 00:18:14', '2013-06-24 00:18:14'),
-	(50, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 11, 1, 'Tester', '', 'abc10@abc.com', '235', '', 'Tester', '', '', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', 'Tester', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', '', 390000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-24 00:18:38', '2013-06-24 00:18:38');
+	(50, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 11, 1, 'Tester', '', 'abc10@abc.com', '235', '', 'Tester', '', '', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', 'Tester', '', '', '233265', '', '', '', 'Viet Nam', 230, 'Bac Giang', 3752, '', '', '', '', 390000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-24 00:18:38', '2013-06-24 00:18:38'),
+	(51, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 2, 1, 'Son Tran', '', 'abc@abc.com', '0904449512', '', 'Son Tran', '', '', '', '', 'Từ Sơn - Châu kHêu', '', '', '', 'Viet Nam', 230, 'Can Tho', 3763, '', '', '', 'Son Tran', '', '', 'Từ Sơn - Châu kHêu', '', '', '', 'Viet Nam', 230, 'Can Tho', 3763, '', '', '', '', 690000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-25 23:26:33', '2013-06-25 23:26:33'),
+	(52, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 1, 1, 'Sơn', 'Trần', 'transontt@gmail.com', '0902222222222', '', 'Sơn', 'Trần', '', '', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Sơn', 'Trần', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 10807500.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-26 02:15:31', '2013-06-26 02:15:31');
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 
 -- Dumping data for table weorder.order_download: 0 rows
@@ -1042,7 +1044,7 @@ INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `st
 /*!40000 ALTER TABLE `order_fraud` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_fraud` ENABLE KEYS */;
 
--- Dumping data for table weorder.order_history: 28 rows
+-- Dumping data for table weorder.order_history: 30 rows
 /*!40000 ALTER TABLE `order_history` DISABLE KEYS */;
 INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, `notify`, `comment`, `date_added`) VALUES
 	(1, 24, 1, 1, '', '2013-06-16 20:38:44'),
@@ -1072,7 +1074,9 @@ INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, 
 	(25, 47, 1, 1, '', '2013-06-24 00:12:30'),
 	(26, 48, 1, 1, '', '2013-06-24 00:16:32'),
 	(27, 49, 1, 1, '', '2013-06-24 00:18:14'),
-	(28, 50, 1, 1, '', '2013-06-24 00:18:38');
+	(28, 50, 1, 1, '', '2013-06-24 00:18:38'),
+	(29, 51, 1, 1, '', '2013-06-25 23:26:33'),
+	(30, 52, 1, 1, '', '2013-06-26 02:15:31');
 /*!40000 ALTER TABLE `order_history` ENABLE KEYS */;
 
 -- Dumping data for table weorder.order_option: 10 rows
@@ -1090,7 +1094,7 @@ INSERT INTO `order_option` (`order_option_id`, `order_id`, `order_product_id`, `
 	(9, 38, 40, 227, 19, 'Màu Sắc', 'Nâu', 'image');
 /*!40000 ALTER TABLE `order_option` ENABLE KEYS */;
 
--- Dumping data for table weorder.order_product: 55 rows
+-- Dumping data for table weorder.order_product: 59 rows
 /*!40000 ALTER TABLE `order_product` DISABLE KEYS */;
 INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `link`, `size`, `color`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
 	(1, 1, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'L,M', 'Trắng ', 2, 650000.0000, 1300000.0000, 0.0000, 0),
@@ -1147,7 +1151,11 @@ INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name
 	(52, 47, 99, 'Sản phẩm', 'Color', 'link sản phẩm', 'size', 'Array', 1, 250000.0000, 250000.0000, 0.0000, 0),
 	(53, 48, 30, 'Áo cánh mỏng', 'Màu', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', 'Array', 1, 690000.0000, 690000.0000, 0.0000, 200),
 	(54, 49, 30, 'Áo cánh mỏng', 'Product 3', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', '', 1, 690000.0000, 690000.0000, 0.0000, 200),
-	(55, 50, 31, 'Áo phông 3', 'Product 4', 'http://www.geckomedia.vn', 'M', 'Trắng', 1, 390000.0000, 390000.0000, 0.0000, 0);
+	(55, 50, 31, 'Áo phông 3', 'Product 4', 'http://www.geckomedia.vn', 'M', 'Trắng', 1, 390000.0000, 390000.0000, 0.0000, 0),
+	(56, 51, 30, 'Áo cánh mỏng', 'Product 3', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', '', 1, 690000.0000, 690000.0000, 0.0000, 200),
+	(57, 52, 30, 'Áo cánh mỏng', 'Product 3', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', '', 1, 690000.0000, 690000.0000, 0.0000, 200),
+	(58, 52, 108, 'sdg', '', 'sdg', 'dsg', 'sdg', 2, 2556000.0000, 5112000.0000, 0.0000, 0),
+	(59, 52, 106, 'name', '', 'sdgsdg', 'sdg', 'dsgdsg', 1, 5005500.0000, 5005500.0000, 0.0000, 0);
 /*!40000 ALTER TABLE `order_product` ENABLE KEYS */;
 
 -- Dumping data for table weorder.order_status: 5 rows
@@ -1160,7 +1168,7 @@ INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`, `sort_orde
 	(18, 2, 'Chờ thanh toán', 2);
 /*!40000 ALTER TABLE `order_status` ENABLE KEYS */;
 
--- Dumping data for table weorder.order_total: 101 rows
+-- Dumping data for table weorder.order_total: 105 rows
 /*!40000 ALTER TABLE `order_total` DISABLE KEYS */;
 INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`, `value`, `sort_order`) VALUES
 	(1, 1, 'sub_total', 'Tổng giá trị là', '2,800,000 VNĐ', 2800000.0000, 1),
@@ -1263,19 +1271,23 @@ INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`
 	(98, 49, 'sub_total', 'Tổng giá trị là', '690,000 VNĐ', 690000.0000, 1),
 	(99, 49, 'total', 'Thành tiền', '690,000 VNĐ', 690000.0000, 9),
 	(100, 50, 'sub_total', 'Tổng giá trị là', '390,000 VNĐ', 390000.0000, 1),
-	(101, 50, 'total', 'Thành tiền', '390,000 VNĐ', 390000.0000, 9);
+	(101, 50, 'total', 'Thành tiền', '390,000 VNĐ', 390000.0000, 9),
+	(102, 51, 'sub_total', 'Tổng giá trị là', '690,000 VNĐ', 690000.0000, 1),
+	(103, 51, 'total', 'Thành tiền', '690,000 VNĐ', 690000.0000, 9),
+	(104, 52, 'sub_total', 'Tổng giá trị là', '10,807,500 VNĐ', 10807500.0000, 1),
+	(105, 52, 'total', 'Thành tiền', '10,807,500 VNĐ', 10807500.0000, 9);
 /*!40000 ALTER TABLE `order_total` ENABLE KEYS */;
 
 -- Dumping data for table weorder.order_voucher: 0 rows
 /*!40000 ALTER TABLE `order_voucher` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_voucher` ENABLE KEYS */;
 
--- Dumping data for table weorder.product: 69 rows
+-- Dumping data for table weorder.product: 74 rows
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `link`, `size`, `color`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
 	(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'data/san_pham/IMG_3920-400x600.JPG', 5, 1, 500000.0000, 200, 9, '2009-02-03', 'http://www.geckomedia.vn', 'M', 'Trắng', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:06:50', '2013-06-19 20:30:49', 95),
 	(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'data/demo/palm_treo_pro_1.jpg', 6, 1, 279.9900, 0, 9, '2009-02-03', 'http://www.geckofashion.vn', 'M', 'Trắng', 133.00000000, 2, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0),
-	(30, 'Product 3', '', '', '', '', '', '', '', 2, 6, 'data/1-single-thumbnail.jpg', 9, 1, 690000.0000, 0, 0, '2009-02-03', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2013-06-19 20:35:38', 149),
+	(30, 'Product 3', '', '', '', '', '', '', '', 0, 6, 'data/1-single-thumbnail.jpg', 9, 1, 690000.0000, 0, 0, '2009-02-03', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2013-06-19 20:35:38', 149),
 	(31, 'Product 4', '', '', '', '', '', '', '', 998, 6, 'data/san_pham/IMG_3958-400x600.JPG', 11, 1, 390000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2013-06-19 20:31:00', 11),
 	(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'data/demo/ipod_touch_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 'http://www.geckofashion.vn', 'sdg', NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 17:07:26', '2011-09-30 01:07:22', 0),
 	(33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'data/demo/samsung_syncmaster_941bw.jpg', 0, 1, 200.0000, 0, 9, '2009-02-03', 'http://www.geckofashion.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 17:08:31', '2011-09-30 01:06:29', 0),
@@ -1341,7 +1353,12 @@ INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`
 	(103, '', '', '', '', '', '', '', '', 2, 0, 'data/no_image.jpg', 0, 0, 1704000.0000, 0, 0, '0000-00-00', 'sdgs', 'dsg', '', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-25 01:16:16', '0000-00-00 00:00:00', 0),
 	(104, '', '', '', '', '', '', '', '', 2, 0, 'data/no_image.jpg', 0, 0, 80197500.0000, 0, 0, '0000-00-00', 'Link', 'M', '', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-25 01:21:02', '0000-00-00 00:00:00', 0),
 	(105, '', '', '', '', '', '', '', '', 3, 0, 'data/no_image.jpg', 0, 0, 4009875.0000, 0, 0, '0000-00-00', 'Link', 'M', '', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-25 01:21:44', '0000-00-00 00:00:00', 2),
-	(106, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 5005500.0000, 0, 0, '0000-00-00', 'sdgsdg', 'sdg', 'dsgdsg', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-25 20:06:43', '0000-00-00 00:00:00', 0);
+	(106, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 5005500.0000, 0, 0, '0000-00-00', 'sdgsdg', 'sdg', 'dsgdsg', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-25 20:06:43', '0000-00-00 00:00:00', 0),
+	(107, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 53250000.0000, 0, 0, '0000-00-00', 'dgsg', 'dsg', 'dsg', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-26 01:10:24', '0000-00-00 00:00:00', 0),
+	(108, '', '', '', '', '', '', '', '', 100, 0, 'data/no_image.jpg', 0, 0, 2556000.0000, 0, 0, '0000-00-00', 'sdg', 'dsg', 'sdg', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-26 01:13:07', '0000-00-00 00:00:00', 0),
+	(109, '', '', '', '', '', '', '', '', 100, 0, 'data/no_image.jpg', 0, 0, 769896.0000, 0, 0, '0000-00-00', 'sdg', 'M', 'dsgsdg', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-26 01:16:24', '0000-00-00 00:00:00', 0),
+	(110, '', '', '', '', '', '', '', '', 100, 0, 'data/no_image.jpg', 0, 0, 5325000.0000, 0, 0, '0000-00-00', 'http://dbc.com', 'M', '', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-26 02:21:41', '0000-00-00 00:00:00', 0),
+	(111, '', '', '', '', '', '', '', '', 100, 0, 'data/no_image.jpg', 0, 0, 2556000.0000, 0, 0, '0000-00-00', 'http://abc.com', 'L', 'Trắng', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-26 02:22:07', '0000-00-00 00:00:00', 0);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 -- Dumping data for table weorder.product_attribute: 2 rows
@@ -1351,7 +1368,7 @@ INSERT INTO `product_attribute` (`product_id`, `attribute_id`, `language_id`, `t
 	(43, 4, 2, '8gb');
 /*!40000 ALTER TABLE `product_attribute` ENABLE KEYS */;
 
--- Dumping data for table weorder.product_description: 58 rows
+-- Dumping data for table weorder.product_description: 63 rows
 /*!40000 ALTER TABLE `product_description` DISABLE KEYS */;
 INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `description`, `sort_description`, `meta_description`, `meta_keyword`, `tag`) VALUES
 	(76, 2, '', '', '', '', '', ''),
@@ -1411,7 +1428,12 @@ INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `descrip
 	(103, 2, 'Nam', '', '', '', '', ''),
 	(104, 2, 'Ten', '', '', '', '', ''),
 	(105, 2, 'Ten', '', '', '', '', ''),
-	(106, 2, 'name', '', '', '', '', '');
+	(106, 2, 'name', '', '', '', '', ''),
+	(107, 2, 'Test', '', '', '', '', ''),
+	(108, 2, 'sdg', '', '', '', '', ''),
+	(109, 2, 'Áo cánh hồng mỏng', '', '', '', '', ''),
+	(110, 2, 'Testing', '', '', '', '', ''),
+	(111, 2, 'Testing 2', '', '', '', '', '');
 /*!40000 ALTER TABLE `product_description` ENABLE KEYS */;
 
 -- Dumping data for table weorder.product_discount: 3 rows
@@ -1537,7 +1559,7 @@ INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group
 /*!40000 ALTER TABLE `product_special` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_special` ENABLE KEYS */;
 
--- Dumping data for table weorder.product_to_category: 41 rows
+-- Dumping data for table weorder.product_to_category: 46 rows
 /*!40000 ALTER TABLE `product_to_category` DISABLE KEYS */;
 INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 	(28, 33),
@@ -1580,7 +1602,12 @@ INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 	(103, 66),
 	(104, 66),
 	(105, 66),
-	(106, 66);
+	(106, 66),
+	(107, 66),
+	(108, 66),
+	(109, 66),
+	(110, 66),
+	(111, 66);
 /*!40000 ALTER TABLE `product_to_category` ENABLE KEYS */;
 
 -- Dumping data for table weorder.product_to_download: 0 rows
@@ -1591,7 +1618,7 @@ INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 /*!40000 ALTER TABLE `product_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_to_layout` ENABLE KEYS */;
 
--- Dumping data for table weorder.product_to_store: 59 rows
+-- Dumping data for table weorder.product_to_store: 64 rows
 /*!40000 ALTER TABLE `product_to_store` DISABLE KEYS */;
 INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 	(28, 0),
@@ -1652,7 +1679,12 @@ INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 	(103, 0),
 	(104, 0),
 	(105, 0),
-	(106, 0);
+	(106, 0),
+	(107, 0),
+	(108, 0),
+	(109, 0),
+	(110, 0),
+	(111, 0);
 /*!40000 ALTER TABLE `product_to_store` ENABLE KEYS */;
 
 -- Dumping data for table weorder.return: 0 rows

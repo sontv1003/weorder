@@ -109,7 +109,7 @@ class ControllerAccountOrder extends Controller {
         $results = $this->model_account_order->getOrders(($page - 1) * 10, 10, $order_status_id);
         $order_statuses = $this->model_localisation_order_status->getOrderStatuses();
         $count_status = 0;
-        foreach($order_statuses as $os) {
+        foreach ($order_statuses as $os) {
             $count_status++;
             $summary_orders[$os['order_status_id']] = array('quantity' => 0, 'total' => 0, 'currency' => 0);
         }
@@ -257,6 +257,10 @@ class ControllerAccountOrder extends Controller {
             $this->data['column_status'] = $this->language->get('column_status');
             $this->data['column_comment'] = $this->language->get('column_comment');
 
+            $this->data['account_info_href'] = $this->url->link('account/edit');
+            $this->data['account_order_info_href'] = $this->url->link('account/order');
+            $this->data['account_transaction_href'] = $this->url->link('account/transaction');
+
             $this->data['button_return'] = $this->language->get('button_return');
             $this->data['button_continue'] = $this->language->get('button_continue');
 
@@ -380,6 +384,7 @@ class ControllerAccountOrder extends Controller {
                     'option' => $option_data,
                     'thumb' => $image,
                     'quantity' => $product['quantity'],
+                    'order_status_id' => $product['order_status_id'],
                     'href' => $this->url->link('product/product', 'product_id=' . $product['product_id']),
                     'price' => $this->currency->format($product['price'] + ($this->config->get('config_tax') ? $product['tax'] : 0), $order_info['currency_code'], $order_info['currency_value']),
                     'total' => $this->currency->format($product['total'] + ($this->config->get('config_tax') ? ($product['tax'] * $product['quantity']) : 0), $order_info['currency_code'], $order_info['currency_value']),
@@ -520,14 +525,14 @@ class ControllerAccountOrder extends Controller {
         if (!empty($this->request->get['order_from'])) {
             $str_from = explode('/', $this->request->get['order_from']);
             if (count($str_from) == 3) {
-                $order_from = $str_from[2] . '-' . $str_from[1] . '-' . $str_from[0].' 00:00:00';
+                $order_from = $str_from[2] . '-' . $str_from[1] . '-' . $str_from[0] . ' 00:00:00';
             }
         }
 
         if (!empty($this->request->get['order_to'])) {
             $str_to = explode('/', $this->request->get['order_to']);
             if (count($str_to) == 3) {
-                $order_to = $str_to[2] . '-' . $str_to[1] . '-' . $str_to[0]. '23:59:59';
+                $order_to = $str_to[2] . '-' . $str_to[1] . '-' . $str_to[0] . '23:59:59';
             }
         }
 
