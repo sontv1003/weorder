@@ -16,24 +16,24 @@
         <table width="100%" cellspacing="10px;" cellpadding="5px" bordercolor="#CCCCCC" align="center">
             <tbody>
                 <tr>
-                    <td align="center" colspan="<?php echo $count_status+1; ?>" class="font-chu"><span style="font-size:36px; margin-top:-10px;color:#333">Danh sách đơn hàng cá nhân</span></td>
+                    <td align="center" colspan="<?php echo $count_status + 1; ?>" class="font-chu"><span style="font-size:36px; margin-top:-10px;color:#333">Danh sách đơn hàng cá nhân</span></td>
                 </tr>
                 <tr bgcolor="#CCCCCC">
                     <td width="150px" bgcolor="#cdcdcd" align="center" style="background-color: #333;color: #FFFFFF; margin: 8px; vertical-align: middle;" class="font-chu boder-1">Đơn hàng</td>
-                    <?php foreach($order_statuses as $os): ?>
-                    <td width="<?php echo ceil(100/($count_status+1)) ;?>%" bgcolor="#cdcdcd" align="center" style="background-color: #333;color: #FFFFFF;margin: 8px; vertical-align: middle;" class="font-chu boder-1"><?php echo $os['name'] ?></td>
+                    <?php foreach ($order_statuses as $os): ?>
+                        <td width="<?php echo ceil(100 / ($count_status + 1)); ?>%" bgcolor="#cdcdcd" align="center" style="background-color: #333;color: #FFFFFF;margin: 8px; vertical-align: middle;" class="font-chu boder-1"><?php echo $os['name'] ?></td>
                     <?php endforeach; ?>
                 </tr>
                 <tr bgcolor="#CCCCCC">
                     <td bgcolor="#cdcdcd" align="center" style="background-color: #333333; color: #FFFFFF; margin: 2px; vertical-align: middle;" class="boder-1 font-chu">Số lượng ( đơn )</td>
-                    <?php foreach($order_statuses as $os): ?>
-                    <td bgcolor="#fff" align="center" style="margin: 2px; background-color: rgb(153, 153, 153); border: 1px solid rgb(0, 0, 0); font-family: 'UTM_Avo'; font-size: 16px;" class="boder-1"><?php echo $summary_orders[$os['order_status_id']]['quantity']; ?></td>
+                    <?php foreach ($order_statuses as $os): ?>
+                        <td bgcolor="#fff" align="center" style="margin: 2px; background-color: rgb(153, 153, 153); border: 1px solid rgb(0, 0, 0); font-family: 'UTM_Avo'; font-size: 16px;" class="boder-1"><?php echo $summary_orders[$os['order_status_id']]['quantity']; ?></td>
                     <?php endforeach; ?>
                 </tr>
                 <tr bgcolor="#CCCCCC">
                     <td bgcolor="#fff" align="center" style="background-color: #333333; color: #FFFFFF; margin: 2px; vertical-align: middle;" class="boder-1 font-chu">Trị Giá ( vnđ )</td>
-                    <?php foreach($order_statuses as $os): ?>
-                    <td bgcolor="#fff" align="center" style="margin: 2px; background-color: rgb(153, 153, 153); border: 1px solid rgb(000, 000, 000); font-family: 'UTM_Avo'; font-size: 16px;color:#f00" class="boder-1"><?php echo $summary_orders[$os['order_status_id']]['currency']; ?></td>
+                    <?php foreach ($order_statuses as $os): ?>
+                        <td bgcolor="#fff" align="center" style="margin: 2px; background-color: rgb(153, 153, 153); border: 1px solid rgb(000, 000, 000); font-family: 'UTM_Avo'; font-size: 16px;color:#f00" class="boder-1"><?php echo $summary_orders[$os['order_status_id']]['currency']; ?></td>
                     <?php endforeach; ?>
                 </tr>
             </tbody></table>
@@ -62,13 +62,13 @@
                     <input type="button" value="Tất cả đơn hàng" style="background-color:#666">
                 </a>
             </li>
-            <?php foreach($order_statuses as $order_status): ?>
-            <li>
-                <a href="javascript:void(0)">
-                    <input type="hidden" class="filter_status_id" value ="<?php echo $order_status['order_status_id'] ?>" />
-                    <input type="button" value="<?php echo $order_status['name'] ?>" style="background-color:#666; text-decoration: none;">
-                </a>
-            </li>
+            <?php foreach ($order_statuses as $order_status): ?>
+                <li>
+                    <a href="javascript:void(0)">
+                        <input type="hidden" class="filter_status_id" value ="<?php echo $order_status['order_status_id'] ?>" />
+                        <input type="button" value="<?php echo $order_status['name'] ?>" style="background-color:#666; text-decoration: none;">
+                    </a>
+                </li>
             <?php endforeach; ?>
         </ul>
         <table width="100%" cellspacing="10px;" cellpadding="5px" bordercolor="#CCCCCC" align="center">
@@ -98,27 +98,27 @@
                                 <a href="<?php echo $order['href']; ?>">#<?php echo $order['order_id']; ?> - <?php echo $order['date_added']; ?></a>
                             </th>
                             <th width="30%" align="center" class="boder-1 v_center">
-                                <textarea onfocus="this.value = '';
-                                                this.onfocus = null;" style="border: 1px solid;
-                                          color: #999999;width: 200px !important;
-                                          height: 19px; margin-top:10px" name="domainNameInput2" id="domainNameInput2" class="txt-reg-domain"> 
-
-                                </textarea>
-                                <a href="#"><img style="margin:10px 0px 0px 4px" src="<?php echo HTTP_SERVER; ?>image/save-icon.png"></a>
-                            </th>
-                            <th width="15%" align="center" valign="middle" class="boder-1 v_center"><?php echo $order['total']; ?></th>
-                            <th width="10%" align="center" valign="middle" class="boder-1 v_center"><?php echo $order['products']; ?></th>
-                            <th width="20%" align="center" valign="middle" class="boder-1 v_center"><span id="tt"><?php echo $order['status']; ?></span></th>
-                            <th width="*" align="center" valign="middle" class="boder-1 v_center"><a href="<?php echo $order['href']; ?>">Chi tiết</a></th>
-                        </tr>
-                        <?php
-                    }
-                } else {
-                    ?>
-                    <tr class="ui-border">
-                        <td colspan="6"><p style="margin-left: 20px; margin-top: 10px; color: #ff0000; font-size: 16px;">Bạn không có đơn hàng nào</p></td>
+                    <div class="order_note" style="position: relative;">
+                        <textarea class="txt_note" style="border: 1px solid; color: #333; width: 200px !important; height: 25px; margin-top: 4px;"><?php echo $order['note']; ?></textarea>
+                        <a href="javascript:void(0)" class="update_note">
+                            <input type="hidden" value="<?php echo $order['order_id']; ?>" class="hidden_order_id" />
+                            <img style="margin:6px 0px 0px 4px" src="<?php echo HTTP_SERVER; ?>image/save-icon.png">
+                        </a>
+                    </div>
+                    </th>
+                    <th width="15%" align="center" valign="middle" class="boder-1 v_center"><?php echo $order['total']; ?></th>
+                    <th width="10%" align="center" valign="middle" class="boder-1 v_center"><?php echo $order['products']; ?></th>
+                    <th width="20%" align="center" valign="middle" class="boder-1 v_center"><span id="tt"><?php echo $order['status']; ?></span></th>
+                    <th width="*" align="center" valign="middle" class="boder-1 v_center"><a href="<?php echo $order['href']; ?>">Chi tiết</a></th>
                     </tr>
-                <?php } ?>
+                    <?php
+                }
+            } else {
+                ?>
+                <tr class="ui-border">
+                    <td colspan="6"><p style="margin-left: 20px; margin-top: 10px; color: #ff0000; font-size: 16px;">Bạn không có đơn hàng nào</p></td>
+                </tr>
+            <?php } ?>
             </tbody>
         </table>
     </div>
@@ -153,7 +153,7 @@
                 order_year: $('#order_year').val()
             },
             beforeSend: function() {
-                $('select[name=\'country_id\']').after('<span class="wait">&nbsp;<img src="catalog/view/theme/default/images/loading.gif" alt="" /></span>');
+                $('select[name=\'country_id\']').after('<span class="wait">&nbsp;<img src="<?php echo HTTP_SERVER; ?>image/loading.gif" alt="" /></span>');
             },
             complete: function() {
                 $('.wait').remove();
@@ -173,7 +173,31 @@
     $('#tim').click('click', function() {
         filter(1, $(this));
     });
-    
+
+    $('.update_note').live('click', function() {
+        var order_id = $('.hidden_order_id', this).val();
+        var note = $('.txt_note', $(this).parents('.order_note')).val()
+        var obj = $(this);
+        $.ajax({
+            url: 'index.php?route=account/order/update_note',
+            type: 'GET',
+            dataType: 'json',
+            data: {
+                note: note,
+                order_id: order_id
+            },
+            beforeSend: function() {
+                obj.after('<span class="wait" style="position: absolute; top: 6px; right: 80px;"><img src="<?php echo HTTP_SERVER; ?>image/loading.gif" alt="" /></span>');
+            },
+            complete: function() {
+
+            },
+            success: function(data) {
+                $('.wait').remove();
+            }
+        });
+    });
+
     $(function() {
         var months = ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"];
         var daysInWeek = ["T2", "T3", "T4", "T5", "T6", "T7", "CN"];
@@ -183,7 +207,7 @@
             monthNames: months,
             dateFormat: 'dd/mm/yy'
         });
-        
+
         $("#order_to").datepicker({
             appendText: "(yyyy-mm-dd)",
             dayNamesMin: daysInWeek,

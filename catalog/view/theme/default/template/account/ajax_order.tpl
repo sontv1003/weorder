@@ -5,17 +5,18 @@
                 <a href="<?php echo $order['href']; ?>">#<?php echo $order['order_id']; ?> - <?php echo $order['date_added']; ?></a>
             </th>
             <th width="30%" align="center" valign="middle" class="boder-1 v_center">
-                <textarea onfocus="this.value=''; this.onfocus=null;" style="border: 1px solid;
-                          color: #999999;width: 200px !important;
-                          height: 19px; margin-top:10px" name="domainNameInput2" id="domainNameInput2" class="txt-reg-domain"> 
-
-                </textarea>
-                <a href="#"><img style="margin:10px 0px 0px 4px" src="<?php echo HTTP_SERVER; ?>image/save-icon.png"></a>
-            </th>
-            <th width="15%" align="center" valign="middle" class="boder-1 v_center"><?php echo $order['total']; ?></th>
-            <th width="10%" align="center" valign="middle" class="boder-1 v_center"><?php echo $order['products']; ?></th>
-            <th width="20%" align="center" valign="middle" class="boder-1 v_center"><span id="tt"><?php echo $order['status']; ?></span></th>
-            <th width="*" align="center" valign="middle" class="boder-1 v_center"><a href="<?php echo $order['href']; ?>">Chi tiết</a></th>
+        <div class="order_note" style="position: relative;">
+            <textarea class="txt_note" style="border: 1px solid; color: #333; width: 200px !important; height: 25px; margin-top: 4px;"><?php echo $order['note']; ?></textarea>
+            <a href="javascript:void(0)" class="update_note">
+                <input type="hidden" value="<?php echo $order['order_id']; ?>" class="hidden_order_id" />
+                <img style="margin:6px 0px 0px 4px" src="<?php echo HTTP_SERVER; ?>image/save-icon.png">
+            </a>
+        </div>
+        </th>
+        <th width="15%" align="center" valign="middle" class="boder-1 v_center"><?php echo $order['total']; ?></th>
+        <th width="10%" align="center" valign="middle" class="boder-1 v_center"><?php echo $order['products']; ?></th>
+        <th width="20%" align="center" valign="middle" class="boder-1 v_center"><span id="tt"><?php echo $order['status']; ?></span></th>
+        <th width="*" align="center" valign="middle" class="boder-1 v_center"><a href="<?php echo $order['href']; ?>">Chi tiết</a></th>
         </tr>
         <?php
     }

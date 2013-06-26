@@ -96,7 +96,8 @@ class ModelAccountOrder extends Model {
                 'currency_value' => $order_query->row['currency_value'],
                 'date_modified' => $order_query->row['date_modified'],
                 'date_added' => $order_query->row['date_added'],
-                'ip' => $order_query->row['ip']
+                'ip' => $order_query->row['ip'],
+                'note' => $order_query->row['note'],
             );
         } else {
             return false;
@@ -129,7 +130,7 @@ class ModelAccountOrder extends Model {
             $where = " AND o.order_id = '" . $order_id . "'";
         }
 
-        $query = $this->db->query("SELECT o.order_id, o.order_status_id, o.firstname, o.lastname, os.name as status, o.date_added, o.total, o.currency_code, o.currency_value 
+        $query = $this->db->query("SELECT o.order_id, o.order_status_id, o.firstname, o.lastname, os.name as status, o.date_added, o.total, o.currency_code, o.currency_value , o.note
             FROM `" . DB_PREFIX . "order` o 
             LEFT JOIN " . DB_PREFIX . "order_status os ON (o.order_status_id = os.order_status_id) 
             WHERE o.customer_id = '" . (int) $this->customer->getId() .
@@ -202,6 +203,15 @@ class ModelAccountOrder extends Model {
         $query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "order_voucher` WHERE order_id = '" . (int) $order_id . "'");
 
         return $query->row['total'];
+    }
+    
+    /**
+     * Update note for Order
+     * @param type $order_id
+     * @param type $note
+     */
+    public function updateNoteForOrder($order_id, $note) {
+        $this->db->query("UPDATE `" . DB_PREFIX . "order` SET note = '" . $note . "' WHERE order_id = '" . (int) $order_id . "'");
     }
 
 }
