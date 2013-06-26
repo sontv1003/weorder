@@ -3,12 +3,32 @@
 -- Server version:               5.5.24-log - MySQL Community Server (GPL)
 -- Server OS:                    Win64
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-06-26 20:03:07
+-- Date/time:                    2013-06-26 23:09:37
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!40014 SET FOREIGN_KEY_CHECKS=0 */;
+
+-- Dumping structure for table weorder.address
+CREATE TABLE IF NOT EXISTS `address` (
+  `address_id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) NOT NULL,
+  `firstname` varchar(32) NOT NULL,
+  `lastname` varchar(32) NOT NULL,
+  `company` varchar(32) NOT NULL,
+  `company_id` varchar(32) NOT NULL,
+  `tax_id` varchar(32) NOT NULL,
+  `address_1` varchar(128) NOT NULL,
+  `address_2` varchar(128) NOT NULL,
+  `city` varchar(128) NOT NULL,
+  `postcode` varchar(10) NOT NULL,
+  `country_id` int(11) NOT NULL DEFAULT '0',
+  `zone_id` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`address_id`),
+  KEY `customer_id` (`customer_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.address: 11 rows
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
 INSERT INTO `address` (`address_id`, `customer_id`, `firstname`, `lastname`, `company`, `company_id`, `tax_id`, `address_1`, `address_2`, `city`, `postcode`, `country_id`, `zone_id`) VALUES
@@ -25,13 +45,71 @@ INSERT INTO `address` (`address_id`, `customer_id`, `firstname`, `lastname`, `co
 	(11, 11, 'Tester', '', '', '', '', '233265', '', '', '', 230, 3752);
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.affiliate
+CREATE TABLE IF NOT EXISTS `affiliate` (
+  `affiliate_id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(32) NOT NULL,
+  `lastname` varchar(32) NOT NULL,
+  `email` varchar(96) NOT NULL,
+  `telephone` varchar(32) NOT NULL,
+  `fax` varchar(32) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `salt` varchar(9) NOT NULL,
+  `company` varchar(32) NOT NULL,
+  `website` varchar(255) NOT NULL,
+  `address_1` varchar(128) NOT NULL,
+  `address_2` varchar(128) NOT NULL,
+  `city` varchar(128) NOT NULL,
+  `postcode` varchar(10) NOT NULL,
+  `country_id` int(11) NOT NULL,
+  `zone_id` int(11) NOT NULL,
+  `code` varchar(64) NOT NULL,
+  `commission` decimal(4,2) NOT NULL DEFAULT '0.00',
+  `tax` varchar(64) NOT NULL,
+  `payment` varchar(6) NOT NULL,
+  `cheque` varchar(100) NOT NULL,
+  `paypal` varchar(64) NOT NULL,
+  `bank_name` varchar(64) NOT NULL,
+  `bank_branch_number` varchar(64) NOT NULL,
+  `bank_swift_code` varchar(64) NOT NULL,
+  `bank_account_name` varchar(64) NOT NULL,
+  `bank_account_number` varchar(64) NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `approved` tinyint(1) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`affiliate_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.affiliate: 0 rows
 /*!40000 ALTER TABLE `affiliate` DISABLE KEYS */;
 /*!40000 ALTER TABLE `affiliate` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.affiliate_transaction
+CREATE TABLE IF NOT EXISTS `affiliate_transaction` (
+  `affiliate_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
+  `affiliate_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `description` text NOT NULL,
+  `amount` decimal(15,4) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`affiliate_transaction_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.affiliate_transaction: 0 rows
 /*!40000 ALTER TABLE `affiliate_transaction` DISABLE KEYS */;
 /*!40000 ALTER TABLE `affiliate_transaction` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.attribute
+CREATE TABLE IF NOT EXISTS `attribute` (
+  `attribute_id` int(11) NOT NULL AUTO_INCREMENT,
+  `attribute_group_id` int(11) NOT NULL,
+  `sort_order` int(3) NOT NULL,
+  PRIMARY KEY (`attribute_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.attribute: 11 rows
 /*!40000 ALTER TABLE `attribute` DISABLE KEYS */;
@@ -49,6 +127,15 @@ INSERT INTO `attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VAL
 	(11, 3, 8);
 /*!40000 ALTER TABLE `attribute` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.attribute_description
+CREATE TABLE IF NOT EXISTS `attribute_description` (
+  `attribute_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  PRIMARY KEY (`attribute_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.attribute_description: 11 rows
 /*!40000 ALTER TABLE `attribute_description` DISABLE KEYS */;
 INSERT INTO `attribute_description` (`attribute_id`, `language_id`, `name`) VALUES
@@ -65,6 +152,14 @@ INSERT INTO `attribute_description` (`attribute_id`, `language_id`, `name`) VALU
 	(3, 2, 'Clockspeed');
 /*!40000 ALTER TABLE `attribute_description` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.attribute_group
+CREATE TABLE IF NOT EXISTS `attribute_group` (
+  `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT,
+  `sort_order` int(3) NOT NULL,
+  PRIMARY KEY (`attribute_group_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.attribute_group: 4 rows
 /*!40000 ALTER TABLE `attribute_group` DISABLE KEYS */;
 INSERT INTO `attribute_group` (`attribute_group_id`, `sort_order`) VALUES
@@ -73,6 +168,15 @@ INSERT INTO `attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 	(5, 3),
 	(6, 4);
 /*!40000 ALTER TABLE `attribute_group` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.attribute_group_description
+CREATE TABLE IF NOT EXISTS `attribute_group_description` (
+  `attribute_group_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  PRIMARY KEY (`attribute_group_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.attribute_group_description: 4 rows
 /*!40000 ALTER TABLE `attribute_group_description` DISABLE KEYS */;
@@ -83,6 +187,15 @@ INSERT INTO `attribute_group_description` (`attribute_group_id`, `language_id`, 
 	(6, 2, 'Processor');
 /*!40000 ALTER TABLE `attribute_group_description` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.banner
+CREATE TABLE IF NOT EXISTS `banner` (
+  `banner_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  PRIMARY KEY (`banner_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.banner: 3 rows
 /*!40000 ALTER TABLE `banner` DISABLE KEYS */;
 INSERT INTO `banner` (`banner_id`, `name`, `status`) VALUES
@@ -90,6 +203,16 @@ INSERT INTO `banner` (`banner_id`, `name`, `status`) VALUES
 	(8, 'Tin nóng hàng ngày', 1),
 	(9, 'Slideshow Danh mục', 1);
 /*!40000 ALTER TABLE `banner` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.banner_image
+CREATE TABLE IF NOT EXISTS `banner_image` (
+  `banner_image_id` int(11) NOT NULL AUTO_INCREMENT,
+  `banner_id` int(11) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  PRIMARY KEY (`banner_image_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.banner_image: 5 rows
 /*!40000 ALTER TABLE `banner_image` DISABLE KEYS */;
@@ -101,6 +224,16 @@ INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VAL
 	(94, 9, '', 'data/1.jpg');
 /*!40000 ALTER TABLE `banner_image` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.banner_image_description
+CREATE TABLE IF NOT EXISTS `banner_image_description` (
+  `banner_image_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `banner_id` int(11) NOT NULL,
+  `title` varchar(64) NOT NULL,
+  PRIMARY KEY (`banner_image_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.banner_image_description: 5 rows
 /*!40000 ALTER TABLE `banner_image_description` DISABLE KEYS */;
 INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
@@ -110,6 +243,22 @@ INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banne
 	(91, 2, 7, 'sssssss'),
 	(94, 2, 9, 'hdfhdfhd');
 /*!40000 ALTER TABLE `banner_image_description` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.category
+CREATE TABLE IF NOT EXISTS `category` (
+  `category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) DEFAULT NULL,
+  `parent_id` int(11) NOT NULL DEFAULT '0',
+  `top` tinyint(1) NOT NULL,
+  `top2` tinyint(1) NOT NULL,
+  `column` int(3) NOT NULL,
+  `sort_order` int(3) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`category_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.category: 10 rows
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
@@ -126,6 +275,19 @@ INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `top2`, `col
 	(66, '', 0, 0, 0, 1, 0, 1, '2013-06-22 22:32:42', '2013-06-22 22:32:55');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.category_description
+CREATE TABLE IF NOT EXISTS `category_description` (
+  `category_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `meta_description` varchar(255) NOT NULL,
+  `meta_keyword` varchar(255) NOT NULL,
+  PRIMARY KEY (`category_id`,`language_id`),
+  KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.category_description: 10 rows
 /*!40000 ALTER TABLE `category_description` DISABLE KEYS */;
 INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
@@ -141,9 +303,26 @@ INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `descr
 	(66, 2, 'Người dùng tạo', '', '', '');
 /*!40000 ALTER TABLE `category_description` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.category_filter
+CREATE TABLE IF NOT EXISTS `category_filter` (
+  `category_id` int(11) NOT NULL,
+  `filter_id` int(11) NOT NULL,
+  PRIMARY KEY (`category_id`,`filter_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.category_filter: 0 rows
 /*!40000 ALTER TABLE `category_filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `category_filter` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.category_path
+CREATE TABLE IF NOT EXISTS `category_path` (
+  `category_id` int(11) NOT NULL,
+  `path_id` int(11) NOT NULL,
+  `level` int(11) NOT NULL,
+  PRIMARY KEY (`category_id`,`path_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.category_path: 16 rows
 /*!40000 ALTER TABLE `category_path` DISABLE KEYS */;
@@ -166,6 +345,15 @@ INSERT INTO `category_path` (`category_id`, `path_id`, `level`) VALUES
 	(66, 66, 0);
 /*!40000 ALTER TABLE `category_path` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.category_to_layout
+CREATE TABLE IF NOT EXISTS `category_to_layout` (
+  `category_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `layout_id` int(11) NOT NULL,
+  PRIMARY KEY (`category_id`,`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.category_to_layout: 6 rows
 /*!40000 ALTER TABLE `category_to_layout` DISABLE KEYS */;
 INSERT INTO `category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
@@ -176,6 +364,14 @@ INSERT INTO `category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
 	(64, 0, 3),
 	(65, 0, 3);
 /*!40000 ALTER TABLE `category_to_layout` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.category_to_store
+CREATE TABLE IF NOT EXISTS `category_to_store` (
+  `category_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  PRIMARY KEY (`category_id`,`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.category_to_store: 10 rows
 /*!40000 ALTER TABLE `category_to_store` DISABLE KEYS */;
@@ -191,6 +387,19 @@ INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
 	(65, 0),
 	(66, 0);
 /*!40000 ALTER TABLE `category_to_store` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.country
+CREATE TABLE IF NOT EXISTS `country` (
+  `country_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) NOT NULL,
+  `iso_code_2` varchar(2) NOT NULL,
+  `iso_code_3` varchar(3) NOT NULL,
+  `address_format` text NOT NULL,
+  `postcode_required` tinyint(1) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`country_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=252 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.country: 249 rows
 /*!40000 ALTER TABLE `country` DISABLE KEYS */;
@@ -446,6 +655,26 @@ INSERT INTO `country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addres
 	(251, 'Canary Islands', 'IC', 'ICA', '', 0, 1);
 /*!40000 ALTER TABLE `country` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.coupon
+CREATE TABLE IF NOT EXISTS `coupon` (
+  `coupon_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) NOT NULL,
+  `code` varchar(10) NOT NULL,
+  `type` char(1) NOT NULL,
+  `discount` decimal(15,4) NOT NULL,
+  `logged` tinyint(1) NOT NULL,
+  `shipping` tinyint(1) NOT NULL,
+  `total` decimal(15,4) NOT NULL,
+  `date_start` date NOT NULL DEFAULT '0000-00-00',
+  `date_end` date NOT NULL DEFAULT '0000-00-00',
+  `uses_total` int(11) NOT NULL,
+  `uses_customer` varchar(11) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`coupon_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.coupon: 3 rows
 /*!40000 ALTER TABLE `coupon` DISABLE KEYS */;
 INSERT INTO `coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
@@ -454,17 +683,61 @@ INSERT INTO `coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`,
 	(6, '-10.00 Discount', '1111', 'F', 10.0000, 0, 0, 10.0000, '1970-11-01', '2020-11-01', 100000, '10000', 1, '2009-03-14 21:15:18');
 /*!40000 ALTER TABLE `coupon` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.coupon_category
+CREATE TABLE IF NOT EXISTS `coupon_category` (
+  `coupon_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  PRIMARY KEY (`coupon_id`,`category_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.coupon_category: 0 rows
 /*!40000 ALTER TABLE `coupon_category` DISABLE KEYS */;
 /*!40000 ALTER TABLE `coupon_category` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.coupon_history
+CREATE TABLE IF NOT EXISTS `coupon_history` (
+  `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT,
+  `coupon_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `amount` decimal(15,4) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`coupon_history_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.coupon_history: 0 rows
 /*!40000 ALTER TABLE `coupon_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `coupon_history` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.coupon_product
+CREATE TABLE IF NOT EXISTS `coupon_product` (
+  `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT,
+  `coupon_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  PRIMARY KEY (`coupon_product_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.coupon_product: 0 rows
 /*!40000 ALTER TABLE `coupon_product` DISABLE KEYS */;
 /*!40000 ALTER TABLE `coupon_product` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.currency
+CREATE TABLE IF NOT EXISTS `currency` (
+  `currency_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(32) NOT NULL,
+  `code` varchar(3) NOT NULL,
+  `symbol_left` varchar(12) NOT NULL,
+  `symbol_right` varchar(12) NOT NULL,
+  `decimal_place` char(1) NOT NULL,
+  `value` float(15,8) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`currency_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.currency: 4 rows
 /*!40000 ALTER TABLE `currency` DISABLE KEYS */;
@@ -474,6 +747,33 @@ INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_r
 	(5, 'Đô Mỹ', 'USD', '$', '', '', 21300.00000000, 1, '2013-06-25 00:37:03'),
 	(6, 'Bảng Anh', 'GBP', '', '£', '', 32079.00000000, 1, '2013-06-25 00:38:39');
 /*!40000 ALTER TABLE `currency` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.customer
+CREATE TABLE IF NOT EXISTS `customer` (
+  `customer_id` int(11) NOT NULL AUTO_INCREMENT,
+  `store_id` int(11) NOT NULL DEFAULT '0',
+  `firstname` varchar(32) NOT NULL,
+  `lastname` varchar(32) NOT NULL,
+  `email` varchar(96) NOT NULL,
+  `telephone` varchar(32) NOT NULL,
+  `fax` varchar(32) NOT NULL,
+  `birthday` date DEFAULT NULL,
+  `gender` tinyint(1) DEFAULT '0',
+  `password` varchar(40) NOT NULL,
+  `salt` varchar(9) NOT NULL,
+  `cart` text,
+  `wishlist` text,
+  `newsletter` tinyint(1) NOT NULL DEFAULT '0',
+  `address_id` int(11) NOT NULL DEFAULT '0',
+  `customer_group_id` int(11) NOT NULL,
+  `ip` varchar(40) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL,
+  `approved` tinyint(1) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`customer_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer: 11 rows
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
@@ -491,13 +791,47 @@ INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `ema
 	(10, 0, 'Sơn Trần', '', 'abcd@abc.com', '0900000', '', '0000-00-00', 1, 'db881ccb4a1876cd7bbc69f48f1bdd2aa7f1c099', '4c0da4808', 'a:0:{}', '', 1, 10, 1, '::1', 1, 1, '', '2013-06-22 22:28:51');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.customer_ban_ip
+CREATE TABLE IF NOT EXISTS `customer_ban_ip` (
+  `customer_ban_ip_id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip` varchar(40) NOT NULL,
+  PRIMARY KEY (`customer_ban_ip_id`),
+  KEY `ip` (`ip`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.customer_ban_ip: 0 rows
 /*!40000 ALTER TABLE `customer_ban_ip` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_ban_ip` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.customer_field
+CREATE TABLE IF NOT EXISTS `customer_field` (
+  `customer_id` int(11) NOT NULL,
+  `custom_field_id` int(11) NOT NULL,
+  `custom_field_value_id` int(11) NOT NULL,
+  `name` int(128) NOT NULL,
+  `value` text NOT NULL,
+  `sort_order` int(3) NOT NULL,
+  PRIMARY KEY (`customer_id`,`custom_field_id`,`custom_field_value_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.customer_field: 0 rows
 /*!40000 ALTER TABLE `customer_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_field` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.customer_group
+CREATE TABLE IF NOT EXISTS `customer_group` (
+  `customer_group_id` int(11) NOT NULL AUTO_INCREMENT,
+  `approval` int(1) NOT NULL,
+  `company_id_display` int(1) NOT NULL,
+  `company_id_required` int(1) NOT NULL,
+  `tax_id_display` int(1) NOT NULL,
+  `tax_id_required` int(1) NOT NULL,
+  `sort_order` int(3) NOT NULL,
+  PRIMARY KEY (`customer_group_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_group: 1 rows
 /*!40000 ALTER TABLE `customer_group` DISABLE KEYS */;
@@ -505,15 +839,46 @@ INSERT INTO `customer_group` (`customer_group_id`, `approval`, `company_id_displ
 	(1, 0, 1, 0, 0, 1, 1);
 /*!40000 ALTER TABLE `customer_group` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.customer_group_description
+CREATE TABLE IF NOT EXISTS `customer_group_description` (
+  `customer_group_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `description` text NOT NULL,
+  PRIMARY KEY (`customer_group_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.customer_group_description: 1 rows
 /*!40000 ALTER TABLE `customer_group_description` DISABLE KEYS */;
 INSERT INTO `customer_group_description` (`customer_group_id`, `language_id`, `name`, `description`) VALUES
 	(1, 2, 'Default', 'test');
 /*!40000 ALTER TABLE `customer_group_description` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.customer_history
+CREATE TABLE IF NOT EXISTS `customer_history` (
+  `customer_history_id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`customer_history_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.customer_history: 0 rows
 /*!40000 ALTER TABLE `customer_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_history` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.customer_ip
+CREATE TABLE IF NOT EXISTS `customer_ip` (
+  `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`customer_ip_id`),
+  KEY `ip` (`ip`)
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_ip: 11 rows
 /*!40000 ALTER TABLE `customer_ip` DISABLE KEYS */;
@@ -531,45 +896,158 @@ INSERT INTO `customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) 
 	(11, 11, '::1', '2013-06-24 00:08:42');
 /*!40000 ALTER TABLE `customer_ip` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.customer_online
+CREATE TABLE IF NOT EXISTS `customer_online` (
+  `ip` varchar(40) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `url` text NOT NULL,
+  `referer` text NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`ip`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.customer_online: 0 rows
 /*!40000 ALTER TABLE `customer_online` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_online` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.customer_reward
+CREATE TABLE IF NOT EXISTS `customer_reward` (
+  `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) NOT NULL DEFAULT '0',
+  `order_id` int(11) NOT NULL DEFAULT '0',
+  `description` text NOT NULL,
+  `points` int(8) NOT NULL DEFAULT '0',
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`customer_reward_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.customer_reward: 0 rows
 /*!40000 ALTER TABLE `customer_reward` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_reward` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.customer_transaction
+CREATE TABLE IF NOT EXISTS `customer_transaction` (
+  `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `description` text NOT NULL,
+  `amount` decimal(15,4) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`customer_transaction_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.customer_transaction: 0 rows
 /*!40000 ALTER TABLE `customer_transaction` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_transaction` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.custom_field
+CREATE TABLE IF NOT EXISTS `custom_field` (
+  `custom_field_id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(32) NOT NULL,
+  `value` text NOT NULL,
+  `required` tinyint(1) NOT NULL,
+  `location` varchar(32) NOT NULL,
+  `position` int(3) NOT NULL,
+  `sort_order` int(3) NOT NULL,
+  PRIMARY KEY (`custom_field_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.custom_field: 0 rows
 /*!40000 ALTER TABLE `custom_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.custom_field_description
+CREATE TABLE IF NOT EXISTS `custom_field_description` (
+  `custom_field_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  PRIMARY KEY (`custom_field_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.custom_field_description: 0 rows
 /*!40000 ALTER TABLE `custom_field_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_description` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.custom_field_to_customer_group
+CREATE TABLE IF NOT EXISTS `custom_field_to_customer_group` (
+  `custom_field_id` int(11) NOT NULL,
+  `customer_group_id` int(11) NOT NULL,
+  PRIMARY KEY (`custom_field_id`,`customer_group_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.custom_field_to_customer_group: 0 rows
 /*!40000 ALTER TABLE `custom_field_to_customer_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_to_customer_group` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.custom_field_value
+CREATE TABLE IF NOT EXISTS `custom_field_value` (
+  `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT,
+  `custom_field_id` int(11) NOT NULL,
+  `sort_order` int(3) NOT NULL,
+  PRIMARY KEY (`custom_field_value_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.custom_field_value: 0 rows
 /*!40000 ALTER TABLE `custom_field_value` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_value` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.custom_field_value_description
+CREATE TABLE IF NOT EXISTS `custom_field_value_description` (
+  `custom_field_value_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `custom_field_id` int(11) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  PRIMARY KEY (`custom_field_value_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.custom_field_value_description: 0 rows
 /*!40000 ALTER TABLE `custom_field_value_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_value_description` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.download
+CREATE TABLE IF NOT EXISTS `download` (
+  `download_id` int(11) NOT NULL AUTO_INCREMENT,
+  `filename` varchar(128) NOT NULL,
+  `mask` varchar(128) NOT NULL,
+  `remaining` int(11) NOT NULL DEFAULT '0',
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`download_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.download: 0 rows
 /*!40000 ALTER TABLE `download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `download` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.download_description
+CREATE TABLE IF NOT EXISTS `download_description` (
+  `download_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  PRIMARY KEY (`download_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.download_description: 0 rows
 /*!40000 ALTER TABLE `download_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `download_description` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.extension
+CREATE TABLE IF NOT EXISTS `extension` (
+  `extension_id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(32) NOT NULL,
+  `code` varchar(32) NOT NULL,
+  PRIMARY KEY (`extension_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=436 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.extension: 27 rows
 /*!40000 ALTER TABLE `extension` DISABLE KEYS */;
@@ -603,21 +1081,68 @@ INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 	(435, 'payment', 'bank_transfer');
 /*!40000 ALTER TABLE `extension` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.filter
+CREATE TABLE IF NOT EXISTS `filter` (
+  `filter_id` int(11) NOT NULL AUTO_INCREMENT,
+  `filter_group_id` int(11) NOT NULL,
+  `sort_order` int(3) NOT NULL,
+  PRIMARY KEY (`filter_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.filter: 0 rows
 /*!40000 ALTER TABLE `filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.filter_description
+CREATE TABLE IF NOT EXISTS `filter_description` (
+  `filter_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `filter_group_id` int(11) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  PRIMARY KEY (`filter_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.filter_description: 0 rows
 /*!40000 ALTER TABLE `filter_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter_description` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.filter_group
+CREATE TABLE IF NOT EXISTS `filter_group` (
+  `filter_group_id` int(11) NOT NULL AUTO_INCREMENT,
+  `sort_order` int(3) NOT NULL,
+  PRIMARY KEY (`filter_group_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.filter_group: 0 rows
 /*!40000 ALTER TABLE `filter_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter_group` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.filter_group_description
+CREATE TABLE IF NOT EXISTS `filter_group_description` (
+  `filter_group_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  PRIMARY KEY (`filter_group_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.filter_group_description: 0 rows
 /*!40000 ALTER TABLE `filter_group_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter_group_description` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.geo_zone
+CREATE TABLE IF NOT EXISTS `geo_zone` (
+  `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`geo_zone_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.geo_zone: 2 rows
 /*!40000 ALTER TABLE `geo_zone` DISABLE KEYS */;
@@ -625,6 +1150,18 @@ INSERT INTO `geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`, `
 	(3, 'UK VAT Zone', 'UK VAT', '2010-02-26 22:33:24', '2009-01-06 23:26:25'),
 	(4, 'UK Shipping', 'UK Shipping Zones', '2010-12-15 15:18:13', '2009-06-23 01:14:53');
 /*!40000 ALTER TABLE `geo_zone` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.information
+CREATE TABLE IF NOT EXISTS `information` (
+  `information_id` int(11) NOT NULL AUTO_INCREMENT,
+  `bottom` int(1) NOT NULL DEFAULT '0',
+  `sort_order` int(3) NOT NULL DEFAULT '0',
+  `top` int(1) NOT NULL DEFAULT '0',
+  `top_order` int(3) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`information_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.information: 7 rows
 /*!40000 ALTER TABLE `information` DISABLE KEYS */;
@@ -638,6 +1175,16 @@ INSERT INTO `information` (`information_id`, `bottom`, `sort_order`, `top`, `top
 	(9, 0, 0, 1, 0, 1);
 /*!40000 ALTER TABLE `information` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.information_description
+CREATE TABLE IF NOT EXISTS `information_description` (
+  `information_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `title` varchar(64) NOT NULL,
+  `description` text NOT NULL,
+  PRIMARY KEY (`information_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.information_description: 7 rows
 /*!40000 ALTER TABLE `information_description` DISABLE KEYS */;
 INSERT INTO `information_description` (`information_id`, `language_id`, `title`, `description`) VALUES
@@ -650,9 +1197,26 @@ INSERT INTO `information_description` (`information_id`, `language_id`, `title`,
 	(3, 2, 'Điều khoản và bảo mật', '&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;font-weight: bold; line-height: normal; margin: 0px 0px 14px; padding: 0px; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;Đoạn 1.10.32 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;font-weight: bold; line-height: normal; margin: 0px 0px 14px; padding: 0px; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;Một đoạn dịch của H. Rackham năm 1914&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;font-weight: bold; line-height: normal; margin: 0px 0px 14px; padding: 0px; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;Đoạn 1.10.33 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.&quot;&lt;/p&gt;\r\n');
 /*!40000 ALTER TABLE `information_description` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.information_to_layout
+CREATE TABLE IF NOT EXISTS `information_to_layout` (
+  `information_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `layout_id` int(11) NOT NULL,
+  PRIMARY KEY (`information_id`,`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.information_to_layout: 0 rows
 /*!40000 ALTER TABLE `information_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `information_to_layout` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.information_to_store
+CREATE TABLE IF NOT EXISTS `information_to_store` (
+  `information_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  PRIMARY KEY (`information_id`,`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.information_to_store: 7 rows
 /*!40000 ALTER TABLE `information_to_store` DISABLE KEYS */;
@@ -666,11 +1230,35 @@ INSERT INTO `information_to_store` (`information_id`, `store_id`) VALUES
 	(9, 0);
 /*!40000 ALTER TABLE `information_to_store` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.language
+CREATE TABLE IF NOT EXISTS `language` (
+  `language_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL,
+  `code` varchar(5) NOT NULL,
+  `locale` varchar(255) NOT NULL,
+  `image` varchar(64) NOT NULL,
+  `directory` varchar(32) NOT NULL,
+  `filename` varchar(64) NOT NULL,
+  `sort_order` int(3) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL,
+  PRIMARY KEY (`language_id`),
+  KEY `name` (`name`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.language: 1 rows
 /*!40000 ALTER TABLE `language` DISABLE KEYS */;
 INSERT INTO `language` (`language_id`, `name`, `code`, `locale`, `image`, `directory`, `filename`, `sort_order`, `status`) VALUES
 	(2, 'Vietnamese', 'vi', 'vi_VN.UTF-8,vi_VN,vi-vn,vietnamese', 'vn.png', 'vietnamese', 'vietnamese', 0, 1);
 /*!40000 ALTER TABLE `language` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.layout
+CREATE TABLE IF NOT EXISTS `layout` (
+  `layout_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  PRIMARY KEY (`layout_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.layout: 13 rows
 /*!40000 ALTER TABLE `layout` DISABLE KEYS */;
@@ -690,6 +1278,16 @@ INSERT INTO `layout` (`layout_id`, `name`) VALUES
 	(13, 'Tin chi tiết');
 /*!40000 ALTER TABLE `layout` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.layout_route
+CREATE TABLE IF NOT EXISTS `layout_route` (
+  `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,
+  `layout_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `route` varchar(255) NOT NULL,
+  PRIMARY KEY (`layout_route_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.layout_route: 13 rows
 /*!40000 ALTER TABLE `layout_route` DISABLE KEYS */;
 INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
@@ -708,6 +1306,14 @@ INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`)
 	(37, 13, 0, '');
 /*!40000 ALTER TABLE `layout_route` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.length_class
+CREATE TABLE IF NOT EXISTS `length_class` (
+  `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
+  `value` decimal(15,8) NOT NULL,
+  PRIMARY KEY (`length_class_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.length_class: 3 rows
 /*!40000 ALTER TABLE `length_class` DISABLE KEYS */;
 INSERT INTO `length_class` (`length_class_id`, `value`) VALUES
@@ -716,6 +1322,16 @@ INSERT INTO `length_class` (`length_class_id`, `value`) VALUES
 	(3, 0.39370000);
 /*!40000 ALTER TABLE `length_class` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.length_class_description
+CREATE TABLE IF NOT EXISTS `length_class_description` (
+  `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
+  `language_id` int(11) NOT NULL,
+  `title` varchar(32) NOT NULL,
+  `unit` varchar(4) NOT NULL,
+  PRIMARY KEY (`length_class_id`,`language_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.length_class_description: 3 rows
 /*!40000 ALTER TABLE `length_class_description` DISABLE KEYS */;
 INSERT INTO `length_class_description` (`length_class_id`, `language_id`, `title`, `unit`) VALUES
@@ -723,6 +1339,17 @@ INSERT INTO `length_class_description` (`length_class_id`, `language_id`, `title
 	(2, 2, 'Millimeter', 'mm'),
 	(3, 2, 'Inch', 'in');
 /*!40000 ALTER TABLE `length_class_description` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.manufacturer
+CREATE TABLE IF NOT EXISTS `manufacturer` (
+  `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `description` text,
+  `image` varchar(255) DEFAULT NULL,
+  `sort_order` int(3) NOT NULL,
+  PRIMARY KEY (`manufacturer_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.manufacturer: 9 rows
 /*!40000 ALTER TABLE `manufacturer` DISABLE KEYS */;
@@ -738,6 +1365,14 @@ INSERT INTO `manufacturer` (`manufacturer_id`, `name`, `description`, `image`, `
 	(13, 'Phan Nguyễn', '', 'data/thuong_hieu/phannguyen_logo.png', 0);
 /*!40000 ALTER TABLE `manufacturer` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.manufacturer_to_store
+CREATE TABLE IF NOT EXISTS `manufacturer_to_store` (
+  `manufacturer_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  PRIMARY KEY (`manufacturer_id`,`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.manufacturer_to_store: 9 rows
 /*!40000 ALTER TABLE `manufacturer_to_store` DISABLE KEYS */;
 INSERT INTO `manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
@@ -751,6 +1386,23 @@ INSERT INTO `manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 	(12, 0),
 	(13, 0);
 /*!40000 ALTER TABLE `manufacturer_to_store` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.news
+CREATE TABLE IF NOT EXISTS `news` (
+  `news_id` int(11) NOT NULL AUTO_INCREMENT,
+  `manufacturer_id` int(11) DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `date_available` date NOT NULL,
+  `sort_order` int(11) NOT NULL DEFAULT '0',
+  `comment` tinyint(1) NOT NULL DEFAULT '0',
+  `approved` tinyint(1) NOT NULL DEFAULT '0',
+  `status` int(1) NOT NULL DEFAULT '0',
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `viewed` int(5) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`news_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news: 12 rows
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
@@ -769,12 +1421,41 @@ INSERT INTO `news` (`news_id`, `manufacturer_id`, `image`, `date_available`, `so
 	(12, 0, '', '2013-05-27', 1, 1, 1, 1, '2013-05-28 18:26:46', '0000-00-00 00:00:00', 30);
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.news_category
+CREATE TABLE IF NOT EXISTS `news_category` (
+  `news_category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `theme_id` int(11) DEFAULT '0',
+  `image` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `parent_id` int(11) NOT NULL DEFAULT '0',
+  `top` tinyint(4) NOT NULL,
+  `column` int(3) NOT NULL,
+  `sort_order` int(3) NOT NULL DEFAULT '0',
+  `status` int(1) NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`news_category_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
 -- Dumping data for table weorder.news_category: 2 rows
 /*!40000 ALTER TABLE `news_category` DISABLE KEYS */;
 INSERT INTO `news_category` (`news_category_id`, `theme_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 	(1, 0, '', 0, 1, 1, 4, 1, '2013-05-20 23:56:00', '2013-05-23 23:57:18'),
 	(2, 1, '', 0, 0, 1, 5, 1, '2013-05-23 23:20:14', '2013-05-29 00:17:44');
 /*!40000 ALTER TABLE `news_category` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.news_category_description
+CREATE TABLE IF NOT EXISTS `news_category_description` (
+  `news_category_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `description` text COLLATE utf8_bin NOT NULL,
+  `meta_description` varchar(255) COLLATE utf8_bin NOT NULL,
+  `meta_keyword` varchar(255) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`news_category_id`,`language_id`),
+  KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_category_description: 2 rows
 /*!40000 ALTER TABLE `news_category_description` DISABLE KEYS */;
@@ -783,9 +1464,26 @@ INSERT INTO `news_category_description` (`news_category_id`, `language_id`, `nam
 	(2, 2, 'Báo chí / Truyền thông', '', '', '');
 /*!40000 ALTER TABLE `news_category_description` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.news_category_to_layout
+CREATE TABLE IF NOT EXISTS `news_category_to_layout` (
+  `news_category_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `layout_id` int(11) NOT NULL,
+  PRIMARY KEY (`news_category_id`,`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
 -- Dumping data for table weorder.news_category_to_layout: 0 rows
 /*!40000 ALTER TABLE `news_category_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_category_to_layout` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.news_category_to_store
+CREATE TABLE IF NOT EXISTS `news_category_to_store` (
+  `news_category_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  PRIMARY KEY (`news_category_id`,`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_category_to_store: 2 rows
 /*!40000 ALTER TABLE `news_category_to_store` DISABLE KEYS */;
@@ -794,9 +1492,39 @@ INSERT INTO `news_category_to_store` (`news_category_id`, `store_id`) VALUES
 	(2, 0);
 /*!40000 ALTER TABLE `news_category_to_store` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.news_comment
+CREATE TABLE IF NOT EXISTS `news_comment` (
+  `comment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `news_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `author` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `email` varchar(96) COLLATE utf8_bin NOT NULL,
+  `text` text COLLATE utf8_bin NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '0',
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`comment_id`),
+  KEY `product_id` (`news_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
 -- Dumping data for table weorder.news_comment: 0 rows
 /*!40000 ALTER TABLE `news_comment` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_comment` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.news_description
+CREATE TABLE IF NOT EXISTS `news_description` (
+  `news_id` int(11) NOT NULL AUTO_INCREMENT,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_bin NOT NULL,
+  `short_description` text COLLATE utf8_bin NOT NULL,
+  `description` text COLLATE utf8_bin NOT NULL,
+  `meta_description` varchar(255) COLLATE utf8_bin NOT NULL,
+  `meta_keyword` varchar(255) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`news_id`,`language_id`),
+  KEY `name` (`name`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_description: 12 rows
 /*!40000 ALTER TABLE `news_description` DISABLE KEYS */;
@@ -815,9 +1543,27 @@ INSERT INTO `news_description` (`news_id`, `language_id`, `name`, `short_descrip
 	(12, 2, ' Em gái Chung Thục Quyên Ngắm eo \'con kiến\' của em gái Chung Thục Quyên', 'Xuất hiện bên cạnh chị gái Chung Thục Quyên trong một buổi lễ ra mắt phim, Lana Huỳnh ngay lập tức thu hút sự chú ý của truyền thông bởi ngoại hình bắt mắt, đặc biệt là vóc dáng cao ráo không thua kém gì chị gái. Lana Huỳnh là em gái cũng mẹ khác cha với người mẫu Chung Thục Quyên, cô sinh năm 1991 và sở hữu chiều cao 1m70 nổi bật. Với nhan sắc và chiều cao ấn tượng có lẽ trong thời gian sắp tới Lana Huỳnh sẽ là một gương mặt \'hot\' trong làng giải trí như chị gái của mình.', '&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color: rgb(51, 51, 51); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);&quot;&gt;Xuất hiện bên cạnh chị gái Chung Thục Quyên trong một buổi lễ ra mắt phim, Lana Huỳnh ngay lập tức thu hút sự chú ý của truyền thông bởi ngoại hình bắt mắt, đặc biệt là vóc dáng cao ráo không thua kém gì chị gái. Lana Huỳnh là em gái cũng mẹ khác cha với người mẫu Chung Thục Quyên, cô sinh năm 1991 và sở hữu chiều cao 1m70 nổi bật. Với nhan sắc và chiều cao ấn tượng có lẽ trong thời gian sắp tới Lana Huỳnh sẽ là một gương mặt \'hot\' trong làng giải trí như chị gái của mình.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color: rgb(51, 51, 51); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);&quot;&gt;Lana Huỳnh đang là sinh viên trường văn hóa nghệ thuật. Thời gian gần đây cô thường xuất hiện bên cạnh chị gái Chung Thục Quyên tại các sự kiện giải trí. Bên cạnh cô chị gái Chung Thục Quyên luôn sexy một cách táo bạo thì Lana Huỳnh, ở độ tuổi 22, lại khoe vẻ năng động trong những trang phục trẻ trung, xì tin nhưng vẫn toát lên nét gợi cảm của cô gái mới lớn.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color: rgb(51, 51, 51); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);&quot;&gt;&lt;em style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px;&quot;&gt;Cùng ngắm một góc hình ảnh trong phong cách của Lana Huỳnh trong những ngày hè nóng nực của Sài Gòn nhé. Cô nàng đặc biệt thích mốt áo lửng khoe eo vừa sexy lại rất khỏe khoắn.&lt;/em&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color: rgb(51, 51, 51); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center;&quot;&gt;&lt;img alt=&quot;Ngắm eo \'con kiến\' của em gái Chung Thục Quyên - 1&quot; class=&quot;news-image&quot; height=&quot;500&quot; src=&quot;http://img-eva.24hstatic.com/upload/2-2013/images/2013-05-27/1369642328-IMG_8006.jpg&quot; style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; border: 0px;&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-style: italic; text-align: center;&quot;&gt;Sở hữu vòng eo thon mảnh nên Lana Huỳnh rất tự tin diện kiểu áo lửng đang là xu hướng hot trong mùa hè năm nay&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color: rgb(51, 51, 51); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center;&quot;&gt;&lt;img alt=&quot;Ngắm eo \'con kiến\' của em gái Chung Thục Quyên - 2&quot; class=&quot;news-image&quot; src=&quot;http://img-eva.24hstatic.com/upload/2-2013/images/2013-05-27/1369642328-IMG_8016.jpg&quot; style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; border: 0px;&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-style: italic; text-align: center;&quot;&gt;Xì tai năng động của cô ban 9X khi kết hợp đôi ankle boot với bộ đôi quần sooc sequin, áo lửng.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color: rgb(51, 51, 51); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center;&quot;&gt;&lt;img alt=&quot;Ngắm eo \'con kiến\' của em gái Chung Thục Quyên - 3&quot; class=&quot;news-image&quot; src=&quot;http://img-eva.24hstatic.com/upload/2-2013/images/2013-05-27/1369642328-IMG_8017.jpg&quot; style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; border: 0px;&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-style: italic; text-align: center;&quot;&gt;Chiếc áo khoác denim tăng thêm phần cá tính&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color: rgb(51, 51, 51); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center;&quot;&gt;&lt;img alt=&quot;Ngắm eo \'con kiến\' của em gái Chung Thục Quyên - 4&quot; class=&quot;news-image&quot; src=&quot;http://img-eva.24hstatic.com/upload/2-2013/images/2013-05-27/1369642328-IMG_8084.jpg&quot; style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; border: 0px;&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-style: italic; text-align: center;&quot;&gt;Cô nàng rất thời trang khi khéo léo kết hợp áo lửng trắng với chân váy cạp cạo in họa tiết chấm bi nhí vô cùng xinh xắn&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color: rgb(51, 51, 51); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center;&quot;&gt;&lt;img alt=&quot;Ngắm eo \'con kiến\' của em gái Chung Thục Quyên - 5&quot; class=&quot;news-image&quot; height=&quot;500&quot; src=&quot;http://img-eva.24hstatic.com/upload/2-2013/images/2013-05-27/1369642328-IMG_8088.jpg&quot; style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; border: 0px;&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-style: italic; text-align: center;&quot;&gt;Vòng eo con kiến thu hút bao ánh nhìn khi Lana Huỳnh bước đi trên phố&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color: rgb(51, 51, 51); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center;&quot;&gt;&lt;img alt=&quot;Ngắm eo \'con kiến\' của em gái Chung Thục Quyên - 6&quot; class=&quot;news-image&quot; src=&quot;http://img-eva.24hstatic.com/upload/2-2013/images/2013-05-27/1369642328-IMG_8117.jpg&quot; style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; border: 0px;&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color: rgb(51, 51, 51); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center;&quot;&gt;&lt;img alt=&quot;Ngắm eo \'con kiến\' của em gái Chung Thục Quyên - 7&quot; class=&quot;news-image&quot; src=&quot;http://img-eva.24hstatic.com/upload/2-2013/images/2013-05-27/1369642328-IMG_8167.jpg&quot; style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; border: 0px;&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-style: italic; text-align: center;&quot;&gt;Lana táo bạo chọn kiểu áo lửng hoa khoe trọn eo, khoe cả vòng 1 và tấm lưng trần&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color: rgb(51, 51, 51); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center;&quot;&gt;&lt;img alt=&quot;Ngắm eo \'con kiến\' của em gái Chung Thục Quyên - 8&quot; class=&quot;news-image&quot; src=&quot;http://img-eva.24hstatic.com/upload/2-2013/images/2013-05-27/1369642328-IMG_8177.jpg&quot; style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; border: 0px;&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-style: italic; text-align: center;&quot;&gt;Cô nàng nổi bật trên phố với vòng eo thon và làn da trắng đẹp&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color: rgb(51, 51, 51); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center;&quot;&gt;&lt;img alt=&quot;Ngắm eo \'con kiến\' của em gái Chung Thục Quyên - 9&quot; class=&quot;news-image&quot; src=&quot;http://img-eva.24hstatic.com/upload/2-2013/images/2013-05-27/1369642328-IMG_8186.jpg&quot; style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; border: 0px;&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-style: italic; text-align: center;&quot;&gt;Bạn nên học hỏi Lana kết hợp áo lửng với kiểu quần hoặc váy cạp cao như thế này nhé&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color: rgb(51, 51, 51); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center;&quot;&gt;&lt;img alt=&quot;Ngắm eo \'con kiến\' của em gái Chung Thục Quyên - 10&quot; class=&quot;news-image&quot; src=&quot;http://img-eva.24hstatic.com/upload/2-2013/images/2013-05-27/1369642328-IMG_8205.jpg&quot; style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; border: 0px;&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-style: italic; text-align: center;&quot;&gt;Năng động áo lửng ba lỗ kẻ sọc hồng vô cùng dễ thương.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color: rgb(51, 51, 51); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center;&quot;&gt;&lt;img alt=&quot;Ngắm eo \'con kiến\' của em gái Chung Thục Quyên - 11&quot; class=&quot;news-image&quot; src=&quot;http://img-eva.24hstatic.com/upload/2-2013/images/2013-05-27/1369642328-IMG_8220.jpg&quot; style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; border: 0px;&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-style: italic; text-align: center;&quot;&gt;Với chiếc áo chất liệu thun thoải mái này thì quần sooc cạp cao là sự lựa chọn hoàn hảo nhất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color: rgb(51, 51, 51); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center;&quot;&gt;&lt;img alt=&quot;Ngắm eo \'con kiến\' của em gái Chung Thục Quyên - 12&quot; class=&quot;news-image&quot; src=&quot;http://img-eva.24hstatic.com/upload/2-2013/images/2013-05-27/1369642328-IMG_8231.jpg&quot; style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; border: 0px;&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-style: italic; text-align: center;&quot;&gt;Lana Huỳnh khoe đường cong nóng bỏng trong trang phục mát mẻ&lt;/p&gt;\r\n', '', '');
 /*!40000 ALTER TABLE `news_description` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.news_related
+CREATE TABLE IF NOT EXISTS `news_related` (
+  `news_id` int(11) NOT NULL,
+  `related_id` int(11) NOT NULL,
+  PRIMARY KEY (`news_id`,`related_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
 -- Dumping data for table weorder.news_related: 0 rows
 /*!40000 ALTER TABLE `news_related` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_related` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.news_tag
+CREATE TABLE IF NOT EXISTS `news_tag` (
+  `news_tag_id` int(11) NOT NULL AUTO_INCREMENT,
+  `news_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `tag` varchar(32) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`news_tag_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_tag: 2 rows
 /*!40000 ALTER TABLE `news_tag` DISABLE KEYS */;
@@ -825,6 +1571,14 @@ INSERT INTO `news_tag` (`news_tag_id`, `news_id`, `language_id`, `tag`) VALUES
 	(18, 1, 2, 'sale off'),
 	(17, 1, 2, '50%');
 /*!40000 ALTER TABLE `news_tag` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.news_to_category
+CREATE TABLE IF NOT EXISTS `news_to_category` (
+  `news_id` int(11) NOT NULL,
+  `news_category_id` int(11) NOT NULL,
+  PRIMARY KEY (`news_id`,`news_category_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_to_category: 15 rows
 /*!40000 ALTER TABLE `news_to_category` DISABLE KEYS */;
@@ -846,9 +1600,26 @@ INSERT INTO `news_to_category` (`news_id`, `news_category_id`) VALUES
 	(12, 1);
 /*!40000 ALTER TABLE `news_to_category` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.news_to_layout
+CREATE TABLE IF NOT EXISTS `news_to_layout` (
+  `news_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `layout_id` int(11) NOT NULL,
+  PRIMARY KEY (`news_id`,`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
 -- Dumping data for table weorder.news_to_layout: 0 rows
 /*!40000 ALTER TABLE `news_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_to_layout` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.news_to_store
+CREATE TABLE IF NOT EXISTS `news_to_store` (
+  `news_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`news_id`,`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table weorder.news_to_store: 12 rows
 /*!40000 ALTER TABLE `news_to_store` DISABLE KEYS */;
@@ -867,6 +1638,15 @@ INSERT INTO `news_to_store` (`news_id`, `store_id`) VALUES
 	(12, 0);
 /*!40000 ALTER TABLE `news_to_store` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.option
+CREATE TABLE IF NOT EXISTS `option` (
+  `option_id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(32) NOT NULL,
+  `sort_order` int(3) NOT NULL,
+  PRIMARY KEY (`option_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.option: 4 rows
 /*!40000 ALTER TABLE `option` DISABLE KEYS */;
 INSERT INTO `option` (`option_id`, `type`, `sort_order`) VALUES
@@ -876,6 +1656,15 @@ INSERT INTO `option` (`option_id`, `type`, `sort_order`) VALUES
 	(13, 'image', 1);
 /*!40000 ALTER TABLE `option` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.option_description
+CREATE TABLE IF NOT EXISTS `option_description` (
+  `option_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  PRIMARY KEY (`option_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.option_description: 4 rows
 /*!40000 ALTER TABLE `option_description` DISABLE KEYS */;
 INSERT INTO `option_description` (`option_id`, `language_id`, `name`) VALUES
@@ -884,6 +1673,16 @@ INSERT INTO `option_description` (`option_id`, `language_id`, `name`) VALUES
 	(15, 2, 'Kích cỡ theo số'),
 	(13, 2, 'Màu Sắc');
 /*!40000 ALTER TABLE `option_description` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.option_value
+CREATE TABLE IF NOT EXISTS `option_value` (
+  `option_value_id` int(11) NOT NULL AUTO_INCREMENT,
+  `option_id` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `sort_order` int(3) NOT NULL,
+  PRIMARY KEY (`option_value_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.option_value: 48 rows
 /*!40000 ALTER TABLE `option_value` DISABLE KEYS */;
@@ -938,6 +1737,16 @@ INSERT INTO `option_value` (`option_value_id`, `option_id`, `image`, `sort_order
 	(81, 15, 'no_image.jpg', 0);
 /*!40000 ALTER TABLE `option_value` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.option_value_description
+CREATE TABLE IF NOT EXISTS `option_value_description` (
+  `option_value_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `option_id` int(11) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  PRIMARY KEY (`option_value_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.option_value_description: 48 rows
 /*!40000 ALTER TABLE `option_value_description` DISABLE KEYS */;
 INSERT INTO `option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
@@ -991,6 +1800,70 @@ INSERT INTO `option_value_description` (`option_value_id`, `language_id`, `optio
 	(96, 2, 16, 'S');
 /*!40000 ALTER TABLE `option_value_description` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.order
+CREATE TABLE IF NOT EXISTS `order` (
+  `order_id` int(11) NOT NULL AUTO_INCREMENT,
+  `invoice_no` int(11) NOT NULL DEFAULT '0',
+  `invoice_prefix` varchar(26) NOT NULL,
+  `store_id` int(11) NOT NULL DEFAULT '0',
+  `store_name` varchar(64) NOT NULL,
+  `store_url` varchar(255) NOT NULL,
+  `customer_id` int(11) NOT NULL DEFAULT '0',
+  `customer_group_id` int(11) NOT NULL DEFAULT '0',
+  `firstname` varchar(32) NOT NULL,
+  `lastname` varchar(32) NOT NULL,
+  `email` varchar(96) NOT NULL,
+  `telephone` varchar(32) NOT NULL,
+  `fax` varchar(32) NOT NULL,
+  `payment_firstname` varchar(32) NOT NULL,
+  `payment_lastname` varchar(32) NOT NULL,
+  `payment_company` varchar(32) NOT NULL,
+  `payment_company_id` varchar(32) NOT NULL,
+  `payment_tax_id` varchar(32) NOT NULL,
+  `payment_address_1` varchar(128) NOT NULL,
+  `payment_address_2` varchar(128) NOT NULL,
+  `payment_city` varchar(128) NOT NULL,
+  `payment_postcode` varchar(10) NOT NULL,
+  `payment_country` varchar(128) NOT NULL,
+  `payment_country_id` int(11) NOT NULL,
+  `payment_zone` varchar(128) NOT NULL,
+  `payment_zone_id` int(11) NOT NULL,
+  `payment_address_format` text NOT NULL,
+  `payment_method` varchar(128) NOT NULL,
+  `payment_code` varchar(128) NOT NULL,
+  `shipping_firstname` varchar(32) NOT NULL,
+  `shipping_lastname` varchar(32) NOT NULL,
+  `shipping_company` varchar(32) NOT NULL,
+  `shipping_address_1` varchar(128) NOT NULL,
+  `shipping_address_2` varchar(128) NOT NULL,
+  `shipping_city` varchar(128) NOT NULL,
+  `shipping_postcode` varchar(10) NOT NULL,
+  `shipping_country` varchar(128) NOT NULL,
+  `shipping_country_id` int(11) NOT NULL,
+  `shipping_zone` varchar(128) NOT NULL,
+  `shipping_zone_id` int(11) NOT NULL,
+  `shipping_address_format` text NOT NULL,
+  `shipping_method` varchar(128) NOT NULL,
+  `shipping_code` varchar(128) NOT NULL,
+  `comment` text NOT NULL,
+  `total` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `order_status_id` int(11) NOT NULL DEFAULT '0',
+  `affiliate_id` int(11) NOT NULL,
+  `commission` decimal(15,4) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `currency_id` int(11) NOT NULL,
+  `currency_code` varchar(3) NOT NULL,
+  `currency_value` decimal(15,8) NOT NULL DEFAULT '1.00000000',
+  `ip` varchar(40) NOT NULL,
+  `forwarded_ip` varchar(40) NOT NULL,
+  `user_agent` varchar(255) NOT NULL,
+  `accept_language` varchar(255) NOT NULL,
+  `date_added` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  PRIMARY KEY (`order_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.order: 36 rows
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
 INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_company_id`, `payment_tax_id`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
@@ -1032,17 +1905,113 @@ INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `st
 	(52, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 1, 1, 'Sơn', 'Trần', 'transontt@gmail.com', '0902222222222', '', 'Sơn', 'Trần', '', '', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Sơn', 'Trần', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 10807500.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', '2013-06-26 02:15:31', '2013-06-26 02:15:31');
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.order_download
+CREATE TABLE IF NOT EXISTS `order_download` (
+  `order_download_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `order_product_id` int(11) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  `filename` varchar(128) NOT NULL,
+  `mask` varchar(128) NOT NULL,
+  `remaining` int(3) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`order_download_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.order_download: 0 rows
 /*!40000 ALTER TABLE `order_download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_download` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.order_field
+CREATE TABLE IF NOT EXISTS `order_field` (
+  `order_id` int(11) NOT NULL,
+  `custom_field_id` int(11) NOT NULL,
+  `custom_field_value_id` int(11) NOT NULL,
+  `name` int(128) NOT NULL,
+  `value` text NOT NULL,
+  `sort_order` int(3) NOT NULL,
+  PRIMARY KEY (`order_id`,`custom_field_id`,`custom_field_value_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_field: 0 rows
 /*!40000 ALTER TABLE `order_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_field` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.order_fraud
+CREATE TABLE IF NOT EXISTS `order_fraud` (
+  `order_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `country_match` varchar(3) NOT NULL,
+  `country_code` varchar(2) NOT NULL,
+  `high_risk_country` varchar(3) NOT NULL,
+  `distance` int(11) NOT NULL,
+  `ip_region` varchar(255) NOT NULL,
+  `ip_city` varchar(255) NOT NULL,
+  `ip_latitude` decimal(10,6) NOT NULL,
+  `ip_longitude` decimal(10,6) NOT NULL,
+  `ip_isp` varchar(255) NOT NULL,
+  `ip_org` varchar(255) NOT NULL,
+  `ip_asnum` int(11) NOT NULL,
+  `ip_user_type` varchar(255) NOT NULL,
+  `ip_country_confidence` varchar(3) NOT NULL,
+  `ip_region_confidence` varchar(3) NOT NULL,
+  `ip_city_confidence` varchar(3) NOT NULL,
+  `ip_postal_confidence` varchar(3) NOT NULL,
+  `ip_postal_code` varchar(10) NOT NULL,
+  `ip_accuracy_radius` int(11) NOT NULL,
+  `ip_net_speed_cell` varchar(255) NOT NULL,
+  `ip_metro_code` int(3) NOT NULL,
+  `ip_area_code` int(3) NOT NULL,
+  `ip_time_zone` varchar(255) NOT NULL,
+  `ip_region_name` varchar(255) NOT NULL,
+  `ip_domain` varchar(255) NOT NULL,
+  `ip_country_name` varchar(255) NOT NULL,
+  `ip_continent_code` varchar(2) NOT NULL,
+  `ip_corporate_proxy` varchar(3) NOT NULL,
+  `anonymous_proxy` varchar(3) NOT NULL,
+  `proxy_score` int(3) NOT NULL,
+  `is_trans_proxy` varchar(3) NOT NULL,
+  `free_mail` varchar(3) NOT NULL,
+  `carder_email` varchar(3) NOT NULL,
+  `high_risk_username` varchar(3) NOT NULL,
+  `high_risk_password` varchar(3) NOT NULL,
+  `bin_match` varchar(10) NOT NULL,
+  `bin_country` varchar(2) NOT NULL,
+  `bin_name_match` varchar(3) NOT NULL,
+  `bin_name` varchar(255) NOT NULL,
+  `bin_phone_match` varchar(3) NOT NULL,
+  `bin_phone` varchar(32) NOT NULL,
+  `customer_phone_in_billing_location` varchar(8) NOT NULL,
+  `ship_forward` varchar(3) NOT NULL,
+  `city_postal_match` varchar(3) NOT NULL,
+  `ship_city_postal_match` varchar(3) NOT NULL,
+  `score` decimal(10,5) NOT NULL,
+  `explanation` text NOT NULL,
+  `risk_score` decimal(10,5) NOT NULL,
+  `queries_remaining` int(11) NOT NULL,
+  `maxmind_id` varchar(8) NOT NULL,
+  `error` text NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`order_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.order_fraud: 0 rows
 /*!40000 ALTER TABLE `order_fraud` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_fraud` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.order_history
+CREATE TABLE IF NOT EXISTS `order_history` (
+  `order_history_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `order_status_id` int(5) NOT NULL,
+  `notify` tinyint(1) NOT NULL DEFAULT '0',
+  `comment` text NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`order_history_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_history: 30 rows
 /*!40000 ALTER TABLE `order_history` DISABLE KEYS */;
@@ -1079,6 +2048,20 @@ INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, 
 	(30, 52, 1, 1, '', '2013-06-26 02:15:31');
 /*!40000 ALTER TABLE `order_history` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.order_option
+CREATE TABLE IF NOT EXISTS `order_option` (
+  `order_option_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `order_product_id` int(11) NOT NULL,
+  `product_option_id` int(11) NOT NULL,
+  `product_option_value_id` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(255) NOT NULL,
+  `value` text NOT NULL,
+  `type` varchar(32) NOT NULL,
+  PRIMARY KEY (`order_option_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.order_option: 10 rows
 /*!40000 ALTER TABLE `order_option` DISABLE KEYS */;
 INSERT INTO `order_option` (`order_option_id`, `order_id`, `order_product_id`, `product_option_id`, `product_option_value_id`, `name`, `value`, `type`) VALUES
@@ -1093,6 +2076,25 @@ INSERT INTO `order_option` (`order_option_id`, `order_id`, `order_product_id`, `
 	(10, 38, 40, 228, 21, 'Kích cỡ theo chữ', 'L', 'radio'),
 	(9, 38, 40, 227, 19, 'Màu Sắc', 'Nâu', 'image');
 /*!40000 ALTER TABLE `order_option` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.order_product
+CREATE TABLE IF NOT EXISTS `order_product` (
+  `order_product_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `model` varchar(64) NOT NULL,
+  `link` varchar(250) DEFAULT NULL,
+  `size` varchar(250) DEFAULT NULL,
+  `color` varchar(250) DEFAULT NULL,
+  `quantity` int(4) NOT NULL,
+  `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `total` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `tax` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `reward` int(8) NOT NULL,
+  PRIMARY KEY (`order_product_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_product: 59 rows
 /*!40000 ALTER TABLE `order_product` DISABLE KEYS */;
@@ -1158,6 +2160,16 @@ INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name
 	(59, 52, 106, 'name', '', 'sdgsdg', 'sdg', 'dsgdsg', 1, 5005500.0000, 5005500.0000, 0.0000, 0);
 /*!40000 ALTER TABLE `order_product` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.order_status
+CREATE TABLE IF NOT EXISTS `order_status` (
+  `order_status_id` int(11) NOT NULL AUTO_INCREMENT,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `sort_order` int(11) DEFAULT NULL,
+  PRIMARY KEY (`order_status_id`,`language_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.order_status: 5 rows
 /*!40000 ALTER TABLE `order_status` DISABLE KEYS */;
 INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`, `sort_order`) VALUES
@@ -1167,6 +2179,20 @@ INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`, `sort_orde
 	(1, 2, 'Chờ xác minh', 1),
 	(18, 2, 'Chờ thanh toán', 2);
 /*!40000 ALTER TABLE `order_status` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.order_total
+CREATE TABLE IF NOT EXISTS `order_total` (
+  `order_total_id` int(10) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `code` varchar(32) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `text` varchar(255) NOT NULL,
+  `value` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `sort_order` int(3) NOT NULL,
+  PRIMARY KEY (`order_total_id`),
+  KEY `idx_orders_total_orders_id` (`order_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=106 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.order_total: 105 rows
 /*!40000 ALTER TABLE `order_total` DISABLE KEYS */;
@@ -1278,9 +2304,67 @@ INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`
 	(105, 52, 'total', 'Thành tiền', '10,807,500 VNĐ', 10807500.0000, 9);
 /*!40000 ALTER TABLE `order_total` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.order_voucher
+CREATE TABLE IF NOT EXISTS `order_voucher` (
+  `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `voucher_id` int(11) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `code` varchar(10) NOT NULL,
+  `from_name` varchar(64) NOT NULL,
+  `from_email` varchar(96) NOT NULL,
+  `to_name` varchar(64) NOT NULL,
+  `to_email` varchar(96) NOT NULL,
+  `voucher_theme_id` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `amount` decimal(15,4) NOT NULL,
+  PRIMARY KEY (`order_voucher_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.order_voucher: 0 rows
 /*!40000 ALTER TABLE `order_voucher` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_voucher` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.product
+CREATE TABLE IF NOT EXISTS `product` (
+  `product_id` int(11) NOT NULL AUTO_INCREMENT,
+  `model` varchar(64) NOT NULL,
+  `sku` varchar(64) NOT NULL,
+  `upc` varchar(12) NOT NULL,
+  `ean` varchar(14) NOT NULL,
+  `jan` varchar(13) NOT NULL,
+  `isbn` varchar(13) NOT NULL,
+  `mpn` varchar(64) NOT NULL,
+  `location` varchar(128) NOT NULL,
+  `quantity` int(4) NOT NULL DEFAULT '0',
+  `stock_status_id` int(11) NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `manufacturer_id` int(11) NOT NULL,
+  `shipping` tinyint(1) NOT NULL DEFAULT '1',
+  `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `points` int(8) NOT NULL DEFAULT '0',
+  `tax_class_id` int(11) NOT NULL,
+  `date_available` date NOT NULL,
+  `link` varchar(250) DEFAULT NULL,
+  `size` varchar(250) DEFAULT NULL,
+  `color` varchar(250) DEFAULT NULL,
+  `weight` decimal(15,8) NOT NULL DEFAULT '0.00000000',
+  `weight_class_id` int(11) NOT NULL DEFAULT '0',
+  `length` decimal(15,8) NOT NULL DEFAULT '0.00000000',
+  `width` decimal(15,8) NOT NULL DEFAULT '0.00000000',
+  `height` decimal(15,8) NOT NULL DEFAULT '0.00000000',
+  `length_class_id` int(11) NOT NULL DEFAULT '0',
+  `subtract` tinyint(1) NOT NULL DEFAULT '1',
+  `minimum` int(11) NOT NULL DEFAULT '1',
+  `sort_order` int(11) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '0',
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `viewed` int(5) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`product_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=112 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product: 74 rows
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
@@ -1361,12 +2445,37 @@ INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`
 	(111, '', '', '', '', '', '', '', '', 100, 0, 'data/no_image.jpg', 0, 0, 2556000.0000, 0, 0, '0000-00-00', 'http://abc.com', 'L', 'Trắng', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-26 02:22:07', '0000-00-00 00:00:00', 0);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.product_attribute
+CREATE TABLE IF NOT EXISTS `product_attribute` (
+  `product_id` int(11) NOT NULL,
+  `attribute_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `text` text NOT NULL,
+  PRIMARY KEY (`product_id`,`attribute_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.product_attribute: 2 rows
 /*!40000 ALTER TABLE `product_attribute` DISABLE KEYS */;
 INSERT INTO `product_attribute` (`product_id`, `attribute_id`, `language_id`, `text`) VALUES
 	(43, 2, 2, '1'),
 	(43, 4, 2, '8gb');
 /*!40000 ALTER TABLE `product_attribute` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.product_description
+CREATE TABLE IF NOT EXISTS `product_description` (
+  `product_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `sort_description` text NOT NULL,
+  `meta_description` varchar(255) NOT NULL,
+  `meta_keyword` varchar(255) NOT NULL,
+  `tag` text NOT NULL,
+  PRIMARY KEY (`product_id`,`language_id`),
+  KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_description: 63 rows
 /*!40000 ALTER TABLE `product_description` DISABLE KEYS */;
@@ -1436,6 +2545,21 @@ INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `descrip
 	(111, 2, 'Testing 2', '', '', '', '', '');
 /*!40000 ALTER TABLE `product_description` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.product_discount
+CREATE TABLE IF NOT EXISTS `product_discount` (
+  `product_discount_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `customer_group_id` int(11) NOT NULL,
+  `quantity` int(4) NOT NULL DEFAULT '0',
+  `priority` int(5) NOT NULL DEFAULT '1',
+  `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `date_start` date NOT NULL DEFAULT '0000-00-00',
+  `date_end` date NOT NULL DEFAULT '0000-00-00',
+  PRIMARY KEY (`product_discount_id`),
+  KEY `product_id` (`product_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=489 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.product_discount: 3 rows
 /*!40000 ALTER TABLE `product_discount` DISABLE KEYS */;
 INSERT INTO `product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
@@ -1444,9 +2568,27 @@ INSERT INTO `product_discount` (`product_discount_id`, `product_id`, `customer_g
 	(486, 42, 1, 10, 1, 88.0000, '0000-00-00', '0000-00-00');
 /*!40000 ALTER TABLE `product_discount` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.product_filter
+CREATE TABLE IF NOT EXISTS `product_filter` (
+  `product_id` int(11) NOT NULL,
+  `filter_id` int(11) NOT NULL,
+  PRIMARY KEY (`product_id`,`filter_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.product_filter: 0 rows
 /*!40000 ALTER TABLE `product_filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_filter` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.product_image
+CREATE TABLE IF NOT EXISTS `product_image` (
+  `product_image_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `sort_order` int(3) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`product_image_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2533 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_image: 62 rows
 /*!40000 ALTER TABLE `product_image` DISABLE KEYS */;
@@ -1515,13 +2657,51 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 	(2500, 31, 'data/san_pham/IMG_4006-400x600.JPG', 0);
 /*!40000 ALTER TABLE `product_image` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.product_option
+CREATE TABLE IF NOT EXISTS `product_option` (
+  `product_option_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `option_id` int(11) NOT NULL,
+  `option_value` text NOT NULL,
+  `required` tinyint(1) NOT NULL,
+  PRIMARY KEY (`product_option_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=235 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.product_option: 0 rows
 /*!40000 ALTER TABLE `product_option` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_option` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.product_option_value
+CREATE TABLE IF NOT EXISTS `product_option_value` (
+  `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_option_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `option_id` int(11) NOT NULL,
+  `option_value_id` int(11) NOT NULL,
+  `quantity` int(3) NOT NULL,
+  `subtract` tinyint(1) NOT NULL,
+  `price` decimal(15,4) NOT NULL,
+  `price_prefix` varchar(1) NOT NULL,
+  `points` int(8) NOT NULL,
+  `points_prefix` varchar(1) NOT NULL,
+  `weight` decimal(15,8) NOT NULL,
+  `weight_prefix` varchar(1) NOT NULL,
+  PRIMARY KEY (`product_option_value_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.product_option_value: 0 rows
 /*!40000 ALTER TABLE `product_option_value` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_option_value` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.product_related
+CREATE TABLE IF NOT EXISTS `product_related` (
+  `product_id` int(11) NOT NULL,
+  `related_id` int(11) NOT NULL,
+  PRIMARY KEY (`product_id`,`related_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_related: 4 rows
 /*!40000 ALTER TABLE `product_related` DISABLE KEYS */;
@@ -1531,6 +2711,16 @@ INSERT INTO `product_related` (`product_id`, `related_id`) VALUES
 	(42, 40),
 	(42, 41);
 /*!40000 ALTER TABLE `product_related` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.product_reward
+CREATE TABLE IF NOT EXISTS `product_reward` (
+  `product_reward_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL DEFAULT '0',
+  `customer_group_id` int(11) NOT NULL DEFAULT '0',
+  `points` int(8) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`product_reward_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=606 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_reward: 18 rows
 /*!40000 ALTER TABLE `product_reward` DISABLE KEYS */;
@@ -1555,9 +2745,31 @@ INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group
 	(521, 49, 1, 1000);
 /*!40000 ALTER TABLE `product_reward` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.product_special
+CREATE TABLE IF NOT EXISTS `product_special` (
+  `product_special_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `customer_group_id` int(11) NOT NULL,
+  `priority` int(5) NOT NULL DEFAULT '1',
+  `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `date_start` date NOT NULL DEFAULT '0000-00-00',
+  `date_end` date NOT NULL DEFAULT '0000-00-00',
+  PRIMARY KEY (`product_special_id`),
+  KEY `product_id` (`product_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=473 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.product_special: 0 rows
 /*!40000 ALTER TABLE `product_special` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_special` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.product_to_category
+CREATE TABLE IF NOT EXISTS `product_to_category` (
+  `product_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  PRIMARY KEY (`product_id`,`category_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_to_category: 46 rows
 /*!40000 ALTER TABLE `product_to_category` DISABLE KEYS */;
@@ -1610,13 +2822,38 @@ INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 	(111, 66);
 /*!40000 ALTER TABLE `product_to_category` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.product_to_download
+CREATE TABLE IF NOT EXISTS `product_to_download` (
+  `product_id` int(11) NOT NULL,
+  `download_id` int(11) NOT NULL,
+  PRIMARY KEY (`product_id`,`download_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.product_to_download: 0 rows
 /*!40000 ALTER TABLE `product_to_download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_to_download` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.product_to_layout
+CREATE TABLE IF NOT EXISTS `product_to_layout` (
+  `product_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `layout_id` int(11) NOT NULL,
+  PRIMARY KEY (`product_id`,`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.product_to_layout: 0 rows
 /*!40000 ALTER TABLE `product_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_to_layout` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.product_to_store
+CREATE TABLE IF NOT EXISTS `product_to_store` (
+  `product_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`product_id`,`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.product_to_store: 64 rows
 /*!40000 ALTER TABLE `product_to_store` DISABLE KEYS */;
@@ -1687,9 +2924,43 @@ INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 	(111, 0);
 /*!40000 ALTER TABLE `product_to_store` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.return
+CREATE TABLE IF NOT EXISTS `return` (
+  `return_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `firstname` varchar(32) NOT NULL,
+  `lastname` varchar(32) NOT NULL,
+  `email` varchar(96) NOT NULL,
+  `telephone` varchar(32) NOT NULL,
+  `product` varchar(255) NOT NULL,
+  `model` varchar(64) NOT NULL,
+  `quantity` int(4) NOT NULL,
+  `opened` tinyint(1) NOT NULL,
+  `return_reason_id` int(11) NOT NULL,
+  `return_action_id` int(11) NOT NULL,
+  `return_status_id` int(11) NOT NULL,
+  `comment` text,
+  `date_ordered` date NOT NULL,
+  `date_added` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  PRIMARY KEY (`return_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.return: 0 rows
 /*!40000 ALTER TABLE `return` DISABLE KEYS */;
 /*!40000 ALTER TABLE `return` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.return_action
+CREATE TABLE IF NOT EXISTS `return_action` (
+  `return_action_id` int(11) NOT NULL AUTO_INCREMENT,
+  `language_id` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(64) NOT NULL,
+  PRIMARY KEY (`return_action_id`,`language_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.return_action: 3 rows
 /*!40000 ALTER TABLE `return_action` DISABLE KEYS */;
@@ -1699,9 +2970,30 @@ INSERT INTO `return_action` (`return_action_id`, `language_id`, `name`) VALUES
 	(3, 2, 'Replacement Sent');
 /*!40000 ALTER TABLE `return_action` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.return_history
+CREATE TABLE IF NOT EXISTS `return_history` (
+  `return_history_id` int(11) NOT NULL AUTO_INCREMENT,
+  `return_id` int(11) NOT NULL,
+  `return_status_id` int(11) NOT NULL,
+  `notify` tinyint(1) NOT NULL,
+  `comment` text NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`return_history_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.return_history: 0 rows
 /*!40000 ALTER TABLE `return_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `return_history` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.return_reason
+CREATE TABLE IF NOT EXISTS `return_reason` (
+  `return_reason_id` int(11) NOT NULL AUTO_INCREMENT,
+  `language_id` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(128) NOT NULL,
+  PRIMARY KEY (`return_reason_id`,`language_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.return_reason: 5 rows
 /*!40000 ALTER TABLE `return_reason` DISABLE KEYS */;
@@ -1713,6 +3005,15 @@ INSERT INTO `return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
 	(5, 2, 'Other, please supply details');
 /*!40000 ALTER TABLE `return_reason` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.return_status
+CREATE TABLE IF NOT EXISTS `return_status` (
+  `return_status_id` int(11) NOT NULL AUTO_INCREMENT,
+  `language_id` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(32) NOT NULL,
+  PRIMARY KEY (`return_status_id`,`language_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.return_status: 3 rows
 /*!40000 ALTER TABLE `return_status` DISABLE KEYS */;
 INSERT INTO `return_status` (`return_status_id`, `language_id`, `name`) VALUES
@@ -1721,11 +3022,39 @@ INSERT INTO `return_status` (`return_status_id`, `language_id`, `name`) VALUES
 	(2, 2, 'Awaiting Products');
 /*!40000 ALTER TABLE `return_status` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.review
+CREATE TABLE IF NOT EXISTS `review` (
+  `review_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `author` varchar(64) NOT NULL,
+  `text` text NOT NULL,
+  `rating` int(1) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '0',
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`review_id`),
+  KEY `product_id` (`product_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.review: 1 rows
 /*!40000 ALTER TABLE `review` DISABLE KEYS */;
 INSERT INTO `review` (`review_id`, `product_id`, `customer_id`, `author`, `text`, `rating`, `status`, `date_added`, `date_modified`) VALUES
 	(1, 30, 0, 'fsd', 'fsdfsdfsdfsfsfsdfsf sdf sf sf sdf sdfsdf sd', 13, 0, '2013-06-04 14:52:37', '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `review` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.setting
+CREATE TABLE IF NOT EXISTS `setting` (
+  `setting_id` int(11) NOT NULL AUTO_INCREMENT,
+  `store_id` int(11) NOT NULL DEFAULT '0',
+  `group` varchar(32) NOT NULL,
+  `key` varchar(64) NOT NULL,
+  `value` text NOT NULL,
+  `serialized` tinyint(1) NOT NULL,
+  PRIMARY KEY (`setting_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4046 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.setting: 150 rows
 /*!40000 ALTER TABLE `setting` DISABLE KEYS */;
@@ -1882,6 +3211,15 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(4042, 0, 'cod', 'cod_sort_order', '1', 0);
 /*!40000 ALTER TABLE `setting` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.stock_status
+CREATE TABLE IF NOT EXISTS `stock_status` (
+  `stock_status_id` int(11) NOT NULL AUTO_INCREMENT,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  PRIMARY KEY (`stock_status_id`,`language_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.stock_status: 4 rows
 /*!40000 ALTER TABLE `stock_status` DISABLE KEYS */;
 INSERT INTO `stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
@@ -1891,9 +3229,30 @@ INSERT INTO `stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 	(6, 2, '2 - 3 Days');
 /*!40000 ALTER TABLE `stock_status` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.store
+CREATE TABLE IF NOT EXISTS `store` (
+  `store_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `ssl` varchar(255) NOT NULL,
+  PRIMARY KEY (`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.store: 0 rows
 /*!40000 ALTER TABLE `store` DISABLE KEYS */;
 /*!40000 ALTER TABLE `store` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.tax_class
+CREATE TABLE IF NOT EXISTS `tax_class` (
+  `tax_class_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(32) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`tax_class_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.tax_class: 2 rows
 /*!40000 ALTER TABLE `tax_class` DISABLE KEYS */;
@@ -1902,6 +3261,19 @@ INSERT INTO `tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `
 	(10, 'Downloadable Products', 'Downloadable', '2011-09-21 22:19:39', '2011-09-22 10:27:36');
 /*!40000 ALTER TABLE `tax_class` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.tax_rate
+CREATE TABLE IF NOT EXISTS `tax_rate` (
+  `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT,
+  `geo_zone_id` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(32) NOT NULL,
+  `rate` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `type` char(1) NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`tax_rate_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=88 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.tax_rate: 2 rows
 /*!40000 ALTER TABLE `tax_rate` DISABLE KEYS */;
 INSERT INTO `tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `date_added`, `date_modified`) VALUES
@@ -1909,12 +3281,31 @@ INSERT INTO `tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `d
 	(87, 3, 'Eco Tax (-2.00)', 2.0000, 'F', '2011-09-21 21:49:23', '2011-09-23 00:40:19');
 /*!40000 ALTER TABLE `tax_rate` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.tax_rate_to_customer_group
+CREATE TABLE IF NOT EXISTS `tax_rate_to_customer_group` (
+  `tax_rate_id` int(11) NOT NULL,
+  `customer_group_id` int(11) NOT NULL,
+  PRIMARY KEY (`tax_rate_id`,`customer_group_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.tax_rate_to_customer_group: 2 rows
 /*!40000 ALTER TABLE `tax_rate_to_customer_group` DISABLE KEYS */;
 INSERT INTO `tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VALUES
 	(86, 1),
 	(87, 1);
 /*!40000 ALTER TABLE `tax_rate_to_customer_group` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.tax_rule
+CREATE TABLE IF NOT EXISTS `tax_rule` (
+  `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tax_class_id` int(11) NOT NULL,
+  `tax_rate_id` int(11) NOT NULL,
+  `based` varchar(10) NOT NULL,
+  `priority` int(5) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`tax_rule_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=129 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.tax_rule: 4 rows
 /*!40000 ALTER TABLE `tax_rule` DISABLE KEYS */;
@@ -1924,6 +3315,15 @@ INSERT INTO `tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `
 	(128, 9, 86, 'shipping', 1),
 	(127, 9, 87, 'shipping', 2);
 /*!40000 ALTER TABLE `tax_rule` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.url_alias
+CREATE TABLE IF NOT EXISTS `url_alias` (
+  `url_alias_id` int(11) NOT NULL AUTO_INCREMENT,
+  `query` varchar(255) NOT NULL,
+  `keyword` varchar(255) NOT NULL,
+  PRIMARY KEY (`url_alias_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=877 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.url_alias: 35 rows
 /*!40000 ALTER TABLE `url_alias` DISABLE KEYS */;
@@ -1965,11 +3365,38 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(876, 'category_id=66', 'nguoi-dung-tao');
 /*!40000 ALTER TABLE `url_alias` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.user
+CREATE TABLE IF NOT EXISTS `user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_group_id` int(11) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `salt` varchar(9) NOT NULL,
+  `firstname` varchar(32) NOT NULL,
+  `lastname` varchar(32) NOT NULL,
+  `email` varchar(96) NOT NULL,
+  `code` varchar(40) NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`user_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.user: 1 rows
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `code`, `ip`, `status`, `date_added`) VALUES
 	(1, 1, 'admin', 'eb3b619f4e511cdecae9a01f958f9322a445eeb6', '16c32b3ef', '', '', 'admin@admin.com', '', '::1', 1, '2013-05-16 23:52:20');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.user_group
+CREATE TABLE IF NOT EXISTS `user_group` (
+  `user_group_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `permission` text NOT NULL,
+  PRIMARY KEY (`user_group_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.user_group: 2 rows
 /*!40000 ALTER TABLE `user_group` DISABLE KEYS */;
@@ -1978,13 +3405,50 @@ INSERT INTO `user_group` (`user_group_id`, `name`, `permission`) VALUES
 	(10, 'Demonstration', '');
 /*!40000 ALTER TABLE `user_group` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.voucher
+CREATE TABLE IF NOT EXISTS `voucher` (
+  `voucher_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `code` varchar(10) NOT NULL,
+  `from_name` varchar(64) NOT NULL,
+  `from_email` varchar(96) NOT NULL,
+  `to_name` varchar(64) NOT NULL,
+  `to_email` varchar(96) NOT NULL,
+  `voucher_theme_id` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `amount` decimal(15,4) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`voucher_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.voucher: 0 rows
 /*!40000 ALTER TABLE `voucher` DISABLE KEYS */;
 /*!40000 ALTER TABLE `voucher` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.voucher_history
+CREATE TABLE IF NOT EXISTS `voucher_history` (
+  `voucher_history_id` int(11) NOT NULL AUTO_INCREMENT,
+  `voucher_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `amount` decimal(15,4) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`voucher_history_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.voucher_history: 0 rows
 /*!40000 ALTER TABLE `voucher_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `voucher_history` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.voucher_theme
+CREATE TABLE IF NOT EXISTS `voucher_theme` (
+  `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) NOT NULL,
+  PRIMARY KEY (`voucher_theme_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.voucher_theme: 3 rows
 /*!40000 ALTER TABLE `voucher_theme` DISABLE KEYS */;
@@ -1994,6 +3458,15 @@ INSERT INTO `voucher_theme` (`voucher_theme_id`, `image`) VALUES
 	(6, 'data/demo/apple_logo.jpg');
 /*!40000 ALTER TABLE `voucher_theme` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.voucher_theme_description
+CREATE TABLE IF NOT EXISTS `voucher_theme_description` (
+  `voucher_theme_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  PRIMARY KEY (`voucher_theme_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.voucher_theme_description: 3 rows
 /*!40000 ALTER TABLE `voucher_theme_description` DISABLE KEYS */;
 INSERT INTO `voucher_theme_description` (`voucher_theme_id`, `language_id`, `name`) VALUES
@@ -2001,6 +3474,14 @@ INSERT INTO `voucher_theme_description` (`voucher_theme_id`, `language_id`, `nam
 	(7, 2, 'Birthday'),
 	(8, 2, 'General');
 /*!40000 ALTER TABLE `voucher_theme_description` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.weight_class
+CREATE TABLE IF NOT EXISTS `weight_class` (
+  `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
+  `value` decimal(15,8) NOT NULL DEFAULT '0.00000000',
+  PRIMARY KEY (`weight_class_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.weight_class: 4 rows
 /*!40000 ALTER TABLE `weight_class` DISABLE KEYS */;
@@ -2011,6 +3492,16 @@ INSERT INTO `weight_class` (`weight_class_id`, `value`) VALUES
 	(6, 35.27400000);
 /*!40000 ALTER TABLE `weight_class` ENABLE KEYS */;
 
+
+-- Dumping structure for table weorder.weight_class_description
+CREATE TABLE IF NOT EXISTS `weight_class_description` (
+  `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
+  `language_id` int(11) NOT NULL,
+  `title` varchar(32) NOT NULL,
+  `unit` varchar(4) NOT NULL,
+  PRIMARY KEY (`weight_class_id`,`language_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table weorder.weight_class_description: 4 rows
 /*!40000 ALTER TABLE `weight_class_description` DISABLE KEYS */;
 INSERT INTO `weight_class_description` (`weight_class_id`, `language_id`, `title`, `unit`) VALUES
@@ -2019,6 +3510,17 @@ INSERT INTO `weight_class_description` (`weight_class_id`, `language_id`, `title
 	(5, 2, 'Pound ', 'lb'),
 	(6, 2, 'Ounce', 'oz');
 /*!40000 ALTER TABLE `weight_class_description` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.zone
+CREATE TABLE IF NOT EXISTS `zone` (
+  `zone_id` int(11) NOT NULL AUTO_INCREMENT,
+  `country_id` int(11) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `code` varchar(32) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`zone_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4033 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.zone: 3,985 rows
 /*!40000 ALTER TABLE `zone` DISABLE KEYS */;
@@ -6009,6 +7511,18 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 	(4031, 248, 'Western Bahr el-Ghazal', 'BW', 1),
 	(4032, 248, 'Western Equatoria', 'EW', 1);
 /*!40000 ALTER TABLE `zone` ENABLE KEYS */;
+
+
+-- Dumping structure for table weorder.zone_to_geo_zone
+CREATE TABLE IF NOT EXISTS `zone_to_geo_zone` (
+  `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
+  `country_id` int(11) NOT NULL,
+  `zone_id` int(11) NOT NULL DEFAULT '0',
+  `geo_zone_id` int(11) NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`zone_to_geo_zone_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table weorder.zone_to_geo_zone: 2 rows
 /*!40000 ALTER TABLE `zone_to_geo_zone` DISABLE KEYS */;
