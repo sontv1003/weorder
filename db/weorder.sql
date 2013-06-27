@@ -27,9 +27,9 @@ CREATE TABLE IF NOT EXISTS `address` (
   `zone_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`address_id`),
   KEY `customer_id` (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.address: 11 rows
+-- Dumping data for table weorder.address: 12 rows
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
 INSERT INTO `address` (`address_id`, `customer_id`, `firstname`, `lastname`, `company`, `company_id`, `tax_id`, `address_1`, `address_2`, `city`, `postcode`, `country_id`, `zone_id`) VALUES
 	(1, 1, 'Sơn', 'Trần', '', '', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 230, 3755),
@@ -42,7 +42,8 @@ INSERT INTO `address` (`address_id`, `customer_id`, `firstname`, `lastname`, `co
 	(8, 8, 'SƠn Trần', '', '', '', '', '346475865', '', '', '', 230, 3755),
 	(9, 9, 'Testing...', '', '', '', '', '363464', '', '', '', 230, 3755),
 	(10, 10, 'Sơn Trần', '', '', '', '', 'Từ Sơn', '', '', '', 230, 3755),
-	(11, 11, 'Tester', '', '', '', '', '233265', '', '', '', 230, 3752);
+	(11, 11, 'Tester', '', '', '', '', '233265', '', '', '', 230, 3752),
+	(12, 12, 'ABC', '', '', '', '', '634647', '', '', '', 230, 3755);
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 
 
@@ -743,7 +744,7 @@ CREATE TABLE IF NOT EXISTS `currency` (
 /*!40000 ALTER TABLE `currency` DISABLE KEYS */;
 INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
 	(3, 'Euro', 'EUR', '', '€', '2', 0.76419997, 1, '2013-06-05 15:08:27'),
-	(4, 'VNĐ', 'VND', '', ' VNĐ', '0', 1.00000000, 1, '2013-06-23 12:56:28'),
+	(4, 'VNĐ', 'VND', '', ' VNĐ', '0', 1.00000000, 1, '2013-06-27 19:12:23'),
 	(5, 'Đô Mỹ', 'USD', '$', '', '', 21300.00000000, 1, '2013-06-25 00:37:03'),
 	(6, 'Bảng Anh', 'GBP', '', '£', '', 32079.00000000, 1, '2013-06-25 00:38:39');
 /*!40000 ALTER TABLE `currency` ENABLE KEYS */;
@@ -761,6 +762,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `birthday` date DEFAULT NULL,
   `gender` tinyint(1) DEFAULT '0',
   `password` varchar(40) NOT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
   `salt` varchar(9) NOT NULL,
   `cart` text,
   `wishlist` text,
@@ -773,22 +775,23 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `token` varchar(255) NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.customer: 11 rows
+-- Dumping data for table weorder.customer: 12 rows
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `birthday`, `gender`, `password`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `customer_group_id`, `ip`, `status`, `approved`, `token`, `date_added`) VALUES
-	(1, 0, 'Sơn', 'Trần', 'transontt@gmail.com', '0902222222222', '', NULL, NULL, 'c0ff2af611e745e05c989d8c07a56230be54ede5', 'fbad643c7', 'a:0:{}', 'a:0:{}', 1, 1, 1, '::1', 1, 1, '', '2013-06-16 14:36:00'),
-	(2, 0, 'Son Tran', '', 'abc@abc.com', '0904449512', '', NULL, NULL, '77a5b440ca697d017e6b7b26c49b2143afdb2409', '1639fb344', 'a:0:{}', '', 0, 2, 1, '::1', 1, 1, '', '2013-06-16 15:38:25'),
-	(3, 0, 'Son Tran', '', 'abc2@abc.com', '099999', '', '2013-06-16', 1, 'd5ed71b57ac0291dc6486ef25da05dac1f717958', '069781bef', 'a:7:{i:40;i:1;i:89;i:2;i:90;i:3;s:4:"link";a:4:{i:40;s:24:"http://www.geckomedia.vn";i:89;s:5:"dsgds";i:90;s:20:"http://www.dantri.vn";i:30;s:83:"http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html";}s:4:"size";a:4:{i:40;s:1:"M";i:89;s:7:"gsdgdsg";i:90;s:1:"M";i:30;s:3:"sdg";}s:5:"color";a:2:{i:40;s:5:"Đỏ";i:90;s:7:"Trắng";}i:30;i:2;}', '', 1, 3, 1, '::1', 1, 1, '', '2013-06-16 17:59:54'),
-	(4, 0, 'Testing', '', 'abc3@abc.com', '0900000', '', '2013-06-16', 1, 'f8c8c06b5030d3678cf1f2aaf9bba2128413f48c', '65ffc4630', 'a:1:{s:51:"30:YToyOntpOjIyOTtzOjI6IjIzIjtpOjIzMDtzOjI6IjI3Ijt9";i:1;}', '', 1, 4, 1, '::1', 1, 1, '', '2013-06-16 18:04:20'),
-	(5, 0, 'Son Tran', '', 'abc4@abc.com', '0989999999999999', '', '2013-06-16', 0, '4d3676e0d8b251e248ac317e97453bcf372100e3', '9abdb677e', 'a:0:{}', '', 1, 5, 1, '::1', 1, 1, '', '2013-06-16 18:06:55'),
-	(6, 0, 'sdgsdgds', '', 'abc32@abc.com', '3532534', '', '1988-06-04', 1, 'f5c4e801c6e29f8d83bfe5b28ab6a79b268474a9', '5539c26fa', 'a:1:{i:31;i:1;}', '', 1, 6, 1, '::1', 1, 1, '', '2013-06-16 19:27:45'),
-	(7, 0, 'User 6', '', 'abhhh@abc.com', '0912222222', '', '1976-05-07', 1, 'a08ca22bda822c411983a81f47383c82f37858c0', '5861a8e83', 'a:1:{i:31;i:1;}', '', 1, 7, 1, '::1', 1, 1, '', '2013-06-16 20:15:41'),
-	(8, 0, 'SƠn Trần', '', 'abc5@abc.com', '92385325', '', '0000-00-00', 0, '609d3081592895ff6c370faeff2ff9c7cb6aebef', '1997b6a16', 'a:1:{i:31;i:1;}', '', 1, 8, 1, '::1', 1, 1, '', '2013-06-16 20:26:34'),
-	(9, 0, 'Testing...', '', 'hhh@abc.com', '3546436', '', '0000-00-00', 0, '8a2af002e6666d557cc454c20162c92f99826ea0', '4b32febea', 'a:1:{s:71:"30:YTozOntpOjIyOTtzOjI6IjIzIjtpOjIzMTtzOjI6IjI5IjtpOjIzMDtzOjI6IjI3Ijt9";i:1;}', '', 1, 9, 1, '::1', 1, 1, '', '2013-06-16 20:38:43'),
-	(11, 0, 'Tester', '', 'abc10@abc.com', '235', '', '0000-00-00', 1, '269176159f4b10913a51a188761f7e5d2b1ad0d6', '3ece162bc', 'a:0:{}', '', 1, 11, 1, '::1', 1, 1, '', '2013-06-24 00:07:31'),
-	(10, 0, 'Sơn Trần', '', 'abcd@abc.com', '0900000', '', '0000-00-00', 1, 'db881ccb4a1876cd7bbc69f48f1bdd2aa7f1c099', '4c0da4808', 'a:0:{}', '', 1, 10, 1, '::1', 1, 1, '', '2013-06-22 22:28:51');
+INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `birthday`, `gender`, `password`, `avatar`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `customer_group_id`, `ip`, `status`, `approved`, `token`, `date_added`) VALUES
+	(1, 0, 'Sơn', 'Trần', 'transontt@gmail.com', '0902222222222', '', NULL, NULL, 'c0ff2af611e745e05c989d8c07a56230be54ede5', 'image/avatars/51cc8385eb6d3.jpg', 'fbad643c7', 'a:0:{}', 'a:0:{}', 1, 1, 1, '::1', 1, 1, '', '2013-06-16 14:36:00'),
+	(2, 0, 'Son Tran', '', 'abc@abc.com', '0904449512', '', NULL, NULL, '77a5b440ca697d017e6b7b26c49b2143afdb2409', NULL, '1639fb344', 'a:0:{}', '', 0, 2, 1, '::1', 1, 1, '', '2013-06-16 15:38:25'),
+	(3, 0, 'Son Tran', '', 'abc2@abc.com', '099999', '', '2013-06-16', 1, 'd5ed71b57ac0291dc6486ef25da05dac1f717958', NULL, '069781bef', 'a:7:{i:40;i:1;i:89;i:2;i:90;i:3;s:4:"link";a:4:{i:40;s:24:"http://www.geckomedia.vn";i:89;s:5:"dsgds";i:90;s:20:"http://www.dantri.vn";i:30;s:83:"http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html";}s:4:"size";a:4:{i:40;s:1:"M";i:89;s:7:"gsdgdsg";i:90;s:1:"M";i:30;s:3:"sdg";}s:5:"color";a:2:{i:40;s:5:"Đỏ";i:90;s:7:"Trắng";}i:30;i:2;}', '', 1, 3, 1, '::1', 1, 1, '', '2013-06-16 17:59:54'),
+	(4, 0, 'Testing', '', 'abc3@abc.com', '0900000', '', '2013-06-16', 1, 'f8c8c06b5030d3678cf1f2aaf9bba2128413f48c', NULL, '65ffc4630', 'a:1:{s:51:"30:YToyOntpOjIyOTtzOjI6IjIzIjtpOjIzMDtzOjI6IjI3Ijt9";i:1;}', '', 1, 4, 1, '::1', 1, 1, '', '2013-06-16 18:04:20'),
+	(5, 0, 'Son Tran', '', 'abc4@abc.com', '0989999999999999', '', '2013-06-16', 0, '4d3676e0d8b251e248ac317e97453bcf372100e3', NULL, '9abdb677e', 'a:0:{}', '', 1, 5, 1, '::1', 1, 1, '', '2013-06-16 18:06:55'),
+	(6, 0, 'sdgsdgds', '', 'abc32@abc.com', '3532534', '', '1988-06-04', 1, 'f5c4e801c6e29f8d83bfe5b28ab6a79b268474a9', NULL, '5539c26fa', 'a:1:{i:31;i:1;}', '', 1, 6, 1, '::1', 1, 1, '', '2013-06-16 19:27:45'),
+	(7, 0, 'User 6', '', 'abhhh@abc.com', '0912222222', '', '1976-05-07', 1, 'a08ca22bda822c411983a81f47383c82f37858c0', NULL, '5861a8e83', 'a:1:{i:31;i:1;}', '', 1, 7, 1, '::1', 1, 1, '', '2013-06-16 20:15:41'),
+	(8, 0, 'SƠn Trần', '', 'abc5@abc.com', '92385325', '', '0000-00-00', 0, '609d3081592895ff6c370faeff2ff9c7cb6aebef', NULL, '1997b6a16', 'a:1:{i:31;i:1;}', '', 1, 8, 1, '::1', 1, 1, '', '2013-06-16 20:26:34'),
+	(9, 0, 'Testing...', '', 'hhh@abc.com', '3546436', '', '0000-00-00', 0, '8a2af002e6666d557cc454c20162c92f99826ea0', NULL, '4b32febea', 'a:1:{s:71:"30:YTozOntpOjIyOTtzOjI6IjIzIjtpOjIzMTtzOjI6IjI5IjtpOjIzMDtzOjI6IjI3Ijt9";i:1;}', '', 1, 9, 1, '::1', 1, 1, '', '2013-06-16 20:38:43'),
+	(11, 0, 'Tester', '', 'abc10@abc.com', '235', '', '0000-00-00', 1, '269176159f4b10913a51a188761f7e5d2b1ad0d6', NULL, '3ece162bc', 'a:0:{}', '', 1, 11, 1, '::1', 1, 1, '', '2013-06-24 00:07:31'),
+	(10, 0, 'Sơn Trần', '', 'abcd@abc.com', '0900000', '', '0000-00-00', 1, 'db881ccb4a1876cd7bbc69f48f1bdd2aa7f1c099', NULL, '4c0da4808', 'a:0:{}', '', 1, 10, 1, '::1', 1, 1, '', '2013-06-22 22:28:51'),
+	(12, 0, 'ABC', '', 'bbb@abc.com', '356437547', '', '0000-00-00', 1, '9961bc79a2e9ec43252a73f41d930754da15870a', 'image/avatars/51cc8385eb6d3.jpg', '22c26a728', 'a:0:{}', '', 0, 12, 1, '::1', 1, 1, '', '2013-06-28 01:25:33');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 
 
@@ -878,9 +881,9 @@ CREATE TABLE IF NOT EXISTS `customer_ip` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_ip_id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.customer_ip: 11 rows
+-- Dumping data for table weorder.customer_ip: 12 rows
 /*!40000 ALTER TABLE `customer_ip` DISABLE KEYS */;
 INSERT INTO `customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) VALUES
 	(1, 1, '::1', '2013-06-16 14:36:01'),
@@ -893,7 +896,8 @@ INSERT INTO `customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) 
 	(8, 8, '::1', '2013-06-16 20:26:39'),
 	(9, 9, '::1', '2013-06-16 20:39:55'),
 	(10, 10, '::1', '2013-06-22 22:28:55'),
-	(11, 11, '::1', '2013-06-24 00:08:42');
+	(11, 11, '::1', '2013-06-24 00:08:42'),
+	(12, 12, '::1', '2013-06-28 01:25:35');
 /*!40000 ALTER TABLE `customer_ip` ENABLE KEYS */;
 
 

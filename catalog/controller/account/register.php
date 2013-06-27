@@ -27,7 +27,7 @@ class ControllerAccountRegister extends Controller {
             $this->request->post['company'] = '';
             $this->request->post['postcode'] = '';
             $this->request->post['fax'] = '';
-            
+
             $this->model_account_customer->addCustomer($this->request->post);
 
             $this->customer->login($this->request->post['email'], $this->request->post['password']);
@@ -345,6 +345,8 @@ class ControllerAccountRegister extends Controller {
             $this->data['agree'] = false;
         }
 
+        $this->data['upload_href'] = $this->url->link('account/upload');
+
         if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/register.tpl')) {
             $this->template = $this->config->get('config_template') . '/template/account/register.tpl';
         } else {
@@ -453,6 +455,29 @@ class ControllerAccountRegister extends Controller {
                 'status' => $country_info['status']
             );
         }
+
+        $this->response->setOutput(json_encode($json));
+    }
+
+    public function upload() {
+
+
+        $file = $_FILES['file'];
+        
+        $uploadedfile = $_FILES['file']['tmp_name']; 
+        $src = @imagecreatefromjpeg($uploadedfile);        
+        list($width, $height) = @getimagesize($uploadedfile); 
+
+        $tmp = @imagecreatetruecolor(200, 200); 
+        $basename = basename($_FILES['file']['name']);
+        $ext = explode('.', $basename);
+        $file = uniqid().'.'.end($ext);
+        $filename = DIR_IMAGE.'avatars/' . $file;
+
+        @imagecopyresampled($tmp, $src, 0, 0, 0, 0, 200, 200, $width, $height); 
+        @imagejpeg($tmp, $filename, 100);
+        
+        $json = array('status' => 'success', 'image' => HTTP_SERVER.'image/avatars/'.$file, 'short_link' => 'image/avatars/'.$file);
 
         $this->response->setOutput(json_encode($json));
     }
