@@ -157,7 +157,8 @@ class ControllerAccountOrder extends Controller {
         $this->data['order_statuses'] = $order_statuses;
         $this->data['summary_orders'] = $summary_orders;
         $this->data['count_status'] = $count_status;
-
+        $this->data['avatar'] = $this->customer->getAvatar();
+        
         if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/order_list.tpl')) {
             $this->template = $this->config->get('config_template') . '/template/account/order_list.tpl';
         } else {

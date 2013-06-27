@@ -4,7 +4,7 @@
     <div id="ttcanhan">
         <img src="<?php echo HTTP_SERVER; ?>image/camket.jpg" id="ck">
         <ul>
-            <li class="ttcn ttcnd "><img src="images/tranminhduc.png" id="kh"><a href="<?php echo $account_info_href; ?>">thông tin cá nhân</a></li>
+            <li class="ttcn ttcnd "><img src="<?php echo HTTP_SERVER.$avatar?>" id="kh" width="80px"><a style="margin-left: 30px;" href="<?php echo $account_info_href; ?>">thông tin cá nhân</a></li>
             <li class="ttcc"><a href="<?php echo $account_order_info_href; ?>">danh sách đơn hàng cá nhân</a></li>
             <li class="ttcn"><a href="<?php echo $account_transaction_href; ?>">thu chi tài chính</a></li>
             <li class="ttcc"><a href="<?php echo $account_order_info_href; ?>">khiếu nại</a></li>

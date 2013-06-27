@@ -6,6 +6,7 @@ class Customer {
 	private $email;
 	private $telephone;
 	private $fax;
+	private $avatar;
 	private $newsletter;
 	private $customer_group_id;
 	private $address_id;
@@ -28,6 +29,7 @@ class Customer {
 				$this->birthday = $customer_query->row['birthday'];
 				$this->telephone = $customer_query->row['telephone'];
 				$this->fax = $customer_query->row['fax'];
+				$this->avatar = $customer_query->row['avatar'];
 				$this->newsletter = $customer_query->row['newsletter'];
 				$this->customer_group_id = $customer_query->row['customer_group_id'];
 				$this->address_id = $customer_query->row['address_id'];
@@ -89,6 +91,7 @@ class Customer {
 			$this->birthday = $customer_query->row['birthday'];
 			$this->telephone = $customer_query->row['telephone'];
 			$this->fax = $customer_query->row['fax'];
+			$this->avatar = $customer_query->row['avatar'];
 			$this->newsletter = $customer_query->row['newsletter'];
 			$this->customer_group_id = $customer_query->row['customer_group_id'];
 			$this->address_id = $customer_query->row['address_id'];
@@ -113,6 +116,7 @@ class Customer {
 		$this->gender = '';
 		$this->birthday = '';
 		$this->telephone = '';
+		$this->avatar = '';
 		$this->fax = '';
 		$this->newsletter = '';
 		$this->customer_group_id = '';
@@ -153,6 +157,10 @@ class Customer {
   
   	public function getFax() {
 		return $this->fax;
+  	}
+
+        public function getAvatar() {
+		return $this->avatar;
   	}
 	
   	public function getNewsletter() {

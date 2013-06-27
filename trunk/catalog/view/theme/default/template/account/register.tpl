@@ -27,12 +27,12 @@
                     <td><span class="txt_label"><?php echo $entry_gender; ?></span></td>
                     <td>
                         <select name="gender">
-                            <?php if(empty($entry_gender)):?>
-                            <option value="1">Nam</option>
-                            <option value="0" selected="selected">Nữ</option>
+                            <?php if (empty($entry_gender)): ?>
+                                <option value="1">Nam</option>
+                                <option value="0" selected="selected">Nữ</option>
                             <?php else: ?>
-                            <option value="1" selected="selected">Nam</option>
-                            <option value="0">Nữ</option>
+                                <option value="1" selected="selected">Nam</option>
+                                <option value="0">Nữ</option>
                             <?php endif; ?>
                         </select>
                     </td>
@@ -108,6 +108,14 @@
                             <span class="error"><?php echo $error_zone; ?></span>
                         <?php } ?></td>
                 </tr>
+                <tr>
+                    <td>Ảnh đại diện</td>
+                    <td>
+                        <a id="UploadButton" class="UploadButton">Chọn ảnh đại diện</a>
+                        <input type="hidden" name="avatar" id="avatar" value="" />
+                        <div id="InfoBox" style="width: 100px; margin-top: 10px; height: 100px; border: 1px solid #ccc;"></div>
+                    </td>
+                </tr>
             </table>
         </div>
 
@@ -158,96 +166,106 @@
     </form>
     <?php echo $content_bottom; ?></div>
 <script type="text/javascript"><!--
-    $('input[name=\'customer_group_id\']:checked').live('change', function() {
-        var customer_group = [];
-	
-<?php foreach ($customer_groups as $customer_group) { ?>
-            customer_group[<?php echo $customer_group['customer_group_id']; ?>] = [];
-            customer_group[<?php echo $customer_group['customer_group_id']; ?>]['company_id_display'] = '<?php echo $customer_group['company_id_display']; ?>';
-            customer_group[<?php echo $customer_group['customer_group_id']; ?>]['company_id_required'] = '<?php echo $customer_group['company_id_required']; ?>';
-            customer_group[<?php echo $customer_group['customer_group_id']; ?>]['tax_id_display'] = '<?php echo $customer_group['tax_id_display']; ?>';
-            customer_group[<?php echo $customer_group['customer_group_id']; ?>]['tax_id_required'] = '<?php echo $customer_group['tax_id_required']; ?>';
-<?php } ?>	
-
-        if (customer_group[this.value]) {
-            if (customer_group[this.value]['company_id_display'] == '1') {
-                $('#company-id-display').show();
-            } else {
-                $('#company-id-display').hide();
+    
+    $("#UploadButton").ajaxUpload({
+            url : "index.php?route=account/register/upload",
+            name: "file",
+            onSubmit: function() {
+                $('#InfoBox').html('Đang upload ảnh ... ');
+            },
+            onComplete: function(result) {
+                var data = $.parseJSON(result);
+                $('#InfoBox').html('<img src="'+ data.image +'" width="100px" />');
+                $('#avatar').val(data.short_link);
             }
-		
-            if (customer_group[this.value]['company_id_required'] == '1') {
-                $('#company-id-required').show();
-            } else {
-                $('#company-id-required').hide();
-            }
-		
-            if (customer_group[this.value]['tax_id_display'] == '1') {
-                $('#tax-id-display').show();
-            } else {
-                $('#tax-id-display').hide();
-            }
-		
-            if (customer_group[this.value]['tax_id_required'] == '1') {
-                $('#tax-id-required').show();
-            } else {
-                $('#tax-id-required').hide();
-            }	
-        }
     });
 
-    $('input[name=\'customer_group_id\']:checked').trigger('change');
-    //--></script> 
+
+    $('input[name=\'customer_group_id\']:checked').live('change', function() {
+    var customer_group = [];
+<?php foreach ($customer_groups as $customer_group) { ?>
+        customer_group[<?php echo $customer_group['customer_group_id']; ?>] = [];
+                customer_group[<?php echo $customer_group['customer_group_id']; ?>]['company_id_display'] = '<?php echo $customer_group['company_id_display']; ?>';
+                customer_group[<?php echo $customer_group['customer_group_id']; ?>]['company_id_required'] = '<?php echo $customer_group['company_id_required']; ?>';
+                customer_group[<?php echo $customer_group['customer_group_id']; ?>]['tax_id_display'] = '<?php echo $customer_group['tax_id_display']; ?>';
+                customer_group[<?php echo $customer_group['customer_group_id']; ?>]['tax_id_required'] = '<?php echo $customer_group['tax_id_required']; ?>';
+<?php } ?>
+
+    if (customer_group[this.value]) {
+    if (customer_group[this.value]['company_id_display'] == '1') {
+    $('#company-id-display').show();
+    } else {
+    $('#company-id-display').hide();
+    }
+
+    if (customer_group[this.value]['company_id_required'] == '1') {
+    $('#company-id-required').show();
+    } else {
+    $('#company-id-required').hide();
+    }
+
+    if (customer_group[this.value]['tax_id_display'] == '1') {
+    $('#tax-id-display').show();
+    } else {
+    $('#tax-id-display').hide();
+    }
+
+    if (customer_group[this.value]['tax_id_required'] == '1') {
+    $('#tax-id-required').show();
+    } else {
+    $('#tax-id-required').hide();
+    }
+    }
+    });
+            $('input[name=\'customer_group_id\']:checked').trigger('change');
+            //--></script> 
 <script type="text/javascript"><!--
     $('select[name=\'country_id\']').bind('change', function() {
-        $.ajax({
-            url: 'index.php?route=account/register/country&country_id=' + this.value,
+    $.ajax({
+    url: 'index.php?route=account/register/country&country_id=' + this.value,
             dataType: 'json',
             beforeSend: function() {
-                $('select[name=\'country_id\']').after('<span class="wait">&nbsp;<img src="catalog/view/theme/default/images/loading.gif" alt="" /></span>');
-            },
+    $('select[name=\'country_id\']').after('<span class="wait">&nbsp;<img src="catalog/view/theme/default/images/loading.gif" alt="" /></span>');
+    },
             complete: function() {
-                $('.wait').remove();
-            },			
+    $('.wait').remove();
+    },
             success: function(json) {
-                if (json['postcode_required'] == '1') {
-                    $('#postcode-required').show();
-                } else {
-                    $('#postcode-required').hide();
-                }
-			
-                html = '<option value=""><?php echo $text_select; ?></option>';
-			
-                if (json['zone'] != '') {
-                    for (i = 0; i < json['zone'].length; i++) {
-                        html += '<option value="' + json['zone'][i]['zone_id'] + '"';
-	    			
-                        if (json['zone'][i]['zone_id'] == '<?php echo $zone_id; ?>') {
-                            html += ' selected="selected"';
-                        }
-	
-                        html += '>' + json['zone'][i]['name'] + '</option>';
-                    }
-                } else {
-                    html += '<option value="0" selected="selected"><?php echo $text_none; ?></option>';
-                }
-			
-                $('select[name=\'zone_id\']').html(html);
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-            }
-        });
-    });
+    if (json['postcode_required'] == '1') {
+    $('#postcode-required').show();
+    } else {
+    $('#postcode-required').hide();
+    }
 
-    $('select[name=\'country_id\']').trigger('change');
-    //--></script> 
+    html = '<option value=""><?php echo $text_select; ?></option>';
+            if (json['zone'] != '') {
+    for (i = 0; i < json['zone'].length; i++) {
+    html += '<option value="' + json['zone'][i]['zone_id'] + '"';
+            if (json['zone'][i]['zone_id'] == '<?php echo $zone_id; ?>') {
+    html += ' selected="selected"';
+    }
+
+    html += '>' + json['zone'][i]['name'] + '</option>';
+    }
+    } else {
+    html += '<option value="0" selected="selected"><?php echo $text_none; ?></option>';
+    }
+
+    $('select[name=\'zone_id\']').html(html);
+    },
+            error: function(xhr, ajaxOptions, thrownError) {
+    alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+    }
+    });
+    });
+            $('select[name=\'country_id\']').trigger('change');
+            //--></script> 
 <script type="text/javascript"><!--
     $(document).ready(function() {
-        $('.colorbox').colorbox({
-            width: 640,
+    $('.colorbox').colorbox({
+    width: 640,
             height: 480
-        });
     });
-    //--></script> 
+    });
+            //--></script> 
 <?php echo $footer; ?>

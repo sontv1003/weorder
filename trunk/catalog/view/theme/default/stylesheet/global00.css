@@ -2413,12 +2413,13 @@ p.error404 img {margin:0 10px 0 0;}
 #duoimenu-right p{font-family:'UTM_Avo'; font-size:14px;}
 #ttcanhan #kh{border: 1px solid #000000;
               height: 67px;
-              margin: -21px 0 0 -64px;
-              position: absolute; }
+              margin: -21px 0 0 -61px;
+              position: absolute; 
+}
 #ttcanhan ul li{
     border: 1px solid #000000;
     float: left;
-    padding:23px 65px 25px 66px; margin-bottom:-10px}
+    padding:23px 65px 25px 62px; margin-bottom:-10px}
 #ttcanhan ul li a{font-family:'UTM_Bebas'; font-size:19px;}
 .ttcn{background-color:#999}
 .ttcc{background:#ccc}
