@@ -88,6 +88,7 @@ class ControllerAccountTransaction extends Controller {
         $this->data['account_info_href'] = $this->url->link('account/edit');
         $this->data['account_order_info_href'] = $this->url->link('account/order');
         $this->data['account_transaction_href'] = $this->url->link('account/transaction');
+        $this->data['account_avatar'] = $this->customer->getAvatar();
         
         if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/transaction.tpl')) {
             $this->template = $this->config->get('config_template') . '/template/account/transaction.tpl';

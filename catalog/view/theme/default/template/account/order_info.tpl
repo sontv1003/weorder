@@ -1,7 +1,7 @@
 <?php echo $header; ?>
 <?php echo $column_left; ?>
 <div id="content"><?php echo $content_top; ?>
-    <div id="tbm2">
+    <div id="tbm2" style="width: 65%" class="fl">
         <ul>
             <li>
                 <a href="javascript:void(0)" id="chot">cho link sản phẩm vào giỏ hàng</a>
@@ -18,47 +18,37 @@
                 
         </ul>
     </div>    
+    <div style="width: 32%;" class="fl">
+        <table>
+            <tr>
+                <td width="85px">
+                    <a href="<?php echo $account_info_href; ?>">
+                    <?php
+                    if (!empty($account_avatar)) {
+                        $avatar = HTTP_SERVER.$account_avatar;
+                    } else {
+                        $avatar = HTTP_SERVER.'image/avatar_default.png';
+                    }
+                    ?>
+                        <img style="margin-top: 4px;" class="avatar" src="<?php echo $avatar; ?>" height="85px">
+                    </a>
+                </td>
+                <td width="*" style="padding-left: 15px;">
+                    <ul class="cart_acc_info">
+                        <li><b>Xin chào: <?php echo $account_name; ?></b></li>
+                        <li><a href="<?php echo $account_info_href; ?>">thông tin cá nhân</a></li>
+                        <li><a href="<?php echo $account_order_info_href; ?>">danh sách đơn hàng cá nhân</a></li>
+                        <li><a href="<?php echo $account_transaction_href; ?>">thu chi tài chính</a></li>
+                        <li><a href="<?php echo $account_wishlist_href; ?>">Danh sách mua sau</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>    
+    <div class="clear"></div>
     <div class="l-pageWrapper" style="margin-top: 20px;">
         <img class="fl" src="catalog/view/theme/default/images/giohang.png" style="height: 115px; padding-bottom: 17px; margin-top: 20px; margin-right: 30px;">
         <img class="fl" style="width: 855px;" id="camket" src="catalog/view/theme/default/images/camket.jpg">
-        <div class="clear"></div>
-    </div>
-    <div id="ttcanhan">
-        <ul>
-            <li class="ttcn ttcnd" style="padding-top: 2px; padding-bottom: 5px;">
-                <a href="<?php echo $account_info_href; ?>">thông tin cá nhân</a>
-            </li>
-            <li class="ttcc" style="padding-top: 2px; padding-bottom: 5px;">
-                <a href="<?php echo $account_order_info_href; ?>">danh sách đơn hàng cá nhân</a>
-            </li>
-            <li class="ttcn" style="padding-top: 2px; padding-bottom: 5px;">
-                <a href="<?php echo $account_transaction_href; ?>">thu chi tài chính</a>
-            </li>
-            <li class="ttcc" style="padding-top: 2px; padding-bottom: 5px;">
-                <a href="javascript:void(0)">khiếu nại</a>
-            </li>
-        </ul>
-        <div class="clear"></div>
-    </div>
-    <br/>
-    <br/>
-    <div>
-        <div class="fl cartSelectAll">
-            <input type="checkbox" id="cbSelectAll" />
-            <label for="cbSelectAll">CHỌN TẤT CẢ</label>
-        </div>
-        <div class="fl cartDelProduct">
-            XÓA SẢN PHẨM
-        </div>
-        <div class="fr" style="border-top: 1px solid #000; width: 690px; height: 30px;">
-            <div id="hotline" class="fl" style="width: 60%;">
-                <p>HOTLINE: MR.LONG: <span id="sohl">092 883 688</span><img src="catalog/view/theme/default/images/ip.png"></p>
-            </div>
-            <div id="httt" class="fr" style="width: 35%;">
-                <p>HỖ TRỢ TRỰC TUYẾN<img src="catalog/view/theme/default/images/phone.png"></p>
-            </div>
-            <div class="clear"></div>
-        </div>
         <div class="clear"></div>
     </div>
   <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
@@ -81,7 +71,7 @@
           
           <?php 
           $total_quantity = 0;          
-          //echo '<pre>' . print_r($products, true) . '</pre>';
+
           foreach ($products as $product) { ?>
           <tr>
             <td class="image">
@@ -127,7 +117,7 @@
     </div>
   </form>
     <span style="font-family: 'UTM_Bebas'; font-size: 20px;">GHI CHÚ:</span>&nbsp;
-    <span style="font-size: 16px;"><?php echo $note; ?></span>
+    <span style="font-size: 16px; color: #666;"><?php echo $note; ?></span>
   <div class="box-bgcolor payment_cart" style='margin-top: 20px;'>
       
       <?php $i=0; foreach ($totals as $total) { ?>

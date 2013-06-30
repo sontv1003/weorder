@@ -2404,40 +2404,48 @@ p.error404 img {margin:0 10px 0 0;}
 #tbm2 ul li a:hover{color:#fff}
 
 
-#duoimenu-right{border: 2px solid;
-                float: right;
-                height: 113px;
-                margin: -118px 0 0;
-                width: 370px;}
+#duoimenu-right{
+    border: 2px solid;
+    float: right;
+    height: 113px;
+    margin: -118px 0 0;
+    width: 370px;
+}
 #duoimenu-right img{border:1px #000 solid; float:left; margin-right:10px; height:111px}
 #duoimenu-right p{font-family:'UTM_Avo'; font-size:14px;}
-#ttcanhan #kh{border: 1px solid #000000;
-              height: 67px;
-              margin: -21px 0 0 -61px;
-              position: absolute; 
+#ttcanhan #kh{
+    border: 1px solid #000000;
+    height: 67px;
+    margin: -21px 0 0 -61px;
+    position: absolute; 
 }
 #ttcanhan ul li{
     border: 1px solid #000000;
     float: left;
-    padding:23px 65px 25px 62px; margin-bottom:-10px}
+    padding:23px 65px 25px 60px; margin-bottom:-10px}
 #ttcanhan ul li a{font-family:'UTM_Bebas'; font-size:19px;}
 .ttcn{background-color:#999}
 .ttcc{background:#ccc}
-#ck{ margin-bottom: 20px;
-     margin-left: 65px;
-     width: 836px;}
+#ck{
+    margin-bottom: 20px;
+    margin-left: 65px;
+    width: 836px;
+}
 .qui{font-family:'UTM_Bebas'; font-size:18px;}
-#ngay li{background: none repeat scroll 0 0 #000000;
-         color: #FFFFFF;
-         float: left;
-         font-family: 'UTM_Bebas';
-         font-size: 20px;
-         padding: 10px 40px; }
-#tien li{  border: 1px solid #CDCDCD;
-           float: left;
-           font-family: 'UTM_Bebas';
-           font-size: 15px;
-           padding: 10px 30px 130px;}
+#ngay li{
+    background: none repeat scroll 0 0 #000000;
+    color: #FFFFFF;
+    float: left;
+    font-family: 'UTM_Bebas';
+    font-size: 20px;
+    padding: 10px 40px;
+}
+#tien li{  
+    border: 1px solid #CDCDCD;
+    float: left;
+    font-family: 'UTM_Bebas';
+    font-size: 15px;
+    padding: 10px 30px 130px;}
 
 #menu-khach-hang{
     width: 100%;
@@ -2477,38 +2485,37 @@ p.error404 img {margin:0 10px 0 0;}
     padding:5px 57px;
     color:#fff;
 }
-.font-chu{color: #fff;
-          font-family: 'UTM_Bebas';
-          font-size: 18px;
+.font-chu{
+    color: #fff;
+    font-family: 'UTM_Bebas';
+    font-size: 18px;
 }
-.font-chu-2{color: #333;
-            font-family: 'UTM_Bebas';
-            font-size: 18px;
+.font-chu-2{
+    color: #333;
+    font-family: 'UTM_Bebas';
+    font-size: 18px;
 }
 .boder-1{
     padding:2px;
 }
-
-
-
-
-
-#tim{background: #606060;
-     background: -moz-linear-gradient(top,#606060 0%,#2F2F2F 100%);
-     background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#606060),color-stop(100%,#2F2F2F));
-     background: -webkit-linear-gradient(top,#606060 0%,#2F2F2F 100%);
-     background: -o-linear-gradient(top,#606060 0%,#2F2F2F 100%);
-     background: -ms-linear-gradient(top,#606060 0%,#2F2F2F 100%);
-     background: linear-gradient(top,#606060 0%,#2F2F2F 100%);
-     color: white!important;
-     border: 0 none;
-     border-radius: 2px 2px 2px 2px;
-     color: black !important;
-     display: inline-block;
-     font-size: 1.2em;
-     min-width: 140px;
-     padding: 1px 16px;
-     text-align: center;}
+#tim{
+    background: #606060;
+    background: -moz-linear-gradient(top,#606060 0%,#2F2F2F 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#606060),color-stop(100%,#2F2F2F));
+    background: -webkit-linear-gradient(top,#606060 0%,#2F2F2F 100%);
+    background: -o-linear-gradient(top,#606060 0%,#2F2F2F 100%);
+    background: -ms-linear-gradient(top,#606060 0%,#2F2F2F 100%);
+    background: linear-gradient(top,#606060 0%,#2F2F2F 100%);
+    color: white!important;
+    border: 0 none;
+    border-radius: 2px 2px 2px 2px;
+    color: black !important;
+    display: inline-block;
+    font-size: 1.2em;
+    min-width: 140px;
+    padding: 1px 16px;
+    text-align: center;
+}
 #tim:hover{background: -moz-linear-gradient(center top , #FFAC59 0%, #FF9428 100%) repeat scroll 0 0 transparent;}
 #tatcadonhang li{
     text-align: center;
@@ -2706,7 +2713,7 @@ div.option .option-name{
 
 
 #chon-all{margin:-19px 0 10px;
-    position: absolute;}
+          position: absolute;}
 #camket{
     /*margin:-10px 0 0 -852px;*/
 }
@@ -2733,9 +2740,9 @@ div.option .option-name{
     -webkit-box-shadow: 0 1px 0 rgba(283,181,81,0.3);
     -moz-box-shadow: 0 1px 0 rgba(283,181,81,0.3);
     box-shadow: 0 1px 0 rgba(283,181,81,0.3);
-    
+
     width: 150px; font-weight: normal; line-height: 31px; text-align: center;
-    
+
 }
 .cartSelectAll label {
     display: inline-block;
@@ -2830,12 +2837,12 @@ div.option .option-name{
     width: 482px;
 }
 #tongtien ul li{ float: left;
-    font-size: 20px;
-    line-height: 25px;
-    padding: 4px 12px 5px;
-    width: 166px; 
-    border:none ;
-    border-left:1px solid #cdcdcd
+                 font-size: 20px;
+                 line-height: 25px;
+                 padding: 4px 12px 5px;
+                 width: 166px; 
+                 border:none ;
+                 border-left:1px solid #cdcdcd
 }
 .total_payment {
     width: 195px; 
@@ -2868,7 +2875,7 @@ div.option .option-name{
     color: #FFF;
 }
 #thuchitaichinh {
-    
+
 }
 #thuchitaichinh th {
     background: #000;
@@ -2887,7 +2894,8 @@ div.option .option-name{
     font-family: 'UTM_Bebas';
     font-size: 15px;
 }
-.btn-update {
+
+.btn-update, .order_later {
     font-size: 13px;
     padding: 3px 5px;
     background: -webkit-gradient(linear, center top, center bottom, from(#FFAC59), to(#FF9428));
@@ -2897,7 +2905,7 @@ div.option .option-name{
     box-shadow: 1px 0 3px 0 rgba(0, 0, 0, 0.6);
     font-family: 'UTM_Bebas';    
 }
-.btn-update:hover{
+.btn-update:hover, .order_later:hover {
     background: #606060;
     background: -moz-linear-gradient(top,#606060 0%,#2F2F2F 100%);
     background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#606060),color-stop(100%,#2F2F2F));
@@ -2907,7 +2915,10 @@ div.option .option-name{
     background: linear-gradient(top,#606060 0%,#2F2F2F 100%);
     color: white!important;
 }
-
+a.order_later {
+    padding: 5px 10px;
+    font-size: 14px;
+}
 .note_reg {
     font-size: 14px; font-weight: normal; font-family: 'UTM_Bebas';
 }
@@ -2930,4 +2941,55 @@ ul.menu_cart li a {
 }
 ul.menu_cart li a:hover {
     text-decoration: underline;    
+}
+img.avatar {
+    box-shadow: 0px 0px 1px #ccc;
+    -moz-box-shadow: 0px 0px 1px #ccc;
+    -webkit-box-shadow: 0px 0px 1px #ccc;
+    -o-box-shadow: 0px 0px 1px #ccc;
+    -ms-box-shadow: 0px 0px 1px #ccc;
+}
+img.avatar:hover {
+    box-shadow: 0px 0px 1px #000;
+    -moz-box-shadow: 0px 0px 1px #000;
+    -webkit-box-shadow: 0px 0px 1px #000;
+    -o-box-shadow: 0px 0px 1px #000;
+    -ms-box-shadow: 0px 0px 1px #000;
+}
+ul.cart_acc_info {
+    
+}
+ul.cart_acc_info li{
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    font-size: 10px;
+    
+}
+ul.cart_acc_info li a {
+    color: #000;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+a.UploadButton {
+    cursor: pointer;
+}
+a.UploadButton input {
+    cursor: pointer;    
+}
+.frmEditAccount input[type="text"] {
+    width: 250px;
+}
+.banner_small {
+    text-align: center; 
+    border: 1px solid #f0f0f0;
+    background: #fafafa;
+    width: 225px;
+    height: 184px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.banner_small:hover {
+    border: 1px solid #ccc;
+    background: #999999;
 }

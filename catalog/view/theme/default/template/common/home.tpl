@@ -18,26 +18,26 @@
     <div id="tmslider2">
         <ul>
             <li class="slide1">
-                <a href="#/product.php?id_product=2"><img alt="" src="<?php echo HTTP_SERVER ?>/image/slide_05.jpg"></a>
+                <a href="<?php echo $category_man_href; ?>"><img alt="" src="<?php echo HTTP_SERVER ?>/image/slide_05.jpg"></a>
             </li>
             <li class="slide2">
-                <a href="#/category.php?id_category=15"><img alt="" src="<?php echo HTTP_SERVER ?>/image/slide_06.jpg"></a>
+                <a href="<?php echo $category_woman_href; ?>"><img alt="" src="<?php echo HTTP_SERVER ?>/image/slide_06.jpg"></a>
             </li>
         </ul>
     </div>
 
     <div id="tmnivoslider2">
-        <a href="#/category.php?id_category=15"><img alt="" src="<?php echo HTTP_SERVER ?>/image/slide_09.jpg"></a>
+        <a href="#"><img alt="" src="<?php echo HTTP_SERVER ?>/image/slide_09.jpg"></a>
 
     </div>
 
     <div id="tmslider2">
         <ul>
             <li class="slide3">
-                <a href="#/category.php?id_category=7"><img alt="" src="<?php echo HTTP_SERVER ?>/image/slide_07.jpg"></a>
+                <a href="#"><img alt="" src="<?php echo HTTP_SERVER ?>/image/slide_07.jpg"></a>
             </li>
             <li class="slide4">
-                <a href="#/category.php?id_category=2"><img alt="" src="<?php echo HTTP_SERVER ?>/image/slide_08.jpg"></a>
+                <a href="#"><img alt="" src="<?php echo HTTP_SERVER ?>/image/slide_08.jpg"></a>
             </li>
         </ul>
     </div>    

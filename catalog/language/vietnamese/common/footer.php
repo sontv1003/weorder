@@ -12,7 +12,7 @@ $_['text_affiliate']    = 'Đại lý';
 $_['text_special']      = 'Khuyến mãi';
 $_['text_account']      = 'Tài khoản của tôi';
 $_['text_order']        = 'Lịch sử đơn hàng';
-$_['text_wishlist']     = 'Danh sách yêu thích';
+$_['text_wishlist']     = 'Danh sách mua sau';
 $_['text_newsletter']   = 'Thư thông báo';
 $_['text_powered']      = '';
 ?>

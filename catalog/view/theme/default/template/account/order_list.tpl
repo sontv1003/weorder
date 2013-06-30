@@ -4,7 +4,19 @@
     <div id="ttcanhan">
         <img src="<?php echo HTTP_SERVER; ?>image/camket.jpg" id="ck">
         <ul>
-            <li class="ttcn ttcnd "><img src="<?php echo HTTP_SERVER.$avatar?>" id="kh" width="80px"><a style="margin-left: 30px;" href="<?php echo $account_info_href; ?>">thông tin cá nhân</a></li>
+            <li class="ttcn ttcnd ">
+                <a href="<?php echo $account_info_href; ?>">
+                    <?php
+                    if (!empty($account_avatar)) {
+                        $avatar = HTTP_SERVER.$account_avatar;
+                    } else {
+                        $avatar = HTTP_SERVER.'image/avatar_default.png';
+                    }
+                    ?>
+                    <img class="avatar" src="<?php echo $avatar; ?>" id="kh" width="80px">
+                </a>
+                <a style="margin-left: 30px;" href="<?php echo $account_info_href; ?>">thông tin cá nhân</a>
+            </li>
             <li class="ttcc"><a href="<?php echo $account_order_info_href; ?>">danh sách đơn hàng cá nhân</a></li>
             <li class="ttcn"><a href="<?php echo $account_transaction_href; ?>">thu chi tài chính</a></li>
             <li class="ttcc"><a href="<?php echo $account_order_info_href; ?>">khiếu nại</a></li>
@@ -22,19 +34,19 @@
                     <td width="150px" bgcolor="#cdcdcd" align="center" style="background-color: #333;color: #FFFFFF; margin: 8px; vertical-align: middle;" class="font-chu boder-1">Đơn hàng</td>
                     <?php foreach ($order_statuses as $os): ?>
                         <td width="<?php echo ceil(100 / ($count_status + 1)); ?>%" bgcolor="#cdcdcd" align="center" style="background-color: #333;color: #FFFFFF;margin: 8px; vertical-align: middle;" class="font-chu boder-1"><?php echo $os['name'] ?></td>
-                    <?php endforeach; ?>
+<?php endforeach; ?>
                 </tr>
                 <tr bgcolor="#CCCCCC">
                     <td bgcolor="#cdcdcd" align="center" style="background-color: #333333; color: #FFFFFF; margin: 2px; vertical-align: middle;" class="boder-1 font-chu">Số lượng ( đơn )</td>
                     <?php foreach ($order_statuses as $os): ?>
                         <td bgcolor="#fff" align="center" style="margin: 2px; background-color: rgb(153, 153, 153); border: 1px solid rgb(0, 0, 0); font-family: 'UTM_Avo'; font-size: 16px;" class="boder-1"><?php echo $summary_orders[$os['order_status_id']]['quantity']; ?></td>
-                    <?php endforeach; ?>
+<?php endforeach; ?>
                 </tr>
                 <tr bgcolor="#CCCCCC">
                     <td bgcolor="#fff" align="center" style="background-color: #333333; color: #FFFFFF; margin: 2px; vertical-align: middle;" class="boder-1 font-chu">Trị Giá ( vnđ )</td>
                     <?php foreach ($order_statuses as $os): ?>
                         <td bgcolor="#fff" align="center" style="margin: 2px; background-color: rgb(153, 153, 153); border: 1px solid rgb(000, 000, 000); font-family: 'UTM_Avo'; font-size: 16px;color:#f00" class="boder-1"><?php echo $summary_orders[$os['order_status_id']]['currency']; ?></td>
-                    <?php endforeach; ?>
+<?php endforeach; ?>
                 </tr>
             </tbody></table>
         <div class="clear-both"></div>
@@ -62,14 +74,14 @@
                     <input type="button" value="Tất cả đơn hàng" style="background-color:#666">
                 </a>
             </li>
-            <?php foreach ($order_statuses as $order_status): ?>
+<?php foreach ($order_statuses as $order_status): ?>
                 <li>
                     <a href="javascript:void(0)">
                         <input type="hidden" class="filter_status_id" value ="<?php echo $order_status['order_status_id'] ?>" />
                         <input type="button" value="<?php echo $order_status['name'] ?>" style="background-color:#666; text-decoration: none;">
                     </a>
                 </li>
-            <?php endforeach; ?>
+<?php endforeach; ?>
         </ul>
         <table width="100%" cellspacing="10px;" cellpadding="5px" bordercolor="#CCCCCC" align="center">
 
@@ -92,7 +104,7 @@
             </tbody>
             <tbody id="tdLists">
                 <?php if ($orders) { ?>
-                    <?php foreach ($orders as $order) { ?>
+    <?php foreach ($orders as $order) { ?>
                         <tr class="ui-border">
                             <th width="15%" align="center" class="v_center" style="padding-top: 10px; padding-bottom: 10px;">
                                 <a href="<?php echo $order['href']; ?>">#<?php echo $order['order_id']; ?> - <?php echo $order['date_added']; ?></a>
@@ -118,7 +130,7 @@
                 <tr class="ui-border">
                     <td colspan="6"><p style="margin-left: 20px; margin-top: 10px; color: #ff0000; font-size: 16px;">Bạn không có đơn hàng nào</p></td>
                 </tr>
-            <?php } ?>
+<?php } ?>
             </tbody>
         </table>
     </div>
@@ -126,7 +138,7 @@
     <div class="clearfix"></div>
     <div class="pagination"><?php echo $pagination; ?></div>
     <?php echo $content_bottom; ?></div>
-    <?php echo $footer; ?>
+<?php echo $footer; ?>
 
 <script type="text/javascript"><!--
 
@@ -202,14 +214,12 @@
         var months = ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"];
         var daysInWeek = ["T2", "T3", "T4", "T5", "T6", "T7", "CN"];
         $("#order_from").datepicker({
-            appendText: "(yyyy-mm-dd)",
             dayNamesMin: daysInWeek,
             monthNames: months,
             dateFormat: 'dd/mm/yy'
         });
 
         $("#order_to").datepicker({
-            appendText: "(yyyy-mm-dd)",
             dayNamesMin: daysInWeek,
             monthNames: months,
             dateFormat: 'dd/mm/yy'

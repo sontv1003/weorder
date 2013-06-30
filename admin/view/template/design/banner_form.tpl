@@ -42,6 +42,9 @@
               <td class="left"><?php echo $entry_title; ?></td>
               <td class="left"><?php echo $entry_link; ?></td>
               <td class="left"><?php echo $entry_image; ?></td>
+              <?php if($banner_id == 8){ ?>
+              <td class="left">Banner nhỏ</td>
+              <?php } ?>
               <td></td>
             </tr>
           </thead>
@@ -61,6 +64,15 @@
                   <input type="hidden" name="banner_image[<?php echo $image_row; ?>][image]" value="<?php echo $banner_image['image']; ?>" id="image<?php echo $image_row; ?>"  />
                   <br />
                   <a onclick="image_upload('image<?php echo $image_row; ?>', 'thumb<?php echo $image_row; ?>');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$('#thumb<?php echo $image_row; ?>').attr('src', '<?php echo $no_image; ?>'); $('#image<?php echo $image_row; ?>').attr('value', '');"><?php echo $text_clear; ?></a></div></td>
+<?php if($banner_id == 8){ ?>      
+        <?php if($banner_image['is_small']==1) {?>
+            <td class="left"><input type="checkbox" name="banner_image[<?php echo $image_row; ?>][is_small]" checked="checked" /></td>
+        <?php } else { ?>
+            <td class="left"><input type="checkbox" name="banner_image[<?php echo $image_row; ?>][is_small]" /></td>
+        <?php } 
+}
+?>
+            
               <td class="left"><a onclick="$('#image-row<?php echo $image_row; ?>').remove();" class="button"><?php echo $button_remove; ?></a></td>
             </tr>
           </tbody>
@@ -68,7 +80,7 @@
           <?php } ?>
           <tfoot>
             <tr>
-              <td colspan="3"></td>
+              <td colspan="<?php echo ($banner_id==8)? '4' : '3'; ?>"></td>
               <td class="left"><a onclick="addImage();" class="button"><?php echo $button_add_banner; ?></a></td>
             </tr>
           </tfoot>
@@ -90,7 +102,10 @@ function addImage() {
 	html += '</td>';	
 	html += '<td class="left"><input type="text" name="banner_image[' + image_row + '][link]" value="" /></td>';	
 	html += '<td class="left"><div class="image"><img src="<?php echo $no_image; ?>" alt="" id="thumb' + image_row + '" /><input type="hidden" name="banner_image[' + image_row + '][image]" value="" id="image' + image_row + '" /><br /><a onclick="image_upload(\'image' + image_row + '\', \'thumb' + image_row + '\');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$(\'#thumb' + image_row + '\').attr(\'src\', \'<?php echo $no_image; ?>\'); $(\'#image' + image_row + '\').attr(\'value\', \'\');"><?php echo $text_clear; ?></a></div></td>';
-	html += '<td class="left"><a onclick="$(\'#image-row' + image_row  + '\').remove();" class="button"><?php echo $button_remove; ?></a></td>';
+   <?php if($banner_id == 8){ ?>
+        html += '<td class="left"><input type="checkbox" name="banner_image[' + image_row + '][is_small]" value="" /></td>';
+   <?php } ?>
+        html += '<td class="left"><a onclick="$(\'#image-row' + image_row  + '\').remove();" class="button"><?php echo $button_remove; ?></a></td>';
 	html += '</tr>';
 	html += '</tbody>'; 
 	
@@ -119,10 +134,9 @@ function image_upload(field, thumb) {
 			}
 		},	
 		bgiframe: false,
-		width: 700,
+		width: 800,
 		height: 400,
-		resizable: false,
-		modal: false
+		resizable: false
 	});
 };
 //--></script> 

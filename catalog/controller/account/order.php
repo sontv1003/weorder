@@ -157,8 +157,9 @@ class ControllerAccountOrder extends Controller {
         $this->data['order_statuses'] = $order_statuses;
         $this->data['summary_orders'] = $summary_orders;
         $this->data['count_status'] = $count_status;
-        $this->data['avatar'] = $this->customer->getAvatar();
-        
+        $this->data['account_avatar'] = $this->customer->getAvatar();
+        $this->data['account_name'] = $this->customer->getFirstName();
+
         if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/order_list.tpl')) {
             $this->template = $this->config->get('config_template') . '/template/account/order_list.tpl';
         } else {
@@ -262,6 +263,7 @@ class ControllerAccountOrder extends Controller {
             $this->data['account_info_href'] = $this->url->link('account/edit');
             $this->data['account_order_info_href'] = $this->url->link('account/order');
             $this->data['account_transaction_href'] = $this->url->link('account/transaction');
+            $this->data['account_wishlist_href'] = $this->url->link('account/wishlist');
 
             $this->data['button_return'] = $this->language->get('button_return');
             $this->data['button_continue'] = $this->language->get('button_continue');
@@ -396,7 +398,7 @@ class ControllerAccountOrder extends Controller {
 
             // Voucher
             $this->data['vouchers'] = array();
-            
+
             $vouchers = $this->model_account_order->getOrderVouchers($this->request->get['order_id']);
 
             foreach ($vouchers as $voucher) {
@@ -410,7 +412,8 @@ class ControllerAccountOrder extends Controller {
 
             $this->data['comment'] = nl2br($order_info['comment']);
             $this->data['note'] = $order_info['note'];
-
+            $this->data['account_avatar'] = $this->customer->getAvatar();            
+            $this->data['account_name'] = $this->customer->getFirstName();
             $this->data['histories'] = array();
 
             $results = $this->model_account_order->getOrderHistories($this->request->get['order_id']);
@@ -477,6 +480,14 @@ class ControllerAccountOrder extends Controller {
             );
 
             $this->data['continue'] = $this->url->link('account/order', '', 'SSL');
+
+            if ($this->customer->isLogged()) {
+                $this->data['avatar'] = $this->customer->getAvatar();
+                $this->data['name'] = $this->customer->getFirstName();
+            } else {
+                $this->data['avatar'] = '';
+                $this->data['name'] = '';
+            }
 
             if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/error/not_found.tpl')) {
                 $this->template = $this->config->get('config_template') . '/template/error/not_found.tpl';
@@ -615,16 +626,16 @@ class ControllerAccountOrder extends Controller {
 
         $this->response->setOutput($this->render());
     }
-    
+
     function update_note() {
-        
+
         if (isset($this->request->get['order_id'])) {
             $order_id = $this->request->get['order_id'];
             $note = $this->request->get['note'];
-            
+
             $this->load->model('account/order');
             $this->model_account_order->updateNoteForOrder($order_id, $note);
-            
+
             echo json_encode(array('status' => 'success'));
         }
     }
