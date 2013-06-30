@@ -18,6 +18,7 @@ class ControllerAccountEdit extends Controller {
         $this->load->model('account/customer');
 
         if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+            $this->request->post['lastname'] = '';
             $this->model_account_customer->editCustomer($this->request->post);
 
             $this->session->data['success'] = $this->language->get('text_success');
@@ -70,12 +71,6 @@ class ControllerAccountEdit extends Controller {
             $this->data['error_firstname'] = '';
         }
 
-        if (isset($this->error['lastname'])) {
-            $this->data['error_lastname'] = $this->error['lastname'];
-        } else {
-            $this->data['error_lastname'] = '';
-        }
-
         if (isset($this->error['email'])) {
             $this->data['error_email'] = $this->error['email'];
         } else {
@@ -125,7 +120,8 @@ class ControllerAccountEdit extends Controller {
         } else {
             $this->data['fax'] = '';
         }
-
+        
+        
         if (!empty($this->request->post['avatar'])) {
             $this->data['avatar'] = $this->request->post['avatar'];
             $this->data['account_avatar'] = HTTP_SERVER.$this->request->post['avatar'];

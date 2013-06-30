@@ -411,10 +411,10 @@ class ControllerCheckoutCart extends Controller {
         $this->load->model('localisation/currency');
         $this->data['currencies'] = $this->model_localisation_currency->getCurrencies();
         if($this->customer->isLogged()) {
-            $this->data['avatar'] = $this->customer->getAvatar();
+            $this->data['account_avatar'] = $this->customer->getAvatar();
             $this->data['name'] = $this->customer->getFirstName();
         } else {
-            $this->data['avatar'] = HTTP_SERVER.'image/avatars/avatar_default.png';
+            $this->data['account_avatar'] = HTTP_SERVER.'image/avatars/avatar_default.png';
             $this->data['name'] = '';
         }
         
