@@ -26,7 +26,12 @@ class ModelDesignBanner extends Model {
 			
 		if (isset($data['banner_image'])) {
 			foreach ($data['banner_image'] as $banner_image) {
-				$this->db->query("INSERT INTO " . DB_PREFIX . "banner_image SET banner_id = '" . (int)$banner_id . "', link = '" .  $this->db->escape($banner_image['link']) . "', image = '" .  $this->db->escape($banner_image['image']) . "'");
+                            if(empty($banner_image['is_small']))
+                                $banner_image['is_small'] = 0;
+                            else 
+                                $banner_image['is_small'] = 1;
+                                    
+				$this->db->query("INSERT INTO " . DB_PREFIX . "banner_image SET banner_id = '" . (int)$banner_id . "', link = '" .  $this->db->escape($banner_image['link']) . "', is_small = '" .  $banner_image['is_small'] . "', image = '". $this->db->escape($banner_image['image']) ."'");
 				
 				$banner_image_id = $this->db->getLastId();
 				
@@ -38,6 +43,8 @@ class ModelDesignBanner extends Model {
 	}
 	
 	public function deleteBanner($banner_id) {
+                if($banner_id == 8) return; //  Khong the xoa banner "Tin nong hang ngay"
+                
 		$this->db->query("DELETE FROM " . DB_PREFIX . "banner WHERE banner_id = '" . (int)$banner_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "banner_image WHERE banner_id = '" . (int)$banner_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "banner_image_description WHERE banner_id = '" . (int)$banner_id . "'");
@@ -103,7 +110,8 @@ class ModelDesignBanner extends Model {
 			$banner_image_data[] = array(
 				'banner_image_description' => $banner_image_description_data,
 				'link'                     => $banner_image['link'],
-				'image'                    => $banner_image['image']	
+				'image'                    => $banner_image['image'],
+				'is_small'                 => $banner_image['is_small'],
 			);
 		}
 		

@@ -102,14 +102,6 @@ class ControllerAccountEdit extends Controller {
             $this->data['firstname'] = '';
         }
 
-        if (isset($this->request->post['lastname'])) {
-            $this->data['lastname'] = $this->request->post['lastname'];
-        } elseif (isset($customer_info)) {
-            $this->data['lastname'] = $customer_info['lastname'];
-        } else {
-            $this->data['lastname'] = '';
-        }
-
         if (isset($this->request->post['email'])) {
             $this->data['email'] = $this->request->post['email'];
         } elseif (isset($customer_info)) {
@@ -132,6 +124,28 @@ class ControllerAccountEdit extends Controller {
             $this->data['fax'] = $customer_info['fax'];
         } else {
             $this->data['fax'] = '';
+        }
+
+        if (!empty($this->request->post['avatar'])) {
+            $this->data['avatar'] = $this->request->post['avatar'];
+            $this->data['account_avatar'] = HTTP_SERVER.$this->request->post['avatar'];
+        } elseif (isset($customer_info)) {
+            if(empty($customer_info['avatar'])) {
+                $this->data['account_avatar'] = HTTP_SERVER.'image/avatar_default.png';              
+            } else {
+                $this->data['account_avatar'] = HTTP_SERVER.$customer_info['avatar'];             
+            }
+            
+            $this->data['avatar'] = $customer_info['avatar'];
+        } else {
+            $this->data['avatar'] = '';
+            $avatar = $this->customer->getAvatar();
+            
+            if(!empty($avatar)) {
+                $this->data['account_avatar'] = HTTP_SERVER.$avatar;
+            } else {
+                $this->data['account_avatar'] = HTTP_SERVER.'image/avatar_default.png';
+            }
         }
 
         $this->data['back'] = $this->url->link('account/account', '', 'SSL');
@@ -158,11 +172,7 @@ class ControllerAccountEdit extends Controller {
         if ((utf8_strlen($this->request->post['firstname']) < 1) || (utf8_strlen($this->request->post['firstname']) > 32)) {
             $this->error['firstname'] = $this->language->get('error_firstname');
         }
-
-        if ((utf8_strlen($this->request->post['lastname']) < 1) || (utf8_strlen($this->request->post['lastname']) > 32)) {
-            $this->error['lastname'] = $this->language->get('error_lastname');
-        }
-
+        
         if ((utf8_strlen($this->request->post['email']) > 96) || !preg_match('/^[^\@]+@.*\.[a-z]{2,6}$/i', $this->request->post['email'])) {
             $this->error['email'] = $this->language->get('error_email');
         }

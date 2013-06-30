@@ -241,14 +241,7 @@ class ControllerNewsNewsCategory extends Controller {
 
             $this->data['continue'] = $this->url->link('news/all');
 
-//            if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/news_category.tpl')) {
-//                $this->template = $this->config->get('config_template') . '/template/news/news_category.tpl';
-//            } else {
-//                $this->template = 'default/template/news/news_category.tpl';
-//            }
-
-            if (empty($news_category_info['theme_id'])) {
-                
+            if (empty($news_category_info['theme_id'])) { // Tin nong hang ngay                
                 if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/news_theme1.tpl')) {
                     $this->template = $this->config->get('config_template') . '/template/news/news_theme1.tpl';
                 } else {

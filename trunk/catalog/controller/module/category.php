@@ -10,7 +10,7 @@ class ControllerModuleCategory extends Controller {
 		} else {
 			$parts = array();
 		}
-		
+                
 		if (isset($parts[0])) {
 			$this->data['category_id'] = $parts[0];
 		} else {
@@ -32,6 +32,9 @@ class ControllerModuleCategory extends Controller {
 		$categories = $this->model_catalog_category->getCategories(0);
 
 		foreach ($categories as $category) {
+                        if($category['category_id'] == 66)
+                            continue;
+                        
 			$total = $this->model_catalog_product->getTotalProducts(array('filter_category_id' => $category['category_id']));
 
 			$children_data = array();

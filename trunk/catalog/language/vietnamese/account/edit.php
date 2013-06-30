@@ -9,7 +9,7 @@ $_['text_your_details'] = 'Thông tin cá nhân';
 $_['text_success']      = 'Thành công: Tài khoản của bạn đã được cập nhật.';
 
 // Entry
-$_['entry_firstname']  = 'Tên:';
+$_['entry_firstname']  = 'Họ tên:';
 $_['entry_lastname']   = 'Họ:';
 $_['entry_email']      = 'Email:';
 $_['entry_telephone']  = 'Điện thoại:';

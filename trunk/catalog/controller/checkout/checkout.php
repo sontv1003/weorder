@@ -276,8 +276,10 @@ class ControllerCheckoutCheckout extends Controller {
                 $data['company_id'] = '';
                 $data['company'] = '';
                 $data['postcode'] = '';
+                $data['avatar'] = '';
                 $data['fax'] = '';
-                $data['fax'] = '';
+                $data['minimum'] = 0;
+                
                 if (!empty($data['date']) && !empty($data['month']) && !empty($data['year']))
                     $data['birthday'] = $data['year'] . '-' . $data['month'] . '-' . $data['date'];
                 else

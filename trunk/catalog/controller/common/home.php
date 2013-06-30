@@ -6,6 +6,9 @@ class ControllerCommonHome extends Controller {
 
 		$this->data['heading_title'] = $this->config->get('config_title');
 		
+		$this->data['category_man_href'] = $this->url->link('product/category', 'path=33', 'SSL');
+		$this->data['category_woman_href'] = $this->url->link('product/category', 'path=25', 'SSL');
+                
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/home.tpl')) {
 			$this->template = $this->config->get('config_template') . '/template/common/home.tpl';
 		} else {

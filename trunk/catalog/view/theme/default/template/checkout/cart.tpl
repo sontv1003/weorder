@@ -29,16 +29,26 @@
     <div style="width: 32%;" class="fl">
         <table>
             <tr>
-                <td width="50px">
-                    <img src="<?php echo HTTP_SERVER ?>image/tranminhduc.png" height="85px">
+                <td width="85px">
+                    <?php
+                    if (!empty($account_avatar)) {
+                        $avatar = HTTP_SERVER.$account_avatar;
+                    } else {
+                        $avatar = HTTP_SERVER.'image/avatar_default.png';
+                    }
+                    ?>
+                    <a href="<?php echo $account_info_href; ?>">
+                        <img style="margin-top: 4px;" class="avatar" src="<?php echo $avatar; ?>" height="85px">
+                    </a>
                 </td>
                 <td width="*" style="padding-left: 15px;">
-                    <p style="font-size: 15px; line-height: 17px;">
-                        Xin chào: Trần Minh Đức!<br>
-                        Bạn có (3) tin nhắn mới<br>
-                        Hãy gọi cho chúng tôi mỗi khi bạn
-                        cần hỗ trợ. Chúc bạn một ngày mua sắm vui vẻ!
-                    </p>
+                    <ul class="cart_acc_info">
+                        <li><b>Xin chào: <?php echo $name; ?></b></li>
+                        <li><a href="<?php echo $account_info_href; ?>">thông tin cá nhân</a></li>
+                        <li><a href="<?php echo $account_order_info_href; ?>">danh sách đơn hàng cá nhân</a></li>
+                        <li><a href="<?php echo $account_transaction_href; ?>">thu chi tài chính</a></li>
+                        <li><a href="<?php echo $account_wishlist_href; ?>">Danh sách mua sau</a></li>
+                    </ul>
                 </td>
             </tr>
         </table>
@@ -49,6 +59,7 @@
         <img class="fl" style="width: 855px;" id="camket" src="catalog/view/theme/default/images/camket.jpg">
         <div class="clear"></div>
     </div>
+<!--
     <div id="ttcanhan">
         <ul>
             <li class="ttcn ttcnd" style="padding-top: 2px; padding-bottom: 5px;">
@@ -66,8 +77,8 @@
         </ul>
         <div class="clear"></div>
     </div>
-    <br />
-    <br />
+-->
+
     <div>
         <div class="fl cartSelectAll">
             <input type="checkbox" id="cbSelectAll" />
@@ -122,7 +133,8 @@
 
                                 <?php if ($product['thumb']) { ?>
                                     <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" /></a>
-                                <?php } ?></td>
+                                <?php } ?>
+                            </td>
                             <td class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
                                 <?php if (!$product['stock']) { ?>
                                     <span class="stock">***</span>
@@ -137,6 +149,9 @@
                                 <?php } ?>             
                                 <div class="clear"></div>
                                 <a style="font-size: 15px;" href="<?php echo $product['remove']; ?>"><img src="catalog/view/theme/default/images/remove.png" alt="<?php echo $button_remove; ?>" title="<?php echo $button_remove; ?>" />&nbsp;Xóa</a>
+                                <br/>
+                                <img src="<?php echo HTTP_SERVER.'image/cart.png'?>" width="16px" />
+                                <a style="font-size: 15px;" href="javascript:void(0)" onclick="addToWishList('<?php echo $product['key']; ?>')">Mua sau</a>
                             </td>
                             <td class="link"><input type="text" name="link[<?php echo $product['key']; ?>]" value="<?php echo $product['link']; ?>" /></td>
                             <td class="size"><input type="text" name="size[<?php echo $product['key']; ?>]" value="<?php echo $product['size']; ?>" style="width: 50px" /></td>
@@ -234,7 +249,7 @@
                 <div>
                     <div class="fl dky fontUTM">Hủy đơn hàng</div>
                     <div class="fr cost_payment"><b><?php echo $total['text']; ?></b></div>
-                    <div class="fr total_payment"><b>Tổng tiền bạn phải trả là:<?php //echo $total['title'];         ?></b></div>
+                    <div class="fr total_payment"><b>Tổng tiền bạn phải trả là:<?php //echo $total['title'];          ?></b></div>
                     <div class="clear"></div>
                 </div>
 

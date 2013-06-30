@@ -4,7 +4,19 @@
     <div id="ttcanhan">
         <img id="ck" src="<?php echo HTTP_SERVER; ?>image/camket.jpg">
         <ul>
-            <li class="ttcn ttcnd"><img src="images/tranminhduc.png" id="kh"><a href="<?php echo $account_info_href; ?>">thông tin cá nhân</a></li>
+            <li class="ttcn ttcnd ">
+                <a href="<?php echo $account_info_href; ?>">
+                    <?php
+                    if (!empty($account_avatar)) {
+                        $avatar = HTTP_SERVER.$account_avatar;
+                    } else {
+                        $avatar = HTTP_SERVER.'image/avatar_default.png';
+                    }
+                    ?>
+                    <img class="avatar" src="<?php echo $avatar; ?>" id="kh" width="80px">
+                </a>
+                <a style="margin-left: 30px;" href="<?php echo $account_info_href; ?>">thông tin cá nhân</a>
+            </li>
             <li class="ttcc"><a href="<?php echo $account_order_info_href; ?>">danh sách đơn hàng cá nhân</a></li>
             <li class="ttcn"><a href="<?php echo $account_transaction_href; ?>">thu chi tài chính</a></li>
             <li class="ttcc"><a href="<?php echo $account_order_info_href; ?>">khiếu nại</a></li>
@@ -54,23 +66,23 @@
             <th>Trạng thái</th>
             <th>Chi tiết</th>
         </tr>
-    <?php if ($transactions) { ?>
-        <?php foreach ($transactions as $transaction) { ?>
+        <?php if ($transactions) { ?>
+            <?php foreach ($transactions as $transaction) { ?>
+                <tr>
+                    <td><span>30/4/2013</span></td>
+                    <td><span style="color: #09F;">tmđ 1-30/4/2013</span></td>
+                    <td><span style="color: #060;">30.000.000vnđ</span></td>
+                    <td><span style="color: #930;">±20.000.000 vnđ</span></td>
+                    <td><span style="color: #c00;">30.250.000</span></td>
+                    <td><span style="color: #09F;">đã hoàn thành giao dịch</span></td>
+                    <td><span style="color: #000;">xem Chi tiết</span></td>
+                </tr>
+            <?php } ?>
+        <?php } else { ?>
             <tr>
-                <td><span>30/4/2013</span></td>
-                <td><span style="color: #09F;">tmđ 1-30/4/2013</span></td>
-                <td><span style="color: #060;">30.000.000vnđ</span></td>
-                <td><span style="color: #930;">±20.000.000 vnđ</span></td>
-                <td><span style="color: #c00;">30.250.000</span></td>
-                <td><span style="color: #09F;">đã hoàn thành giao dịch</span></td>
-                <td><span style="color: #000;">xem Chi tiết</span></td>
+                <td class="center" colspan="7" style="text-align: left"><span style="font-family: Arial; font-size: 16px; color: #f00;"><?php echo $text_empty; ?></span></td>
             </tr>
         <?php } ?>
-    <?php } else { ?>
-        <tr>
-            <td class="center" colspan="7" style="text-align: left"><span style="font-family: Arial; font-size: 16px; color: #f00;"><?php echo $text_empty; ?></span></td>
-        </tr>
-    <?php } ?>
     </table>
     <div class="clearfix"></div>
     <div class="pagination"><?php echo $pagination; ?></div>
