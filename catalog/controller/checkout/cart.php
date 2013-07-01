@@ -414,7 +414,7 @@ class ControllerCheckoutCart extends Controller {
             $this->data['account_avatar'] = $this->customer->getAvatar();
             $this->data['name'] = $this->customer->getFirstName();
         } else {
-            $this->data['account_avatar'] = HTTP_SERVER.'image/avatars/avatar_default.png';
+            $this->data['account_avatar'] = 'image/avatar_default.png';
             $this->data['name'] = '';
         }
         
