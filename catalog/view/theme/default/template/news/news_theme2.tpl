@@ -1,4 +1,4 @@
-<?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
+<?php echo $header; ?><?php echo $column_left; ?>
 <div class="l-pageWrapper l-hasSidebarAndAside l-staticpage">
     <div class="press" id="cms-page">
 	<div class="wrapper">
