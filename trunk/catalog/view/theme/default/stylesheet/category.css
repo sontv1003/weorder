@@ -155,7 +155,7 @@ h4, h5, .h4, .h5 {
 }
 .list-product ul li{
     width: 349px;
-    height:355px;
+    height:360px;
     float: left;
     text-align: center;
     color: #555;
@@ -340,4 +340,13 @@ h4, h5, .h4, .h5 {
     background: #000;
     color: #fff;    
     padding: 2px 7px;
+}
+
+p.pro_description {
+    font-family: 'UTM Avo';
+    margin-top: -5px;
+    margin-left: 45px;
+    width: 250px; 
+    height: 30px;
+    overflow: hidden;
 }

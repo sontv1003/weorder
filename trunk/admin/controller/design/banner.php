@@ -388,8 +388,7 @@ class ControllerDesignBanner extends Controller {
 
             $this->data['banner_images'][] = array(
                 'banner_image_description' => $banner_image['banner_image_description'],
-                'link' => $banner_image['link'],
-                'is_small' => $banner_image['is_small'],
+                'link' => $banner_image['link'],                
                 'image' => $image,
                 'thumb' => $this->model_tool_image->resize($image, 100, 100)
             );

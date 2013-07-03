@@ -1,6 +1,7 @@
-<?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
-<div id="content"><?php echo $content_top; ?>
-  
+<?php echo $header; ?><?php echo $column_left; ?>
+<div id="content" class="hot_news">
+  <div style="float: left;"><?php echo $content_top; ?></div>
+  <?php echo $column_right; ?>
   <?php foreach ($news as $news_item) { ?>
         <div id="news_content" style="position: relative;">
               <div class="date_block">

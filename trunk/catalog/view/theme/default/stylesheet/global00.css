@@ -2359,7 +2359,13 @@ p.error404 img {margin:0 10px 0 0;}
     src:url(fonts/UTM_Avo.ttf)
 }
 
-.aosomi{color:#900; font-family:'UTM Avo'}
+.aosomi{
+    color:#900;
+    font-family:'UTM Avo';
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
 .size{text-transform:uppercase; font-family:'UTM Avo';  margin-top: 2px; }
 #eu{font-family:'UTM_Bebas'; color:#000; font-size:17px}
 #ue{font-family:'UTM_Bebas'; color:#900; font-size:17px}
@@ -2957,13 +2963,13 @@ img.avatar:hover {
     -ms-box-shadow: 0px 0px 1px #000;
 }
 ul.cart_acc_info {
-    
+
 }
 ul.cart_acc_info li{
     margin-bottom: 3px;
     text-transform: uppercase;
     font-size: 10px;
-    
+
 }
 ul.cart_acc_info li a {
     color: #000;

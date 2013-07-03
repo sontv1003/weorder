@@ -69,7 +69,9 @@
                         <div id="tinsp">
                             <ul>
                                 <li><p class="aosomi"><?php echo $product['name']; ?></p></li>
-                                <li><p class="size">MẦU: Trắng, Da cam; SIZE: S, M, L</p></li>
+                                <li>
+                                    <p class="pro_description"><?php echo $product['sort_description']; ?></p>
+                                </li>
                                 <li class="price">
                                         <?php if (!$product['special']) { ?>
                                         <p class="size" >Giá siêu rẻ:

@@ -37,22 +37,6 @@ class ControllerModuleSlideshow extends Controller {
 
         $this->data['module'] = $module++;
 
-        // Tin nong hang ngay
-        $arrBanners = array();
-        $banners_small_image = $this->model_design_banner->getSmallBanner($setting['banner_id']);
-        $arrBanners = array();
-
-        foreach ($banners_small_image as $row) {
-            $banner_image = $this->model_tool_image->resize($row['image'], 225, 184);
-            $arrBanners[] = array(
-                'title' => $row['title'],
-                'link' => $row['link'],
-                'image' => $banner_image,
-            );
-        }
-
-        $this->data['banners_image_small'] = $arrBanners;
-
         if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/slideshow.tpl')) {
             $this->template = $this->config->get('config_template') . '/template/module/slideshow.tpl';
         } else {

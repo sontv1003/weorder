@@ -6492,3 +6492,17 @@ label.nl_header {
 .buttons {
     margin-top: 20px;
 }
+.hot_news #column-right {
+    width: 230px !important;
+}
+.hot_news .banner {
+    border: 1px solid #F0F0F0;
+    margin-bottom: 10px;
+    background: #FAFAFA;
+}
+.hot_news .banner:hover {
+    border: 1px solid #ccc;
+}
+.hot_news  .banner div img {
+    margin-bottom: 0px;
+}
