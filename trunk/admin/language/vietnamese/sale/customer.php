@@ -27,7 +27,7 @@ $_['column_total']              = 'Tổng số tài khoản';
 $_['column_action']           = 'Thao tác';
 
 // Entry
-$_['entry_firstname']         = 'Tên:';
+$_['entry_firstname']         = 'Họ tên:';
 $_['entry_lastname']          = 'Họ:';
 $_['entry_email']             = 'E-Mail:';
 $_['entry_telephone']         = 'Điện thoại:';

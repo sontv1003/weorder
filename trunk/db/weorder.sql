@@ -1,14 +1,14 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               5.5.24-log - MySQL Community Server (GPL)
--- Server OS:                    Win64
--- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-07-04 01:45:16
+-- Server version:               5.5.16 - MySQL Community Server (GPL)
+-- Server OS:                    Win32
+-- HeidiSQL Version:             8.0.0.4396
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
-/*!40014 SET FOREIGN_KEY_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping structure for table weorder.address
 CREATE TABLE IF NOT EXISTS `address` (
@@ -27,24 +27,12 @@ CREATE TABLE IF NOT EXISTS `address` (
   `zone_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`address_id`),
   KEY `customer_id` (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.address: 13 rows
+-- Dumping data for table weorder.address: 1 rows
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
 INSERT INTO `address` (`address_id`, `customer_id`, `firstname`, `lastname`, `company`, `company_id`, `tax_id`, `address_1`, `address_2`, `city`, `postcode`, `country_id`, `zone_id`) VALUES
-	(1, 1, 'Sơn', 'Trần', '', '', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 230, 3755),
-	(2, 2, 'Son Tran', '', '', '', '', 'Từ Sơn - Châu kHêu', '', '', '', 230, 3763),
-	(3, 3, 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 230, 3755),
-	(4, 4, 'Sơn Trần', 'Testing', '', '', '', 'Từ Sơn', '', 'Bac Ninh', '', 230, 3755),
-	(5, 5, 'Son Tran', '', '', '', '', 'Tu Son Tesging', '', '', '', 230, 3755),
-	(6, 6, 'sdgsdgds', '', '', '', '', '2356346457457', '', '', '', 230, 3755),
-	(7, 7, 'User 6', '', '', '', '', 'uSER 6 ĐỊA CHỈ', '', '', '', 230, 3758),
-	(8, 8, 'SƠn Trần', '', '', '', '', '346475865', '', '', '', 230, 3755),
-	(9, 9, 'Testing...', '', '', '', '', '363464', '', '', '', 230, 3755),
-	(10, 10, 'Sơn Trần', '', '', '', '', 'Từ Sơn', '', '', '', 230, 3755),
-	(11, 11, 'Tester', '', '', '', '', '233265', '', '', '', 230, 3752),
-	(12, 12, 'ABC', '', '', '', '', '634647', '', '', '', 230, 3755),
-	(13, 13, 'Gia Bảo', '', '', '', '', 'Từ Sơn', '', '', '', 230, 3755);
+	(1, 1, 'Sơn', 'Trần', '', '', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 230, 3755);
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 
 
@@ -751,12 +739,12 @@ CREATE TABLE IF NOT EXISTS `currency` (
 /*!40000 ALTER TABLE `currency` DISABLE KEYS */;
 INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
 	(3, 'Euro', 'EUR', '', '€', '2', 27308.00000000, 1, '2013-06-30 11:07:05'),
-	(4, 'VNĐ', 'VND', '', ' VNĐ', '0', 1.00000000, 1, '2013-06-30 11:04:44'),
+	(4, 'VNĐ', 'VND', '', ' VNĐ', '0', 1.00000000, 1, '2013-07-04 18:32:07'),
 	(5, 'Đô Mỹ', 'USD', '$', '', '', 21300.00000000, 1, '2013-06-25 00:37:03'),
 	(6, 'Bảng Anh', 'GBP', '', '£', '', 31846.00000000, 1, '2013-06-30 11:08:13'),
-	(7, 'Singapore', 'SGD', '', '', '', 16500.00000000, 0, '2013-06-30 14:54:15'),
-	(8, 'Yên Nhật', 'JPY', '', '', '', 201.00000000, 0, '2013-06-30 14:53:47'),
-	(9, 'Đô la Hồng Kong', 'HKD', '', '', '', 17100.00000000, 0, '2013-06-30 14:53:59');
+	(7, 'Singapore', 'SGD', '', '', '', 0.00010000, 0, '2013-07-04 17:13:14'),
+	(8, 'Yên Nhật', 'JPY', '', '', '', 0.00470000, 0, '2013-07-04 17:13:14'),
+	(9, 'Đô la Hồng Kong', 'HKD', '', '', '', 0.00040000, 0, '2013-07-04 17:13:14');
 /*!40000 ALTER TABLE `currency` ENABLE KEYS */;
 
 
@@ -785,24 +773,12 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `token` varchar(255) NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.customer: 13 rows
+-- Dumping data for table weorder.customer: 1 rows
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `birthday`, `gender`, `password`, `avatar`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `customer_group_id`, `ip`, `status`, `approved`, `token`, `date_added`) VALUES
-	(1, 0, 'Sơn Trần', '', 'transontt@gmail.com', '0902222222222', '', NULL, NULL, 'c0ff2af611e745e05c989d8c07a56230be54ede5', 'image/avatars/51d4654806911.jpg', 'fbad643c7', 'a:0:{}', 'a:1:{i:0;s:2:"42";}', 1, 1, 1, '::1', 1, 1, '', '2013-06-16 14:36:00'),
-	(2, 0, 'Son Tran', '', 'abc@abc.com', '0904449512', '', NULL, NULL, '77a5b440ca697d017e6b7b26c49b2143afdb2409', NULL, '1639fb344', 'a:0:{}', '', 0, 2, 1, '::1', 1, 1, '', '2013-06-16 15:38:25'),
-	(3, 0, 'Son Tran', '', 'abc2@abc.com', '099999', '', '2013-06-16', 1, 'd5ed71b57ac0291dc6486ef25da05dac1f717958', NULL, '069781bef', 'a:7:{i:40;i:1;i:89;i:2;i:90;i:3;s:4:"link";a:4:{i:40;s:24:"http://www.geckomedia.vn";i:89;s:5:"dsgds";i:90;s:20:"http://www.dantri.vn";i:30;s:83:"http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html";}s:4:"size";a:4:{i:40;s:1:"M";i:89;s:7:"gsdgdsg";i:90;s:1:"M";i:30;s:3:"sdg";}s:5:"color";a:2:{i:40;s:5:"Đỏ";i:90;s:7:"Trắng";}i:30;i:2;}', '', 1, 3, 1, '::1', 1, 1, '', '2013-06-16 17:59:54'),
-	(4, 0, 'Testing', '', 'abc3@abc.com', '0900000', '', '2013-06-16', 1, 'f8c8c06b5030d3678cf1f2aaf9bba2128413f48c', NULL, '65ffc4630', 'a:1:{s:51:"30:YToyOntpOjIyOTtzOjI6IjIzIjtpOjIzMDtzOjI6IjI3Ijt9";i:1;}', '', 1, 4, 1, '::1', 1, 1, '', '2013-06-16 18:04:20'),
-	(5, 0, 'Son Tran', '', 'abc4@abc.com', '0989999999999999', '', '2013-06-16', 0, '4d3676e0d8b251e248ac317e97453bcf372100e3', NULL, '9abdb677e', 'a:0:{}', '', 1, 5, 1, '::1', 1, 1, '', '2013-06-16 18:06:55'),
-	(6, 0, 'sdgsdgds', '', 'abc32@abc.com', '3532534', '', '1988-06-04', 1, 'f5c4e801c6e29f8d83bfe5b28ab6a79b268474a9', NULL, '5539c26fa', 'a:1:{i:31;i:1;}', '', 1, 6, 1, '::1', 1, 1, '', '2013-06-16 19:27:45'),
-	(7, 0, 'User 6', '', 'abhhh@abc.com', '0912222222', '', '1976-05-07', 1, 'a08ca22bda822c411983a81f47383c82f37858c0', NULL, '5861a8e83', 'a:1:{i:31;i:1;}', '', 1, 7, 1, '::1', 1, 1, '', '2013-06-16 20:15:41'),
-	(8, 0, 'SƠn Trần', '', 'abc5@abc.com', '92385325', '', '0000-00-00', 0, '609d3081592895ff6c370faeff2ff9c7cb6aebef', NULL, '1997b6a16', 'a:1:{i:31;i:1;}', '', 1, 8, 1, '::1', 1, 1, '', '2013-06-16 20:26:34'),
-	(9, 0, 'Testing...', '', 'hhh@abc.com', '3546436', '', '0000-00-00', 0, '8a2af002e6666d557cc454c20162c92f99826ea0', NULL, '4b32febea', 'a:1:{s:71:"30:YTozOntpOjIyOTtzOjI6IjIzIjtpOjIzMTtzOjI6IjI5IjtpOjIzMDtzOjI6IjI3Ijt9";i:1;}', '', 1, 9, 1, '::1', 1, 1, '', '2013-06-16 20:38:43'),
-	(11, 0, 'Tester', '', 'abc10@abc.com', '235', '', '0000-00-00', 1, '269176159f4b10913a51a188761f7e5d2b1ad0d6', NULL, '3ece162bc', 'a:0:{}', '', 1, 11, 1, '::1', 1, 1, '', '2013-06-24 00:07:31'),
-	(10, 0, 'Sơn Trần', '', 'abcd@abc.com', '0900000', '', '0000-00-00', 1, 'db881ccb4a1876cd7bbc69f48f1bdd2aa7f1c099', NULL, '4c0da4808', 'a:0:{}', '', 1, 10, 1, '::1', 1, 1, '', '2013-06-22 22:28:51'),
-	(12, 0, 'ABC', '', 'bbb@abc.com', '356437547', '', '0000-00-00', 1, '9961bc79a2e9ec43252a73f41d930754da15870a', 'image/avatars/51cc8385eb6d3.jpg', '22c26a728', 'a:0:{}', '', 0, 12, 1, '::1', 1, 1, '', '2013-06-28 01:25:33'),
-	(13, 0, 'Gia Bảo', '', 'giabao@abc.com', '09025346456', '', '1995-06-17', 1, '8c08d4260cbc8921408a0df7b245979442960edf', '', '3d1f4e14e', 'a:1:{i:30;i:1;}', 'a:1:{i:0;s:2:"30";}', 1, 13, 1, '::1', 1, 1, '', '2013-06-30 12:30:25');
+	(1, 0, 'Sơn Trần', '', 'transontt@gmail.com', '0902222222222', '', NULL, NULL, 'c0ff2af611e745e05c989d8c07a56230be54ede5', 'image/avatars/51d4654806911.jpg', 'fbad643c7', 'a:2:{i:144;i:1;i:143;i:2;}', 'a:1:{i:0;s:2:"42";}', 1, 1, 1, '::1', 1, 1, '', '2013-06-16 14:36:00');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 
 
@@ -892,24 +868,12 @@ CREATE TABLE IF NOT EXISTS `customer_ip` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_ip_id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.customer_ip: 13 rows
+-- Dumping data for table weorder.customer_ip: 1 rows
 /*!40000 ALTER TABLE `customer_ip` DISABLE KEYS */;
 INSERT INTO `customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) VALUES
-	(1, 1, '::1', '2013-06-16 14:36:01'),
-	(2, 2, '::1', '2013-06-16 15:38:26'),
-	(3, 3, '::1', '2013-06-16 18:02:55'),
-	(4, 4, '::1', '2013-06-16 18:04:44'),
-	(5, 5, '::1', '2013-06-16 18:06:57'),
-	(6, 6, '::1', '2013-06-16 19:27:47'),
-	(7, 7, '::1', '2013-06-16 20:17:10'),
-	(8, 8, '::1', '2013-06-16 20:26:39'),
-	(9, 9, '::1', '2013-06-16 20:39:55'),
-	(10, 10, '::1', '2013-06-22 22:28:55'),
-	(11, 11, '::1', '2013-06-24 00:08:42'),
-	(12, 12, '::1', '2013-06-28 01:25:35'),
-	(13, 13, '::1', '2013-06-30 12:31:01');
+	(1, 1, '::1', '2013-06-16 14:36:01');
 /*!40000 ALTER TABLE `customer_ip` ENABLE KEYS */;
 
 
@@ -1879,9 +1843,9 @@ CREATE TABLE IF NOT EXISTS `order` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order: 39 rows
+-- Dumping data for table weorder.order: 42 rows
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
 INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_company_id`, `payment_tax_id`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `note`, `date_added`, `date_modified`) VALUES
 	(29, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 650000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', NULL, '2013-06-16 23:43:20', '2013-06-16 23:43:20'),
@@ -1922,7 +1886,10 @@ INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `st
 	(52, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 1, 1, 'Sơn', 'Trần', 'transontt@gmail.com', '0902222222222', '', 'Sơn', 'Trần', '', '', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Sơn', 'Trần', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 10807500.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', 'Vui lòng liên hệ với tôi khi có hàng sớm nhất', '2013-06-26 02:15:31', '2013-06-26 02:15:31'),
 	(53, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 1, 1, 'Sơn', 'Trần', 'transontt@gmail.com', '0902222222222', '', 'Sơn', 'Trần', '', '', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', 10437000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', 'Tôi cần giao hàng sớm', '2013-06-26 23:36:02', '2013-06-26 23:36:02'),
 	(54, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 13, 1, 'Gia Bảo', '', 'giabao@abc.com', '09025346456', '', 'Gia Bảo', '', '', '', '', 'Từ Sơn', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', 852000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36', 'en-US,en;q=0.8', '', '2013-06-30 12:30:28', '2013-06-30 12:30:28'),
-	(55, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 1, 1, 'Sơn Trần', '', 'transontt@gmail.com', '0902222222222', '', 'Sơn', 'Trần', '', '', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Sơn', 'Trần', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 690000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36', 'en-US,en;q=0.8', 'Tesing note', '2013-06-30 15:18:46', '2013-06-30 15:18:46');
+	(55, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 1, 1, 'Sơn Trần', '', 'transontt@gmail.com', '0902222222222', '', 'Sơn', 'Trần', '', '', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Sơn', 'Trần', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 690000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36', 'en-US,en;q=0.8', 'Tesing note', '2013-06-30 15:18:46', '2013-06-30 15:18:46'),
+	(56, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 14, 1, 'Testing 2', '', 'dsgsdg@gsdgsd.sdg', '3464576457', '', 'sdgsdh', '', '', '', '', '457', '', '', '', 'Viet Nam', 230, 'Binh Phuoc', 3760, '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, '{firstname} {lastname}\n{company}\n{address_1}\n{address_2}\n{city} {postcode}\n{zone}\n{country}', '', '', '', 63692.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36', 'en-US,en;q=0.8', '', '2013-07-04 20:45:22', '2013-07-04 22:22:55'),
+	(57, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 15, 1, 'Testing', '', 'ddd@gsdg.com', '346457', '', 'Testing', '', '', '', '', 'sdghdh', '', '', '', 'Viet Nam', 230, 'Ca Mau', 3762, '', '', '', 'Testing', '', '', 'sdghdh', '', '', '', 'Viet Nam', 230, 'Ca Mau', 3762, '', '', '', '', 650000.0000, 18, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0', 'en-US,en;q=0.5', '', '2013-07-04 22:08:18', '2013-07-04 22:23:36'),
+	(58, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 15, 1, 'fđfh', '', 'ddd@gsdg.com', '346457', '', 'fđfh', '', '', '', '', 'sdghdh', '', '', '', 'Viet Nam', 230, 'Ca Mau', 3762, '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', 1847068.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0', 'en-US,en;q=0.5', '', '2013-07-04 23:12:02', '2013-07-04 23:12:02');
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 
 
@@ -2031,9 +1998,9 @@ CREATE TABLE IF NOT EXISTS `order_history` (
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`order_history_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order_history: 33 rows
+-- Dumping data for table weorder.order_history: 36 rows
 /*!40000 ALTER TABLE `order_history` DISABLE KEYS */;
 INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, `notify`, `comment`, `date_added`) VALUES
 	(1, 24, 1, 1, '', '2013-06-16 20:38:44'),
@@ -2068,7 +2035,10 @@ INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, 
 	(30, 52, 1, 1, '', '2013-06-26 02:15:31'),
 	(31, 53, 1, 1, '', '2013-06-26 23:36:02'),
 	(32, 54, 1, 1, '', '2013-06-30 12:30:28'),
-	(33, 55, 1, 1, '', '2013-06-30 15:18:46');
+	(33, 55, 1, 1, '', '2013-06-30 15:18:46'),
+	(34, 56, 1, 1, '', '2013-07-04 20:45:22'),
+	(35, 57, 1, 1, '', '2013-07-04 22:08:18'),
+	(36, 58, 1, 1, '', '2013-07-04 23:12:02');
 /*!40000 ALTER TABLE `order_history` ENABLE KEYS */;
 
 
@@ -2117,9 +2087,9 @@ CREATE TABLE IF NOT EXISTS `order_product` (
   `tax` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `reward` int(8) NOT NULL,
   PRIMARY KEY (`order_product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=64 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order_product: 63 rows
+-- Dumping data for table weorder.order_product: 67 rows
 /*!40000 ALTER TABLE `order_product` DISABLE KEYS */;
 INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `link`, `size`, `color`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
 	(1, 1, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'L,M', 'Trắng ', 2, 650000.0000, 1300000.0000, 0.0000, 0),
@@ -2179,12 +2149,16 @@ INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name
 	(55, 50, 31, 'Áo phông 3', 'Product 4', 'http://www.geckomedia.vn', 'M', 'Trắng', 1, 390000.0000, 390000.0000, 0.0000, 0),
 	(56, 51, 30, 'Áo cánh mỏng', 'Product 3', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', '', 1, 690000.0000, 690000.0000, 0.0000, 200),
 	(57, 52, 30, 'Áo cánh mỏng', 'Product 3', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', '', 1, 690000.0000, 690000.0000, 0.0000, 200),
-	(58, 52, 108, 'sdg', '', 'sdg', 'dsg', 'sdg', 2, 2556000.0000, 5112000.0000, 0.0000, 0),
+	(58, 52, 108, 'sdg', '', 'http://www.abc.com', 'dsg', 'sdg', 2, 2556000.0000, 5112000.0000, 0.0000, 0),
 	(59, 52, 106, 'name', '', 'sdgsdg', 'sdg', 'dsgdsg', 1, 5005500.0000, 5005500.0000, 0.0000, 0),
 	(60, 53, 110, 'Testing', '', 'http://dbc.com', 'M', '', 1, 5325000.0000, 5325000.0000, 0.0000, 0),
 	(61, 53, 111, 'Testing 2', '', 'http://abc.com', 'L', 'Trắng', 2, 2556000.0000, 5112000.0000, 0.0000, 0),
 	(62, 54, 112, 'Áo Converse', '', 'http://www.converse.com.vn', 'M', 'Trắng', 1, 852000.0000, 852000.0000, 0.0000, 0),
-	(63, 55, 30, 'Áo cánh mỏng', 'Product 3', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', '', 1, 690000.0000, 690000.0000, 0.0000, 200);
+	(63, 55, 30, 'Áo cánh mỏng', 'Product 3', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', '', 1, 690000.0000, 690000.0000, 0.0000, 200),
+	(64, 56, 113, 'sdg', '', NULL, NULL, NULL, 1, 63692.0000, 63692.0000, 0.0000, 0),
+	(65, 57, 41, 'Áo phông 2', '', NULL, NULL, NULL, 1, 650000.0000, 650000.0000, 0.0000, 0),
+	(66, 58, 137, 'ds', '', 'aaaa', 'sg', 'sg', 2, 0.0000, 0.0000, 0.0000, 0),
+	(67, 58, 138, 'sdgdsg', '', 'aaad', 'dsg', 'sdg', 2, 923534.0000, 1847068.0000, 0.0000, 0);
 /*!40000 ALTER TABLE `order_product` ENABLE KEYS */;
 
 
@@ -2219,9 +2193,9 @@ CREATE TABLE IF NOT EXISTS `order_total` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`order_total_id`),
   KEY `idx_orders_total_orders_id` (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=112 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=118 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order_total: 111 rows
+-- Dumping data for table weorder.order_total: 117 rows
 /*!40000 ALTER TABLE `order_total` DISABLE KEYS */;
 INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`, `value`, `sort_order`) VALUES
 	(1, 1, 'sub_total', 'Tổng giá trị là', '2,800,000 VNĐ', 2800000.0000, 1),
@@ -2334,7 +2308,13 @@ INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`
 	(108, 54, 'sub_total', 'Tổng giá trị là', '852,000 VNĐ', 852000.0000, 1),
 	(109, 54, 'total', 'Thành tiền', '852,000 VNĐ', 852000.0000, 9),
 	(110, 55, 'sub_total', 'Tổng giá trị là', '690,000 VNĐ', 690000.0000, 1),
-	(111, 55, 'total', 'Thành tiền', '690,000 VNĐ', 690000.0000, 9);
+	(111, 55, 'total', 'Thành tiền', '690,000 VNĐ', 690000.0000, 9),
+	(112, 56, 'sub_total', 'Tổng giá trị là', '63,692 VNĐ', 63692.0000, 1),
+	(115, 57, 'total', 'Thành tiền', '650,000 VNĐ', 650000.0000, 9),
+	(114, 57, 'sub_total', 'Tổng giá trị là', '650,000 VNĐ', 650000.0000, 1),
+	(113, 56, 'total', 'Thành tiền', '63,692 VNĐ', 63692.0000, 9),
+	(116, 58, 'sub_total', 'Tổng giá trị là', '1,847,068 VNĐ', 1847068.0000, 1),
+	(117, 58, 'total', 'Thành tiền', '1,847,068 VNĐ', 1847068.0000, 9);
 /*!40000 ALTER TABLE `order_total` ENABLE KEYS */;
 
 
@@ -2397,29 +2377,18 @@ CREATE TABLE IF NOT EXISTS `product` (
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `viewed` int(5) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=113 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=145 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product: 52 rows
+-- Dumping data for table weorder.product: 18 rows
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `link`, `size`, `color`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
 	(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'data/san_pham/IMG_3920-400x600.JPG', 5, 1, 500000.0000, 200, 9, '2009-02-03', 'http://www.geckomedia.vn', 'M', 'Trắng', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 0, 0, 1, '2009-02-03 16:06:50', '2013-07-04 00:21:00', 97),
-	(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'data/demo/palm_treo_pro_1.jpg', 6, 1, 279.9900, 0, 9, '2009-02-03', 'http://www.geckofashion.vn', 'M', 'Trắng', 133.00000000, 2, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0),
-	(30, 'Product 3', '', '', '', '', '', '', '', 98, 6, 'data/1-single-thumbnail.jpg', 9, 1, 690000.0000, 0, 0, '2009-02-03', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 0, 0, 1, '2009-02-03 16:59:00', '2013-06-30 12:28:52', 163),
+	(30, 'Product 3', '', '', '', '', '', '', '', 98, 6, 'data/1-single-thumbnail.jpg', 9, 1, 690000.0000, 0, 0, '2009-02-03', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 0, 0, 1, '2009-02-03 16:59:00', '2013-06-30 12:28:52', 166),
 	(31, 'Product 4', '', '', '', '', '', '', '', 998, 6, 'data/san_pham/IMG_3958-400x600.JPG', 11, 1, 390000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 0, 0, 1, '2009-02-03 17:00:10', '2013-07-04 00:21:09', 11),
-	(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'data/demo/ipod_touch_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 'http://www.geckofashion.vn', 'sdg', NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 17:07:26', '2011-09-30 01:07:22', 0),
-	(33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'data/demo/samsung_syncmaster_941bw.jpg', 0, 1, 200.0000, 0, 9, '2009-02-03', 'http://www.geckofashion.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 17:08:31', '2011-09-30 01:06:29', 0),
-	(34, 'Product 7', '', '', '', '', '', '', '', 1000, 6, 'data/demo/ipod_shuffle_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 'http://www.geckofashion.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:07:54', '2011-09-30 01:07:17', 0),
-	(36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'data/demo/ipod_nano_1.jpg', 8, 0, 100.0000, 100, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:09:19', '2011-09-30 01:07:12', 0),
 	(40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'data/san_pham/IMG_3935-400x600.JPG', 8, 1, 652000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', 'M', 'Đỏ', 10.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 0, 0, 1, '2009-02-03 21:07:12', '2013-07-04 00:21:07', 4),
-	(41, 'Product 14', '', '', '', '', '', '', '', 964, 5, 'data/san_pham/IMG_4003-400x600.JPG', 9, 1, 650000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 0, 0, 1, '2009-02-03 21:07:26', '2013-07-04 00:21:03', 22),
+	(41, 'Product 14', '', '', '', '', '', '', '', 963, 5, 'data/san_pham/IMG_4003-400x600.JPG', 9, 1, 650000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 0, 0, 1, '2009-02-03 21:07:26', '2013-07-04 00:21:03', 22),
 	(42, 'Product 15', '', '', '', '', '', '', '', 98, 5, 'data/san_pham/IMG_3909-400x600 (1).JPG', 13, 1, 750000.0000, 400, 9, '2009-02-04', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 1.00000000, 2.00000000, 3.00000000, 1, 1, 0, 0, 1, '2009-02-03 21:07:37', '2013-06-30 16:05:56', 25),
-	(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'data/demo/macbook_1.jpg', 8, 0, 500.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:07:49', '2011-09-30 01:05:46', 0),
-	(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'data/demo/macbook_air_1.jpg', 8, 1, 1000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:00', '2011-09-30 01:05:53', 0),
-	(45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'data/demo/macbook_pro_1.jpg', 8, 1, 2000.0000, 0, 100, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:17', '2011-09-15 22:22:01', 0),
-	(46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'data/demo/sony_vaio_1.jpg', 10, 1, 1000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:29', '2011-09-30 01:06:39', 0),
 	(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'data/san_pham/IMG_3917-400x600 (1).JPG', 8, 1, 100.0000, 400, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 0, 0, 1, '2009-02-03 21:08:40', '2013-06-30 16:05:06', 6),
-	(48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'data/demo/ipod_classic_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-08', 'http://www.geckomedia.vn', NULL, NULL, 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-08 17:21:51', '2011-09-30 01:07:06', 0),
-	(49, 'SAM1', '', '', '', '', '', '', '', 0, 8, 'data/demo/samsung_tab_1.jpg', 0, 1, 199.9900, 0, 9, '2011-04-25', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23', 7),
 	(50, '', '', '', '', '', '', '', '', 1, 0, NULL, 0, 0, 450000.0000, 0, 0, '0000-00-00', 'http://www.dantri.vn', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 0, '2013-06-20 23:58:26', '0000-00-00 00:00:00', 0),
 	(51, '', '', '', '', '', '', '', '', 0, 0, NULL, 0, 0, 0.0000, 0, 0, '0000-00-00', '', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 0, '2013-06-22 00:25:32', '0000-00-00 00:00:00', 0),
 	(52, '', '', '', '', '', '', '', '', 22, 0, NULL, 0, 0, 235532.0000, 0, 0, '0000-00-00', '6436436', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 0, '2013-06-22 00:31:11', '0000-00-00 00:00:00', 0),
@@ -2430,30 +2399,7 @@ INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`
 	(57, '', '', '', '', '', '', '', '', 0, 0, NULL, 0, 0, 0.0000, 0, 0, '0000-00-00', '', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 00:36:25', '0000-00-00 00:00:00', 0),
 	(58, '', '', '', '', '', '', '', '', 0, 0, NULL, 0, 0, 0.0000, 0, 0, '0000-00-00', '', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 00:36:39', '0000-00-00 00:00:00', 0),
 	(59, '', '', '', '', '', '', '', '', 1, 0, NULL, 0, 0, 2500000.0000, 0, 0, '0000-00-00', 'http://link.com', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 00:38:01', '0000-00-00 00:00:00', 0),
-	(62, '', '', '', '', '', '', '', '', 74, 0, NULL, 0, 0, 0.0000, 0, 0, '0000-00-00', 'nhjhf', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 01:14:58', '0000-00-00 00:00:00', 0),
-	(63, '', '', '', '', '', '', '', '', 325, 0, NULL, 0, 0, 23523523.0000, 0, 0, '0000-00-00', 'dd', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 01:15:56', '0000-00-00 00:00:00', 0),
-	(64, '', '', '', '', '', '', '', '', 325, 0, NULL, 0, 0, 23523523.0000, 0, 0, '0000-00-00', 'dd', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 01:16:59', '0000-00-00 00:00:00', 0),
-	(67, '', '', '', '', '', '', '', '', 1, 0, NULL, 0, 0, 150000.0000, 0, 0, '0000-00-00', 'http://www.dantri.vn', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 01:24:19', '0000-00-00 00:00:00', 0),
-	(78, '', '', '', '', '', '', '', '', 1, 0, NULL, 0, 0, 1450000.0000, 0, 0, '0000-00-00', 'testing.com', 'L', 'Trắng', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 21:35:50', '0000-00-00 00:00:00', 0),
-	(69, '', '', '', '', '', '', '', '', 1, 0, NULL, 0, 0, 250000.0000, 0, 0, '0000-00-00', 'http://link', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 01:26:04', '0000-00-00 00:00:00', 0),
-	(70, '', '', '', '', '', '', '', '', 1, 0, NULL, 0, 0, 500000.0000, 0, 0, '0000-00-00', 'httP://www.test.com', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 01:26:43', '0000-00-00 00:00:00', 0),
-	(72, '', '', '', '', '', '', '', '', 1, 0, NULL, 0, 0, 250000.0000, 0, 0, '0000-00-00', 'http://www.dantri.vn', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 22:27:12', '0000-00-00 00:00:00', 1),
-	(79, '', '', '', '', '', '', '', '', 2, 0, 'data/no_image.jpg', 0, 0, 250000.0000, 0, 0, '0000-00-00', 'http://www.dantri.vn', 'S', 'Trắng', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 22:45:23', '0000-00-00 00:00:00', 1),
-	(112, '', '', '', '', '', '', '', '', 100, 0, 'data/no_image.jpg', 0, 0, 852000.0000, 0, 0, '0000-00-00', 'http://www.converse.com.vn', 'M', 'Trắng', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-30 12:29:40', '0000-00-00 00:00:00', 0),
-	(84, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 0.0000, 0, 0, '0000-00-00', 'dsg', 'sgd', 'sgd', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 22:54:39', '0000-00-00 00:00:00', 0),
-	(86, '', '', '', '', '', '', '', '', 0, 0, 'data/no_image.jpg', 0, 0, 6234.0000, 0, 0, '0000-00-00', 'dsg', 'sag', '', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 23:01:05', '0000-00-00 00:00:00', 0),
-	(87, '', '', '', '', '', '', '', '', 0, 0, 'data/no_image.jpg', 0, 0, 0.0000, 0, 0, '0000-00-00', 'dsg', 'sdg', '', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 23:01:35', '0000-00-00 00:00:00', 0),
-	(90, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 250000.0000, 0, 0, '0000-00-00', 'http://www.dantri.vn', 'M', 'Trắng', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 23:04:30', '0000-00-00 00:00:00', 0),
-	(91, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 200000.0000, 0, 0, '0000-00-00', 'www.dantri.vn', 'L', 'Tím', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-23 23:59:24', '0000-00-00 00:00:00', 0),
-	(92, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 2005.0000, 0, 0, '0000-00-00', 'dantr.vin', 'M', 'Do', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-24 00:00:07', '0000-00-00 00:00:00', 0),
-	(97, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 53.0000, 0, 0, '0000-00-00', 'sdgsd', 'dg', 'dsg2', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-24 00:08:58', '0000-00-00 00:00:00', 0),
-	(104, '', '', '', '', '', '', '', '', 2, 0, 'data/no_image.jpg', 0, 0, 80197500.0000, 0, 0, '0000-00-00', 'Link', 'M', '', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-25 01:21:02', '0000-00-00 00:00:00', 0),
-	(105, '', '', '', '', '', '', '', '', 3, 0, 'data/no_image.jpg', 0, 0, 4009875.0000, 0, 0, '0000-00-00', 'Link', 'M', '', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-25 01:21:44', '0000-00-00 00:00:00', 2),
-	(107, '', '', '', '', '', '', '', '', 1, 0, 'data/no_image.jpg', 0, 0, 53250000.0000, 0, 0, '0000-00-00', 'dgsg', 'dsg', 'dsg', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-26 01:10:24', '0000-00-00 00:00:00', 0),
-	(108, '', '', '', '', '', '', '', '', 100, 0, 'data/no_image.jpg', 0, 0, 2556000.0000, 0, 0, '0000-00-00', 'sdg', 'dsg', 'sdg', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-26 01:13:07', '0000-00-00 00:00:00', 0),
-	(109, '', '', '', '', '', '', '', '', 100, 0, 'data/no_image.jpg', 0, 0, 769896.0000, 0, 0, '0000-00-00', 'sdg', 'M', 'dsgsdg', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-26 01:16:24', '0000-00-00 00:00:00', 0),
-	(110, '', '', '', '', '', '', '', '', 100, 0, 'data/no_image.jpg', 0, 0, 5325000.0000, 0, 0, '0000-00-00', 'http://dbc.com', 'M', '', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-26 02:21:41', '0000-00-00 00:00:00', 0),
-	(111, '', '', '', '', '', '', '', '', 100, 0, 'data/no_image.jpg', 0, 0, 2556000.0000, 0, 0, '0000-00-00', 'http://abc.com', 'L', 'Trắng', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-26 02:22:07', '0000-00-00 00:00:00', 0);
+	(62, '', '', '', '', '', '', '', '', 74, 0, NULL, 0, 0, 0.0000, 0, 0, '0000-00-00', 'nhjhf', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 1, '2013-06-22 01:14:58', '0000-00-00 00:00:00', 0);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 
@@ -2466,11 +2412,8 @@ CREATE TABLE IF NOT EXISTS `product_attribute` (
   PRIMARY KEY (`product_id`,`attribute_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_attribute: 2 rows
+-- Dumping data for table weorder.product_attribute: 0 rows
 /*!40000 ALTER TABLE `product_attribute` DISABLE KEYS */;
-INSERT INTO `product_attribute` (`product_id`, `attribute_id`, `language_id`, `text`) VALUES
-	(43, 2, 2, '1'),
-	(43, 4, 2, '8gb');
 /*!40000 ALTER TABLE `product_attribute` ENABLE KEYS */;
 
 
@@ -2488,50 +2431,16 @@ CREATE TABLE IF NOT EXISTS `product_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_description: 41 rows
+-- Dumping data for table weorder.product_description: 7 rows
 /*!40000 ALTER TABLE `product_description` DISABLE KEYS */;
 INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `description`, `sort_description`, `meta_description`, `meta_keyword`, `tag`) VALUES
-	(48, 2, 'iPod Classic', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', '', ''),
 	(40, 2, 'Áo phông 3', '&lt;p class=&quot;intro&quot;&gt;iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.&lt;/p&gt;\r\n', '&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; font-size: 11px; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: 14px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;&quot;&gt;Lorem Ipsum&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 14px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;&quot;&gt; chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500, khi một họa sĩ vô danh ghép nhiều đoạn văn bản với nhau để tạo thành một bản mẫu văn bản&lt;/span&gt;&lt;/p&gt;\r\n', '', '', ''),
 	(28, 2, 'Áo phông 1', '&lt;p&gt;HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Processor Qualcomm® MSM 7201A™ 528 MHz&lt;/li&gt;\r\n	&lt;li&gt;Windows Mobile® 6.1 Professional Operating System&lt;/li&gt;\r\n	&lt;li&gt;Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\r\n	&lt;li&gt;Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\r\n	&lt;li&gt;3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\r\n	&lt;li&gt;HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\r\n	&lt;li&gt;Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\r\n	&lt;li&gt;Device Control via HTC TouchFLO™ 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\r\n	&lt;li&gt;GPS and A-GPS ready&lt;/li&gt;\r\n	&lt;li&gt;Bluetooth® 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\r\n	&lt;li&gt;Wi-Fi®: IEEE 802.11 b/g&lt;/li&gt;\r\n	&lt;li&gt;HTC ExtUSB™ (11-pin mini-USB 2.0)&lt;/li&gt;\r\n	&lt;li&gt;5 megapixel color camera with auto focus&lt;/li&gt;\r\n	&lt;li&gt;VGA CMOS color camera&lt;/li&gt;\r\n	&lt;li&gt;Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\r\n	&lt;li&gt;Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\r\n	&lt;li&gt;40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\r\n	&lt;li&gt;Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\r\n	&lt;li&gt;Expansion Slot: microSD™ memory card (SD 2.0 compatible)&lt;/li&gt;\r\n	&lt;li&gt;AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\r\n	&lt;li&gt;Special Features: FM Radio, G-Sensor&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; font-size: 11px; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: 14px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;&quot;&gt;Lorem Ipsum&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 14px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;&quot;&gt; chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500, khi một họa sĩ vô danh ghép nhiều đoạn văn bản với nhau để tạo thành một bản mẫu văn bản&lt;/span&gt;&lt;/p&gt;\r\n', '', '', ''),
-	(44, 2, 'MacBook Air', '&lt;div&gt;\r\n	MacBook Air is ultrathin, ultraportable, and ultra unlike anything else. But you don&amp;rsquo;t lose inches and pounds overnight. It&amp;rsquo;s the result of rethinking conventions. Of multiple wireless innovations. And of breakthrough design. With MacBook Air, mobile computing suddenly has a new standard.&lt;/div&gt;\r\n', '', '', '', ''),
-	(45, 2, 'MacBook Pro', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Latest Intel mobile architecture&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Powered by the most advanced mobile processors from Intel, the new Core 2 Duo MacBook Pro is over 50% faster than the original Core Duo MacBook Pro and now supports up to 4GB of RAM.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Leading-edge graphics&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			The NVIDIA GeForce 8600M GT delivers exceptional graphics processing power. For the ultimate creative canvas, you can even configure the 17-inch model with a 1920-by-1200 resolution display.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Designed for life on the road&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Innovations such as a magnetic power connection and an illuminated keyboard with ambient light sensor put the MacBook Pro in a class by itself.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Connect. Create. Communicate.&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Quickly set up a video conference with the built-in iSight camera. Control presentations and media from up to 30 feet away with the included Apple Remote. Connect to high-bandwidth peripherals with FireWire 800 and DVI.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Next-generation wireless&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Featuring 802.11n wireless technology, the MacBook Pro delivers up to five times the performance and up to twice the range of previous-generation technologies.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', '', ''),
-	(29, 2, 'Palm Treo Pro', '&lt;p&gt;\r\n	Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&amp;rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Edition&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Qualcomm&amp;reg; MSM7201 400MHz Processor&lt;/li&gt;\r\n	&lt;li&gt;\r\n		320x320 transflective colour TFT touchscreen&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/UMTS/EDGE/GPRS/GSM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Tri-band UMTS &amp;mdash; 850MHz, 1900MHz, 2100MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM &amp;mdash; 850/900/1800/1900&lt;/li&gt;\r\n	&lt;li&gt;\r\n		802.11b/g with WPA, WPA2, and 801.1x authentication&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in GPS&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth Version: 2.0 + Enhanced Data Rate&lt;/li&gt;\r\n	&lt;li&gt;\r\n		256MB storage (100MB user available), 128MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2.0 megapixel camera, up to 8x digital zoom and video capture&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Removable, rechargeable 1500mAh lithium-ion battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Up to 5.0 hours talk time and up to 250 hours standby&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroSDHC card expansion (up to 32GB supported)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroUSB 2.0 for synchronization and charging&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.5mm stereo headset jack&lt;/li&gt;\r\n	&lt;li&gt;\r\n		60mm (W) x 114mm (L) x 13.5mm (D) / 133g&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '', '', ''),
-	(36, 2, 'iPod Nano', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Video in your pocket.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Sleek and colorful.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;iTunes.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', '', ''),
-	(46, 2, 'Sony VAIO', '&lt;div&gt;\r\n	Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&amp;#39;s latest, most powerful innovation yet: Intel&amp;reg; Centrino&amp;reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.&lt;/div&gt;\r\n', '', '', '', ''),
 	(47, 2, 'Áo sơ mi 2', '&lt;p&gt;Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you\'re at the office&lt;/p&gt;\r\n', '', '', '', ''),
-	(32, 2, 'iPod Touch', '&lt;p&gt;\r\n	&lt;strong&gt;Revolutionary multi-touch interface.&lt;/strong&gt;&lt;br /&gt;\r\n	iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Gorgeous 3.5-inch widescreen display.&lt;/strong&gt;&lt;br /&gt;\r\n	Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Music downloads straight from iTunes.&lt;/strong&gt;&lt;br /&gt;\r\n	Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Surf the web with Wi-Fi.&lt;/strong&gt;&lt;br /&gt;\r\n	Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in&lt;br /&gt;\r\n	&amp;nbsp;&lt;/p&gt;\r\n', '', '', '', ''),
 	(41, 2, 'Áo phông 2', '&lt;div&gt;Just when you thought iMac had everything, now there´s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife ´08, and it´s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; font-size: 11px; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: 14px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;&quot;&gt;Lorem Ipsum&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 14px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;&quot;&gt; chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500, khi một họa sĩ vô danh ghép nhiều đoạn văn bản với nhau để tạo thành một bản mẫu văn bản&lt;/span&gt;&lt;/p&gt;\r\n', '', '', ''),
-	(33, 2, 'Samsung SyncMaster 941BW', '&lt;div&gt;\r\n	Imagine the advantages of going big without slowing down. The big 19&amp;quot; 941BW monitor combines wide aspect ratio with fast pixel response time, for bigger images, more room to work and crisp motion. In addition, the exclusive MagicBright 2, MagicColor and MagicTune technologies help deliver the ideal image in every situation, while sleek, narrow bezels and adjustable stands deliver style just the way you want it. With the Samsung 941BW widescreen analog/digital LCD monitor, it&amp;#39;s not hard to imagine.&lt;/div&gt;\r\n', '', '', '', ''),
-	(34, 2, 'iPod Shuffle', '&lt;div&gt;\r\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\r\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', '', ''),
-	(43, 2, 'MacBook', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Intel Core 2 Duo processor&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, the new MacBook is the fastest ever.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;1GB memory, larger hard drives&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		The new MacBook now comes with 1GB of memory standard and larger hard drives for the entire line perfect for running more of your favorite applications and storing growing media collections.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Sleek, 1.08-inch-thin design&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		MacBook makes it easy to hit the road thanks to its tough polycarbonate case, built-in wireless technologies, and innovative MagSafe Power Adapter that releases automatically if someone accidentally trips on the cord.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Built-in iSight camera&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Right out of the box, you can have a video chat with friends or family,2 record a video at your desk, or take fun pictures with Photo Booth&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', '', ''),
 	(31, 2, 'Áo phông 3', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n&lt;div&gt;Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon\'s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n&lt;br /&gt;\r\nSimilar to the D3, the D300 features Nikon\'s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera\'s new features. The D300 features a new 51-point autofocus system with Nikon\'s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera\'s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n&lt;br /&gt;\r\nThe D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n&lt;br /&gt;\r\nThe D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon\'s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; font-size: 11px; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: 14px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;&quot;&gt;Lorem Ipsum&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 14px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;&quot;&gt; chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500, khi một họa sĩ vô danh ghép nhiều đoạn văn bản với nhau để tạo thành một bản mẫu văn bản&lt;/span&gt;&lt;/p&gt;\r\n', '', '', ''),
-	(49, 2, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world&amp;rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &amp;ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &amp;ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&amp;rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &amp;ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;&amp;auml;&amp;ouml;&lt;/p&gt;\r\n', '', '', '', ''),
 	(42, 2, 'Áo sơ mi 1', '&lt;p&gt;&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there\'s no limit to what you can achieve. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it\'s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple\'s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;\r\n\r\n&lt;h3&gt;Features:&lt;/h3&gt;\r\n\r\n&lt;p&gt;Unrivaled display performance&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n	&lt;li&gt;Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n	&lt;li&gt;Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n	&lt;li&gt;Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n	&lt;li&gt;Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n	&lt;li&gt;Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n	&lt;li&gt;Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Simple setup and operation&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Single cable with elegant breakout for connection to DVI, USB and FireWire ports&lt;/li&gt;\r\n	&lt;li&gt;Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n	&lt;li&gt;Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Sleek, elegant design&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n	&lt;li&gt;Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n	&lt;li&gt;Unique hinge design for effortless adjustment&lt;/li&gt;\r\n	&lt;li&gt;Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;h3&gt;Technical specifications&lt;/h3&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen size (diagonal viewable image size)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen type&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Resolutions&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n	&lt;li&gt;2048 x 1280&lt;/li&gt;\r\n	&lt;li&gt;1920 x 1200&lt;/li&gt;\r\n	&lt;li&gt;1280 x 800&lt;/li&gt;\r\n	&lt;li&gt;1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Display colors (maximum)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Viewing angle (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;170° horizontal; 170° vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Brightness (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Contrast ratio (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Response time (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Pixel pitch&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen treatment&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;User controls (hardware and software)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Display Power,&lt;/li&gt;\r\n	&lt;li&gt;System sleep, wake&lt;/li&gt;\r\n	&lt;li&gt;Brightness&lt;/li&gt;\r\n	&lt;li&gt;Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Connectors and cables&lt;/b&gt;&lt;br /&gt;\r\nCable&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;DVI (Digital Visual Interface)&lt;/li&gt;\r\n	&lt;li&gt;FireWire 400&lt;/li&gt;\r\n	&lt;li&gt;USB 2.0&lt;/li&gt;\r\n	&lt;li&gt;DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Connectors&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n	&lt;li&gt;Two FireWire 400 ports&lt;/li&gt;\r\n	&lt;li&gt;Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;VESA mount adapter&lt;/b&gt;&lt;br /&gt;\r\nRequires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Electrical requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n	&lt;li&gt;Maximum power when operating: 150W&lt;/li&gt;\r\n	&lt;li&gt;Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Environmental requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Operating temperature: 50° to 95° F (10° to 35° C)&lt;/li&gt;\r\n	&lt;li&gt;Storage temperature: -40° to 116° F (-40° to 47° C)&lt;/li&gt;\r\n	&lt;li&gt;Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n	&lt;li&gt;Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Agency approvals&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;FCC Part 15 Class B&lt;/li&gt;\r\n	&lt;li&gt;EN55022 Class B&lt;/li&gt;\r\n	&lt;li&gt;EN55024&lt;/li&gt;\r\n	&lt;li&gt;VCCI Class B&lt;/li&gt;\r\n	&lt;li&gt;AS/NZS 3548 Class B&lt;/li&gt;\r\n	&lt;li&gt;CNS 13438 Class B&lt;/li&gt;\r\n	&lt;li&gt;ICES-003 Class B&lt;/li&gt;\r\n	&lt;li&gt;ISO 13406 part 2&lt;/li&gt;\r\n	&lt;li&gt;MPR II&lt;/li&gt;\r\n	&lt;li&gt;IEC 60950&lt;/li&gt;\r\n	&lt;li&gt;UL 60950&lt;/li&gt;\r\n	&lt;li&gt;CSA 60950&lt;/li&gt;\r\n	&lt;li&gt;EN60950&lt;/li&gt;\r\n	&lt;li&gt;ENERGY STAR&lt;/li&gt;\r\n	&lt;li&gt;TCO \'03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Size and weight&lt;/b&gt;&lt;br /&gt;\r\n30-inch Apple Cinema HD Display&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n	&lt;li&gt;Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n	&lt;li&gt;Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n	&lt;li&gt;Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;System Requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mac Pro, all graphic options&lt;/li&gt;\r\n	&lt;li&gt;MacBook Pro&lt;/li&gt;\r\n	&lt;li&gt;Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n	&lt;li&gt;Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n	&lt;li&gt;PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n	&lt;li&gt;Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;div class=&quot;prm mts fsm clearfix strong estimated-delivery&quot;&gt;&lt;strong&gt;&lt;span&gt;Sẽ có tại nhà bạn&lt;/span&gt; &lt;span id=&quot;estimated_delivery_time&quot;&gt;trong 3 - 5 ngày làm việc&lt;/span&gt;&lt;/strong&gt;&lt;/div&gt;\r\n\r\n&lt;div class=&quot;prm mts fsm txtGray clearfix&quot;&gt;\r\n&lt;p&gt;Với thiết kế nhiều ngăn tiện dụng cùng kiểu dáng trẻ trung, ba lô củawesale&lt;/p&gt;\r\n\r\n&lt;p&gt;sẽ mang đến cho bạn vẻ ngoài năng động, khỏe khoắn và cá tính. Hãy kết hợp ba lô&lt;/p&gt;\r\n\r\n&lt;p&gt;với những bộ trang phục hợp thời trang để trở nên cuốn hút và nổi bật hơn bao giờ hết.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', ''),
-	(30, 2, 'Áo cánh mỏng', '&lt;p&gt;Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...)&lt;/p&gt;\r\n', '&lt;div class=&quot;box prm mts fsm clearfix strong estimated-delivery&quot;&gt;&lt;span&gt;Sẽ có tại nhà bạn&lt;/span&gt; &lt;span id=&quot;estimated_delivery_time&quot;&gt;trong 3 - 5 ngày làm việc&lt;/span&gt;&lt;/div&gt;\r\n\r\n&lt;div class=&quot;box prm mts fsm txtGray clearfix&quot;&gt;\r\n&lt;p&gt;Với thiết kế nhiều ngăn tiện dụng cùng kiểu dáng trẻ trung, ba lô củawesale&lt;/p&gt;\r\n\r\n&lt;p&gt;sẽ mang đến cho bạn vẻ ngoài năng động, khỏe khoắn và cá tính. Hãy kết hợp ba lô&lt;/p&gt;\r\n\r\n&lt;p&gt;với những bộ trang phục hợp thời trang để trở nên cuốn hút và nổi bật hơn bao giờ hết.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', ''),
-	(78, 2, 'testin', '', '', '', '', ''),
-	(79, 2, 'Testing', '', '', '', '', ''),
-	(112, 2, 'Áo Converse', '', '', '', '', ''),
-	(84, 2, 'sdg', '', '', '', '', ''),
-	(86, 2, 'sdgsdg', '', '', '', '', ''),
-	(87, 2, 'sdg', '', '', '', '', ''),
-	(90, 2, 'Testing', '', '', '', '', ''),
-	(91, 2, 'Testing', '', '', '', '', ''),
-	(92, 2, 'Test2', '', '', '', '', ''),
-	(97, 2, 'sdg', '', '', '', '', ''),
-	(63, 2, 'sđ', '', '', '', '', ''),
-	(64, 2, 'sđ', '', '', '', '', ''),
-	(67, 2, 'Testing', '', '', '', '', ''),
-	(69, 2, 'Testing', '', '', '', '', ''),
-	(70, 2, 'Sơn Trần', '', '', '', '', ''),
-	(72, 2, 'Testing', '', '', '', '', ''),
-	(104, 2, 'Ten', '', '', '', '', ''),
-	(105, 2, 'Ten', '', '', '', '', ''),
-	(107, 2, 'Test', '', '', '', '', ''),
-	(108, 2, 'sdg', '', '', '', '', ''),
-	(109, 2, 'Áo cánh hồng mỏng', '', '', '', '', ''),
-	(110, 2, 'Testing', '', '', '', '', ''),
-	(111, 2, 'Testing 2', '', '', '', '', '');
+	(30, 2, 'Áo cánh mỏng', '&lt;p&gt;Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...)&lt;/p&gt;\r\n', '&lt;div class=&quot;box prm mts fsm clearfix strong estimated-delivery&quot;&gt;&lt;span&gt;Sẽ có tại nhà bạn&lt;/span&gt; &lt;span id=&quot;estimated_delivery_time&quot;&gt;trong 3 - 5 ngày làm việc&lt;/span&gt;&lt;/div&gt;\r\n\r\n&lt;div class=&quot;box prm mts fsm txtGray clearfix&quot;&gt;\r\n&lt;p&gt;Với thiết kế nhiều ngăn tiện dụng cùng kiểu dáng trẻ trung, ba lô củawesale&lt;/p&gt;\r\n\r\n&lt;p&gt;sẽ mang đến cho bạn vẻ ngoài năng động, khỏe khoắn và cá tính. Hãy kết hợp ba lô&lt;/p&gt;\r\n\r\n&lt;p&gt;với những bộ trang phục hợp thời trang để trở nên cuốn hút và nổi bật hơn bao giờ hết.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', '');
 /*!40000 ALTER TABLE `product_description` ENABLE KEYS */;
 
 
@@ -2579,56 +2488,17 @@ CREATE TABLE IF NOT EXISTS `product_image` (
   PRIMARY KEY (`product_image_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2574 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_image: 62 rows
+-- Dumping data for table weorder.product_image: 23 rows
 /*!40000 ALTER TABLE `product_image` DISABLE KEYS */;
 INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
 	(2541, 47, 'data/san_pham/IMG_3919-400x600.JPG', 0),
 	(2565, 41, 'data/san_pham/IMG_3958-400x600.JPG', 0),
 	(2569, 40, 'data/san_pham/IMG_3940-400x600.JPG', 0),
-	(2001, 36, 'data/demo/ipod_nano_5.jpg', 0),
-	(2000, 36, 'data/demo/ipod_nano_4.jpg', 0),
-	(2005, 34, 'data/demo/ipod_shuffle_5.jpg', 0),
-	(2004, 34, 'data/demo/ipod_shuffle_4.jpg', 0),
-	(2011, 32, 'data/demo/ipod_touch_7.jpg', 0),
-	(2010, 32, 'data/demo/ipod_touch_6.jpg', 0),
-	(2009, 32, 'data/demo/ipod_touch_5.jpg', 0),
-	(1971, 43, 'data/demo/macbook_5.jpg', 0),
-	(1970, 43, 'data/demo/macbook_4.jpg', 0),
-	(1974, 44, 'data/demo/macbook_air_4.jpg', 0),
-	(1973, 44, 'data/demo/macbook_air_2.jpg', 0),
-	(1977, 45, 'data/demo/macbook_pro_2.jpg', 0),
-	(1976, 45, 'data/demo/macbook_pro_3.jpg', 0),
 	(2572, 31, 'data/san_pham/IMG_4003-400x600 (1).JPG', 0),
-	(1988, 29, 'data/demo/palm_treo_pro_3.jpg', 0),
-	(1995, 46, 'data/demo/sony_vaio_5.jpg', 0),
-	(1994, 46, 'data/demo/sony_vaio_4.jpg', 0),
-	(1991, 48, 'data/demo/ipod_classic_4.jpg', 0),
-	(1990, 48, 'data/demo/ipod_classic_3.jpg', 0),
 	(2534, 30, 'data/1-single-thumbnail.jpg', 1),
 	(2562, 28, 'data/san_pham/IMG_3922-400x600.JPG', 0),
 	(2568, 40, 'data/san_pham/IMG_3937-400x600 (1).JPG', 0),
-	(1989, 48, 'data/demo/ipod_classic_2.jpg', 0),
-	(1999, 36, 'data/demo/ipod_nano_2.jpg', 0),
-	(1998, 36, 'data/demo/ipod_nano_3.jpg', 0),
-	(2003, 34, 'data/demo/ipod_shuffle_2.jpg', 0),
-	(2002, 34, 'data/demo/ipod_shuffle_3.jpg', 0),
-	(2008, 32, 'data/demo/ipod_touch_2.jpg', 0),
-	(2007, 32, 'data/demo/ipod_touch_3.jpg', 0),
-	(2006, 32, 'data/demo/ipod_touch_4.jpg', 0),
-	(1969, 43, 'data/demo/macbook_2.jpg', 0),
-	(1968, 43, 'data/demo/macbook_3.jpg', 0),
-	(1972, 44, 'data/demo/macbook_air_3.jpg', 0),
-	(1975, 45, 'data/demo/macbook_pro_4.jpg', 0),
 	(2571, 31, 'data/san_pham/IMG_3932-400x600.JPG', 0),
-	(1987, 29, 'data/demo/palm_treo_pro_2.jpg', 0),
-	(1993, 46, 'data/demo/sony_vaio_2.jpg', 0),
-	(1992, 46, 'data/demo/sony_vaio_3.jpg', 0),
-	(2327, 49, 'data/demo/samsung_tab_7.jpg', 0),
-	(2326, 49, 'data/demo/samsung_tab_6.jpg', 0),
-	(2325, 49, 'data/demo/samsung_tab_5.jpg', 0),
-	(2324, 49, 'data/demo/samsung_tab_4.jpg', 0),
-	(2323, 49, 'data/demo/samsung_tab_3.jpg', 0),
-	(2322, 49, 'data/demo/samsung_tab_2.jpg', 0),
 	(2559, 42, 'data/san_pham/IMG_3911-400x600.JPG', 0),
 	(2558, 42, 'data/san_pham/IMG_3909-400x600.JPG', 0),
 	(2533, 30, 'data/1-single-thumbnail.jpg', 2),
@@ -2711,27 +2581,16 @@ CREATE TABLE IF NOT EXISTS `product_reward` (
   PRIMARY KEY (`product_reward_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=618 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_reward: 18 rows
+-- Dumping data for table weorder.product_reward: 7 rows
 /*!40000 ALTER TABLE `product_reward` DISABLE KEYS */;
 INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
 	(613, 42, 1, 100),
 	(608, 47, 1, 300),
 	(614, 28, 1, 400),
-	(329, 43, 1, 600),
-	(339, 29, 1, 0),
-	(343, 48, 1, 0),
 	(616, 40, 1, 0),
 	(606, 30, 1, 200),
-	(331, 44, 1, 700),
-	(333, 45, 1, 800),
 	(617, 31, 1, 0),
-	(345, 33, 1, 0),
-	(347, 46, 1, 0),
-	(615, 41, 1, 0),
-	(351, 36, 1, 0),
-	(353, 34, 1, 0),
-	(355, 32, 1, 0),
-	(521, 49, 1, 1000);
+	(615, 41, 1, 0);
 /*!40000 ALTER TABLE `product_reward` ENABLE KEYS */;
 
 
@@ -2760,7 +2619,7 @@ CREATE TABLE IF NOT EXISTS `product_to_category` (
   PRIMARY KEY (`product_id`,`category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_to_category: 29 rows
+-- Dumping data for table weorder.product_to_category: 14 rows
 /*!40000 ALTER TABLE `product_to_category` DISABLE KEYS */;
 INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 	(28, 33),
@@ -2776,22 +2635,7 @@ INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 	(42, 33),
 	(42, 61),
 	(47, 33),
-	(47, 61),
-	(84, 66),
-	(86, 66),
-	(87, 66),
-	(90, 66),
-	(91, 66),
-	(92, 66),
-	(97, 66),
-	(104, 66),
-	(105, 66),
-	(107, 66),
-	(108, 66),
-	(109, 66),
-	(110, 66),
-	(111, 66),
-	(112, 66);
+	(47, 61);
 /*!40000 ALTER TABLE `product_to_category` ENABLE KEYS */;
 
 
@@ -2827,51 +2671,17 @@ CREATE TABLE IF NOT EXISTS `product_to_store` (
   PRIMARY KEY (`product_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.product_to_store: 42 rows
+-- Dumping data for table weorder.product_to_store: 8 rows
 /*!40000 ALTER TABLE `product_to_store` DISABLE KEYS */;
 INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 	(28, 0),
-	(29, 0),
 	(30, 0),
 	(31, 0),
-	(32, 0),
-	(33, 0),
-	(34, 0),
-	(36, 0),
 	(40, 0),
 	(41, 0),
 	(42, 0),
-	(43, 0),
-	(44, 0),
-	(45, 0),
-	(46, 0),
 	(47, 0),
-	(48, 0),
-	(49, 0),
-	(62, 0),
-	(63, 0),
-	(64, 0),
-	(67, 0),
-	(69, 0),
-	(70, 0),
-	(72, 0),
-	(78, 0),
-	(79, 0),
-	(84, 0),
-	(86, 0),
-	(87, 0),
-	(90, 0),
-	(91, 0),
-	(92, 0),
-	(97, 0),
-	(104, 0),
-	(105, 0),
-	(107, 0),
-	(108, 0),
-	(109, 0),
-	(110, 0),
-	(111, 0),
-	(112, 0);
+	(62, 0);
 /*!40000 ALTER TABLE `product_to_store` ENABLE KEYS */;
 
 
@@ -3275,10 +3085,9 @@ CREATE TABLE IF NOT EXISTS `url_alias` (
   PRIMARY KEY (`url_alias_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=879 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.url_alias: 35 rows
+-- Dumping data for table weorder.url_alias: 34 rows
 /*!40000 ALTER TABLE `url_alias` DISABLE KEYS */;
 INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
-	(704, 'product_id=48', 'ipod_classic'),
 	(778, 'category_id=25', 'nu'),
 	(777, 'category_id=33', 'nam'),
 	(855, 'manufacturer_id=8', 'lascote'),
@@ -3472,7 +3281,7 @@ CREATE TABLE IF NOT EXISTS `zone` (
   PRIMARY KEY (`zone_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4033 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.zone: 3,985 rows
+-- Dumping data for table weorder.zone: 3.985 rows
 /*!40000 ALTER TABLE `zone` DISABLE KEYS */;
 INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 	(1, 1, 'Badakhshan', 'BDS', 1),
@@ -7480,5 +7289,6 @@ INSERT INTO `zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, 
 	(57, 222, 0, 3, '2010-02-26 22:33:24', '0000-00-00 00:00:00'),
 	(65, 222, 0, 4, '2010-12-15 15:18:13', '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `zone_to_geo_zone` ENABLE KEYS */;
-/*!40014 SET FOREIGN_KEY_CHECKS=1 */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

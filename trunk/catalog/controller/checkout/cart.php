@@ -205,7 +205,6 @@ class ControllerCheckoutCart extends Controller {
         $this->load->model('tool/image');
 
         $this->data['products'] = array();
-
         $products = $this->cart->getProducts();
 
         foreach ($products as $product) {
@@ -553,7 +552,14 @@ class ControllerCheckoutCart extends Controller {
             }
 
             if (!$json) {
-                $this->cart->add($this->request->post['product_id'], $quantity, $option);
+                
+                $attributes = array(
+                    'link' => $product_info['link'],
+                    'size' => $product_info['size'],
+                    'color' => $product_info['color'],
+                );
+                
+                $this->cart->add($this->request->post['product_id'], $quantity, $option, $attributes);
                 
                 $json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));
 

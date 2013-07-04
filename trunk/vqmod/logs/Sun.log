@@ -21279,3 +21279,255 @@ Could not resolve path for [/admin/language/russian/common/filemanager.php] (SKI
 ----------------------------------------------------------------------
 
 
+---------- Date: 2013-06-30 15:07:12 ~ IP : ::1 ----------
+REQUEST URI : /weorder/index.php?route=news/news_category&amp;cat_id=1
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/multiupload_files.xml
+   id        : Multiupload files with filemanager
+   version   : 1.0.0
+   vqmver    : 1.2.0
+   author    : Chumachkin Mihail Aleksandrovich chumachkin.m@gmail.com
+Could not resolve path for [/admin/language/russian/common/filemanager.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-30 15:07:41 ~ IP : ::1 ----------
+REQUEST URI : /weorder/index.php?route=news/news_category&amp;cat_id=1
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/multiupload_files.xml
+   id        : Multiupload files with filemanager
+   version   : 1.0.0
+   vqmver    : 1.2.0
+   author    : Chumachkin Mihail Aleksandrovich chumachkin.m@gmail.com
+Could not resolve path for [/admin/language/russian/common/filemanager.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-30 15:13:39 ~ IP : ::1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/multiupload_files.xml
+   id        : Multiupload files with filemanager
+   version   : 1.0.0
+   vqmver    : 1.2.0
+   author    : Chumachkin Mihail Aleksandrovich chumachkin.m@gmail.com
+Could not resolve path for [/admin/language/russian/common/filemanager.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-30 15:29:55 ~ IP : ::1 ----------
+REQUEST URI : /weorder/
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/multiupload_files.xml
+   id        : Multiupload files with filemanager
+   version   : 1.0.0
+   vqmver    : 1.2.0
+   author    : Chumachkin Mihail Aleksandrovich chumachkin.m@gmail.com
+Could not resolve path for [/admin/language/russian/common/filemanager.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-30 15:29:57 ~ IP : ::1 ----------
+REQUEST URI : /weorder/index.php?route=account/login
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/multiupload_files.xml
+   id        : Multiupload files with filemanager
+   version   : 1.0.0
+   vqmver    : 1.2.0
+   author    : Chumachkin Mihail Aleksandrovich chumachkin.m@gmail.com
+Could not resolve path for [/admin/language/russian/common/filemanager.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-30 15:30:03 ~ IP : ::1 ----------
+REQUEST URI : /weorder/index.php?route=account/login
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/multiupload_files.xml
+   id        : Multiupload files with filemanager
+   version   : 1.0.0
+   vqmver    : 1.2.0
+   author    : Chumachkin Mihail Aleksandrovich chumachkin.m@gmail.com
+Could not resolve path for [/admin/language/russian/common/filemanager.php] (SKIPPED)
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-30 15:30:04 ~ IP : ::1 ----------
+REQUEST URI : /weorder/index.php?route=account/account
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/multiupload_files.xml
+   id        : Multiupload files with filemanager
+   version   : 1.0.0
+   vqmver    : 1.2.0
+   author    : Chumachkin Mihail Aleksandrovich chumachkin.m@gmail.com
+Could not resolve path for [/admin/language/russian/common/filemanager.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-30 15:30:05 ~ IP : ::1 ----------
+REQUEST URI : /weorder/index.php?route=common/home
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/multiupload_files.xml
+   id        : Multiupload files with filemanager
+   version   : 1.0.0
+   vqmver    : 1.2.0
+   author    : Chumachkin Mihail Aleksandrovich chumachkin.m@gmail.com
+Could not resolve path for [/admin/language/russian/common/filemanager.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-30 15:30:07 ~ IP : ::1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/multiupload_files.xml
+   id        : Multiupload files with filemanager
+   version   : 1.0.0
+   vqmver    : 1.2.0
+   author    : Chumachkin Mihail Aleksandrovich chumachkin.m@gmail.com
+Could not resolve path for [/admin/language/russian/common/filemanager.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-30 15:30:28 ~ IP : ::1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/multiupload_files.xml
+   id        : Multiupload files with filemanager
+   version   : 1.0.0
+   vqmver    : 1.2.0
+   author    : Chumachkin Mihail Aleksandrovich chumachkin.m@gmail.com
+Could not resolve path for [/admin/language/russian/common/filemanager.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-30 15:31:10 ~ IP : ::1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/multiupload_files.xml
+   id        : Multiupload files with filemanager
+   version   : 1.0.0
+   vqmver    : 1.2.0
+   author    : Chumachkin Mihail Aleksandrovich chumachkin.m@gmail.com
+Could not resolve path for [/admin/language/russian/common/filemanager.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-30 15:31:13 ~ IP : ::1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/multiupload_files.xml
+   id        : Multiupload files with filemanager
+   version   : 1.0.0
+   vqmver    : 1.2.0
+   author    : Chumachkin Mihail Aleksandrovich chumachkin.m@gmail.com
+Could not resolve path for [/admin/language/russian/common/filemanager.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-30 15:31:46 ~ IP : ::1 ----------
+REQUEST URI : /weorder/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/multiupload_files.xml
+   id        : Multiupload files with filemanager
+   version   : 1.0.0
+   vqmver    : 1.2.0
+   author    : Chumachkin Mihail Aleksandrovich chumachkin.m@gmail.com
+Could not resolve path for [/admin/language/russian/common/filemanager.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : D:\Sources\weorder\vqmod/xml/news_pro.xml
+   id        : News_Pro
+   version   : 1.5.4.1
+   vqmver    : 2.1.7
+   author    : VinaEcom
+SEARCH NOT FOUND (ABORTING MOD): </ul></div>
+
+----------------------------------------------------------------------
+
+
