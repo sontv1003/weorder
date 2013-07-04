@@ -29,16 +29,15 @@
         <link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/colorbox/colorbox.css" media="screen" />
 
         <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
-        <script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/jquery.carouFredSel.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/jquery-1.js"></script>
-        <!--<script type="text/javascript" src="catalog/view/theme/default/javascript/moderniz.js"></script>-->
         <script type="text/javascript" src="catalog/view/javascript/jscript_.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/script00.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/nivo0000.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/tools000.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/jquery00.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/common.js"></script>
+        <script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/jquery/tabs.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/jquery/colorbox/jquery.colorbox-min.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/ajaxupload.min.js"></script>

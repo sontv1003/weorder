@@ -21,22 +21,44 @@ class Cart {
 
     public function getProducts() {
         if (!$this->data) {
+
+            if (!empty($this->session->data['cart2'])) {
+                $cartLinks = array();
+                foreach ($this->session->data['cart2'] as $keyProductId => $record) {
+                    $cartLinks[$keyProductId] = $record['link'];
+                }
+
+                asort($cartLinks); // Sap xep theo tang dan cung link
+
+                $cart1 = array();
+                $cart2 = array();
+                foreach ($cartLinks as $keyCart => $cartSorted) {
+                    $cart1[$keyCart] = $this->session->data['cart'][$keyCart];
+                    $cart2[$keyCart] = $this->session->data['cart2'][$keyCart];
+                }
+
+                // Set to sessoin 
+                $this->session->data['cart'] = $cart1;
+                $this->session->data['cart2'] = $cart2;
+            }
+
+
             foreach ($this->session->data['cart'] as $key => $quantity) {
                 $link = '';
                 $size = '';
                 $color = '';
-                
-                if(!empty($this->session->data['cart2'][$key]['link'])) {
+
+                if (!empty($this->session->data['cart2'][$key]['link'])) {
                     $link = $this->session->data['cart2'][$key]['link'];
                 }
-                if(!empty($this->session->data['cart2'][$key]['size'])) {
+                if (!empty($this->session->data['cart2'][$key]['size'])) {
                     $size = $this->session->data['cart2'][$key]['size'];
                 }
-                if(!empty($this->session->data['cart2'][$key]['color'])) {
+                if (!empty($this->session->data['cart2'][$key]['color'])) {
                     $color = $this->session->data['cart2'][$key]['color'];
                 }
-                
-                
+
+
                 $product = explode(':', $key);
                 $product_id = $product[0];
                 $stock = true;
@@ -240,16 +262,16 @@ class Cart {
                         $stock = false;
                     }
 
-                    if(empty($link)) {
+                    if (empty($link)) {
                         $link = $product_query->row['link'];
                     }
-                    if(empty($size)) {
+                    if (empty($size)) {
                         $size = $product_query->row['size'];
                     }
-                    if(empty($color)) {
+                    if (empty($color)) {
                         $color = $product_query->row['color'];
                     }
-                    
+
                     $this->data[$key] = array(
                         'key' => $key,
                         'product_id' => $product_query->row['product_id'],
@@ -287,7 +309,7 @@ class Cart {
         return $this->data;
     }
 
-    public function add($product_id, $qty = 1, $option = array()) {
+    public function add($product_id, $qty = 1, $option = array(), $attributes = array()) {
         if (!$option) {
             $key = (int) $product_id;
         } else {
@@ -302,11 +324,17 @@ class Cart {
             }
         }
 
+        if (!empty($attributes)) {
+            $this->session->data['cart2'][$key]['link'] = $attributes['link'];
+            $this->session->data['cart2'][$key]['color'] = $attributes['color'];
+            $this->session->data['cart2'][$key]['size'] = $attributes['size'];
+        }
+
         $this->data = array();
     }
 
     public function update($key, $qty) {
-        
+
         if ((int) $qty && ((int) $qty > 0)) {
             $this->session->data['cart'][$key] = (int) $qty;
         } else {
@@ -315,35 +343,36 @@ class Cart {
 
         $this->data = array();
     }
-    
+
     public function updateOtherField($key, $value, $field) {
-        if (!empty($value)) {
-            $this->session->data['cart2'][$key][$field] = $value;
-        } else {
-            //$this->removeOtherField($key, $field);
-        }
-        
-        $this->data = array();
+        $this->session->data['cart2'][$key][$field] = $value;
     }
 
     public function removeOtherField($keys, $field) {
-		if(is_array($keys)) {
-			foreach ($keys as $key) {
-				if (isset($this->session->data['cart2'][$key][$field])) {
-					unset($this->session->data['cart2'][$key][$field]);
-				}
-			}
+        if (is_array($keys)) {
+            foreach ($keys as $key) {
+                if (isset($this->session->data['cart2'][$key][$field])) {
+                    unset($this->session->data['cart2'][$key][$field]);
+                }
+            }
 
-			$this->data = array();
-		}
+            $this->data = array();
+        }
     }
+
     public function remove($keys) {
-        foreach ($keys as $key) {
-            if (isset($this->session->data['cart'][$key])) {
-                unset($this->session->data['cart'][$key]);
+        
+        if (!empty($keys) && is_array($keys)) {
+            foreach ($keys as $key) {
+                if (isset($this->session->data['cart'][$key])) {
+                    unset($this->session->data['cart'][$key]);
+                }
+                if (isset($this->session->data['cart2'][$key])) {
+                    unset($this->session->data['cart2'][$key]);
+                }
             }
         }
-
+        
         $this->data = array();
     }
 

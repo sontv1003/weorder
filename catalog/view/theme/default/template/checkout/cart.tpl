@@ -32,9 +32,9 @@
                 <td width="85px">
                     <?php
                     if (!empty($account_avatar)) {
-                        $avatar = HTTP_SERVER.$account_avatar;
+                        $avatar = HTTP_SERVER . $account_avatar;
                     } else {
-                        $avatar = HTTP_SERVER.'image/avatar_default.png';
+                        $avatar = HTTP_SERVER . 'image/avatar_default.png';
                     }
                     ?>
                     <a href="<?php echo $account_info_href; ?>">
@@ -59,26 +59,31 @@
         <img class="fl" style="width: 855px;" id="camket" src="catalog/view/theme/default/images/camket.jpg">
         <div class="clear"></div>
     </div>
-<!--
-    <div id="ttcanhan">
-        <ul>
-            <li class="ttcn ttcnd" style="padding-top: 2px; padding-bottom: 5px;">
-                <a href="<?php echo $account_info_href; ?>">thông tin cá nhân</a>
-            </li>
-            <li class="ttcc" style="padding-top: 2px; padding-bottom: 5px;">
-                <a href="<?php echo $account_order_info_href; ?>">danh sách đơn hàng cá nhân</a>
-            </li>
-            <li class="ttcn" style="padding-top: 2px; padding-bottom: 5px;">
-                <a href="<?php echo $account_transaction_href; ?>">thu chi tài chính</a>
-            </li>
-            <li class="ttcc" style="padding-top: 2px; padding-bottom: 5px;">
-                <a href="javascript:void(0)">khiếu nại</a>
-            </li>
-        </ul>
-        <div class="clear"></div>
-    </div>
--->
-
+    <!--
+        <div id="ttcanhan">
+            <ul>
+                <li class="ttcn ttcnd" style="padding-top: 2px; padding-bottom: 5px;">
+                    <a href="<?php echo $account_info_href; ?>">thông tin cá nhân</a>
+                </li>
+                <li class="ttcc" style="padding-top: 2px; padding-bottom: 5px;">
+                    <a href="<?php echo $account_order_info_href; ?>">danh sách đơn hàng cá nhân</a>
+                </li>
+                <li class="ttcn" style="padding-top: 2px; padding-bottom: 5px;">
+                    <a href="<?php echo $account_transaction_href; ?>">thu chi tài chính</a>
+                </li>
+                <li class="ttcc" style="padding-top: 2px; padding-bottom: 5px;">
+                    <a href="javascript:void(0)">khiếu nại</a>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    -->
+    <p>
+        <b style="font-size: 14px;">Chú thích:</b> 
+        <b style="font-size: 15px; font-family: Arial;">Giá của sản phẩm khi về đến Việt Nam = Giá sản phẩm tại website + Phí ship quốc tế
+            + Tiền công + 8 Bảng / kg
+        </b>
+    </p>
     <div>
         <div class="fl cartSelectAll">
             <input type="checkbox" id="cbSelectAll" />
@@ -99,7 +104,8 @@
         <div class="clear"></div>
     </div>
     <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
-        <div class="cart-info">
+        <div class="cart-info" style="position: relative;">
+            <div id="loading"></div>
             <table>
                 <thead>
                     <tr>
@@ -150,7 +156,7 @@
                                 <div class="clear"></div>
                                 <a style="font-size: 15px;" href="<?php echo $product['remove']; ?>"><img src="catalog/view/theme/default/images/remove.png" alt="<?php echo $button_remove; ?>" title="<?php echo $button_remove; ?>" />&nbsp;Xóa</a>
                                 <br/>
-                                <img src="<?php echo HTTP_SERVER.'image/cart.png'?>" width="16px" />
+                                <img src="<?php echo HTTP_SERVER . 'image/cart.png' ?>" width="16px" />
                                 <a style="font-size: 15px;" href="javascript:void(0)" onclick="addToWishList('<?php echo $product['key']; ?>')">Mua sau</a>
                             </td>
                             <td class="link"><input type="text" name="link[<?php echo $product['key']; ?>]" value="<?php echo $product['link']; ?>" /></td>
@@ -249,7 +255,7 @@
                 <div>
                     <div class="fl dky fontUTM">Hủy đơn hàng</div>
                     <div class="fr cost_payment"><b><?php echo $total['text']; ?></b></div>
-                    <div class="fr total_payment"><b>Tổng tiền bạn phải trả là:<?php //echo $total['title'];          ?></b></div>
+                    <div class="fr total_payment"><b>Tổng tiền bạn phải trả là:<?php //echo $total['title'];            ?></b></div>
                     <div class="clear"></div>
                 </div>
 
@@ -296,7 +302,7 @@
         }
 
         if (isNaN(quantity) && sign == 2) {
-            quantity = 0;
+            quantity = 1;
         }
 
         total = quantity * price * currency;
@@ -353,7 +359,7 @@
         var quantity = $('#order_quantity').val();
         var price = $('#order_price').val();
 
-        if (quantity == '') {
+        if (quantity == '' || quantity == '0') {
             quantity = 1;
         }
         if (price == '') {
@@ -362,10 +368,16 @@
             price = Math.round(price * currency);
         }
 
+        var link = $.trim($('#order_link').val());
+        if (link != '') {
+            if (!link.match('http://') && !link.match('https://')) {
+                link = 'http://'+link;
+            }
+        }
 
         var params = {
             name: $('#order_name').val(),
-            link: $('#order_link').val(),
+            link: link,
             size: $('#order_size').val(),
             color: $('#order_color').val(),
             model: '',
@@ -404,12 +416,14 @@
             total: quantity * price
         };
 
+        $('#loading').show();
         $.ajax({
             url: 'index.php?route=checkout/cart/add_product',
             type: 'post',
             data: params,
             dataType: 'json',
             success: function(product_id) {
+                $('#loading').hide();
                 addToCart(product_id, quantity);
             }
         });

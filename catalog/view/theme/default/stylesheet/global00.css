@@ -2999,3 +2999,13 @@ a.UploadButton input {
     border: 1px solid #ccc;
     background: #999999;
 }
+#loading {
+    position: absolute;
+    background: url('../image/ajax-loader.gif') no-repeat;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+    top: 48%;
+    left: 47%;
+    display: none;
+}

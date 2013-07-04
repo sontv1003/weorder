@@ -38,13 +38,6 @@
                   <?php } ?></td>
               </tr>
               <tr>
-                <td><span class="required">*</span> <?php echo $entry_lastname; ?></td>
-                <td><input type="text" name="lastname" value="<?php echo $lastname; ?>" />
-                  <?php if ($error_lastname) { ?>
-                  <span class="error"><?php echo $error_lastname; ?></span>
-                  <?php } ?></td>
-              </tr>
-              <tr>
                 <td><span class="required">*</span> <?php echo $entry_email; ?></td>
                 <td><input type="text" name="email" value="<?php echo $email; ?>" />
                   <?php if ($error_email) { ?>
@@ -124,13 +117,6 @@
                 <td><input type="text" name="address[<?php echo $address_row; ?>][firstname]" value="<?php echo $address['firstname']; ?>" />
                   <?php if (isset($error_address_firstname[$address_row])) { ?>
                   <span class="error"><?php echo $error_address_firstname[$address_row]; ?></span>
-                  <?php } ?></td>
-              </tr>
-              <tr>
-                <td><span class="required">*</span> <?php echo $entry_lastname; ?></td>
-                <td><input type="text" name="address[<?php echo $address_row; ?>][lastname]" value="<?php echo $address['lastname']; ?>" />
-                  <?php if (isset($error_address_lastname[$address_row])) { ?>
-                  <span class="error"><?php echo $error_address_lastname[$address_row]; ?></span>
                   <?php } ?></td>
               </tr>
               <tr>

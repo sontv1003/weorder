@@ -85,7 +85,7 @@
                 <?php } ?>
               </div>
             </td>
-            <td class="link" style="text-align: center;"><a href="<?php echo $product['link']; ?>" target="_blank">Xem link</a></td>
+            <td class="link" style="text-align: center;"><a href="<?php echo $product['link']; ?>" title="<?php echo $product['link']; ?>" target="_blank">Xem link</a></td>
             <td class="size" style="text-align: center;"><?php echo $product['size']; ?></td>
             <td class="color" style="text-align: center;"><?php echo $product['color']; ?></td>
             <td class="quantity" style="text-align: center;">
