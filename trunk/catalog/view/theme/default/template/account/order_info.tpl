@@ -95,7 +95,7 @@
             <td class="total" style="text-align: center;"><?php echo $product['total']; ?></td>
             <?php $total_quantity += $product['quantity'];?>
             <td class="return">
-                <?php if($product['order_status_id'] == 21): ?>
+                <?php if($isReturn): ?>
                 <a href="<?php echo $product['return']; ?>">Bấm</a>
                 <?php endif; ?>
             </td>

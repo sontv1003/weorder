@@ -354,6 +354,7 @@ class ControllerAccountOrder extends Controller {
             $this->load->model('tool/image');
 
             $products = $this->model_account_order->getOrderDetailProducts($this->request->get['order_id']);
+            $currentOrderStatus = $this->model_account_order->checkOrderStatus($this->request->get['order_id']);
 
             foreach ($products as $product) {
                 $option_data = array();
@@ -388,7 +389,6 @@ class ControllerAccountOrder extends Controller {
                     'option' => $option_data,
                     'thumb' => $image,
                     'quantity' => $product['quantity'],
-                    'order_status_id' => $product['order_status_id'],
                     'href' => $this->url->link('product/product', 'product_id=' . $product['product_id']),
                     'price' => $this->currency->format($product['price'] + ($this->config->get('config_tax') ? $product['tax'] : 0), $order_info['currency_code'], $order_info['currency_value']),
                     'total' => $this->currency->format($product['total'] + ($this->config->get('config_tax') ? ($product['tax'] * $product['quantity']) : 0), $order_info['currency_code'], $order_info['currency_value']),
@@ -396,6 +396,11 @@ class ControllerAccountOrder extends Controller {
                 );
             }
 
+            if (isset($currentOrderStatus[0]['order_status_id']) && $currentOrderStatus[0]['order_status_id'] == 21) {
+                $this->data['isReturn'] = true;
+            } else {
+                $this->data['isReturn'] = false;
+            }
             // Voucher
             $this->data['vouchers'] = array();
 
@@ -412,7 +417,7 @@ class ControllerAccountOrder extends Controller {
 
             $this->data['comment'] = nl2br($order_info['comment']);
             $this->data['note'] = $order_info['note'];
-            $this->data['account_avatar'] = $this->customer->getAvatar();            
+            $this->data['account_avatar'] = $this->customer->getAvatar();
             $this->data['account_name'] = $this->customer->getFirstName();
             $this->data['histories'] = array();
 
