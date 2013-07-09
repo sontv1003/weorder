@@ -739,12 +739,12 @@ CREATE TABLE IF NOT EXISTS `currency` (
 /*!40000 ALTER TABLE `currency` DISABLE KEYS */;
 INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
 	(3, 'Euro', 'EUR', '', '€', '2', 27308.00000000, 1, '2013-06-30 11:07:05'),
-	(4, 'VNĐ', 'VND', '', ' VNĐ', '0', 1.00000000, 1, '2013-07-04 18:32:07'),
+	(4, 'VNĐ', 'VND', '', ' VNĐ', '0', 1.00000000, 1, '2013-07-09 16:07:59'),
 	(5, 'Đô Mỹ', 'USD', '$', '', '', 21300.00000000, 1, '2013-06-25 00:37:03'),
 	(6, 'Bảng Anh', 'GBP', '', '£', '', 31846.00000000, 1, '2013-06-30 11:08:13'),
-	(7, 'Singapore', 'SGD', '', '', '', 0.00010000, 0, '2013-07-04 17:13:14'),
-	(8, 'Yên Nhật', 'JPY', '', '', '', 0.00470000, 0, '2013-07-04 17:13:14'),
-	(9, 'Đô la Hồng Kong', 'HKD', '', '', '', 0.00040000, 0, '2013-07-04 17:13:14');
+	(7, 'Singapore', 'SGD', '', '', '', 0.00010000, 0, '2013-07-08 16:49:42'),
+	(8, 'Yên Nhật', 'JPY', '', '', '', 0.00480000, 0, '2013-07-08 16:49:42'),
+	(9, 'Đô la Hồng Kong', 'HKD', '', '', '', 0.00040000, 0, '2013-07-08 16:49:42');
 /*!40000 ALTER TABLE `currency` ENABLE KEYS */;
 
 
@@ -778,7 +778,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
 -- Dumping data for table weorder.customer: 1 rows
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `birthday`, `gender`, `password`, `avatar`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `customer_group_id`, `ip`, `status`, `approved`, `token`, `date_added`) VALUES
-	(1, 0, 'Sơn Trần', '', 'transontt@gmail.com', '0902222222222', '', NULL, NULL, 'c0ff2af611e745e05c989d8c07a56230be54ede5', 'image/avatars/51d4654806911.jpg', 'fbad643c7', 'a:2:{i:144;i:1;i:143;i:2;}', 'a:1:{i:0;s:2:"42";}', 1, 1, 1, '::1', 1, 1, '', '2013-06-16 14:36:00');
+	(1, 0, 'Sơn Trần', '', 'transontt@gmail.com', '0902222222222', '', NULL, NULL, 'c0ff2af611e745e05c989d8c07a56230be54ede5', 'image/avatars/51d4654806911.jpg', 'fbad643c7', 'a:0:{}', 'a:1:{i:0;s:2:"42";}', 1, 1, 1, '::1', 1, 1, '', '2013-06-16 14:36:00');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 
 
@@ -1368,6 +1368,24 @@ INSERT INTO `manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 /*!40000 ALTER TABLE `manufacturer_to_store` ENABLE KEYS */;
 
 
+-- Dumping structure for table weorder.messages
+CREATE TABLE IF NOT EXISTS `messages` (
+  `message_id` int(10) NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) DEFAULT NULL,
+  `customer_id` int(10) DEFAULT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  `content` text,
+  `created_by` varchar(50) DEFAULT NULL,
+  `is_read` tinyint(4) DEFAULT '0',
+  `created` datetime DEFAULT NULL,
+  PRIMARY KEY (`message_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table weorder.messages: ~0 rows (approximately)
+/*!40000 ALTER TABLE `messages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `messages` ENABLE KEYS */;
+
+
 -- Dumping structure for table weorder.news
 CREATE TABLE IF NOT EXISTS `news` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1843,9 +1861,9 @@ CREATE TABLE IF NOT EXISTS `order` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order: 42 rows
+-- Dumping data for table weorder.order: 43 rows
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
 INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_company_id`, `payment_tax_id`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `note`, `date_added`, `date_modified`) VALUES
 	(29, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 3, 1, 'Son Tran', '', 'abc2@abc.com', '099999', '', 'Son Tran', '', '', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Son Tran', '', '', 'Tu son', '', '', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 650000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0', 'en-US,en;q=0.5', NULL, '2013-06-16 23:43:20', '2013-06-16 23:43:20'),
@@ -1889,7 +1907,8 @@ INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `st
 	(55, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 1, 1, 'Sơn Trần', '', 'transontt@gmail.com', '0902222222222', '', 'Sơn', 'Trần', '', '', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Sơn', 'Trần', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 690000.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36', 'en-US,en;q=0.8', 'Tesing note', '2013-06-30 15:18:46', '2013-06-30 15:18:46'),
 	(56, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 14, 1, 'Testing 2', '', 'dsgsdg@gsdgsd.sdg', '3464576457', '', 'sdgsdh', '', '', '', '', '457', '', '', '', 'Viet Nam', 230, 'Binh Phuoc', 3760, '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, '{firstname} {lastname}\n{company}\n{address_1}\n{address_2}\n{city} {postcode}\n{zone}\n{country}', '', '', '', 63692.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36', 'en-US,en;q=0.8', '', '2013-07-04 20:45:22', '2013-07-04 22:22:55'),
 	(57, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 15, 1, 'Testing', '', 'ddd@gsdg.com', '346457', '', 'Testing', '', '', '', '', 'sdghdh', '', '', '', 'Viet Nam', 230, 'Ca Mau', 3762, '', '', '', 'Testing', '', '', 'sdghdh', '', '', '', 'Viet Nam', 230, 'Ca Mau', 3762, '', '', '', '', 650000.0000, 18, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0', 'en-US,en;q=0.5', '', '2013-07-04 22:08:18', '2013-07-04 22:23:36'),
-	(58, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 15, 1, 'fđfh', '', 'ddd@gsdg.com', '346457', '', 'fđfh', '', '', '', '', 'sdghdh', '', '', '', 'Viet Nam', 230, 'Ca Mau', 3762, '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', 1847068.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0', 'en-US,en;q=0.5', '', '2013-07-04 23:12:02', '2013-07-04 23:12:02');
+	(58, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 15, 1, 'fđfh', '', 'ddd@gsdg.com', '346457', '', 'fđfh', '', '', '', '', 'sdghdh', '', '', '', 'Viet Nam', 230, 'Ca Mau', 3762, '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', 1847068.0000, 18, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0', 'en-US,en;q=0.5', '', '2013-07-04 23:12:02', '2013-07-09 19:13:36'),
+	(59, 0, 'INV-2013-00', 0, 'Đặt hàng quốc tế', 'http://localhost/weorder/', 1, 1, 'Sơn Trần', '', 'transontt@gmail.com', '0902222222222', '', 'Sơn', 'Trần', '', '', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', 'Sơn', 'Trần', '', 'Từ SƠn ', '', 'Bắc Ninh', '', 'Viet Nam', 230, 'Bac Ninh', 3755, '', '', '', '', 1190000.0000, 21, 0, 0.0000, 2, 4, 'VND', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0', 'en-US,en;q=0.5', '', '2013-07-09 21:04:42', '2013-07-09 21:30:33');
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 
 
@@ -1998,9 +2017,9 @@ CREATE TABLE IF NOT EXISTS `order_history` (
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`order_history_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order_history: 36 rows
+-- Dumping data for table weorder.order_history: 44 rows
 /*!40000 ALTER TABLE `order_history` DISABLE KEYS */;
 INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, `notify`, `comment`, `date_added`) VALUES
 	(1, 24, 1, 1, '', '2013-06-16 20:38:44'),
@@ -2038,7 +2057,15 @@ INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, 
 	(33, 55, 1, 1, '', '2013-06-30 15:18:46'),
 	(34, 56, 1, 1, '', '2013-07-04 20:45:22'),
 	(35, 57, 1, 1, '', '2013-07-04 22:08:18'),
-	(36, 58, 1, 1, '', '2013-07-04 23:12:02');
+	(36, 58, 1, 1, '', '2013-07-04 23:12:02'),
+	(37, 58, 1, 1, 'Xin chào ', '2013-07-09 19:13:09'),
+	(38, 58, 18, 1, 'gsdgsdg', '2013-07-09 19:13:35'),
+	(39, 58, 18, 1, 'gsdgsdg', '2013-07-09 19:13:36'),
+	(40, 59, 1, 1, '', '2013-07-09 21:04:42'),
+	(41, 59, 18, 0, '', '2013-07-09 21:08:40'),
+	(42, 59, 21, 0, '', '2013-07-09 21:30:14'),
+	(43, 59, 20, 0, '', '2013-07-09 21:30:26'),
+	(44, 59, 21, 0, '', '2013-07-09 21:30:33');
 /*!40000 ALTER TABLE `order_history` ENABLE KEYS */;
 
 
@@ -2087,9 +2114,9 @@ CREATE TABLE IF NOT EXISTS `order_product` (
   `tax` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `reward` int(8) NOT NULL,
   PRIMARY KEY (`order_product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order_product: 67 rows
+-- Dumping data for table weorder.order_product: 69 rows
 /*!40000 ALTER TABLE `order_product` DISABLE KEYS */;
 INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `link`, `size`, `color`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
 	(1, 1, 41, 'Áo phông 2', 'Product 14', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'L,M', 'Trắng ', 2, 650000.0000, 1300000.0000, 0.0000, 0),
@@ -2158,7 +2185,9 @@ INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name
 	(64, 56, 113, 'sdg', '', NULL, NULL, NULL, 1, 63692.0000, 63692.0000, 0.0000, 0),
 	(65, 57, 41, 'Áo phông 2', '', NULL, NULL, NULL, 1, 650000.0000, 650000.0000, 0.0000, 0),
 	(66, 58, 137, 'ds', '', 'aaaa', 'sg', 'sg', 2, 0.0000, 0.0000, 0.0000, 0),
-	(67, 58, 138, 'sdgdsg', '', 'aaad', 'dsg', 'sdg', 2, 923534.0000, 1847068.0000, 0.0000, 0);
+	(67, 58, 138, 'sdgdsg', '', 'aaad', 'dsg', 'sdg', 2, 923534.0000, 1847068.0000, 0.0000, 0),
+	(68, 59, 28, 'Áo phông 1', 'Product 1', 'http://www.geckomedia.vn', 'M', 'Trắng', 1, 500000.0000, 500000.0000, 0.0000, 400),
+	(69, 59, 30, 'Áo cánh mỏng', 'Product 3', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', '', 1, 690000.0000, 690000.0000, 0.0000, 200);
 /*!40000 ALTER TABLE `order_product` ENABLE KEYS */;
 
 
@@ -2193,9 +2222,9 @@ CREATE TABLE IF NOT EXISTS `order_total` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`order_total_id`),
   KEY `idx_orders_total_orders_id` (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=118 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=120 DEFAULT CHARSET=utf8;
 
--- Dumping data for table weorder.order_total: 117 rows
+-- Dumping data for table weorder.order_total: 119 rows
 /*!40000 ALTER TABLE `order_total` DISABLE KEYS */;
 INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`, `value`, `sort_order`) VALUES
 	(1, 1, 'sub_total', 'Tổng giá trị là', '2,800,000 VNĐ', 2800000.0000, 1),
@@ -2314,7 +2343,9 @@ INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`
 	(114, 57, 'sub_total', 'Tổng giá trị là', '650,000 VNĐ', 650000.0000, 1),
 	(113, 56, 'total', 'Thành tiền', '63,692 VNĐ', 63692.0000, 9),
 	(116, 58, 'sub_total', 'Tổng giá trị là', '1,847,068 VNĐ', 1847068.0000, 1),
-	(117, 58, 'total', 'Thành tiền', '1,847,068 VNĐ', 1847068.0000, 9);
+	(117, 58, 'total', 'Thành tiền', '1,847,068 VNĐ', 1847068.0000, 9),
+	(118, 59, 'sub_total', 'Tổng giá trị là', '1,190,000 VNĐ', 1190000.0000, 1),
+	(119, 59, 'total', 'Thành tiền', '1,190,000 VNĐ', 1190000.0000, 9);
 /*!40000 ALTER TABLE `order_total` ENABLE KEYS */;
 
 
@@ -2382,13 +2413,13 @@ CREATE TABLE IF NOT EXISTS `product` (
 -- Dumping data for table weorder.product: 18 rows
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `link`, `size`, `color`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-	(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'data/san_pham/IMG_3920-400x600.JPG', 5, 1, 500000.0000, 200, 9, '2009-02-03', 'http://www.geckomedia.vn', 'M', 'Trắng', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 0, 0, 1, '2009-02-03 16:06:50', '2013-07-04 00:21:00', 97),
-	(30, 'Product 3', '', '', '', '', '', '', '', 98, 6, 'data/1-single-thumbnail.jpg', 9, 1, 690000.0000, 0, 0, '2009-02-03', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 0, 0, 1, '2009-02-03 16:59:00', '2013-06-30 12:28:52', 166),
+	(28, 'Product 1', '', '', '', '', '', '', '', 938, 7, 'data/san_pham/IMG_3920-400x600.JPG', 5, 1, 500000.0000, 200, 9, '2009-02-03', 'http://www.geckomedia.vn', 'M', 'Trắng', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 0, 0, 1, '2009-02-03 16:06:50', '2013-07-04 00:21:00', 97),
+	(30, 'Product 3', '', '', '', '', '', '', '', 97, 6, 'data/1-single-thumbnail.jpg', 9, 1, 690000.0000, 0, 0, '2009-02-03', 'http://www.zara.com/us/en/man/jackets/synthetic-leather-jacket-c358050p1293384.html', 'sdg', NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 0, 0, 1, '2009-02-03 16:59:00', '2013-06-30 12:28:52', 166),
 	(31, 'Product 4', '', '', '', '', '', '', '', 998, 6, 'data/san_pham/IMG_3958-400x600.JPG', 11, 1, 390000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 0, 0, 1, '2009-02-03 17:00:10', '2013-07-04 00:21:09', 11),
 	(40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'data/san_pham/IMG_3935-400x600.JPG', 8, 1, 652000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', 'M', 'Đỏ', 10.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 0, 0, 1, '2009-02-03 21:07:12', '2013-07-04 00:21:07', 4),
-	(41, 'Product 14', '', '', '', '', '', '', '', 963, 5, 'data/san_pham/IMG_4003-400x600.JPG', 9, 1, 650000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 0, 0, 1, '2009-02-03 21:07:26', '2013-07-04 00:21:03', 22),
+	(41, 'Product 14', '', '', '', '', '', '', '', 963, 5, 'data/san_pham/IMG_4003-400x600.JPG', 9, 1, 650000.0000, 0, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 0, 0, 1, '2009-02-03 21:07:26', '2013-07-04 00:21:03', 30),
 	(42, 'Product 15', '', '', '', '', '', '', '', 98, 5, 'data/san_pham/IMG_3909-400x600 (1).JPG', 13, 1, 750000.0000, 400, 9, '2009-02-04', 'http://www.geckomedia.vn', NULL, NULL, 0.00000000, 1, 1.00000000, 2.00000000, 3.00000000, 1, 1, 0, 0, 1, '2009-02-03 21:07:37', '2013-06-30 16:05:56', 25),
-	(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'data/san_pham/IMG_3917-400x600 (1).JPG', 8, 1, 100.0000, 400, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 0, 0, 1, '2009-02-03 21:08:40', '2013-06-30 16:05:06', 6),
+	(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'data/san_pham/IMG_3917-400x600 (1).JPG', 8, 1, 100.0000, 400, 9, '2009-02-03', 'http://www.geckomedia.vn', NULL, NULL, 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 0, 0, 1, '2009-02-03 21:08:40', '2013-06-30 16:05:06', 7),
 	(50, '', '', '', '', '', '', '', '', 1, 0, NULL, 0, 0, 450000.0000, 0, 0, '0000-00-00', 'http://www.dantri.vn', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 0, '2013-06-20 23:58:26', '0000-00-00 00:00:00', 0),
 	(51, '', '', '', '', '', '', '', '', 0, 0, NULL, 0, 0, 0.0000, 0, 0, '0000-00-00', '', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 0, '2013-06-22 00:25:32', '0000-00-00 00:00:00', 0),
 	(52, '', '', '', '', '', '', '', '', 22, 0, NULL, 0, 0, 235532.0000, 0, 0, '0000-00-00', '6436436', NULL, NULL, 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 0, 0, 0, 0, 0, '2013-06-22 00:31:11', '0000-00-00 00:00:00', 0),
@@ -3160,7 +3191,7 @@ CREATE TABLE IF NOT EXISTS `user_group` (
 -- Dumping data for table weorder.user_group: 2 rows
 /*!40000 ALTER TABLE `user_group` DISABLE KEYS */;
 INSERT INTO `user_group` (`user_group_id`, `name`, `permission`) VALUES
-	(1, 'Top Administrator', 'a:2:{s:6:"access";a:140:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";i:136;s:19:"module/filteroption";i:137;s:13:"module/viewed";i:138;s:13:"shipping/free";i:139;s:21:"payment/bank_transfer";}s:6:"modify";a:140:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";i:136;s:19:"module/filteroption";i:137;s:13:"module/viewed";i:138;s:13:"shipping/free";i:139;s:21:"payment/bank_transfer";}}'),
+	(1, 'Top Administrator', 'a:2:{s:6:"access";a:137:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:15:"catalog/message";i:8;s:12:"catalog/news";i:9;s:21:"catalog/news_category";i:10;s:20:"catalog/news_comment";i:11;s:14:"catalog/option";i:12;s:15:"catalog/product";i:13;s:14:"catalog/review";i:14;s:18:"common/filemanager";i:15;s:13:"design/banner";i:16;s:19:"design/custom_field";i:17;s:13:"design/layout";i:18;s:14:"extension/feed";i:19;s:17:"extension/manager";i:20;s:16:"extension/module";i:21;s:17:"extension/payment";i:22;s:18:"extension/shipping";i:23;s:15:"extension/total";i:24;s:16:"feed/google_base";i:25;s:19:"feed/google_sitemap";i:26;s:20:"localisation/country";i:27;s:21:"localisation/currency";i:28;s:21:"localisation/geo_zone";i:29;s:21:"localisation/language";i:30;s:25:"localisation/length_class";i:31;s:25:"localisation/order_status";i:32;s:26:"localisation/return_action";i:33;s:26:"localisation/return_reason";i:34;s:26:"localisation/return_status";i:35;s:25:"localisation/stock_status";i:36;s:22:"localisation/tax_class";i:37;s:21:"localisation/tax_rate";i:38;s:25:"localisation/weight_class";i:39;s:17:"localisation/zone";i:40;s:14:"module/account";i:41;s:16:"module/affiliate";i:42;s:13:"module/banner";i:43;s:17:"module/bestseller";i:44;s:15:"module/carousel";i:45;s:15:"module/category";i:46;s:15:"module/featured";i:47;s:13:"module/filter";i:48;s:19:"module/filteroption";i:49;s:18:"module/google_talk";i:50;s:18:"module/information";i:51;s:13:"module/latest";i:52;s:28:"module/manufacturersdropdown";i:53;s:20:"module/news_category";i:54;s:19:"module/newsfeatured";i:55;s:17:"module/newslatest";i:56;s:16:"module/slideshow";i:57;s:14:"module/special";i:58;s:12:"module/store";i:59;s:18:"module/tnt_newscat";i:60;s:13:"module/viewed";i:61;s:20:"module/vqmod_manager";i:62;s:14:"module/welcome";i:63;s:24:"payment/authorizenet_aim";i:64;s:21:"payment/bank_transfer";i:65;s:14:"payment/cheque";i:66;s:11:"payment/cod";i:67;s:21:"payment/free_checkout";i:68;s:22:"payment/klarna_account";i:69;s:22:"payment/klarna_invoice";i:70;s:14:"payment/liqpay";i:71;s:20:"payment/moneybookers";i:72;s:14:"payment/nochex";i:73;s:15:"payment/paymate";i:74;s:16:"payment/paypoint";i:75;s:13:"payment/payza";i:76;s:26:"payment/perpetual_payments";i:77;s:14:"payment/pp_pro";i:78;s:17:"payment/pp_pro_uk";i:79;s:19:"payment/pp_standard";i:80;s:15:"payment/sagepay";i:81;s:22:"payment/sagepay_direct";i:82;s:18:"payment/sagepay_us";i:83;s:19:"payment/twocheckout";i:84;s:28:"payment/web_payment_software";i:85;s:16:"payment/worldpay";i:86;s:27:"report/affiliate_commission";i:87;s:22:"report/customer_credit";i:88;s:22:"report/customer_online";i:89;s:21:"report/customer_order";i:90;s:22:"report/customer_reward";i:91;s:24:"report/product_purchased";i:92;s:21:"report/product_viewed";i:93;s:18:"report/sale_coupon";i:94;s:17:"report/sale_order";i:95;s:18:"report/sale_return";i:96;s:20:"report/sale_shipping";i:97;s:15:"report/sale_tax";i:98;s:14:"sale/affiliate";i:99;s:12:"sale/contact";i:100;s:11:"sale/coupon";i:101;s:13:"sale/customer";i:102;s:20:"sale/customer_ban_ip";i:103;s:19:"sale/customer_group";i:104;s:10:"sale/order";i:105;s:11:"sale/return";i:106;s:12:"sale/voucher";i:107;s:18:"sale/voucher_theme";i:108;s:15:"setting/setting";i:109;s:13:"setting/store";i:110;s:16:"shipping/auspost";i:111;s:17:"shipping/citylink";i:112;s:14:"shipping/fedex";i:113;s:13:"shipping/flat";i:114;s:13:"shipping/free";i:115;s:13:"shipping/item";i:116;s:23:"shipping/parcelforce_48";i:117;s:15:"shipping/pickup";i:118;s:19:"shipping/royal_mail";i:119;s:12:"shipping/ups";i:120;s:13:"shipping/usps";i:121;s:15:"shipping/weight";i:122;s:11:"tool/backup";i:123;s:14:"tool/error_log";i:124;s:12:"total/coupon";i:125;s:12:"total/credit";i:126;s:14:"total/handling";i:127;s:16:"total/klarna_fee";i:128;s:19:"total/low_order_fee";i:129;s:12:"total/reward";i:130;s:14:"total/shipping";i:131;s:15:"total/sub_total";i:132;s:9:"total/tax";i:133;s:11:"total/total";i:134;s:13:"total/voucher";i:135;s:9:"user/user";i:136;s:20:"user/user_permission";}s:6:"modify";a:137:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:15:"catalog/message";i:8;s:12:"catalog/news";i:9;s:21:"catalog/news_category";i:10;s:20:"catalog/news_comment";i:11;s:14:"catalog/option";i:12;s:15:"catalog/product";i:13;s:14:"catalog/review";i:14;s:18:"common/filemanager";i:15;s:13:"design/banner";i:16;s:19:"design/custom_field";i:17;s:13:"design/layout";i:18;s:14:"extension/feed";i:19;s:17:"extension/manager";i:20;s:16:"extension/module";i:21;s:17:"extension/payment";i:22;s:18:"extension/shipping";i:23;s:15:"extension/total";i:24;s:16:"feed/google_base";i:25;s:19:"feed/google_sitemap";i:26;s:20:"localisation/country";i:27;s:21:"localisation/currency";i:28;s:21:"localisation/geo_zone";i:29;s:21:"localisation/language";i:30;s:25:"localisation/length_class";i:31;s:25:"localisation/order_status";i:32;s:26:"localisation/return_action";i:33;s:26:"localisation/return_reason";i:34;s:26:"localisation/return_status";i:35;s:25:"localisation/stock_status";i:36;s:22:"localisation/tax_class";i:37;s:21:"localisation/tax_rate";i:38;s:25:"localisation/weight_class";i:39;s:17:"localisation/zone";i:40;s:14:"module/account";i:41;s:16:"module/affiliate";i:42;s:13:"module/banner";i:43;s:17:"module/bestseller";i:44;s:15:"module/carousel";i:45;s:15:"module/category";i:46;s:15:"module/featured";i:47;s:13:"module/filter";i:48;s:19:"module/filteroption";i:49;s:18:"module/google_talk";i:50;s:18:"module/information";i:51;s:13:"module/latest";i:52;s:28:"module/manufacturersdropdown";i:53;s:20:"module/news_category";i:54;s:19:"module/newsfeatured";i:55;s:17:"module/newslatest";i:56;s:16:"module/slideshow";i:57;s:14:"module/special";i:58;s:12:"module/store";i:59;s:18:"module/tnt_newscat";i:60;s:13:"module/viewed";i:61;s:20:"module/vqmod_manager";i:62;s:14:"module/welcome";i:63;s:24:"payment/authorizenet_aim";i:64;s:21:"payment/bank_transfer";i:65;s:14:"payment/cheque";i:66;s:11:"payment/cod";i:67;s:21:"payment/free_checkout";i:68;s:22:"payment/klarna_account";i:69;s:22:"payment/klarna_invoice";i:70;s:14:"payment/liqpay";i:71;s:20:"payment/moneybookers";i:72;s:14:"payment/nochex";i:73;s:15:"payment/paymate";i:74;s:16:"payment/paypoint";i:75;s:13:"payment/payza";i:76;s:26:"payment/perpetual_payments";i:77;s:14:"payment/pp_pro";i:78;s:17:"payment/pp_pro_uk";i:79;s:19:"payment/pp_standard";i:80;s:15:"payment/sagepay";i:81;s:22:"payment/sagepay_direct";i:82;s:18:"payment/sagepay_us";i:83;s:19:"payment/twocheckout";i:84;s:28:"payment/web_payment_software";i:85;s:16:"payment/worldpay";i:86;s:27:"report/affiliate_commission";i:87;s:22:"report/customer_credit";i:88;s:22:"report/customer_online";i:89;s:21:"report/customer_order";i:90;s:22:"report/customer_reward";i:91;s:24:"report/product_purchased";i:92;s:21:"report/product_viewed";i:93;s:18:"report/sale_coupon";i:94;s:17:"report/sale_order";i:95;s:18:"report/sale_return";i:96;s:20:"report/sale_shipping";i:97;s:15:"report/sale_tax";i:98;s:14:"sale/affiliate";i:99;s:12:"sale/contact";i:100;s:11:"sale/coupon";i:101;s:13:"sale/customer";i:102;s:20:"sale/customer_ban_ip";i:103;s:19:"sale/customer_group";i:104;s:10:"sale/order";i:105;s:11:"sale/return";i:106;s:12:"sale/voucher";i:107;s:18:"sale/voucher_theme";i:108;s:15:"setting/setting";i:109;s:13:"setting/store";i:110;s:16:"shipping/auspost";i:111;s:17:"shipping/citylink";i:112;s:14:"shipping/fedex";i:113;s:13:"shipping/flat";i:114;s:13:"shipping/free";i:115;s:13:"shipping/item";i:116;s:23:"shipping/parcelforce_48";i:117;s:15:"shipping/pickup";i:118;s:19:"shipping/royal_mail";i:119;s:12:"shipping/ups";i:120;s:13:"shipping/usps";i:121;s:15:"shipping/weight";i:122;s:11:"tool/backup";i:123;s:14:"tool/error_log";i:124;s:12:"total/coupon";i:125;s:12:"total/credit";i:126;s:14:"total/handling";i:127;s:16:"total/klarna_fee";i:128;s:19:"total/low_order_fee";i:129;s:12:"total/reward";i:130;s:14:"total/shipping";i:131;s:15:"total/sub_total";i:132;s:9:"total/tax";i:133;s:11:"total/total";i:134;s:13:"total/voucher";i:135;s:9:"user/user";i:136;s:20:"user/user_permission";}}'),
 	(10, 'Demonstration', '');
 /*!40000 ALTER TABLE `user_group` ENABLE KEYS */;
 
