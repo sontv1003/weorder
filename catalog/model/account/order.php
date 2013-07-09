@@ -145,8 +145,14 @@ class ModelAccountOrder extends Model {
 
         return $query->rows;
     }
+    
+    public function checkOrderStatus($order_id) {
+        $query = $this->db->query("SELECT order_status_id  FROM " . DB_PREFIX . "order_history WHERE order_id = '" . (int) $order_id . "' ORDER BY order_history_id DESC LIMIT 0,1");
+        return $query->rows;
+    }
+    
     public function getOrderDetailProducts($order_id) {
-        $query = $this->db->query("SELECT op.*, p.image, oh.order_status_id FROM " . DB_PREFIX . "order_product op INNER JOIN product p ON p.product_id = op.product_id INNER JOIN order_history oh ON oh.order_id = op.order_id WHERE op.order_id = '" . (int) $order_id . "' ORDER BY op.link");
+        $query = $this->db->query("SELECT op.*, p.image FROM " . DB_PREFIX . "order_product op INNER JOIN product p ON p.product_id = op.product_id WHERE op.order_id = '" . (int) $order_id . "' ORDER BY op.link");
 
         return $query->rows;
     }

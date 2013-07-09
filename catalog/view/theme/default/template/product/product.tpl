@@ -459,9 +459,9 @@
             </section>
 
             <?php if ($products) { ?>
-                <section class="box box-bgcolor mtm">
+                <section class="box box-bgcolor mtm" style="margin: 0px;">
                     <div id="recommengine_recommendations">
-                        <div class="box box-bdr box-bgcolor mbm mtl" data-recommid="recommBox1">
+                        <div class="box box-bdr box-bgcolor mbm mtl" data-recommid="recommBox1" style="margin: 0px;">
                             <h3 class="mam pbm ui-borderBottom">Giới thiệu cho bạn</h3>
                             <ul class="catalog_grid">
                                 <?php foreach ($products as $product) { ?>

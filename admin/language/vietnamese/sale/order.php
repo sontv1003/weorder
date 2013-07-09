@@ -198,4 +198,5 @@ $_['error_upload']            = 'Yêu cầu upload!';
 $_['error_filename']          = 'Tên file phải từ 3 đến 128 ký tự!';
 $_['error_filetype']          = 'Kiểu file không hợp lệ!';
 $_['error_action']            = 'Cảnh báo: Bạn không thể hoàn thành!';
+$_['tab_history']             = 'Lịch sử đơn hàng';
 ?>

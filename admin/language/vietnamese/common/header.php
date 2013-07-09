@@ -78,4 +78,5 @@ $_['text_voucher_theme']    = 'Giao diện phiếu quà tặng';
 $_['text_weight_class']     = 'Trọng Lượng';
 $_['text_length_class']     = 'Chiều dài';
 $_['text_zone']             = 'Vùng';
+$_['text_filter']           = 'Bộ lọc';
 ?>
