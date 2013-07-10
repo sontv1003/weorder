@@ -254,7 +254,35 @@ class ModelSaleOrder extends Model {
 			
 			$total += $order_total['value'];
 		}
-		
+                
+		if (isset($data['txt_shipping_fee'])) {
+                    $order_shippings = $this->db->query("SELECT order_total_id FROM ". DB_PREFIX . "order_total WHERE code='shipping_fee' AND order_id = '". (int)$order_id. "'");
+                    $order_total_id = null;
+                    if($order_shippings->num_rows) {
+                        foreach($order_shippings->rows as $order_shipping) {
+                            $order_total_id = $order_shipping['order_total_id'];
+                        }
+                    }
+                    
+                    $this->db->query("INSERT INTO " . DB_PREFIX . "order_total SET order_total_id = '" . (int)$order_total_id . "', order_id = '" . (int)$order_id . "', code = 'shipping_fee', title = '" . $this->db->escape($data['txt_shipping_fee_title']) . "', text = '" . $this->db->escape($data['txt_shipping_fee_text']) . "', `value` = '" . (float)$data['txt_shipping_fee'] . "', sort_order = '" . (int)$data['txt_shipping_fee_sort_order'] . "'");
+                    
+                    $total += $data['txt_shipping_fee'];
+                }
+                
+		if (isset($data['txt_pay'])) {
+                    $order_shippings = $this->db->query("SELECT order_total_id FROM ". DB_PREFIX . "order_total WHERE code='shipping_pay' AND order_id = '". (int)$order_id. "'");
+                    $order_total_id = null;
+                    if($order_shippings->num_rows) {
+                        foreach($order_shippings->rows as $order_shipping) {
+                            $order_total_id = $order_shipping['order_total_id'];
+                        }
+                    }
+                    
+                    $this->db->query("INSERT INTO " . DB_PREFIX . "order_total SET order_total_id = '" . (int)$order_total_id . "', order_id = '" . (int)$order_id . "', code = 'shipping_pay', title = '" . $this->db->escape($data['txt_pay_title']) . "', text = '" . $this->db->escape($data['txt_pay_text']) . "', `value` = '" . (float)$data['txt_pay'] . "', sort_order = '" . (int)$data['txt_pay_sort_order'] . "'");
+                    
+                    $total += $data['txt_pay'];
+                }
+
 		// Affiliate
 		$affiliate_id = 0;
 		$commission = 0;

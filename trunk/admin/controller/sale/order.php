@@ -77,6 +77,20 @@ class ControllerSaleOrder extends Controller {
 
         $this->load->model('sale/order');
 
+        if (isset($this->request->post['txt_shipping_fee'])) {
+            $shipping_fee = $this->request->post['txt_shipping_fee'];
+            $shipping_pay = $this->request->post['txt_pay'];
+            $this->request->post['txt_shipping_fee_text'] = $this->currency->format($shipping_fee, 'VND', 1.00000000);
+            ;
+            $this->request->post['txt_shipping_fee_sort_order'] = '3';
+            $this->request->post['txt_shipping_fee_title'] = $this->language->get('entry_shipping_fee');
+
+            $this->request->post['txt_pay_text'] = $this->currency->format($shipping_pay, 'VND', 1.00000000);
+            ;
+            $this->request->post['txt_pay_sort_order'] = '4';
+            $this->request->post['txt_pay_title'] = $this->language->get('entry_pay');
+        }
+
         if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
             $this->model_sale_order->editOrder($this->request->get['order_id'], $this->request->post);
 
@@ -554,6 +568,9 @@ class ControllerSaleOrder extends Controller {
         $this->data['tab_customer'] = $this->language->get('tab_customer');
         $this->data['tab_payment'] = $this->language->get('tab_payment');
         $this->data['tab_shipping'] = $this->language->get('tab_shipping');
+        $this->data['tab_shipping_fee'] = $this->language->get('tab_shipping_fee');
+        $this->data['entry_shipping_fee'] = $this->language->get('entry_shipping_fee');
+        $this->data['entry_pay'] = $this->language->get('entry_pay');
         $this->data['tab_product'] = $this->language->get('tab_product');
         $this->data['tab_voucher'] = $this->language->get('tab_voucher');
         $this->data['tab_total'] = $this->language->get('tab_total');
@@ -688,6 +705,18 @@ class ControllerSaleOrder extends Controller {
             $this->data['error_shipping_method'] = $this->error['shipping_method'];
         } else {
             $this->data['error_shipping_method'] = '';
+        }
+
+        if (isset($this->error['txt_shipping_fee'])) {
+            $this->data['error_txt_shipping_fee'] = $this->error['txt_shipping_fee'];
+        } else {
+            $this->data['error_txt_shipping_fee'] = '';
+        }
+
+        if (isset($this->error['txt_pay'])) {
+            $this->data['error_txt_pay'] = $this->error['txt_pay'];
+        } else {
+            $this->data['error_txt_pay'] = '';
         }
 
         $url = '';
@@ -1090,6 +1119,31 @@ class ControllerSaleOrder extends Controller {
             $this->data['shipping_code'] = '';
         }
 
+
+        if (isset($this->request->post['txt_shipping_fee'])) {
+            $this->data['txt_shipping_fee'] = $this->request->post['txt_shipping_fee'];
+            $this->data['txt_pay'] = $this->request->post['shipping_code'];
+        } else {
+            $this->data['txt_shipping_fee'] = 0;
+            $this->data['txt_pay'] = 0;
+            if (isset($this->request->get['order_id'])) {
+                $order_shippings = $this->model_sale_order->getOrderTotals($this->request->get['order_id']);
+                $flag = false;
+
+                foreach ($order_shippings as $order_shipping) {
+                    if ($order_shipping['code'] == 'shipping_fee') {
+                        $flag = true;
+                        $this->data['txt_shipping_fee'] = $order_shipping['value'];
+                    }
+
+                    if ($order_shipping['code'] == 'shipping_pay') {
+                        $this->data['txt_pay'] = $order_shipping['value'];
+                    }
+                }
+            }
+        }
+
+
         if (isset($this->request->post['order_product'])) {
             $order_products = $this->request->post['order_product'];
         } elseif (isset($this->request->get['order_id'])) {
@@ -1175,7 +1229,7 @@ class ControllerSaleOrder extends Controller {
         if ((utf8_strlen($this->request->post['firstname']) < 1) || (utf8_strlen($this->request->post['firstname']) > 32)) {
             $this->error['firstname'] = $this->language->get('error_firstname');
         }
-        
+
         if ((utf8_strlen($this->request->post['email']) > 96) || (!preg_match('/^[^\@]+@.*\.[a-z]{2,6}$/i', $this->request->post['email']))) {
             $this->error['email'] = $this->language->get('error_email');
         }
@@ -1190,6 +1244,14 @@ class ControllerSaleOrder extends Controller {
 
         if ((utf8_strlen($this->request->post['payment_address_1']) < 3) || (utf8_strlen($this->request->post['payment_address_1']) > 128)) {
             $this->error['payment_address_1'] = $this->language->get('error_address_1');
+        }
+
+        if (!empty($this->request->post['txt_shipping_fee']) && !is_numeric($this->request->post['txt_shipping_fee'])) {
+            $this->error['txt_shipping_fee'] = $this->language->get('error_txt_shipping_fee');
+        }
+
+        if (!empty($this->request->post['txt_pay']) && !is_numeric($this->request->post['txt_pay'])) {
+            $this->error['txt_pay'] = $this->language->get('error_txt_pay');
         }
 
         $this->load->model('localisation/country');
@@ -1212,7 +1274,7 @@ class ControllerSaleOrder extends Controller {
         if ($this->request->post['payment_country_id'] == '') {
             $this->error['payment_country'] = $this->language->get('error_country');
         }
-        
+
         // Check if any products require shipping
         $shipping = false;
 
@@ -1232,11 +1294,11 @@ class ControllerSaleOrder extends Controller {
             if ((utf8_strlen($this->request->post['shipping_firstname']) < 1) || (utf8_strlen($this->request->post['shipping_firstname']) > 32)) {
                 $this->error['shipping_firstname'] = $this->language->get('error_firstname');
             }
-            
+
             if ((utf8_strlen($this->request->post['shipping_address_1']) < 3) || (utf8_strlen($this->request->post['shipping_address_1']) > 128)) {
                 $this->error['shipping_address_1'] = $this->language->get('error_address_1');
             }
-            
+
             $this->load->model('localisation/country');
 
             $country_info = $this->model_localisation_country->getCountry($this->request->post['shipping_country_id']);
@@ -1244,10 +1306,10 @@ class ControllerSaleOrder extends Controller {
             if ($this->request->post['shipping_country_id'] == '') {
                 $this->error['shipping_country'] = $this->language->get('error_country');
             }
-
-            if (!isset($this->request->post['shipping_zone_id']) || $this->request->post['shipping_zone_id'] == '') {
-                $this->error['shipping_zone'] = $this->language->get('error_zone');
-            }
+//
+//            if (!isset($this->request->post['shipping_zone_id']) || $this->request->post['shipping_zone_id'] == '') {
+//                $this->error['shipping_zone'] = $this->language->get('error_zone');
+//            }
         }
 
         if ($this->error && !isset($this->error['warning'])) {
