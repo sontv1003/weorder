@@ -78,16 +78,17 @@ class ControllerSaleOrder extends Controller {
         $this->load->model('sale/order');
 
         if (isset($this->request->post['txt_shipping_fee'])) {
+            
             $shipping_fee = $this->request->post['txt_shipping_fee'];
             $shipping_pay = $this->request->post['txt_pay'];
             $this->request->post['txt_shipping_fee_text'] = $this->currency->format($shipping_fee, 'VND', 1.00000000);
-            ;
-            $this->request->post['txt_shipping_fee_sort_order'] = '3';
+            
+            $this->request->post['txt_shipping_fee_sort_order'] = '2';
             $this->request->post['txt_shipping_fee_title'] = $this->language->get('entry_shipping_fee');
 
             $this->request->post['txt_pay_text'] = $this->currency->format($shipping_pay, 'VND', 1.00000000);
-            ;
-            $this->request->post['txt_pay_sort_order'] = '4';
+            
+            $this->request->post['txt_pay_sort_order'] = '3';
             $this->request->post['txt_pay_title'] = $this->language->get('entry_pay');
         }
 

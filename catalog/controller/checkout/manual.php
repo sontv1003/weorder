@@ -325,7 +325,9 @@ class ControllerCheckoutManual extends Controller {
 						$zone = '';
 						$zone_code = '';
 					}					
-	
+                                        
+                                        $this->request->post['shipping_lastname'] = '';
+                                        
 					$address_data = array(
 						'firstname'      => $this->request->post['shipping_firstname'],
 						'lastname'       => $this->request->post['shipping_lastname'],
@@ -504,7 +506,7 @@ class ControllerCheckoutManual extends Controller {
 					$zone = '';
 					$zone_code = '';
 				}					
-				
+				$this->request->post['payment_lastname'] = '';
 				$address_data = array(
 					'firstname'      => $this->request->post['payment_firstname'],
 					'lastname'       => $this->request->post['payment_lastname'],
