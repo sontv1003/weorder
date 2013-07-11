@@ -225,45 +225,52 @@
         </table>
     </div>
     <div class="clear"></div>
+
     <div class="box-bgcolor payment_cart">
-
         <?php
-        $i = 0;
-        foreach ($totals as $total) {
-            ?>
-            <?php if ($i == 0) { ?>
-                <ul>
-                    <li class="head_cart1" style="width: 310px; color:#000;">Tổng số lượng trong giỏ hàng là </li>
-                    <li class="head_cart2" style="width: 163px;"><?php echo $total_quantity ?></li>
-                    <li class="head_cart1" style="width: 198px; color:#000;"><?php echo $total['title']; ?></li>
-                    <li class="head_cart2" style="width: 237px;"><?php echo $total['text']; ?></li>
-                </ul>
-            <?php } else { ?>
-
-                <div>
-                    <a href="<?php echo $checkout; ?>"><div class="fl dytt fontUTM" style="width: 518px;"><?php echo $button_checkout; ?></div></a>
-                    <div id="phis" class="fr">
-                        <ul>
-                            <li>phí ship quốc tế</li>
-                            <li>0</li>
-                            <li>phí ship trong nước</li>
-                            <li>0</li>
-                        </ul>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <div>
-                    <div class="fl dky fontUTM">Hủy đơn hàng</div>
-                    <div class="fr cost_payment"><b><?php echo $total['text']; ?></b></div>
-                    <div class="fr total_payment"><b>Tổng tiền bạn phải trả là:<?php //echo $total['title'];            ?></b></div>
-                    <div class="clear"></div>
-                </div>
-
-                <?php
-            }
-            $i++;
-        }
+        $count = count($totals);
         ?>
+        <ul>
+            <li class="head_cart1" style="width: 310px; color:#000;">Tổng số lượng trong giỏ hàng là </li>
+            <li class="head_cart2" style="width: 163px;"><?php echo $total_quantity ?></li>
+            <li class="head_cart1" style="width: 198px; color:#000;"><?php echo $totals[0]['title']; ?></li>
+            <li class="head_cart2" style="width: 237px;"><?php echo $totals[0]['text']; ?></li>
+        </ul>
+
+        <?php if ($count == 2): ?>
+            <div>
+                <a href="<?php echo $checkout; ?>"><div class="fl dytt fontUTM" style="width: 518px;"><?php echo $button_checkout; ?></div></a>
+                <div id="phis" class="fr">
+                    <ul>
+                        <li>phí ship quốc tế</li>
+                        <li>0 VNĐ (Tính sau)</li>
+                        <li>Tiền công </li>
+                        <li>0 VNĐ (Tính sau)</li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        <?php else: ?>
+            <a href="<?php echo $checkout; ?>"><div class="fl dytt fontUTM" style="width: 518px;"><?php echo $button_checkout; ?></div></a>
+            <div>          
+                <div id="phis" class="fr">
+                    <ul>
+                        <?php for ($i = 1; $i < $count - 1; $i++) { ?>
+                            <li><?php echo $totals[$i]['title']; ?></li>
+                            <li><?php echo $totals[$i]['text']; ?></li>
+                        <?php } ?>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        <?php endif; ?>
+        <div>
+            <div class="fl dky fontUTM">Hủy đơn hàng</div>
+            <div class="fr cost_payment"><b><?php echo $totals[$count - 1]['text']; ?></b></div>
+            <div class="fr total_payment"><b>Tổng tiền bạn phải trả là:</b></div>
+            <div class="clear"></div>
+        </div>
+
     </div>
     <?php echo $content_bottom; ?></div>
 <script type="text/javascript"><!--
@@ -371,7 +378,7 @@
         var link = $.trim($('#order_link').val());
         if (link != '') {
             if (!link.match('http://') && !link.match('https://')) {
-                link = 'http://'+link;
+                link = 'http://' + link;
             }
         }
 
