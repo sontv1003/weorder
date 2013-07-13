@@ -232,6 +232,7 @@ class ControllerProductProduct extends Controller {
                 'separator' => $this->language->get('text_separator')
             );
 
+            $this->data['current_url'] = $this->url->link('product/product', $url . '&product_id=' . $this->request->get['product_id']);
             $this->document->setTitle($product_info['name']);
             $this->document->setDescription($product_info['meta_description']);
             $this->document->setKeywords($product_info['meta_keyword']);
@@ -241,6 +242,7 @@ class ControllerProductProduct extends Controller {
             $this->document->addStyle('catalog/view/javascript/jquery/colorbox/colorbox.css');
 
             $this->data['heading_title'] = $product_info['name'];
+            $this->data['product_link'] = $product_info['link'];
 
             $this->data['text_select'] = $this->language->get('text_select');
             $this->data['text_manufacturer'] = $this->language->get('text_manufacturer');

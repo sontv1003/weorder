@@ -26,7 +26,12 @@
 @font-face
 {
     font-family: UTM_Bebas;
-    src:url(fonts/UTM_Bebas.ttf)
+    src:url(fonts/UTM_Bebas.ttf);
+}
+@font-face
+{
+    font-family: "Myriad Pro";
+    src:url(fonts/MYRIADPRO-REGULAR.OTF);
 }
 
 h4, h5, .h4, .h5 {
@@ -159,7 +164,7 @@ h4, h5, .h4, .h5 {
     float: left;
     text-align: center;
     color: #555;
-    margin: 15px 0 160px 18px;
+    margin: 20px 0 160px 18px;
 }
 .list_pic{
     display: block;
@@ -344,9 +349,19 @@ h4, h5, .h4, .h5 {
 
 p.pro_description {
     font-family: 'UTM Avo';
-    margin-top: -5px;
+    margin-top: -10px;
     margin-left: 45px;
     width: 250px; 
     height: 30px;
     overflow: hidden;
+}
+.xemlink a {
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #900;
+}
+.xemlink a:hover {
+    color: #ccc;
 }

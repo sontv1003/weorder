@@ -82,4 +82,5 @@ $_['text_zone']             = 'Vùng';
 $_['text_news']        			= 'Tin tức';
 $_['text_news_category']  	= 'Danh mục tin tức';
 $_['text_news_comment']  	= 'Nhận xét';
+$_['text_filter']           = 'Bộ lọc';
 ?>

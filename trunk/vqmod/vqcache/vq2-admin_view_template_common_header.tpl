@@ -164,6 +164,13 @@ $(document).ready(function(){
           </li>
           <li><a href="<?php echo $error_log; ?>"><?php echo $text_error_log; ?></a></li>
           <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+<!--          <li><a class="parent">Tin nhắn</a>
+              <ul>
+                  <li><a href="<?php echo $message; ?>">Gửi tin nhắn</a></li>
+                  <li><a href="<?php echo $message; ?>">Danh sách tin</a></li>
+              </ul>
+          </li>-->
+          
         </ul>
       </li>
       <li id="reports"><a class="top"><?php echo $text_reports; ?></a>

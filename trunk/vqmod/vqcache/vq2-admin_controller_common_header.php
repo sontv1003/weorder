@@ -182,7 +182,13 @@ $this->data['text_news'] = $this->language->get('text_news');
 $this->data['news'] = $this->url->link('catalog/news', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['news_category'] = $this->url->link('catalog/news_category', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['news_comment'] = $this->url->link('catalog/news_comment', 'token=' . $this->session->data['token'], 'SSL');
-			
+			$this->data['vqmod_manager'] = $this->url->link('module/vqmod_manager', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['zone'] = $this->url->link('localisation/zone', 'token=' . $this->session->data['token'], 'SSL');
+$this->data['news'] = $this->url->link('catalog/news', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['news_category'] = $this->url->link('catalog/news_category', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['news_comment'] = $this->url->link('catalog/news_comment', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['message'] = $this->url->link('catalog/message', 'token=' . $this->session->data['token'], 'SSL');
+                        
 			$this->data['stores'] = array();
 			
 			$this->load->model('setting/store');

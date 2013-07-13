@@ -39,6 +39,7 @@
                                         </span>
                                     <?php } ?>
                                     <span class="prd-title fsm" property="gr:name"><?php echo $heading_title; ?></span>
+                                    <p class="xemlink"><a href="<?php echo $product_link; ?>" target="_blank">Xem link</a></p>
                                     <span class="prd-price fsm" property="gr:name"><?php echo $text_price; ?> <span class="lbPrice"><?php echo $price; ?></span></span>
                                 </h1>
                                 <div class="l-row vMid">
@@ -284,7 +285,7 @@
                             <a href="#productDetails" class="selected">Chi tiết sản phẩm</a>
                             <a href="#brandInformation">THÔNG TIN NHÃN HIỆU</a>
                             <a href="#productReviews">NHẬN XÉT SẢN PHẨM</a>
-
+                            <a href="#facebookComment">BÌNH LUẬN</a>
                         </div>
                         <div style="clear: both"></div>
                         <div class="ui-tabViewCont box-bdr">
@@ -362,30 +363,47 @@
                                         </div><!-- #ProductRating -->
                                     </div>
                                 </div>
+                                <div id="facebookComment">
+                                    <div class="box_facebook_comment" style="margin: 5px auto;">
+                                        <div id="fb-root"></div>
+                                        <script>(function(d, s, id) {
+                                                var js, fjs = d.getElementsByTagName(s)[0];
+                                                if (d.getElementById(id))
+                                                    return;
+                                                js = d.createElement(s);
+                                                js.id = id;
+                                                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=542409615782070";
+                                                fjs.parentNode.insertBefore(js, fjs);
+                                            }(document, 'script', 'facebook-jssdk'));</script>
+
+                                        <fb:comments href="<?php echo $current_url; ?>" width="750" num_posts="10"></fb:comments>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <script type="text/javascript">
                             var rating = {
-                                performSend: function(){
+                                performSend: function() {
                                     var data = this.getForm();
-                                    if ( this.isValid(data) == true) {
+                                    if (this.isValid(data) == true) {
                                         this.send(data);
                                     } else {
                                         msg = "Không thể gửi đánh giá, một vài thông tin còn thiếu.";
                                         $('#ProductRatingFormErrors').html(msg).show();
                                     }
                                 },
-                                getForm: function(){
+                                getForm: function() {
                                     var data = new Object();
                                     $(':input', '#ProductRatingForm').each(function() {
-                                        type = $('#'+this.id).attr('type');
+                                        type = $('#' + this.id).attr('type');
                                         name = '';
                                         value = '';
                                         if (type == 'radio') {
                                             if (!data[this.name]) {
                                                 data[this.name] = 'VALUE_MISSING';
-                                            };
-                                            if ( $('#'+this.id).is(':checked') ) {
+                                            }
+                                            ;
+                                            if ($('#' + this.id).is(':checked')) {
                                                 data[this.name] = this.value;
                                             }
                                         } else {
@@ -401,24 +419,25 @@
                                         name = name.replace('[', '_').replace(']', '');
                                         if (name != 'rating-customer' && (value == '' || value == 'VALUE_MISSING')) {
                                             /*TODO: more validation!?*/
-                                            $('#'+name).css('border', '1px solid #f16048');
-                                            $('span#'+name).css('color', '#df280a').css('border', 'none');
-                                            $('legend#'+name).css('color', '#df280a').css('border', 'none');
-                                            $('label[for='+name+']').css('color', '#df280a').css('border', 'none');
-                
-                                            if( ['INPUT', 'TEXTAREA'].indexOf( $('#' + name)[0].tagName ) != -1 ) $('#' + name).css('background-color', '#FFC0C0');
+                                            $('#' + name).css('border', '1px solid #f16048');
+                                            $('span#' + name).css('color', '#df280a').css('border', 'none');
+                                            $('legend#' + name).css('color', '#df280a').css('border', 'none');
+                                            $('label[for=' + name + ']').css('color', '#df280a').css('border', 'none');
+
+                                            if (['INPUT', 'TEXTAREA'].indexOf($('#' + name)[0].tagName) != -1)
+                                                $('#' + name).css('background-color', '#FFC0C0');
                                             valid = false;
                                         } else {
-                                            $('#'+name).css('border', '1px solid #000');
-                                            $('#'+name).css('border-color', '#8E8E8E #C2C2C2 #E2E2E2');
-                                            $('span#'+name).css('color', '#000').css('border', 'none');
-                                            $('legend#'+name).css('color', '#000').css('border', 'none');
-                                            $('label[for='+name+']').css('color', '#000').css('border', 'none');
+                                            $('#' + name).css('border', '1px solid #000');
+                                            $('#' + name).css('border-color', '#8E8E8E #C2C2C2 #E2E2E2');
+                                            $('span#' + name).css('color', '#000').css('border', 'none');
+                                            $('legend#' + name).css('color', '#000').css('border', 'none');
+                                            $('label[for=' + name + ']').css('color', '#000').css('border', 'none');
                                         }
                                     });
                                     return valid;
                                 },
-                                send: function(data){
+                                send: function(data) {
                                     var successText = '<div class="msg-success">Cám ơn nhận xét của quý khách. Nhận xét sẽ hiển thị sau khi được thông qua.</div>';
                                     var errorText = '<div class="msg-error">Quá trình lưu đánh giá xảy ra lỗi. Xin hãy thử lại lần nữa</div>';
                                     var post = '';
@@ -430,7 +449,7 @@
                                         type: 'POST',
                                         url: '/catalog/sendRating/',
                                         data: post + '&YII_CSRF_TOKEN=88541ada72b317ffd4dd28215375541e119c9ce8' + '&ajax=1',
-                                        success: function(rtn){
+                                        success: function(rtn) {
                                             if (rtn == 'true') {
                                                 $('#ProductRating').html(successText);
                                             } else {
@@ -509,25 +528,25 @@
             dataType: 'json',
             success: function(json) {
                 $('.success, .warning, .attention, information, .error').remove();
-			
+
                 if (json['error']) {
                     if (json['error']['option']) {
                         for (i in json['error']['option']) {
                             $('#option-' + i).after('<span class="error">' + json['error']['option'][i] + '</span>');
                         }
                     }
-                } 
+                }
                 if (json['success']) {
                     $('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
-					
+
                     $('.success').fadeIn('slow');
-					
+
                     $('#cart-total').html(json['total']);
-				
+
                     //Nhay den trang gio hang
                     location = json['redirect'];
                     //$('html, body').animate({ scrollTop: 0 }, 'slow'); 
-                }	
+                }
             }
         });
     });
@@ -548,20 +567,20 @@
                     },
                     onComplete: function(file, json) {
                         $('#button-option-<?php echo $option['product_option_id']; ?>').attr('disabled', false);
-                                                                                                                                                                                                                                                                                                                                                                                                                        		
+
                         $('.error').remove();
-                                                                                                                                                                                                                                                                                                                                                                                                                        		
+
                         if (json['success']) {
                             alert(json['success']);
-                                                                                                                                                                                                                                                                                                                                                                                                                        			
+
                             $('input[name=\'option[<?php echo $option['product_option_id']; ?>]\']').attr('value', json['file']);
                         }
-                                                                                                                                                                                                                                                                                                                                                                                                                        		
+
                         if (json['error']) {
                             $('#option-<?php echo $option['product_option_id']; ?>').after('<span class="error">' + json['error'] + '</span>');
                         }
-                                                                                                                                                                                                                                                                                                                                                                                                                        		
-                        $('.loading').remove();	
+
+                        $('.loading').remove();
                     }
                 });
                 //--></script>
@@ -571,13 +590,13 @@
 <script type="text/javascript"><!--
     $('#review .pagination a').live('click', function() {
         $('#review').fadeOut('slow');
-		
+
         $('#review').load(this.href);
-	
+
         $('#review').fadeIn('slow');
-	
+
         return false;
-    });			
+    });
 
     $('#review').load('index.php?route=product/product/review&product_id=<?php echo $product_id; ?>');
 
@@ -600,10 +619,10 @@
                 if (data['error']) {
                     $('#review-title').after('<div class="warning">' + data['error'] + '</div>');
                 }
-			
+
                 if (data['success']) {
                     $('#review-title').after('<div class="success">' + data['success'] + '</div>');
-								
+
                     $('input[name=\'name\']').val('');
                     $('textarea[name=\'text\']').val('');
                     $('input[name=\'rating\']:checked').attr('checked', '');

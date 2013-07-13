@@ -289,8 +289,18 @@ font-family:utm bebas; padding-bottom:8px; margin:40px 0 0 30px; position:absolu
 .like_on_face{
 	position: absolute;
 	color: white !important;
-	bottom: 29px;
-	right: 20px;
+	bottom: 34px;
+	right: 24px;
+	padding: 5px;
+	height: 20px;
+	width: 101px;
+	text-align: center;
+}
+.share_on_face{
+	position: absolute;
+	color: white !important;
+	bottom: 34px;
+	right: 139px;
 	padding: 5px;
 	height: 20px;
 	width: 101px;

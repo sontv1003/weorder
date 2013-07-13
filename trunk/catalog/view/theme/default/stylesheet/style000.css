@@ -1,3 +1,8 @@
+@font-face
+{
+    font-family: "Myriad Pro";
+    src:url(fonts/MYRIADPRO-REGULAR.OTF);
+}
 #compare_shipping .center {
 	text-align: center;
 }
@@ -57,7 +62,7 @@ body {
 	line-height: 1.6rem
 }
 body, button, input, select, textarea {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Myriad Pro;
 	color: #404040
 }
 ::-moz-selection {
@@ -107,8 +112,8 @@ mark {
 	font-weight: bold
 }
 pre, code, kbd, samp {
-	font-family: monospace, monospace;
-	_font-family: 'courier new', monospace;
+	font-family: Myriad Pro;
+	_font-family: 'Myriad Pro';
 	font-size: 1em
 }
 pre {
@@ -125,7 +130,7 @@ q:before, q:after {
 }
 small {
     font-size: 11px;
-    font-family: Arial;
+    font-family: Myriad Pro;
 }
 sub, sup {
 	font-size: 10px;
@@ -3462,14 +3467,14 @@ label.gray strong {
 	width: 800px;
 	z-index: 9999;
 	color: #2b2b2b;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Myriad Pro;
 	font-size: 12px;
 	font-weight: normal;
 	line-height: 1.65em;
 	list-style: none outside none
 }
 div#payment-paypal {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Myriad Pro;
 	list-style: none outside none
 }
 #product-zoom-expanded-close {
@@ -3486,7 +3491,7 @@ div#payment-paypal {
 }
 #product-detail-quickview>p {
 	border: medium none;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Myriad Pro;
 	list-style: none outside none;
 	margin: 0;
 	outline: medium none;
@@ -3494,7 +3499,7 @@ div#payment-paypal {
 }
 a.popup-payment-close-btn, a:active.popup-payment-close-btn, a:visited.popup-payment-close-btn, a:hover.popup-payment-close-btn {
 	display: block;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Myriad Pro;
 	font-weight: normal;
 	text-decoration: none;
 	width: 60px
@@ -3584,7 +3589,7 @@ a.popup-payment-close-btn, a:active.popup-payment-close-btn, a:visited.popup-pay
 	height: 2px
 }
 .t-pageHeadline {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: Myriad Pro;
 	font-size: 30px;
 	font-weight: 100;
 	line-height: 50px
@@ -5379,7 +5384,7 @@ tr.coupon {
 	background-position: -40px -122px
 }
 #fancybox-title {
-	font-family: Helvetica;
+	font-family: Myriad Pro;
 	font-size: 12px;
 	z-index: 1102
 }
@@ -6285,7 +6290,7 @@ label.nl_header {
 #product-list-filters{padding:10px; height:39px}
 .filter-display select {
     border: 1px solid #CCCCCC;
-    font-family: Arial,Helvetica,sans-serif;
+    font-family: Myriad Pro;
     font-size: 12px;
     padding: 2px;
     width: 136px;
@@ -6505,4 +6510,8 @@ label.nl_header {
 }
 .hot_news  .banner div img {
     margin-bottom: 0px;
+}
+.box_facebook_comment {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

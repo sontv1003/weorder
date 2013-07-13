@@ -47,8 +47,20 @@
                     <?php } ?>
                 </ul></div>
         <?php } ?>
+        <div class="box_facebook_comment">
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id))
+                        return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=542409615782070";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
 
-        <div style="margin-bottom: 20px;"></div>
+            <fb:comments href="<?php echo $current_url; ?>" width="780" num_posts="10"></fb:comments>
+        </div>
 
         <?php echo $content_bottom; ?></div>
 </div>

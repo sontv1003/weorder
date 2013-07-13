@@ -267,6 +267,7 @@ class ControllerProductCategory extends Controller {
                     'man_thumb' => $man_thumb,
                     'thumb' => $image,
                     'thumbs' => $images,
+                    'link' => $result['link'],
                     'name' => $result['name'],
                     'date' => $result['date_available'],
                     'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, 100) . '..',
