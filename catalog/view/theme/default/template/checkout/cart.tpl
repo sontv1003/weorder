@@ -80,7 +80,7 @@
     -->
     <p>
         <b style="font-size: 14px;">Chú thích:</b> 
-        <b style="font-size: 15px; font-family: Arial;">Giá của sản phẩm khi về đến Việt Nam = Giá sản phẩm tại website + Phí ship quốc tế
+        <b style="font-size: 15px; font-family: Arial;">Giá của sản phẩm khi về đến Việt Nam = Giá sản phẩm tại website + Phí ship quốc tế (nếu có)
             + Tiền công + 8 Bảng / kg
         </b>
     </p>

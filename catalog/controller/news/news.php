@@ -243,7 +243,7 @@ class ControllerNewsNews extends Controller {
 			}
 			
 			$this->model_catalog_news->updateViewed($this->request->get['news_id']);
-			
+			$this->data['current_url'] = $this->url->link('news/news', $url . '&news_id=' . $this->request->get['news_id']);
 			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/news.tpl')) {
 				$this->template = $this->config->get('config_template') . '/template/news/news.tpl';
 			} else {

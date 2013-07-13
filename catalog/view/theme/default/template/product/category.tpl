@@ -69,16 +69,17 @@
                         <div id="tinsp">
                             <ul>
                                 <li><p class="aosomi"><?php echo $product['name']; ?></p></li>
+                                <li><p class="xemlink" style="margin-top: -5px; margin-bottom: -5px;"><a href="<?php echo $product['link']; ?>" target="_blank">Xem link</a></p></li>
                                 <li>
                                     <p class="pro_description"><?php echo $product['sort_description']; ?></p>
                                 </li>
                                 <li class="price">
                                         <?php if (!$product['special']) { ?>
-                                        <p class="size" >Giá siêu rẻ:
+                                        <p class="size" >Giá:
                                             <span style="color: #BF0000; font-weight: bold;"><?php echo $product['price']; ?></span>
                                         </p>
                                     <?php } else { ?>
-                                        <span class="price-old size">Giá siêu rẻ: <?php echo $product['price']; ?></span> <span class="price-new"><?php echo $product['special']; ?></span>
+                                        <span class="price-old size">Giá: <?php echo $product['price']; ?></span> <span class="price-new"><?php echo $product['special']; ?></span>
                                     <?php } ?>
     <?php if ($product['tax']) { ?>
                                         <br />
@@ -97,7 +98,7 @@
             </ul>
         </div>
 
-        <div class="pagination"><?php echo $pagination; ?></div>
+        <div class="pagination" style="margin-top: 30px;"><?php echo $pagination; ?></div>
 
     </div>
 

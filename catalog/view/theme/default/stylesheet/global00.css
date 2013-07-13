@@ -1,5 +1,10 @@
 
 @import url("grid_pre.css");
+@font-face
+{
+    font-family: "Myriad Pro";
+    src:url(fonts/MYRIADPRO-REGULAR.OTF);
+}
 /****************************************** reset ******************************************/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, 
 del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, 
@@ -44,7 +49,7 @@ header, nav, section, article, aside, footer {display:block;}
 }
 
 html, body {width:100%;height:100%;}
-body {font:normal 12px Tahoma, Geneva, sans-serif;;color:black;}
+body {font:normal 12px Myriad Pro;;color:black;}
 
 .bold {font-weight:bold;}
 .hidden, .block_hidden_only_for_screen {display:none;}
@@ -57,16 +62,16 @@ body {font:normal 12px Tahoma, Geneva, sans-serif;;color:black;}
 .center_column a:hover {text-decoration:none;}
 
 #center_column h1 {margin:0px 0 0 0;padding:0px 10px 5px;background:#333;font-size:34px;font-weight:normal;color:#fff; font-family:utm bebas;}
-#center_column h1 span {float:right;padding:20px 0 0 0;font-size:12px;font-weight:normal;color:#898989;text-transform:none; font-family:Tahoma, Geneva, sans-serif;}
+#center_column h1 span {float:right;padding:20px 0 0 0;font-size:12px;font-weight:normal;color:#898989;text-transform:none; font-family:Myriad Pro;}
 
 .center_column h2,
 .center_column h3,
 .center_column h4 {font-size:12px ;color:#000; }
 
-a.product_link {font:normal 12px/14px "Tahoma";color:#000000;text-decoration:none;text-transform:uppercase !important;}
+a.product_link {font:normal 12px/14px "Myriad Pro";color:#000000;text-decoration:none;text-transform:uppercase !important;}
 a.product_link:hover {color:#74bed7;}
 
-a.product_descr {font:normal 12px/14px "Tahoma";color:#7f7f7f;text-decoration:none;text-transform:uppercase !important;}
+a.product_descr {font:normal 12px/14px "Myriad Pro";color:#7f7f7f;text-decoration:none;text-transform:uppercase !important;}
 a.product_descr:hover {color:#999;}
 
 /* global border color */
@@ -81,7 +86,7 @@ a.product_descr:hover {color:#999;}
 
 table#cart_summary td.price,
 table#cart_summary td.cart_total,
-#center_column span.price {font-weight:normal;color:#000; font-family:Tahoma, Geneva, sans-serif;}
+#center_column span.price {font-weight:normal;color:#000; font-family:Myriad Pro;}
 
 /* optional background color */
 #center_column .bgcolor,
@@ -96,7 +101,7 @@ ul.footer_links li img.icon {margin:0 5px 0 0;}
 
 /* ON SALE and DISCOUNT states */
 span.on_sale,
-span.discount {font:bold 11px "Arial";color:#999;text-transform:uppercase;}
+span.discount {font:bold 11px "Myriad Pro";color:#999;text-transform:uppercase;}
 
 /* errors */
 div.error {background:#da0f00;margin:20px 0 0 0;padding:10px 13px;}
@@ -121,17 +126,17 @@ div.error li {padding:10px 0 0 0;list-style-position:inside;list-style-type:deci
     margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;
 }
 
-.mceContentBody {width:500px;margin:9px 6px;background:#fff;background-image:none;font:normal 12px "Arial";color:#000;text-align:left;}
+.mceContentBody {width:500px;margin:9px 6px;background:#fff;background-image:none;font:normal 12px "Myriad Pro";color:#000;text-align:left;}
 
-.mceContentBody h1 {padding:14px 0 0 0;font:normal 18px "Arial";color:#777;text-transform:uppercase;}
-.mceContentBody h2 {padding:14px 0 0 0;font:bold 14px "Arial";color:#777;text-transform:uppercase;}
-.mceContentBody h3 {padding:14px 0 0 0;font:bold 12px "Arial";color:#777;text-transform:uppercase;}
+.mceContentBody h1 {padding:14px 0 0 0;font:normal 18px "Myriad Pro";color:#777;text-transform:uppercase;}
+.mceContentBody h2 {padding:14px 0 0 0;font:bold 14px "Myriad Pro";color:#777;text-transform:uppercase;}
+.mceContentBody h3 {padding:14px 0 0 0;font:bold 12px "Myriad Pro";color:#777;text-transform:uppercase;}
 .mceContentBody h4,
 .mceContentBody h5,
-.mceContentBody h6 {padding:14px 0 0 0;font:normal 12px "Arial";color:#777;text-transform:uppercase;}
+.mceContentBody h6 {padding:14px 0 0 0;font:normal 12px "Myriad Pro";color:#777;text-transform:uppercase;}
 
-.mceContentBody p {margin:7px;font:normal 12px "Arial";color:#000;}
-.mceContentBody a {font:normal 12px "Arial";color:#0753b4;text-decoration:underline;}
+.mceContentBody p {margin:7px;font:normal 12px "Myriad Pro";color:#000;}
+.mceContentBody a {font:normal 12px "Myriad Pro";color:#0753b4;text-decoration:underline;}
 
 .mceContentBody ul {list-style-type:circle;list-style-position:inside;}
 .mceContentBody ol {list-style-type:decimal;list-style-position:inside;}
@@ -144,7 +149,7 @@ div.error li {padding:10px 0 0 0;list-style-position:inside;list-style-type:deci
 .mceContentBody caption,
 .mceContentBody th,
 .mceContentBody td,
-.mceContentBody table {text-align:left;font-weight:normal;background:none;height:inherit;border:1px #eee solid;font:normal 12px "Arial";color:#000;text-align:center;}
+.mceContentBody table {text-align:left;font-weight:normal;background:none;height:inherit;border:1px #eee solid;font:normal 12px "Myriad Pro";color:#000;text-align:center;}
 
 .mceContentBody th {height:24px;padding:0 7px;background:#eee;font-weight:bold;}
 
@@ -157,11 +162,11 @@ div.error li {padding:10px 0 0 0;list-style-position:inside;list-style-type:deci
 input[type=text],
 input[type=password],
 textarea,
-select {font:normal 12px "Arial";color:#000;}
+select {font:normal 12px "Myriad Pro";color:#000;}
 
 .columns label,
 .columns .radio span,
-.columns .select span {font:normal 12px "Arial";color:#555;}
+.columns .select span {font:normal 12px "Myriad Pro";color:#555;}
 
 .columns input[type=text],
 .columns input[type=password],
@@ -192,7 +197,7 @@ select {font:normal 12px "Arial";color:#000;}
 
 #content label,
 #content .radio span,
-#content .select span {font:normal 12px "Arial";color:#555;}
+#content .select span {font:normal 12px "Myriad Pro";color:#555;}
 
 #content input[type=text],
 #content input[type=password],
@@ -269,7 +274,7 @@ form.std .checkbox span  {padding:0 7px 0 0;}
 form.std .submit {margin-left:177px;}
 
 /* required state */
-.required sup {vertical-align:top;font:normal 13px "Tahoma";color:#da0f00;}
+.required sup {vertical-align:top;font:normal 13px "Myriad Pro";color:#da0f00;}
 .required_desc {margin:0 0 -3px 0;padding-left:157px;}
 
 
@@ -317,7 +322,7 @@ a.button_mini, a.button_small, a.button, a.button_large,
 a.exclusive_mini, a.exclusive_small, a.exclusive, a.exclusive_large,
 span.button_mini, span.button_small, span.button, span.button_large,
 span.exclusive_mini, span.exclusive_small, span.exclusive, span.exclusive_large 
-{height:27px !important;display:inline-block;padding:0 15px 0 16px;background:#000;border:none;font:12px "Tahoma" !important;color:#fff !important; text-transform:uppercase; text-decoration:none !important;cursor:pointer;
+{height:27px !important;display:inline-block;padding:0 15px 0 16px;background:#000;border:none;font:12px "Myriad Pro" !important;color:#fff !important; text-transform:uppercase; text-decoration:none !important;cursor:pointer;
  -webkit-transition:background .5s ease;
  -moz-transition:background .5s ease;
  -ms-transition:background .5s ease;
@@ -427,14 +432,14 @@ header {padding:160px 0 0 0;position:relative;}
 /* blocksearch-top.tpl */
 #search_block_top {position:absolute;right:0;top:84px;}
 
-#search_block_top label {display:block;float:left;padding:0 10px 0 0;font:12px/25px "Arial"; display:none;}
+#search_block_top label {display:block;float:left;padding:0 10px 0 0;font:12px/25px "Myriad Pro"; display:none;}
 #search_block_top input.search_query {width:128px;height:21px;float:left;padding:7px 5px 7px 9px; background:url(../images/search-b.jpg) no-repeat 0 0;border:none;}
 #search_block_top a {height:35px; width:29px; padding:0;display:block; float:left; background:url(../images/search00.jpg) no-repeat 0 0; text-indent:-10000px; overflow:hidden;}
 #search_block_top a:hover {}
 
 .ac_results {width:230px !important;border:none !important;}
 .ac_results ul {}
-.ac_results ul li {font:normal 12px "Arial" !important;color:#333;cursor:pointer;}
+.ac_results ul li {font:normal 12px "Myriad Pro" !important;color:#333;cursor:pointer;}
 .ac_results ul li.ac_even {background:#c4c4c4;}
 .ac_results ul li.ac_odd {background:#ddd;}
 .ac_results ul li:hover {background:#333;color:#fff !important;}
@@ -444,7 +449,7 @@ header {padding:160px 0 0 0;position:relative;}
 #tmheaderlinks {position:absolute;right:295px;top:106px;}
 #tmheaderlinks li {float:left;}
 #tmheaderlinks li + li {padding:0 0 0 22px;}
-#tmheaderlinks li a {color:#999999;text-decoration:none;text-transform:capitalize; font-family:Tahoma, Geneva, sans-serif; font-size:12px;}
+#tmheaderlinks li a {color:#999999;text-decoration:none;text-transform:capitalize; font-family:Myriad Pro; font-size:12px;}
 
 #tmheaderlinks li a:hover,
 #tmheaderlinks li a.active {color:#333;}
@@ -456,8 +461,8 @@ header {padding:160px 0 0 0;position:relative;}
 #header_user li a {color:#333;text-decoration:none;}
 #header_user li a:hover {}
 
-#header_user #user_info {padding:9px 11px 13px 16px; right:0; background:#000; font-size:12px; font-family:Tahoma, Geneva, sans-serif; color:#fff;}
-#header_user #user_info a { font-size:12px; line-height:12px; font-family:Tahoma, Geneva, sans-serif; color:#999; text-transform:lowercase;}
+#header_user #user_info {padding:9px 11px 13px 16px; right:0; background:#000; font-size:12px; font-family:Myriad Pro; color:#fff;}
+#header_user #user_info a { font-size:12px; line-height:12px; font-family:Myriad Pro; color:#999; text-transform:lowercase;}
 #header_user #user_info a:hover { color:#fff;}
 #header_user #user_info a.login {}
 #header_user #user_info a.logout {}
@@ -467,8 +472,8 @@ header {padding:160px 0 0 0;position:relative;}
 #header_user #your_account a {}
 #header_user #your_account a:hover {}
 
-#header_user #shopping_cart {width:105px;height:45px; right:168px; top:91px; font-family:Tahoma, Geneva, sans-serif; font-size:12px;}
-#header_user #shopping_cart a {height:30px;display:block;padding:15px 10px 0 0px; font-family:Tahoma, Geneva, sans-serif; color:#54150e;}
+#header_user #shopping_cart {width:105px;height:45px; right:168px; top:91px; font-family:Myriad Pro; font-size:12px;}
+#header_user #shopping_cart a {height:30px;display:block;padding:15px 10px 0 0px; font-family:Myriad Pro; color:#54150e;}
 #header_user #shopping_cart a span{ color:#999;}
 #header_user #shopping_cart .ajax_cart_total{ display:none!important;}
 /* blockcart.tpl */
@@ -487,7 +492,7 @@ header #cart_block dl {padding:0 0 10px 0;border:1px solid #c4c4c4;border-width:
 header #cart_block dl dt {height:15px;padding:10px 0 0 0;clear:both;}
 header #cart_block dl dd {clear:both;}
 
-header #cart_block span.quantity-formated {padding:0 2px 0 0;float:left;font:normal 10px/17px "Arial";letter-spacing:1px;}
+header #cart_block span.quantity-formated {padding:0 2px 0 0;float:left;font:normal 10px/17px "Myriad Pro";letter-spacing:1px;}
 header #cart_block span.quantity-formated span.quantity {font-size:10px;}
 
 header #cart_block dl a {text-decoration:underline;}
@@ -506,7 +511,7 @@ header #cart_block table#vouchers tr td.delete a {width:11px;height:13px;font-si
 header #cart_block table#vouchers tr td.delete a img {display:none;}
 
 header #cart_block ul.cart_block_customizations {padding:0 0 0 13px;}
-header #cart_block ul.cart_block_customizations li {font:11px/15px "Arial";}
+header #cart_block ul.cart_block_customizations li {font:11px/15px "Myriad Pro";}
 header #cart_block ul.cart_block_customizations div.deleteCustomizableProduct {width:11px;float:right;}
 header #cart_block ul.cart_block_customizations div.deleteCustomizableProduct a {float:right;margin:0;padding:0;font-size:0;}
 
@@ -533,12 +538,12 @@ header #cart_block p#cart-buttons a.button_small {}
 .sf-menu li {position:relative;}
 .sf-menu > li:first-child {background:none; padding-left:0;}
 .sf-menu > li {float:left; background:url(../images/cat-line.gif) no-repeat 0 0; padding:8px 10px 21px 82px;}
-.sf-menu > li > a {display:block;margin:0 0 0 0px;font:14px/30px "Arial";color:#939393;text-decoration:none; text-transform:uppercase; font-family:Tahoma, Geneva, sans-serif; padding:}
+.sf-menu > li > a {display:block;margin:0 0 0 0px;font:14px/30px "Myriad Pro";color:#939393;text-decoration:none; text-transform:uppercase; font-family:Myriad Pro; padding:}
 .sf-menu > li > a:hover{ color:#000;}
 
 .sf-menu li ul {width:184px;background:#000;position:absolute; padding:25px 0 28px 0;}
 .sf-menu li ul li { padding-bottom:5px;}
-.sf-menu li ul li a {display:block;padding:0 29px;font:12px/18px "Tahoma";color:#999999;text-decoration:none;}
+.sf-menu li ul li a {display:block;padding:0 29px;font:12px/18px "Myriad Pro";color:#999999;text-decoration:none;}
 .sf-menu li ul li a:hover {color:#fff;}
 
 .sf-menu li:hover ul,
@@ -591,8 +596,8 @@ div.column > div {margin:0 0 10px 0;}
 
 div.column div.block {background:#f5f5f5;}
 
-div.column div.block h4 {margin:0;padding:15px 0px 8px; border-top:1px solid #000; font:normal 24px/24px "Tahoma";color:#000;text-transform:uppercase;}
-div.column div.block h4 a {font:normal 24px/24px "Tahoma";color:#000; text-decoration:none;}
+div.column div.block h4 {margin:0;padding:15px 0px 8px; border-top:1px solid #000; font:normal 24px/24px "Myriad Pro";color:#000;text-transform:uppercase;}
+div.column div.block h4 a {font:normal 24px/24px "Myriad Pro";color:#000; text-decoration:none;}
 div.column div.block h4 a:hover {color:#999;}
 
 div.column div.block .block_content {padding:0 20px 20px 20px;background:#f5f5f5;}
@@ -605,10 +610,10 @@ div.column div.block ul.bullet li {padding:4px 0 0 12px;background:url(http://li
 .column .bordercolor {border-color:#ddd !important;}
 .column .pricecolor {}
 
-.column a.product_link {font:normal 12px "Tahoma";color:#000;text-decoration:none;text-transform:uppercase !important;}
+.column a.product_link {font:normal 12px "Myriad Pro";color:#000;text-decoration:none;text-transform:uppercase !important;}
 .column a.product_link:hover {color:#999;}
 
-.column a.product_descr {font:12px "Tahoma";color:#999;text-decoration:none;text-transform:none !important;}
+.column a.product_descr {font:12px "Myriad Pro";color:#999;text-decoration:none;text-transform:none !important;}
 .column a.product_descr:hover {color:#333;}
 
 .products_block ul {overflow:hidden;}
@@ -666,7 +671,7 @@ div.column div.block ul.bullet li {padding:4px 0 0 12px;background:url(http://li
 .column #cart_block dl dt {height:15px;padding:7px 0 0 0;clear:both;}
 .column #cart_block dl dd {clear:both;}
 
-.column #cart_block span.quantity-formated {padding:0 2px 0 0;float:left;font:normal 10px/17px "Arial";letter-spacing:1px;}
+.column #cart_block span.quantity-formated {padding:0 2px 0 0;float:left;font:normal 10px/17px "Myriad Pro";letter-spacing:1px;}
 .column #cart_block span.quantity-formated span.quantity {font-size:10px;}
 
 .column #cart_block dl a {text-decoration:underline;}
@@ -685,7 +690,7 @@ div.column div.block ul.bullet li {padding:4px 0 0 12px;background:url(http://li
 .column #cart_block table#vouchers tr td.delete a img {display:none;}
 
 .column #cart_block ul.cart_block_customizations {padding:0 0 0 13px;}
-.column #cart_block ul.cart_block_customizations li {font:11px/15px "Arial";}
+.column #cart_block ul.cart_block_customizations li {font:11px/15px "Myriad Pro";}
 .column #cart_block ul.cart_block_customizations div.deleteCustomizableProduct {width:11px;float:right;}
 .column #cart_block ul.cart_block_customizations div.deleteCustomizableProduct a {float:right;margin:0;padding:0;font-size:0;}
 
@@ -693,7 +698,7 @@ div.column div.block ul.bullet li {padding:4px 0 0 12px;background:url(http://li
 .column #cart_block .cart-prices {}
 .column #cart_block .cart-prices > div {height:25px;background:#fff;}
 .column #cart_block .cart-prices > div + div {margin:10px 0 0 0;}
-.column #cart_block .cart-prices span {float:left;padding:0 0 0 7px;font:12px/25px "Arial";}
+.column #cart_block .cart-prices span {float:left;padding:0 0 0 7px;font:12px/25px "Myriad Pro";}
 
 .column #cart_block .cart-prices #cart_block_shipping_cost,
 .column #cart_block .cart-prices #cart_block_total,
@@ -886,7 +891,7 @@ a.tag_level3 {font-size:17px;font-weight:bold;}
 
 /* homefeatured.tpl */
 #featured_products {padding:0px 0 0 0;}
-#featured_products h4 {margin:0;padding:15px 0px 8px; border-top:1px solid #aaa; font:normal 24px/24px "Tahoma";color:black;text-transform:uppercase;}
+#featured_products h4 {margin:0;padding:15px 0px 8px; border-top:1px solid #aaa; font:normal 24px/24px "Myriad Pro";color:black;text-transform:uppercase;}
 
 #featured_products .block_content{ overflow:hidden; width:1024px;}
 #featured_products ul {verflow:hidden; width:1044px;}
@@ -954,7 +959,7 @@ footer { width:100%; margin:0 auto; padding:0;}
     margin: 10px 10px;
     border: 1px solid lightgray;
 }
-.bct{font-family:'UTM_Avo'; font-size:15px; margin-left:10px; position:absolute}
+.bct{font-family:'Myriad Pro'; font-size:15px; margin-left:10px; position:absolute}
 #footer button, #cartform button{
     display: inline-block; margin-left:10px;
     padding: 3px 16px;
@@ -1003,15 +1008,15 @@ footer { width:100%; margin:0 auto; padding:0;}
 */
 /* 3 columns */
 #tmfooterlinks div {width:31%;float:left;padding:0 0 0 0;  margin-top: 10px; text-align:center}
-#tmfooterlinks h4 {padding:6px 0 0 0;font-f:normal 15px/24px "utm avo";color:#333333;text-transform:capitalize; margin-top:35px}
+#tmfooterlinks h4 {padding:6px 0 0 0;font-f:normal 15px/24px "Myriad Pro";color:#333333;text-transform:capitalize; margin-top:35px}
 
 #tmfooterlinks ul {padding:6px 0 11px 1px;}
 #tmfooterlinks ul li {padding:0px 0 7px 0;}
-#tmfooterlinks ul li a { text-decoration:none; color:#fff; font-size:12px; line-height:16px; font-family:"Times New Roman", Times, serif;}
+#tmfooterlinks ul li a { text-decoration:none; color:#fff; font-size:12px; line-height:16px; font-family:Myriad Pro;}
 #tmfooterlinks ul li a:hover { color:#000;}
 
 
-#tmfooterlinks p {padding:14px 0 0px 1px;clear:both;color:#933; font-size:12px; line-height:22px; font-family:Tahoma, Geneva, sans-serif; }
+#tmfooterlinks p {padding:14px 0 0px 1px;clear:both;color:#933; font-size:12px; line-height:22px; font-family:Myriad Pro; text-transform: uppercase; }
 #tmfooterlinks p a {color:#999999; text-decoration:none;}
 #tmfooterlinks p a:hover { color:#933;}
 
@@ -1019,7 +1024,7 @@ footer { width:100%; margin:0 auto; padding:0;}
 /* blockreinsurance.tpl */
 #reinsurance_block {background:url(http://livedemo00.template-help.com/prestashop_41289/modules/blockreinsurance/img/bg_reinsurance_block.gif) 0 0 repeat-x #bec3c8;}
 #reinsurance_block ul {width:100%;}
-#reinsurance_block ul li {width:20% !important;float:left;margin:0 !important;padding:15px 0 !important;font:12px "Arial";text-transform:uppercase;}
+#reinsurance_block ul li {width:20% !important;float:left;margin:0 !important;padding:15px 0 !important;font:12px "Myriad Pro";text-transform:uppercase;}
 #reinsurance_block ul li img {float:left;margin:0 10px 0 0;}
 #reinsurance_block ul li span {display:block;float:none;margin:0 10px 0 60px;}
 
@@ -1027,7 +1032,7 @@ footer { width:100%; margin:0 auto; padding:0;}
 /* blockcms.tpl */
 #cms_footer {float:left;padding:0 0 50px 0;position:relative;}
 #cms_footer div {width:170px;float:left;margin:0 10px 0 0;}
-#cms_footer div h4 {padding:17px 0 0 0;font:bold 12px "Arial";color:#333;text-transform:uppercase;}
+#cms_footer div h4 {padding:17px 0 0 0;font:bold 12px "Myriad Pro";color:#333;text-transform:uppercase;}
 
 #cms_footer div ul {}
 #cms_footer div ul li {padding:7px 0 0 0;}
@@ -1042,7 +1047,7 @@ footer { width:100%; margin:0 auto; padding:0;}
 
 /* blocksocial.tpl */
 #social_block {width:170px;float:left;margin:0 10px 0 0;}
-#social_block h4 {padding:17px 0 0 0;font:bold 12px "Arial";color:#333;text-transform:uppercase;}
+#social_block h4 {padding:17px 0 0 0;font:bold 12px "Myriad Pro";color:#333;text-transform:uppercase;}
 
 #social_block ul {}
 #social_block ul li {padding:7px 0 0 20px;}
@@ -1056,7 +1061,7 @@ footer { width:100%; margin:0 auto; padding:0;}
 
 /* blockcontactinfos.tpl */
 #block_contact_infos {width:170px;float:left;margin:0 10px 0 0;}
-#block_contact_infos h4 {padding:17px 0 0 0;font:bold 12px "Arial";color:#333;text-transform:uppercase;}
+#block_contact_infos h4 {padding:17px 0 0 0;font:bold 12px "Myriad Pro";color:#333;text-transform:uppercase;}
 
 #block_contact_infos ul {}
 #block_contact_infos ul li {padding:7px 0 0 0;}
@@ -1071,7 +1076,7 @@ footer { width:100%; margin:0 auto; padding:0;}
 .breadcrumb, .pathway-items a {
     margin: 0px;
     color: #000;
-    font-family:Tahoma, Geneva, sans-serif;
+    font-family:Myriad Pro;
     font-size:12px;
     margin-top: 10px;
 }
@@ -1138,7 +1143,7 @@ footer { width:100%; margin:0 auto; padding:0;}
 .list li .center_block {width:250px;float:left;padding:0 0 0 15px;}
 
 .list li .center_block .product_flags {overflow:hidden;margin:0 0 -3px 0;}
-.list li .center_block .product_flags span {display:block;float:left;font:bold 11px "Arial";}
+.list li .center_block .product_flags span {display:block;float:left;font:bold 11px "Myriad Pro";}
 .list li .center_block .product_flags span + span {margin:0 0 0 10px;padding:0 0 0 10px;border-left-width:1px;border-left-style:solid;}
 .list li .center_block .product_flags span.new {color:#333;}
 .list li .center_block .product_flags span.availability { color:#000;}
@@ -1318,7 +1323,7 @@ span#wrapResetImages div {width:306px;margin:0 0 -3px 0;padding:17px 0 10px 20px
 
 /* send to a friend form */
 #send_friend_form {width:500px;padding:10px;}
-#send_friend_form h2.title {padding:10px;background:#333;font:12px "Arial";color:#fff;text-transform:uppercase;}
+#send_friend_form h2.title {padding:10px;background:#333;font:12px "Myriad Pro";color:#fff;text-transform:uppercase;}
 
 #send_friend_form .product {padding:20px 0 0 0;}
 #send_friend_form .product > img {float:left;border:1px solid #ddd;}
@@ -1327,10 +1332,10 @@ span#wrapResetImages div {width:306px;margin:0 0 -3px 0;padding:17px 0 10px 20px
 #send_friend_form .product_name strong {font-size:18px;font-weight:normal;color:#000;}
 
 #send_friend_form .form_container {margin:20px 0 0 0;padding:20px;background:#f5f5f5;}
-#send_friend_form .form_container .intro_form {font:bold 14px "Arial";color:#000;}
+#send_friend_form .form_container .intro_form {font:bold 14px "Myriad Pro";color:#000;}
 
-#send_friend_form .form_container .text label {display:block;padding:20px 0 7px 0;font:bold 12px "Arial";color:#555;}
-#send_friend_form .form_container .text label sup {vertical-align:top;font:normal 13px "Tahoma";color:#da0f00;}
+#send_friend_form .form_container .text label {display:block;padding:20px 0 7px 0;font:bold 12px "Myriad Pro";color:#555;}
+#send_friend_form .form_container .text label sup {vertical-align:top;font:normal 13px "Myriad Pro";color:#da0f00;}
 #send_friend_form .form_container .text input[type=text] {width:448px;padding:5px;background:#fff;border:1px solid #ccc;}
 
 #send_friend_form .form_container .txt_required {padding:20px 0 0 0;color:#da0f00;}
@@ -1383,7 +1388,7 @@ span#wrapResetImages div {width:306px;margin:0 0 -3px 0;padding:17px 0 10px 20px
 
 #buy_block #other_prices,
 #buy_block #other_prices p,
-#buy_block #other_prices span {font:12px "Arial";}
+#buy_block #other_prices span {font:12px "Myriad Pro";}
 
 #buy_block #other_prices > p {width:100%;min-height:18px;margin:0;padding:13px 0 0 0; }
 #buy_block #other_prices > p#old_price{color:#000;}
@@ -1406,7 +1411,7 @@ span#wrapResetImages div {width:306px;margin:0 0 -3px 0;padding:17px 0 10px 20px
 #buy_block #attributes p {margin:0;padding:10px 0 0 0;overflow:hidden;}
 
 #buy_block span.on_sale,
-#buy_block span.discount {height:18px;display:block;float:right;margin:10px 0 0 0;padding:3px 7px 0 7px;background:#74bed7;font:bold 12px "Arial";color:#fff;}
+#buy_block span.discount {height:18px;display:block;float:right;margin:10px 0 0 0;padding:3px 7px 0 7px;background:#74bed7;font:bold 12px "Myriad Pro";color:#fff;}
 
 #buy_block #attributes label {float:right;padding:3px 7px 0 0;text-align:right;}
 #buy_block #attributes select {width:120px;height:21px;float:right;padding:1px;}
@@ -1447,7 +1452,7 @@ span#wrapResetImages div {width:306px;margin:0 0 -3px 0;padding:17px 0 10px 20px
 
 /* product comments form */
 #new_comment_form {width:585px;padding:10px;}
-#new_comment_form h2.title {padding:10px;background:#333;font:12px "Arial";color:#fff;text-transform:uppercase;}
+#new_comment_form h2.title {padding:10px;background:#333;font:12px "Myriad Pro";color:#fff;text-transform:uppercase;}
 
 #new_comment_form .product {padding:20px 0 0 0;}
 #new_comment_form .product > img {float:left;border:1px solid #ddd;}
@@ -1456,12 +1461,12 @@ span#wrapResetImages div {width:306px;margin:0 0 -3px 0;padding:17px 0 10px 20px
 #new_comment_form .product_name strong {font-size:18px;font-weight:normal;color:#000;}
 
 #new_comment_form .new_comment_form_content {margin:20px 0 0 0;padding:20px;background:#f5f5f5;}
-#new_comment_form .new_comment_form_content h2 {font:bold 14px "Arial";color:#000;}
+#new_comment_form .new_comment_form_content h2 {font:bold 14px "Myriad Pro";color:#000;}
 
 #new_comment_form #criterions_list {padding:0 0 20px 0;border-bottom:1px solid #ccc;}
 #new_comment_form #criterions_list li {padding:20px 0 0 0;}
 
-#new_comment_form #criterions_list label {display:block;float:left;padding:0 20px 0 0;font:12px "Arial";color:#555;}
+#new_comment_form #criterions_list label {display:block;float:left;padding:0 20px 0 0;font:12px "Myriad Pro";color:#555;}
 #new_comment_form #criterions_list .star_content {float:left;margin:1px 0 0 0;}
 #new_comment_form #criterions_list .star_content div {float:left;}
 
@@ -1473,8 +1478,8 @@ span#wrapResetImages div {width:306px;margin:0 0 -3px 0;padding:17px 0 10px 20px
 #new_comment_form #criterions_list .star_content div.star_hover a,
 #new_comment_form #criterions_list .star_content div.star_on a {background: url(http://livedemo00.template-help.com/prestashop_41289/themes/theme489/img/star.png) 0 -12px no-repeat;}
 
-#new_comment_form .new_comment_form_content > label {display:block;padding:20px 0 7px 0;font:bold 12px "Arial";color:#555;}
-#new_comment_form .new_comment_form_content > label sup {vertical-align:top;font:normal 13px "Tahoma";color:#da0f00;}
+#new_comment_form .new_comment_form_content > label {display:block;padding:20px 0 7px 0;font:bold 12px "Myriad Pro";color:#555;}
+#new_comment_form .new_comment_form_content > label sup {vertical-align:top;font:normal 13px "Myriad Pro";color:#da0f00;}
 #new_comment_form .new_comment_form_content input[type=text] {width:533px;padding:5px;background:#fff;border:1px solid #ccc;}
 #new_comment_form .new_comment_form_content textarea {width:533px;padding:5px;background:#fff;border:1px solid #ccc;}
 
@@ -1485,7 +1490,7 @@ span#wrapResetImages div {width:306px;margin:0 0 -3px 0;padding:17px 0 10px 20px
 #new_comment_form #new_comment_form_footer .fr {float:right;color:#000;}
 #new_comment_form #new_comment_form_footer .fr a {color:#333;text-decoration:underline;}
 #new_comment_form #new_comment_form_footer .fr a:hover {text-decoration:none;}
-#new_comment_form #new_comment_form_footer .fr button {height:27px;display:inline-block;padding:0 10px;background:#f5b81c;border:none;font:12px "Arial";color:#333;text-decoration:none;cursor:pointer}
+#new_comment_form #new_comment_form_footer .fr button {height:27px;display:inline-block;padding:0 10px;background:#f5b81c;border:none;font:12px "Myriad Pro";color:#333;text-decoration:none;cursor:pointer}
 #new_comment_form #new_comment_form_footer .fr button:hover {background:#333;color:#f5b81c;}
 @-moz-document url-prefix() {#new_comment_form #new_comment_form_footer .fr button {padding-bottom:2px;}}
 
@@ -1547,7 +1552,7 @@ span#wrapResetImages div {width:306px;margin:0 0 -3px 0;padding:17px 0 10px 20px
 ul.idTabs {height:28px;padding:20px 0 0 0;clear:both;}
 ul.idTabs li {float:left;}
 ul.idTabs li + li {margin:0 0 0 1px;}
-ul.idTabs li a {height:27px;display:block;padding:0 21px 0 21px;background:#fff;border:1px solid #ddd;font:bold 12px/27px "Arial";color:#888;text-decoration:none;cursor:pointer;}
+ul.idTabs li a {height:27px;display:block;padding:0 21px 0 21px;background:#fff;border:1px solid #ddd;font:bold 12px/27px "Myriad Pro";color:#888;text-decoration:none;cursor:pointer;}
 ul.idTabs li a.selected {height:28px;background:#f5f5f5;border-width:1px 1px 0 1px;color:#333;}
 
 
@@ -1611,7 +1616,7 @@ div.tabs_content {padding:14px 20px;}
 #product_comments_block_tab .comment + .comment {padding:20px 0 0 0;border-width:1px 0 0 0;border-style:solid;}
 
 #product_comments_block_tab .comment .comment_author {overflow:hidden;}
-#product_comments_block_tab .comment .comment_author span {float:left;font:12px "Arial";color:#000;}
+#product_comments_block_tab .comment .comment_author span {float:left;font:12px "Myriad Pro";color:#000;}
 #product_comments_block_tab .comment .comment_author .star_content {margin:1px 0 0 10px;}
 #product_comments_block_tab .comment .comment_author .star_content div.star {width:12px;height:0;padding:12px 0 0 0;overflow:hidden;float:left;background: url(http://livedemo00.template-help.com/prestashop_41289/themes/theme489/img/star.png) 0 0 no-repeat;cursor:pointer;}
 #product_comments_block_tab .comment .comment_author .star_content div.star_on {background-position:0 -12px;}
@@ -1625,11 +1630,11 @@ div.tabs_content {padding:14px 20px;}
 #product_comments_block_tab .comment .comment_details ul,
 #product_comments_block_tab .comment .comment_details ul li {padding:10px 0 0 0;}
 
-#product_comments_block_tab .comment .comment_details ul li {font:11px "Arial";}
-#product_comments_block_tab .comment .comment_details ul li span {font:11px "Arial";color:#333;text-decoration:underline;cursor:pointer;}
+#product_comments_block_tab .comment .comment_details ul li {font:11px "Myriad Pro";}
+#product_comments_block_tab .comment .comment_details ul li span {font:11px "Myriad Pro";color:#333;text-decoration:underline;cursor:pointer;}
 #product_comments_block_tab .comment .comment_details ul li span:hover {text-decoration:none;}
 
-#product_comments_block_tab .comment .comment_details ul li button {height:20px;display:inline-block;margin:0 0 0 20px;padding:0 10px;background:#f5b81c;border:none;font:11px "Arial";color:#333;text-decoration:none;text-transform:capitalize;cursor:pointer}
+#product_comments_block_tab .comment .comment_details ul li button {height:20px;display:inline-block;margin:0 0 0 20px;padding:0 10px;background:#f5b81c;border:none;font:11px "Myriad Pro";color:#333;text-decoration:none;text-transform:capitalize;cursor:pointer}
 #product_comments_block_tab .comment .comment_details ul li button:hover {background:#333;color:#f5b81c;}
 @-moz-document url-prefix() {#product_comments_block_tab .comment .comment_details ul li button {padding-bottom:2px;}}
 
@@ -1744,15 +1749,15 @@ p#desc_contact2 {height:15px;padding:20px 0 0 177px;}
 /* only_content pages */
 body#cms div.content_only {padding:0 20px 20px 20px;background:#fff;color:#000;text-align:left;}
 
-body#cms div.content_only h1 {padding:14px 0 0 0;font:normal 18px "Arial";color:#777;text-transform:uppercase;}
-body#cms div.content_only h2 {padding:14px 0 0 0;font:bold 14px "Arial";color:#777;text-transform:uppercase;}
-body#cms div.content_only h3 {padding:14px 0 0 0;font:bold 12px "Arial";color:#777;text-transform:uppercase;}
+body#cms div.content_only h1 {padding:14px 0 0 0;font:normal 18px "Myriad Pro";color:#777;text-transform:uppercase;}
+body#cms div.content_only h2 {padding:14px 0 0 0;font:bold 14px "Myriad Pro";color:#777;text-transform:uppercase;}
+body#cms div.content_only h3 {padding:14px 0 0 0;font:bold 12px "Myriad Pro";color:#777;text-transform:uppercase;}
 body#cms div.content_only h4,
 body#cms div.content_only h5,
-body#cms div.content_only h6 {padding:14px 0 0 0;font:normal 12px "Arial";color:#777;text-transform:uppercase;}
+body#cms div.content_only h6 {padding:14px 0 0 0;font:normal 12px "Myriad Pro";color:#777;text-transform:uppercase;}
 
-body#cms div.content_only p {padding-top:12px;font:normal 12px "Arial";color:#000;}
-body#cms div.content_only a {font:normal 12px "Arial";color:#0753b4;text-decoration:none;}
+body#cms div.content_only p {padding-top:12px;font:normal 12px "Myriad Pro";color:#000;}
+body#cms div.content_only a {font:normal 12px "Myriad Pro";color:#0753b4;text-decoration:none;}
 body#cms div.content_only a:hover {color:#000;}
 
 body#cms div.content_only ul {list-style-type:circle;list-style-position:inside;}
@@ -1766,7 +1771,7 @@ div.rte table {border-collapse:separate;border-spacing:1px;width:auto;}
 div.rte caption,
 div.rte th,
 div.rte td,
-div.rte table {text-align:left;font-weight:normal;background:none;height:inherit;border:1px #eee solid;font:normal 12px "Arial";color:#000;text-align:center;}
+div.rte table {text-align:left;font-weight:normal;background:none;height:inherit;border:1px #eee solid;font:normal 12px "Myriad Pro";color:#000;text-align:center;}
 
 div.rte th {height:24px;padding:0 7px;background:#eee;font-weight:bold;}
 
@@ -1801,8 +1806,8 @@ div.rte th {height:24px;padding:0 7px;background:#eee;font-weight:bold;}
 /* account creation form */
 #account-creation_form {}
 #account-creation_form .radio label {padding:0 20px 0 2px;}
-#account-creation_form .password .form_info {display:inline-block;padding:4px 0 0 7px;font:normal 12px "Arial";color:#555;}
-#account-creation_form .select span {width:170px;display:block;float:left;padding:4px 7px 0 0;font:normal 12px "Arial";color:#555;text-align:right;}
+#account-creation_form .password .form_info {display:inline-block;padding:4px 0 0 7px;font:normal 12px "Myriad Pro";color:#555;}
+#account-creation_form .select span {width:170px;display:block;float:left;padding:4px 7px 0 0;font:normal 12px "Myriad Pro";color:#555;text-align:right;}
 
 #account-creation_form .submit {margin:0;}
 #account-creation_form .submit span {display:block;padding:20px 0 0 0;}
@@ -1826,7 +1831,7 @@ ul.item {width:47.6%;height:auto;float:left;margin:20px 4% 0 0;padding:0 0 20px 
 ul.alternate_item {width:47.6%;float:right;margin:20px 0 0 0;padding:0 0 20px 0;border-width:1px;border-style:solid;overflow:hidden;}
 
 ul.address li {margin:5px 20px 0 20px;}
-ul.address li.address_title {margin:20px 20px 17px 20px;font:bold 12px "Arial";color:#000;text-transform:uppercase;}
+ul.address li.address_title {margin:20px 20px 17px 20px;font:bold 12px "Myriad Pro";color:#000;text-transform:uppercase;}
 ul.address li.address_title h3 {margin:0;}
 
 ul.address li span.address_name,
@@ -1864,7 +1869,7 @@ ul.step5 {background-position:0 -224px;}
 #order_steps li {width:110px;height:56px;float:left;}
 
 #order_steps li a,
-#order_steps li span {width:100px;height:22px;display:block;padding:34px 0 0 10px;font:normal 12px "Arial";}
+#order_steps li span {width:100px;height:22px;display:block;padding:34px 0 0 10px;font:normal 12px "Myriad Pro";}
 
 #order_steps li span {color:#a1a1a1; font-weight:bold;}
 #order_steps li.step_current span {font-weight:bold;color:#fff;}
@@ -2023,7 +2028,7 @@ p.error404 img {margin:0 10px 0 0;}
 {
     background: url("../images/nav-divider.gif") no-repeat 100% 5px;
     color: black;
-    font-family: Georgia;
+    font-family: Myriad Pro;
     font-size: 1.6em;
     height: 2.3em;
     line-height: 2em;
@@ -2336,7 +2341,7 @@ p.error404 img {margin:0 10px 0 0;}
 #tieudeft{font-family:'UTM_Bebas'; font-size:20px; color:#666}
 
 #zara16{width:100px; height:103px; margin-bottom:55px; border: 1px solid #CDCDCD;}
-#tinsp ul li{margin:314px 0 -643px 0}
+#tinsp ul li{margin:310px 0 -643px 0}
 #tinsp ul{margin-top:5px}
 #tinsp ul li button{   
     background: #000;
@@ -2346,7 +2351,7 @@ p.error404 img {margin:0 10px 0 0;}
     height: 32px;
     margin-left: 122px;
     width: 108px;padding-bottom: 3px; 
-    margin-top:7px;
+    margin-top: 5px;
     border: none;
     border-radius: 5px;
     -moz-border-radius: 5px;
@@ -2355,18 +2360,18 @@ p.error404 img {margin:0 10px 0 0;}
 
 @font-face
 {
-    font-family: UTM_Avo;
-    src:url(fonts/UTM_Avo.ttf)
+    font-family: Myriad Pro;
+    src:url(fonts/Myriad Pro.ttf)
 }
 
 .aosomi{
     color:#900;
-    font-family:'UTM Avo';
+    font-family:'Myriad Pro';
     font-weight: bold;
     font-size: 14px;
     text-transform: uppercase;
 }
-.size{text-transform:uppercase; font-family:'UTM Avo';  margin-top: 2px; }
+.size{text-transform:uppercase; font-family:'Myriad Pro';  margin-top: 2px; }
 #eu{font-family:'UTM_Bebas'; color:#000; font-size:17px}
 #ue{font-family:'UTM_Bebas'; color:#900; font-size:17px}
 #ngan img{width:700px; height:1px; margin-top:-10px}
@@ -2402,7 +2407,7 @@ p.error404 img {margin:0 10px 0 0;}
        line-height: 22px;
        padding-left: 10px; float:left;
        width: 83px;}
-#tbm span{font-family:'UTM_Avo'; color:#f00; margin-left:10px; font-size:14px;}	
+#tbm span{font-family:'Myriad Pro'; color:#f00; margin-left:10px; font-size:14px;}	
 
 #tbm2{background:url(../images/subsub.png) no-repeat; height:88px; margin-top:3px;}
 #tbm2 ul li{float:left; margin:22px 43px 0 7px; width:110px; text-align:center;}
@@ -2418,7 +2423,7 @@ p.error404 img {margin:0 10px 0 0;}
     width: 370px;
 }
 #duoimenu-right img{border:1px #000 solid; float:left; margin-right:10px; height:111px}
-#duoimenu-right p{font-family:'UTM_Avo'; font-size:14px;}
+#duoimenu-right p{font-family:'Myriad Pro'; font-size:14px;}
 #ttcanhan #kh{
     border: 1px solid #000000;
     height: 67px;
@@ -2538,7 +2543,7 @@ p.error404 img {margin:0 10px 0 0;}
 #timkiemmahang ul li input{background-color:#fff; margin-left: 5px}
 #timkiemmahang ul{margin-top:10px;}
 #timkiemmahang ul li a{font-family:'UTM_Bebas'; font-size:18px; color:#ff0}
-.ui-border{font-family:'UTM_Avo'}
+.ui-border{font-family:'Myriad Pro'}
 
 
 .xoa2{background: -moz-linear-gradient(center top , #56CA56, #006600) repeat scroll 0 0 transparent;
@@ -2556,16 +2561,16 @@ p.error404 img {margin:0 10px 0 0;}
 }
 #gct{background-color:#006401; color:#fff; width:182px; height:158px}
 #gct ul{color:#fff;}
-#gct ul li{color:#fff; font-family:'UTM_Avo';}
+#gct ul li{color:#fff; font-family:'Myriad Pro';}
 
 #knv{background-color:#024c73; color:#fff; width:182px; height:158px; margin-left:20px}
 #knv ul{color:#fff;}
-#knv ul li{color:#fff; font-family:'UTM_Avo';}
+#knv ul li{color:#fff; font-family:'Myriad Pro';}
 #knv ul li #face{margin:10px 10px 0px -64px; height:50px}
 #knv ul li #emaill{margin:-85px 10px 0 84px; height:50px}
 #ckct{background-color:#7c0000; color:#fff; width:182px; height:158px; margin-left:20px}
 #ckct ul{color:#fff;}
-#ckct ul li{color:#fff; font-family:'UTM_Avo';}
+#ckct ul li{color:#fff; font-family:'Myriad Pro';}
 
 #tttd{color: #000000;
       font-family: "UTM_Bebas";

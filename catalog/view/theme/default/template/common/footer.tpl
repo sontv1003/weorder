@@ -29,8 +29,7 @@
                     <!--<li><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>-->
                 </ul>
             </div>
-            <p>&copy; 2012 Powered by <a href="http://www.weorder.vn/">Weorder.vn</a>&trade;. All rights reserved</p>
-
+            <p>&copy; 2013 Powered by <a href="http://www.weorder.vn/">Weorder.vn</a>&trade;. All rights reserved. Thiết kế bởi <a href="http://www.geckomedia.vn" target="_blank">Geckomedia</a></p>
         </div>
         <div class="float-r" id="tmfooterright">
             <div class="ui-formRow">
@@ -43,9 +42,7 @@
                 </div>
             </div>
             <div style="margin-bottom:0px;" class="clr-both"></div>
-            <p></p>
         </div>
-
         <!-- [[%FOOTER_LINK]] -->
     </div>
 </div>

@@ -12,15 +12,17 @@
 <?php foreach ($news as $news_item) { ?>
         <div class="news">
           <div class="thumb">
-            <div class="border"> <a href="bung-no-giam-gia-cac-san-pham-tai-zalora/">
-            <img width="220" height="153" src="<?php echo $news_item['thumb']; ?>" title="<?php echo $news_item['name']; ?>" alt="<?php echo $news_item['name']; ?>"></a> </div>
+            <div class="border"> 
+                <a href="<?php echo $news_item['href']; ?>">
+            <img width="220" height="153" src="<?php echo $news_item['thumb']; ?>" title="<?php echo $news_item['name']; ?>" alt="<?php echo $news_item['name']; ?>">
+                </a> </div>
             <div class="tl corner"></div>
             <div class="br corner"></div>
           </div>
           <!--.thumb-->
           <div class="info fr" style="width: 505px; height: 190px;">
             <h2><a href="<?php echo $news_item['href']; ?>"><?php echo $news_item['name']; ?></a></h2>
-            <p class="meta">EVA <span class="date">- <?php echo date('d/m/Y',strtotime($news_item['date_available'])) ?></span></p>
+            <p class="meta">Ngày đăng: <span class="date"><?php echo date('d/m/Y',strtotime($news_item['date_available'])) ?></span></p>
             <p style="" class="excerpt"> 
                 <img width="39" height="33" alt="quote" src="<?php echo HTTP_SERVER?>/image/quote-open.png" class="quote open">
                 <?php echo utf8_substr($news_item['short_description'], 0, 300); ?>
@@ -41,9 +43,9 @@
   
   <?php if (!$categories && !$news) { ?>
   <div class="content"><?php echo $text_empty; ?></div>
-  <div class="buttons">
+<!--  <div class="buttons">
     <div class="right"><a href="<?php echo $continue; ?>" class="button"><span><?php echo $button_continue; ?></span></a></div>
-  </div>
+  </div>-->
   <?php } ?>
   <?php echo $content_bottom; ?>
             </div> <!-- end content -->
