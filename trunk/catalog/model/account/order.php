@@ -98,6 +98,7 @@ class ModelAccountOrder extends Model {
                 'date_added' => $order_query->row['date_added'],
                 'ip' => $order_query->row['ip'],
                 'note' => $order_query->row['note'],
+                'note_shipping_fee' => $order_query->row['note_shipping_fee'],
             );
         } else {
             return false;

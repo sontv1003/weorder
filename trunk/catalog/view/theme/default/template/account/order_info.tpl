@@ -146,7 +146,11 @@
                 <div id="phis" class="fr">
                     <ul>
                         <?php for ($i = 1; $i < $count - 1; $i++) { ?>
-                            <li><?php echo $totals[$i]['title']; ?></li>
+                            <li><?php echo $totals[$i]['title']; ?>
+                            <?php if($totals[$i]['code']=='shipping_fee'){ ?>
+                                (<a href="javascript:void(0)" class="toolTip" title="<?php echo $note_shipping_fee; ?>"> Chi tiết </a>)
+                            <?php } ?>
+                            </li>
                             <li><?php echo $totals[$i]['text']; ?></li>
                         <?php } ?>
                     </ul>
@@ -155,10 +159,11 @@
             </div>
         <?php endif; ?>
         <div>
-            <div class="fr cost_payment"><b><?php echo $totals[$count - 1]['text']; ?></b></div>
-            <div class="fr total_payment"><b><?php echo $totals[$count - 1]['title']; ?></b></div>
+            <div class="fr cost_payment"><span><strong><?php echo $totals[$count - 1]['text']; ?></strong></span></div>
+            <div class="fr total_payment"><span><strong><?php echo $totals[$count - 1]['title']; ?></strong></span></div>
             <div class="clear"></div>
         </div>
+        
     </div>
     <?php echo $content_bottom; ?></div>
 <script type="text/javascript"><!--
@@ -180,3 +185,11 @@ $('#cbSelectAll').click(function() {
 
 //--></script>
 <?php echo $footer; ?>
+<script type="text/javascript" src="catalog/view/javascript/jquery.tipTip.minified.js"></script>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/tipTip.css" />
+
+<script><!--
+    $(function() {
+        $(".toolTip").tipTip({maxWidth: "400px", edgeOffset: 10});
+    });
+//--></script>

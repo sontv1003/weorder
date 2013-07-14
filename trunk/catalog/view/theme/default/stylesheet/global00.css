@@ -27,10 +27,11 @@ fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, 
     border-bottom-style: solid;
     border-left-style: solid;
 }
-
-b,strong {font-family: "UTM_Bebas";
+label strong,
+span b, span strong {font-family: "UTM_Bebas";
           font-size: 18px;
-          font-weight: normal;}
+          font-weight: normal;
+}
 .the{font-family: "UTM_Bebas"; font-size:18px}
 i {font-style:italic;}
 ol, ul {list-style:none;}
@@ -3013,4 +3014,7 @@ a.UploadButton input {
     top: 48%;
     left: 47%;
     display: none;
+}
+.toolTip {
+    font-size: 18px;
 }

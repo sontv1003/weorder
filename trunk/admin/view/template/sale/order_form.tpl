@@ -258,6 +258,12 @@
                                 <?php } ?>
                             </td>
                         </tr>
+                        <tr>
+                            <td><?php echo $entry_note_shipping_fee; ?></td>
+                            <td>
+                                <textarea name="note_shipping_fee" id="note_shipping_fee" cols="60" rows="15" style="margin-top: 2px; margin-bottom: 2px; height: 91px;"><?php echo $note_shipping_fee; ?></textarea>
+                            </td>
+                        </tr>
                     </table>                   
                 </div>
                 <div id="tab-product" class="vtabs-content">
@@ -601,6 +607,18 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="view/javascript/ckeditor/ckeditor.js"></script> 
+<script type="text/javascript"><!--
+CKEDITOR.replace('note_shipping_fee', {
+	filebrowserBrowseUrl: 'index.php?route=common/filemanager&token=<?php echo $token; ?>',
+	filebrowserImageBrowseUrl: 'index.php?route=common/filemanager&token=<?php echo $token; ?>',
+	filebrowserFlashBrowseUrl: 'index.php?route=common/filemanager&token=<?php echo $token; ?>',
+	filebrowserUploadUrl: 'index.php?route=common/filemanager&token=<?php echo $token; ?>',
+	filebrowserImageUploadUrl: 'index.php?route=common/filemanager&token=<?php echo $token; ?>',
+	filebrowserFlashUploadUrl: 'index.php?route=common/filemanager&token=<?php echo $token; ?>'
+});
+//--></script> 
+
 <script type="text/javascript"><!--
 $.widget('custom.catcomplete', $.ui.autocomplete, {
         _renderMenu: function(ul, items) {

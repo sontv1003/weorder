@@ -575,6 +575,7 @@ class ControllerSaleOrder extends Controller {
         $this->data['tab_product'] = $this->language->get('tab_product');
         $this->data['tab_voucher'] = $this->language->get('tab_voucher');
         $this->data['tab_total'] = $this->language->get('tab_total');
+        $this->data['entry_note_shipping_fee'] = $this->language->get('entry_note_shipping_fee');
 
         if (isset($this->error['warning'])) {
             $this->data['error_warning'] = $this->error['warning'];
@@ -1110,6 +1111,22 @@ class ControllerSaleOrder extends Controller {
             $this->data['shipping_method'] = $order_info['shipping_method'];
         } else {
             $this->data['shipping_method'] = '';
+        }
+        
+        if (isset($this->request->post['shipping_method'])) {
+            $this->data['shipping_method'] = $this->request->post['shipping_method'];
+        } elseif (!empty($order_info)) {
+            $this->data['shipping_method'] = $order_info['shipping_method'];
+        } else {
+            $this->data['shipping_method'] = '';
+        }
+        
+        if (isset($this->request->post['note_shipping_fee'])) {
+            $this->data['note_shipping_fee'] = $this->request->post['note_shipping_fee'];
+        } elseif (!empty($order_info)) {
+            $this->data['note_shipping_fee'] = $order_info['note_shipping_fee'];
+        } else {
+            $this->data['note_shipping_fee'] = '';
         }
 
         if (isset($this->request->post['shipping_code'])) {

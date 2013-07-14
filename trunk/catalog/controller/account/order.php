@@ -417,6 +417,7 @@ class ControllerAccountOrder extends Controller {
 
             $this->data['comment'] = nl2br($order_info['comment']);
             $this->data['note'] = $order_info['note'];
+            $this->data['note_shipping_fee'] = $order_info['note_shipping_fee'];
             $this->data['account_avatar'] = $this->customer->getAvatar();
             $this->data['account_name'] = $this->customer->getFirstName();
             $this->data['histories'] = array();

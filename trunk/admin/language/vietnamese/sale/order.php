@@ -207,4 +207,5 @@ $_['tab_shipping_fee']        = 'Chi phí vận chuyển';
 $_['tab_shipping_fee']        = 'Chi phí vận chuyển';
 $_['entry_shipping_fee']      = 'Phí vận chuyển quốc tế';
 $_['entry_pay']               = 'Tiền công';
+$_['entry_note_shipping_fee'] = 'Giải thích';
 ?>
