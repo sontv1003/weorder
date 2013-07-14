@@ -8,9 +8,9 @@
                 <a href="<?php echo $account_info_href; ?>">
                     <?php
                     if (!empty($account_avatar)) {
-                        $avatar = HTTP_SERVER.$account_avatar;
+                        $avatar = HTTP_SERVER . $account_avatar;
                     } else {
-                        $avatar = HTTP_SERVER.'image/avatar_default.png';
+                        $avatar = HTTP_SERVER . 'image/avatar_default.png';
                     }
                     ?>
                     <img class="avatar" src="<?php echo $avatar; ?>" id="kh" width="80px">
@@ -61,22 +61,25 @@
             <th>Ngày</th>
             <th>Mã đơn hàng</th>
             <th>Tiền hóa đơn</th>
-            <th>Tiền nạp</th>
+            <th>Tiền nạp/Đã trả</th>
             <th>Công nợ</th>
             <th>Trạng thái</th>
         </tr>
-        <?php if ($transactions) {
-     echo '<pre>' . print_r($transactions, true) . '</pre>';
-            
+        <?php if ($transactions) { ?>
+            <?php
+            foreach ($transactions as $transaction) {
+                
+                $orderCode = (!empty($transaction['order_id'])) ? '#' . $transaction['order_id'] . '-' . $transaction['date_added'] : 'Không có';
+                $orderSubTotal = (!empty($transaction['order_id'])) ? $transaction['sub_total'] : '0 VNĐ';
+                $order_status = (!empty($transaction['order_status'])) ? $transaction['order_status'] : 'Nạp tiền thành công';
             ?>
-            <?php foreach ($transactions as $transaction) { ?>
                 <tr>
-                    <td><span>30/4/2013</span></td>
-                    <td><span style="color: #09F;">tmđ 1-30/4/2013</span></td>
-                    <td><span style="color: #060;">30.000.000vnđ</span></td>
-                    <td><span style="color: #930;">±20.000.000 vnđ</span></td>
-                    <td><span style="color: #c00;">30.250.000</span></td>
-                    <td><span style="color: #09F;">đã hoàn thành giao dịch</span></td>
+                    <td><span><?php echo $transaction['date_added']; ?></span></td>
+                    <td><span style="color: #09F;"><?php echo $orderCode; ?></span></td>
+                    <td><span style="color: #060;"><?php echo $transaction['order_total']; ?></span></td>
+                    <td><span style="color: #930;"><?php echo $transaction['amount']; ?></span></td>
+                    <td><span style="color: #c00;"><?php echo $orderSubTotal; ?></span></td>
+                    <td><span style="color: #09F;"><?php echo $order_status; ?></span></td>
                 </tr>
             <?php } ?>
         <?php } else { ?>
