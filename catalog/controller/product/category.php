@@ -220,7 +220,7 @@ class ControllerProductCategory extends Controller {
                 foreach ($resultimgs as $resultimg) {
                     $images[] = array(
                         'popup' => $this->model_tool_image->resize($resultimg['image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height')),
-                        'thumb' => $this->model_tool_image->resize($resultimg['image'], $this->config->get('config_image_additional_width'), $this->config->get('config_image_additional_height'))
+                        'thumb' => $this->model_tool_image->resize($resultimg['image'], 50, 80)
                     );
                 }
 
