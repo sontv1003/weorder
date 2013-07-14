@@ -138,4 +138,17 @@ $_['entry_review']       	    = 'Cho phép những tổng quan:<br /><span class
 $_['entry_download']            = 'Cho phép tải xuống:';
 $_['entry_upload_allowed']      = 'Được phép tải lên các tệp Mở rộng:<br /><span class="help">Thêm vào đó các phần mở rộng tập tin được phép tải lên. Sử dụng các giá trị cách nhau bằng dấu phẩy.</span>';
 $_['entry_image_news']      = 'Hình ảnh tin tức';
+$_['tab_ftp']               = 'FTP';
+$_['entry_ftp_host']        = 'Host';
+$_['entry_ftp_port']        = 'Cổng';
+$_['entry_ftp_username']    = 'Tài khoản';
+$_['entry_ftp_password']    = 'Mậ khẩu';
+$_['entry_ftp_root']        = 'Root';
+$_['entry_ftp_status']      = 'Trạng thái';
+$_['entry_secure']          = 'Sử dụng SSL';
+$_['entry_shared']          = 'Chia se Session';
+$_['entry_robots']          = 'Robots';
+$_['entry_file_extension_allowed']          = 'Chấp nhận';
+$_['entry_file_mime_allowed']          = 'Định dạng';
+$_['entry_password']          = 'Quên mật khẩu';
 ?>

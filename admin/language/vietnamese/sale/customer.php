@@ -69,4 +69,8 @@ $_['error_city']              = 'Quận Huyện phải có từ 3 đến 128 ký
 $_['error_postcode']          = 'Mã bưu điện phải được giữa 2 và 10 ký tự cho đất nước này!';
 $_['error_country']           = 'Vui lòng chọn quốc gia!';
 $_['error_zone']              = 'Vui lòng chọn tỉnh / thành phố!';
+$_['tab_history']             = 'Lịch sử';
+$_['column_comment']          = 'Nhận xét';
+$_['entry_comment']           = 'Nhận xét';
+$_['text_remove_ban_ip']      = 'Gỡ khóa IP';
 ?>

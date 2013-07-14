@@ -119,7 +119,7 @@
                             <div class="ui-formRow payment-method ">
                                 <div class="collection pbs">
                                     <input id="cod" value="CashOnDelivery" class="payment-method-option ui-inputRadio lfloat codbased" checked="checked" type="radio" name="PaymentMethodForm[payment_method]">        <label for="cod" style="display: inline;" class="codbasedlabel">
-                                        <strong>THANH TOÁN trực tiếp</strong>
+                                        <span><strong>THANH TOÁN trực tiếp</strong></span>
 
                                     </label>
                                 </div>

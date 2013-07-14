@@ -11,6 +11,7 @@ $_['text_register_account']        = 'Có một tài khoản sẽ giúp bạn s�
 $_['text_returning_customer']      = 'Khách hàng đăng nhập';
 $_['text_i_am_returning_customer'] = 'Tôi đã có tài khoản tại đây';
 $_['text_forgotten']               = 'Quên mật khẩu?';
+$_['text_address']                 = 'Địa chỉ';
 
 // Entry
 $_['entry_email']                  = 'Địa chỉ Email:';

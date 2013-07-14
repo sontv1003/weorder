@@ -266,8 +266,8 @@
         <?php endif; ?>
         <div>
             <div class="fl dky fontUTM">Hủy đơn hàng</div>
-            <div class="fr cost_payment"><b><?php echo $totals[$count - 1]['text']; ?></b></div>
-            <div class="fr total_payment"><b>Tổng tiền bạn phải trả là:</b></div>
+            <div class="fr cost_payment"><span><strong><?php echo $totals[$count - 1]['text']; ?></strong></span></div>
+            <div class="fr total_payment"><span><strong>Tổng tiền bạn phải trả là:</strong></span></div>
             <div class="clear"></div>
         </div>
 
