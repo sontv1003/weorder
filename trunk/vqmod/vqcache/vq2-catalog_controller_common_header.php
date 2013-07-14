@@ -202,7 +202,7 @@ class ControllerCommonHeader extends Controller {
 
         $this->data['contact'] = $this->url->link('information/contact', '', 'SSL');
         $this->data['text_contact'] = $this->language->get('text_contact');
-        
+
 if (isset($this->request->get['catid'])) {
 			$partnews = explode('_', (string)$this->request->get['catid']);
 		} else {
@@ -258,6 +258,22 @@ if (isset($this->request->get['catid'])) {
             'module/currency',
             'module/cart'
         );
+
+        $this->load->model('localisation/currency');
+
+        $this->data['currencies'] = array();
+
+        $results = $this->model_localisation_currency->getCurrencies();
+        
+        foreach ($results as $result) {
+            if ($result['status'] && $result['code'] != 'VND') {
+                $this->data['currencies'][] = array(
+                    'title' => $result['title'],
+                    'code' => $result['code'],
+                    'value' => $this->currency->format($result['value'], 'VND', 1.000000)
+                );
+            }
+        }
 
         if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/header.tpl')) {
             $this->template = $this->config->get('config_template') . '/template/common/header.tpl';
