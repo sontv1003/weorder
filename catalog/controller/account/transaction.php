@@ -64,11 +64,21 @@ class ControllerAccountTransaction extends Controller {
         $transaction_total = $this->model_account_transaction->getTotalTransactions($data);
 
         $results = $this->model_account_transaction->getTransactions($data);
-
+        
         foreach ($results as $result) {
+            $order_id = $result['order_id'];
+            $order_total = 0;
+            if(!empty($order_id)) {
+                $order_total = $this->model_account_transaction->getTotalOrder($order_id);
+            }
+
             $this->data['transactions'][] = array(
+                'order_id' => $result['order_id'],
                 'amount' => $this->currency->format($result['amount'], $this->config->get('config_currency')),
+                'order_total' => $this->currency->format($order_total, $this->config->get('config_currency')),
+                'sub_total' => $this->currency->format($order_total + $result['amount'], $this->config->get('config_currency')),
                 'description' => $result['description'],
+                'order_status' => $result['order_status'],
                 'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added']))
             );
         }
