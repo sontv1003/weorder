@@ -41,6 +41,8 @@
         <script type="text/javascript" src="catalog/view/javascript/jquery/tabs.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/jquery/colorbox/jquery.colorbox-min.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/ajaxupload.min.js"></script>
+
+
         <!--[if IE 7]> 
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/ie7.css" />
         <![endif]-->
@@ -88,10 +90,18 @@
                         </span>
                     </div>
 
-                    <header id="header" name="header">                  
-                            <span id="cart_item">
-                                <?php echo $cart; ?>
-                            </span>
+                    <header id="header" name="header">
+                        <span class="currencyHeader">
+                            <?php $currencyText = "<table border='1' class='boxCurrency'><tr><th width='50px' align='center'>Mã</th><th align='left' width='70px'>Tên</th><th width='60px' align='left'>Tỷ giá/VNĐ</th></tr>"; ?>
+                            <?php foreach ($currencies as $currency) : ?>
+                                <?php $currencyText .= "<tr><td align='center'>" . $currency['code'] . "</td><td>" . $currency['title'] . "</td><td>" . $currency['value'] . "</td></tr>"; ?>
+                            <?php endforeach; ?>
+                            <?php $currencyText .= "</table>"; ?>
+                            <a href="javascript:void(0)" class="toolTip" title="<?php echo $currencyText; ?>">Tỷ giá ngoại tệ</a>
+                        </span>
+                        <span id="cart_item">
+                            <?php echo $cart; ?>
+                        </span>
                         <?php if ($logo) { ?>
                             <a href="<?php echo $home; ?>" style="text-decoration:none"><img width="130" src="<?php echo $logo; ?>" id="logowesale" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a>
                             <h1 id="sloganws">Ready for better service</h1>
@@ -102,7 +112,7 @@
                             <div class="topsearch">
                                 <form class="" style="width: 37px;" method="get" action="<?php echo $home; ?>" id="searchForm">
                                     <input type="submit" class="btn-search" value="Search" id="searchSubmit">
-									<input type="hidden" name="route" value="product/search" />
+                                    <input type="hidden" name="route" value="product/search" />
                                     <input type="text" class="stext" name="filter_name" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />                                    
                                 </form>
                             </div> 
@@ -114,26 +124,30 @@
                                     <?php if ($categories): ?>
                                         <?php foreach ($categories as $category) : ?>
                                             <li><a name="#tab2" href="<?php echo $category['href'] ?>"><?php echo $category['name'] ?></a></li>
-                                        <?php endforeach;
-                                    endif; ?>
+                                            <?php
+                                        endforeach;
+                                    endif;
+                                    ?>
                                     <?php if ($categoriesnews): ?>
                                         <?php foreach ($categoriesnews as $category) : ?>
                                             <li><a name="#tab2" href="<?php echo $category['href'] ?>"><?php echo $category['name'] ?></a></li>
-    <?php endforeach;
-endif; ?>  
+                                            <?php
+                                        endforeach;
+                                    endif;
+                                    ?>  
                                 </ul>
                             </div>
                             <div class="clear"></div>
                             <ul id="nav-sub">
-                                <?php foreach($categoriesTop2 as $result) { ?>
-                                <li>
-                                    <a style="background-image:none;" href="<?php echo $result['href'] ?>"><span class="nav-subTxt"><?php echo $result['name'] ?></span></a>
-                                </li>
+                                <?php foreach ($categoriesTop2 as $result) { ?>
+                                    <li>
+                                        <a style="background-image:none;" href="<?php echo $result['href'] ?>"><span class="nav-subTxt"><?php echo $result['name'] ?></span></a>
+                                    </li>
                                 <?php } ?>
-                                <?php foreach($informations as $result) { ?>
-                                <li>
-                                    <a style="background-image:none;" href="<?php echo $result['href'] ?>"><span class="nav-subTxt"><?php echo $result['title'] ?></span></a>
-                                </li>
+                                <?php foreach ($informations as $result) { ?>
+                                    <li>
+                                        <a style="background-image:none;" href="<?php echo $result['href'] ?>"><span class="nav-subTxt"><?php echo $result['title'] ?></span></a>
+                                    </li>
                                 <?php } ?>
                                 <li>
                                     <a style="background-image:none;" href="<?php echo $news_brand_href ?>"><span class="nav-subTxt">Các thương hiệu</span></a>
@@ -145,5 +159,5 @@ endif; ?>
                         </div>
                     </header>
                     <div class="clearfix"></div>
-                    
+
                     <div id="notification"></div>

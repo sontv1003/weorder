@@ -24,7 +24,7 @@
             </div>
             <div id="ngan"><img src="<?php echo HTTP_SERVER ?>/image/vien.jpg" height="1px" width="950px"></div>
 
-            <a class="shop_now" href="#">
+            <a class="shop_now" href="<?php echo $news_item['news_link']; ?>" target="_blank">
                 <img src="<?php echo HTTP_SERVER ?>/image/shop-now.gif" />
             </a>
 

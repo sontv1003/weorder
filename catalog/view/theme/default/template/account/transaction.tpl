@@ -64,9 +64,11 @@
             <th>Tiền nạp</th>
             <th>Công nợ</th>
             <th>Trạng thái</th>
-            <th>Chi tiết</th>
         </tr>
-        <?php if ($transactions) { ?>
+        <?php if ($transactions) {
+     echo '<pre>' . print_r($transactions, true) . '</pre>';
+            
+            ?>
             <?php foreach ($transactions as $transaction) { ?>
                 <tr>
                     <td><span>30/4/2013</span></td>
@@ -75,7 +77,6 @@
                     <td><span style="color: #930;">±20.000.000 vnđ</span></td>
                     <td><span style="color: #c00;">30.250.000</span></td>
                     <td><span style="color: #09F;">đã hoàn thành giao dịch</span></td>
-                    <td><span style="color: #000;">xem Chi tiết</span></td>
                 </tr>
             <?php } ?>
         <?php } else { ?>

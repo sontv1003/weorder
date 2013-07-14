@@ -61,4 +61,13 @@ Please donate via PayPal to donate@opencart.com
 </div>
 </div>
 </div>
-</body></html>
+<script type="text/javascript" src="catalog/view/javascript/jquery.tipTip.minified.js"></script>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/tipTip.css" />
+
+<script><!--
+    $(function() {
+        $(".toolTip").tipTip({maxWidth: "400px", edgeOffset: 10});
+    });
+//--></script>
+</body>
+</html>

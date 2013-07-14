@@ -764,6 +764,14 @@ class ControllerCatalogNews extends Controller {
         } else {
             $this->data['status'] = 1;
         }
+        
+        if (isset($this->request->post['news_link'])) {
+            $this->data['news_link'] = $this->request->post['news_link'];
+        } else if (isset($news_info)) {
+            $this->data['news_link'] = $news_info['news_link'];
+        } else {
+            $this->data['news_link'] = '';
+        }
 
 
 
