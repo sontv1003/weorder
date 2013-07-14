@@ -11,27 +11,28 @@ class ModelCatalogNews extends Model {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}	
 				
-		$query = $this->db->query("SELECT DISTINCT *, nd.name AS name, n.image, (SELECT COUNT(*) AS total FROM " . DB_PREFIX . "news_comment c2 WHERE c2.news_id = n.news_id AND c2.status = '1' GROUP BY c2.news_id) AS total_comments FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON (n.news_id = nd.news_id) LEFT JOIN " . DB_PREFIX . "news_to_store n2s ON (n.news_id = n2s.news_id) WHERE n.news_id = '" . (int)$news_id . "' AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND n.status = '1' AND n.date_available <= NOW() AND n2s.store_id = '" . (int)$this->config->get('config_store_id') . "'");
-		
+		$query = $this->db->query("SELECT DISTINCT *, nd.name AS name, n.image, n.news_link, (SELECT COUNT(*) AS total FROM " . DB_PREFIX . "news_comment c2 WHERE c2.news_id = n.news_id AND c2.status = '1' GROUP BY c2.news_id) AS total_comments FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON (n.news_id = nd.news_id) LEFT JOIN " . DB_PREFIX . "news_to_store n2s ON (n.news_id = n2s.news_id) WHERE n.news_id = '" . (int)$news_id . "' AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND n.status = '1' AND n.date_available <= NOW() AND n2s.store_id = '" . (int)$this->config->get('config_store_id') . "'");
+
 		if ($query->num_rows) {
 			return array(
-				'name'             => $query->row['name'],
-				'manufacturer_id'             => $query->row['manufacturer_id'],
-				'news_id'       => $query->row['news_id'],
-				'short_description'      => $query->row['short_description'],
-				'description'      => $query->row['description'],
-				'meta_description' => $query->row['meta_description'],
-				'meta_keyword'     => $query->row['meta_keyword'],				
-				'image'            => $query->row['image'],				
-				'date_available'   => $query->row['date_available'],				
-				'sort_order'       => $query->row['sort_order'],
-				'comment'           => $query->row['comment'],
-				'approved'           => $query->row['approved'],
-				'total_comments'     => $query->row['total_comments'],
-				'status'           => $query->row['status'],
-				'date_added'       => $query->row['date_added'],
-				'date_modified'    => $query->row['date_modified'],
-				'viewed'           => $query->row['viewed']
+				'name'                      => $query->row['name'],
+				'manufacturer_id'           => $query->row['manufacturer_id'],
+				'news_link'                 => $query->row['news_link'],
+				'news_id'                   => $query->row['news_id'],
+				'short_description'         => $query->row['short_description'],
+				'description'               => $query->row['description'],
+				'meta_description'          => $query->row['meta_description'],
+				'meta_keyword'              => $query->row['meta_keyword'],				
+				'image'                     => $query->row['image'],				
+				'date_available'            => $query->row['date_available'],				
+				'sort_order'                => $query->row['sort_order'],
+				'comment'                   => $query->row['comment'],
+				'approved'                  => $query->row['approved'],
+				'total_comments'            => $query->row['total_comments'],
+				'status'                    => $query->row['status'],
+				'date_added'                => $query->row['date_added'],
+				'date_modified'             => $query->row['date_modified'],
+				'viewed'                    => $query->row['viewed']
 			);
 		} else {
 			return false;

@@ -58,9 +58,15 @@
         </div>       
         <div id="tab-links">
           <table class="form">        
-              <tr>
+            <tr>
               <td><?php echo $entry_manufacturer; ?></td>
               <td><input type="text" name="manufacturer" value="<?php echo $manufacturer ?>" /><input type="hidden" name="manufacturer_id" value="<?php echo $manufacturer_id; ?>" /></td>
+            </tr>
+            <tr>
+              <td>Link tin tức từ nguồn</td>
+              <td>
+                  <input style="width: 300px" type="text" name="news_link" value="<?php echo $news_link ?>" />
+              </td>
             </tr>
             <tr>
               <td><?php echo $entry_category; ?></td>

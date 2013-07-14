@@ -1,7 +1,7 @@
 <?php
 class ModelCatalogNews extends Model {
 	public function addNews($data) {
-		$this->db->query("INSERT INTO " . DB_PREFIX . "news SET date_available = '" . $this->db->escape($data['date_available']) . "', manufacturer_id = '" . (int)$data['manufacturer_id'] . "', comment = '" . (int)$data['comment'] . "', approved = '" . (int)$data['approved'] . "', status = '" . (int)$data['status'] . "', sort_order = '" . (int)$data['sort_order'] . "', date_added = NOW()");
+		$this->db->query("INSERT INTO " . DB_PREFIX . "news SET date_available = '" . $this->db->escape($data['date_available']) . "', news_link = '" . $this->db->escape($data['news_link']) . "', manufacturer_id = '" . (int)$data['manufacturer_id'] . "', comment = '" . (int)$data['comment'] . "', approved = '" . (int)$data['approved'] . "', status = '" . (int)$data['status'] . "', sort_order = '" . (int)$data['sort_order'] . "', date_added = NOW()");
 		
 		$news_id = $this->db->getLastId();
 		
@@ -61,7 +61,7 @@ class ModelCatalogNews extends Model {
 	
 	public function editNews($news_id, $data) {
 
-		$this->db->query("UPDATE " . DB_PREFIX . "news SET date_available = '" . $this->db->escape($data['date_available']) . "', manufacturer_id = '" . (int)$data['manufacturer_id'] . "', comment = '" . (int)$data['comment'] . "', approved = '" . (int)$data['approved'] . "', status = '" . (int)$data['status'] . "', sort_order = '" . (int)$data['sort_order'] . "', date_modified = NOW() WHERE news_id = '" . (int)$news_id . "'");
+		$this->db->query("UPDATE " . DB_PREFIX . "news SET date_available = '" . $this->db->escape($data['date_available']) . "', news_link = '" . $this->db->escape($data['news_link']) . "', manufacturer_id = '" . (int)$data['manufacturer_id'] . "', comment = '" . (int)$data['comment'] . "', approved = '" . (int)$data['approved'] . "', status = '" . (int)$data['status'] . "', sort_order = '" . (int)$data['sort_order'] . "', date_modified = NOW() WHERE news_id = '" . (int)$news_id . "'");
 
 		if (isset($data['image'])) {
 			$this->db->query("UPDATE " . DB_PREFIX . "news SET image = '" . $this->db->escape($data['image']) . "' WHERE news_id = '" . (int)$news_id . "'");

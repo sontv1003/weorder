@@ -29,8 +29,8 @@ fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, 
 }
 label strong,
 span b, span strong {font-family: "UTM_Bebas";
-          font-size: 18px;
-          font-weight: normal;
+                     font-size: 18px;
+                     font-weight: normal;
 }
 .the{font-family: "UTM_Bebas"; font-size:18px}
 i {font-style:italic;}
@@ -2161,7 +2161,7 @@ p.error404 img {margin:0 10px 0 0;}
     width:383px;
     height:30px;
     border: 1px solid #CCC;
-    padding:3px;
+    padding:3px 3px 3px 10px;
     border-radius: 2px;
     box-shadow: inset 1px 1px 3px #ddd;
 }
@@ -3017,4 +3017,20 @@ a.UploadButton input {
 }
 .toolTip {
     font-size: 18px;
+}
+.currencyHeader {
+    position: absolute;
+    left: 820px; 
+    top: 10px;
+}
+table.boxCurrency {
+    width: 250px;
+}
+table.boxCurrency td, table.boxCurrency th {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.currencyHeader a {
+    font-size: 14px;
 }

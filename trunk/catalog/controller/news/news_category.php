@@ -172,6 +172,7 @@ class ControllerNewsNewsCategory extends Controller {
                     'thumb' => $image,
                     'thumb_manufacture' => $image_manufacture,
                     'name' => $result['name'],
+                    'news_link' => $result['news_link'],
                     'short_description' => $short_description,
                     'date_available' => $result['date_available'],
                     'date_added' => date('H:i:s - ' . $this->language->get('date_format_short'), strtotime($result['date_added'])),
