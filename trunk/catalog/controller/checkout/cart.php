@@ -16,15 +16,15 @@ class ControllerCheckoutCart extends Controller {
             foreach ($this->request->post['quantity'] as $key => $value) {
                 $this->cart->update($key, $value);
             }
-            
+
             foreach ($this->request->post['link'] as $key => $value) {
                 $this->cart->updateOtherField($key, $value, 'link');
             }
-            
+
             foreach ($this->request->post['size'] as $key => $value) {
                 $this->cart->updateOtherField($key, $value, 'size');
             }
-            
+
             foreach ($this->request->post['color'] as $key => $value) {
                 $this->cart->updateOtherField($key, $value, 'color');
             }
@@ -169,7 +169,7 @@ class ControllerCheckoutCart extends Controller {
         $this->data['account_order_info_href'] = $this->url->link('account/order');
         $this->data['account_transaction_href'] = $this->url->link('account/transaction');
         $this->data['account_wishlist_href'] = $this->url->link('account/wishlist');
-        
+
         $this->data['hasProducts'] = $this->cart->hasProducts();
 
         if (isset($this->error['warning'])) {
@@ -256,7 +256,7 @@ class ControllerCheckoutCart extends Controller {
             } else {
                 $total = false;
             }
-            
+
             $this->data['products'][] = array(
                 'key' => $product['key'],
                 'thumb' => $image,
@@ -408,15 +408,26 @@ class ControllerCheckoutCart extends Controller {
 
         $this->data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
         $this->load->model('localisation/currency');
-        $this->data['currencies'] = $this->model_localisation_currency->getCurrencies();
-        if($this->customer->isLogged()) {
+        $currencies = $this->model_localisation_currency->getCurrencies();
+        $this->data['currencies'] = array();
+        foreach ($currencies as $currency) {
+            if ($currency['status']) {
+                $this->data['currencies'][] = array(
+                    'status' => $currency['status'],
+                    'title' => $currency['title'],
+                    'code' => $currency['code'],
+                    'value' => $currency['value'],
+                );
+            }
+        }
+        if ($this->customer->isLogged()) {
             $this->data['account_avatar'] = $this->customer->getAvatar();
             $this->data['name'] = $this->customer->getFirstName();
         } else {
             $this->data['account_avatar'] = 'image/avatar_default.png';
             $this->data['name'] = '';
         }
-        
+
         if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/cart.tpl')) {
             $this->template = $this->config->get('config_template') . '/template/checkout/cart.tpl';
         } else {
@@ -552,15 +563,15 @@ class ControllerCheckoutCart extends Controller {
             }
 
             if (!$json) {
-                
+
                 $attributes = array(
                     'link' => $product_info['link'],
                     'size' => $product_info['size'],
                     'color' => $product_info['color'],
                 );
-                
+
                 $this->cart->add($this->request->post['product_id'], $quantity, $option, $attributes);
-                
+
                 $json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));
 
                 unset($this->session->data['shipping_method']);
@@ -770,7 +781,7 @@ class ControllerCheckoutCart extends Controller {
             $this->load->model('catalog/product');
             $this->request->post['image'] = 'data/no_image.jpg';
             $product_id = $this->model_catalog_product->addProduct($this->request->post);
-            
+
             echo $product_id;
         }
     }
