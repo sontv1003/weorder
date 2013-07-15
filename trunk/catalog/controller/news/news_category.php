@@ -82,7 +82,7 @@ class ControllerNewsNewsCategory extends Controller {
             $this->document->setDescription($news_category_info['meta_description']);
             $this->document->setKeywords($news_category_info['meta_keyword']);
 
-            $this->data['heading_title'] = $news_category_info['name'];            
+            $this->data['heading_title'] = $news_category_info['name'];
 
             $this->data['text_refine'] = $this->language->get('text_refine');
             $this->data['text_empty'] = $this->language->get('text_empty');
@@ -139,7 +139,7 @@ class ControllerNewsNewsCategory extends Controller {
                 $width = '';
                 $height = '';
                 $image_manufacture = '';
-                
+
                 if (!empty($result['manufacturer_id'])) {
                     $manufacture = $this->model_catalog_manufacturer->getManufacturer($result['manufacturer_id']);
                     if ($manufacture['image']) {
@@ -148,7 +148,15 @@ class ControllerNewsNewsCategory extends Controller {
                 }
 
                 if ($result['image']) {
-                    $image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_news_width'), $this->config->get('config_image_news_height'));
+                    if (empty($news_category_info['theme_id'])) {
+                        $thumb_width = $this->config->get('config_image_news_width');
+                        $thumb_height = $this->config->get('config_image_news_height');
+                    } else {
+                        $thumb_width = 220;
+                        $thumb_height = 153;
+                    }
+                    
+                    $image = $this->model_tool_image->resize($result['image'], $thumb_width, $thumb_height);
                 } else {
                     $firstImgNews = $this->catchFirstImage(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'));
                     if ($firstImgNews == 'no_image.jpg') {
@@ -248,7 +256,6 @@ class ControllerNewsNewsCategory extends Controller {
                 } else {
                     $this->template = 'default/template/news/news_theme1.tpl';
                 }
-                
             } else {
 
                 if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/news_theme2.tpl')) {
@@ -337,5 +344,4 @@ class ControllerNewsNewsCategory extends Controller {
 
 //end function
 }
-
 ?>

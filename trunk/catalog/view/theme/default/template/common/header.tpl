@@ -99,6 +99,9 @@
                             <?php $currencyText .= "</table>"; ?>
                             <a href="javascript:void(0)" class="toolTip" title="<?php echo $currencyText; ?>">Tỷ giá ngoại tệ</a>
                         </span>
+                        <span style=" left: 830px; position: absolute;  top: 90px; ">
+                        	<a href="<?php echo $shopping_cart; ?>"><img   src="<?php echo HTTP_SERVER; ?>image/dat-hang.jpg" height="110px" ></a>
+                        </span>
                         <span id="cart_item">
                             <?php echo $cart; ?>
                         </span>

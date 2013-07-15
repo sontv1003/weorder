@@ -35,7 +35,7 @@
 }
 
 h4, h5, .h4, .h5 {
-    font-family: 'UTM_Bebas';
+    font-family: 'Myriad Pro';
     font-size: 20px; color:#933
 }
 .fct-bd {
@@ -292,7 +292,7 @@ h4, h5, .h4, .h5 {
     margin-left: 10px;
 }
 .box ul.box-category li {
-    padding-top: 5px;
+    padding-top: 0.1px;
 }
 .box ul.box-category li a {
     font-size: 12px;
@@ -348,7 +348,7 @@ h4, h5, .h4, .h5 {
 }
 
 p.pro_description {
-    font-family: 'UTM Avo';
+    font-family: 'Myriad Pro';
     margin-top: -10px;
     margin-left: 45px;
     width: 250px; 
