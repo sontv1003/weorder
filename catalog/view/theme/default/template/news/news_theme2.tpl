@@ -14,7 +14,7 @@
           <div class="thumb">
             <div class="border"> 
                 <a href="<?php echo $news_item['href']; ?>">
-            <img width="220" height="153" src="<?php echo $news_item['thumb']; ?>" title="<?php echo $news_item['name']; ?>" alt="<?php echo $news_item['name']; ?>">
+                    <img width="220" height="153" src="<?php echo $news_item['thumb']; ?>" title="<?php echo $news_item['name']; ?>" alt="<?php echo $news_item['name']; ?>">
                 </a> </div>
             <div class="tl corner"></div>
             <div class="br corner"></div>

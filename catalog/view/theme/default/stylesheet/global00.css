@@ -2404,16 +2404,16 @@ p.error404 img {margin:0 10px 0 0;}
 #duoimenu-left{float:left;}
 #tbm{border: 2px solid #000000;
      width: 615px; margin-top:-7px; height:23px;}
-#tbm p{font-family:'UTM_Bebas'; font-size:15px; color:#fff; background:#000;height:23px;
+#tbm p{font-family:'Myriad Pro'; font-size:15px; color:#fff; background:#000;height:23px;
        line-height: 22px;
        padding-left: 10px; float:left;
        width: 83px;}
 #tbm span{font-family:'Myriad Pro'; color:#f00; margin-left:10px; font-size:14px;}	
 
 #tbm2{background:url(../images/subsub.png) no-repeat; height:88px; margin-top:3px;}
-#tbm2 ul li{float:left; margin:22px 43px 0 7px; width:110px; text-align:center;}
-#tbm2 ul li a{font-family:'UTM_Bebas'; font-size:16px; color:#000}
-#tbm2 ul li a:hover{color:#fff}
+#tbm2 ul li{float:left; margin:22px 43px 0 5px; width:110px; text-align:center;}
+#tbm2 ul li a{font-family:'Myriad Pro'; font-size:13px; color:#000}
+#tbm2 ul li a:hover{color:#f00}
 
 
 #duoimenu-right{

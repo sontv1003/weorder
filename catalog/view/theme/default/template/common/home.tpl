@@ -1,13 +1,6 @@
 <?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
 <div class="promotion">
     <img width="100%" src="<?php echo HTTP_SERVER; ?>/image/quy_trinh_mua_hang.jpg">
-    <div id="dathangngay">
-        <ul>
-            <li><a href="<?php echo $link_order_now ?>">đặt hàng ngay</a></li>
-            <li><a href="#">-</a></li>
-            <li><a href="#">đăng nhập sau</a></li>
-        </ul>
-    </div>
 </div>
 
 
