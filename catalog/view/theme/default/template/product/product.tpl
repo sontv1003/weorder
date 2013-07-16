@@ -473,7 +473,7 @@
                 </div>
             </section>
 
-            <section class="box box-bgcolor mtm">
+            <section class="box box-bgcolor mtm" style="max-width: 990px; overflow-y: hidden; overflow-x: auto;">
                 <div id="recommengine_lastproductsviewed"></div>
             </section>
 
