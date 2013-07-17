@@ -93,7 +93,7 @@
       <div class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
       <div class="description"><?php echo $product['description']; ?></div>
       <?php if ($product['price']) { ?>
-      <div class="price">
+      <div class="price" style='float: none; text-align: left;'>
         <?php if (!$product['special']) { ?>
         <?php echo $product['price']; ?>
         <?php } else { ?>
