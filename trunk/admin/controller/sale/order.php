@@ -1682,7 +1682,7 @@ class ControllerSaleOrder extends Controller {
             $this->data['products'] = array();
 
             $products = $this->model_sale_order->getOrderProducts($this->request->get['order_id']);
-
+            
             foreach ($products as $product) {
                 $option_data = array();
 
@@ -1710,6 +1710,7 @@ class ControllerSaleOrder extends Controller {
                     'product_id' => $product['product_id'],
                     'name' => $product['name'],
                     'link' => $product['link'],
+                    'main_link' => $product['main_link'],
                     'size' => $product['size'],
                     'color' => $product['color'],
                     'model' => $product['model'],

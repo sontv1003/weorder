@@ -309,7 +309,9 @@
                 &nbsp;<small> - <?php echo $option['name']; ?>: <a href="<?php echo $option['href']; ?>"><?php echo $option['value']; ?></a></small>
                 <?php } ?>
                 <?php } ?></td>
-              <td class="left"><a href="<?php echo $product['link']; ?>" target="_blank"><?php echo utf8_substr($product['link'], 0, 25); echo (strlen($product['link'])>25)?'...':''; ?></a></td>
+              <?php $product_link = (!empty($product['link'])) ? $product['link'] : $product['main_link']; ?>
+              
+              <td class="left"><a href="<?php echo $product_link; ?>" target="_blank"><?php echo utf8_substr($product_link, 0, 25); echo (strlen($product['link'])>25)?'...':''; ?></a></td>
               <td class="left"><?php echo $product['size']; ?></td>
               <td class="left"><?php echo $product['color']; ?></td>
               <td class="right"><?php echo $product['quantity']; ?></td>
