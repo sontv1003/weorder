@@ -583,7 +583,7 @@ class ModelSaleOrder extends Model {
     }
 
     public function getOrderProducts($order_id) {
-        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int) $order_id . "' ORDER BY link");
+        $query = $this->db->query("SELECT op.*, p.link as main_link FROM " . DB_PREFIX . "order_product op INNER JOIN product p ON op.product_id = p.product_id WHERE order_id = '" . (int) $order_id . "' ORDER BY link");
 
         return $query->rows;
     }

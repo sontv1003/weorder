@@ -122,6 +122,7 @@ class ControllerAccountOrder extends Controller {
                 'order_id' => $result['order_id'],
                 'name' => $result['firstname'] . ' ' . $result['lastname'],
                 'note' => $result['note'],
+                'order_status_id' => $result['order_status_id'],
                 'status' => $result['status'],
                 'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
                 'products' => ($product_total + $voucher_total),
@@ -384,6 +385,7 @@ class ControllerAccountOrder extends Controller {
                     'name' => $product['name'],
                     'model' => $product['model'],
                     'link' => $product['link'],
+                    'main_link' => $product['main_link'],
                     'size' => $product['size'],
                     'color' => $product['color'],
                     'option' => $option_data,
@@ -395,7 +397,7 @@ class ControllerAccountOrder extends Controller {
                     'return' => $this->url->link('account/return/insert', 'order_id=' . $order_info['order_id'] . '&product_id=' . $product['product_id'], 'SSL')
                 );
             }
-
+            
             if (isset($currentOrderStatus[0]['order_status_id']) && $currentOrderStatus[0]['order_status_id'] == 21) {
                 $this->data['isReturn'] = true;
             } else {

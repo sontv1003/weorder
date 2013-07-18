@@ -153,7 +153,7 @@ class ModelAccountOrder extends Model {
     }
     
     public function getOrderDetailProducts($order_id) {
-        $query = $this->db->query("SELECT op.*, p.image FROM " . DB_PREFIX . "order_product op INNER JOIN product p ON p.product_id = op.product_id WHERE op.order_id = '" . (int) $order_id . "' ORDER BY op.link");
+        $query = $this->db->query("SELECT op.*, p.image, p.link as main_link FROM " . DB_PREFIX . "order_product op INNER JOIN product p ON p.product_id = op.product_id WHERE op.order_id = '" . (int) $order_id . "' ORDER BY op.link");
 
         return $query->rows;
     }
