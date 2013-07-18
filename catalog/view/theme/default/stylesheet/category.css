@@ -336,6 +336,7 @@ h4, h5, .h4, .h5 {
 .pagination .links a.selected {
     color: #fff;
     background: #9C232A;
+    border: 1px solid #333;
 }
 .pagination .links b {
     color: red;
@@ -344,7 +345,8 @@ h4, h5, .h4, .h5 {
 .pagination .links a:hover {
     background: #000;
     color: #fff;    
-    padding: 2px 7px;
+    padding: 4px 10px;
+    border: 1px solid #000;
 }
 
 p.pro_description {
