@@ -3034,3 +3034,10 @@ table.boxCurrency td, table.boxCurrency th {
 .currencyHeader a {
     font-size: 14px;
 }
+.list_product_images {
+    text-align: center;
+}
+.list_product_images img {
+    margin-right: 10px;
+    margin-bottom: 20px;
+}

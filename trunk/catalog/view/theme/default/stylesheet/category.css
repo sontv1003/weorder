@@ -297,7 +297,9 @@ h4, h5, .h4, .h5 {
 .box ul.box-category li a {
     font-size: 12px;
 }
-
+.box ul.box-category li a.cat_parent {
+    font-weight: bold;    
+}
 .manufacturer-product {
      border: 1px solid #CDCDCD;
     height: 90px;

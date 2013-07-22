@@ -356,7 +356,8 @@ class ModelCatalogProduct extends Model {
 		$sql .= " GROUP BY p.product_id";
 					
 		$sort_data = array(
-			'pd.name',
+                        'p.product_id',
+//			'pd.name',
 			'p.model',
 			'p.price',
 			'p.quantity',
@@ -367,15 +368,15 @@ class ModelCatalogProduct extends Model {
 		if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
 			$sql .= " ORDER BY " . $data['sort'];	
 		} else {
-			$sql .= " ORDER BY pd.name";	
+			$sql .= " ORDER BY p.product_id";	
 		}
 		
 		if (isset($data['order']) && ($data['order'] == 'DESC')) {
 			$sql .= " DESC";
 		} else {
-			$sql .= " ASC";
+			$sql .= " DESC";
 		}
-	
+
 		if (isset($data['start']) || isset($data['limit'])) {
 			if ($data['start'] < 0) {
 				$data['start'] = 0;

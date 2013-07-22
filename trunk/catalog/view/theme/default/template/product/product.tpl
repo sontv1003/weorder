@@ -294,6 +294,11 @@
                                     <h2 class="mbm">Chi tiết sản phẩm</h2>
                                     <div class="prd-description mbm">
                                         <?php echo $description; ?>
+                                        <div class="list_product_images">
+                                            <?php foreach ($images as $key => $image) { ?>
+                                                <img src="<?php echo $image['popup']; ?>" alt="<?php echo $image['popup']; ?>"> 
+                                            <?php } ?>
+                                        </div>
                                     </div>
                                     <table class="ui-grid ui-gridFull prd-attributes">
                                         <tbody>
