@@ -12,9 +12,31 @@
 <script type="text/javascript"><!--
 $(document).ready(function() {
 	$('#slideshow<?php echo $module; ?>').nivoSlider({
+            effect: 'fade',
+            speed: 1000,
             directionNav: false,
             directionNavHide: true,
             controlNav: false
         });
 });
+
+/* 
+ List effect:
+    sliceDown
+    sliceDownLeft
+    sliceUp
+    sliceUpLeft
+    sliceUpDown
+    sliceUpDownLeft
+    fold
+    fade
+    random
+    slideInRight
+    slideInLeft
+    boxRandom
+    boxRain
+    boxRainReverse
+    boxRainGrow
+    boxRainGrowReverse
+ */
 --></script>
