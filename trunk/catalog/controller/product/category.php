@@ -22,13 +22,13 @@ class ControllerProductCategory extends Controller {
         if (isset($this->request->get['sort'])) {
             $sort = $this->request->get['sort'];
         } else {
-            $sort = 'p.sort_order';
+            $sort = 'p.product_id';
         }
 
         if (isset($this->request->get['order'])) {
             $order = $this->request->get['order'];
         } else {
-            $order = 'ASC';
+            $order = 'DESC';
         }
 
         if (isset($this->request->get['page'])) {
@@ -299,8 +299,8 @@ class ControllerProductCategory extends Controller {
 
             $this->data['sorts'][] = array(
                 'text' => $this->language->get('text_default'),
-                'value' => 'p.sort_order-ASC',
-                'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.sort_order&order=ASC' . $url)
+                'value' => 'p.product_id-DESC',
+                'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.product_id&order=DESC' . $url)
             );
 
             $this->data['sorts'][] = array(
