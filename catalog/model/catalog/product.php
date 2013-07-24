@@ -190,7 +190,8 @@ class ModelCatalogProduct extends Model {
 
         $sql .= " GROUP BY p.product_id";
 
-        $sort_data = array(
+        $sort_data = array(            
+            'p.product_id',
             'pd.name',
             'p.model',
             'p.quantity',
@@ -209,13 +210,13 @@ class ModelCatalogProduct extends Model {
                 $sql .= " ORDER BY " . $data['sort'];
             }
         } else {
-            $sql .= " ORDER BY p.sort_order";
+            $sql .= " ORDER BY p.product_id";
         }
 
         if (isset($data['order']) && ($data['order'] == 'DESC')) {
             $sql .= " DESC, LCASE(pd.name) DESC";
         } else {
-            $sql .= " ASC, LCASE(pd.name) ASC";
+             $sql .= " ASC, LCASE(pd.name) ASC";
         }
 
         if (isset($data['start']) || isset($data['limit'])) {
@@ -229,6 +230,7 @@ class ModelCatalogProduct extends Model {
 
             $sql .= " LIMIT " . (int) $data['start'] . "," . (int) $data['limit'];
         }
+        
         $product_data = array();
 
         $query = $this->db->query($sql);
