@@ -215,7 +215,7 @@ class ModelSaleOrder extends Model {
                 if(!isset($order_product['model']))
                     $order_product['model'] = '';
                 
-                $this->db->query("INSERT INTO " . DB_PREFIX . "order_product SET order_product_id = '" . (int) $order_product['order_product_id'] . "', order_id = '" . (int) $order_id . "', product_id = '" . (int) $order_product['product_id'] . "', name = '" . $this->db->escape($order_product['name']) . "', model = '" . $this->db->escape($order_product['model']) . "', quantity = '" . (int) $order_product['quantity'] . "', price = '" . (float) $order_product['price'] . "', total = '" . (float) $order_product['total'] . "', tax = '" . (float) $order_product['tax'] . "', reward = '" . (int) $order_product['reward'] . "'");
+                $this->db->query("INSERT INTO " . DB_PREFIX . "order_product SET order_product_id = '" . (int) $order_product['order_product_id'] . "', order_id = '" . (int) $order_id . "', product_id = '" . (int) $order_product['product_id'] . "', name = '" . $this->db->escape($order_product['name']) . "', model = '" . $this->db->escape($order_product['model']) . "', quantity = '" . (int) $order_product['quantity'] . "', price = '" . (float) $order_product['price'] . "', total = '" . (float) $order_product['total'] . "', tax = '" . (float) $order_product['tax'] . "', reward = '" . (int) $order_product['reward'] . "', link = '" . $this->db->escape($order_product['link'])."', size = '" . $this->db->escape($order_product['size'])."', color = '". $this->db->escape($order_product['color'])."'");
 
                 $order_product_id = $this->db->getLastId();
 
@@ -583,7 +583,7 @@ class ModelSaleOrder extends Model {
     }
 
     public function getOrderProducts($order_id) {
-        $query = $this->db->query("SELECT op.*, p.link as main_link FROM " . DB_PREFIX . "order_product op INNER JOIN product p ON op.product_id = p.product_id WHERE order_id = '" . (int) $order_id . "' ORDER BY link");
+        $query = $this->db->query("SELECT op.*, p.link as main_link,p.model FROM " . DB_PREFIX . "order_product op INNER JOIN product p ON op.product_id = p.product_id WHERE order_id = '" . (int) $order_id . "' ORDER BY link");
 
         return $query->rows;
     }

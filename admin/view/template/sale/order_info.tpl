@@ -289,6 +289,7 @@
           <thead>
             <tr>
               <td class="left"><?php echo $column_product; ?></td>
+              <td class="left"><?php echo $column_model; ?></td>
               <td class="left">Link</td>
               <td class="left">Size</td>
               <td class="left">Màu sắc</td>
@@ -309,6 +310,7 @@
                 &nbsp;<small> - <?php echo $option['name']; ?>: <a href="<?php echo $option['href']; ?>"><?php echo $option['value']; ?></a></small>
                 <?php } ?>
                 <?php } ?></td>
+              <td class="left"><?php echo $product['model']; ?></td>
               <?php $product_link = (!empty($product['link'])) ? $product['link'] : $product['main_link']; ?>
               
               <td class="left"><a href="<?php echo $product_link; ?>" target="_blank"><?php echo utf8_substr($product_link, 0, 25); echo (strlen($product['link'])>25)?'...':''; ?></a></td>
@@ -332,7 +334,7 @@
           <?php foreach ($totals as $totals) { ?>
           <tbody id="totals">
             <tr>
-              <td colspan="6" class="right"><?php echo $totals['title']; ?>:</td>
+              <td colspan="7" class="right"><?php echo $totals['title']; ?>:</td>
               <td class="right"><?php echo $totals['text']; ?></td>
             </tr>
           </tbody>

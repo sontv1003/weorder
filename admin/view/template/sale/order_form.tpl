@@ -272,6 +272,7 @@
                             <tr>
                                 <td></td>
                                 <td class="left"><?php echo $column_product; ?></td>
+                                <td class="left"><?php echo $column_model; ?></td>
                                 <td class="left">Link</td>
                                 <td class="left">Size</td>
                                 <td class="left">Màu sắc</td>
@@ -311,6 +312,10 @@
                                                 <input type="hidden" name="order_product[<?php echo $product_row; ?>][order_download][<?php echo $download_row; ?>][remaining]" value="<?php echo $download['remaining']; ?>" />
                                                 <?php $download_row++; ?>
                                             <?php } ?></td>
+                                        <td class="left">
+                                            <?php echo $order_product['model']; ?>
+                                            <input type="hidden" name="order_product[<?php echo $product_row; ?>][model]" value="<?php echo $order_product['model']; ?>" />
+                                        </td>
                                         <td class="left">
                                             <a href="<?php echo $order_product['link']; ?>" target="_blank"><?php echo utf8_substr($order_product['link'], 0, 25);
                                     echo (strlen($order_product['link']) ? '...' : '');
@@ -465,6 +470,7 @@
                         <thead>
                             <tr>
                                 <td class="left"><?php echo $column_product; ?></td>
+                                <td class="left"><?php echo $column_model; ?></td>
                                 <td class="left">Link</td>
                                 <td class="left">Size</td>
                                 <td class="left">Màu sắc</td>
@@ -482,6 +488,7 @@
                                             <?php foreach ($order_product['option'] as $option) { ?>
                                                 - <small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small><br />
         <?php } ?></td>
+                                        <td class="left"><?php echo $order_product['model']; ?></td>
                                         <td class="left">
                                             <a href="<?php echo $order_product['link']; ?>" target="_blank"><?php echo utf8_substr($order_product['link'], 0, 25);
                                         echo (strlen($order_product['link']) ? '...' : '');
@@ -505,7 +512,7 @@
     <?php } ?>
     <?php foreach ($order_totals as $order_total) { ?>
                                     <tr id="total-row<?php echo $total_row; ?>">
-                                        <td class="right" colspan="6"><?php echo $order_total['title']; ?>:
+                                        <td class="right" colspan="7"><?php echo $order_total['title']; ?>:
                                             <?php if(!in_array($order_total['code'], array('shipping_fee', 'shipping_pay'))): ?>
                                             <input type="hidden" name="order_total[<?php echo $total_row; ?>][order_total_id]" value="<?php echo $order_total['order_total_id']; ?>" />
                                             <input type="hidden" name="order_total[<?php echo $total_row; ?>][code]" value="<?php echo $order_total['code']; ?>" />
@@ -1457,6 +1464,9 @@ $('#button-product, #button-voucher, #button-update').live('click', function() {
 
                         html += '  </td>';
                         html += '  <td class="left">' + product['model'] + '<input type="hidden" name="order_product[' + product_row + '][model]" value="' + product['model'] + '" /></td>';
+                        html += '  <td class="left">' + product['link'] + '<input type="hidden" name="order_product[' + product_row + '][link]" value="' + product['link'] + '" /></td>';
+                        html += '  <td class="left">' + product['size'] + '<input type="hidden" name="order_product[' + product_row + '][size]" value="' + product['size'] + '" /></td>';
+                        html += '  <td class="left">' + product['color'] + '<input type="hidden" name="order_product[' + product_row + '][color]" value="' + product['color'] + '" /></td>';
                         html += '  <td class="right">' + product['quantity'] + '<input type="hidden" name="order_product[' + product_row + '][quantity]" value="' + product['quantity'] + '" /></td>';
                         html += '  <td class="right">' + product['price'] + '<input type="hidden" name="order_product[' + product_row + '][price]" value="' + product['price'] + '" /></td>';
                         html += '  <td class="right">' + product['total'] + '<input type="hidden" name="order_product[' + product_row + '][total]" value="' + product['total'] + '" /><input type="hidden" name="order_product[' + product_row + '][tax]" value="' + product['tax'] + '" /><input type="hidden" name="order_product[' + product_row + '][reward]" value="' + product['reward'] + '" /></td>';
@@ -1537,6 +1547,9 @@ $('#button-product, #button-voucher, #button-update').live('click', function() {
 
                             html += '  </td>';
                             html += '  <td class="left">' + product['model'] + '</td>';
+                            html += '  <td class="left">' + product['link'] + '</td>';
+                            html += '  <td class="left">' + product['size'] + '</td>';
+                            html += '  <td class="left">' + product['color'] + '</td>';
                             html += '  <td class="right">' + product['quantity'] + '</td>';
                             html += '  <td class="right">' + product['price'] + '</td>';
                             html += '  <td class="right">' + product['total'] + '</td>';
@@ -1564,7 +1577,7 @@ $('#button-product, #button-voucher, #button-update').live('click', function() {
                         total = json['order_total'][i];
 
                         html += '<tr id="total-row' + total_row + '">';
-                        html += '  <td class="right" colspan="4"><input type="hidden" name="order_total[' + total_row + '][order_total_id]" value="" /><input type="hidden" name="order_total[' + total_row + '][code]" value="' + total['code'] + '" /><input type="hidden" name="order_total[' + total_row + '][title]" value="' + total['title'] + '" /><input type="hidden" name="order_total[' + total_row + '][text]" value="' + total['text'] + '" /><input type="hidden" name="order_total[' + total_row + '][value]" value="' + total['value'] + '" /><input type="hidden" name="order_total[' + total_row + '][sort_order]" value="' + total['sort_order'] + '" />' + total['title'] + ':</td>';
+                        html += '  <td class="right" colspan="7"><input type="hidden" name="order_total[' + total_row + '][order_total_id]" value="" /><input type="hidden" name="order_total[' + total_row + '][code]" value="' + total['code'] + '" /><input type="hidden" name="order_total[' + total_row + '][title]" value="' + total['title'] + '" /><input type="hidden" name="order_total[' + total_row + '][text]" value="' + total['text'] + '" /><input type="hidden" name="order_total[' + total_row + '][value]" value="' + total['value'] + '" /><input type="hidden" name="order_total[' + total_row + '][sort_order]" value="' + total['sort_order'] + '" />' + total['title'] + ':</td>';
                         html += '  <td class="right">' + total['value'] + '</td>';
                         html += '</tr>';
 
