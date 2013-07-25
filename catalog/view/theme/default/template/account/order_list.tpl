@@ -120,10 +120,11 @@
                     </th>
                     <?php 
                         $colorList = array(
-                            0 => '#000',
-                            1 => '#000',
-                            2 => '#000',
-                            3 => '#000',
+                            1 => '#F47F7F', // Cho xac minh
+                            18 => '#FFFF00', // Cho thanh toan                            
+                            19 => '#01A5E1', // Dang mua hang
+                            20 => '#81BFCD', // Dang chuyen hang
+                            21 => '#79CB42', // Thanh cong
                         );
                         
                         $colorBg = (isset($colorList[$order['order_status_id']])) ? $colorList[$order['order_status_id']] : 'none';
