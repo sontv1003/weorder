@@ -192,7 +192,7 @@ h4, h5, .h4, .h5 {
 }
 .fader  img{
     max-width: 219px;
-    height: 352px;
+    height: 329px;
 }
 .ribbon {
     -webkit-transform: rotate(45deg);
@@ -233,7 +233,7 @@ h4, h5, .h4, .h5 {
 .list_thumbnail a img {
     display: block;
     margin-left: 30px;    
-    height: 57px;
+    height: 59px;
     margin: 10px 30px;
     width: 39px;
 }
@@ -296,6 +296,9 @@ h4, h5, .h4, .h5 {
 }
 .box ul.box-category li a {
     font-size: 12px;
+}
+.box ul.box-category li a.active {
+    text-decoration:underline;
 }
 .box ul.box-category li a.cat_parent {
     font-weight: bold;    
@@ -360,12 +363,14 @@ p.pro_description {
     overflow: hidden;
 }
 .xemlink a {
-    text-decoration: none;
+    text-decoration: underline;
     font-size: 11px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #900;
+    color: #036;
 }
 .xemlink a:hover {
     color: #ccc;
+}
+
+ul.box-category a.active {
+    text-decoration: underline;
 }
