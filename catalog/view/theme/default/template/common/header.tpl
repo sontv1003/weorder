@@ -8,11 +8,14 @@
             <meta name="description" content="<?php echo $description; ?>" />
         <?php } ?>
         <?php if ($keywords) { ?>
-            <meta name="keywords" content="<?php echo $keywords; ?>, geckomedia.vn" />
+            <meta name="keywords" content="<?php echo $keywords; ?>, dathangquocte.vn" />
         <?php } ?>
         <?php if ($icon) { ?>
             <link href="<?php echo $icon; ?>" rel="icon" />
         <?php } ?>
+
+<script type="text/javascript" src="http://carota.vn/samples/ShowMenuWhenScrolling/scripts/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="http://carota.vn/samples/ShowMenuWhenScrolling/scripts/jquery-1.9.1.min.js"></script>
 
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/slideshow.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/jquery00.css" />
@@ -65,6 +68,7 @@
         <?php echo $google_analytics; ?>
     </head>
     <body id="index">
+
         <div id="wrapper1">
             <div id="wrapper2">
                 <div id="wrapper3" class="clearfix">
@@ -99,6 +103,15 @@
                             <?php $currencyText .= "</table>"; ?>
                             <a href="javascript:void(0)" class="toolTip" title="<?php echo $currencyText; ?>">Tỷ giá ngoại tệ</a>
                         </span>
+
+                        <span style=" left: 0px; position: absolute; top:60px;">
+                       <div style="display: inline-block; padding: 2px 4px; margin: 0px 0px 5px; text-align: center; background-color: transparent;">
+<div style="display: inline-block; text-align: center;"><noscript></noscript><script type="text/javascript" src="http://localtimes.info/world_clock2.php?&cp1_Hex=000000&cp2_Hex=FFFFFF&cp3_Hex=000000&fwdt=72&ham=0&hbg=0&hfg=0&sid=0&mon=0&wek=0&wkf=0&sep=0&widget_number=11000&lcid=USNY0996,UKXX0085,SPXX0050,GMXX0007,KSXX0037,FRXX0076"></script></div>
+</div>
+
+
+
+                        </span>
                         <span style=" left: 830px; position: absolute;  top: 90px; ">
                         	<a href="<?php echo $shopping_cart; ?>"><img   src="<?php echo HTTP_SERVER; ?>image/dat-hang.jpg" height="110px" ></a>
                         </span>
@@ -107,7 +120,7 @@
                         </span>
                         <?php if ($logo) { ?>
                             <a href="<?php echo $home; ?>" style="text-decoration:none"><img width="130" src="<?php echo $logo; ?>" id="logowesale" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a>
-                            <h1 id="sloganws">Ready for better service</h1>
+                            
                         <?php } ?>
                         <a href="<?php echo $home; ?>"><img width="250" style="margin:-8px 0px 0px -42px" src="<?php echo HTTP_SERVER; ?>/image/logoweorder-bong.png" id="header_logo"></a>
                         <h1 id="slogan">___  Đặt hàng quốc tế  ___</h1>
@@ -160,7 +173,65 @@
                                 </li>
                             </ul>
                         </div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+   
+    $(window).on('scroll', function(){
+        var bottom_of_window = $(this).scrollTop();
+        if(  $(this).scrollTop() > 250 ){
+        $(".hideme").stop().animate({ top: '0px' });
+        }
+			else
+			{
+			    $(".hideme").stop().animate({ top: '-65px' });
+			}
+        
+    });
+    
+});
+
+	
+	</script>
+
+
                     </header>
+
+<style type="text/css">
+.hideme
+{   position:fixed;
+    top:-65px;
+    left:0px;
+    height:60px;
+    background-color:#333333; 
+    width:140px;
+    border-bottom:5px solid white;
+	
+}
+.hideme a{
+text-decoration:none;
+color:white;
+}
+.btnDownload
+{
+
+padding-top:7px;
+text-align:center;
+position: absolute;
+left:5px;
+top: 20px;
+height:50px;
+width:120px;
+ -webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;
+ border:2px solid black; 
+ background-color:#000; 
+ z-index:1000;
+font-family: Myriad Pro;
+}
+</style>
+
+<div class="hideme"><a href="http://dathangquocte.vn/index.php?route=checkout/cart" alt="MUA HANG"><div class="btnDownload"><img tyle="position:absolute; top:-10px;" src="http://i.upanh.com/vputob"/></img></div></a></div>
+
                     <div class="clearfix"></div>
 
                     <div id="notification"></div>
