@@ -613,6 +613,20 @@ class ControllerCatalogProduct extends Controller {
         $this->data['tab_reward'] = $this->language->get('tab_reward');
         $this->data['tab_design'] = $this->language->get('tab_design');
 
+        $this->load->model('localisation/currency');
+        $currencies = $this->model_localisation_currency->getCurrencies();
+        $this->data['currencies'] = array();
+        foreach ($currencies as $currency) {
+            if ($currency['status']) {
+                $this->data['currencies'][] = array(
+                    'status' => $currency['status'],
+                    'title' => $currency['title'],
+                    'code' => $currency['code'],
+                    'value' => $currency['value'],
+                );
+            }
+        }        
+
         if (isset($this->error['warning'])) {
             $this->data['error_warning'] = $this->error['warning'];
         } else {
