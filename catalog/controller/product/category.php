@@ -290,6 +290,10 @@ class ControllerProductCategory extends Controller {
             if (isset($this->request->get['manufacturer_id'])) {
                 $url .= '&manufacturer_id=' . $this->request->get['manufacturer_id'];
             }
+            
+            if (isset($this->request->get['filter_manufacturer_id'])) {
+                $url .= '&filter_manufacturer_id=' . $this->request->get['filter_manufacturer_id'];
+            }
 
             if (isset($this->request->get['limit'])) {
                 $url .= '&limit=' . $this->request->get['limit'];
@@ -383,6 +387,10 @@ class ControllerProductCategory extends Controller {
 
             $url = '';
 
+            if (isset($this->request->get['filter_manufacturer_id'])) {
+                $url .= '&filter_manufacturer_id=' . $this->request->get['filter_manufacturer_id'];
+            }
+            
             if (isset($this->request->get['filter'])) {
                 $url .= '&filter=' . $this->request->get['filter'];
             }
