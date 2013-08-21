@@ -109,7 +109,7 @@
                                 </div>
                                 <div style="float: left; padding: 0 10px;"><select name="cb_currency" id="cb_currency">
                                     <?php foreach ($currencies as $value): ?>
-                                        <?php if ($value['code'] == 'USD'): ?>
+                                        <?php if ($value['code'] == 'GBP'): ?>
                                             <option value="<?php echo $value['value'] ?>" selected="selected"><?php echo $value['code'] ?></option>
                                         <?php else: ?>
                                             <option value="<?php echo $value['value'] ?>"><?php echo $value['code'] ?></option>
