@@ -430,6 +430,4 @@
     });
 
     $('select[name=\'country_id\']').trigger('change');
-    //--></script> 
-<script type="text/javascript">
-<?php echo $footer; ?>
+    //--></script>
