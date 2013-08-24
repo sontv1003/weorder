@@ -132,6 +132,7 @@ label {
 	left: 616px;
 	z-index: 9;
 	min-width: 350px;
+	z-index:9999999999999;
 }
 #header #cart .heading {
 	float: right;
@@ -237,7 +238,7 @@ label {
 .mini-cart-total td {
 	color: #000;
 	padding: 4px;
-        font-family: 'UTM_Bebas';
+        font-family: 'Myriad Pro';
         font-size: 14px;
 }
 .mini-cart-total span {
@@ -832,6 +833,8 @@ table.radio tr.highlight:hover td {
 	overflow: auto;
 	margin-bottom: 20px;
 }
+
+
 .product-info > .left {
 	float: left;
 	margin-right: 15px;
@@ -930,6 +933,7 @@ table.radio tr.highlight:hover td {
 	border-bottom: 1px solid #E7E7E7;
 	padding: 0px 5px 10px 5px;
 	margin-bottom: 20px;
+	margin-left: -50px;
 	color: #4D4D4D;
 }
 .product-info .cart div > span {
@@ -1540,4 +1544,14 @@ table.radio tr.highlight:hover td {
 }
 .a_center {
     text-align: center !important;
+}
+
+#diachimuahang{
+height:394px;
+width:70px;
+}
+#diachimuahang:hover{
+z-index:1;
+height:436px;
+width:910px;
 }

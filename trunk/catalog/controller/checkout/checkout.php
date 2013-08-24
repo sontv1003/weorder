@@ -321,6 +321,8 @@ class ControllerCheckoutCheckout extends Controller {
                 break;
             }
         }
+        $this->load->model('checkout/order');
+//        die('ok');
 
         if (!$redirect) {
             $total_data = array();
@@ -567,8 +569,6 @@ class ControllerCheckoutCheckout extends Controller {
                 $data['accept_language'] = '';
             }
 
-            $this->load->model('checkout/order');
-
             $this->session->data['order_id'] = $this->model_checkout_order->addOrder($data);
 
             $this->data['column_name'] = $this->language->get('column_name');
@@ -633,15 +633,7 @@ class ControllerCheckoutCheckout extends Controller {
         } else {
             $this->data['redirect'] = $redirect;
         }
-
-        if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/confirm.tpl')) {
-            $this->template = $this->config->get('config_template') . '/template/checkout/confirm.tpl';
-        } else {
-            $this->template = 'default/template/checkout/confirm.tpl';
-        }
-
-        $this->load->model('checkout/order');
-		
+        		
         $this->model_checkout_order->confirm($this->session->data['order_id'], $this->config->get('cod_order_status_id'));
 
         //unset($this->cart->getProducts());
