@@ -52,7 +52,7 @@
                             <div class="manufacturer-product">
                                 <span class="product-date"><?php echo date('d/m/Y', strtotime($product['date'])); ?></span>
                                 <?php if (!empty($product['man_thumb'])) { ?>
-                                    <img src="<?php echo $product['man_thumb'] ?>" />
+                                    <img src="<?php echo $product['man_thumb'] ?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>"/>
                                 <?php } ?>
                             </div>
                             <?php
@@ -61,7 +61,7 @@
                                 $i++;
                                 if ($i <= 3) {
                                     ?>
-                                    <a href="<?php echo $product['href']; ?>"><img src="<?php echo $thumb['thumb'] ?>" /></a>
+                                    <a href="<?php echo $product['href']; ?>"><img src="<?php echo $thumb['thumb'] ?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>"/></a>
                                 <?php }
                             }
                             ?>
