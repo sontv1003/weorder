@@ -296,7 +296,7 @@
                                         <?php echo $description; ?>
                                         <div class="list_product_images">
                                             <?php foreach ($images as $key => $image) { ?>
-                                                <img src="<?php echo $image['popup']; ?>" alt="<?php echo $image['popup']; ?>"> 
+                                                <img src="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>"> 
                                             <?php } ?>
                                         </div>
                                     </div>
