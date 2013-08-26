@@ -5,7 +5,7 @@
 
     <div class="bcr mbm fsm breadcrumbs">
         <ul>
-            <?php foreach ($breadcrumbs as $breadcrumb) { ?>﻿
+            <?php foreach ($breadcrumbs as $breadcrumb) { ?>&#65279;
                 <li class="prs"> <a href="<?php echo $breadcrumb['href']; ?>" title="<?php echo $breadcrumb['text']; ?>"><?php echo $breadcrumb['text']; ?></a> </li>
             <?php } ?>
         </ul>
@@ -25,11 +25,6 @@
                             <div id="product-option-stock-hint" class="mtm" style="">
                                 <!--Lựa chọn của quý khách: <strong><span id="product-option-stock-number" style="color:#D02700">Chỉ còn lại 32 mục</span></strong>-->
                             </div>
-
-                            <div class="bService overflow marginBottom ">
-                                <div class="iconSprite"></div>
-                                <p>Mọi câu hỏi vui lòng liên hệ Chăm Sóc Khách Hàng qua hotline miễn phí (08) 6 288 5678</p>
-                            </div>
                             <div class="clear"></div>
                             <div class="prd-hd">
                                 <h1 class="h2 mtm lhl">
@@ -39,7 +34,7 @@
                                         </span>
                                     <?php } ?>
                                     <span class="prd-title fsm" property="gr:name"><?php echo $heading_title; ?></span>
-                                    <p class="xemlink"><a href="<?php echo $product_link; ?>" target="_blank">Xem link</a></p>
+                                    <p class="xemlink"><a href="<?php echo $product_link; ?>" target="_blank">Xem link quốc tế</a></p>
                                     <span class="prd-price fsm" property="gr:name"><?php echo $text_price; ?> <span class="lbPrice"><?php echo $price; ?></span></span>
                                 </h1>
                                 <div class="l-row vMid">
@@ -56,7 +51,7 @@
                                     </p>
                                 <?php } ?>
                             </div>
-                            <?php echo $sort_description ?>
+                             <h1><?php echo $sort_description ?></h1>
 
                             <?php if ($options) { ?>
                                 <div class="options">
@@ -241,6 +236,12 @@
                                     <div class="minimum"><?php echo $text_minimum; ?></div>
                                 <?php } ?>
                             </div>
+
+
+
+<img src="http://dathangquocte.vn/image/sponline.jpg" style="margin-left: -65px;margin-top: -20px;"></img>
+                       
+
                         </div>
                         <div id="prdMedia" class="prd-media">
                             <?php if ($thumb || $images) { ?>
@@ -283,9 +284,9 @@
 
                         <div id="jtabs" class="htabs">
                             <a href="#productDetails" class="selected">Chi tiết sản phẩm</a>
-                            <a href="#brandInformation">THÔNG TIN NHÃN HIỆU</a>
-                            <a href="#productReviews">NHẬN XÉT SẢN PHẨM</a>
-                            <a href="#facebookComment">BÌNH LUẬN</a>
+                            <a href="#brandInformation">Thông tin nhãn hiệu</a>
+                            <a href="#productReviews">Nhận xét sản phẩm</a>
+                            <a href="#facebookComment">Bình luận</a>
                         </div>
                         <div style="clear: both"></div>
                         <div class="ui-tabViewCont box-bdr">
@@ -294,11 +295,15 @@
                                     <h2 class="mbm">Chi tiết sản phẩm</h2>
                                     <div class="prd-description mbm">
                                         <?php echo $description; ?>
+                                        
+                                        <?php /* Chi hien thi cho san pham moi */
+                                        if($product_id > 636): ?>
                                         <div class="list_product_images">
                                             <?php foreach ($images as $key => $image) { ?>
-                                                <img src="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>"> 
+                                                <img src="<?php echo $image['popup']; ?>" alt="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>"> 
                                             <?php } ?>
                                         </div>
+                                        <?php endif; ?>
                                     </div>
                                     <table class="ui-grid ui-gridFull prd-attributes">
                                         <tbody>
