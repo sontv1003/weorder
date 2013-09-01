@@ -105,7 +105,7 @@ class ControllerCommonSeoUrl extends Controller {
                     $categories = explode('_', $value);
 
                     foreach ($categories as $category) {
-                        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE `query` = 'news_category_id=" . (int) $category . "'");
+                        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE `query` = 'cat_id=" . (int) $category . "'");
 
                         if ($query->num_rows) {
                             $url .= '/' . $query->row['keyword'];
