@@ -28,7 +28,7 @@ class ModelCatalogNewsCategory extends Model {
 		}
 						
 		if ($data['keyword']) {
-			$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'news_category_id=" . (int)$news_category_id . "', keyword = '" . $this->db->escape($data['keyword']) . "'");
+			$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'cat_id=" . (int)$news_category_id . "', keyword = '" . $this->db->escape($data['keyword']) . "'");
 		}
 		
 		$this->cache->delete('news_category');
@@ -65,10 +65,10 @@ class ModelCatalogNewsCategory extends Model {
 			}
 		}
 						
-		$this->db->query("DELETE FROM " . DB_PREFIX . "url_alias WHERE query = 'news_category_id=" . (int)$news_category_id. "'");
+		$this->db->query("DELETE FROM " . DB_PREFIX . "url_alias WHERE query = 'cat_id=" . (int)$news_category_id. "'");
 		
 		if ($data['keyword']) {
-			$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'news_category_id=" . (int)$news_category_id . "', keyword = '" . $this->db->escape($data['keyword']) . "'");
+			$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'cat_id=" . (int)$news_category_id . "', keyword = '" . $this->db->escape($data['keyword']) . "'");
 		}
 		
 		$this->cache->delete('news_category');
@@ -79,7 +79,7 @@ class ModelCatalogNewsCategory extends Model {
 		$this->db->query("DELETE FROM " . DB_PREFIX . "news_category_description WHERE news_category_id = '" . (int)$news_category_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "news_category_to_store WHERE news_category_id = '" . (int)$news_category_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "news_category_to_layout WHERE news_category_id = '" . (int)$news_category_id . "'");
-		$this->db->query("DELETE FROM " . DB_PREFIX . "url_alias WHERE query = 'news_category_id=" . (int)$news_category_id . "'");
+		$this->db->query("DELETE FROM " . DB_PREFIX . "url_alias WHERE query = 'cat_id=" . (int)$news_category_id . "'");
 		
 		$query = $this->db->query("SELECT news_category_id FROM " . DB_PREFIX . "news_category WHERE parent_id = '" . (int)$news_category_id . "'");
 
@@ -91,7 +91,7 @@ class ModelCatalogNewsCategory extends Model {
 	} 
 
 	public function getNewsCategory($news_category_id) {
-		$query = $this->db->query("SELECT DISTINCT *, (SELECT keyword FROM " . DB_PREFIX . "url_alias WHERE query = 'news_category_id=" . (int)$news_category_id . "') AS keyword FROM " . DB_PREFIX . "news_category WHERE news_category_id = '" . (int)$news_category_id . "'");
+		$query = $this->db->query("SELECT DISTINCT *, (SELECT keyword FROM " . DB_PREFIX . "url_alias WHERE query = 'cat_id=" . (int)$news_category_id . "') AS keyword FROM " . DB_PREFIX . "news_category WHERE news_category_id = '" . (int)$news_category_id . "'");
 		
 		return $query->row;
 	} 
